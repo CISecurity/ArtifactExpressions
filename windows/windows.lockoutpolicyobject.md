@@ -39,9 +39,9 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
 			<ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION_NUMBER]">
 				<ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
 				<ae:title>[RECOMMENDATION TITLE]</ae:title>
-				<ae:artifact type="windows.passwordpolicyobject">
+				<ae:artifact type="windows.lockoutpolicyobject">
 					<ae:parameters>
-						<ae:parameter dt="string" name="passwordpolicysetting">[SETTING CONSTRAINT VALUE]</ae:parameter>
+						<ae:parameter dt="string" name="lockoutsetting">[SETTING CONSTRAINT VALUE]</ae:parameter>
 					</ae:parameters>
 				</ae:artifact>
 				<ae:test type="[TestType Name]">
