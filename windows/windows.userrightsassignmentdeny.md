@@ -1,4 +1,4 @@
-# windows.userright_v2
+# windows.userrightsassignmentdeny
 
 ## Description
 The userright_test is used to enumerate all of the trustees/SIDs that have been granted a specific user right/privilege.
@@ -10,8 +10,7 @@ TBD
 ### Artifact Parameters
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
-| userright | String | The userright entity holds a string that represents the name of a particular user right/privilege.	|
-| check_existence | String | Defines how many items should be collected.	|
+| userright | String | The user right setting to be audited.|
 
 NOTE: This parameter is governed by a constraint allowing only the following values:
 - SE_ASSIGNPRIMARYTOKEN_NAME	
@@ -62,77 +61,87 @@ NOTE: This parameter is governed by a constraint allowing only the following val
 - "" (empty string)
 
 ### Supported Test Types
-- windows.userright_trustee_name_v2
-- windows.userright_trustee_sid_v2
+- set.white_list_v1
 
 ### Generated Content
 #### XCCDF+AE
 This is what the AE check looks like, inside a Rule, in the XCCDF
 
 ```
-<xccdf:complex-check operator="OR">
-    <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
-        <xccdf:check-content>
-            <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_14.1.1">
-                <ae:artifact_oval_id>[ARTIFACT_OVAL_ID]</ae:artifact_oval_id>
-                <ae:title>[RECOMMENDATION_TITLE]</ae:title>
-                <ae:artifact type="windows.userright_v2">
-                    <ae:parameters>
-                        <ae:parameter dt="string" name="userright"
-                            >[SETTING_CONSTRAINT_VALUE]</ae:parameter>
-                        <ae:parameter dt="string" name="check_existence"
-                            >at_least_one_exists</ae:parameter>
-                    </ae:parameters>
-                </ae:artifact>
-                <ae:test type="[Testtype Name]">
-                    <ae:parameters>
-                        <ae:parameter dt="string" name="check">all</ae:parameter>
-                        <ae:parameter dt="string" name="operation">[TestType.value]</ae:parameter>
-                        <ae:parameter dt="string" name="datatype">[TestType.data_type]</ae:parameter>
-                        <ae:parameter dt="string" name="[PARAMETER NAME]"
-                            >[ARTIFACT TYPE PARAMETER VALUE]</ae:parameter>
-                    </ae:parameters>
-                </ae:test>
-            </ae:artifact_expression>
-        </xccdf:check-content>
-    </xccdf:check>
+<xccdf:complex-check operator="AND">
+	<xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
+		<xccdf:check-content>
+			<ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION_NUMBER]">
+				<ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
+				<ae:title>[RECOMMENDATION TITLE]</ae:title>
+				<ae:artifact type="windows.userrightsassignmentdeny">
+					<ae:parameters>
+						<ae:parameter dt="string" name="userright">[SETTING CONSTRAINT VALUE]</ae:parameter>
+					</ae:parameters>
+				</ae:artifact>
+				<ae:test type="[TestType Name]">
+					<ae:parameters>
+						<ae:parameter dt="string" name="value">[TestType.value]</ae:parameter>
+						<ae:parameter dt="string" name="data_type">[TestType.data_type]</ae:parameter>
+					</ae:parameters>
+				</ae:test>
+			</ae:artifact_expression>
+		</xccdf:check-content>
+	</xccdf:check>
 </xccdf:complex-check>
 ```
 
 #### SCAP
+##### XCCDF
+For `windows.userrightsassignmentdeny` artifacts, an XCCDF Value element is generated:
+
+```
+<Value id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" 
+       operator="[TestType Name]" type="[number|boolean]">
+  <title>[RECOMMENDATION TITLE]</title>
+  <description>This value is used in Rule: [RECOMMENDATION TITLE]</description>
+  <value>[TestType.value.value]</value>
+</Value>
+```
 
 ##### OVAL
 ###### Test
 
 ```
-<userright_test xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#windows"
-            id="oval:org.cisecurity.benchmarks.windows_8.1:tst:ARTIFACT-OVAL-ID"
-            check_existence="at_least_one_exists" check="all"
+ <userright_test xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#windows"
+            id="oval:org.cisecurity.benchmarks.windows_8.1:tst: <userright_object xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#windows"
+                                                                           id="oval:org.cisecurity.benchmarks.windows_8.1:obj:73694"
+                                                                           comment="Ensure &apos;sedenyinteractivelogonright&apos; is set to &apos;Guests&apos;"
+                                                                           version="1">
+                                                                           <userright operation="equals">SE_DENY_INTERACTIVE_LOGON_NAME</userright>
+                                                                       </userright_object>"
+            check_existence="at_least_one_exists" check="at least one"
             comment="[RECOMMENDATION_TITLE]"
             version="1">
             <object object_ref="oval:org.cisecurity.benchmarks.windows_8.1:obj:ARTIFACT-OVAL-ID"/>
             <state state_ref="oval:org.cisecurity.benchmarks.windows_8.1:ste:ARTIFACT-OVAL-ID"/>
-</userright_test>
+        </userright_test>
 ```
 
 ###### Object
 
 ```
-      id="oval:org.cisecurity.benchmarks.windows_8.1:obj:ARTIFACT-OVAL-ID"
+ <userright_object xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#windows"
+            id="oval:org.cisecurity.benchmarks.windows_8.1:obj:ARTIFACT_OVAL_ID"
             comment="[RECOMMENDATION_TITLE]"
             version="1">
-            <userright>[ARTIFACT_PARAMETER_NAME]</userright>
+            <userright operation="[TestType Name]">[SETTING_CONSTRAINT_VALUE]</userright>
         </userright_object>
 ```
+
 ###### State
 
 ```
 <userright_state xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#windows"
-            id="oval:org.cisecurity.benchmarks.windows_8.1:ste:ARTIFACT-OVAL-ID"
-            comment="[RECOMMENDATION TITLE]"
+            id="oval:org.cisecurity.benchmarks.windows_8.1:ste:ARTIFACT_OVAL_ID"
+            comment="[RECOMMENDATION_TITLE]"
             version="1">
-            <userright>[ARTIFACT_PARAMETER_NAME]</userright>
-            <trustee_name operation="[TEST_TYPE_NAME]" datatype="string">[PARAMETER_VALUE]</trustee_name>
+            <trustee_sid operation="[TestType Name]" datatype="[TestType.data_type]">[TestType.data_type.value]</trustee_sid>
         </userright_state>
 ```
 
@@ -143,10 +152,10 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
     artifact-unique-id: [ARTIFACT-OVAL-ID]
     artifact-title: [RECOMMENDATION TITLE]
     artifact:
-      type: windows.userright_v2
+      type: windows.userrightsassignmentdeny
       parameters:
       - parameter: 
-          name: [PARAMETER_NAME]
+          name: userright
           type: string
           value: [ARTIFACT TYPE PARAMETER VALUE]
     test:
@@ -169,11 +178,11 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
   "artifact-unique-id": [ARTIFACT-OVAL-ID],
   "artifact-title": [RECOMMENDATION TITLE],
   "artifact": {
-    "type": "windows.userright_v2",
+    "type": "windows.userrightsassignmentdeny",
     "parameters": [
       {
         "parameter": {
-          "name": "[PARAMETER_NAME]",
+          "name": "userright",
           "type": "string",
           "value": [ARTIFACT TYPE PARAMETER VALUE]
         }
