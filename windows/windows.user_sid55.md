@@ -23,6 +23,15 @@ TBD
 - greater than
 - greater than or equal 
 
+### Test Type Parameters
+### Test Type Parameters
+| Name                  |Type    | Description |
+| ----------------------|--------| ----------- |
+| data_type | String | datatype of the value |
+| values | String | Comma separated list of permitted values|
+| value | String | the value included within the set of results/ value to be tested|
+
+
 ### Generated Content
 #### XCCDF+AE
 This is what the AE check looks like, inside a Rule, in the XCCDF
@@ -37,11 +46,10 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
 				<ae:artifact type="windows.user_sid55">
                 <ae:parameters>
                     <ae:parameter dt="string" name="sid"
-                        >^S\-1\-5\-21\-\d+\-\d+\-\d+\-500$</ae:parameter>
-                    <ae:parameter dt="string" name="sid_operation">pattern
-                        match</ae:parameter>
+                        >[sid.value]</ae:parameter>
+                    <ae:parameter dt="string" name="sid_operation">[sid_operation.value]</ae:parameter>
                     <ae:parameter dt="string" name="state"
-                        >enabled</ae:parameter>
+                        >[state.value]</ae:parameter>
                 </ae:parameters>
 				</ae:artifact>
 				<ae:test type="[TestType Name]">
@@ -90,7 +98,7 @@ For `windows.user_sid55` artifacts, an XCCDF Value element is generated:
             id="oval:org.cisecurity.benchmarks.windows_8.1:obj:ARTIFACT_OVAL_ID"
             comment="[RECOMMENDATION_TITLE]"
             version="1">
-            <userright operation="[TestType Name]">[SETTING_CONSTRAINT_VALUE]</userright>
+           <user_sid operation="pattern match">^S\-1\-5\-21\-\d+\-\d+\-\d+\-500$</user_sid>
 </user_sid55_object>
 ```
 
@@ -101,7 +109,8 @@ For `windows.user_sid55` artifacts, an XCCDF Value element is generated:
             id="oval:org.cisecurity.benchmarks.windows_8.1:ste:ARTIFACT_OVAL_ID"
             comment="[RECOMMENDATION_TITLE]"
             version="1">
-            <trustee_sid operation="[TestType Name]" datatype="[TestType.data_type]">[TestType.data_type.value]</trustee_sid>
+           <enabled operation="[testtype_name]" datatype="[testtype.datatype.value]"
+                           var_ref="oval:org.cisecurity.benchmarks.windows_8.1:var:ARTIFACT_OVAL_ID"/>
 </user_sid55_state>
 ```
 
@@ -116,6 +125,14 @@ For `windows.user_sid55` artifacts, an XCCDF Value element is generated:
       parameters:
       - parameter: 
           name: sid
+          type: string
+          value: [ARTIFACT TYPE PARAMETER VALUE]
+      - parameter: 
+          name: sid_operation
+          type: string
+          value: [ARTIFACT TYPE PARAMETER VALUE]
+      - parameter: 
+          name: state
           type: string
           value: [ARTIFACT TYPE PARAMETER VALUE]
     test:
@@ -134,39 +151,71 @@ For `windows.user_sid55` artifacts, an XCCDF Value element is generated:
 #### JSON
 
 ```
-"artifact-expression": {
-  "artifact-unique-id": [ARTIFACT-OVAL-ID],
-  "artifact-title": [RECOMMENDATION TITLE],
-  "artifact": {
-    "type": "windows.user_sid55",
-    "parameters": [
-      {
-        "parameter": {
-          "name": "userright",
-          "type": "string",
-          "value": [ARTIFACT TYPE PARAMETER VALUE]
+{
+  "artifact-expression": {
+    "artifact-unique-id": [
+      "ARTIFACT-OVAL-ID"
+    ],
+    "artifact-title": [
+      "RECOMMENDATION TITLE"
+    ],
+    "artifact": {
+      "type": "windows.user_sid55",
+      "parameters": [
+        {
+          "parameter": {
+            "name": "sid",
+            "type": "string",
+            "value": [
+              "ARTIFACT TYPE PARAMETER VALUE"
+            ]
+          }
+        },
+        {
+          "parameter": {
+            "name": "sid_operation",
+            "type": "string",
+            "value": [
+              "ARTIFACT TYPE PARAMETER VALUE"
+            ]
+          }
+        },
+        {
+          "parameter": {
+            "name": "state",
+            "type": "string",
+            "value": [
+              "ARTIFACT TYPE PARAMETER VALUE"
+            ]
+          }
         }
-      }
-    ]
-  },
-  "test": {
-    "type": [TestType Name],
-    "parameters": [
-      {
-        "parameter": {
-          "name": "value",
-          "type": "string",
-          "value": [TestType.value.value]
+      ]
+    },
+    "test": {
+      "type": [
+        "TestType Name"
+      ],
+      "parameters": [
+        {
+          "parameter": {
+            "name": "value",
+            "type": "string",
+            "value": [
+              "TestType.value.value"
+            ]
+          }
+        },
+        {
+          "parameter": {
+            "name": "data_type",
+            "type": "string",
+            "value": [
+              "TestType.data_type.value"
+            ]
+          }
         }
-      },
-      {
-        "parameter": {
-          "name": "data_type",
-          "type": "string",
-          "value": [TestType.data_type.value]
-        }
-      }
-    ]
+      ]
+    }
   }
 }
 ``` 
