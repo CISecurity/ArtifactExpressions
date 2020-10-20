@@ -3,8 +3,7 @@
 ## Description
 The accesstoken_test is used to check the properties of a Windows access token as well as individual privileges and rights associated with it.
 ## Intent
-The intent of the `windows.privilegeassignment` artifact type is to allow users to create specific checks against the Windows password policy.  The `privilegeassignmentsettings` parameter is constrained to the specific list of values, each representing one of the password policy attributes that can be collected.
-
+ TBD
 ## Technical Details
 ### Artifact Parameters
 | Name                  |Type    | Description |
