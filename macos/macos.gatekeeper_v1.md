@@ -70,7 +70,7 @@ For `macos.gatekeeper_v1` artifacts, the xccdf:check looks like this.  There is 
       xmlns:cpe="http://cpe.mitre.org/language/2.0"
       xmlns:ecl="http://cisecurity.org/check"
       href="[BENCHMARK NAME]"
-      name="oval:org.cisecurity.benchmarks.o_apple_mac_os_x:def:25415000"/>
+      name="oval:org.cisecurity.benchmarks.o_apple_mac_os_x:def:[ARTIFACT-OVAL-ID]"/>
 </xccdf:check>
 ```
 
@@ -118,7 +118,7 @@ For `macos.gatekeeper_v1` artifacts, the xccdf:check looks like this.  There is 
           type: string
           value: [gatekeeper.value]
     test:
-      type: [TestTYPE Name]
+      type: [TESTTYPE NAME]
       parameters:
       - parameter:
           name: check_existence

@@ -40,83 +40,81 @@ TBD
 This is what the AE check looks like, inside a Rule, in the XCCDF
 
 ```
-<xccdf:complex-check operator="AND">
-	<xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
-		<xccdf:check-content>
-			<ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION_NUMBER]">
-				<ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-				<ae:title>[RECOMMENDATION TITLE]</ae:title>
-				<ae:artifact type="windows.lockoutpolicyobject">
-					<ae:parameters>
-						<ae:parameter dt="string" name="lockoutsetting">[SETTING CONSTRAINT VALUE]</ae:parameter>
-					</ae:parameters>
-				</ae:artifact>
-				<ae:test type="[TestType Name]">
-					<ae:parameters>
-						<ae:parameter dt="string" name="value">[TestType.value]</ae:parameter>
-						<ae:parameter dt="string" name="data_type">[TestType.data_type]</ae:parameter>
-					</ae:parameters>
-				</ae:test>
-			</ae:artifact_expression>
-		</xccdf:check-content>
-	</xccdf:check>
-</xccdf:complex-check>
+<xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
+  <xccdf:check-content>
+    <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION_NUMBER]">
+      <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
+      <ae:title>[RECOMMENDATION TITLE]</ae:title>
+      <ae:artifact type="[ARTIFACTTYPE NAME]">
+        <ae:parameters>
+          <ae:parameter dt="string" name="filepath"
+            >[filepath.value]</ae:parameter>
+        </ae:parameters>
+      </ae:artifact>
+      <ae:test type="[TESTTYPE NAME]">
+        <ae:parameters>
+          <ae:parameter dt="string" name="check_existence">[check_existence.value]</ae:parameter>
+          <ae:parameter dt="string" name="check">[check.value]</ae:parameter>
+          <ae:parameter dt="string" name="operation">[operation.value]</ae:parameter>
+          <ae:parameter dt="string" name="datatype">[datatype.value]</ae:parameter>
+          <ae:parameter dt="integer" name="timeout">[timeout.value]</ae:parameter>
+        </ae:parameters>
+      </ae:test>
+      <ae:profiles>
+        <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_2"/>
+      </ae:profiles>
+    </ae:artifact_expression>
+  </xccdf:check-content>
+</xccdf:check>
+
 ```
 
 #### SCAP
 ##### XCCDF
-For `windows.lockoutpolicyobject` artifacts, an XCCDF Value element is generated:
+For `macos.keychain_v1` artifacts, the xccdf:check looks like this.  There is no Value in the xccdf for this Artifact.
 
 ```
-<Value id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" 
-       operator="[TestType Name]" type="[number|boolean]">
-  <title>[RECOMMENDATION TITLE]</title>
-  <description>This value is used in Rule: [RECOMMENDATION TITLE]</description>
-  <value>[TestType.value.value]</value>
-</Value>
+<xccdf:check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+  <xccdf:check-content-ref xmlns:ae="http://benchmarks.cisecurity.org/ae/0.5"
+     xmlns:cpe="http://cpe.mitre.org/language/2.0" xmlns:ecl="http://cisecurity.org/check"
+     href="CIS_Apple_macOS_10.13_Benchmark_v1.0.0.1-oval.xml"
+     name="oval:org.cisecurity.benchmarks.o_apple_mac_os_x:def:[ARTIFACT-OVAL-ID]"/>
+</xccdf:check>
 ```
 
 ##### OVAL
 ###### Test
 
 ```
-    <lockoutpolicy_test xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#windows"
-            id="oval:org.cisecurity.benchmarks.windows_server_2012_r2:tst:ARTIFACT-OVAL-ID"
-            check_existence="at_least_one_exists" check="all"
-            comment="[RECOMMENDATION TITLE]"
-            version="1">
-            <object object_ref="oval:org.cisecurity.benchmarks.windows_server_2012_r2:obj:ARTIFACT-OVAL-ID"/>
-            <state state_ref="oval:org.cisecurity.benchmarks.windows_server_2012_r2:ste:ARTIFACT-OVAL-ID"/>
-    </lockoutpolicy_test>
+<macos:keychain_test check="[check.value]" check_existence="[check_existence.value]"
+  comment="[RECOMMENDATION TITLE]"
+  id="oval:org.cisecurity.benchmarks.o_apple_mac_os_x:tst:[ARTIFACT-OVAL-ID]" version="1">
+  <macos:object object_ref="oval:org.cisecurity.benchmarks.o_apple_mac_os_x:obj:[ARTIFACT-OVAL-ID]"/>
+  <macos:state state_ref="oval:org.cisecurity.benchmarks.o_apple_mac_os_x:ste:[ARTIFACT-OVAL-ID]"/>
+</macos:keychain_test>
+
 ```
 
 ###### Object
 
 ```
-   <lockoutpolicy_object xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#windows"
-            id="oval:org.cisecurity.benchmarks.windows_server_2012_r2:obj:ARTIFACT-OVAL-ID"
-            comment="[RECOMMENDATION TITLE]"
-    version="1"/>
+<macos:keychain_object
+  comment="[RECOMMENDATION TITLE]"
+  id="oval:org.cisecurity.benchmarks.o_apple_mac_os_x:obj:[ARTIFACT-OVAL-ID]" version="1">
+  <macos:filepath>[filepath.value]</macos:filepath>
+</macos:keychain_object>
+
 ```
 ###### State
 
 ```
-    <lockoutpolicy_state xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#windows"
-            id="oval:org.cisecurity.benchmarks.windows_server_2012_r2:ste:ARTIFACT-OVAL-ID"
-            comment="[RECOMMENDATION TITLE]"
-            version="1">
-            <lockout_duration operation="greater than or equal" datatype="int"
-                var_ref="oval:org.cisecurity.benchmarks.windows_server_2012_r2:var:ARTIFACT-OVAL-ID"/>
-    </lockoutpolicy_state>
-```
 
-###### Variable
+<macos:keychain_state
+  comment="[RECOMMENDATION TITLE]"
+  id="oval:org.cisecurity.benchmarks.o_apple_mac_os_x:ste:[ARTIFACT-OVAL-ID]" version="1">
+  <macos:timeout datatype="[datatype.value]" operation="[operation.value]">[timeout.value]</macos:timeout>
+</macos:keychain_state>
 
-```
-<external_variable comment="This value is used in [RECOMMENDATION TITLE]" 
-                  datatype="[int|boolean]" 
-                        id="oval:org.cisecurity.benchmarks.PLATFORM:var:ARTIFACT-OVAL-ID" 
-                   version="1"/>
 ```
 
 #### YAML
@@ -126,23 +124,35 @@ For `windows.lockoutpolicyobject` artifacts, an XCCDF Value element is generated
     artifact-unique-id: [ARTIFACT-OVAL-ID]
     artifact-title: [RECOMMENDATION TITLE]
     artifact:
-      type: windows.lockoutpolicyobject
+      type: [ARTIFACTTYPE NAME]
       parameters:
       - parameter: 
-          name: lockoutpolicyobject
+          name: filepath
           type: string
-          value: [ARTIFACT TYPE PARAMETER VALUE]
+          value: [filepath.value]
     test:
-      type: [TestType Name]
+      type: [TESTTYPE NAME]
       parameters:
       - parameter:
-          name: value
+          name: check_existence
           type: string
-          value: [TestType.value.value]
+          value: [check_existence.value]
       - parameter: 
-          name: data_type
+          name: check
           type: string
-          value: [TestType.data_type.value]
+          value: [check.value]
+      - parameter:
+          name: operation
+          type: string
+          value: [operation.value]
+      - parameter: 
+          name: datatype
+          type: string
+          value: [datatype.value]  
+      - parameter: 
+          name: timeout
+          type: string
+          value: [timeout.value]  
 ```
 
 #### JSON
@@ -152,32 +162,236 @@ For `windows.lockoutpolicyobject` artifacts, an XCCDF Value element is generated
   "artifact-unique-id": [ARTIFACT-OVAL-ID],
   "artifact-title": [RECOMMENDATION TITLE],
   "artifact": {
-    "type": "windows.lockoutpolicyobject",
+    "type": "[ARTIFACTTYPE NAME]",
     "parameters": [
       {
         "parameter": {
-          "name": "lockoutpolicyobject",
+          "name": "filepath",
           "type": "string",
-          "value": [ARTIFACT TYPE PARAMETER VALUE]
+          "value": [filepath.value]
         }
       }
     ]
   },
   "test": {
-    "type": [TestType Name],
+    "type": [TESTTYPE NAME],
     "parameters": [
       {
         "parameter": {
-          "name": "value",
+          "name": "check_existence",
           "type": "string",
-          "value": [TestType.value.value]
+          "value": [check_existence.value]
         }
       },
       {
         "parameter": {
-          "name": "data_type",
+          "name": "check",
           "type": "string",
-          "value": [TestType.data_type.value]
+          "value": [check.value]
+        }
+      },
+      {
+        "parameter": {
+          "name": "operation",
+          "type": "string",
+          "value": [operation.value]
+        }
+      },
+      {
+        "parameter": {
+          "name": "datetype",
+          "type": "string",
+          "value": [datatype.value]
+        }
+      },
+      {
+        "parameter": {
+          "name": "timeout",
+          "type": "string",
+          "value": [timeout.value]
+        }
+      }
+    ]
+  }
+}
+```
+
+
+
+### Generated Content
+#### XCCDF+AE
+This is what the AE check looks like, inside a Rule, in the XCCDF
+
+```
+<xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
+  <xccdf:check-content>
+    <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION_NUMBER]">
+      <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
+      <ae:title>[RECOMMENDATION TITLE]</ae:title>
+      <ae:artifact type="[ARTIFACTTYPE NAME]">
+        <ae:parameters>
+          <ae:parameter dt="string" name="filepath"
+            >[filepath.value]</ae:parameter>
+        </ae:parameters>
+      </ae:artifact>
+      <ae:test type="[TESTTYPE NAME]">
+        <ae:parameters>
+          <ae:parameter dt="string" name="check_existence">[check_existence.value]</ae:parameter>
+          <ae:parameter dt="string" name="check">[check.value]</ae:parameter>
+          <ae:parameter dt="string" name="operation">[operation.value]</ae:parameter>
+          <ae:parameter dt="string" name="datatype">[datatype.value]</ae:parameter>
+          <ae:parameter dt="integer" name="lock_on_sleep">[lock_on_sleep.value]</ae:parameter>
+        </ae:parameters>
+      </ae:test>
+      <ae:profiles>
+        <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_2"/>
+      </ae:profiles>
+    </ae:artifact_expression>
+  </xccdf:check-content>
+</xccdf:check>
+
+```
+
+#### SCAP
+##### XCCDF
+For `macos.keychain_v1` artifacts, the xccdf:check looks like this.  There is no Value in the xccdf for this Artifact.
+
+```
+<xccdf:check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+  <xccdf:check-content-ref xmlns:ae="http://benchmarks.cisecurity.org/ae/0.5"
+     xmlns:cpe="http://cpe.mitre.org/language/2.0" xmlns:ecl="http://cisecurity.org/check"
+     href="CIS_Apple_macOS_10.13_Benchmark_v1.0.0.1-oval.xml"
+     name="oval:org.cisecurity.benchmarks.o_apple_mac_os_x:def:[ARTIFACT-OVAL-ID]"/>
+</xccdf:check>
+```
+
+##### OVAL
+###### Test
+
+```
+<macos:keychain_test check="[check.value]" check_existence="[check_existence.value]"
+  comment="[RECOMMENDATION TITLE]"
+  id="oval:org.cisecurity.benchmarks.o_apple_mac_os_x:tst:[ARTIFACT-OVAL-ID]" version="1">
+  <macos:object object_ref="oval:org.cisecurity.benchmarks.o_apple_mac_os_x:obj:[ARTIFACT-OVAL-ID]"/>
+  <macos:state state_ref="oval:org.cisecurity.benchmarks.o_apple_mac_os_x:ste:[ARTIFACT-OVAL-ID]"/>
+</macos:keychain_test>
+
+```
+
+###### Object
+
+```
+<macos:keychain_object
+  comment="[RECOMMENDATION TITLE]"
+  id="oval:org.cisecurity.benchmarks.o_apple_mac_os_x:obj:[ARTIFACT-OVAL-ID]" version="1">
+  <macos:filepath>[filepath.value]</macos:filepath>
+</macos:keychain_object>
+
+```
+###### State
+
+```
+
+<macos:keychain_state
+  comment="[RECOMMENDATION TITLE]"
+  id="oval:org.cisecurity.benchmarks.o_apple_mac_os_x:ste:[ARTIFACT-OVAL-ID]" version="1">
+  <macos:lock_on_sleep datatype="[datatype.value]" operation="[operation.value]">[lock_on_sleep.value]</macos:lock_on_sleep>
+</macos:keychain_state>
+
+```
+
+#### YAML
+
+```
+- artifact-expression:
+    artifact-unique-id: [ARTIFACT-OVAL-ID]
+    artifact-title: [RECOMMENDATION TITLE]
+    artifact:
+      type: [ARTIFACTTYPE NAME]
+      parameters:
+      - parameter: 
+          name: filepath
+          type: string
+          value: [filepath.value]
+    test:
+      type: [TESTTYPE NAME]
+      parameters:
+      - parameter:
+          name: check_existence
+          type: string
+          value: [check_existence.value]
+      - parameter: 
+          name: check
+          type: string
+          value: [check.value]
+      - parameter:
+          name: operation
+          type: string
+          value: [operation.value]
+      - parameter: 
+          name: datatype
+          type: string
+          value: [datatype.value]  
+      - parameter: 
+          name: lock_on_sleep
+          type: string
+          value: [lock_on_sleep.value]  
+```
+
+#### JSON
+
+```
+"artifact-expression": {
+  "artifact-unique-id": [ARTIFACT-OVAL-ID],
+  "artifact-title": [RECOMMENDATION TITLE],
+  "artifact": {
+    "type": "[ARTIFACTTYPE NAME]",
+    "parameters": [
+      {
+        "parameter": {
+          "name": "filepath",
+          "type": "string",
+          "value": [filepath.value]
+        }
+      }
+    ]
+  },
+  "test": {
+    "type": [TESTTYPE NAME],
+    "parameters": [
+      {
+        "parameter": {
+          "name": "check_existence",
+          "type": "string",
+          "value": [check_existence.value]
+        }
+      },
+      {
+        "parameter": {
+          "name": "check",
+          "type": "string",
+          "value": [check.value]
+        }
+      },
+      {
+        "parameter": {
+          "name": "operation",
+          "type": "string",
+          "value": [operation.value]
+        }
+      },
+      {
+        "parameter": {
+          "name": "datetype",
+          "type": "string",
+          "value": [datatype.value]
+        }
+      },
+      {
+        "parameter": {
+          "name": "lock_on_sleep",
+          "type": "string",
+          "value": [lock_on_sleep.value]
         }
       }
     ]
