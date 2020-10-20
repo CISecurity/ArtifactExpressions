@@ -149,7 +149,7 @@ For `macos.gatekeeper_v1` artifacts, the xccdf:check looks like this.  There is 
   "artifact-unique-id": [ARTIFACT-OVAL-ID],
   "artifact-title": [RECOMMENDATION TITLE],
   "artifact": {
-    "type": "[]ARTIFACTTYPE NAME",
+    "type": "[ARTIFACTTYPE NAME]",
     "parameters": [
       {
         "parameter": {
