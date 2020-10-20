@@ -24,7 +24,6 @@ TBD
 - greater than or equal 
 
 ### Test Type Parameters
-### Test Type Parameters
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
 | data_type | String | datatype of the value |
