@@ -9,15 +9,21 @@ TBD
 ### Artifact Parameters
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
-| trustee_sid | String | SID|
-| sid_operation | String | The trustee_sid entity identifies a unique SID associated with a user, group, system, or program (such as a Windows service).|
-| trustee_sid_operator | String | The operator used to qualify the Trustee SID. This is typically 'pattern match' or 'equals'|
+| trustee_sid | String | The trustee_sid entity identifies a unique SID associated with a user, group, system, or program (such as a Windows service).	|
+| trustee_sid_operator | String |  The operator used to qualify the Trustee SID. This is typically 'pattern match' or 'equals'	|
 
 ### Supported Test Types
-- case insensitive equals
-- equals
-- case insensitive not equal
-- not equal
+- windows.sid_sid_trustee_name_v1
+
+### Test Type Parameters
+| Name                  |Type    | Description |
+| ----------------------|--------| ----------- |
+| check_existence | String | Define how many items should be collected|
+| check | String | Defines how many collected items must match the expected state |
+| operation | String | comparison operation |
+| datatype | String | datatype |
+| trustee_name | String | This element specifies the trustee name associated with a particular SID. In Windows, trustee names are case-insensitive. As a result, it is recommended that the case-insensitive operations are used for this entity.|
+
 
 ### Generated Content
 #### XCCDF+AE
@@ -33,9 +39,9 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
 				<ae:artifact type="windows.sid_sid_v1">
                 <ae:parameters>
                  <ae:parameter dt="string" name="trustee_sid"
-                    >^S\-1\-5\-21\-\d+\-\d+\-\d+\-500$</ae:parameter>
-                <ae:parameter dt="string" name="trustee_sid_operator">pattern
-                    match</ae:parameter>
+                    >[trustee_sid.value]</ae:parameter>
+                <ae:parameter dt="string" name="trustee_sid_operator">
+                    [trustee_sid_operator.value]</ae:parameter>
                 </ae:parameters>
 				</ae:artifact>
 				<ae:test type="[TestType Name]">
@@ -80,23 +86,23 @@ For `windows.sid_sid_v1` artifacts, an XCCDF Value element is generated:
 ###### Object
 
 ```
-<sid_sid_v1_object xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#windows"
-            id="oval:org.cisecurity.benchmarks.windows_8.1:obj:ARTIFACT_OVAL_ID"
+<sid_sid_object xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#windows"
+            id="oval:org.cisecurity.benchmarks.windows_8.1:obj:231103"
             comment="[RECOMMENDATION_TITLE]"
             version="1">
-            <userright operation="[TestType Name]">[SETTING_CONSTRAINT_VALUE]</userright>
-</sid_sid_v1_object>
+            <trustee_sid operation="pattern match">[trustee_sid.value]</trustee_sid>
+        </sid_sid_object>
 ```
 
 ###### State
 
 ```
-<sid_sid_v1_state xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#windows"
-            id="oval:org.cisecurity.benchmarks.windows_8.1:ste:ARTIFACT_OVAL_ID"
-            comment="[RECOMMENDATION_TITLE]"
+ <sid_sid_state xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#windows"
+            id="oval:org.cisecurity.benchmarks.windows_8.1:ste:231103"
+            comment="Ensure &apos;^S\-1\-5\-21\-\d+\-\d+\-\d+\-500$&apos; is &apos;case insensitive not equal&apos; &apos;Administrator&apos;"
             version="1">
-            <trustee_sid operation="[TestType Name]" datatype="[TestType.data_type]">[TestType.data_type.value]</trustee_sid>
-</sid_sid_v1_state>
+            <[testParameter.name] operation="[testType.name]" datatype="[testType.datatype]">[testParameter.value]</[testParameter.name]>
+        </sid_sid_state>
 ```
 
 ###### Variable
