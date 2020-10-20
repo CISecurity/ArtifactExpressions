@@ -118,6 +118,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
 ###### Object
 
 ```
+<userright_object xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#windows"
       id="oval:org.cisecurity.benchmarks.windows_8.1:obj:ARTIFACT-OVAL-ID"
             comment="[RECOMMENDATION_TITLE]"
             version="1">
