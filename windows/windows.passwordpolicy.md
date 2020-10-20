@@ -28,6 +28,14 @@ NOTE: This parameter is governed by a constraint allowing only the following val
 - Greater Than
 - Greater Than or Equal
 
+### Test Type Parameters
+| Name                  |Type    | Description |
+| ----------------------|--------| ----------- |
+| data_type | String | datatype of the value |
+| values | String | Comma separated list of permitted values|
+| value | String | the value included within the set of results/ value to be tested|
+
+
 ### Generated Content
 #### XCCDF+AE
 This is what the AE check looks like, inside a Rule, in the XCCDF
