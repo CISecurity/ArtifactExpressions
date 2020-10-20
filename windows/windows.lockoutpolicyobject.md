@@ -28,6 +28,13 @@ NOTE: This parameter is governed by a constraint allowing only the following val
 - Greater Than
 - Greater Than or Equal
 
+### Test Type Parameters
+| Name                  |Type    | Description |
+| ----------------------|--------| ----------- |
+| data_type | String | datatype of the value |
+| values | String | Comma separated list of permitted values|
+| value | String | the value included within the set of results/ value to be tested|
+
 ### Generated Content
 #### XCCDF+AE
 This is what the AE check looks like, inside a Rule, in the XCCDF
@@ -90,6 +97,7 @@ For `windows.lockoutpolicyobject` artifacts, an XCCDF Value element is generated
             id="oval:org.cisecurity.benchmarks.windows_server_2012_r2:obj:ARTIFACT-OVAL-ID"
             comment="[RECOMMENDATION TITLE]"
     version="1"/>
+    
 ```
 ###### State
 
@@ -98,7 +106,7 @@ For `windows.lockoutpolicyobject` artifacts, an XCCDF Value element is generated
             id="oval:org.cisecurity.benchmarks.windows_server_2012_r2:ste:ARTIFACT-OVAL-ID"
             comment="[RECOMMENDATION TITLE]"
             version="1">
-            <lockout_duration operation="greater than or equal" datatype="int"
+            <[lockoutsetting] operation="[testtype_name]" datatype="int"
                 var_ref="oval:org.cisecurity.benchmarks.windows_server_2012_r2:var:ARTIFACT-OVAL-ID"/>
     </lockoutpolicy_state>
 ```
