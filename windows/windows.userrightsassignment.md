@@ -65,6 +65,12 @@ NOTE: This parameter is governed by a constraint allowing only the following val
 - equals
 - pattern match
 
+### Test Type Parameters
+| Name                  |Type    | Description |
+| ----------------------|--------| ----------- |
+| data_type | String | datatype of the value |
+| value | String | Regular expression to be matched/ value to be tested |
+
 ### Generated Content
 #### XCCDF+AE
 This is what the AE check looks like, inside a Rule, in the XCCDF
@@ -110,7 +116,7 @@ For `windows.userrightsassignment` artifacts, an XCCDF Value element is generate
 ###### Test
 
 ```
- <userright_test xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#windows"
+<userright_test xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#windows"
             id="oval:org.cisecurity.benchmarks.windows_8.1:tst: <userright_object xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#windows"
                                                                            id="oval:org.cisecurity.benchmarks.windows_8.1:obj:73694"
                                                                            comment="Ensure &apos;sedenyinteractivelogonright&apos; is set to &apos;Guests&apos;"
@@ -122,18 +128,18 @@ For `windows.userrightsassignment` artifacts, an XCCDF Value element is generate
             version="1">
             <object object_ref="oval:org.cisecurity.benchmarks.windows_8.1:obj:ARTIFACT-OVAL-ID"/>
             <state state_ref="oval:org.cisecurity.benchmarks.windows_8.1:ste:ARTIFACT-OVAL-ID"/>
-        </userright_test>
+</userright_test>
 ```
 
 ###### Object
 
 ```
- <userright_object xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#windows"
+<userright_object xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#windows"
             id="oval:org.cisecurity.benchmarks.windows_8.1:obj:ARTIFACT_OVAL_ID"
             comment="[RECOMMENDATION_TITLE]"
             version="1">
             <userright operation="[TestType Name]">[SETTING_CONSTRAINT_VALUE]</userright>
-        </userright_object>
+</userright_object>
 ```
 
 ###### State
@@ -144,7 +150,7 @@ For `windows.userrightsassignment` artifacts, an XCCDF Value element is generate
             comment="[RECOMMENDATION_TITLE]"
             version="1">
             <trustee_sid operation="[TestType Name]" datatype="[TestType.data_type]">[TestType.data_type.value]</trustee_sid>
-        </userright_state>
+</userright_state>
 ```
 
 #### YAML
