@@ -13,6 +13,48 @@ TBD
 | data_type | String |The data_type entity provides the datatype value that is desired.|
 | xpath | String |Specifies an Xpath expression describing the text node(s) or attribute(s) to look at. Any valid Xpath 1.0 statement is usable with one exception, at most one field may be identified in the Xpath. This is because the value_of element in the data section is only designed to work against a single field. The only valid operator for xpath is equals since there is an infinite number of possible xpaths and determinining all those that do not equal a given xpath would be impossible.|
 
+data_type
+NOTE: This parameter is governed by a constraint allowing only the following values:
+- SPHardwareDataType  
+- SPNetworkDataType 
+- SPSoftwareDataType  
+- SPParallelATADataType 
+- SPAudioDataType 
+- SPBluetoothDataType 
+- SPDiagnosticsDataType 
+- SPDiscBurningDataType 
+- SPEthernetDataType  
+- SPFibreChannelDataType  
+- SPFireWireDataType  
+- SPDisplaysDataType  
+- SPHardwareRAIDDataType  
+- SPMemoryDataType  
+- SPPCIDataType 
+- SPParallelSCSIDataType  
+- SPPowerDataType 
+- SPPrintersDataType  
+- SPSASDataType 
+- SPSerialATADataType 
+- SPUSBDataType 
+- SPAirPortDataType 
+- SPFirewallDataType  
+- SPNetworkLocationDataType 
+- SPModemDataType 
+- SPNetworkVolumeDataType 
+- SPWWANDataType  
+- SPApplicationsDataType  
+- SPDeveloperToolsDataType  
+- SPExtensionsDataType  
+- SPFontsDataType 
+- SPFrameworksDataType  
+- SPLogsDataType  
+- SPManagedClientDataType 
+- SPPrefPaneDataType  
+- SPStartupItemDataType 
+- SPSyncServicesDataType  
+- SPUniversalAccessDataType
+- The empty string value is permitted here to allow for empty elements associated with variable references.
+
 ### Supported Test Types
 - macos.systemprofiler_v1
 
@@ -31,83 +73,83 @@ TBD
 This is what the AE check looks like, inside a Rule, in the XCCDF
 
 ```
-<xccdf:complex-check operator="AND">
-	<xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
-		<xccdf:check-content>
-			<ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION_NUMBER]">
-				<ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-				<ae:title>[RECOMMENDATION TITLE]</ae:title>
-				<ae:artifact type="windows.lockoutpolicyobject">
-					<ae:parameters>
-						<ae:parameter dt="string" name="lockoutsetting">[SETTING CONSTRAINT VALUE]</ae:parameter>
-					</ae:parameters>
-				</ae:artifact>
-				<ae:test type="[TestType Name]">
-					<ae:parameters>
-						<ae:parameter dt="string" name="value">[TestType.value]</ae:parameter>
-						<ae:parameter dt="string" name="data_type">[TestType.data_type]</ae:parameter>
-					</ae:parameters>
-				</ae:test>
-			</ae:artifact_expression>
-		</xccdf:check-content>
-	</xccdf:check>
-</xccdf:complex-check>
+<xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
+  <xccdf:check-content>
+    <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION_NUMBER]">
+      <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
+      <ae:title>[RECOMMENDATION TITLE]</ae:title>
+      <ae:artifact type="[ARTIFACTTYPE NAME]">
+        <ae:parameters>
+          <ae:parameter dt="string" name="data_type"
+            >[data_type.value]</ae:parameter>
+          <ae:parameter dt="string" name="xpath"
+            >[xpath.value]</ae:parameter>
+        </ae:parameters>
+      </ae:artifact>
+      <ae:test type="[TESTTYPE NAME]">
+        <ae:parameters>
+          <ae:parameter dt="string" name="check_existence">[check_existence.value]</ae:parameter>
+          <ae:parameter dt="string" name="check">[check.value]</ae:parameter>
+          <ae:parameter dt="string" name="operation">[operation.value]</ae:parameter>
+          <ae:parameter dt="string" name="datatype">[datatype.value]</ae:parameter>
+          <ae:parameter dt="string" name="value_of">[value_of.value]</ae:parameter>
+        </ae:parameters>
+      </ae:test>
+      <ae:profiles>
+        <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1"
+        />
+      </ae:profiles>
+    </ae:artifact_expression>
+  </xccdf:check-content>
+</xccdf:check>
 ```
 
 #### SCAP
 ##### XCCDF
-For `windows.lockoutpolicyobject` artifacts, an XCCDF Value element is generated:
+For `macos.gatekeeper_v1` artifacts, the xccdf:check looks like this.  There is no Value in the xccdf for this Artifact.
 
 ```
-<Value id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" 
-       operator="[TestType Name]" type="[number|boolean]">
-  <title>[RECOMMENDATION TITLE]</title>
-  <description>This value is used in Rule: [RECOMMENDATION TITLE]</description>
-  <value>[TestType.value.value]</value>
-</Value>
+<xccdf:check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+   <xccdf:check-content-ref xmlns:ae="http://benchmarks.cisecurity.org/ae/0.5"
+      xmlns:cpe="http://cpe.mitre.org/language/2.0"
+      xmlns:ecl="http://cisecurity.org/check"
+      href="[BENCHMARK NAME]"
+      name="oval:org.cisecurity.benchmarks.o_apple_mac_os_x:def:[ARTIFACT-OVAL-ID]"/>
+</xccdf:check>
 ```
 
 ##### OVAL
 ###### Test
 
 ```
-    <lockoutpolicy_test xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#windows"
-            id="oval:org.cisecurity.benchmarks.windows_server_2012_r2:tst:ARTIFACT-OVAL-ID"
-            check_existence="at_least_one_exists" check="all"
-            comment="[RECOMMENDATION TITLE]"
-            version="1">
-            <object object_ref="oval:org.cisecurity.benchmarks.windows_server_2012_r2:obj:ARTIFACT-OVAL-ID"/>
-            <state state_ref="oval:org.cisecurity.benchmarks.windows_server_2012_r2:ste:ARTIFACT-OVAL-ID"/>
-    </lockoutpolicy_test>
+<macos:systemprofiler_test check="[check.value]" check_existence="[check_existence.value]"
+  comment="[RECOMMENDATION TITLE]"
+  id="oval:org.cisecurity.benchmarks.o_apple_mac_os_x:tst:[ARTIFACT-OVAL-ID]" version="1">
+  <macos:object object_ref="oval:org.cisecurity.benchmarks.o_apple_mac_os_x:obj:[ARTIFACT-OVAL-ID]"/>
+  <macos:state state_ref="oval:org.cisecurity.benchmarks.o_apple_mac_os_x:ste:[ARTIFACT-OVAL-ID]"/>
+</macos:systemprofiler_test>
 ```
 
 ###### Object
 
 ```
-   <lockoutpolicy_object xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#windows"
-            id="oval:org.cisecurity.benchmarks.windows_server_2012_r2:obj:ARTIFACT-OVAL-ID"
-            comment="[RECOMMENDATION TITLE]"
-    version="1"/>
+
+<macos:systemprofiler_object
+  comment="[RECOMMENDATION TITLE]"
+  id="oval:org.cisecurity.benchmarks.o_apple_mac_os_x:obj:[ARTIFACT-OVAL-ID]" version="1">
+  <macos:data_type>[data_type.value]</macos:data_type>
+  <macos:xpath>[xpath.value]</macos:xpath>
+</macos:systemprofiler_object>
+
 ```
 ###### State
 
 ```
-    <lockoutpolicy_state xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#windows"
-            id="oval:org.cisecurity.benchmarks.windows_server_2012_r2:ste:ARTIFACT-OVAL-ID"
-            comment="[RECOMMENDATION TITLE]"
-            version="1">
-            <lockout_duration operation="greater than or equal" datatype="int"
-                var_ref="oval:org.cisecurity.benchmarks.windows_server_2012_r2:var:ARTIFACT-OVAL-ID"/>
-    </lockoutpolicy_state>
-```
-
-###### Variable
-
-```
-<external_variable comment="This value is used in [RECOMMENDATION TITLE]" 
-                  datatype="[int|boolean]" 
-                        id="oval:org.cisecurity.benchmarks.PLATFORM:var:ARTIFACT-OVAL-ID" 
-                   version="1"/>
+<macos:systemprofiler_state
+  comment="[RECOMMENDATION TITLE]"
+  id="oval:org.cisecurity.benchmarks.o_apple_mac_os_x:ste:[ARTIFACT-OVAL-ID]" version="1">
+  <macos:value_of datatype="[datatype.value]" operation="[operation.value]">[value_of.value]</macos:value_of>
+</macos:systemprofiler_state>    
 ```
 
 #### YAML
@@ -117,23 +159,39 @@ For `windows.lockoutpolicyobject` artifacts, an XCCDF Value element is generated
     artifact-unique-id: [ARTIFACT-OVAL-ID]
     artifact-title: [RECOMMENDATION TITLE]
     artifact:
-      type: windows.lockoutpolicyobject
+      type: [ARTIFACTTYPE NAME]
       parameters:
-      - parameter: 
-          name: lockoutpolicyobject
-          type: string
-          value: [ARTIFACT TYPE PARAMETER VALUE]
-    test:
-      type: [TestType Name]
-      parameters:
-      - parameter:
-          name: value
-          type: string
-          value: [TestType.value.value]
       - parameter: 
           name: data_type
           type: string
-          value: [TestType.data_type.value]
+          value: [data_type.value]
+      - parameter: 
+        name: xpath
+        type: string
+        value: [xpath.value]    
+    test:
+      type: [TESTTYPE NAME]
+      parameters:
+      - parameter:
+          name: check_existence
+          type: string
+          value: [check_existence.value]
+      - parameter: 
+          name: check
+          type: string
+          value: [check.value]
+      - parameter:
+          name: operation
+          type: string
+          value: [operation.value]
+      - parameter: 
+          name: datatype
+          type: string
+          value: [datatype.value]  
+      - parameter: 
+          name: value_of
+          type: string
+          value: [value_of.value]      
 ```
 
 #### JSON
@@ -143,35 +201,65 @@ For `windows.lockoutpolicyobject` artifacts, an XCCDF Value element is generated
   "artifact-unique-id": [ARTIFACT-OVAL-ID],
   "artifact-title": [RECOMMENDATION TITLE],
   "artifact": {
-    "type": "windows.lockoutpolicyobject",
+    "type": "[ARTIFACTTYPE NAME]",
     "parameters": [
       {
         "parameter": {
-          "name": "lockoutpolicyobject",
+          "name": "data_type",
           "type": "string",
-          "value": [ARTIFACT TYPE PARAMETER VALUE]
+          "value": [data_type.value]
+        }
+      },
+      {
+        "parameter": {
+          "name": "xpath",
+          "type": "string",
+          "value": [xpath.value]
         }
       }
     ]
   },
   "test": {
-    "type": [TestType Name],
+    "type": [TESTTYPE NAME],
     "parameters": [
       {
         "parameter": {
-          "name": "value",
+          "name": "check_existence",
           "type": "string",
-          "value": [TestType.value.value]
+          "value": [check_existence.value]
         }
       },
       {
         "parameter": {
-          "name": "data_type",
+          "name": "check",
           "type": "string",
-          "value": [TestType.data_type.value]
+          "value": [check.value]
+        }
+      },
+      {
+        "parameter": {
+          "name": "operation",
+          "type": "string",
+          "value": [operation.value]
+        }
+      },
+      {
+        "parameter": {
+          "name": "datetype",
+          "type": "string",
+          "value": [datatype.value]
+        }
+      },
+      {
+        "parameter": {
+          "name": "value_of",
+          "type": "string",
+          "value": [value_of.value]
         }
       }
     ]
   }
 }
-``` 
+```
+
+
