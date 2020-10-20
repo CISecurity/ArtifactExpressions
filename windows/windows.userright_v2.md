@@ -65,6 +65,16 @@ NOTE: This parameter is governed by a constraint allowing only the following val
 - windows.userright_trustee_name_v2
 - windows.userright_trustee_sid_v2
 
+
+### Test Type Parameters
+| Name                  |Type    | Description |
+| ----------------------|--------| ----------- |
+| datatype | String | datatype of the value |
+| operation | String | 	comparison operation |
+| check | String | Defines how many collected items must match the expected state|
+| trustee_name | String | The trustee_name entity is the unique name associated with the SID that has been granted the specified user right/privilege. A trustee can be associated with a user, group, or program (such as a Windows service). In Windows, trustee names are case-insensitive. As a result, it is recommended that the case-insensitive operations are used for this entity. |
+| trustee_sid  | String | The trustee_sid entity identifies the SID that has been granted the specified user right/privilege. |
+
 ### Generated Content
 #### XCCDF+AE
 This is what the AE check looks like, inside a Rule, in the XCCDF
