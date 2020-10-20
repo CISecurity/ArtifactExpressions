@@ -91,18 +91,18 @@ For `windows.sid_sid_v1` artifacts, an XCCDF Value element is generated:
             comment="[RECOMMENDATION_TITLE]"
             version="1">
             <trustee_sid operation="pattern match">[trustee_sid.value]</trustee_sid>
-        </sid_sid_object>
+</sid_sid_object>
 ```
 
 ###### State
 
 ```
- <sid_sid_state xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#windows"
+<sid_sid_state xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#windows"
             id="oval:org.cisecurity.benchmarks.windows_8.1:ste:231103"
             comment="Ensure &apos;^S\-1\-5\-21\-\d+\-\d+\-\d+\-500$&apos; is &apos;case insensitive not equal&apos; &apos;Administrator&apos;"
             version="1">
             <[testParameter.name] operation="[testType.name]" datatype="[testType.datatype]">[testParameter.value]</[testParameter.name]>
-        </sid_sid_state>
+</sid_sid_state>
 ```
 
 ###### Variable
@@ -111,7 +111,7 @@ For `windows.sid_sid_v1` artifacts, an XCCDF Value element is generated:
 <external_variable comment="This value is used in [RECOMMENDATION TITLE]" 
                   datatype="[int|boolean]" 
                         id="oval:org.cisecurity.benchmarks.PLATFORM:var:ARTIFACT-OVAL-ID" 
-                   version="1"/>
+version="1"/>
 ```
 
 
