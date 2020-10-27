@@ -10,7 +10,7 @@ TBD
 ### Artifact Parameters
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
-| mmodule | String | Add in  |
+| module | String | Add in  |
 
 
 ### Supported Test Types
@@ -28,122 +28,100 @@ TBD
 | loaded | String | Is the module currently loaded |
 
 
-
-
 ### Generated Content
 #### XCCDF+AE
 This is what the AE check looks like, inside a Rule, in the XCCDF
 
 ```
-<xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
-  <xccdf:check-content>
-    <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION_NUMBER]">
-      <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-      <ae:title>[RECOMMENDATION TITLE]</ae:title>
-      <ae:artifact type="[ARTIFACTTYPE NAME]">
-        <ae:parameters>
-          <ae:parameter dt="string" name="gatekeeper"
-            >[gatekeeper.value]</ae:parameter>
-        </ae:parameters>
-      </ae:artifact>
-      <ae:test type="[TESTTYPE NAME]">
-        <ae:parameters>
-          <ae:parameter dt="string" name="check_existence">[check_existence.value]</ae:parameter>
-          <ae:parameter dt="string" name="check">[check.value]</ae:parameter>
-          <ae:parameter dt="string" name="operation">[operation.value]</ae:parameter>
-          <ae:parameter dt="string" name="datatype">[datatype.value]</ae:parameter>
-          <ae:parameter dt="boolean" name="enabled">[enabled.value]</ae:parameter>
-        </ae:parameters>
-      </ae:test>
-      <ae:profiles>
-        <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1"
-        />
-      </ae:profiles>
-    </ae:artifact_expression>
-  </xccdf:check-content>
-</xccdf:check>
+<xccdf:complex-check operator="AND">
+    <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
+        <xccdf:check-content>
+            <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_23.1.1">
+                <ae:artifact_oval_id>[ARTIFACT_OVAL_ID]</ae:artifact_oval_id>
+                <ae:title>[RECOMMENDATION_TITLE]</ae:title>
+                <ae:artifact type="[ARTIFACT_TYPE_NAME]">
+                    <ae:parameters>
+                        <ae:parameter dt="string" name="loadable">[artifact_parameter.value]</ae:parameter>
+                        <ae:parameter dt="string" name="protocol"/>
+                    </ae:parameters>
+                </ae:artifact>
+                <ae:test type="[TESTTYPE_NAME]">
+                    <ae:parameters>
+                        <ae:parameter dt="string" name="loaded">[enabled.value]</ae:parameter>
+                    </ae:parameters>
+                </ae:test>
+            </ae:artifact_expression>
+        </xccdf:check-content>
+    </xccdf:check>
+</xccdf:complex-check>
 ```
 
 #### SCAP
 ##### XCCDF
-For `macos.gatekeeper_v1` artifacts, the xccdf:check looks like this.  There is no Value in the xccdf for this Artifact.
+For `linux.upstart_service_v1` artifacts, the xccdf:check looks like this.  There is no Value in the xccdf for this Artifact.
 
 ```
-<xccdf:check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
-   <xccdf:check-content-ref xmlns:ae="http://benchmarks.cisecurity.org/ae/0.5"
-      xmlns:cpe="http://cpe.mitre.org/language/2.0"
-      xmlns:ecl="http://cisecurity.org/check"
-      href="[BENCHMARK NAME]"
-      name="oval:org.cisecurity.benchmarks.o_apple_mac_os_x:def:[ARTIFACT-OVAL-ID]"/>
-</xccdf:check>
+<check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+    <check-content-ref href="[BENCHMARK_TITLE]"
+        name="oval:org.cisecurity.benchmarks.centos_centos_7:def:[ARTIFACT_OVAL_ID]"/>
+</check>
 ```
 
 ##### OVAL
 ###### Test
 
 ```
-<macos:gatekeeper_test check="[check.value]" check_existence="[check_existence.value]"
-  comment="[RECOMMENDATION TITLE]"
-  id="oval:org.cisecurity.benchmarks.o_apple_mac_os_x:tst:ARTIFACT-OVAL-ID" version="1">
-  <macos:object object_ref="oval:org.cisecurity.benchmarks.o_apple_mac_os_x:obj:ARTIFACT-OVAL-ID"/>
-  <macos:state state_ref="oval:org.cisecurity.benchmarks.o_apple_mac_os_x:ste:ARTIFACT-OVAL-ID"/>
-</macos:gatekeeper_test>
+  <shellcommand_test xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#cmd"
+            id="oval:org.cisecurity.benchmarks.centos_centos_7:tst:[ARTIFACT_OVAL_ID]"
+            check_existence="at_least_one_exists" check="at least one"
+            comment="[RECOMMENDATION_TITLE]" version="1">
+            <object object_ref="oval:org.cisecurity.benchmarks.centos_centos_7:obj:[ARTIFACT_OVAL_ID]"/>
+            <state state_ref="oval:org.cisecurity.benchmarks.centos_centos_7:ste:[ARTIFACT_OVAL_ID]"/>
+        </shellcommand_test>
 ```
 
 ###### Object
 
 ```
-<macos:gatekeeper_object
-  comment="[RECOMMENDATION TITLE]"
-  id="oval:org.cisecurity.benchmarks.o_apple_mac_os_x:obj:ARTIFACT-OVAL-ID" version="1"> 
-</macos:gatekeeper_object>    
+<shellcommand_object xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#cmd"
+            id="oval:org.cisecurity.benchmarks.centos_centos_7:obj:[ARTIFACT_OVAL_ID]"
+            comment="[RECOMMENDATION_TITLE]" version="1">
+            <command>modprobe -n -v dccp</command>
+            <line_selection operation="pattern match">.+</line_selection>
+        </shellcommand_object>
 ```
 ###### State
 
 ```
-<macos:gatekeeper_state
-  comment="[RECOMMENDATION TITLE]"
-  id="oval:org.cisecurity.benchmarks.o_apple_mac_os_x:ste:ARTIFACT-OVAL-ID" version="1">
-  <macos:enabled datatype="[datatype.value]" operation="[operation.value]">[enabled.value]</macos:enabled>
-</macos:gatekeeper_state>    
+<shellcommand_state xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#cmd"
+            id="oval:org.cisecurity.benchmarks.centos_centos_7:ste:[ARTIFACT_OVAL_ID]"
+            comment="[RECOMMENDATION_TITLE]" version="1">
+            <stdout_line entity_check="at least one" operation="[testtype.name]"
+                >[testType.name.value]</stdout_line>
+</shellcommand_state>
 ```
 
 #### YAML
+
 
 ```
 - artifact-expression:
     artifact-unique-id: [ARTIFACT-OVAL-ID]
     artifact-title: [RECOMMENDATION TITLE]
     artifact:
-      type: [ARTIFACTTYPE NAME]
+      type: unix.command_output_v1
       parameters:
       - parameter: 
-          name: gatekeeper
+          name: loadable
           type: string
-          value: [gatekeeper.value]
+          value: [ARTIFACT TYPE PARAMETER VALUE]
     test:
-      type: [TESTTYPE NAME]
+      type: [TestType Name]
       parameters:
       - parameter:
-          name: check_existence
+          name: loaded
           type: string
-          value: [check_existence.value]
-      - parameter: 
-          name: check
-          type: string
-          value: [check.value]
-      - parameter:
-          name: operation
-          type: string
-          value: [operation.value]
-      - parameter: 
-          name: datatype
-          type: string
-          value: [datatype.value]  
-      - parameter: 
-          name: enabled
-          type: string
-          value: [enabled.value]      
+          value: [TestType.value.value]
 ```
 
 #### JSON
@@ -153,53 +131,25 @@ For `macos.gatekeeper_v1` artifacts, the xccdf:check looks like this.  There is 
   "artifact-unique-id": [ARTIFACT-OVAL-ID],
   "artifact-title": [RECOMMENDATION TITLE],
   "artifact": {
-    "type": "[ARTIFACTTYPE NAME]",
+    "type": "linux.kernel_module_v1",
     "parameters": [
       {
         "parameter": {
-          "name": "gatekeeper",
+          "name": "loadable",
           "type": "string",
-          "value": [gatekeeper.value]
+          "value": [ARTIFACT TYPE PARAMETER VALUE]
         }
       }
     ]
   },
   "test": {
-    "type": [TESTTYPE NAME],
+    "type": [TestType Name],
     "parameters": [
       {
         "parameter": {
-          "name": "check_existence",
+          "name": "loaded",
           "type": "string",
-          "value": [check_existence.value]
-        }
-      },
-      {
-        "parameter": {
-          "name": "check",
-          "type": "string",
-          "value": [check.value]
-        }
-      },
-      {
-        "parameter": {
-          "name": "operation",
-          "type": "string",
-          "value": [operation.value]
-        }
-      },
-      {
-        "parameter": {
-          "name": "datetype",
-          "type": "string",
-          "value": [datatype.value]
-        }
-      },
-      {
-        "parameter": {
-          "name": "enabled",
-          "type": "string",
-          "value": [enabled.value]
+          "value": [TestType.value.value]
         }
       }
     ]

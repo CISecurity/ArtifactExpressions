@@ -113,7 +113,7 @@ For `linux.upstart_service_v1` artifacts, the xccdf:check looks like this.  Ther
       parameters:
       - parameter:
           name: enabled
-          type: boolean
+          type: string
           value: [TestType.value.value]
 ```
 
@@ -141,7 +141,7 @@ For `linux.upstart_service_v1` artifacts, the xccdf:check looks like this.  Ther
       {
         "parameter": {
           "name": "enabled",
-          "type": "boolean",
+          "type": "string",
           "value": [TestType.value.value]
         }
       }
