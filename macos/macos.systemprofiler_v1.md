@@ -114,7 +114,7 @@ For `macos.gatekeeper_v1` artifacts, the xccdf:check looks like this.  There is 
       xmlns:cpe="http://cpe.mitre.org/language/2.0"
       xmlns:ecl="http://cisecurity.org/check"
       href="[BENCHMARK NAME]"
-      name="oval:org.cisecurity.benchmarks.o_apple_mac_os_x:def:[ARTIFACT-OVAL-ID]"/>
+      name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]"/>
 </xccdf:check>
 ```
 
@@ -124,9 +124,9 @@ For `macos.gatekeeper_v1` artifacts, the xccdf:check looks like this.  There is 
 ```
 <macos:systemprofiler_test check="[check.value]" check_existence="[check_existence.value]"
   comment="[RECOMMENDATION TITLE]"
-  id="oval:org.cisecurity.benchmarks.o_apple_mac_os_x:tst:[ARTIFACT-OVAL-ID]" version="1">
-  <macos:object object_ref="oval:org.cisecurity.benchmarks.o_apple_mac_os_x:obj:[ARTIFACT-OVAL-ID]"/>
-  <macos:state state_ref="oval:org.cisecurity.benchmarks.o_apple_mac_os_x:ste:[ARTIFACT-OVAL-ID]"/>
+  id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]" version="1">
+  <macos:object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"/>
+  <macos:state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"/>
 </macos:systemprofiler_test>
 ```
 
@@ -136,7 +136,7 @@ For `macos.gatekeeper_v1` artifacts, the xccdf:check looks like this.  There is 
 
 <macos:systemprofiler_object
   comment="[RECOMMENDATION TITLE]"
-  id="oval:org.cisecurity.benchmarks.o_apple_mac_os_x:obj:[ARTIFACT-OVAL-ID]" version="1">
+  id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" version="1">
   <macos:data_type>[data_type.value]</macos:data_type>
   <macos:xpath>[xpath.value]</macos:xpath>
 </macos:systemprofiler_object>
@@ -147,7 +147,7 @@ For `macos.gatekeeper_v1` artifacts, the xccdf:check looks like this.  There is 
 ```
 <macos:systemprofiler_state
   comment="[RECOMMENDATION TITLE]"
-  id="oval:org.cisecurity.benchmarks.o_apple_mac_os_x:ste:[ARTIFACT-OVAL-ID]" version="1">
+  id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" version="1">
   <macos:value_of datatype="[datatype.value]" operation="[operation.value]">[value_of.value]</macos:value_of>
 </macos:systemprofiler_state>    
 ```

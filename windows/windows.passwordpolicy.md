@@ -29,10 +29,44 @@ NOTE: This parameter is governed by a constraint allowing only the following val
 - Greater Than or Equal
 
 ### Test Type Parameters
+Equals 
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
 | data_type | String | datatype of the value |
-| values | String | Comma separated list of permitted values|
+| value | String | the value included within the set of results/ value to be tested|
+
+Not Equal
+| Name                  |Type    | Description |
+| ----------------------|--------| ----------- |
+| data_type | String | datatype of the value |
+| value | String | the value included within the set of results/ value to be tested
+
+Less Than 
+| Name                  |Type    | Description |
+| ----------------------|--------| ----------- |
+| data_type | String | datatype of the value |
+| value | String | the value included within the set of results/ value to be tested|
+
+Less Than or Equal 
+| Name                  |Type    | Description |
+| ----------------------|--------| ----------- |
+| data_type | String | datatype of the value |
+| value | String | the value included within the set of results/ value to be tested|
+
+Greater Than
+| Name                  |Type    | Description |
+| ----------------------|--------| ----------- |
+| data_type | String | datatype of the value |
+| value | String | the value included within the set of results/ value to be tested|Equals 
+| Name                  |Type    | Description |
+| ----------------------|--------| ----------- |
+| data_type | String | datatype of the value |
+| value | String | the value included within the set of results/ value to be tested|
+
+Greater Than or Equal 
+| Name                  |Type    | Description |
+| ----------------------|--------| ----------- |
+| data_type | String | datatype of the value |
 | value | String | the value included within the set of results/ value to be tested|
 
 
@@ -47,15 +81,15 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
 			<ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION_NUMBER]">
 				<ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
 				<ae:title>[RECOMMENDATION TITLE]</ae:title>
-				<ae:artifact type="windows.passwordpolicyobject">
+				<ae:artifact type="[ARTIFACTTYPE NAME]">
 					<ae:parameters>
-						<ae:parameter dt="string" name="passwordpolicysetting">[SETTING CONSTRAINT VALUE]</ae:parameter>
+						<ae:parameter dt="string" name="passwordpolicysetting">[passwordpolicysetting.value]</ae:parameter>
 					</ae:parameters>
 				</ae:artifact>
-				<ae:test type="[TestType Name]">
+				<ae:test type="[TESTTYPE NAME]">
 					<ae:parameters>
-						<ae:parameter dt="string" name="value">[TestType.value]</ae:parameter>
-						<ae:parameter dt="string" name="data_type">[TestType.data_type]</ae:parameter>
+						<ae:parameter dt="string" name="value">[value.value]</ae:parameter>
+						<ae:parameter dt="string" name="data_type">[data_type.value]</ae:parameter>
 					</ae:parameters>
 				</ae:test>
 			</ae:artifact_expression>
@@ -64,16 +98,29 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
 </xccdf:complex-check>
 ```
 
+
+
 #### SCAP
 ##### XCCDF
 For `windows.passwordpolicyobject` artifacts, an XCCDF Value element is generated:
 
 ```
+
+<xccdf:complex-check operator="AND">
+  <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+    <check-export export-name="oval:org.cisecurity.benchmarks.windows_10:var:[ARTIFACT-OVAL-ID]"
+      value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var"/>
+    <check-content-ref
+      href="CIS_Microsoft_Windows_10_Enterprise_Release_2004_Benchmark_v1.9.0-oval.xml"
+      name="oval:org.cisecurity.benchmarks.windows_10:def:[ARTIFACT-OVAL-ID]"/>
+  </check>
+</xccdf:complex-check>
+
 <Value id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" 
-       operator="[TestType Name]" type="[number|boolean]">
+       operator="test_type" type="data_type.value">
   <title>[RECOMMENDATION TITLE]</title>
   <description>This value is used in Rule: [RECOMMENDATION TITLE]</description>
-  <value>[TestType.value.value]</value>
+  <value>[value.value]</value>
 </Value>
 ```
 
@@ -85,10 +132,10 @@ For `windows.passwordpolicyobject` artifacts, an XCCDF Value element is generate
                      check="all" 
            check_existence="at_least_one_exists" 
                    comment="[RECOMMENDATION TITLE]" 
-                        id="oval:org.cisecurity.benchmarks.PLATFORM:tst:ARTIFACT-OVAL-ID" 
+                        id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]" 
                    version="1">
-   <object object_ref="oval:org.cisecurity.benchmarks.PLATFORM:obj:ARTIFACT-OVAL-ID"/>
-   <state state_ref="oval:org.cisecurity.benchmarks.PLATFORM:ste:ARTIFACT-OVAL-ID"/>
+   <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"/>
+   <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"/>
 </passwordpolicy_test>
 ```
 

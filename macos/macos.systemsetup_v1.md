@@ -99,7 +99,7 @@ For `macos.gatekeeper_v1` artifacts, the xccdf:check looks like this.  There is 
       xmlns:cpe="http://cpe.mitre.org/language/2.0"
       xmlns:ecl="http://cisecurity.org/check"
       href="[BENCHMARK NAME]"
-      name="oval:org.cisecurity.benchmarks.o_apple_mac_os_x:def:[ARTIFACT-OVAL-ID]"/>
+      name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]"/>
 </xccdf:check>
 ```
 
@@ -109,9 +109,9 @@ For `macos.gatekeeper_v1` artifacts, the xccdf:check looks like this.  There is 
 ```
 <macos:systemsetup_test check="[check.value]" check_existence="[check_existence.value]"
   comment="[RECOMMENDATION TITLE]"
-  id="oval:org.cisecurity.benchmarks.o_apple_mac_os_x:tst:[ARTIFACT-OVAL-ID]" version="1">
-  <macos:object object_ref="oval:org.cisecurity.benchmarks.o_apple_mac_os_x:obj:[ARTIFACT-OVAL-ID]"/>
-  <macos:state state_ref="oval:org.cisecurity.benchmarks.o_apple_mac_os_x:ste:[ARTIFACT-OVAL-ID]"/>
+  id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]" version="1">
+  <macos:object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"/>
+  <macos:state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"/>
 </macos:systemsetup_test>
 ```
 
@@ -120,7 +120,7 @@ For `macos.gatekeeper_v1` artifacts, the xccdf:check looks like this.  There is 
 ```
 <macos:systemsetup_object
   comment="[RECOMMENDATION TITLE]"
-  id="oval:org.cisecurity.benchmarks.o_apple_mac_os_x:obj:[ARTIFACT-OVAL-ID]" version="1">
+  id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" version="1">
 </macos:systemsetup_object>
 
 ```
@@ -129,7 +129,7 @@ For `macos.gatekeeper_v1` artifacts, the xccdf:check looks like this.  There is 
 ``` 
 <macos:systemsetup_state
   comment="[RECOMMENDATION TITLE]"
-  id="oval:org.cisecurity.benchmarks.o_apple_mac_os_x:ste:[ARTIFACT-OVAL-ID]" version="1">
+  id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" version="1">
   <macos:remoteappleevents datatype="[datatype.value]" operation="[operation.value]">[remoteappleevents.value]</macos:remoteappleevents>
 </macos:systemsetup_state>    
 ```
@@ -279,7 +279,7 @@ For `macos.gatekeeper_v1` artifacts, the xccdf:check looks like this.  There is 
       xmlns:cpe="http://cpe.mitre.org/language/2.0"
       xmlns:ecl="http://cisecurity.org/check"
       href="[BENCHMARK NAME]"
-      name="oval:org.cisecurity.benchmarks.o_apple_mac_os_x:def:[ARTIFACT-OVAL-ID]"/>
+      name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]"/>
 </xccdf:check>
 ```
 
@@ -289,9 +289,9 @@ For `macos.gatekeeper_v1` artifacts, the xccdf:check looks like this.  There is 
 ```
 <macos:systemsetup_test check="[check.value]" check_existence="[check_existence.value]"
   comment="[RECOMMENDATION TITLE]"
-  id="oval:org.cisecurity.benchmarks.o_apple_mac_os_x:tst:[ARTIFACT-OVAL-ID]" version="1">
-  <macos:object object_ref="oval:org.cisecurity.benchmarks.o_apple_mac_os_x:obj:[ARTIFACT-OVAL-ID]"/>
-  <macos:state state_ref="oval:org.cisecurity.benchmarks.o_apple_mac_os_x:ste:[ARTIFACT-OVAL-ID]"/>
+  id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]" version="1">
+  <macos:object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"/>
+  <macos:state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"/>
 </macos:systemsetup_test>
 ```
 
@@ -300,7 +300,7 @@ For `macos.gatekeeper_v1` artifacts, the xccdf:check looks like this.  There is 
 ```
 <macos:systemsetup_object
   comment="[RECOMMENDATION TITLE]"
-  id="oval:org.cisecurity.benchmarks.o_apple_mac_os_x:obj:[ARTIFACT-OVAL-ID]" version="1">
+  id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" version="1">
 </macos:systemsetup_object>
 
 ```
@@ -309,7 +309,7 @@ For `macos.gatekeeper_v1` artifacts, the xccdf:check looks like this.  There is 
 ``` 
 <macos:systemsetup_state
   comment="[RECOMMENDATION TITLE]"
-  id="oval:org.cisecurity.benchmarks.o_apple_mac_os_x:ste:[ARTIFACT-OVAL-ID]" version="1">
+  id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" version="1">
   <macos:remotelogin datatype="[datatype.value]" operation="[operation.value]">[remotelogin.value]</macos:remotelogin>
 </macos:systemsetup_state>    
 ```
@@ -459,7 +459,7 @@ For `macos.gatekeeper_v1` artifacts, the xccdf:check looks like this.  There is 
       xmlns:cpe="http://cpe.mitre.org/language/2.0"
       xmlns:ecl="http://cisecurity.org/check"
       href="[BENCHMARK NAME]"
-      name="oval:org.cisecurity.benchmarks.o_apple_mac_os_x:def:[ARTIFACT-OVAL-ID]"/>
+      name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]"/>
 </xccdf:check>
 ```
 
@@ -469,9 +469,9 @@ For `macos.gatekeeper_v1` artifacts, the xccdf:check looks like this.  There is 
 ```
 <macos:systemsetup_test check="[check.value]" check_existence="[check_existence.value]"
   comment="[RECOMMENDATION TITLE]"
-  id="oval:org.cisecurity.benchmarks.o_apple_mac_os_x:tst:[ARTIFACT-OVAL-ID]" version="1">
-  <macos:object object_ref="oval:org.cisecurity.benchmarks.o_apple_mac_os_x:obj:[ARTIFACT-OVAL-ID]"/>
-  <macos:state state_ref="oval:org.cisecurity.benchmarks.o_apple_mac_os_x:ste:[ARTIFACT-OVAL-ID]"/>
+  id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]" version="1">
+  <macos:object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"/>
+  <macos:state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"/>
 </macos:systemsetup_test>
 ```
 
@@ -480,7 +480,7 @@ For `macos.gatekeeper_v1` artifacts, the xccdf:check looks like this.  There is 
 ```
 <macos:systemsetup_object
   comment="[RECOMMENDATION TITLE]"
-  id="oval:org.cisecurity.benchmarks.o_apple_mac_os_x:obj:[ARTIFACT-OVAL-ID]" version="1">
+  id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" version="1">
 </macos:systemsetup_object>
 
 ```
@@ -489,7 +489,7 @@ For `macos.gatekeeper_v1` artifacts, the xccdf:check looks like this.  There is 
 ``` 
 <macos:systemsetup_state
   comment="[RECOMMENDATION TITLE]"
-  id="oval:org.cisecurity.benchmarks.o_apple_mac_os_x:ste:[ARTIFACT-OVAL-ID]" version="1">
+  id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" version="1">
   <macos:usingnetworktime datatype="[datatype.value]" operation="[operation.value]">[usingnetworktime.value]</macos:usingnetworktime>
 </macos:systemsetup_state>    
 ```
@@ -639,7 +639,7 @@ For `macos.gatekeeper_v1` artifacts, the xccdf:check looks like this.  There is 
       xmlns:cpe="http://cpe.mitre.org/language/2.0"
       xmlns:ecl="http://cisecurity.org/check"
       href="[BENCHMARK NAME]"
-      name="oval:org.cisecurity.benchmarks.o_apple_mac_os_x:def:[ARTIFACT-OVAL-ID]"/>
+      name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]"/>
 </xccdf:check>
 ```
 
@@ -649,9 +649,9 @@ For `macos.gatekeeper_v1` artifacts, the xccdf:check looks like this.  There is 
 ```
 <macos:systemsetup_test check="[check.value]" check_existence="[check_existence.value]"
   comment="[RECOMMENDATION TITLE]"
-  id="oval:org.cisecurity.benchmarks.o_apple_mac_os_x:tst:[ARTIFACT-OVAL-ID]" version="1">
-  <macos:object object_ref="oval:org.cisecurity.benchmarks.o_apple_mac_os_x:obj:[ARTIFACT-OVAL-ID]"/>
-  <macos:state state_ref="oval:org.cisecurity.benchmarks.o_apple_mac_os_x:ste:[ARTIFACT-OVAL-ID]"/>
+  id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]" version="1">
+  <macos:object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"/>
+  <macos:state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"/>
 </macos:systemsetup_test>
 ```
 
@@ -660,7 +660,7 @@ For `macos.gatekeeper_v1` artifacts, the xccdf:check looks like this.  There is 
 ```
 <macos:systemsetup_object
   comment="[RECOMMENDATION TITLE]"
-  id="oval:org.cisecurity.benchmarks.o_apple_mac_os_x:obj:[ARTIFACT-OVAL-ID]" version="1">
+  id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" version="1">
 </macos:systemsetup_object>
 
 ```
@@ -669,7 +669,7 @@ For `macos.gatekeeper_v1` artifacts, the xccdf:check looks like this.  There is 
 ``` 
 <macos:systemsetup_state
   comment="[RECOMMENDATION TITLE]"
-  id="oval:org.cisecurity.benchmarks.o_apple_mac_os_x:ste:[ARTIFACT-OVAL-ID]" version="1">
+  id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" version="1">
   <macos:wakeonnetworkaccess datatype="[datatype.value]" operation="[operation.value]">[wakeonnetworkaccess.value]</macos:wakeonnetworkaccess>
 </macos:systemsetup_state>    
 ```

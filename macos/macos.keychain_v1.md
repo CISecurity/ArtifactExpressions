@@ -78,7 +78,7 @@ For `macos.keychain_v1` artifacts, the xccdf:check looks like this.  There is no
   <xccdf:check-content-ref xmlns:ae="http://benchmarks.cisecurity.org/ae/0.5"
      xmlns:cpe="http://cpe.mitre.org/language/2.0" xmlns:ecl="http://cisecurity.org/check"
      href="CIS_Apple_macOS_10.13_Benchmark_v1.0.0.1-oval.xml"
-     name="oval:org.cisecurity.benchmarks.o_apple_mac_os_x:def:[ARTIFACT-OVAL-ID]"/>
+     name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]"/>
 </xccdf:check>
 ```
 
@@ -88,9 +88,9 @@ For `macos.keychain_v1` artifacts, the xccdf:check looks like this.  There is no
 ```
 <macos:keychain_test check="[check.value]" check_existence="[check_existence.value]"
   comment="[RECOMMENDATION TITLE]"
-  id="oval:org.cisecurity.benchmarks.o_apple_mac_os_x:tst:[ARTIFACT-OVAL-ID]" version="1">
-  <macos:object object_ref="oval:org.cisecurity.benchmarks.o_apple_mac_os_x:obj:[ARTIFACT-OVAL-ID]"/>
-  <macos:state state_ref="oval:org.cisecurity.benchmarks.o_apple_mac_os_x:ste:[ARTIFACT-OVAL-ID]"/>
+  id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]" version="1">
+  <macos:object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"/>
+  <macos:state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"/>
 </macos:keychain_test>
 
 ```
@@ -100,7 +100,7 @@ For `macos.keychain_v1` artifacts, the xccdf:check looks like this.  There is no
 ```
 <macos:keychain_object
   comment="[RECOMMENDATION TITLE]"
-  id="oval:org.cisecurity.benchmarks.o_apple_mac_os_x:obj:[ARTIFACT-OVAL-ID]" version="1">
+  id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" version="1">
   <macos:filepath>[filepath.value]</macos:filepath>
 </macos:keychain_object>
 
@@ -111,7 +111,7 @@ For `macos.keychain_v1` artifacts, the xccdf:check looks like this.  There is no
 
 <macos:keychain_state
   comment="[RECOMMENDATION TITLE]"
-  id="oval:org.cisecurity.benchmarks.o_apple_mac_os_x:ste:[ARTIFACT-OVAL-ID]" version="1">
+  id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" version="1">
   <macos:timeout datatype="[datatype.value]" operation="[operation.value]">[timeout.value]</macos:timeout>
 </macos:keychain_state>
 
@@ -261,7 +261,7 @@ For `macos.keychain_v1` artifacts, the xccdf:check looks like this.  There is no
   <xccdf:check-content-ref xmlns:ae="http://benchmarks.cisecurity.org/ae/0.5"
      xmlns:cpe="http://cpe.mitre.org/language/2.0" xmlns:ecl="http://cisecurity.org/check"
      href="CIS_Apple_macOS_10.13_Benchmark_v1.0.0.1-oval.xml"
-     name="oval:org.cisecurity.benchmarks.o_apple_mac_os_x:def:[ARTIFACT-OVAL-ID]"/>
+     name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]"/>
 </xccdf:check>
 ```
 
@@ -271,9 +271,9 @@ For `macos.keychain_v1` artifacts, the xccdf:check looks like this.  There is no
 ```
 <macos:keychain_test check="[check.value]" check_existence="[check_existence.value]"
   comment="[RECOMMENDATION TITLE]"
-  id="oval:org.cisecurity.benchmarks.o_apple_mac_os_x:tst:[ARTIFACT-OVAL-ID]" version="1">
-  <macos:object object_ref="oval:org.cisecurity.benchmarks.o_apple_mac_os_x:obj:[ARTIFACT-OVAL-ID]"/>
-  <macos:state state_ref="oval:org.cisecurity.benchmarks.o_apple_mac_os_x:ste:[ARTIFACT-OVAL-ID]"/>
+  id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]" version="1">
+  <macos:object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"/>
+  <macos:state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"/>
 </macos:keychain_test>
 
 ```
@@ -283,7 +283,7 @@ For `macos.keychain_v1` artifacts, the xccdf:check looks like this.  There is no
 ```
 <macos:keychain_object
   comment="[RECOMMENDATION TITLE]"
-  id="oval:org.cisecurity.benchmarks.o_apple_mac_os_x:obj:[ARTIFACT-OVAL-ID]" version="1">
+  id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" version="1">
   <macos:filepath>[filepath.value]</macos:filepath>
 </macos:keychain_object>
 
@@ -294,7 +294,7 @@ For `macos.keychain_v1` artifacts, the xccdf:check looks like this.  There is no
 
 <macos:keychain_state
   comment="[RECOMMENDATION TITLE]"
-  id="oval:org.cisecurity.benchmarks.o_apple_mac_os_x:ste:[ARTIFACT-OVAL-ID]" version="1">
+  id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" version="1">
   <macos:lock_on_sleep datatype="[datatype.value]" operation="[operation.value]">[lock_on_sleep.value]</macos:lock_on_sleep>
 </macos:keychain_state>
 
