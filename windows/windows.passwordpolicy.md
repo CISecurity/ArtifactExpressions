@@ -145,7 +145,7 @@ For `windows.passwordpolicyobject` artifacts, an XCCDF Value element is generate
 <passwordpolicy_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#windows" 
   comment="[RECOMMENDATION TITLE]" 
-       id="oval:org.cisecurity.benchmarks.PLATFORM:obj:ARTIFACT-OVAL-ID" 
+       id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" 
   version="1"/>
 ```
 
@@ -155,10 +155,10 @@ For `windows.passwordpolicyobject` artifacts, an XCCDF Value element is generate
 <passwordpolicy_state 
    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#windows" 
  comment="[RECOMMENDATION TITLE]" 
-      id="oval:org.cisecurity.benchmarks.PLATFORM:ste:ARTIFACT-OVAL-ID" version="1">
-   <[passwordpolicysetting] datatype="[int|boolean]" 
-      operation="[TestType Name]" 
-        var_ref="oval:org.cisecurity.benchmarks.PLATFORM:var:ARTIFACT-OVAL-ID"/>
+      id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" version="1">
+   <[passwordpolicysetting.value] datatype="[data_type.value]" 
+      operation="[test_type]" 
+        var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"/>
 </passwordpolicy_state>
 ```
 
@@ -166,8 +166,8 @@ For `windows.passwordpolicyobject` artifacts, an XCCDF Value element is generate
 
 ```
 <external_variable comment="This value is used in [RECOMMENDATION TITLE]" 
-                  datatype="[int|boolean]" 
-                        id="oval:org.cisecurity.benchmarks.PLATFORM:var:ARTIFACT-OVAL-ID" 
+                  datatype="[data_type.value]" 
+                        id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" 
                    version="1"/>
 ```
 
@@ -178,23 +178,23 @@ For `windows.passwordpolicyobject` artifacts, an XCCDF Value element is generate
     artifact-unique-id: [ARTIFACT-OVAL-ID]
     artifact-title: [RECOMMENDATION TITLE]
     artifact:
-      type: windows.passwordpolicyobject
+      type: [ARTIFACTTYPE NAME]
       parameters:
       - parameter: 
           name: passwordpolicysetting
           type: string
-          value: [ARTIFACT TYPE PARAMETER VALUE]
+          value: [passwordpolicysetting.value]
     test:
-      type: [TestType Name]
+      type: [TESTTYPE NAME]
       parameters:
       - parameter:
           name: value
           type: string
-          value: [TestType.value.value]
+          value: [value.value]
       - parameter: 
           name: data_type
           type: string
-          value: [TestType.data_type.value]
+          value: [data_type.value]
 ```
 
 #### JSON
@@ -204,32 +204,32 @@ For `windows.passwordpolicyobject` artifacts, an XCCDF Value element is generate
   "artifact-unique-id": [ARTIFACT-OVAL-ID],
   "artifact-title": [RECOMMENDATION TITLE],
   "artifact": {
-    "type": "windows.passwordpolicyobject",
+    "type": "[ARTIFACTTYPE NAME]",
     "parameters": [
       {
         "parameter": {
           "name": "passwordpolicysetting",
           "type": "string",
-          "value": [ARTIFACT TYPE PARAMETER VALUE]
+          "value": [passwordpolicysetting.value]
         }
       }
     ]
   },
   "test": {
-    "type": [TestType Name],
+    "type": [TESTTYPE NAME],
     "parameters": [
       {
         "parameter": {
           "name": "value",
           "type": "string",
-          "value": [TestType.value.value]
+          "value": [value.value]
         }
       },
       {
         "parameter": {
           "name": "data_type",
           "type": "string",
-          "value": [TestType.data_type.value]
+          "value": [data_type.value]
         }
       }
     ]
