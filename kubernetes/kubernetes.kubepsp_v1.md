@@ -1,7 +1,7 @@
 # kubernetes.kubepsp_v1
 
 ## Description
-The gatekeeper_test is used to check the status of Gatekeeper and any unsigned applications that have been granted execute permission.
+The kubernetes.kubepsp_v1 is used to TBD
 
 ## Intent
 TBD
