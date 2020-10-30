@@ -26,6 +26,14 @@ TBD
 | data_type | String | datatype |  datatype
 
 
+data_type
+NOTE: This parameter is governed by a constraint allowing only the following values:
+- boolean
+- float
+- int
+- string
+- version
+- set
 
 ### Generated Content
 #### XCCDF+AE

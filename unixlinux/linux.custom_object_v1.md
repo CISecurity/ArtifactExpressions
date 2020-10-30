@@ -68,7 +68,24 @@ NOTE: This parameter is governed by a constraint allowing only the following val
 This is what the AE check looks like, inside a Rule, in the XCCDF
 
 ```
-TBD
+<xccdf:complex-check operator="AND">
+    <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
+        <xccdf:check-content>
+            <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_2.2.15.1">
+                <ae:artifact_oval_id>[ARTIFACT_OVAL_ID]</ae:artifact_oval_id>
+                <ae:title>[RECOMMENDATION_TITLE]"</ae:title>
+                <ae:artifact type="[ARTIFACTTYPE_NAME]">
+                    <ae:parameters>
+                        <ae:parameter dt="string" name="object">[object.value]</ae:parameter>
+                    </ae:parameters>
+                </ae:artifact>
+                <ae:test type="[TESTTYPE_NAME]">
+            <ae:parameters/>
+                </ae:test>
+            </ae:artifact_expression>
+        </xccdf:check-content>
+    </xccdf:check>
+</xccdf:complex-check>
 ```
 
 #### SCAP

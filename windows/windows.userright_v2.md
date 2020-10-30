@@ -75,6 +75,38 @@ NOTE: This parameter is governed by a constraint allowing only the following val
 | trustee_name | String | The trustee_name entity is the unique name associated with the SID that has been granted the specified user right/privilege. A trustee can be associated with a user, group, or program (such as a Windows service). In Windows, trustee names are case-insensitive. As a result, it is recommended that the case-insensitive operations are used for this entity. |
 | trustee_sid  | String | The trustee_sid entity identifies the SID that has been granted the specified user right/privilege. |
 
+
+datatype
+NOTE: This parameter is governed by a constraint allowing only the following values:
+- boolean
+- float
+- int
+- string
+- version
+- set
+
+check
+NOTE: This parameter is governed by a constraint allowing only the following values:
+- all
+- at least one
+- none satisfy
+- only one
+
+operation
+NOTE: This parameter is governed by a constraint allowing only the following values:
+- equals
+- not equal
+- case insensitive equals
+- case insensitive not equal
+- greater than
+- less than
+- greater than or equal
+- less than or equal
+- bitwise and
+- bitwise or
+- pattern match
+- subset of
+- superset of
 ### Generated Content
 #### XCCDF+AE
 This is what the AE check looks like, inside a Rule, in the XCCDF

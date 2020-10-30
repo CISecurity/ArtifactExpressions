@@ -69,6 +69,16 @@ NOTE: This parameter is governed by a constraint allowing only the following val
 | data_type | String | datatype of the value |
 | values | String | Comma separated list of permitted values |
 
+datatype
+NOTE: This parameter is governed by a constraint allowing only the following values:
+- boolean
+- float
+- int
+- string
+- version
+- set
+
+
 ### Generated Content
 #### XCCDF+AE
 This is what the AE check looks like, inside a Rule, in the XCCDF
