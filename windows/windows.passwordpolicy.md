@@ -69,6 +69,14 @@ Greater Than or Equal
 | data_type | String | datatype of the value |
 | value | String | the value included within the set of results/ value to be tested|
 
+data_type
+NOTE: This parameter is governed by a constraint allowing only the following values:
+- boolean
+- float
+- int
+- string
+- version
+- set
 
 ### Generated Content
 #### XCCDF+AE
