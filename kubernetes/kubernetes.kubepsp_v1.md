@@ -113,8 +113,8 @@ For `kubernetes.kubepsp_v1` artifacts, the xccdf:check looks like this. There is
 ```
 <check system='http://oval.mitre.org/XMLSchema/oval-definitions-5'>
     <check-content-ref 
-        href='Kubernetes_v1.5.0-oval.xml' 
-        name='oval:org.cisecurity.benchmarks.Kubernetes_Kubernetes_1:def:470516'/>
+        href='[BENCHMARK NAME]' 
+        name='oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]'/>
 </check>
 ```
 
@@ -138,7 +138,7 @@ For `kubernetes.kubepsp_v1` artifacts, the xccdf:check looks like this. There is
 <kubepsp_object xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#kubernetes' 
     id='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'
     comment='[RECOMMENDATION TITLE]'>
-    <psp_name operation='[psp_name.value]'>.*</psp_name>
+    <psp_name operation='[operation.value'>[psp_name.value]</psp_name>
     <yaml_path>[yaml_path.value]</yaml_path>
 </kubepsp_object>  
 ```
