@@ -1,7 +1,7 @@
-# cisco_ios.bgp_neighbor_config
+# cisco_ios.snmp
 
 ## Description
-The cisco_ios.bgp_neighbor_config is used to TBD
+The cisco_ios.snmp is used to TBD
 
 ## Intent
 TBD
@@ -10,17 +10,24 @@ TBD
 ### Artifact Parameters
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
-| operator | String | Comparison operator used for collecting BGP Neighbor items. |
-| neighbor | String | The BGP Neighbor(s) to collect. |
 
 ### Supported Test Types
-- cisco_ios:all_bgp_neighbor_password
+- existence_test
+- cisco_ios.snmp
 
 ### Test Type Parameters
+#### existence_test
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
+| value | String | Value. |
 
+#### cisco_ios.snmp
+| Name                  |Type    | Description |
+| ----------------------|--------| ----------- |
+| operator | String | Comparison Operator. |
+| access_list | String | The defined SNMP Access List. |
 
+   
 
 ### Generated Content
 #### XCCDF+AE
@@ -51,7 +58,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
 
 #### SCAP
 ##### XCCDF
-For `cisco_ios.bgp_neighbor_config` artifacts, the xccdf:check looks like this. 
+For `cisco_ios.snmp` artifacts, the xccdf:check looks like this. 
 
 ```
 <check system='http://oval.mitre.org/XMLSchema/oval-definitions-5'>            

@@ -1,7 +1,7 @@
-# cisco_ios.bgp_neighbor_config
+# cisco_ios.section
 
 ## Description
-The cisco_ios.bgp_neighbor_config is used to TBD
+The cisco_ios.section is used to TBD
 
 ## Intent
 TBD
@@ -10,17 +10,26 @@ TBD
 ### Artifact Parameters
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
-| operator | String | Comparison operator used for collecting BGP Neighbor items. |
-| neighbor | String | The BGP Neighbor(s) to collect. |
+| cisco_ios.section_name | String | The name of the section for which to collect configuration information. |
 
 ### Supported Test Types
-- cisco_ios:all_bgp_neighbor_password
+- cisco_ios.section_existence_test
+- cisco_ios.section_config_line
 
 ### Test Type Parameters
+#### cisco_ios.section_existence_test
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
+| existence_check | String | Number of sections expected to be collected. |
 
+#### cisco_ios.section_config_line
+| Name                  |Type    | Description |
+| ----------------------|--------| ----------- |
+| section_config_line | String | One config line of the collected configuration section. |
+| operation | String | Comparison Operator. |
+| entity_check | String | The number of section configuration lines which must match the expected state. |
 
+   
 
 ### Generated Content
 #### XCCDF+AE
@@ -51,7 +60,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
 
 #### SCAP
 ##### XCCDF
-For `cisco_ios.bgp_neighbor_config` artifacts, the xccdf:check looks like this. 
+For `cisco_ios.section` artifacts, the xccdf:check looks like this. 
 
 ```
 <check system='http://oval.mitre.org/XMLSchema/oval-definitions-5'>            

@@ -1,7 +1,7 @@
-# cisco_ios.bgp_neighbor_config
+# cisco_ios.snmp_community
 
 ## Description
-The cisco_ios.bgp_neighbor_config is used to TBD
+The cisco_ios.snmp_community is used to TBD
 
 ## Intent
 TBD
@@ -10,17 +10,39 @@ TBD
 ### Artifact Parameters
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
-| operator | String | Comparison operator used for collecting BGP Neighbor items. |
-| neighbor | String | The BGP Neighbor(s) to collect. |
+| cisco_ios.snmp_community_name | String | The SNMP community name. |
 
 ### Supported Test Types
-- cisco_ios:all_bgp_neighbor_password
+- existence_test
+- cisco_ios.snmp_community_mode
+- cisco_ios.snmp_community_ipv4_acl
+- cisco_ios.snmp_community_ipv6_acl
 
 ### Test Type Parameters
+#### existence_test
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
+| value | String | Value. |
 
+#### cisco_ios.snmp_community_mode
+| Name                  |Type    | Description |
+| ----------------------|--------| ----------- |
+| operation | String | Comparison Operator. |
+| mode | String | The read-write privileges of the community. |
 
+#### cisco_ios.snmp_community_ipv4_acl
+| Name                  |Type    | Description |
+| ----------------------|--------| ----------- |
+| operator | String | Comparison Operator. |
+| ipv4_acl | String | The IPv4 ACL name applied to the community. |
+
+#### cisco_ios.snmp_community_ipv6_acl
+| Name                  |Type    | Description |
+| ----------------------|--------| ----------- |
+| operator | String | Comparison Operator. |
+| ipv6_acl | String | The IPv6 ACL name applied to the community. |
+
+   
 
 ### Generated Content
 #### XCCDF+AE
@@ -51,7 +73,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
 
 #### SCAP
 ##### XCCDF
-For `cisco_ios.bgp_neighbor_config` artifacts, the xccdf:check looks like this. 
+For `cisco_ios.snmp_community` artifacts, the xccdf:check looks like this. 
 
 ```
 <check system='http://oval.mitre.org/XMLSchema/oval-definitions-5'>            

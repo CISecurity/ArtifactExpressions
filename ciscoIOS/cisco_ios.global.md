@@ -1,7 +1,7 @@
-# cisco_ios.bgp_neighbor_config
+# cisco_ios.global
 
 ## Description
-The cisco_ios.bgp_neighbor_config is used to TBD
+The cisco_ios.global is used to TBD
 
 ## Intent
 TBD
@@ -10,17 +10,18 @@ TBD
 ### Artifact Parameters
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
-| operator | String | Comparison operator used for collecting BGP Neighbor items. |
-| neighbor | String | The BGP Neighbor(s) to collect. |
+|  	cisco_ios.global_command | String | The global command identifies a specific line in the IOS config file under the global context. |
 
 ### Supported Test Types
-- cisco_ios:all_bgp_neighbor_password
+- cisco_ios.global_command
 
 ### Test Type Parameters
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
-
-
+| operator | String |  	The comparison operator. |
+| global_command | String | The global_command entity identifies a specific line in the ios config file under the global context. |
+| existence_check | String | Number of global config lines required in the result. |
+   
 
 ### Generated Content
 #### XCCDF+AE
@@ -51,7 +52,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
 
 #### SCAP
 ##### XCCDF
-For `cisco_ios.bgp_neighbor_config` artifacts, the xccdf:check looks like this. 
+For `cisco_ios.global` artifacts, the xccdf:check looks like this. 
 
 ```
 <check system='http://oval.mitre.org/XMLSchema/oval-definitions-5'>            

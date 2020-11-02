@@ -1,7 +1,7 @@
-# cisco_ios.bgp_neighbor_config
+# cisco_ios.section_custom_router_ospf
 
 ## Description
-The cisco_ios.bgp_neighbor_config is used to TBD
+The cisco_ios.section_custom_router_ospf is used to TBD
 
 ## Intent
 TBD
@@ -10,17 +10,18 @@ TBD
 ### Artifact Parameters
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
-| operator | String | Comparison operator used for collecting BGP Neighbor items. |
-| neighbor | String | The BGP Neighbor(s) to collect. |
+
 
 ### Supported Test Types
-- cisco_ios:all_bgp_neighbor_password
+- cisco_ios.section_custom_router_ospf_line
 
 ### Test Type Parameters
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
-
-
+| entity_check | String | The number of section configuration lines which must match the expected state. |
+| operation | String | Comparison Operator. |
+| section_config_line | String | One config line of the collected configuration section. |
+   
 
 ### Generated Content
 #### XCCDF+AE
@@ -51,7 +52,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
 
 #### SCAP
 ##### XCCDF
-For `cisco_ios.bgp_neighbor_config` artifacts, the xccdf:check looks like this. 
+For `cisco_ios.section_custom_router_ospf` artifacts, the xccdf:check looks like this. 
 
 ```
 <check system='http://oval.mitre.org/XMLSchema/oval-definitions-5'>            

@@ -1,7 +1,7 @@
-# cisco_ios.bgp_neighbor_config
+# cisco_ios.interface
 
 ## Description
-The cisco_ios.bgp_neighbor_config is used to TBD
+The cisco_ios.interface is used to TBD
 
 ## Intent
 TBD
@@ -10,17 +10,35 @@ TBD
 ### Artifact Parameters
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
-| operator | String | Comparison operator used for collecting BGP Neighbor items. |
-| neighbor | String | The BGP Neighbor(s) to collect. |
+| cisco_ios.interface_name | String | The name of the IOS interface to be tested. |
+| operation | String | The operator defining how to collect the IOS interface(s). |
+
 
 ### Supported Test Types
-- cisco_ios:all_bgp_neighbor_password
+- cisco_ios.interface_existence_test
+- cisco_ios.interface_proxy_arp
+- cisco_ios.interface_urpf
 
 ### Test Type Parameters
+#### cisco_ios.interface_existence_test
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
+| existence_check | String | Number of interfaces expected to be collected. |
+| operator | String | Interface Name comparison operator. |
+| interface_name | String | The interface name. |
 
+#### cisco_ios.interface_proxy_arp
+| Name                  |Type    | Description |
+| ----------------------|--------| ----------- |
+| operation | String | Comparison Operator. |
+| proxy_arp_enabled | String | True if the proxy_arp command is enabled on the interface. The default is true. |
 
+#### cisco_ios.interface_urpf
+| Name                  |Type    | Description |
+| ----------------------|--------| ----------- |
+| operator | String | Interface Name comparison operator. |
+| urpf_command | String | The uRPF commands expected value. |
+   
 
 ### Generated Content
 #### XCCDF+AE
@@ -51,7 +69,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
 
 #### SCAP
 ##### XCCDF
-For `cisco_ios.bgp_neighbor_config` artifacts, the xccdf:check looks like this. 
+For `cisco_ios.interface` artifacts, the xccdf:check looks like this. 
 
 ```
 <check system='http://oval.mitre.org/XMLSchema/oval-definitions-5'>            

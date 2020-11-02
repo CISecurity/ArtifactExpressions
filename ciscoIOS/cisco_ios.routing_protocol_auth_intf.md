@@ -1,7 +1,7 @@
-# cisco_ios.bgp_neighbor_config
+# cisco_ios.routing_protocol_auth_intf
 
 ## Description
-The cisco_ios.bgp_neighbor_config is used to TBD
+The cisco_ios.routing_protocol_auth_intf is used to TBD
 
 ## Intent
 TBD
@@ -10,17 +10,27 @@ TBD
 ### Artifact Parameters
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
-| operator | String | Comparison operator used for collecting BGP Neighbor items. |
-| neighbor | String | The BGP Neighbor(s) to collect. |
+| interface_operator | String | Interface Operator. |
+| interface | String | The name of the interface(s) to collect. |
+| protocol_operator | String | Protocol Operator. |
+| routing_protocol | String | The name of the routing protocol(s) to collect. |
 
 ### Supported Test Types
-- cisco_ios:all_bgp_neighbor_password
+- cisco_ios.routing_protocol_auth_keychain
+- cisco_ios.routing_protocol_auth_type
 
 ### Test Type Parameters
+#### cisco_ios.routing_protocol_auth_keychain
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
+| operator | String | Comparison Operator. |
+| keychain | String | Authentication Key Chain. |
 
-
+#### cisco_ios.routing_protocol_auth_type
+| Name                  |Type    | Description |
+| ----------------------|--------| ----------- |
+| auth_type | String | The routing protocol authentication type. |
+   
 
 ### Generated Content
 #### XCCDF+AE
@@ -51,7 +61,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
 
 #### SCAP
 ##### XCCDF
-For `cisco_ios.bgp_neighbor_config` artifacts, the xccdf:check looks like this. 
+For `cisco_ios.routing_protocol_auth_intf` artifacts, the xccdf:check looks like this. 
 
 ```
 <check system='http://oval.mitre.org/XMLSchema/oval-definitions-5'>            
