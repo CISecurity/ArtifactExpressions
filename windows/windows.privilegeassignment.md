@@ -66,11 +66,33 @@ NOTE: This parameter is governed by a constraint allowing only the following val
 - equals
 
 ### Test Type Parameters
+####setisempty
+| Name                  |Type    | Description |
+| ----------------------|--------| ----------- |
+
+####Equal
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
 | data_type | String | datatype of the value |
-| values | String | Comma separated list of permitted values|
-| value | String | the value included within the set of results/ value to be tested|
+| value | String | the value included within the set of results/ value to be tested |
+
+####set.includes_v1
+| Name                  |Type    | Description |
+| ----------------------|--------| ----------- |
+| data_type | String | datatype of the value |
+| value | String | the value included within the set of results/ value to be tested |
+
+####set.white_list_v1
+| Name                  |Type    | Description |
+| ----------------------|--------| ----------- |
+| data_type | String | datatype of the value |
+| values | String | Comma separated list of permitted values |
+
+####Equals
+| Name                  |Type    | Description |
+| ----------------------|--------| ----------- |
+| data_type | String | datatype of the value |
+| value | String | the value included within the set of results/ value to be tested | 
 
 data_type
 NOTE: This parameter is governed by a constraint allowing only the following values:

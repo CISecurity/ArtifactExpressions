@@ -74,20 +74,57 @@ user_device_claims
 audit_detailedtracking_tokenrightadjusted
 
 ### Supported Test Types
-- equals
-- equal
-- not equal
-- less than
-- less than or equal
-- greater than
-- greater than or equal 
+- Equals 
+- Equal
+- Not Equal
+- Less Than
+- Less Than or Equal
+- Greater Than
+- Greater Than or Equal
 
 ### Test Type Parameters
+####Equals 
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
 | data_type | String | datatype of the value |
-| values | String | Comma separated list of permitted values|
-| value | String | the value included within the set of results/ value to be tested|
+| value | String | the value included within the set of results/ value to be tested |
+
+####Equal
+| Name                  |Type    | Description |
+| ----------------------|--------| ----------- |
+| data_type | String | datatype of the value |
+| value | String | the value included within the set of results/ value to be tested |
+
+####Not Equal
+| Name                  |Type    | Description |
+| ----------------------|--------| ----------- |
+| data_type | String | datatype of the value |
+| value | String | the value included within the set of results/ value to be tested |
+
+####Less Than 
+| Name                  |Type    | Description |
+| ----------------------|--------| ----------- |
+| data_type | String | datatype of the value |
+| value | String | the value included within the set of results/ value to be tested |
+
+####Less Than or Equal 
+| Name                  |Type    | Description |
+| ----------------------|--------| ----------- |
+| data_type | String | datatype of the value |
+| value | String | the value included within the set of results/ value to be tested |
+
+####Greater Than
+| Name                  |Type    | Description |
+| ----------------------|--------| ----------- |
+| data_type | String | datatype of the value |
+| value | String | the value included within the set of results/ value to be tested |
+
+####Greater Than or Equal 
+| Name                  |Type    | Description |
+| ----------------------|--------| ----------- |
+| data_type | String | datatype of the value |
+| value | String | the value included within the set of results/ value to be tested |
+
 
 data_type
 NOTE: This parameter is governed by a constraint allowing only the following values:

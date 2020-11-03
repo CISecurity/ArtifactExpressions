@@ -21,7 +21,7 @@ NOTE: This parameter is governed by a constraint allowing only the following val
 - Reversible Encryption
 
 ### Supported Test Types
-- Equals (value, data_type)
+- Equals 
 - Not Equal
 - Less Than
 - Less Than or Equal
@@ -29,45 +29,41 @@ NOTE: This parameter is governed by a constraint allowing only the following val
 - Greater Than or Equal
 
 ### Test Type Parameters
-Equals 
+####Equals 
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
 | data_type | String | datatype of the value |
-| value | String | the value included within the set of results/ value to be tested|
+| value | String | the value included within the set of results/ value to be tested |
 
-Not Equal
+####Not Equal
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
 | data_type | String | datatype of the value |
-| value | String | the value included within the set of results/ value to be tested
+| value | String | the value included within the set of results/ value to be tested |
 
-Less Than 
+####Less Than 
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
 | data_type | String | datatype of the value |
-| value | String | the value included within the set of results/ value to be tested|
+| value | String | the value included within the set of results/ value to be tested |
 
-Less Than or Equal 
+####Less Than or Equal 
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
 | data_type | String | datatype of the value |
-| value | String | the value included within the set of results/ value to be tested|
+| value | String | the value included within the set of results/ value to be tested |
 
-Greater Than
+####Greater Than
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
 | data_type | String | datatype of the value |
-| value | String | the value included within the set of results/ value to be tested|Equals 
-| Name                  |Type    | Description |
-| ----------------------|--------| ----------- |
-| data_type | String | datatype of the value |
-| value | String | the value included within the set of results/ value to be tested|
+| value | String | the value included within the set of results/ value to be tested |
 
-Greater Than or Equal 
+####Greater Than or Equal 
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
 | data_type | String | datatype of the value |
-| value | String | the value included within the set of results/ value to be tested|
+| value | String | the value included within the set of results/ value to be tested |
 
 data_type
 NOTE: This parameter is governed by a constraint allowing only the following values:

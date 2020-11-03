@@ -66,10 +66,22 @@ NOTE: This parameter is governed by a constraint allowing only the following val
 - pattern match
 
 ### Test Type Parameters
+####existence_test
+| Name                  |Type    | Description |
+| ----------------------|--------| ----------- |
+| value | String | the value included within the set of results/ value to be tested |
+
+####equals 
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
 | data_type | String | datatype of the value |
-| value | String | Regular expression to be matched/ value to be tested |
+| value | String | the value included within the set of results/ value to be tested |
+
+####pattern match
+| Name                  |Type    | Description |
+| ----------------------|--------| ----------- |
+| data_type | String | datatype of the value |
+| value | String | Regular expression to be matched |
 
 data_type
 NOTE: This parameter is governed by a constraint allowing only the following values:

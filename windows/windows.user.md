@@ -16,6 +16,10 @@ TBD
 ### Supported Test Types
 - null_test_v1
 
+### Test Type Parameters
+| Name                  |Type    | Description |
+| ----------------------|--------| ----------- |
+
 ### Generated Content
 #### XCCDF+AE
 This is what the AE check looks like, inside a Rule, in the XCCDF

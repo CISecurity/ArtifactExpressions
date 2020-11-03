@@ -67,14 +67,21 @@ NOTE: This parameter is governed by a constraint allowing only the following val
 
 
 ### Test Type Parameters
+####windows.userright_trustee_name_v2
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
 | datatype | String | datatype of the value |
 | operation | String | 	comparison operation |
 | check | String | Defines how many collected items must match the expected state|
 | trustee_name | String | The trustee_name entity is the unique name associated with the SID that has been granted the specified user right/privilege. A trustee can be associated with a user, group, or program (such as a Windows service). In Windows, trustee names are case-insensitive. As a result, it is recommended that the case-insensitive operations are used for this entity. |
-| trustee_sid  | String | The trustee_sid entity identifies the SID that has been granted the specified user right/privilege. |
 
+####windows.userright_trustee_sid_v2
+| Name                  |Type    | Description |
+| ----------------------|--------| ----------- |
+| datatype | String | datatype of the value |
+| operation | String | 	comparison operation |
+| check | String | Defines how many collected items must match the expected state|
+| trustee_sid  | String | The trustee_sid entity identifies the SID that has been granted the specified user right/privilege. |
 
 datatype
 NOTE: This parameter is governed by a constraint allowing only the following values:

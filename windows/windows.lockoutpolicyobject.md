@@ -19,8 +19,8 @@ NOTE: This parameter is governed by a constraint allowing only the following val
 - Forced Logoff
 
 ### Supported Test Types
-- Equal (value, data_type)
-- Equals (value, data_type)
+- Equal 
+- Equals 
 - Not Equal
 - Equal To
 - Less Than
@@ -29,11 +29,53 @@ NOTE: This parameter is governed by a constraint allowing only the following val
 - Greater Than or Equal
 
 ### Test Type Parameters
+####Equal
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
 | data_type | String | datatype of the value |
-| values | String | Comma separated list of permitted values|
-| value | String | the value included within the set of results/ value to be tested|
+| value | String | the value included within the set of results/ value to be tested |
+
+####Equals
+| Name                  |Type    | Description |
+| ----------------------|--------| ----------- |
+| data_type | String | datatype of the value |
+| value | String | the value included within the set of results/ value to be tested |
+
+####Not Equal
+| Name                  |Type    | Description |
+| ----------------------|--------| ----------- |
+| data_type | String | datatype of the value |
+| value | String | the value included within the set of results/ value to be tested |
+
+####Equal to
+| Name                  |Type    | Description |
+| ----------------------|--------| ----------- |
+| data_type | String | datatype of the value |
+| value | String | the value included within the set of results/ value to be tested |
+
+####Less Than 
+| Name                  |Type    | Description |
+| ----------------------|--------| ----------- |
+| data_type | String | datatype of the value |
+| value | String | the value included within the set of results/ value to be tested |
+
+####Less Than or Equal 
+| Name                  |Type    | Description |
+| ----------------------|--------| ----------- |
+| data_type | String | datatype of the value |
+| value | String | the value included within the set of results/ value to be tested |
+
+####Greater Than
+| Name                  |Type    | Description |
+| ----------------------|--------| ----------- |
+| data_type | String | datatype of the value |
+| value | String | the value included within the set of results/ value to be tested |
+
+####Greater Than or Equal 
+| Name                  |Type    | Description |
+| ----------------------|--------| ----------- |
+| data_type | String | datatype of the value |
+| value | String | the value included within the set of results/ value to be tested |
 
 data_type
 NOTE: This parameter is governed by a constraint allowing only the following values:

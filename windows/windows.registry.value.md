@@ -52,13 +52,30 @@ NOTE: This parameter is governed by a constraint allowing only the following val
 - equals
 
 ### Test Type Parameters
+####windows.registry.value
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
-| operator | String | The operation to perform on the collected registry values|
+| operator | String | The operation to perform on the collected registry values |
 | value_data_type | String | The data type of the collected value |
 | value | String | The value to compare against the collected registry value |
-| check | String | Determines how many of the collected registry values must satisfy the operator/value test. Typically set to 'at least one'	 |
-| data_type | String | datatype |
+| check | String | Determines how many of the collected registry values must satisfy the operator/value test. Typically set to 'at least one' |
+
+####existence_test
+| Name                  |Type    | Description |
+| ----------------------|--------| ----------- |
+| value | String | the value included within the set of results/ value to be tested |
+
+####equals 
+| Name                  |Type    | Description |
+| ----------------------|--------| ----------- |
+| data_type | String | datatype of the value |
+| value | String | the value included within the set of results/ value to be tested |
+
+####equal
+| Name                  |Type    | Description |
+| ----------------------|--------| ----------- |
+| data_type | String | datatype of the value |
+| value | String | the value included within the set of results/ value to be tested |
 
 data_type/value_data_type
 NOTE: This parameter is governed by a constraint allowing only the following values:

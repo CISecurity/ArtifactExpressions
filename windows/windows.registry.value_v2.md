@@ -67,12 +67,18 @@ NOTE: This parameter is governed by a constraint allowing only the following val
 - existence_test
 
 ### Test Type Parameters
+####windows.registry.value
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
-| operator | String | The operation to perform on the collected registry values|
+| operator | String | The operation to perform on the collected registry values |
 | value_data_type | String | The data type of the collected value |
 | value | String | The value to compare against the collected registry value |
-| check | String | Determines how many of the collected registry values must satisfy the operator/value test. Typically set to 'at least one'	 |
+| check | String | Determines how many of the collected registry values must satisfy the operator/value test. Typically set to 'at least one' |
+
+####existence_test
+| Name                  |Type    | Description |
+| ----------------------|--------| ----------- |
+| value | String | the value included within the set of results/ value to be tested |
 
 value_data_type
 NOTE: This parameter is governed by a constraint allowing only the following values:
