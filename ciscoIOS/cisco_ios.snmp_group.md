@@ -36,16 +36,17 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
             <ae:title>[RECOMMENDATION TITLE]</ae:title>
             <ae:artifact type="[ARTIFACTTYPE NAME]">
                 <ae:parameters>
-                    <ae:parameter dt="string" name="operator">[operator.value]</ae:parameter>
-                    <ae:parameter dt="string" name="neighbor">[neighbor.value]</ae:parameter>
+                    <ae:parameter dt="string" name="cisco_ios.snmp_group_name">[cisco_ios.snmp_group_name.value]</ae:parameter>
+                    <ae:parameter dt="string" name="cisco_ios.snmp_group_op">[cisco_ios.snmp_group_op.value]</ae:parameter>
+                    <ae:parameter dt="string" name="cisco_ios.snmpv3_filter">[cisco_ios.snmpv3_filter.value]</ae:parameter>
                 </ae:parameters>
             </ae:artifact>
             <ae:test type="[TESTTYPE NAME]">
-                <ae:parameters/>
+                <ae:parameters>
+                    <ae:parameter dt="string" name="operator">[operator.value]</ae:parameter>
+                    <ae:parameter dt="string" name="snmpv3_sec_level">[snmpv3_sec_level.value]</ae:parameter>
+                </ae:parameters>
             </ae:test>
-            <ae:profiles>
-                <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_2"/>
-            </ae:profiles>
         </ae:artifact_expression>
     </xccdf:check-content>
 </xccdf:check>
@@ -60,9 +61,9 @@ For `cisco_ios.snmp_group` artifacts, the xccdf:check looks like this.
     <check-export 
         export-name='oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]' 
         value-id='xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var'/>
-        <check-content-ref 
-            href='[BENCHMARK NAME]' 
-            name='oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]'/>
+    <check-content-ref 
+        href='[BENCHMARK NAME]' 
+        name='oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]'/>
 </check>
 ```
 
@@ -70,34 +71,43 @@ For `cisco_ios.snmp_group` artifacts, the xccdf:check looks like this.
 ###### Test
 
 ```
-<bgpneighbor_test xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#ios' 
+<snmpgroup_test 
+    xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#ios' 
     id='oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]'
     check_existence='[check_existence.value]' 
     check='[check.value]' 
-    comment='[RECOMMENDATION TITLE]'>
+    comment='[RECOMMENDATION TITLE]'
+    version='[version.value]'>
     <object object_ref='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'/>
     <state state_ref='oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]'/>
-</bgpneighbor_test>
+</snmpgroup_test>
 ```
 
 ###### Object
 
 ```
-<bgpneighbor_object xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#ios' 
+<snmpgroup_object 
+    xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#ios' 
     id='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'
-    comment='[RECOMMENDATION TITLE]'>
-    <neighbor operation='[operation.value]'>[neighbor.value]</neighbor>
-</bgpneighbor_object>
+    comment='[RECOMMENDATION TITLE]' 
+    version='[version.value]'>
+    <filter 
+        xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5'
+        action='.+'>oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]</filter>
+</snmpgroup_object>
 ```
+
 ###### State
 
 ```
-<bgpneighbor_state xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#ios' 
+<snmpgroup_state 
+    xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#ios' 
     id='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'
-    comment='[RECOMMENDATION TITLE]'>
-    <password operation='[operation.value]' 
-    var_ref='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID'/>
-</bgpneighbor_state>
+    comment='[RECOMMENDATION TITLE]'
+    version='[version.value]'>
+    <snmpv3_sec_level operation='pattern match' 
+        var_ref='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'/>
+</snmpgroup_state>
 ```
 
 #### YAML
@@ -110,16 +120,28 @@ For `cisco_ios.snmp_group` artifacts, the xccdf:check looks like this.
       type: [ARTIFACTTYPE NAME]
       parameters:
       - parameter: 
+          name: cisco_ios.snmp_group_name
+          type: string
+          value: [cisco_ios.snmp_group_name.value]
+      - parameter: 
+          name: cisco_ios.snmp_group_op
+          type: string
+          value: [cisco_ios.snmp_group_op.value]
+      - parameter: 
+          name: cisco_ios.snmpv3_filter
+          type: string
+          value: [cisco_ios.snmpv3_filter.value]
+    test:
+      type: [TESTTYPE NAME]
+      parameters:   
+      - parameter: 
           name: operator
           type: string
           value: [operator.value]
       - parameter: 
-          name: neighbor
+          name: snmpv3_sec_level
           type: string
-          value: [neighbor.value]
-    test:
-      type: [TESTTYPE NAME]
-      parameters:   
+          value: [snmpv3_sec_level.value]
 ```
 
 #### JSON
@@ -140,19 +162,28 @@ For `cisco_ios.snmp_group` artifacts, the xccdf:check looks like this.
         "parameters": [
           {
             "parameter": {
-              "name": "operator",
+              "name": "cisco_ios.snmp_group_name",
               "type": "string",
               "value": [
-                "operator.value"
+                "cisco_ios.snmp_group_name.value"
               ]
             }
           },
           {
             "parameter": {
-              "name": "neighbor",
+              "name": "cisco_ios.snmp_group_op",
               "type": "string",
               "value": [
-                "neighbor.value"
+                "cisco_ios.snmp_group_op.value"
+              ]
+            }
+          },
+          {
+            "parameter": {
+              "name": "cisco_ios.snmpv3_filter",
+              "type": "string",
+              "value": [
+                "cisco_ios.snmpv3_filter.value"
               ]
             }
           }
@@ -162,7 +193,26 @@ For `cisco_ios.snmp_group` artifacts, the xccdf:check looks like this.
         "type": [
           "TESTTYPE NAME"
         ],
-        "parameters": null
+        "parameters": [
+          {
+            "parameter": {
+              "name": "operator",
+              "type": "string",
+              "value": [
+                "operator.value"
+              ]
+            }
+          },
+          {
+            "parameter": {
+              "name": "snmpv3_sec_level",
+              "type": "string",
+              "value": [
+                "snmpv3_sec_level.value"
+              ]
+            }
+          }
+        ]
       }
     }
   }

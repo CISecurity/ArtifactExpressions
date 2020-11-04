@@ -40,17 +40,14 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
             <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
             <ae:title>[RECOMMENDATION TITLE]</ae:title>
             <ae:artifact type="[ARTIFACTTYPE NAME]">
-                <ae:parameters>
-                    <ae:parameter dt="string" name="operator">[operator.value]</ae:parameter>
-                    <ae:parameter dt="string" name="neighbor">[neighbor.value]</ae:parameter>
-                </ae:parameters>
+                <ae:parameters/>
             </ae:artifact>
             <ae:test type="[TESTTYPE NAME]">
-                <ae:parameters/>
+                <ae:parameters>
+                    <ae:parameter dt="string" name="operator">[operator.value]</ae:parameter>
+                    <ae:parameter dt="string" name="access_list">[access_list.value]</ae:parameter>
+                </ae:parameters>
             </ae:test>
-            <ae:profiles>
-                <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_2"/>
-            </ae:profiles>
         </ae:artifact_expression>
     </xccdf:check-content>
 </xccdf:check>
@@ -65,9 +62,9 @@ For `cisco_ios.snmp` artifacts, the xccdf:check looks like this.
     <check-export 
         export-name='oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]' 
         value-id='xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var'/>
-        <check-content-ref 
-            href='[BENCHMARK NAME]' 
-            name='oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]'/>
+    <check-content-ref 
+        href='[BENCHMARK NAME]' 
+        name='oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]'/>
 </check>
 ```
 
@@ -75,34 +72,39 @@ For `cisco_ios.snmp` artifacts, the xccdf:check looks like this.
 ###### Test
 
 ```
-<bgpneighbor_test xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#ios' 
+<snmp_test 
+    xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#ios' 
     id='oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]'
     check_existence='[check_existence.value]' 
     check='[check.value]' 
-    comment='[RECOMMENDATION TITLE]'>
+    comment='[RECOMMENDATION TITLE]'
+    version='[version.value]'>
     <object object_ref='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'/>
     <state state_ref='oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]'/>
-</bgpneighbor_test>
+</snmp_test>
 ```
 
 ###### Object
 
 ```
-<bgpneighbor_object xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#ios' 
+<snmp_object 
+    xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#ios' 
     id='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'
     comment='[RECOMMENDATION TITLE]'>
-    <neighbor operation='[operation.value]'>[neighbor.value]</neighbor>
-</bgpneighbor_object>
+    version='[version.value]'/>
+</snmp_object>
 ```
 ###### State
 
 ```
-<bgpneighbor_state xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#ios' 
+<snmp_state 
+    xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#ios' 
     id='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'
-    comment='[RECOMMENDATION TITLE]'>
-    <password operation='[operation.value]' 
-    var_ref='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID'/>
-</bgpneighbor_state>
+    comment='[RECOMMENDATION TITLE]'
+    version='[version.value]'>
+    <access_list operation='[operation.value]' 
+        var_ref='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'/>
+</snmp_state>
 ```
 
 #### YAML
@@ -114,17 +116,17 @@ For `cisco_ios.snmp` artifacts, the xccdf:check looks like this.
     artifact:
       type: [ARTIFACTTYPE NAME]
       parameters:
+    test:
+      type: [TESTTYPE NAME]
+      parameters:  
       - parameter: 
           name: operator
           type: string
           value: [operator.value]
       - parameter: 
-          name: neighbor
+          name: access_list
           type: string
-          value: [neighbor.value]
-    test:
-      type: [TESTTYPE NAME]
-      parameters:   
+          value: [access_list.value] 
 ```
 
 #### JSON
@@ -142,6 +144,12 @@ For `cisco_ios.snmp` artifacts, the xccdf:check looks like this.
         "type": [
           "ARTIFACTTYPE NAME"
         ],
+        "parameters": null
+      },
+      "test": {
+        "type": [
+          "TESTTYPE NAME"
+        ],
         "parameters": [
           {
             "parameter": {
@@ -154,20 +162,14 @@ For `cisco_ios.snmp` artifacts, the xccdf:check looks like this.
           },
           {
             "parameter": {
-              "name": "neighbor",
+              "name": "access_list",
               "type": "string",
               "value": [
-                "neighbor.value"
+                "access_list.value"
               ]
             }
           }
         ]
-      },
-      "test": {
-        "type": [
-          "TESTTYPE NAME"
-        ],
-        "parameters": null
       }
     }
   }

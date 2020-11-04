@@ -34,17 +34,15 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
             <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
             <ae:title>[RECOMMENDATION TITLE]</ae:title>
             <ae:artifact type="[ARTIFACTTYPE NAME]">
-                <ae:parameters>
-                    <ae:parameter dt="string" name="operator">[operator.value]</ae:parameter>
-                    <ae:parameter dt="string" name="neighbor">[neighbor.value]</ae:parameter>
-                </ae:parameters>
+                <ae:parameters/>
             </ae:artifact>
             <ae:test type="[TESTTYPE NAME]">
-                <ae:parameters/>
+                <ae:parameters>
+                    <ae:parameter dt="string" name="entity_check">[entity_check.value]</ae:parameter>
+                    <ae:parameter dt="string" name="operation">[operation.value]</ae:parameter>
+                    <ae:parameter dt="string" name="section_config_line">[section_config_line.value]</ae:parameter>
+                </ae:parameters>
             </ae:test>
-            <ae:profiles>
-                <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_2"/>
-            </ae:profiles>
         </ae:artifact_expression>
     </xccdf:check-content>
 </xccdf:check>
@@ -59,9 +57,9 @@ For `cisco_ios.section_custom_router_ospf` artifacts, the xccdf:check looks like
     <check-export 
         export-name='oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]' 
         value-id='xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var'/>
-        <check-content-ref 
-            href='[BENCHMARK NAME]' 
-            name='oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]'/>
+    <check-content-ref 
+        href='[BENCHMARK NAME]' 
+        name='oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]'/>
 </check>
 ```
 
@@ -69,34 +67,48 @@ For `cisco_ios.section_custom_router_ospf` artifacts, the xccdf:check looks like
 ###### Test
 
 ```
-<bgpneighbor_test xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#ios' 
+<section_test 
+    xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#ios' 
     id='oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]'
     check_existence='[check_existence.value]' 
     check='[check.value]' 
-    comment='[RECOMMENDATION TITLE]'>
+    comment='[RECOMMENDATION TITLE]'
+    version='[version.value]'>
     <object object_ref='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'/>
     <state state_ref='oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]'/>
-</bgpneighbor_test>
+</section_test>
 ```
 
 ###### Object
 
 ```
-<bgpneighbor_object xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#ios' 
+<section_object 
+    xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#ios' 
     id='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'
-    comment='[RECOMMENDATION TITLE]'>
-    <neighbor operation='[operation.value]'>[neighbor.value]</neighbor>
-</bgpneighbor_object>
+    comment='[RECOMMENDATION TITLE]'
+    version='[version.value]'>
+    <section_command>[section_command.value]</section_command>
+</section_object>
+<router_object 
+    xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#ios' 
+    id='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'
+    comment='[RECOMMENDATION TITLE]'
+    version='[version.value]'>
+    <protocol>OSPF</protocol>
+    <id datatype='[datatype.value]' operation='[operation.value]'>0</id>
+</router_object>
 ```
 ###### State
 
 ```
-<bgpneighbor_state xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#ios' 
+<section_state
+    xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#ios' 
     id='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'
-    comment='[RECOMMENDATION TITLE]'>
-    <password operation='[operation.value]' 
-    var_ref='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID'/>
-</bgpneighbor_state>
+    comment='[RECOMMENDATION TITLE]'
+    version='[version.value]'>
+    <config_line entity_check='[entity_check.value]' operation='[operation.value]' 
+        var_ref='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]/>
+</section_state>
 ```
 
 #### YAML
@@ -108,17 +120,21 @@ For `cisco_ios.section_custom_router_ospf` artifacts, the xccdf:check looks like
     artifact:
       type: [ARTIFACTTYPE NAME]
       parameters:
-      - parameter: 
-          name: operator
-          type: string
-          value: [operator.value]
-      - parameter: 
-          name: neighbor
-          type: string
-          value: [neighbor.value]
     test:
       type: [TESTTYPE NAME]
-      parameters:   
+      parameters: 
+      - parameter: 
+          name: entity_check
+          type: string
+          value: [entity_check.value]
+      - parameter: 
+          name: operation
+          type: string
+          value: [operation.value]  
+      - parameter: 
+          name: section_config_line
+          type: string
+          value: [section_config_line.value] 
 ```
 
 #### JSON
@@ -136,32 +152,41 @@ For `cisco_ios.section_custom_router_ospf` artifacts, the xccdf:check looks like
         "type": [
           "ARTIFACTTYPE NAME"
         ],
-        "parameters": [
-          {
-            "parameter": {
-              "name": "operator",
-              "type": "string",
-              "value": [
-                "operator.value"
-              ]
-            }
-          },
-          {
-            "parameter": {
-              "name": "neighbor",
-              "type": "string",
-              "value": [
-                "neighbor.value"
-              ]
-            }
-          }
-        ]
+        "parameters": null
       },
       "test": {
         "type": [
           "TESTTYPE NAME"
         ],
-        "parameters": null
+        "parameters": [
+          {
+            "parameter": {
+              "name": "entity_check",
+              "type": "string",
+              "value": [
+                "entity_check.value"
+              ]
+            }
+          },
+          {
+            "parameter": {
+              "name": "operation",
+              "type": "string",
+              "value": [
+                "operation.value"
+              ]
+            }
+          },
+          {
+            "parameter": {
+              "name": "section_config_line",
+              "type": "string",
+              "value": [
+                "section_config_line.value"
+              ]
+            }
+          }
+        ]
       }
     }
   }

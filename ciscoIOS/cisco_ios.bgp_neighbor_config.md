@@ -58,9 +58,9 @@ For `cisco_ios.bgp_neighbor_config` artifacts, the xccdf:check looks like this.
     <check-export 
         export-name='oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]' 
         value-id='xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var'/>
-        <check-content-ref 
-            href='[BENCHMARK NAME]' 
-            name='oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]'/>
+    <check-content-ref 
+        href='[BENCHMARK NAME]' 
+        name='oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]'/>
 </check>
 ```
 
@@ -68,7 +68,8 @@ For `cisco_ios.bgp_neighbor_config` artifacts, the xccdf:check looks like this.
 ###### Test
 
 ```
-<bgpneighbor_test xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#ios' 
+<bgpneighbor_test 
+    xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#ios' 
     id='oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]'
     check_existence='[check_existence.value]' 
     check='[check.value]' 
@@ -81,7 +82,8 @@ For `cisco_ios.bgp_neighbor_config` artifacts, the xccdf:check looks like this.
 ###### Object
 
 ```
-<bgpneighbor_object xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#ios' 
+<bgpneighbor_object 
+    xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#ios' 
     id='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'
     comment='[RECOMMENDATION TITLE]'>
     <neighbor operation='[operation.value]'>[neighbor.value]</neighbor>
@@ -90,11 +92,12 @@ For `cisco_ios.bgp_neighbor_config` artifacts, the xccdf:check looks like this.
 ###### State
 
 ```
-<bgpneighbor_state xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#ios' 
+<bgpneighbor_state 
+    xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#ios' 
     id='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'
     comment='[RECOMMENDATION TITLE]'>
     <password operation='[operation.value]' 
-    var_ref='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID'/>
+        var_ref='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'/>
 </bgpneighbor_state>
 ```
 

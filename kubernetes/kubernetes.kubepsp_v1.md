@@ -81,12 +81,9 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
             <ae:title>[RECOMMENDATION TITLE]</ae:title>
             <ae:artifact type="[ARTIFACTTYPE NAME]">
                 <ae:parameters> 
-                    <ae:parameter dt="string" name="psp_name"
-                        >[psp_name.value]</ae:parameter>
-                    <ae:parameter dt="string" name="psp_operation"
-                        >[psp_operation.value]</ae:parameter>
-                    <ae:parameter dt="string" name="yaml_path"
-                        >[yaml_path.value]</ae:parameter>
+                    <ae:parameter dt="string" name="psp_name">[psp_name.value]</ae:parameter>
+                    <ae:parameter dt="string" name="psp_operation">[psp_operation.value]</ae:parameter>
+                    <ae:parameter dt="string" name="yaml_path">[yaml_path.value]</ae:parameter>
                 </ae:parameters>
             </ae:artifact>  
                 <ae:test type="[TESTTYPE NAME]">

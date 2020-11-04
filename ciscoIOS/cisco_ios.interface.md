@@ -45,26 +45,32 @@ TBD
 This is what the AE check looks like, inside a Rule, in the XCCDF
 
 ```
-<xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
-    <xccdf:check-content>
-        <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION_NUMBER]">
-            <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-            <ae:title>[RECOMMENDATION TITLE]</ae:title>
-            <ae:artifact type="[ARTIFACTTYPE NAME]">
-                <ae:parameters>
-                    <ae:parameter dt="string" name="operator">[operator.value]</ae:parameter>
-                    <ae:parameter dt="string" name="neighbor">[neighbor.value]</ae:parameter>
-                </ae:parameters>
-            </ae:artifact>
-            <ae:test type="[TESTTYPE NAME]">
-                <ae:parameters/>
-            </ae:test>
-            <ae:profiles>
-                <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_2"/>
-            </ae:profiles>
-        </ae:artifact_expression>
-    </xccdf:check-content>
-</xccdf:check>
+<xccdf:complex-check operator="AND">
+		<xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
+			<xccdf:check-content>
+				<ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION_NUMBER]">
+					<ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
+					<ae:title>[RECOMMENDATION TITLE]</ae:title>
+					<ae:artifact type="[ARTIFACTTYPE NAME]">
+						<ae:parameters>
+                            <ae:parameter dt="string" name="cisco_ios.interface_name">[cisco_ios.interface_name.value]</ae:parameter>
+							<ae:parameter dt="string" name="operation">[operation.value]</ae:parameter>
+						</ae:parameters>
+					</ae:artifact>
+					<ae:test type="[TESTTYPE NAME]">
+						<ae:parameters>
+							<ae:parameter dt="string" name="existence_check">[existence_check.value]</ae:parameter>
+							<ae:parameter dt="string" name="operator">[operator.value]</ae:parameter>
+							<ae:parameter dt="string" name="interface_name">[interface_name.value]</ae:parameter>
+						</ae:parameters>
+					</ae:test>
+					<ae:profiles>
+						<ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_2"/>
+					</ae:profiles>
+				</ae:artifact_expression>
+			</xccdf:check-content>
+		</xccdf:check>
+</xccdf:complex-check>
 ```
 
 #### SCAP
@@ -72,13 +78,10 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
 For `cisco_ios.interface` artifacts, the xccdf:check looks like this. 
 
 ```
-<check system='http://oval.mitre.org/XMLSchema/oval-definitions-5'>            
-    <check-export 
-        export-name='oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]' 
-        value-id='xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var'/>
-        <check-content-ref 
-            href='[BENCHMARK NAME]' 
-            name='oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]'/>
+<check system='http://oval.mitre.org/XMLSchema/oval-definitions-5'>
+    <check-content-ref 
+        href='[BENCHMARK NAME]' 
+        name='oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]'/>
 </check>
 ```
 
@@ -86,34 +89,39 @@ For `cisco_ios.interface` artifacts, the xccdf:check looks like this.
 ###### Test
 
 ```
-<bgpneighbor_test xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#ios' 
+<interface_test 
+    xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#ios' 
     id='oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]'
     check_existence='[check_existence.value]' 
     check='[check.value]' 
     comment='[RECOMMENDATION TITLE]'>
+    version='[version.value]'>
     <object object_ref='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'/>
-    <state state_ref='oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]'/>
-</bgpneighbor_test>
+</interface_test>
 ```
 
 ###### Object
 
 ```
-<bgpneighbor_object xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#ios' 
+<interface_object 
+    xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#ios' 
     id='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'
     comment='[RECOMMENDATION TITLE]'>
-    <neighbor operation='[operation.value]'>[neighbor.value]</neighbor>
-</bgpneighbor_object>
+    version='[version.value]'>
+    <name operation='[operation.value]'>[name.value]</name>
+</interface_object>
 ```
 ###### State
 
 ```
-<bgpneighbor_state xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#ios' 
+<interface_state 
+    xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#ios' 
     id='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'
-    comment='[RECOMMENDATION TITLE]'>
-    <password operation='[operation.value]' 
-    var_ref='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID'/>
-</bgpneighbor_state>
+    comment='[RECOMMENDATION TITLE]'
+    version='[version.value]'>
+    <proxy_arp_command operation='[operation.value]' 
+        var_ref='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'/>
+</interface_state>
 ```
 
 #### YAML
@@ -126,16 +134,28 @@ For `cisco_ios.interface` artifacts, the xccdf:check looks like this.
       type: [ARTIFACTTYPE NAME]
       parameters:
       - parameter: 
+          name: cisco_ios.interface_name
+          type: string
+          value: [cisco_ios.interface_name.value]
+      - parameter: 
+          name: operation
+          type: string
+          value: [operation.value]
+    test:
+      type: [TESTTYPE NAME]
+      parameters:   
+      - parameter: 
+          name: existence_check
+          type: string
+          value: [existence_check.value]
+      - parameter: 
           name: operator
           type: string
           value: [operator.value]
       - parameter: 
-          name: neighbor
+          name: interface_name
           type: string
-          value: [neighbor.value]
-    test:
-      type: [TESTTYPE NAME]
-      parameters:   
+          value: [interface_name.value]
 ```
 
 #### JSON
@@ -156,19 +176,19 @@ For `cisco_ios.interface` artifacts, the xccdf:check looks like this.
         "parameters": [
           {
             "parameter": {
-              "name": "operator",
+              "name": "cisco_ios.interface_name",
               "type": "string",
               "value": [
-                "operator.value"
+                "cisco_ios.interface_name.value"
               ]
             }
           },
           {
             "parameter": {
-              "name": "neighbor",
+              "name": "operation",
               "type": "string",
               "value": [
-                "neighbor.value"
+                "operation.value"
               ]
             }
           }
@@ -178,7 +198,35 @@ For `cisco_ios.interface` artifacts, the xccdf:check looks like this.
         "type": [
           "TESTTYPE NAME"
         ],
-        "parameters": null
+        "parameters": [
+          {
+            "parameter": {
+              "name": "existence_check",
+              "type": "string",
+              "value": [
+                "existence_check.value"
+              ]
+            }
+          },
+          {
+            "parameter": {
+              "name": "operator",
+              "type": "string",
+              "value": [
+                "operator.value"
+              ]
+            }
+          },
+          {
+            "parameter": {
+              "name": "interface_name",
+              "type": "string",
+              "value": [
+                "interface_name.value"
+              ]
+            }
+          }
+        ]
       }
     }
   }
