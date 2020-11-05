@@ -1,7 +1,7 @@
 # cisco_ios.bgp_neighbor_config
 
 ## Description
-The cisco_ios.bgp_neighbor_config is used to TBD
+The cisco_ios.bgp_neighbor_config is used to check the bgp neighbpr properties of bgp instances in IOS.
 
 ## Intent
 TBD

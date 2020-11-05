@@ -1,7 +1,7 @@
 # cisco_ios.snmp_community
 
 ## Description
-The cisco_ios.snmp_community is used to TBD
+The cisco_ios.snmp_community is used to check the properties of specific output lines from an SNMP configuration.
 
 ## Intent
 TBD
@@ -29,6 +29,22 @@ TBD
 | ----------------------|--------| ----------- |
 | operation | String | Comparison Operator. |
 | mode | String | The read-write privileges of the community. |
+
+operation
+NOTE: This parameter is governed by a constraint allowing only the following values:
+- equals
+- not equal
+- case insensitive equals
+- case insensitive not equal
+- greater than
+- less than
+- greater than or equal
+- less than or equal
+- bitwise and
+- bitwise or
+- pattern match
+- subset of
+- superset of
 
 #### cisco_ios.snmp_community_ipv4_acl
 | Name                  |Type    | Description |

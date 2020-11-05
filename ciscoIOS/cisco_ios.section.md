@@ -1,7 +1,7 @@
 # cisco_ios.section
 
 ## Description
-The cisco_ios.section is used to TBD
+The cisco_ios.section is used to check the properties of specific output lines from a configuration section.
 
 ## Intent
 TBD
@@ -22,6 +22,15 @@ TBD
 | ----------------------|--------| ----------- |
 | existence_check | String | Number of sections expected to be collected. |
 
+existence_check
+NOTE: This parameter is governed by a constraint allowing only the following values:
+- all_exist
+- any_exist
+- at_least_one_exists
+- none_satisfy
+- none_exist
+- only_one_exists
+
 #### cisco_ios.section_config_line
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
@@ -29,7 +38,29 @@ TBD
 | operation | String | Comparison Operator. |
 | entity_check | String | The number of section configuration lines which must match the expected state. |
 
-   
+ operation
+ NOTE: This parameter is governed by a constraint allowing only the following values:
+ - equals
+ - not equal
+ - case insensitive equals
+ - case insensitive not equal
+ - greater than
+ - less than
+ - greater than or equal
+ - less than or equal
+ - bitwise and
+ - bitwise or
+ - pattern match
+ - subset of
+ - superset of
+ 
+ entity_check
+ NOTE: This parameter is governed by a constraint allowing only the following values:
+- all_exist
+- any_exist
+- at_least_one_exists
+- none_exist
+- only_one_exists
 
 ### Generated Content
 #### XCCDF+AE

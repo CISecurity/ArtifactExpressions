@@ -1,7 +1,7 @@
 # cisco_ios.snmp_host
 
 ## Description
-The cisco_ios.snmp_host is used to TBD
+The cisco_ios.snmp_host is used to check the properties of specific output lines from an SNMP configuration.
 
 ## Intent
 TBD

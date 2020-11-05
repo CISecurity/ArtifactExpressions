@@ -1,7 +1,7 @@
 # cisco_ios.routing_protocol_auth_intf
 
 ## Description
-The cisco_ios.routing_protocol_auth_intf is used to TBD
+The cisco_ios.routing_protocol_auth_intf is used to check the properties of routing protocol authentication configured under interfaces in IOS.
 
 ## Intent
 TBD

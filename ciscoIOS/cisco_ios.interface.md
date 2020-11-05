@@ -1,7 +1,7 @@
 # cisco_ios.interface
 
 ## Description
-The cisco_ios.interface is used to TBD
+The cisco_ios.interface test enumerate various attributes about the interfaces on a system. It extends the standard TestType as defined in the oval-definitions-schema and one should refer to the TestType description for more information. The required object element references an interface_object and the optional state element specifies the interface information to check.
 
 ## Intent
 TBD
@@ -13,6 +13,21 @@ TBD
 | cisco_ios.interface_name | String | The name of the IOS interface to be tested. |
 | operation | String | The operator defining how to collect the IOS interface(s). |
 
+operation
+NOTE: This parameter is governed by a constraint allowing only the following values:
+- equals
+- not equal
+- case insensitive equals
+- case insensitive not equal
+- greater than
+- less than
+- greater than or equal
+- less than or equal
+- bitwise and
+- bitwise or
+- pattern match
+- subset of
+- superset of
 
 ### Supported Test Types
 - cisco_ios.interface_existence_test
@@ -27,11 +42,36 @@ TBD
 | operator | String | Interface Name comparison operator. |
 | interface_name | String | The interface name. |
 
+existence_check
+NOTE: This parameter is governed by a constraint allowing only the following values:
+- all_exist
+- any_exist
+- at_least_one_exists
+- none_satisfy
+- none_exist
+- only_one_exists
+
 #### cisco_ios.interface_proxy_arp
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
 | operation | String | Comparison Operator. |
 | proxy_arp_enabled | String | True if the proxy_arp command is enabled on the interface. The default is true. |
+
+operation
+NOTE: This parameter is governed by a constraint allowing only the following values:
+- equals
+- not equal
+- case insensitive equals
+- case insensitive not equal
+- greater than
+- less than
+- greater than or equal
+- less than or equal
+- bitwise and
+- bitwise or
+- pattern match
+- subset of
+- superset of
 
 #### cisco_ios.interface_urpf
 | Name                  |Type    | Description |

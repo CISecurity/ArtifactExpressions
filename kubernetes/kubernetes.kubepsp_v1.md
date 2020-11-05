@@ -1,7 +1,7 @@
 # kubernetes.kubepsp_v1
 
 ## Description
-The kubernetes.kubepsp_v1 is used to TBD
+The kubernetes.kubepsp_v1 is used to check the properties of the Pod Security Policy (PSP)
 
 ## Intent
 TBD

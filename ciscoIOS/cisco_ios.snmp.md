@@ -1,7 +1,7 @@
 # cisco_ios.snmp
 
 ## Description
-The cisco_ios.snmp is used to TBD
+The cisco_ios.snmp is used to check the properties of specific output lines from an SNMP configuration.
 
 ## Intent
 TBD

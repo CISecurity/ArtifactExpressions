@@ -1,7 +1,7 @@
 # cisco_ios.line_v2
 
 ## Description
-The cisco_ios.line_v2 is used to TBD
+The cisco_ios.line_v2 is used to check the properties of specific output lines from an SNMP configuration.
 
 ## Intent
 TBD
@@ -22,6 +22,22 @@ TBD
 | config_line | String | The collected configuration line. |
 | filter | String | Filter. |
 | filter_action | String | Filter action. |
+
+operation
+NOTE: This parameter is governed by a constraint allowing only the following values:
+- equals
+- not equal
+- case insensitive equals
+- case insensitive not equal
+- greater than
+- less than
+- greater than or equal
+- less than or equal
+- bitwise and
+- bitwise or
+- pattern match
+- subset of
+- superset of
    
 
 ### Generated Content

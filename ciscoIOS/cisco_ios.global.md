@@ -1,7 +1,7 @@
 # cisco_ios.global
 
 ## Description
-The cisco_ios.global is used to TBD
+The cisco_ios.global is used to check for the existence of a particular line in the IOS-XE config file under the global context. It extends the standard TestType as defined in the oval-definitions-schema and one should refer to the TestType description for more information. The required object element references a global_object and the optional state element specifies the data to check.
 
 ## Intent
 TBD
@@ -22,6 +22,14 @@ TBD
 | global_command | String | The global_command entity identifies a specific line in the ios config file under the global context. |
 | existence_check | String | Number of global config lines required in the result. |
    
+existence_check
+NOTE: This parameter is governed by a constraint allowing only the following values:
+- all_exist
+- any_exist
+- at_least_one_exists
+- none_satisfy
+- none_exist
+- only_one_exists
 
 ### Generated Content
 #### XCCDF+AE

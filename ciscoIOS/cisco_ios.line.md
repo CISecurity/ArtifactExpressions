@@ -1,7 +1,7 @@
 # cisco_ios.line
 
 ## Description
-The cisco_ios.line is used to TBD
+The cisco_ios.line is used to check the properties of specific output lines from a SHOW command, such as SHOW RUNNING-CONFIG. It extends the standard TestType as defined in the oval-definitions-schema and one should refer to the TestType description for more information. The required object element references a line_object and the optional state element specifies the data to check.
 
 ## Intent
 TBD
@@ -20,7 +20,22 @@ TBD
 | ----------------------|--------| ----------- |
 | operation | String | Comparison Operator. |
 | config_line | String | The collected configuration line. |
-   
+  
+operation
+NOTE: This parameter is governed by a constraint allowing only the following values:
+- equals
+- not equal
+- case insensitive equals
+- case insensitive not equal
+- greater than
+- less than
+- greater than or equal
+- less than or equal
+- bitwise and
+- bitwise or
+- pattern match
+- subset of
+- superset of 
 
 ### Generated Content
 #### XCCDF+AE

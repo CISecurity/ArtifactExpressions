@@ -1,7 +1,7 @@
 # cisco_ios.snmp_user
 
 ## Description
-The cisco_ios.snmp_user is used to TBD
+The cisco_ios.snmp_user is used to check the properties of specific output lines from an SNMP user configuration.
 
 ## Intent
 TBD

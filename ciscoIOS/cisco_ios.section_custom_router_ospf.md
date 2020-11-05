@@ -1,7 +1,7 @@
 # cisco_ios.section_custom_router_ospf
 
 ## Description
-The cisco_ios.section_custom_router_ospf is used to TBD
+The cisco_ios.section_custom_router_ospf is used to check section custom router ospf authentication
 
 ## Intent
 TBD
@@ -21,7 +21,30 @@ TBD
 | entity_check | String | The number of section configuration lines which must match the expected state. |
 | operation | String | Comparison Operator. |
 | section_config_line | String | One config line of the collected configuration section. |
-   
+  
+entity_check
+NOTE: This parameter is governed by a constraint allowing only the following values:
+- all_exist
+- any_exist
+- at_least_one_exists
+- none_exist
+- only_one_exists
+
+ operation
+ NOTE: This parameter is governed by a constraint allowing only the following values:
+ - equals
+ - not equal
+ - case insensitive equals
+ - case insensitive not equal
+ - greater than
+ - less than
+ - greater than or equal
+ - less than or equal
+ - bitwise and
+ - bitwise or
+ - pattern match
+ - subset of
+ - superset of
 
 ### Generated Content
 #### XCCDF+AE

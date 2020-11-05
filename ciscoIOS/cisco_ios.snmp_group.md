@@ -1,7 +1,7 @@
 # cisco_ios.snmp_group
 
 ## Description
-The cisco_ios.snmp_group is used to TBD
+The cisco_ios.snmp_group is used to check the properties of specific output lines from an SNMP group configuration.
 
 ## Intent
 TBD
@@ -23,6 +23,11 @@ TBD
 | operator | String | Comparison Operator. |
 | snmpv3_sec_level | String | The SNMPv3 security configured for the group. |
 
+snmpv3_sec_level
+NOTE: This parameter is governed by a constraint allowing only the following values:
+- PRIV
+- AUTH
+- NO_AUTH
 
 ### Generated Content
 #### XCCDF+AE
