@@ -58,9 +58,6 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
                     <ae:parameter dt="string" name="config_line">[config_line.value]</ae:parameter>
                 </ae:parameters>
             </ae:test>
-            <ae:profiles>
-                <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_2"/>
-            </ae:profiles>
         </ae:artifact_expression>
     </xccdf:check-content>
 </xccdf:check>

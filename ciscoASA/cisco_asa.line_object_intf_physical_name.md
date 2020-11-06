@@ -1,7 +1,7 @@
-# cisco_ios.line
+# cisco_asa.line_object_intf_physical_name
 
 ## Description
-The cisco_ios.line is used to check the properties of specific output lines from a SHOW command, such as SHOW RUNNING-CONFIG. It extends the standard TestType as defined in the oval-definitions-schema and one should refer to the TestType description for more information. The required object element references a line_object and the optional state element specifies the data to check.
+The cisco_asa.line_object_intf_physical_name is used to check the properties of specific output lines.
 
 ## Intent
 TBD
@@ -10,16 +10,18 @@ TBD
 ### Artifact Parameters
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
-| cisco_ios.show_subcommand | String | The name of a SHOW sub-command. This value can either start with the word. |
+| show_run_command_prefix | String | Show Run command prefix. |
+| show_run_command_suffix | String | Show Run Command Suffix. |
 
 ### Supported Test Types
-- cisco_ios.line_config_line
+- cisco_asa.line_config_line
 
 ### Test Type Parameters
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
 | operation | String | Comparison Operator. |
 | config_line | String | The collected configuration line. |
+| check | String | Check enumeration value. |
   
 operation
 NOTE: This parameter is governed by a constraint allowing only the following values:
@@ -37,6 +39,13 @@ NOTE: This parameter is governed by a constraint allowing only the following val
 - subset of
 - superset of 
 
+check
+NOTE: This parameter is governed by a constraint allowing only the following values:
+- all
+- at least one
+- none satisfy
+- only one
+
 ### Generated Content
 #### XCCDF+AE
 This is what the AE check looks like, inside a Rule, in the XCCDF
@@ -49,18 +58,17 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
             <ae:title>[RECOMMENDATION TITLE]</ae:title>
             <ae:artifact type="[ARTIFACTTYPE NAME]">
                 <ae:parameters>
-                    <ae:parameter dt="string" name="cisco_ios.show_subcommand">[cisco_ios.show_subcommand.value]</ae:parameter>
+                    <ae:parameter dt="string" name="show_run_command_prefix">[show_run_command_prefix.value]</ae:parameter>
+                    <ae:parameter dt="string" name="show_run_command_suffix">[show_run_command_suffix.value]</ae:parameter>
                 </ae:parameters>
             </ae:artifact>
             <ae:test type="[TESTTYPE NAME]">
                 <ae:parameters>
                     <ae:parameter dt="string" name="operation">[operation.value]</ae:parameter>
                     <ae:parameter dt="string" name="config_line">[config_line.value]</ae:parameter>
+                    <ae:parameter dt="string" name="check">[check.value]</ae:parameter>
                 </ae:parameters>
             </ae:test>
-            <ae:profiles>
-                <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_2"/>
-            </ae:profiles>
         </ae:artifact_expression>
     </xccdf:check-content>
 </xccdf:check>
@@ -68,7 +76,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
 
 #### SCAP
 ##### XCCDF
-For `cisco_ios.line` artifacts, the xccdf:check looks like this. 
+For `cisco_asa.line_object_intf_physical_name` artifacts, the xccdf:check looks like this. 
 
 ```
 <check system='http://oval.mitre.org/XMLSchema/oval-definitions-5'>
@@ -105,7 +113,7 @@ For `cisco_ios.line` artifacts, the xccdf:check looks like this.
     id='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'
     comment='[RECOMMENDATION TITLE]'>
     version='[version.value]'>
-    <show_subcommand operation='[operation.value]'>[show_subcommand.value]</show_subcommand>
+    <show_subcommand>[show_subcommand.value]</show_subcommand>
 </line_object>
 ```
 ###### State
@@ -117,6 +125,7 @@ For `cisco_ios.line` artifacts, the xccdf:check looks like this.
     comment='[RECOMMENDATION TITLE]'>
     version='[version.value]'>
     <config_line operation='[operation.value]' 
+        var_check='[var_check.value]'
         var_ref='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'/>
 </line_state>
 ```
@@ -131,9 +140,13 @@ For `cisco_ios.line` artifacts, the xccdf:check looks like this.
       type: [ARTIFACTTYPE NAME]
       parameters:
       - parameter: 
-          name: cisco_ios.show_subcommand
+          name: show_run_command_prefix
           type: string
-          value: [cisco_ios.show_subcommand.value]
+          value: [show_run_command_prefix.value]
+      - parameter: 
+          name: show_run_command_suffix
+          type: string
+          value: [show_run_command_suffix.value]
     test:
       type: [TESTTYPE NAME]
       parameters:   
@@ -145,6 +158,10 @@ For `cisco_ios.line` artifacts, the xccdf:check looks like this.
            name: config_line
            type: string
            value: [config_line.value]
+      - parameter: 
+           name: check
+           type: string
+           value: check_line.value]
 ```
 
 #### JSON
@@ -165,10 +182,19 @@ For `cisco_ios.line` artifacts, the xccdf:check looks like this.
         "parameters": [
           {
             "parameter": {
-              "name": "cisco_ios.show_subcommand",
+              "name": "show_run_command_prefix",
               "type": "string",
               "value": [
-                "cisco_ios.show_subcommand.value"
+                "show_run_command_prefix.value"
+              ]
+            }
+          },
+          {
+            "parameter": {
+              "name": "show_run_command_suffix",
+              "type": "string",
+              "value": [
+                "show_run_command_suffix.value"
               ]
             }
           }
@@ -195,6 +221,13 @@ For `cisco_ios.line` artifacts, the xccdf:check looks like this.
               "value": [
                 "config_line.value"
               ]
+            }
+          },
+          {
+            "parameter": {
+              "name": "check",
+              "type": "string",
+              "value": "check_line.value]"
             }
           }
         ]
