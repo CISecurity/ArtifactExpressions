@@ -1,7 +1,7 @@
-# cisco_ios.line
+# cisco_asa.snmp_host_object
 
 ## Description
-The cisco_ios.line is used to check the properties of specific output lines from a SHOW command, such as SHOW RUNNING-CONFIG. It extends the standard TestType as defined in the oval-definitions-schema and one should refer to the TestType description for more information. The required object element references a line_object and the optional state element specifies the data to check.
+The cisco_asa.snmp_host_object is used to check the properties of specific output lines from an SNMP configuration.
 
 ## Intent
 TBD
@@ -10,32 +10,18 @@ TBD
 ### Artifact Parameters
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
-| cisco_ios.show_subcommand | String | The name of a SHOW sub-command. This value can either start with the word. |
+| host | String | The SNMP host address or host name. |
+| operator | String | Comparison Operator. |
 
 ### Supported Test Types
-- cisco_ios.line_config_line
+- cisco_asa.snmp_host_version
 
 ### Test Type Parameters
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
-| operation | String | Comparison Operator. |
-| config_line | String | The collected configuration line. |
-  
-operation
-NOTE: This parameter is governed by a constraint allowing only the following values:
-- equals
-- not equal
-- case insensitive equals
-- case insensitive not equal
-- greater than
-- less than
-- greater than or equal
-- less than or equal
-- bitwise and
-- bitwise or
-- pattern match
-- subset of
-- superset of 
+| operator | String | Comparison Operator. |
+| snmp_version | String | SNMP Version. |
+ 
 
 ### Generated Content
 #### XCCDF+AE
@@ -49,13 +35,14 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
             <ae:title>[RECOMMENDATION TITLE]</ae:title>
             <ae:artifact type="[ARTIFACTTYPE NAME]">
                 <ae:parameters>
-                    <ae:parameter dt="string" name="cisco_ios.show_subcommand">[cisco_ios.show_subcommand.value]</ae:parameter>
+                    <ae:parameter dt="string" name="host">[host.value]</ae:parameter>
+                    <ae:parameter dt="string" name="operator">[operator.value]</ae:parameter>
                 </ae:parameters>
             </ae:artifact>
             <ae:test type="[TESTTYPE NAME]">
                 <ae:parameters>
-                    <ae:parameter dt="string" name="operation">[operation.value]</ae:parameter>
-                    <ae:parameter dt="string" name="config_line">[config_line.value]</ae:parameter>
+                    <ae:parameter dt="string" name="operator">[operator.value]</ae:parameter>
+                    <ae:parameter dt="string" name="snmp_version">[snmp_version.value]</ae:parameter>
                 </ae:parameters>
             </ae:test>
         </ae:artifact_expression>
@@ -65,7 +52,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
 
 #### SCAP
 ##### XCCDF
-For `cisco_ios.line` artifacts, the xccdf:check looks like this. 
+For `cisco_asa.snmp_host_object` artifacts, the xccdf:check looks like this. 
 
 ```
 <check system='http://oval.mitre.org/XMLSchema/oval-definitions-5'>
@@ -82,7 +69,7 @@ For `cisco_ios.line` artifacts, the xccdf:check looks like this.
 ###### Test
 
 ```
-<line_test 
+<snmp_host_test 
     xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#ios' 
     id='oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]'
     check_existence='[check_existence.value]' 
@@ -91,31 +78,31 @@ For `cisco_ios.line` artifacts, the xccdf:check looks like this.
     version='[version.value]'>
     <object object_ref='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'/>
     <state state_ref='oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]'/>
-</line_test>
+</snmp_host_test>
 ```
 
 ###### Object
 
 ```
-<line_object 
+<snmp_host_object 
     xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#ios' 
     id='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'
     comment='[RECOMMENDATION TITLE]'>
     version='[version.value]'>
-    <show_subcommand operation='[operation.value]'>[show_subcommand.value]</show_subcommand>
-</line_object>
+    <host operation='[operation.value]'>[host.value]</host>
+</snmp_host_object>
 ```
 ###### State
 
 ```
-<line_state 
+<snmp_host_state 
     xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#ios' 
     id='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'
     comment='[RECOMMENDATION TITLE]'>
     version='[version.value]'>
-    <config_line operation='[operation.value]' 
+    <version operation='[operation.value]'
         var_ref='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'/>
-</line_state>
+</snmp_host_state>
 ```
 
 #### YAML
@@ -128,20 +115,24 @@ For `cisco_ios.line` artifacts, the xccdf:check looks like this.
       type: [ARTIFACTTYPE NAME]
       parameters:
       - parameter: 
-          name: cisco_ios.show_subcommand
+          name: host
           type: string
-          value: [cisco_ios.show_subcommand.value]
+          value: [host.value]
+      - parameter: 
+          name: operator
+          type: string
+          value: [operator.value]
     test:
       type: [TESTTYPE NAME]
       parameters:   
       - parameter: 
-           name: operation
-           type: string
-           value: [operation.value]
+          name: operator
+          type: string
+          value: [operator.value]
       - parameter: 
-           name: config_line
+           name: snmp_version
            type: string
-           value: [config_line.value]
+           value: [snmp_version.value]
 ```
 
 #### JSON
@@ -162,10 +153,19 @@ For `cisco_ios.line` artifacts, the xccdf:check looks like this.
         "parameters": [
           {
             "parameter": {
-              "name": "cisco_ios.show_subcommand",
+              "name": "host",
               "type": "string",
               "value": [
-                "cisco_ios.show_subcommand.value"
+                "host.value"
+              ]
+            }
+          },
+          {
+            "parameter": {
+              "name": "operator",
+              "type": "string",
+              "value": [
+                "operator.value"
               ]
             }
           }
@@ -178,19 +178,19 @@ For `cisco_ios.line` artifacts, the xccdf:check looks like this.
         "parameters": [
           {
             "parameter": {
-              "name": "operation",
+              "name": "operator",
               "type": "string",
               "value": [
-                "operation.value"
+                "operator.value"
               ]
             }
           },
           {
             "parameter": {
-              "name": "config_line",
+              "name": "snmp_version",
               "type": "string",
               "value": [
-                "config_line.value"
+                "snmp_version.value"
               ]
             }
           }
