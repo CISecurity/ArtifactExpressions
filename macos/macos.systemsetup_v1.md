@@ -20,6 +20,7 @@ TBD
 - macos.systemsetup_wakeonnetworkaccess_v1
 
 ### Test Type Parameters
+#### macos.systemsetup_remoteappleevents_v1
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
 | check_existence | String | Define how many items should be collected|
@@ -28,6 +29,7 @@ TBD
 | datatype | String | datatype |
 | remoteappleevents | Boolean | Specifies whether remote Apple events are enabled..|
 
+#### macos.systemsetup_remotelogin_v1
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
 | check_existence | String | Define how many items should be collected|
@@ -36,6 +38,7 @@ TBD
 | datatype | String | datatype |
 | remotelogin | Boolean |   Specifies whether remote Apple events are enabled. |
 
+#### macos.systemsetup_usingnetworktime_v1
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
 | check_existence | String | Define how many items should be collected|
@@ -44,6 +47,7 @@ TBD
 | datatype | String | datatype |
 | usingnetworktime | Boolean | Specifies weather the machine is using network time. |
 
+#### macos.systemsetup_wakeonnetworkaccess_v1
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
 | check_existence | String | Define how many items should be collected|
@@ -95,6 +99,7 @@ NOTE: This parameter is governed by a constraint allowing only the following val
 - set
 
 ### Generated Content
+#### macos.systemsetup_remoteappleevents_v1
 #### XCCDF+AE
 This is what the AE check looks like, inside a Rule, in the XCCDF
 
@@ -275,6 +280,7 @@ For `macos.gatekeeper_v1` artifacts, the xccdf:check looks like this.  There is 
 
 
 ### Generated Content
+#### macos.systemsetup_remotelogin_v1
 #### XCCDF+AE
 This is what the AE check looks like, inside a Rule, in the XCCDF
 
@@ -455,6 +461,7 @@ For `macos.gatekeeper_v1` artifacts, the xccdf:check looks like this.  There is 
 
 
 ### Generated Content
+#### macos.systemsetup_usingnetworktime_v1
 #### XCCDF+AE
 This is what the AE check looks like, inside a Rule, in the XCCDF
 
@@ -635,6 +642,7 @@ For `macos.gatekeeper_v1` artifacts, the xccdf:check looks like this.  There is 
 
 
 ### Generated Content
+#### macos.systemsetup_wakeonnetworkaccess_v1
 #### XCCDF+AE
 This is what the AE check looks like, inside a Rule, in the XCCDF
 
