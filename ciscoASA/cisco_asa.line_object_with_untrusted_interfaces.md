@@ -1,7 +1,7 @@
-# cisco_ios.line
+# cisco_asa.line_object_with_untrusted_interfaces
 
 ## Description
-The cisco_ios.line is used to check the properties of specific output lines from a SHOW command, such as SHOW RUNNING-CONFIG. It extends the standard TestType as defined in the oval-definitions-schema and one should refer to the TestType description for more information. The required object element references a line_object and the optional state element specifies the data to check.
+The cisco_asa.line_object_with_untrusted_interfaces is used to check the properties of specific output lines.
 
 ## Intent
 TBD
@@ -10,17 +10,21 @@ TBD
 ### Artifact Parameters
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
-| cisco_ios.show_subcommand | String | The name of a SHOW sub-command. This value can either start with the word. |
+| show_run_command | String | Show Run Command Fragment. |
 
 ### Supported Test Types
-- cisco_ios.line_config_line
+- cisco_asa.line_config_line
+- cisco_asa.untrusted_interfaces_state
+
 
 ### Test Type Parameters
+#### cisco_asa.line_config_line
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
 | operation | String | Comparison Operator. |
 | config_line | String | The collected configuration line. |
-  
+| check | String | Check enumeration value. |
+
 operation
 NOTE: This parameter is governed by a constraint allowing only the following values:
 - equals
@@ -37,6 +41,28 @@ NOTE: This parameter is governed by a constraint allowing only the following val
 - subset of
 - superset of 
 
+check
+NOTE: This parameter is governed by a constraint allowing only the following values:
+- all
+- at least one
+- none satisfy
+- only one
+
+#### cisco_asa.untrusted_interfaces_state
+| Name                  |Type    | Description |
+| ----------------------|--------| ----------- |
+| regex_prefix | String | Regular Expression Prefix. |
+| regex_suffix | String | Regular Expression Suffix. |
+| check | String | Check enumeration value. |
+
+check
+NOTE: This parameter is governed by a constraint allowing only the following values:
+- all
+- at least one
+- none satisfy
+- only one
+  
+
 ### Generated Content
 #### XCCDF+AE
 This is what the AE check looks like, inside a Rule, in the XCCDF
@@ -49,13 +75,14 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
             <ae:title>[RECOMMENDATION TITLE]</ae:title>
             <ae:artifact type="[ARTIFACTTYPE NAME]">
                 <ae:parameters>
-                    <ae:parameter dt="string" name="cisco_ios.show_subcommand">[cisco_ios.show_subcommand.value]</ae:parameter>
+                    <ae:parameter dt="string" name="show_run_command">[show_run_command.value]</ae:parameter>
                 </ae:parameters>
             </ae:artifact>
             <ae:test type="[TESTTYPE NAME]">
                 <ae:parameters>
                     <ae:parameter dt="string" name="operation">[operation.value]</ae:parameter>
                     <ae:parameter dt="string" name="config_line">[config_line.value]</ae:parameter>
+                    <ae:parameter dt="string" name="check">[check.value]</ae:parameter>
                 </ae:parameters>
             </ae:test>
         </ae:artifact_expression>
@@ -65,7 +92,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
 
 #### SCAP
 ##### XCCDF
-For `cisco_ios.line` artifacts, the xccdf:check looks like this. 
+For `cisco_asa.line_object_with_untrusted_interfaces` artifacts, the xccdf:check looks like this. 
 
 ```
 <check system='http://oval.mitre.org/XMLSchema/oval-definitions-5'>
@@ -102,7 +129,7 @@ For `cisco_ios.line` artifacts, the xccdf:check looks like this.
     id='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'
     comment='[RECOMMENDATION TITLE]'>
     version='[version.value]'>
-    <show_subcommand operation='[operation.value]'>[show_subcommand.value]</show_subcommand>
+    <show_subcommand>[show_subcommand.value]</show_subcommand>
 </line_object>
 ```
 ###### State
@@ -128,12 +155,12 @@ For `cisco_ios.line` artifacts, the xccdf:check looks like this.
       type: [ARTIFACTTYPE NAME]
       parameters:
       - parameter: 
-          name: cisco_ios.show_subcommand
+          name: show_run_command
           type: string
-          value: [cisco_ios.show_subcommand.value]
+          value: [show_run_command.value]
     test:
       type: [TESTTYPE NAME]
-      parameters:   
+      parameters:
       - parameter: 
            name: operation
            type: string
@@ -142,6 +169,10 @@ For `cisco_ios.line` artifacts, the xccdf:check looks like this.
            name: config_line
            type: string
            value: [config_line.value]
+      - parameter: 
+           name: check
+           type: string
+           value: check_line.value]
 ```
 
 #### JSON
@@ -162,10 +193,10 @@ For `cisco_ios.line` artifacts, the xccdf:check looks like this.
         "parameters": [
           {
             "parameter": {
-              "name": "cisco_ios.show_subcommand",
+              "name": "show_run_command",
               "type": "string",
               "value": [
-                "cisco_ios.show_subcommand.value"
+                "show_run_command.value"
               ]
             }
           }
@@ -192,6 +223,13 @@ For `cisco_ios.line` artifacts, the xccdf:check looks like this.
               "value": [
                 "config_line.value"
               ]
+            }
+          },
+          {
+            "parameter": {
+              "name": "check",
+              "type": "string",
+              "value": "check_line.value]"
             }
           }
         ]

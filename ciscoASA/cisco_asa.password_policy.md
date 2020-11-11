@@ -1,7 +1,7 @@
-# cisco_ios.line
+# cisco_asa.password_policy
 
 ## Description
-The cisco_ios.line is used to check the properties of specific output lines from a SHOW command, such as SHOW RUNNING-CONFIG. It extends the standard TestType as defined in the oval-definitions-schema and one should refer to the TestType description for more information. The required object element references a line_object and the optional state element specifies the data to check.
+The cisco_asa.password_policy is used to check the properties of the password policy.
 
 ## Intent
 TBD
@@ -10,32 +10,29 @@ TBD
 ### Artifact Parameters
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
-| cisco_ios.show_subcommand | String | The name of a SHOW sub-command. This value can either start with the word. |
+| password_policy_option | String | Password Policy configuration option. |
+
+password_policy_option 
+NOTE: This parameter is governed by a constraint allowing only the following values:
+- lifetime
+- minimum-changes
+- minimum-uppercase
+- minimum-lowercase
+- minimum-numeric
+- minimum-special
+- minimum-length
 
 ### Supported Test Types
-- cisco_ios.line_config_line
+- cisco_asa.expected_value_regex_capture
 
 ### Test Type Parameters
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
-| operation | String | Comparison Operator. |
-| config_line | String | The collected configuration line. |
-  
-operation
-NOTE: This parameter is governed by a constraint allowing only the following values:
-- equals
-- not equal
-- case insensitive equals
-- case insensitive not equal
-- greater than
-- less than
-- greater than or equal
-- less than or equal
-- bitwise and
-- bitwise or
-- pattern match
-- subset of
-- superset of 
+| operator | String | Comparison Operator. |
+| expected_value | String | Expected value of the password policy option. |
+| regex_capture | String | The regex_capture to use to isolate the expected value. |
+| expected_value_type | String | Datatype of Expected Value. |
+
 
 ### Generated Content
 #### XCCDF+AE
@@ -49,13 +46,15 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
             <ae:title>[RECOMMENDATION TITLE]</ae:title>
             <ae:artifact type="[ARTIFACTTYPE NAME]">
                 <ae:parameters>
-                    <ae:parameter dt="string" name="cisco_ios.show_subcommand">[cisco_ios.show_subcommand.value]</ae:parameter>
+                    <ae:parameter dt="string" name="password_policy_option">[password_policy_option.value]</ae:parameter>
                 </ae:parameters>
             </ae:artifact>
             <ae:test type="[TESTTYPE NAME]">
                 <ae:parameters>
-                    <ae:parameter dt="string" name="operation">[operation.value]</ae:parameter>
-                    <ae:parameter dt="string" name="config_line">[config_line.value]</ae:parameter>
+                    <ae:parameter dt="string" name="operator">[operator.value]</ae:parameter>
+                    <ae:parameter dt="string" name="expected_value">[expected_value.value]</ae:parameter>
+                    <ae:parameter dt="string" name="regex_capture">[regex_capture.value]</ae:parameter>
+                    <ae:parameter dt="string" name="expected_value_type">[expected_value_type.value]</ae:parameter>
                 </ae:parameters>
             </ae:test>
         </ae:artifact_expression>
@@ -65,7 +64,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
 
 #### SCAP
 ##### XCCDF
-For `cisco_ios.line` artifacts, the xccdf:check looks like this. 
+For `cisco_asa.password_policy` artifacts, the xccdf:check looks like this. 
 
 ```
 <check system='http://oval.mitre.org/XMLSchema/oval-definitions-5'>
@@ -82,7 +81,7 @@ For `cisco_ios.line` artifacts, the xccdf:check looks like this.
 ###### Test
 
 ```
-<line_test 
+<variable_test 
     xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#ios' 
     id='oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]'
     check_existence='[check_existence.value]' 
@@ -91,19 +90,19 @@ For `cisco_ios.line` artifacts, the xccdf:check looks like this.
     version='[version.value]'>
     <object object_ref='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'/>
     <state state_ref='oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]'/>
-</line_test>
+</variable_test>
 ```
 
 ###### Object
 
 ```
-<line_object 
+<variable_object 
     xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#ios' 
     id='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'
     comment='[RECOMMENDATION TITLE]'>
     version='[version.value]'>
-    <show_subcommand operation='[operation.value]'>[show_subcommand.value]</show_subcommand>
-</line_object>
+    <var_ref>oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]</var_ref>
+</variable_object>
 ```
 ###### State
 
@@ -116,6 +115,16 @@ For `cisco_ios.line` artifacts, the xccdf:check looks like this.
     <config_line operation='[operation.value]' 
         var_ref='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'/>
 </line_state>
+
+<variable_state 
+    xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#ios' 
+    id='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'
+    comment='[RECOMMENDATION TITLE]'>
+    version='[version.value]'>
+    <value operation='[operation.value]' 
+        datatype='[datatype.value]' 
+        var_ref='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'/>
+</variable_state>
 ```
 
 #### YAML
@@ -128,20 +137,28 @@ For `cisco_ios.line` artifacts, the xccdf:check looks like this.
       type: [ARTIFACTTYPE NAME]
       parameters:
       - parameter: 
-          name: cisco_ios.show_subcommand
+          name: password_policy_option
           type: string
-          value: [cisco_ios.show_subcommand.value]
+          value: [password_policy_option.value]
     test:
       type: [TESTTYPE NAME]
       parameters:   
       - parameter: 
-           name: operation
+           name: operator
            type: string
-           value: [operation.value]
+           value: [operator.value]
       - parameter: 
-           name: config_line
+           name: expected_value
            type: string
-           value: [config_line.value]
+           value: [expected_value.value]
+      - parameter: 
+           name: regex_capture
+           type: string
+           value: [regex_capture.value]
+      - parameter: 
+           name: expected_value_type
+           type: string
+           value: [expected_value_type.value]
 ```
 
 #### JSON
@@ -162,10 +179,10 @@ For `cisco_ios.line` artifacts, the xccdf:check looks like this.
         "parameters": [
           {
             "parameter": {
-              "name": "cisco_ios.show_subcommand",
+              "name": "password_policy_option",
               "type": "string",
               "value": [
-                "cisco_ios.show_subcommand.value"
+                "password_policy_option.value"
               ]
             }
           }
@@ -178,19 +195,37 @@ For `cisco_ios.line` artifacts, the xccdf:check looks like this.
         "parameters": [
           {
             "parameter": {
-              "name": "operation",
+              "name": "operator",
               "type": "string",
               "value": [
-                "operation.value"
+                "operator.value"
               ]
             }
           },
           {
             "parameter": {
-              "name": "config_line",
+              "name": "expected_value",
               "type": "string",
               "value": [
-                "config_line.value"
+                "expected_value.value"
+              ]
+            }
+          },
+          {
+            "parameter": {
+              "name": "regex_capture",
+              "type": "string",
+              "value": [
+                "regex_capture.value"
+              ]
+            }
+          },
+          {
+            "parameter": {
+              "name": "expected_value_type",
+              "type": "string",
+              "value": [
+                "expected_value_type.value"
               ]
             }
           }
