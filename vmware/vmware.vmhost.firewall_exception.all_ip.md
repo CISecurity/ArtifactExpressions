@@ -10,16 +10,18 @@ TBD
 ### Artifact Parameters
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
-| vmhost_name | String | The name of the ESXi server to scope objects to. Set to NA if not applicable |
+| vmhost_name | String | The ESXi host to scope collection to. Set to NA if not applicable |
+| firewall_exception_name | String |  The firewall exceptions to scope collection to. Set to NA if not applicable |
 
 
 ### Supported Test Types
-- vmware.vhmost.lockdown_mode
+- vmware.vmhost.firewall_exception.all_ip
 
 ### Test Type Parameters
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
-| lockdown | Boolean | lockdown enabled? |
+| operator | String | comparison operation |
+| allowed_hosts_all_ip | Boolean | Allows Hosts All IP? |
 
 ### Generated Content
 #### XCCDF+AE

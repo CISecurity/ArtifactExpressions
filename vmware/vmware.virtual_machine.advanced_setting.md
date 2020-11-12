@@ -13,8 +13,6 @@ TBD
 | name | String | The name of the VM's setting. i.e. RemoteDisplay.maxConnections |
 | vm_name | String | The name of the VM to scope the collection to. Set to NA if not applicable |
 
-
-
 ### Supported Test Types
 - pattern match
 - pattern not match
@@ -67,21 +65,14 @@ TBD
 | data_type | String | datatype of the value |
 | value | String | The value to be tested |
 
-check_existence
+data_type
 NOTE: This parameter is governed by a constraint allowing only the following values:
-- all_exist
-- any_exist
-- at_least_one_exists
-- none_satisfy
-- none_exist
-- only_one_exists
-
-check
-NOTE: This parameter is governed by a constraint allowing only the following values:
-- all
-- at least one
-- none satisfy
-- only one
+- boolean
+- float
+- int
+- string
+- version
+- set
 
 ### Generated Content
 #### XCCDF+AE

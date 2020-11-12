@@ -30,6 +30,22 @@ NOTE: This parameter is governed by a constraint allowing only the following val
 - PartnerSupported
 - CommunitySupported
 
+operator
+NOTE: This parameter is governed by a constraint allowing only the following values:
+- equals
+- not equal
+- case insensitive equals
+- case insensitive not equal
+- greater than
+- less than
+- greater than or equal
+- less than or equal
+- bitwise and
+- bitwise or
+- pattern match
+- subset of
+- superset of
+
 ### Generated Content
 #### XCCDF+AE
 This is what the AE check looks like, inside a Rule, in the XCCDF
