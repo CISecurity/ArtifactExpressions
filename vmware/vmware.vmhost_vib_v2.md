@@ -11,10 +11,10 @@ TBD
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
 | check_existence | String | Defines how many items should be collected |
-| advanced_setting_name | String |  The name of the VM's setting. i.e. RemoteDisplay.maxConnections |
-| vm_name | String | The name of the VM to scope the collection to. Set to NA if not applicable |
-| advanced_setting_name_operation | String | comparison operation |
-| vm_name_operation | String | comparison operation |
+| vmhost_name | String | The ESXi host to scope VIB acceptance collection to. Set to NA if not applicable |
+| vib_name | String | The name of the VIB. Enter NA if not applicable |
+| vmhost_name_operation | String | comparison operation |
+| vib_name_operation | String | comparison operation |
 
 ### Supported Test Types
 - vmware:vmhost_vib_v2
@@ -25,7 +25,47 @@ TBD
 | check | String | Defines how many collected items must match the expected state |
 | operation | String | comparison operation |
 | datatype | String | datatype |
-| advanced_setting_value | Integer | The advanced_setting_value element details the value of the VMHost's advanced configuration setting that was collected. |
+| acceptance_level | String | The software acceptance level for the associated VIB |
+
+acceptance_level
+NOTE: This parameter is governed by a constraint allowing only the following values:
+- NA
+- VMwareCertified
+- VMwareAccepted
+- PartnerSupported
+- CommunitySupported
+
+vmhost_name_operation
+NOTE: This parameter is governed by a constraint allowing only the following values:
+- equals
+- not equal
+- case insensitive equals
+- case insensitive not equal
+- greater than
+- less than
+- greater than or equal
+- less than or equal
+- bitwise and
+- bitwise or
+- pattern match
+- subset of
+- superset of
+
+vib_name_operation
+NOTE: This parameter is governed by a constraint allowing only the following values:
+- equals
+- not equal
+- case insensitive equals
+- case insensitive not equal
+- greater than
+- less than
+- greater than or equal
+- less than or equal
+- bitwise and
+- bitwise or
+- pattern match
+- subset of
+- superset of
 
 check_existence
 NOTE: This parameter is governed by a constraint allowing only the following values:
