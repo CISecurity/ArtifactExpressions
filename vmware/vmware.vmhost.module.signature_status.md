@@ -11,7 +11,7 @@ TBD
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
 | vmhost_name | String | The name of the ESXi host to limit collection to. Set to NA if not applicable |
-| module_name | String | he name of the module to collect. Set to NA if not applicable |
+| module_name | String | The name of the module to collect. Set to NA if not applicable |
 
 ### Supported Test Types
 - vmware.vmhost.module.signature_status

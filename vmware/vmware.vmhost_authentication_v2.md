@@ -11,13 +11,13 @@ TBD
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
 | check_existence | String | Defines how many items should be collected |
-| advanced_setting_name | String |  The name of the VM's setting. i.e. RemoteDisplay.maxConnections |
-| vm_name | String | he name of the VM to scope the collection to. Set to NA if not applicable |
-| advanced_setting_name_operation | String | comparison operation |
-| vm_name_operation | String | comparison operation |
+| setting_name | String | The name of the setting. i.e. DomainMembershipStatus |
+| vmhost_name | String | Name of ESXi server to scope collection to. Set to NA if not applicable |
+| setting_name_operation | String | comparison operation |
+| vmhost_name_operation | String | comparison operation |
 
 ### Supported Test Types
-- vmware:vm_advancedsetting_value_v2
+- vmware.vmhost_authentication_v2
 
 ### Test Type Parameters
 | Name                  |Type    | Description |
@@ -25,7 +25,50 @@ TBD
 | check | String | Defines how many collected items must match the expected state |
 | operation | String | comparison operation |
 | datatype | String | datatype |
-| advanced_setting_value | Integer | The advanced_setting_value element details the value of the VMHost's advanced configuration setting that was collected. |
+| domain_membership_status | String | Value from Domain Membership Status constraint |
+
+setting_name_operation
+NOTE: This parameter is governed by a constraint allowing only the following values:
+- equals
+- not equal
+- case insensitive equals
+- case insensitive not equal
+- greater than
+- less than
+- greater than or equal
+- less than or equal
+- bitwise and
+- bitwise or
+- pattern match
+- subset of
+- superset of
+
+vmhost_name_operation
+NOTE: This parameter is governed by a constraint allowing only the following values:
+- equals
+- not equal
+- case insensitive equals
+- case insensitive not equal
+- greater than
+- less than
+- greater than or equal
+- less than or equal
+- bitwise and
+- bitwise or
+- pattern match
+- subset of
+- superset of
+
+domain_membership_status
+NOTE: This parameter is governed by a constraint allowing only the following values:
+- NA
+- ClientTrustBroken
+- InconsistentTrust
+- NoServers
+- Ok
+- OtherProblem
+- ServerTrustBroken
+- Unknown
 
 check_existence
 NOTE: This parameter is governed by a constraint allowing only the following values:

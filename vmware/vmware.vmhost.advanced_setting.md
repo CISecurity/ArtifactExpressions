@@ -11,7 +11,7 @@ TBD
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
 | vmhost_name | String | The name of the ESXi server to scope results to. Enter NA if not applicable. |
-| advanced_setting_name | String | he name of the setting. i.e. UserVars.ESXiShellInteractiveTimeOut |
+| advanced_setting_name | String | The name of the setting. i.e. UserVars.ESXiShellInteractiveTimeOut |
 
 ### Supported Test Types
 - pattern match
