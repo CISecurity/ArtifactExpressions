@@ -10,16 +10,30 @@ TBD
 ### Artifact Parameters
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
-| vmhost_name | String | The name of the ESXi server to scope objects to. Set to NA if not applicable |
+| vswitch_name | String | The name of a target vswitch. Set to NA if not applicable |
+| vmhost_name | String | The ESXi host to scope results to. Set it NA if not applicable |
 
 
 ### Supported Test Types
-- vmware.vhmost.lockdown_mode
+- vmware.vmhost.virtual_switch.policy
 
 ### Test Type Parameters
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
-| lockdown | Boolean | lockdown enabled? |
+| policy_name | String | Value from Policy Name constraint |
+| policy_state | String | Value from Policy State constraint |
+
+policy_name
+NOTE: This parameter is governed by a constraint allowing only the following values:
+- mac_changes
+- promiscuous_mode
+- forged_transmits
+
+policy_state
+NOTE: This parameter is governed by a constraint allowing only the following values:
+- NA
+- Accept
+- Reject
 
 ### Generated Content
 #### XCCDF+AE

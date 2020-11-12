@@ -10,16 +10,23 @@ TBD
 ### Artifact Parameters
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
-| vmhost_name | String | The name of the ESXi server to scope objects to. Set to NA if not applicable |
+| service_name | String | The name of the service. i.e. DCUI |
+| vm_host | String |  Name of the ESXi host to scope collection to. Set to NA if not applicable |
 
 
 ### Supported Test Types
-- vmware.vhmost.lockdown_mode
+- vmware.vmhost.service.state
 
 ### Test Type Parameters
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
-| lockdown | Boolean | lockdown enabled? |
+| service_policy | String | Value from Service Policy Constraint |
+
+service_policy
+NOTE: This parameter is governed by a constraint allowing only the following values:
+- Automatic
+- Off
+- On
 
 ### Generated Content
 #### XCCDF+AE

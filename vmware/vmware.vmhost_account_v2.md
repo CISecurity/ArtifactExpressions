@@ -11,13 +11,13 @@ TBD
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
 | check_existence | String | Defines how many items should be collected |
-| advanced_setting_name | String |  The name of the VM's setting. i.e. RemoteDisplay.maxConnections |
-| vm_name | String | he name of the VM to scope the collection to. Set to NA if not applicable |
-| advanced_setting_name_operation | String | comparison operation |
-| vm_name_operation | String | comparison operation |
+| vmhost_name | String | The ESXi host to scope collection to. Set to NA if not applicable |
+| account_name | String | Set to NA if not applicable |
+| vmhost_name_operation | String | comparison operation |
+| account_name_operation | String | comparison operation |
 
 ### Supported Test Types
-- vmware:vm_advancedsetting_value_v2
+- vmware.vmhost_account_v2
 
 ### Test Type Parameters
 | Name                  |Type    | Description |
@@ -25,7 +25,43 @@ TBD
 | check | String | Defines how many collected items must match the expected state |
 | operation | String | comparison operation |
 | datatype | String | datatype |
-| advanced_setting_value | Integer | The advanced_setting_value element details the value of the VMHost's advanced configuration setting that was collected. |
+| shell_access_enabled_operator | String | The test to perform on the Shell Access Enabled field. Enter NA if not applicable. |
+| shell_access_enabled | Boolean | Shell Access Enabled? |
+| role_operator | String | comparison operation |
+| role | String | Enter NA if not applicable. |
+
+
+shell_access_enabled_operator
+NOTE: This parameter is governed by a constraint allowing only the following values:
+- bitwise and
+- bitwise or
+- case insensitive equals
+- case insensitive not equal
+- equals
+- greater than
+- greater than or equal
+- less than
+- less than or equal
+- pattern match
+- not equal
+- set white list
+- set is empty
+
+role_operator
+NOTE: This parameter is governed by a constraint allowing only the following values:
+- bitwise and
+- bitwise or
+- case insensitive equals
+- case insensitive not equal
+- equals
+- greater than
+- greater than or equal
+- less than
+- less than or equal
+- pattern match
+- not equal
+- set white list
+- set is empty
 
 check_existence
 NOTE: This parameter is governed by a constraint allowing only the following values:

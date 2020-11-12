@@ -10,16 +10,33 @@ TBD
 ### Artifact Parameters
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
-| vmhost_name | String | The name of the ESXi server to scope objects to. Set to NA if not applicable |
+| vmhost_name | String | Name of the ESXi host to scope collection to. Set to NA if not applicable |
 
 
 ### Supported Test Types
-- vmware.vhmost.lockdown_mode
+- vmware.vmhost.webserverssl
 
 ### Test Type Parameters
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
-| lockdown | Boolean | lockdown enabled? |
+| certificate_is_valid | Boolean | Certificate is Valid? |
+| operator | String | comparison operation |
+
+operator
+NOTE: This parameter is governed by a constraint allowing only the following values:
+- equals
+- not equal
+- case insensitive equals
+- case insensitive not equal
+- greater than
+- less than
+- greater than or equal
+- less than or equal
+- bitwise and
+- bitwise or
+- pattern match
+- subset of
+- superset of
 
 ### Generated Content
 #### XCCDF+AE
