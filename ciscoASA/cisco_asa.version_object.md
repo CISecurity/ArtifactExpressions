@@ -1,7 +1,7 @@
-# cisco_ios.line
+# cisco_asa.version_object
 
 ## Description
-The cisco_ios.line is used to check the properties of specific output lines from a SHOW command, such as SHOW RUNNING-CONFIG. It extends the standard TestType as defined in the oval-definitions-schema and one should refer to the TestType description for more information. The required object element references a line_object and the optional state element specifies the data to check.
+The cisco_asa.version_object is used to check the version of the PIX operating system. It is based off of the SHOW VERSION command. It extends the standard TestType as defined in the oval-definitions-schema and one should refer to the TestType description for more information. The required object element references a version_object and the optional state element specifies the data to check.
 
 ## Intent
 TBD
@@ -10,17 +10,19 @@ TBD
 ### Artifact Parameters
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
-| cisco_ios.show_subcommand | String | The name of a SHOW sub-command. This value can either start with the word. |
+
 
 ### Supported Test Types
-- cisco_ios.line_config_line
+- cisco_asa.major_version 
+- cisco_asa.major_minor_version
 
 ### Test Type Parameters
+####cisco_asa.major_version 
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
 | operation | String | Comparison Operator. |
-| config_line | String | The collected configuration line. |
-  
+| major_version | String | Major Version. |
+
 operation
 NOTE: This parameter is governed by a constraint allowing only the following values:
 - equals
@@ -37,6 +39,15 @@ NOTE: This parameter is governed by a constraint allowing only the following val
 - subset of
 - superset of 
 
+####cisco_asa.major_minor_version
+| Name                  |Type    | Description |
+| ----------------------|--------| ----------- |
+| asa_major_release | String | The asa_major_release is the dotted version that starts a version string. |
+| major_release_operation | String | Comparison Operator. |
+| minor_release_operation | String | Minor Release Comparison Operator. |
+| asa_minor_release | String | The asa_minor_release is the dotted version that starts a version string. |
+  
+
 ### Generated Content
 #### XCCDF+AE
 This is what the AE check looks like, inside a Rule, in the XCCDF
@@ -48,14 +59,12 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
             <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
             <ae:title>[RECOMMENDATION TITLE]</ae:title>
             <ae:artifact type="[ARTIFACTTYPE NAME]">
-                <ae:parameters>
-                    <ae:parameter dt="string" name="cisco_ios.show_subcommand">[cisco_ios.show_subcommand.value]</ae:parameter>
-                </ae:parameters>
+                <ae:parameters/>
             </ae:artifact>
             <ae:test type="[TESTTYPE NAME]">
                 <ae:parameters>
                     <ae:parameter dt="string" name="operation">[operation.value]</ae:parameter>
-                    <ae:parameter dt="string" name="config_line">[config_line.value]</ae:parameter>
+                    <ae:parameter dt="string" name="major_version">[major_version.value]</ae:parameter>
                 </ae:parameters>
             </ae:test>
         </ae:artifact_expression>
@@ -65,7 +74,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
 
 #### SCAP
 ##### XCCDF
-For `cisco_ios.line` artifacts, the xccdf:check looks like this. 
+For `cisco_asa.version_object` artifacts, the xccdf:check looks like this. 
 
 ```
 <check system='http://oval.mitre.org/XMLSchema/oval-definitions-5'>
@@ -82,7 +91,7 @@ For `cisco_ios.line` artifacts, the xccdf:check looks like this.
 ###### Test
 
 ```
-<line_test 
+<version_test 
     xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#ios' 
     id='oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]'
     check_existence='[check_existence.value]' 
@@ -91,31 +100,32 @@ For `cisco_ios.line` artifacts, the xccdf:check looks like this.
     version='[version.value]'>
     <object object_ref='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'/>
     <state state_ref='oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]'/>
-</line_test>
+</version_test>
 ```
 
 ###### Object
 
 ```
-<line_object 
+<version_object 
     xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#ios' 
     id='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'
     comment='[RECOMMENDATION TITLE]'>
     version='[version.value]'>
-    <show_subcommand operation='[operation.value]'>[show_subcommand.value]</show_subcommand>
-</line_object>
+</version_object >
 ```
 ###### State
 
 ```
-<line_state 
+<version_state 
     xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#ios' 
     id='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'
     comment='[RECOMMENDATION TITLE]'>
     version='[version.value]'>
-    <config_line operation='[operation.value]' 
+    <asa_major_release datatype='[datatype.value]' operation='[operation.value]' 
         var_ref='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'/>
-</line_state>
+    <asa_minor_release datatype='[datatype.value]' operation='[operation.value]' 
+        var_ref='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'/>
+</version_state>
 ```
 
 #### YAML
@@ -127,10 +137,6 @@ For `cisco_ios.line` artifacts, the xccdf:check looks like this.
     artifact:
       type: [ARTIFACTTYPE NAME]
       parameters:
-      - parameter: 
-          name: cisco_ios.show_subcommand
-          type: string
-          value: [cisco_ios.show_subcommand.value]
     test:
       type: [TESTTYPE NAME]
       parameters:   
@@ -139,9 +145,9 @@ For `cisco_ios.line` artifacts, the xccdf:check looks like this.
            type: string
            value: [operation.value]
       - parameter: 
-           name: config_line
+           name: major_version
            type: string
-           value: [config_line.value]
+           value: [major_version.value]
 ```
 
 #### JSON
@@ -159,17 +165,7 @@ For `cisco_ios.line` artifacts, the xccdf:check looks like this.
         "type": [
           "ARTIFACTTYPE NAME"
         ],
-        "parameters": [
-          {
-            "parameter": {
-              "name": "cisco_ios.show_subcommand",
-              "type": "string",
-              "value": [
-                "cisco_ios.show_subcommand.value"
-              ]
-            }
-          }
-        ]
+        "parameters": null
       },
       "test": {
         "type": [
@@ -187,10 +183,10 @@ For `cisco_ios.line` artifacts, the xccdf:check looks like this.
           },
           {
             "parameter": {
-              "name": "config_line",
+              "name": "major_version",
               "type": "string",
               "value": [
-                "config_line.value"
+                "major_version.value"
               ]
             }
           }
