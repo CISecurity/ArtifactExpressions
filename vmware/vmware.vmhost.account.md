@@ -15,7 +15,7 @@ TBD
 
 
 ### Supported Test Types
-- vmware.vhmost.lockdown_mode
+- vmware.vmhost.account
 
 ### Test Type Parameters
 | Name                  |Type    | Description |

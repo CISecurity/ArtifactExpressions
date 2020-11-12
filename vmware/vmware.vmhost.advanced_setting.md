@@ -10,16 +10,61 @@ TBD
 ### Artifact Parameters
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
-| vmhost_name | String | The name of the ESXi server to scope objects to. Set to NA if not applicable |
-
+| vmhost_name | String | The name of the ESXi server to scope results to. Enter NA if not applicable. |
+| advanced_setting_name | String | he name of the setting. i.e. UserVars.ESXiShellInteractiveTimeOut |
 
 ### Supported Test Types
-- vmware.vhmost.lockdown_mode
+- pattern match
+- pattern not match
+- less than or equal
+- greater than or equal
+- greater than
+- less than
+- equals
 
 ### Test Type Parameters
+#### pattern match
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
-| lockdown | Boolean | lockdown enabled? |
+| data_type | String | datatype of the value |
+| value | String | Regular expression to be matched |
+
+#### pattern not match
+| Name                  |Type    | Description |
+| ----------------------|--------| ----------- |
+| data_type | String | datatype of the value |
+| value | String | Regular expression to be matched |
+
+#### less than or equal
+| Name                  |Type    | Description |
+| ----------------------|--------| ----------- |
+| data_type | String | datatype of the value |
+| value | String | The value to be tested |
+
+#### less than
+| Name                  |Type    | Description |
+| ----------------------|--------| ----------- |
+| data_type | String | datatype of the value |
+| value | String | The value to be tested |
+
+#### greater than or equal
+| Name                  |Type    | Description |
+| ----------------------|--------| ----------- |
+| data_type | String | datatype of the value |
+| value | String | The value to be tested |
+
+#### greater than
+| Name                  |Type    | Description |
+| ----------------------|--------| ----------- |
+| data_type | String | datatype of the value |
+| value | String | The value to be tested |
+
+#### equals
+| Name                  |Type    | Description |
+| ----------------------|--------| ----------- |
+| data_type | String | datatype of the value |
+| value | String | The value to be tested |
+
 
 ### Generated Content
 #### XCCDF+AE
