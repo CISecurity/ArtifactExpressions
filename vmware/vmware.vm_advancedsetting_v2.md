@@ -11,8 +11,8 @@ TBD
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
 | check_existence | String | Defines how many items should be collected |
-| advanced_setting_name | String |  The name of the VM's setting. i.e. RemoteDisplay.maxConnections |
-| vm_name | String | he name of the VM to scope the collection to. Set to NA if not applicable |
+| advanced_setting_name | String | The name of the VM's setting. i.e. RemoteDisplay.maxConnections |
+| vm_name | String | The name of the VM to scope the collection to. Set to NA if not applicable |
 | advanced_setting_name_operation | String | comparison operation |
 | vm_name_operation | String | comparison operation |
 

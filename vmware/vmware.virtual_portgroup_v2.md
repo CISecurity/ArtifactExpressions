@@ -10,20 +10,40 @@ TBD
 ### Artifact Parameters
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
+| check_existence | String | Defines how many items should be collected |
 | port_group_name | String | The name of the port group. Enter NA if not applicable |
 | virtual_switch_name | String | The name of the virtual switch. Enter NA if not applicable |
-
+| portgroup_name_operation | String | comparison operation |
+| virtual_switch_name_operation | String | comparison operation |
 
 ### Supported Test Types
-- vmware.virtual_port_group.vlan
+- vmware.virtual_portgroup_vlan_v2
 
 ### Test Type Parameters
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
-| operator | String | comparison operation |
-| vlan_id | Integer | VLAN ID |
+| check | String | Defines how many collected items must match the expected state |
+| operation | String | comparison operation |
+| datatype | String | datatype |
+| vlan_id | Integer | The ID of the VLAN |
 
-operator
+check_existence
+NOTE: This parameter is governed by a constraint allowing only the following values:
+- all_exist
+- any_exist
+- at_least_one_exists
+- none_satisfy
+- none_exist
+- only_one_exists
+
+check
+NOTE: This parameter is governed by a constraint allowing only the following values:
+- all
+- at least one
+- none satisfy
+- only one
+
+operation
 NOTE: This parameter is governed by a constraint allowing only the following values:
 - equals
 - not equal
@@ -38,6 +58,15 @@ NOTE: This parameter is governed by a constraint allowing only the following val
 - pattern match
 - subset of
 - superset of
+
+datatype
+NOTE: This parameter is governed by a constraint allowing only the following values:
+- boolean
+- float
+- int
+- string
+- version
+- set
 
 ### Generated Content
 #### XCCDF+AE

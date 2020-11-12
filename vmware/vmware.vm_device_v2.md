@@ -11,13 +11,13 @@ TBD
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
 | check_existence | String | Defines how many items should be collected |
-| advanced_setting_name | String |  The name of the VM's setting. i.e. RemoteDisplay.maxConnections |
-| vm_name | String | he name of the VM to scope the collection to. Set to NA if not applicable |
-| advanced_setting_name_operation | String | comparison operation |
-| vm_name_operation | String | comparison operation |
+| vm_name | String | The name of the VM to scope collection to. Set to NA if not applicable |
+| vm_name_operation | comparison operation |
+| device_type_operation | String | comparison operation |
+| device_type | String | The device type; one of the values in the enumeration (floppy, cdrom, parallel, etc). |
 
 ### Supported Test Types
-- vmware:vm_advancedsetting_value_v2
+- vmware.vm_device_v2
 
 ### Test Type Parameters
 | Name                  |Type    | Description |
@@ -25,7 +25,16 @@ TBD
 | check | String | Defines how many collected items must match the expected state |
 | operation | String | comparison operation |
 | datatype | String | datatype |
-| advanced_setting_value | Integer | The advanced_setting_value element details the value of the VMHost's advanced configuration setting that was collected. |
+| connected | Boolean | connected? |
+
+device_type
+NOTE: This parameter is governed by a constraint allowing only the following values:
+- floppy
+- cdrom
+- parallel_port
+- serial_port
+- usb
+- hard_disk
 
 check_existence
 NOTE: This parameter is governed by a constraint allowing only the following values:

@@ -11,13 +11,16 @@ TBD
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
 | check_existence | String | Defines how many items should be collected |
-| advanced_setting_name | String |  The name of the VM's setting. i.e. RemoteDisplay.maxConnections |
-| vm_name | String | he name of the VM to scope the collection to. Set to NA if not applicable |
-| advanced_setting_name_operation | String | comparison operation |
+| persistence | String | NA or acceptable persistence constraint values |
+| disktype | String | |
+| filename | String |   i.e. hd1,hd2. Enter NA if not applicable |
+| capacitykb | Integer |  i.e. 1000. Enter NA if not applicable |
+| capacitygb | Float | i.e 1.6. Enter NA if not applicable |
+| vm_name | String |  The name of the VM to scope collection to. Set to NA if not applicable |
 | vm_name_operation | String | comparison operation |
 
 ### Supported Test Types
-- vmware:vm_advancedsetting_value_v2
+- vmware.vm_harddiskdevice_v2
 
 ### Test Type Parameters
 | Name                  |Type    | Description |
@@ -25,7 +28,17 @@ TBD
 | check | String | Defines how many collected items must match the expected state |
 | operation | String | comparison operation |
 | datatype | String | datatype |
-| advanced_setting_value | Integer | The advanced_setting_value element details the value of the VMHost's advanced configuration setting that was collected. |
+| persistence | String | he persistence policy (Persistent, NonPersistent, Undoable, IndependentPersistent, IndependentNonPersistent, or Unknown |
+
+persistence
+NOTE: This parameter is governed by a constraint allowing only the following values:
+- NA
+- Persistent
+- NonPersistent
+- Undoable
+- IndependentPersistent
+- IndependentNonPersistent
+- Unknown
 
 check_existence
 NOTE: This parameter is governed by a constraint allowing only the following values:

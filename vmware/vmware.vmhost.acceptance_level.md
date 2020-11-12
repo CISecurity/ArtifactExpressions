@@ -14,12 +14,21 @@ TBD
 
 
 ### Supported Test Types
-- vmware.vhmost.lockdown_mode
+- vmware.vmhost.acceptance_level
 
 ### Test Type Parameters
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
-| lockdown | Boolean | lockdown enabled? |
+| operator | String | comparison operator |
+| acceptance_level | String | NA or values defined by Acceptance Level constraint|
+
+acceptance_level
+NOTE: This parameter is governed by a constraint allowing only the following values
+- NA
+- VMwareCertified
+- VMwareAccepted
+- PartnerSupported
+- CommunitySupported
 
 ### Generated Content
 #### XCCDF+AE
