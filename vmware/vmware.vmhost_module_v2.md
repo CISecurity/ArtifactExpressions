@@ -11,13 +11,13 @@ TBD
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
 | check_existence | String | Defines how many items should be collected |
-| advanced_setting_name | String |  The name of the VM's setting. i.e. RemoteDisplay.maxConnections |
-| vm_name | String | The name of the VM to scope the collection to. Set to NA if not applicable |
-| advanced_setting_name_operation | String | comparison operation |
-| vm_name_operation | String | comparison operation |
+| vmhost_name | String | The ESXi host to scope collection to. Set to NA if not applicable |
+| module_name | String | The name of the module to collect. Set to NA if not applicable |
+| vmhost_name_operation | String | comparison operation |
+| module_name_operation | String | comparison operation |
 
 ### Supported Test Types
-- vmware:vm_advancedsetting_value_v2
+- vmware:vmhost_module_signed_status_v2
 
 ### Test Type Parameters
 | Name                  |Type    | Description |
@@ -25,7 +25,45 @@ TBD
 | check | String | Defines how many collected items must match the expected state |
 | operation | String | comparison operation |
 | datatype | String | datatype |
-| advanced_setting_value | Integer | The advanced_setting_value element details the value of the VMHost's advanced configuration setting that was collected. |
+| signed_status | String | The digital signature status of the kernel module |
+
+signed_status
+NOTE: This parameter is governed by a constraint allowing only the following values:
+- NA
+- VMware Signed
+- VMWare Certified
+
+vmhost_name_operation
+NOTE: This parameter is governed by a constraint allowing only the following values:
+- equals
+- not equal
+- case insensitive equals
+- case insensitive not equal
+- greater than
+- less than
+- greater than or equal
+- less than or equal
+- bitwise and
+- bitwise or
+- pattern match
+- subset of
+- superset of
+
+module_name_operation
+NOTE: This parameter is governed by a constraint allowing only the following values:
+- equals
+- not equal
+- case insensitive equals
+- case insensitive not equal
+- greater than
+- less than
+- greater than or equal
+- less than or equal
+- bitwise and
+- bitwise or
+- pattern match
+- subset of
+- superset of
 
 check_existence
 NOTE: This parameter is governed by a constraint allowing only the following values:

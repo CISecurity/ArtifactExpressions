@@ -11,13 +11,13 @@ TBD
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
 | check_existence | String | Defines how many items should be collected |
-| advanced_setting_name | String |  The name of the VM's setting. i.e. RemoteDisplay.maxConnections |
-| vm_name | String | The name of the VM to scope the collection to. Set to NA if not applicable |
-| advanced_setting_name_operation | String | comparison operation |
-| vm_name_operation | String | comparison operation |
+| vmhost_name | String | The ESXi host to scope results to. Set it NA if not applicable |
+| firewall_exception_name | String | The firewall exceptions to scope collection to. Set to NA if not applicable |
+| vmhost_name_operation | String | comparison operation |
+| firewall_exception_name_operation | String | comparison operation |
 
 ### Supported Test Types
-- vmware:vm_advancedsetting_value_v2
+- vmware.vmhost_firewallexception
 
 ### Test Type Parameters
 | Name                  |Type    | Description |
@@ -25,7 +25,63 @@ TBD
 | check | String | Defines how many collected items must match the expected state |
 | operation | String | comparison operation |
 | datatype | String | datatype |
-| advanced_setting_value | Integer | The advanced_setting_value element details the value of the VMHost's advanced configuration setting that was collected. |
+| allowed_hosts_all_ip | Boolean | Allowed Hosts All IP? |
+| exception_enabled_datatype | String | datatype |
+| exception_enabled | Boolean | Exception Enabled? |
+| service_running_datatype | String | datatype |
+| service_running | Boolean | Service Running? |
+| exception_enabled_operation | String | comparison operation |
+| service_running_operation | String | comparison operation |
+
+exception_enabled_datatype
+NOTE: This parameter is governed by a constraint allowing only the following values:
+- boolean
+- float
+- int
+- string
+- version
+- set
+
+service_running_datatype
+NOTE: This parameter is governed by a constraint allowing only the following values:
+- boolean
+- float
+- int
+- string
+- version
+- set
+
+exception_enabled_operation
+NOTE: This parameter is governed by a constraint allowing only the following values:
+- equals
+- not equal
+- case insensitive equals
+- case insensitive not equal
+- greater than
+- less than
+- greater than or equal
+- less than or equal
+- bitwise and
+- bitwise or
+- pattern match
+- subset of
+- superset of
+
+service_running_operation
+NOTE: This parameter is governed by a constraint allowing only the following values:
+- equals
+- not equal
+- case insensitive equals
+- case insensitive not equal
+- greater than
+- less than
+- greater than or equal
+- less than or equal
+- bitwise and
+- bitwise or
+- pattern match
+- subset of
+- superset of
 
 check_existence
 NOTE: This parameter is governed by a constraint allowing only the following values:

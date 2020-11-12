@@ -17,7 +17,7 @@ TBD
 | vm_name_operation | String | comparison operation |
 
 ### Supported Test Types
-- vmware:vm_advancedsetting_value_v2
+- vmware:vmhost_vib_v2
 
 ### Test Type Parameters
 | Name                  |Type    | Description |
