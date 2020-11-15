@@ -54,7 +54,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
 
 #### SCAP
 ##### XCCDF
-For `linux.upstart_service_v1` artifacts, the xccdf:check looks like this.  There is no Value in the xccdf for this Artifact.
+For ` linux.auditd_rule_v2` artifacts, the xccdf:check looks like this.  There is no Value in the xccdf for this Artifact.
 
 ```
 <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
