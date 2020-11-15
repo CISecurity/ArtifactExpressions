@@ -1,7 +1,6 @@
 # linux.custom_object_v1
 
 ## Description
-The webconfig_test is used to check the status of Gatekeeper and any unsigned applications that have been granted execute permission.
 
 ## Intent
 TBD
@@ -14,7 +13,6 @@ TBD
 
 object
 NOTE: This parameter is governed by a constraint allowing only the following values:
-
 - N/A
 - All World Writable Directories Have Sticky Bit Set
 - No World Writable Files Exist|There Are No Unconfined Daemons

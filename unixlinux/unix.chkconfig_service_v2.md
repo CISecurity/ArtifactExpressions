@@ -1,4 +1,4 @@
-# linux.kernel_module_v1
+# unix.chkconfig_service_v2
 
 ## Description
 
@@ -9,19 +9,34 @@ TBD
 ### Artifact Parameters
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
-| module | String | Add in  |
+| service  | String | Name of the Service to be tested	 |
+| name_operation |string |Defines what operation should be performed using the string from the Service Name parameter.		|
+| runlevel |string | The system runlevel to examine. A runlevel allows only a selected group of processes to exist.	 |
+| runlevel_operation | string | Defines what operation should be performed using the string from the Runlevel parameter.	 |
 
+name_operation/runlevel_operation
+NOTE: This parameter is governed by a constraint allowing only the following values:
+- equals
+- not equal
+- case insensitive equals
+- case insensitive not equal
+- greater than
+- less than
+- greater than or equal
+- less than or equal
+- bitwise and
+- bitwise or
+- pattern match
+- subset of
+- superset of
 
 ### Supported Test Types
-- linux.kernel_module.loadable_v1 
-- linux.kernel_module.loaded_v1
+- unix.service_enabled_v1
 
 ### Test Type Parameters
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
-| loadable | String | Is the module loadable |
-| loaded | String | Is the module currently loaded |
-
+| enabled | String | Is the service enabled? |
 
 ### Generated Content
 #### XCCDF+AE
@@ -29,22 +44,22 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
 
 ```
 <xccdf:complex-check operator="AND">
-   <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
-        <xccdf:check-content>
-            <ae:artifact_expression
-                id="xccdf_org.cisecurity.benchmarks_ae_1.1.1.1.1">
+    	<xccdf:check-content>
+            <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_6.3.3.1">
                 <ae:artifact_oval_id>[ARTIFACT_OVAL_ID]</ae:artifact_oval_id>
                 <ae:title>[RECOMMENDATION_TITLE]</ae:title>
                 <ae:artifact type="[ARTIFACTTYPE]">
                     <ae:parameters>
-                        <ae:parameter dt="string" name="module"
-                            >[module.value]</ae:parameter>
+                        <ae:parameter dt="string" name="service">[service.value]</ae:parameter>
+                        <ae:parameter dt="string" name="name_operation">[name_operaton.value]
+                            </ae:parameter>
+                        <ae:parameter dt="string" name="runlevel">[runlevel.value]</ae:parameter>
+                        <ae:parameter dt="string" name="runlevel_operation">[runlevel_operation.value]</ae:parameter>
                     </ae:parameters>
                 </ae:artifact>
-                <ae:test type="[TESTTYPE]">
+                <ae:test type="[TEST_TYPE]">
                     <ae:parameters>
-                        <ae:parameter dt="string" name="loadable"
-                            >[loadable.value]</ae:parameter>
+                        <ae:parameter dt="string" name="enabled">[enabled.value]</ae:parameter>
                     </ae:parameters>
                 </ae:test>
             </ae:artifact_expression>
@@ -128,7 +143,8 @@ For `linux.upstart_service_v1` artifacts, the xccdf:check looks like this.  Ther
   "artifact-unique-id": [ARTIFACT-OVAL-ID],
   "artifact-title": [RECOMMENDATION TITLE],
   "artifact": {
-    "type": "linux.kernel_module_v1",
+    "type": "unix.chkconfig_service_v2
+",
     "parameters": [
       {
         "parameter": {

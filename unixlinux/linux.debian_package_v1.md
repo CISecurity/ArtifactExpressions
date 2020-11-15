@@ -1,4 +1,4 @@
-# linux.kernel_module_v1
+# linux.debian_package_v1
 
 ## Description
 
@@ -9,18 +9,15 @@ TBD
 ### Artifact Parameters
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
-| module | String | Add in  |
-
+| name  | String | The name of the package being checked.  |
 
 ### Supported Test Types
-- linux.kernel_module.loadable_v1 
-- linux.kernel_module.loaded_v1
+- existence_test
 
 ### Test Type Parameters
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
-| loadable | String | Is the module loadable |
-| loaded | String | Is the module currently loaded |
+| value | String | Regular expression to be matched |
 
 
 ### Generated Content
@@ -31,25 +28,22 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
 <xccdf:complex-check operator="AND">
    <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
         <xccdf:check-content>
-            <ae:artifact_expression
-                id="xccdf_org.cisecurity.benchmarks_ae_1.1.1.1.1">
+            <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_9.1.1">
                 <ae:artifact_oval_id>[ARTIFACT_OVAL_ID]</ae:artifact_oval_id>
                 <ae:title>[RECOMMENDATION_TITLE]</ae:title>
-                <ae:artifact type="[ARTIFACTTYPE]">
+                <ae:artifact type="[ARTIFACT_TYPE]">
                     <ae:parameters>
-                        <ae:parameter dt="string" name="module"
-                            >[module.value]</ae:parameter>
+                        <ae:parameter dt="string" name="name">[name.name]</ae:parameter>
                     </ae:parameters>
                 </ae:artifact>
-                <ae:test type="[TESTTYPE]">
+                <ae:test type="[TEST_TYPE]">
                     <ae:parameters>
-                        <ae:parameter dt="string" name="loadable"
-                            >[loadable.value]</ae:parameter>
+                        <ae:parameter dt="string" name="value">[value.value]</ae:parameter>
                     </ae:parameters>
                 </ae:test>
             </ae:artifact_expression>
-        </xccdf:check-content>
-    </xccdf:check>
+            </xccdf:check-content>
+        </xccdf:check>
 </xccdf:complex-check>
 ```
 
@@ -128,7 +122,7 @@ For `linux.upstart_service_v1` artifacts, the xccdf:check looks like this.  Ther
   "artifact-unique-id": [ARTIFACT-OVAL-ID],
   "artifact-title": [RECOMMENDATION TITLE],
   "artifact": {
-    "type": "linux.kernel_module_v1",
+    "type": "linux.debian_package_v1",
     "parameters": [
       {
         "parameter": {
