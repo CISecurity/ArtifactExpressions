@@ -64,59 +64,48 @@ TODO
 
 #### SCAP
 ##### XCCDF
-For `unix.proc_info_v1` artifacts, artifacts, an XCCDF Value element is generated:
+For `unix.proc_info_v1` artifacts, an XCCDF Check element is generated:
 
 ```
-     <Value id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" type="string"
-                operator="[testTypeName]">
-                <title>[RECOMMENDATION_TITLE]</title>
-                <description>This value is used in Rule: [RECOMMENDATION TITLE]</description>
-                <value>[TestType.value.value]</value>
-    </Value>
+    <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+    			<check-content-ref
+    				href="[BENCHMARK_NAME]"
+    				name="oval:org.cisecurity.benchmarks.oracle_mysql_8:def:[ARTIFACT_OVAL_ID]"/>
+    		</check>
 ```
 
 ##### OVAL
 ###### Test
 
 ```
-<shellcommand_test xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#cmd"
-            id="oval:org.cisecurity.benchmarks.canonical_ubuntu_linux_18:tst:ARTIFACT_OVAL_ID"
-            check_existence="at_least_one_exists" check="all"
-            comment="[RECOMMENDATION_TITLE]" version="1">
-            <object object_ref="oval:org.cisecurity.benchmarks.canonical_ubuntu_linux_18:obj:ARTIFACT_OVAL_ID"
-            />
-</shellcommand_test>
+<process58_test xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
+			id="oval:org.cisecurity.benchmarks.oracle_mysql_8:tst:[ARTIFACT_OVAL_ID]"
+			check_existence="all_exist" check="all"
+			comment="[RECOMMENDATION_TITLE]" version="1">
+			<object object_ref="oval:org.cisecurity.benchmarks.oracle_mysql_8:obj:[ARTIFACT_OVAL_ID]"/>
+			<state state_ref="oval:org.cisecurity.benchmarks.oracle_mysql_8:ste:[ARTIFACT_OVAL_ID]"/>
+		</process58_test>
 ```
 
 ###### Object
 
 ```
-<shellcommand_object xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#cmd"
-            id="oval:org.cisecurity.benchmarks.canonical_ubuntu_linux_18:obj:ARTIFACT_OVAL_ID"
-            comment="[RECOMMENDATION_TITLE]" version="1">
-            <command/>
-            <line_selection operation="[TestType]">[TestType.value]</line_selection>
-    </shellcommand_object>
+<process58_object xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
+			id="oval:org.cisecurity.benchmarks.oracle_mysql_8:obj:[ARTIFACT_OVAL_ID]"
+			comment="[RECOMMENDATION_TITLE]" version="1">
+			<command_line operation="pattern match">/usr/sbin/mysqld .*</command_line>
+			<pid datatype="int" operation="equals">0</pid>
+		</process58_object>
 ```
 ###### State
 
 ```
-<shellcommand_state xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#cmd"
-            id="oval:org.cisecurity.benchmarks.centos_centos_7:ste:[ARTIFACT_OVAL_ID]"
-            comment='[RECOMMENDATION_TITLE]'
-            version="1">
-            <stdout_line entity_check="at least one" operation="pattern match"
-                var_ref="oval:org.cisecurity.benchmarks.centos_centos_7:var:[ARTIFACT_OVAL_ID]"/>
-</shellcommand_state> 
-```
-
-###### Variable
-
-```
-<external_variable comment="This value is used in [RECOMMENDATION TITLE]" 
-                  datatype="[string]" 
-                        id="oval:org.cisecurity.benchmarks.PLATFORM:var:ARTIFACT-OVAL-ID" 
-                   version="1"/>
+	<process58_state xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
+			id="oval:org.cisecurity.benchmarks.oracle_mysql_8:ste:[ARTIFACT_OVAL_ID]"
+			comment="[RECOMMENDATION_TITLE]" version="1">
+			<user_id datatype="int" operation="equals"
+				var_ref="oval:org.cisecurity.benchmarks:var:1000002"/>
+		</process58_state>
 ```
 
 #### YAML

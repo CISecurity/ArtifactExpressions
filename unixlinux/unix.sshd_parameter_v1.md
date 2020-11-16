@@ -85,56 +85,65 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
 For `unix.sshd_parameter_v1` artifacts, artifacts, an XCCDF Value element is generated:
 
 ```
-     <Value id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" type="string"
-                operator="[testTypeName]">
-                <title>[RECOMMENDATION_TITLE]</title>
-                <description>This value is used in Rule: [RECOMMENDATION TITLE]</description>
-                <value>[TestType.value.value]</value>
-    </Value>
+<Values>
+<Value id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT_OVAL_ID]_var" type="string"
+    operator="equals">
+    <title>Ensure SSH Protocol is set to 2</title>
+    <description>This value is used in Rule: Ensure SSH Protocol is set to
+        2</description>
+    <value>2</value>
+</Value>
+</Values>
 ```
 
 ##### OVAL
 ###### Test
 
 ```
-<shellcommand_test xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#cmd"
-            id="oval:org.cisecurity.benchmarks.canonical_ubuntu_linux_18:tst:ARTIFACT_OVAL_ID"
-            check_existence="at_least_one_exists" check="all"
-            comment="[RECOMMENDATION_TITLE]" version="1">
-            <object object_ref="oval:org.cisecurity.benchmarks.canonical_ubuntu_linux_18:obj:ARTIFACT_OVAL_ID"
-            />
-</shellcommand_test>
+<textfilecontent54_test
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent"
+    id="oval:org.cisecurity.benchmarks.centos_centos_7:tst:[ARTIFACT_OVAL_ID]"
+    check_existence="at_least_one_exists" check="all"
+    comment="[RECOMMENDATION_TITLE]"
+    version="1">
+    <object object_ref="oval:org.cisecurity.benchmarks.centos_centos_7:obj:[ARTIFACT_OVAL_ID]"/>
+    <state state_ref="oval:org.cisecurity.benchmarks.centos_centos_7:ste:[ARTIFACT_OVAL_ID]"/>
+</textfilecontent54_test>
 ```
 
 ###### Object
 
 ```
-<shellcommand_object xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#cmd"
-            id="oval:org.cisecurity.benchmarks.canonical_ubuntu_linux_18:obj:ARTIFACT_OVAL_ID"
-            comment="[RECOMMENDATION_TITLE]" version="1">
-            <command/>
-            <line_selection operation="[TestType]">[TestType.value]</line_selection>
-    </shellcommand_object>
+<textfilecontent54_object
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent"
+    id="oval:org.cisecurity.benchmarks.centos_centos_7:obj:[ARTIFACT_OVAL_ID]"
+    comment="[RECOMMENDATION_TITLE]"
+    version="1">
+    <filepath>/etc/ssh/sshd_config</filepath>
+    <pattern operation="pattern match">^\s*Protocol\s+(\S+)\s*(?:#.*)?$</pattern>
+    <instance datatype="int" operation="equals">1</instance>
+</textfilecontent54_object>
 ```
 ###### State
 
 ```
-<shellcommand_state xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#cmd"
-            id="oval:org.cisecurity.benchmarks.centos_centos_7:ste:[ARTIFACT_OVAL_ID]"
-            comment='[RECOMMENDATION_TITLE]'
-            version="1">
-            <stdout_line entity_check="at least one" operation="pattern match"
-                var_ref="oval:org.cisecurity.benchmarks.centos_centos_7:var:[ARTIFACT_OVAL_ID]"/>
-</shellcommand_state> 
+<textfilecontent54_state
+			xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent"
+			id="oval:org.cisecurity.benchmarks.centos_centos_7:ste:[ARTIFACT_OVAL_ID]"
+			comment="[RECOMMENDATION_TITLE]"
+			version="1">
+			<subexpression datatype="string" operation="equals"
+				var_ref="oval:org.cisecurity.benchmarks.centos_centos_7:var:[ARTIFACT_OVAL_ID]"/>
+</textfilecontent54_state>
 ```
 
 ###### Variable
 
 ```
 <external_variable comment="This value is used in [RECOMMENDATION TITLE]" 
-                  datatype="[string]" 
-                        id="oval:org.cisecurity.benchmarks.PLATFORM:var:ARTIFACT-OVAL-ID" 
-                   version="1"/>
+  datatype="[string]" 
+        id="oval:org.cisecurity.benchmarks.PLATFORM:var:ARTIFACT-OVAL-ID" 
+   version="1"/>
 ```
 
 #### YAML

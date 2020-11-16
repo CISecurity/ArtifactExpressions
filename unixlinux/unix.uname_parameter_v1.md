@@ -84,47 +84,46 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
 For `unix.uname_parameter_v1` artifacts, artifacts, an XCCDF Value element is generated:
 
 ```
-     <Value id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" type="string"
-                operator="[testTypeName]">
-                <title>[RECOMMENDATION_TITLE]</title>
-                <description>This value is used in Rule: [RECOMMENDATION TITLE]</description>
-                <value>[TestType.value.value]</value>
-    </Value>
+ <Value id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" type="string"
+            operator="[testTypeName]">
+            <title>[RECOMMENDATION_TITLE]</title>
+            <description>This value is used in Rule: [RECOMMENDATION TITLE]</description>
+            <value>[TestType.value.value]</value>
+</Value>
 ```
 
 ##### OVAL
 ###### Test
 
 ```
-<shellcommand_test xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#cmd"
-            id="oval:org.cisecurity.benchmarks.canonical_ubuntu_linux_18:tst:ARTIFACT_OVAL_ID"
-            check_existence="at_least_one_exists" check="all"
-            comment="[RECOMMENDATION_TITLE]" version="1">
-            <object object_ref="oval:org.cisecurity.benchmarks.canonical_ubuntu_linux_18:obj:ARTIFACT_OVAL_ID"
-            />
-</shellcommand_test>
+<uname_test xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
+    id="oval:org.cisecurity.benchmarks.centos_centos_7:tst:[ARTIFACT_OVAL_ID]"
+    check_existence="at_least_one_exists" check="all"
+    comment="[RECOMMENDATION_TITLE]"
+    version="1">
+    <object object_ref="oval:org.cisecurity.benchmarks.centos_centos_7:obj:[ARTIFACT_OVAL_ID]"/>
+    <state state_ref="oval:org.cisecurity.benchmarks.centos_centos_7:ste:[ARTIFACT_OVAL_ID]"/>
+</uname_test>
 ```
 
 ###### Object
 
 ```
-<shellcommand_object xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#cmd"
-            id="oval:org.cisecurity.benchmarks.canonical_ubuntu_linux_18:obj:ARTIFACT_OVAL_ID"
-            comment="[RECOMMENDATION_TITLE]" version="1">
-            <command/>
-            <line_selection operation="[TestType]">[TestType.value]</line_selection>
-    </shellcommand_object>
+<uname_object xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
+    id="oval:org.cisecurity.benchmarks.centos_centos_7:obj:[ARTIFACT_OVAL_ID]"
+    comment="[RECOMMENDATION_TITLE]"
+    version="1"/>
 ```
 ###### State
 
 ```
-<shellcommand_state xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#cmd"
-            id="oval:org.cisecurity.benchmarks.centos_centos_7:ste:[ARTIFACT_OVAL_ID]"
-            comment='[RECOMMENDATION_TITLE]'
-            version="1">
-            <stdout_line entity_check="at least one" operation="pattern match"
-                var_ref="oval:org.cisecurity.benchmarks.centos_centos_7:var:[ARTIFACT_OVAL_ID]"/>
-</shellcommand_state> 
+<uname_state xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
+    id="oval:org.cisecurity.benchmarks.centos_centos_7:ste:[ARTIFACT_OVAL_ID]"
+    comment="[RECOMMENDATION_TITLE]"
+    version="1">
+    <processor_type datatype="string" operation="not equal"
+        var_ref="oval:org.cisecurity.benchmarks.centos_centos_7:var:[ARTIFACT_OVAL_ID]"/>
+</uname_state>
 ```
 
 ###### Variable

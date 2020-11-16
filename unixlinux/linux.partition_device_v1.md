@@ -53,8 +53,9 @@ For `linux.partition_device_v1` artifacts, the xccdf:check looks like this.  The
 
 ```
 <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
-    <check-content-ref href="[BENCHMARK_TITLE]"
-        name="oval:org.cisecurity.benchmarks.centos_centos_7:def:[ARTIFACT_OVAL_ID]"/>
+			<check-content-ref
+				href="[BENCHMARK_TITLE]"
+				name="oval:org.cisecurity.benchmarks.redhat_redhat_enterprise_linux_5:def:[ARTIFACT_OVAL_ID]"/>
 </check>
 ```
 
@@ -62,34 +63,24 @@ For `linux.partition_device_v1` artifacts, the xccdf:check looks like this.  The
 ###### Test
 
 ```
-  <shellcommand_test xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#cmd"
-            id="oval:org.cisecurity.benchmarks.centos_centos_7:tst:[ARTIFACT_OVAL_ID]"
-            check_existence="at_least_one_exists" check="at least one"
-            comment="[RECOMMENDATION_TITLE]" version="1">
-            <object object_ref="oval:org.cisecurity.benchmarks.centos_centos_7:obj:[ARTIFACT_OVAL_ID]"/>
-            <state state_ref="oval:org.cisecurity.benchmarks.centos_centos_7:ste:[ARTIFACT_OVAL_ID]"/>
-        </shellcommand_test>
+<partition_test xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux"
+ 			id="oval:org.cisecurity.benchmarks.redhat_redhat_enterprise_linux_5:tst:[ARTIFACT_OVAL_ID]"
+ 			check_existence="at_least_one_exists" check="all" comment="[RECOMMENDATION_TITLE]"
+ 			version="1">
+ 			<object
+ 				object_ref="oval:org.cisecurity.benchmarks.redhat_redhat_enterprise_linux_5:obj:[ARTIFACT_OVAL_ID]"
+ 			/>
+</partition_test>
 ```
 
 ###### Object
 
 ```
-<shellcommand_object xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#cmd"
-            id="oval:org.cisecurity.benchmarks.centos_centos_7:obj:[ARTIFACT_OVAL_ID]"
-            comment="[RECOMMENDATION_TITLE]" version="1">
-            <command>modprobe -n -v dccp</command>
-            <line_selection operation="pattern match">.+</line_selection>
-        </shellcommand_object>
-```
-###### State
-
-```
-<shellcommand_state xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#cmd"
-            id="oval:org.cisecurity.benchmarks.centos_centos_7:ste:[ARTIFACT_OVAL_ID]"
-            comment="[RECOMMENDATION_TITLE]" version="1">
-            <stdout_line entity_check="at least one" operation="[testtype.name]"
-                >[testType.name.value]</stdout_line>
-</shellcommand_state>
+<partition_object xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux"
+    id="oval:org.cisecurity.benchmarks.redhat_redhat_enterprise_linux_5:obj:[ARTIFACT_OVAL_ID]"
+    comment="[RECOMMENDATION_TITLE]" version="1">
+    <mount_point>/tmp</mount_point>
+</partition_object>
 ```
 
 #### YAML

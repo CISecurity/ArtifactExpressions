@@ -52,59 +52,70 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
 
 #### SCAP
 ##### XCCDF
-For `unix.inetd_service_v1` artifacts, artifacts, an XCCDF Value element is generated:
+For `unix.inetd_service_v1` artifacts, an XCCDF check element is generated:
 
 ```
-     <Value id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" type="string"
-                operator="[testTypeName]">
-                <title>[RECOMMENDATION_TITLE]</title>
-                <description>This value is used in Rule: [RECOMMENDATION TITLE]</description>
-                <value>[TestType.value.value]</value>
-    </Value>
+<check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+			<check-content-ref href="[BENCHMARK_NAME]"
+				name="oval:org.cisecurity.benchmarks.centos_centos_7:def:[ARTIFACT_OVAL_ID]"/>
+</check>
 ```
 
 ##### OVAL
 ###### Test
 
 ```
-<shellcommand_test xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#cmd"
-            id="oval:org.cisecurity.benchmarks.canonical_ubuntu_linux_18:tst:ARTIFACT_OVAL_ID"
-            check_existence="at_least_one_exists" check="all"
-            comment="[RECOMMENDATION_TITLE]" version="1">
-            <object object_ref="oval:org.cisecurity.benchmarks.canonical_ubuntu_linux_18:obj:ARTIFACT_OVAL_ID"
-            />
-</shellcommand_test>
+<textfilecontent54_test
+			xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent"
+			id="oval:org.cisecurity.benchmarks.centos_centos_7:tst:[ARTIFACT_OVAL_ID]2"
+			check_existence="none_exist" check="all"
+			comment="[RECOMMENDATION_TITLE]" version="1">
+			<object object_ref="oval:org.cisecurity.benchmarks.centos_centos_7:obj:[ARTIFACT_OVAL_ID]2"/>
+		</textfilecontent54_test>
+		<textfilecontent54_test
+			xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent"
+			id="oval:org.cisecurity.benchmarks.centos_centos_7:tst:[ARTIFACT_OVAL_ID]3"
+			check_existence="none_exist" check="all"
+			comment="[RECOMMENDATION_TITLE]" version="1">
+			<object object_ref="oval:org.cisecurity.benchmarks.centos_centos_7:obj:[ARTIFACT_OVAL_ID]3"/>
+		</textfilecontent54_test>
 ```
 
 ###### Object
 
 ```
-<shellcommand_object xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#cmd"
-            id="oval:org.cisecurity.benchmarks.canonical_ubuntu_linux_18:obj:ARTIFACT_OVAL_ID"
-            comment="[RECOMMENDATION_TITLE]" version="1">
-            <command/>
-            <line_selection operation="[TestType]">[TestType.value]</line_selection>
-    </shellcommand_object>
+<xinetd_object xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
+			id="oval:org.cisecurity.benchmarks.centos_centos_7:obj:[ARTIFACT_OVAL_ID]1"
+			comment="[RECOMMENDATION_TITLE]" version="1">
+			<protocol operation="pattern match">.*</protocol>
+			<service_name>chargen</service_name>
+		</xinetd_object>
+		<textfilecontent54_object
+			xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent"
+			id="oval:org.cisecurity.benchmarks.centos_centos_7:obj:[ARTIFACT_OVAL_ID]2"
+			comment="[RECOMMENDATION_TITLE]" version="1">
+			<filepath>/etc/inetd.conf</filepath>
+			<pattern operation="pattern match" datatype="string">^chargen\s+</pattern>
+			<instance datatype="int" operation="equals">1</instance>
+		</textfilecontent54_object>
+		<textfilecontent54_object
+			xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent"
+			id="oval:org.cisecurity.benchmarks.centos_centos_7:obj:[ARTIFACT_OVAL_ID]3"
+			comment="[RECOMMENDATION_TITLE]" version="1">
+			<path>/etc/inetd.d</path>
+			<filename operation="pattern match">.+</filename>
+			<pattern operation="pattern match" datatype="string">^chargen\s+</pattern>
+			<instance datatype="int" operation="equals">1</instance>
+		</textfilecontent54_object>
 ```
 ###### State
 
 ```
-<shellcommand_state xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#cmd"
-            id="oval:org.cisecurity.benchmarks.centos_centos_7:ste:[ARTIFACT_OVAL_ID]"
-            comment='[RECOMMENDATION_TITLE]'
-            version="1">
-            <stdout_line entity_check="at least one" operation="pattern match"
-                var_ref="oval:org.cisecurity.benchmarks.centos_centos_7:var:[ARTIFACT_OVAL_ID]"/>
-</shellcommand_state> 
-```
-
-###### Variable
-
-```
-<external_variable comment="This value is used in [RECOMMENDATION TITLE]" 
-                  datatype="[string]" 
-                        id="oval:org.cisecurity.benchmarks.PLATFORM:var:ARTIFACT-OVAL-ID" 
-                   version="1"/>
+<xinetd_state xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
+			id="oval:org.cisecurity.benchmarks.centos_centos_7:ste:[ARTIFACT_OVAL_ID]1"
+			comment="[RECOMMENDATION_TITLE]" version="1">
+			<disabled datatype="boolean" operation="equals">true</disabled>
+		</xinetd_state>
 ```
 
 #### YAML

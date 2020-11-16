@@ -87,50 +87,54 @@ system="https://benchmarks.cisecurity.org/ae/0.5">
 
 #### SCAP
 ##### XCCDF
-For `unix.file_collection_v1` artifacts, artifacts, an XCCDF Value element is generated:
+For `unix.file_collection_v1` artifacts, an XCCDF check looks like this. an XCCDF Value element is not  generated:
 
 ```
-     <Value id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" type="string"
-                operator="[testTypeName]">
-                <title>[RECOMMENDATION_TITLE]</title>
-                <description>This value is used in Rule: [RECOMMENDATION TITLE]</description>
-                <value>[TestType.value.value]</value>
-    </Value>
+     <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+     			<check-content-ref
+     				href="[BENCHMARK_NAME]"
+     				name="oval:org.cisecurity.benchmarks.redhat_redhat_enterprise_linux_5:def:[ARTIFACT_OVAL_ID]"/>
+     		</check>
 ```
 
 ##### OVAL
 ###### Test
 
 ```
-<shellcommand_test xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#cmd"
-            id="oval:org.cisecurity.benchmarks.canonical_ubuntu_linux_18:tst:ARTIFACT_OVAL_ID"
-            check_existence="at_least_one_exists" check="all"
-            comment="[RECOMMENDATION_TITLE]" version="1">
-            <object object_ref="oval:org.cisecurity.benchmarks.canonical_ubuntu_linux_18:obj:ARTIFACT_OVAL_ID"
-            />
-</shellcommand_test>
+<file_test xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
+			id="oval:org.cisecurity.benchmarks.redhat_redhat_enterprise_linux_5:tst:[ARTIFACT_OVAL_ID]"
+			check_existence="at_least_one_exists" check="all"
+			comment="[RECOMMENDATION_TITLE]"
+			version="1">
+			<object
+				object_ref="oval:org.cisecurity.benchmarks.redhat_redhat_enterprise_linux_5:obj:[ARTIFACT_OVAL_ID]"/>
+			<state
+				state_ref="oval:org.cisecurity.benchmarks.redhat_redhat_enterprise_linux_5:ste:[ARTIFACT_OVAL_ID]"
+			/>
+		</file_test>
 ```
 
 ###### Object
 
 ```
-<shellcommand_object xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#cmd"
-            id="oval:org.cisecurity.benchmarks.canonical_ubuntu_linux_18:obj:ARTIFACT_OVAL_ID"
-            comment="[RECOMMENDATION_TITLE]" version="1">
-            <command/>
-            <line_selection operation="[TestType]">[TestType.value]</line_selection>
-    </shellcommand_object>
+<file_object xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
+			id="oval:org.cisecurity.benchmarks.redhat_redhat_enterprise_linux_5:obj:[ARTIFACT_OVAL_ID]"
+			comment="[RECOMMENDATION_TITLE]"
+			version="1">
+			<path>/etc</path>
+			<filename>grub.conf</filename>
+		</file_object>
 ```
 ###### State
 
 ```
-<shellcommand_state xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#cmd"
-            id="oval:org.cisecurity.benchmarks.centos_centos_7:ste:[ARTIFACT_OVAL_ID]"
-            comment='[RECOMMENDATION_TITLE]'
-            version="1">
-            <stdout_line entity_check="at least one" operation="pattern match"
-                var_ref="oval:org.cisecurity.benchmarks.centos_centos_7:var:[ARTIFACT_OVAL_ID]"/>
-</shellcommand_state> 
+<file_state xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
+			id="oval:org.cisecurity.benchmarks.redhat_redhat_enterprise_linux_5:ste:[ARTIFACT_OVAL_ID]"
+			comment="[RECOMMENDATION_TITLE]"
+			version="1">
+			<group_id datatype="int">0</group_id>
+			<user_id datatype="int">0</user_id>
+		</file_state>
 ```
 
 ###### Variable

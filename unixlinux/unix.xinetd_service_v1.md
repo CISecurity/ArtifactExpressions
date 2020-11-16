@@ -54,44 +54,44 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
 For `linux.xinetd_service_v1` artifacts, the xccdf:check looks like this.  There is no Value in the xccdf for this Artifact.
 
 ```
-<check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
-    <check-content-ref href="[BENCHMARK_TITLE]"
-        name="oval:org.cisecurity.benchmarks.centos_centos_7:def:[ARTIFACT_OVAL_ID]"/>
-</check>
+	<check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+			<check-content-ref
+				href="[BENCHMARK_NAME]"
+				name="oval:org.cisecurity.benchmarks:def:[ARTIFACT_OVAL_ID]"/>
+		</check>
 ```
 
 ##### OVAL
 ###### Test
 
 ```
-  <shellcommand_test xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#cmd"
-            id="oval:org.cisecurity.benchmarks.centos_centos_7:tst:[ARTIFACT_OVAL_ID]"
-            check_existence="at_least_one_exists" check="at least one"
-            comment="[RECOMMENDATION_TITLE]" version="1">
-            <object object_ref="oval:org.cisecurity.benchmarks.centos_centos_7:obj:[ARTIFACT_OVAL_ID]"/>
-            <state state_ref="oval:org.cisecurity.benchmarks.centos_centos_7:ste:[ARTIFACT_OVAL_ID]"/>
-        </shellcommand_test>
+<xinetd_test xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
+			id="oval:org.cisecurity.benchmarks:tst:[ARTIFACT_OVAL_ID]" check_existence="any_exist" check="all"
+			comment="[RECOMMENDATION_TITLE]" version="1">
+			<object object_ref="oval:org.cisecurity.benchmarks:obj:[ARTIFACT_OVAL_ID]"/>
+			<state state_ref="oval:org.cisecurity.benchmarks:ste:[ARTIFACT_OVAL_ID]"/>
+		</xinetd_test>
 ```
 
 ###### Object
 
 ```
-<shellcommand_object xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#cmd"
-            id="oval:org.cisecurity.benchmarks.centos_centos_7:obj:[ARTIFACT_OVAL_ID]"
-            comment="[RECOMMENDATION_TITLE]" version="1">
-            <command>modprobe -n -v dccp</command>
-            <line_selection operation="pattern match">.+</line_selection>
-        </shellcommand_object>
+<xinetd_object xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
+			id="oval:org.cisecurity.benchmarks:obj:[ARTIFACT_OVAL_ID]"
+			comment="[RECOMMENDATION_TITLE]" version="1">
+			<protocol/>
+			<service_name>chargen-dgram</service_name>
+</xinetd_object>
 ```
+
 ###### State
 
 ```
-<shellcommand_state xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#cmd"
-            id="oval:org.cisecurity.benchmarks.centos_centos_7:ste:[ARTIFACT_OVAL_ID]"
-            comment="[RECOMMENDATION_TITLE]" version="1">
-            <stdout_line entity_check="at least one" operation="[testtype.name]"
-                >[testType.name.value]</stdout_line>
-</shellcommand_state>
+<xinetd_state xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
+			id="oval:org.cisecurity.benchmarks:ste:[ARTIFACT_OVAL_ID]"
+			comment="[RECOMMENDATION_TITLE]" version="1">
+			<disabled datatype="boolean" operation="equals">true</disabled>
+</xinetd_state>
 ```
 
 #### YAML

@@ -69,47 +69,55 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
 
 #### SCAP
 ##### XCCDF
-For `linux.systemd_unit_property_v1` artifacts, the xccdf:check looks like this.  There is no Value in the xccdf for this Artifact.
+For `linux.systemd_unit_property_v1` artifacts, an XCCDF Value element is generated:
 
 ```
-<check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
-    <check-content-ref href="[BENCHMARK_TITLE]"
-        name="oval:org.cisecurity.benchmarks.centos_centos_7:def:[ARTIFACT_OVAL_ID]"/>
-</check>
+<Value id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT_OVAL_ID]_var" type="string"
+				operator="not equal">
+				<title>[RECOMMENDATION_TITLE]</title>
+				<description>This value is used in Rule: [RECOMMENDATION_TITLE]</description>
+				<value>enabled</value>
+			</Value>
 ```
 
 ##### OVAL
 ###### Test
 
 ```
-  <shellcommand_test xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#cmd"
-            id="oval:org.cisecurity.benchmarks.centos_centos_7:tst:[ARTIFACT_OVAL_ID]"
-            check_existence="at_least_one_exists" check="at least one"
-            comment="[RECOMMENDATION_TITLE]" version="1">
-            <object object_ref="oval:org.cisecurity.benchmarks.centos_centos_7:obj:[ARTIFACT_OVAL_ID]"/>
-            <state state_ref="oval:org.cisecurity.benchmarks.centos_centos_7:ste:[ARTIFACT_OVAL_ID]"/>
-        </shellcommand_test>
+<systemdunitproperty_test xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux"
+			id="oval:org.cisecurity.benchmarks.suse_suse_linux_enterprise_server_12:tst:[ARTIFACT_OVAL_ID]"
+			check_existence="at_least_one_exists" check="all"
+			comment="[RECOMMENDATION_TITLE]"
+			version="1">
+			<object
+				object_ref="oval:org.cisecurity.benchmarks.suse_suse_linux_enterprise_server_12:obj:[ARTIFACT_OVAL_ID]"/>
+			<state
+				state_ref="oval:org.cisecurity.benchmarks.suse_suse_linux_enterprise_server_12:ste:[ARTIFACT_OVAL_ID]"
+			/>
+		</systemdunitproperty_test>
 ```
 
 ###### Object
 
 ```
-<shellcommand_object xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#cmd"
-            id="oval:org.cisecurity.benchmarks.centos_centos_7:obj:[ARTIFACT_OVAL_ID]"
-            comment="[RECOMMENDATION_TITLE]" version="1">
-            <command>modprobe -n -v dccp</command>
-            <line_selection operation="pattern match">.+</line_selection>
-        </shellcommand_object>
+<systemdunitproperty_object xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux"
+			id="oval:org.cisecurity.benchmarks.suse_suse_linux_enterprise_server_12:obj:[ARTIFACT_OVAL_ID]"
+			comment="[RECOMMENDATION_TITLE]"
+			version="1">
+			<unit>smb.service</unit>
+			<property>UnitFileState</property>
+		</systemdunitproperty_object>
 ```
 ###### State
 
 ```
-<shellcommand_state xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#cmd"
-            id="oval:org.cisecurity.benchmarks.centos_centos_7:ste:[ARTIFACT_OVAL_ID]"
-            comment="[RECOMMENDATION_TITLE]" version="1">
-            <stdout_line entity_check="at least one" operation="[testtype.name]"
-                >[testType.name.value]</stdout_line>
-</shellcommand_state>
+	id="oval:org.cisecurity.benchmarks.suse_suse_linux_enterprise_server_12:ste:[ARTIFACT_OVAL_ID]"
+			comment="[RECOMMENDATION_TITLE]"
+			version="1">
+			<value datatype="string" operation="not equal"
+				var_ref="oval:org.cisecurity.benchmarks.suse_suse_linux_enterprise_server_12:var:[ARTIFACT_OVAL_ID]"
+			/>
+		</systemdunitproperty_state>
 ```
 
 #### YAML

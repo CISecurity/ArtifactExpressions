@@ -74,43 +74,45 @@ For `linux.chkconfig_service_v2` artifacts, the xccdf:check looks like this.  Th
 
 ```
 <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
-    <check-content-ref href="[BENCHMARK_TITLE]"
-        name="oval:org.cisecurity.benchmarks.centos_centos_7:def:[ARTIFACT_OVAL_ID]"/>
-</check>
+			<check-content-ref href="[BENCHMARK_NAME]"
+				name="oval:org.cisecurity.benchmarks.postgresql_postgresql_9:def:[ARTIFACT_OVAL_ID]"/>
+		</check>
 ```
 
 ##### OVAL
 ###### Test
 
 ```
-  <shellcommand_test xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#cmd"
-            id="oval:org.cisecurity.benchmarks.centos_centos_7:tst:[ARTIFACT_OVAL_ID]"
-            check_existence="at_least_one_exists" check="at least one"
-            comment="[RECOMMENDATION_TITLE]" version="1">
-            <object object_ref="oval:org.cisecurity.benchmarks.centos_centos_7:obj:[ARTIFACT_OVAL_ID]"/>
-            <state state_ref="oval:org.cisecurity.benchmarks.centos_centos_7:ste:[ARTIFACT_OVAL_ID]"/>
-        </shellcommand_test>
+<runlevel_test xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
+			id="oval:org.cisecurity.benchmarks.postgresql_postgresql_9:tst:[ARTIFACT_OVAL_ID]"
+			check_existence="at_least_one_exists" check="at least one"
+			comment="[RECOMMENDATION_TITLE]"
+			version="1">
+			<object object_ref="oval:org.cisecurity.benchmarks.postgresql_postgresql_9:obj:[ARTIFACT_OVAL_ID]"/>
+			<state state_ref="oval:org.cisecurity.benchmarks.postgresql_postgresql_9:ste:[ARTIFACT_OVAL_ID]"/>
+		</runlevel_test>
 ```
 
 ###### Object
 
 ```
-<shellcommand_object xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#cmd"
-            id="oval:org.cisecurity.benchmarks.centos_centos_7:obj:[ARTIFACT_OVAL_ID]"
-            comment="[RECOMMENDATION_TITLE]" version="1">
-            <command>modprobe -n -v dccp</command>
-            <line_selection operation="pattern match">.+</line_selection>
-        </shellcommand_object>
+	<runlevel_object xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
+			id="oval:org.cisecurity.benchmarks.postgresql_postgresql_9:obj:[ARTIFACT_OVAL_ID]"
+			comment="[RECOMMENDATION_TITLE]"
+			version="1">
+			<service_name operation="pattern match">postgres*</service_name>
+			<runlevel operation="equals">3</runlevel>
+		</runlevel_object>
 ```
 ###### State
 
 ```
-<shellcommand_state xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#cmd"
-            id="oval:org.cisecurity.benchmarks.centos_centos_7:ste:[ARTIFACT_OVAL_ID]"
-            comment="[RECOMMENDATION_TITLE]" version="1">
-            <stdout_line entity_check="at least one" operation="[testtype.name]"
-                >[testType.name.value]</stdout_line>
-</shellcommand_state>
+<runlevel_state xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
+			id="oval:org.cisecurity.benchmarks.postgresql_postgresql_9:ste:[ARTIFACT_OVAL_ID]"
+			comment="[RECOMMENDATION_TITLE]"
+			version="1">
+			<start datatype="boolean" operation="equals">true</start>
+		</runlevel_state>
 ```
 
 #### YAML
