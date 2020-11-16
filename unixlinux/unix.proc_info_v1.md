@@ -1,7 +1,9 @@
 # unix.proc_info_v1
 
 ## Description
-TBD
+The process58_test is used to check information found in the UNIX processes. It is equivalent to parsing the output of the ps command. It extends the standard TestType as defined in the oval-definitions-schema and one should refer to the TestType description for more information. The required object element references a process58_object and the optional state element references a process58_state that specifies the process information to check.
+   
+
 
 ## Intent
 TBD

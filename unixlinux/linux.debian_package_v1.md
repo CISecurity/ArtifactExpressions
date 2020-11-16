@@ -1,6 +1,8 @@
 # linux.debian_package_v1
 
 ## Description
+The dpkginfo test is used to check information for a given DPKG package. It extends the standard TestType as defined in the oval-definitions-schema and one should refer to the TestType description for more information. The required object element references a dpkginfo_object and the optional state element specifies the data to check.
+
 
 ## Intent
 TBD

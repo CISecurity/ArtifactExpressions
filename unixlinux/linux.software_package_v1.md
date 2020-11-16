@@ -1,6 +1,8 @@
 # linux.software_package_v1
 
 ## Description
+The rpminfo_test is used to check the RPM header information for a given RPM package. It extends the standard TestType as defined in the oval-definitions-schema and one should refer to the TestType description for more information. The required object element references a rpminfo_object and the optional state element specifies the data to check.
+
 
 ## Intent
 TBD

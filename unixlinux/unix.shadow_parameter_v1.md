@@ -1,7 +1,7 @@
 # unix.shadow_parameter_v1
 
 ## Description
-TBD
+The shadow test is used to check information from the /etc/shadow file for a specific user. This file contains a user's password, but also their password aging and lockout information. It extends the standard TestType as defined in the oval-definitions-schema and one should refer to the TestType description for more information. The required object element references an shadow_object and the optional state element specifies the information to check.
 
 ## Intent
 TBD

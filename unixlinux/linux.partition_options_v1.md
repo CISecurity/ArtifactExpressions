@@ -1,6 +1,8 @@
 # linux.partition_options_v1
 
 ## Description
+The partition_test is used to check the information associated with partitions on the local system. It extends the standard TestType as defined in the oval-definitions-schema and one should refer to the TestType description for more information. The required object element references a partition_object and the optional state element references a partition_state that specifies the information to check.
+
 
 ## Intent
 TBD

@@ -1,7 +1,7 @@
 # unix.inetd_service_v1
 
 ## Description
-TBD
+The xinetd test is used to check information associated with different Internet services. It extends the standard TestType as defined in the oval-definitions-schema and one should refer to the TestType description for more information. The required object element references an inetd_object and the optional state element specifies the information to check.
 
 ## Intent
 TBD

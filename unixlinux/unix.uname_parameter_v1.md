@@ -1,8 +1,7 @@
 # unix.uname_parameter_v1
 
 ## Description
-TBD
-
+The uname test reveals information about the hardware the machine is running on. This information is the parsed equivalent of uname -a. 
 ## Intent
 TBD
 

@@ -1,7 +1,7 @@
 # unix.file_collection_v1
 
 ## Description
-TBD
+The file test is used to check metadata associated with UNIX files, of the sort returned by either an ls command, stat command or stat() system call. It extends the standard TestType as defined in the oval-definitions-schema and one should refer to the TestType description for more information. The required object element references a file_object and the optional state element specifies the metadata to check.
 
 ## Intent
 TBD
