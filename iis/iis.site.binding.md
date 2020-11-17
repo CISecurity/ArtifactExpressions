@@ -22,8 +22,6 @@ TBD
 | operator | String | comparison operation|
 | host_header | String | |
 
-
-
 ### Generated Content
 #### XCCDF+AE
 This is what the AE check looks like, inside a Rule, in the XCCDF
@@ -36,17 +34,15 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
       <ae:title>[RECOMMENDATION TITLE]</ae:title>
       <ae:artifact type="[ARTIFACTTYPE NAME]">
         <ae:parameters>
-          <ae:parameter dt="string" name="gatekeeper"
-            >[gatekeeper.value]</ae:parameter>
+          <ae:parameter dt="string" name="site_name"
+            >[site_name.value]</ae:parameter>
         </ae:parameters>
       </ae:artifact>
       <ae:test type="[TESTTYPE NAME]">
         <ae:parameters>
-          <ae:parameter dt="string" name="check_existence">[check_existence.value]</ae:parameter>
-          <ae:parameter dt="string" name="check">[check.value]</ae:parameter>
-          <ae:parameter dt="string" name="operation">[operation.value]</ae:parameter>
-          <ae:parameter dt="string" name="datatype">[datatype.value]</ae:parameter>
-          <ae:parameter dt="boolean" name="enabled">[enabled.value]</ae:parameter>
+          <ae:parameter dt="string" name="operator">[operator.value]</ae:parameter>
+          <ae:parameter dt="string" name="host_header"
+            >[host_header.value]</ae:parameter>
         </ae:parameters>
       </ae:test>
       <ae:profiles>
@@ -60,46 +56,66 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
 
 #### SCAP
 ##### XCCDF
-For `macos.gatekeeper_v1` artifacts, the xccdf:check looks like this.  There is no Value in the xccdf for this Artifact.
 
 ```
 <xccdf:check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
-   <xccdf:check-content-ref xmlns:ae="http://benchmarks.cisecurity.org/ae/0.5"
-      xmlns:cpe="http://cpe.mitre.org/language/2.0"
-      xmlns:ecl="http://cisecurity.org/check"
-      href="[BENCHMARK NAME]"
-      name="oval:org.cisecurity.benchmarks.o_apple_mac_os_x:def:[ARTIFACT-OVAL-ID]"/>
+  <xccdf:check-export
+     export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
+     value-id="[VALUE ID NAME]"/>
+  <xccdf:check-content-ref href="CIS_Microsoft_IIS_10_Benchmark_v1.1.1-oval.xml"
+     name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]"/>
 </xccdf:check>
+
+<xccdf:Value id="xccdf_org.cisecurity.benchmarks_value_4.9.1_var" operator="[operator.value]"
+  type="string">
+  <xccdf:title>[RECOMMENDATION TITLE]</xccdf:title>
+  <xccdf:description>This variable is used in [RECOMMENDATION TITLE]</xccdf:description>
+  <xccdf:value>[host_header.value]</xccdf:value>
+</xccdf:Value>
+
 ```
 
 ##### OVAL
 ###### Test
 
 ```
-<macos:gatekeeper_test check="[check.value]" check_existence="[check_existence.value]"
-  comment="[RECOMMENDATION TITLE]"
-  id="oval:org.cisecurity.benchmarks.o_apple_mac_os_x:tst:ARTIFACT-OVAL-ID" version="1">
-  <macos:object object_ref="oval:org.cisecurity.benchmarks.o_apple_mac_os_x:obj:ARTIFACT-OVAL-ID"/>
-  <macos:state state_ref="oval:org.cisecurity.benchmarks.o_apple_mac_os_x:ste:ARTIFACT-OVAL-ID"/>
-</macos:gatekeeper_test>
+<iis:bindings_test check="all" check_existence="any_exist"
+   comment="[RECOMMENDATION TITLE]"
+   id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]" version="1">
+   <iis:object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:"/>
+   <iis:state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"/>
+</iis:bindings_test>
+
 ```
 
 ###### Object
 
 ```
-<macos:gatekeeper_object
-  comment="[RECOMMENDATION TITLE]"
-  id="oval:org.cisecurity.benchmarks.o_apple_mac_os_x:obj:ARTIFACT-OVAL-ID" version="1"> 
-</macos:gatekeeper_object>    
+<iis:bindings_object id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
+   version="1">
+   <iis:site_name operation="[operator.value]">[site_name.value]</iis:site_name>
+</iis:bindings_object>   
+
 ```
+
 ###### State
 
 ```
-<macos:gatekeeper_state
-  comment="[RECOMMENDATION TITLE]"
-  id="oval:org.cisecurity.benchmarks.o_apple_mac_os_x:ste:ARTIFACT-OVAL-ID" version="1">
-  <macos:enabled datatype="[datatype.value]" operation="[operation.value]">[enabled.value]</macos:enabled>
-</macos:gatekeeper_state>    
+<iis:bindings_state
+   id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" version="1">
+   <host_header xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#iis"
+      datatype="string" operation="[operator.value]"
+      var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"/>
+</iis:bindings_state>   
+
+```
+
+###### Variable
+
+```
+<external_variable
+  comment="This value is used in [RECOMMENDATION TITLE]"
+  datatype="[data_type.value]" id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" version="1"/>                   
 ```
 
 #### YAML
@@ -112,32 +128,21 @@ For `macos.gatekeeper_v1` artifacts, the xccdf:check looks like this.  There is 
       type: [ARTIFACTTYPE NAME]
       parameters:
       - parameter: 
-          name: gatekeeper
+          name: site_name
           type: string
-          value: [gatekeeper.value]
+          value: [site_name.value]
     test:
       type: [TESTTYPE NAME]
       parameters:
       - parameter:
-          name: check_existence
+          name: operator
           type: string
-          value: [check_existence.value]
+          value: [operator.value]
       - parameter: 
-          name: check
+          name: host_header
           type: string
-          value: [check.value]
-      - parameter:
-          name: operation
-          type: string
-          value: [operation.value]
-      - parameter: 
-          name: datatype
-          type: string
-          value: [datatype.value]  
-      - parameter: 
-          name: enabled
-          type: string
-          value: [enabled.value]      
+          value: [host_header.value]
+       
 ```
 
 #### JSON
@@ -151,9 +156,9 @@ For `macos.gatekeeper_v1` artifacts, the xccdf:check looks like this.  There is 
     "parameters": [
       {
         "parameter": {
-          "name": "gatekeeper",
+          "name": "site_name",
           "type": "string",
-          "value": [gatekeeper.value]
+          "value": [site_name.value]
         }
       }
     ]
@@ -163,37 +168,16 @@ For `macos.gatekeeper_v1` artifacts, the xccdf:check looks like this.  There is 
     "parameters": [
       {
         "parameter": {
-          "name": "check_existence",
+          "name": "operator",
           "type": "string",
-          "value": [check_existence.value]
+          "value": [operator.value]
         }
       },
       {
         "parameter": {
-          "name": "check",
+          "name": "host_header",
           "type": "string",
-          "value": [check.value]
-        }
-      },
-      {
-        "parameter": {
-          "name": "operation",
-          "type": "string",
-          "value": [operation.value]
-        }
-      },
-      {
-        "parameter": {
-          "name": "datetype",
-          "type": "string",
-          "value": [datatype.value]
-        }
-      },
-      {
-        "parameter": {
-          "name": "enabled",
-          "type": "string",
-          "value": [enabled.value]
+          "value": [host_header.value]
         }
       }
     ]
