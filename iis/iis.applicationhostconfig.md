@@ -25,6 +25,31 @@ TBD
 | value | String | The value to compare to the collected web.config setting |
 
 
+operator
+NOTE: This parameter is governed by a constraint allowing only the following values:
+- equals
+- not equal
+- case insensitive equals
+- case insensitive not equal
+- greater than
+- less than
+- greater than or equal
+- less than or equal
+- bitwise and
+- bitwise or
+- pattern match
+- subset of
+- superset of
+
+data_type
+NOTE: This parameter is governed by a constraint allowing only the following values:
+- boolean
+- float
+- int
+- string
+- version
+- set
+
 ### Generated Content
 #### XCCDF+AE
 This is what the AE check looks like, inside a Rule, in the XCCDF
@@ -57,13 +82,12 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
 
 #### SCAP
 ##### XCCDF
-For `macos.gatekeeper_v1` artifacts, the xccdf:check looks like this.  There is no Value in the xccdf for this Artifact.
 
 ```
 <xccdf:check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
   <xccdf:check-export
      export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
-     value-id="xccdf_org.cisecurity.benchmarks_value_4.9.1_var"/>
+     value-id="[VALUE ID NAME]"/>
   <xccdf:check-content-ref href="CIS_Microsoft_IIS_10_Benchmark_v1.1.1-oval.xml"
      name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]"/>
 </xccdf:check>
@@ -102,7 +126,7 @@ For `macos.gatekeeper_v1` artifacts, the xccdf:check looks like this.  There is 
 <iis:applicationhostconfig_state
    id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" version="1">
    <allow_unlisted_isapis xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#iis"
-      datatype="[data_type.value]" operation="[operation.value]"
+      datatype="[data_type.value]" operation="[operator.value]"
       var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"/>
 </iis:applicationhostconfig_state>   
 ```
