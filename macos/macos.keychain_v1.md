@@ -14,10 +14,12 @@ TBD
 
 
 ### Supported Test Types
-- macos.keychain_lock_on_sleep_v1
 - macos.keychain_timeout_v1
+- macos.keychain_lock_on_sleep_v1
 
 ### Test Type Parameters
+#### macos.keychain_timeout_v1
+
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
 | check_existence | String | Define how many items should be collected|
@@ -26,7 +28,7 @@ TBD
 | datatype | String | datatype |
 | timeout | Integer | Specifies the inactivity timeout (in seconds) for the keychain, or 0 if there is no timeout.|
 
-
+#### macos.keychain_lock_on_sleep_v1
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
 | check_existence | String | Define how many items should be collected|
@@ -77,6 +79,7 @@ NOTE: This parameter is governed by a constraint allowing only the following val
 - set
 
 ### Generated Content
+#### macos.keychain_timeout_v1
 #### XCCDF+AE
 This is what the AE check looks like, inside a Rule, in the XCCDF
 
@@ -260,6 +263,7 @@ For `macos.keychain_v1` artifacts, the xccdf:check looks like this.  There is no
 
 
 ### Generated Content
+#### macos.keychain_lock_on_sleep_v1
 #### XCCDF+AE
 This is what the AE check looks like, inside a Rule, in the XCCDF
 

@@ -121,9 +121,9 @@ For `macos.gatekeeper_v1` artifacts, the xccdf:check looks like this.  There is 
 ```
 <macos:gatekeeper_test check="[check.value]" check_existence="[check_existence.value]"
   comment="[RECOMMENDATION TITLE]"
-  id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:ARTIFACT-OVAL-ID" version="1">
-  <macos:object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:ARTIFACT-OVAL-ID"/>
-  <macos:state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:ARTIFACT-OVAL-ID"/>
+  id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]" version="1">
+  <macos:object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"/>
+  <macos:state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"/>
 </macos:gatekeeper_test>
 ```
 
@@ -132,7 +132,7 @@ For `macos.gatekeeper_v1` artifacts, the xccdf:check looks like this.  There is 
 ```
 <macos:gatekeeper_object
   comment="[RECOMMENDATION TITLE]"
-  id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:ARTIFACT-OVAL-ID" version="1"> 
+  id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" version="1"> 
 </macos:gatekeeper_object>    
 ```
 ###### State
@@ -140,7 +140,7 @@ For `macos.gatekeeper_v1` artifacts, the xccdf:check looks like this.  There is 
 ```
 <macos:gatekeeper_state
   comment="[RECOMMENDATION TITLE]"
-  id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:ARTIFACT-OVAL-ID" version="1">
+  id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" version="1">
   <macos:enabled datatype="[datatype.value]" operation="[operation.value]">[enabled.value]</macos:enabled>
 </macos:gatekeeper_state>    
 ```

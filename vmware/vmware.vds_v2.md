@@ -89,17 +89,19 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
       <ae:title>[RECOMMENDATION TITLE]</ae:title>
       <ae:artifact type="[ARTIFACTTYPE NAME]">
         <ae:parameters>
-          <ae:parameter dt="string" name="gatekeeper"
-            >[gatekeeper.value]</ae:parameter>
+          <ae:parameter dt="string" name="vds_name">[vds_name.value]</ae:parameter>
+          <ae:parameter dt="string" name="check_existence"
+            >[check_existence.value]</ae:parameter>
+          <ae:parameter dt="string" name="vds_name_operation">[vds_name_operation.value]</ae:parameter>
         </ae:parameters>
       </ae:artifact>
       <ae:test type="[TESTTYPE NAME]">
         <ae:parameters>
-          <ae:parameter dt="string" name="check_existence">[check_existence.value]</ae:parameter>
           <ae:parameter dt="string" name="check">[check.value]</ae:parameter>
           <ae:parameter dt="string" name="operation">[operation.value]</ae:parameter>
           <ae:parameter dt="string" name="datatype">[datatype.value]</ae:parameter>
-          <ae:parameter dt="boolean" name="enabled">[enabled.value]</ae:parameter>
+          <ae:parameter dt="string" name="vlan_mtu_health_check_enabled"
+            >[vlan_mtu_health_check_enabled.value]</ae:parameter>
         </ae:parameters>
       </ae:test>
       <ae:profiles>
@@ -113,46 +115,67 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
 
 #### SCAP
 ##### XCCDF
-For `macos.gatekeeper_v1` artifacts, the xccdf:check looks like this.  There is no Value in the xccdf for this Artifact.
+For `vmware.vds_v2` artifacts, the xccdf:check looks like this. An XCCDF Value element is generated.
 
 ```
-<xccdf:check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
-   <xccdf:check-content-ref xmlns:ae="http://benchmarks.cisecurity.org/ae/0.5"
-      xmlns:cpe="http://cpe.mitre.org/language/2.0"
-      xmlns:ecl="http://cisecurity.org/check"
-      href="[BENCHMARK NAME]"
+<xccdf:complex-check operator="AND">
+  <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+    <check-export export-name="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]"
+      value-id="[VALUE ID NAME]"/>
+    <check-content-ref href="[BENCHMARK NAME]"
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]"/>
-</xccdf:check>
+  </check>
+</xccdf:complex-check>  
+
+<Value abstract="false" hidden="false" id="[VALUE ID NAME]"
+  interactive="1" prohibitChanges="false" type="string">
+  <title override="0">[RECOMMENDATION_TITLE]</title>
+  <description override="0">[RECOMMENDATION_TITLE]</description>
+  <value selector=""/>
+  <default>[DEFAULT VALUE]</default>
+</Value>    
+
 ```
 
 ##### OVAL
 ###### Test
 
 ```
-<macos:gatekeeper_test check="[check.value]" check_existence="[check_existence.value]"
-  comment="[RECOMMENDATION TITLE]"
-  id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:ARTIFACT-OVAL-ID" version="1">
-  <macos:object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:ARTIFACT-OVAL-ID"/>
-  <macos:state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:ARTIFACT-OVAL-ID"/>
-</macos:gatekeeper_test>
+<vds_test xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi" check="[check.value]"
+  check_existence="[check_existence.value]" comment="[RECOMMENDATION TITLE]"
+  id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]" version="1">
+  <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"/>
+  <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"/>
+</vds_test>
 ```
 
 ###### Object
 
 ```
-<macos:gatekeeper_object
+<vds_object xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
   comment="[RECOMMENDATION TITLE]"
-  id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:ARTIFACT-OVAL-ID" version="1"> 
-</macos:gatekeeper_object>    
+  id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" version="1">
+  <connection_string var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]"/>
+  <vds_name operation="[operation.value]">[vds_name.value]</vds_name>
+</vds_object>    
 ```
 ###### State
 
 ```
-<macos:gatekeeper_state
+<vds_state xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
   comment="[RECOMMENDATION TITLE]"
-  id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:ARTIFACT-OVAL-ID" version="1">
-  <macos:enabled datatype="[datatype.value]" operation="[operation.value]">[enabled.value]</macos:enabled>
-</macos:gatekeeper_state>    
+  id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" version="1">
+  <vlan_mtu_health_check_enabled datatype="[datatype.value]" operation="[operation.value]"
+    >[vlan_mtu_health_check_enabled.value]</vlan_mtu_health_check_enabled>
+</vds_state>   
+```
+
+###### Variable
+
+```
+<external_variable
+  comment="This value is used in [RECOMMENDATION TITLE]"
+  datatype="[datatype.value]" id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" version="1"/>                   
 ```
 
 #### YAML
@@ -165,16 +188,20 @@ For `macos.gatekeeper_v1` artifacts, the xccdf:check looks like this.  There is 
       type: [ARTIFACTTYPE NAME]
       parameters:
       - parameter: 
-          name: gatekeeper
+          name: vds_name
           type: string
-          value: [gatekeeper.value]
+          value: [vds_name.value]
+      - parameter: 
+        name: check_existence
+        type: string
+        value: [check_existence.value]   
+      - parameter: 
+        name: ds_name_operation
+        type: string
+        value: [vds_name_operation.value]  
     test:
       type: [TESTTYPE NAME]
       parameters:
-      - parameter:
-          name: check_existence
-          type: string
-          value: [check_existence.value]
       - parameter: 
           name: check
           type: string
@@ -188,9 +215,9 @@ For `macos.gatekeeper_v1` artifacts, the xccdf:check looks like this.  There is 
           type: string
           value: [datatype.value]  
       - parameter: 
-          name: enabled
+          name: vlan_mtu_health_check_enabled
           type: string
-          value: [enabled.value]      
+          value: [vlan_mtu_health_check_enabled.value]      
 ```
 
 #### JSON
@@ -204,16 +231,11 @@ For `macos.gatekeeper_v1` artifacts, the xccdf:check looks like this.  There is 
     "parameters": [
       {
         "parameter": {
-          "name": "gatekeeper",
+          "name": "vds_name",
           "type": "string",
-          "value": [gatekeeper.value]
+          "value": [vds_name.value]
         }
-      }
-    ]
-  },
-  "test": {
-    "type": [TESTTYPE NAME],
-    "parameters": [
+      },
       {
         "parameter": {
           "name": "check_existence",
@@ -221,6 +243,18 @@ For `macos.gatekeeper_v1` artifacts, the xccdf:check looks like this.  There is 
           "value": [check_existence.value]
         }
       },
+      {
+        "parameter": {
+          "name": "vds_name_operation",
+          "type": "string",
+          "value": [vds_name_operation.value]
+        }
+      }
+    ]
+  },
+  "test": {
+    "type": [TESTTYPE NAME],
+    "parameters": [
       {
         "parameter": {
           "name": "check",
@@ -244,9 +278,9 @@ For `macos.gatekeeper_v1` artifacts, the xccdf:check looks like this.  There is 
       },
       {
         "parameter": {
-          "name": "enabled",
+          "name": "vlan_mtu_health_check_enabled",
           "type": "string",
-          "value": [enabled.value]
+          "value": [vlan_mtu_health_check_enabled.value]
         }
       }
     ]
