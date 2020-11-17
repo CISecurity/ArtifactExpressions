@@ -129,8 +129,8 @@ For `vmware.vds_v2` artifacts, the xccdf:check looks like this. An XCCDF Value e
 
 <Value abstract="false" hidden="false" id="[VALUE ID NAME]"
   interactive="1" prohibitChanges="false" type="string">
-  <title override="0">[RECOMMENDATION_TITLE]</title>
-  <description override="0">[RECOMMENDATION_TITLE]</description>
+  <title override="0">[RECOMMENDATION TITLE]</title>
+  <description override="0">[RECOMMENDATION TITLE]</description>
   <value selector=""/>
   <default>[DEFAULT VALUE]</default>
 </Value>    
