@@ -1,7 +1,8 @@
 # iis.webserverconfig
 
 ## Description
-The webconfig_test is used to check the status of Gatekeeper and any unsigned applications that have been granted execute permission.
+
+The Web Configuration Test evaluates many of the site-level and application-level configuration settings for Internet Information Services (IIS) 7 and above in the ApplicationHost.config file, and contains configuration elements that define the settings used by the Web server engine and modules.
 
 ## Intent
 TBD

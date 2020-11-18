@@ -1,7 +1,9 @@
 # iis.applicationhostconfig
 
 ## Description
-The applicationhostconfig_test is used to check the status of Gatekeeper and any unsigned applications that have been granted execute permission.
+The Application Host Configuration Test evaluates global configuration settings that are used by the Windows Process Activation Service (WAS) in Internet Information Services (IIS). This element defines many of the server-level configuration settings in the IIS 7 ApplicationHost.config file. 
+Of significant importance, the Application Host Configuration Item contains the configuration settings for the Application Pools and Sites, which respectively define the collection of application pools and Web sites on 
+an IIS server.  Note: Unlike the settings that are found in system.webServer, settings in the Application Host Configuration Item element cannot be delegated.
 
 ## Intent
 TBD

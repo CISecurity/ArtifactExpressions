@@ -1,7 +1,8 @@
 # iis.applicationpool
 
 ## Description
-The applicationpool_test is used to check the status of Gatekeeper and any unsigned applications that have been granted execute permission.
+An Application Pool Test contains configuration settings for all application pools running on your Internet Information Services (IIS) 7 or later server. An application pool defines a group of one or more worker processes, configured with common settings that serve requests to one or more applications that are assigned to that application pool. Because application pools allow a set of Web applications to share one or more similarly configured worker processes, they provide a convenient way to isolate a set 
+of Web applications from other Web applications on the server computer. Process boundaries separate each worker process; therefore, application problems in one application pool do not affect Web sites or applications in other application pools. Application pools significantly increase both the reliability and manageability of your Web infrastructure.
 
 ## Intent
 TBD
