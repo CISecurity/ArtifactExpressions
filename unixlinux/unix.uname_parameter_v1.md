@@ -137,65 +137,80 @@ For `unix.uname_parameter_v1` artifacts, artifacts, an XCCDF Value element is ge
 #### YAML
 
 ```
-- artifact-expression:
+artifact-expression:
     artifact-unique-id: [ARTIFACT-OVAL-ID]
     artifact-title: [RECOMMENDATION TITLE]
     artifact:
       type: unix.uname_parameter_v1
       parameters:
       - parameter: 
-          name: command
+          name: parameter
           type: string
-          value: [ARTIFACT TYPE PARAMETER VALUE]
+          value: [parameter.value]
     test:
-      type: [TestType Name]
+      type: [testType name]
       parameters:
-      - parameter:
+      - parameter: 
           name: value
           type: string
-          value: [TestType.value.value]
+          value: [value.value]
       - parameter: 
           name: data_type
           type: string
-          value: [TestType.data_type.value]
+          value: [data_type.value]
+      
 ```
 
 #### JSON
 
 ```
-"artifact-expression": {
-  "artifact-unique-id": [ARTIFACT-OVAL-ID],
-  "artifact-title": [RECOMMENDATION TITLE],
-  "artifact": {
-    "type": "unix_command_output_v1",
-    "parameters": [
-      {
-        "parameter": {
-          "name": "command",
-          "type": "string",
-          "value": [ARTIFACT TYPE PARAMETER VALUE]
+{
+  "artifact-expression": {
+    "artifact-unique-id": [
+      "ARTIFACT-OVAL-ID"
+    ],
+    "artifact-title": [
+      "RECOMMENDATION TITLE"
+    ],
+    "artifact": {
+      "type": "unix.uname_parameter_v1",
+      "parameters": [
+        {
+          "parameter": {
+            "name": "parameter",
+            "type": "string",
+            "value": [
+              "parameter.value"
+            ]
+          }
         }
-      }
-    ]
-  },
-  "test": {
-    "type": [TestType Name],
-    "parameters": [
-      {
-        "parameter": {
-          "name": "value",
-          "type": "string",
-          "value": [TestType.value.value]
+      ]
+    },
+    "test": {
+      "type": [
+        "testType name"
+      ],
+      "parameters": [
+        {
+          "parameter": {
+            "name": "value",
+            "type": "string",
+            "value": [
+              "value.value"
+            ]
+          }
+        },
+        {
+          "parameter": {
+            "name": "data_type",
+            "type": "string",
+            "value": [
+              "data_type.value"
+            ]
+          }
         }
-      },
-      {
-        "parameter": {
-          "name": "data_type",
-          "type": "string",
-          "value": [TestType.data_type.value]
-        }
-      }
-    ]
+      ]
+    }
   }
 }
 ```

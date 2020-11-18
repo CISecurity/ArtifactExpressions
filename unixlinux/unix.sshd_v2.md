@@ -148,65 +148,118 @@ check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
 #### YAML
 
 ```
-- artifact-expression:
+artifact-expression:
     artifact-unique-id: [ARTIFACT-OVAL-ID]
     artifact-title: [RECOMMENDATION TITLE]
     artifact:
       type: unix.sshd_v2
       parameters:
       - parameter: 
-          name: command
+          name: name
           type: string
-          value: [ARTIFACT TYPE PARAMETER VALUE]
+          value: [name.value]
     test:
-      type: [TestType Name]
+      type: [testType name]
       parameters:
-      - parameter:
+      - parameter: 
           name: value
           type: string
-          value: [TestType.value.value]
+          value: [value.value]
       - parameter: 
           name: data_type
           type: string
-          value: [TestType.data_type.value]
+          value: [data_type.value]
+      - parameter: 
+          name: check_existence
+          type: string
+          value: [check_existence.value]
+      - parameter: 
+          name: check
+          type: string
+          value: [check.value]
+      - parameter: 
+          name: operation
+          type: string
+          value: [operation.value]
 ```
 
 #### JSON
 
 ```
-"artifact-expression": {
-  "artifact-unique-id": [ARTIFACT-OVAL-ID],
-  "artifact-title": [RECOMMENDATION TITLE],
-  "artifact": {
-    "type": "unix_command_output_v1",
-    "parameters": [
-      {
-        "parameter": {
-          "name": "command",
-          "type": "string",
-          "value": [ARTIFACT TYPE PARAMETER VALUE]
+{
+  "artifact-expression": {
+    "artifact-unique-id": [
+      "ARTIFACT-OVAL-ID"
+    ],
+    "artifact-title": [
+      "RECOMMENDATION TITLE"
+    ],
+    "artifact": {
+      "type": "unix.sshd_v2",
+      "parameters": [
+        {
+          "parameter": {
+            "name": "name",
+            "type": "string",
+            "value": [
+              "name.value"
+            ]
+          }
         }
-      }
-    ]
-  },
-  "test": {
-    "type": [TestType Name],
-    "parameters": [
-      {
-        "parameter": {
-          "name": "value",
-          "type": "string",
-          "value": [TestType.value.value]
+      ]
+    },
+    "test": {
+      "type": [
+        "testType name"
+      ],
+      "parameters": [
+        {
+          "parameter": {
+            "name": "value",
+            "type": "string",
+            "value": [
+              "value.value"
+            ]
+          }
+        },
+        {
+          "parameter": {
+            "name": "data_type",
+            "type": "string",
+            "value": [
+              "data_type.value"
+            ]
+          }
+        },
+        {
+          "parameter": {
+            "name": "check_existence",
+            "type": "string",
+            "value": [
+              "check_existence.value"
+            ]
+          }
+        },
+        {
+          "parameter": {
+            "name": "check",
+            "type": "string",
+            "value": [
+              "check.value"
+            ]
+          }
+        },
+        {
+          "parameter": {
+            "name": "operation",
+            "type": "string",
+            "value": [
+              "operation.value"
+            ]
+          }
         }
-      },
-      {
-        "parameter": {
-          "name": "data_type",
-          "type": "string",
-          "value": [TestType.data_type.value]
-        }
-      }
-    ]
+      ]
+    }
   }
 }
 ```

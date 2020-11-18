@@ -125,55 +125,118 @@ For `linux.systemd_unit_property_v1` artifacts, an XCCDF Value element is genera
 
 
 ```
-- artifact-expression:
+artifact-expression:
     artifact-unique-id: [ARTIFACT-OVAL-ID]
     artifact-title: [RECOMMENDATION TITLE]
     artifact:
-      type: unix.command_output_v1
+      type: linux.systemd_unit_property_v1
       parameters:
       - parameter: 
-          name: loadable
+          name: unit
           type: string
-          value: [ARTIFACT TYPE PARAMETER VALUE]
+          value: [unit.value]
+      - parameter: 
+          name: property
+          type: string
+          value: [property.value]
     test:
       type: [TestType Name]
       parameters:
       - parameter:
-          name: loaded
+          name: value
           type: string
-          value: [TestType.value.value]
+          value: [value.value]
+      - parameter:
+          name: data_type
+          type: string
+          value: [data_type.value]
+      - parameter:
+          name: unit_operation
+          type: string
+          value: [unit_operation.value]
+      - parameter:
+          name: dependency
+          type: string
+          value: [dependency.value]
 ```
 
 #### JSON
 
 ```
-"artifact-expression": {
-  "artifact-unique-id": [ARTIFACT-OVAL-ID],
-  "artifact-title": [RECOMMENDATION TITLE],
-  "artifact": {
-    "type": "linux.systemd_unit_property_v1
-",
-    "parameters": [
-      {
-        "parameter": {
-          "name": "loadable",
-          "type": "string",
-          "value": [ARTIFACT TYPE PARAMETER VALUE]
+{
+  "artifact-expression": {
+    "artifact-unique-id": [
+      "ARTIFACT-OVAL-ID"
+    ],
+    "artifact-title": [
+      "RECOMMENDATION TITLE"
+    ],
+    "artifact": {
+      "type": "linux.systemd_unit_property_v1",
+      "parameters": [
+        {
+          "parameter": {
+            "name": "unit",
+            "type": "string",
+            "value": [
+              "unit.value"
+            ]
+          }
+        },
+        {
+          "parameter": {
+            "name": "property",
+            "type": "string",
+            "value": [
+              "property.value"
+            ]
+          }
         }
-      }
-    ]
-  },
-  "test": {
-    "type": [TestType Name],
-    "parameters": [
-      {
-        "parameter": {
-          "name": "loaded",
-          "type": "string",
-          "value": [TestType.value.value]
+      ]
+    },
+    "test": {
+      "type": [
+        "TestType Name"
+      ],
+      "parameters": [
+        {
+          "parameter": {
+            "name": "value",
+            "type": "string",
+            "value": [
+              "value.value"
+            ]
+          }
+        },
+        {
+          "parameter": {
+            "name": "data_type",
+            "type": "string",
+            "value": [
+              "data_type.value"
+            ]
+          }
+        },
+        {
+          "parameter": {
+            "name": "unit_operation",
+            "type": "string",
+            "value": [
+              "unit_operation.value"
+            ]
+          }
+        },
+        {
+          "parameter": {
+            "name": "dependency",
+            "type": "string",
+            "value": [
+              "dependency.value"
+            ]
+          }
         }
-      }
-    ]
+      ]
+    }
   }
 }
 ``` 

@@ -98,54 +98,78 @@ For `linux.upstart_service_v1` artifacts, the xccdf:check looks like this.  Ther
 
 
 ```
-- artifact-expression:
+artifact-expression:
     artifact-unique-id: [ARTIFACT-OVAL-ID]
     artifact-title: [RECOMMENDATION TITLE]
     artifact:
-      type: unix.command_output_v1
+      type: linux.upstart_service_v1
       parameters:
       - parameter: 
           name: service
           type: string
-          value: [ARTIFACT TYPE PARAMETER VALUE]
+          value: [service.value]
+      - parameter: 
+          name: protocol
+          type: string
+          value: [protocol.value]
     test:
       type: [TestType Name]
       parameters:
       - parameter:
           name: enabled
           type: string
-          value: [TestType.value.value]
+          value: [enabled.value]
 ```
-
 #### JSON
 
 ```
-"artifact-expression": {
-  "artifact-unique-id": [ARTIFACT-OVAL-ID],
-  "artifact-title": [RECOMMENDATION TITLE],
-  "artifact": {
-    "type": "unix.upstart_service_v1",
-    "parameters": [
-      {
-        "parameter": {
-          "name": "service",
-          "type": "string",
-          "value": [ARTIFACT TYPE PARAMETER VALUE]
+{
+  "artifact-expression": {
+    "artifact-unique-id": [
+      "ARTIFACT-OVAL-ID"
+    ],
+    "artifact-title": [
+      "RECOMMENDATION TITLE"
+    ],
+    "artifact": {
+      "type": "linux.upstart_service_v1",
+      "parameters": [
+        {
+          "parameter": {
+            "name": "service",
+            "type": "string",
+            "value": [
+              "service.value"
+            ]
+          }
+        },
+        {
+          "parameter": {
+            "name": "protocol",
+            "type": "string",
+            "value": [
+              "protocol.value"
+            ]
+          }
         }
-      }
-    ]
-  },
-  "test": {
-    "type": [TestType Name],
-    "parameters": [
-      {
-        "parameter": {
-          "name": "enabled",
-          "type": "string",
-          "value": [TestType.value.value]
+      ]
+    },
+    "test": {
+      "type": [
+        "TestType Name"
+      ],
+      "parameters": [
+        {
+          "parameter": {
+            "name": "enabled",
+            "type": "string",
+            "value": [
+              "enabled.value"
+            ]
+          }
         }
-      }
-    ]
+      ]
+    }
   }
 }
 ```

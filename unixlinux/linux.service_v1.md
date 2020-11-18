@@ -96,54 +96,66 @@ For `linux.service_v1` artifacts, the xccdf:check looks like this.  There is no 
 
 
 ```
-- artifact-expression:
+artifact-expression:
     artifact-unique-id: [ARTIFACT-OVAL-ID]
     artifact-title: [RECOMMENDATION TITLE]
     artifact:
-      type: unix.command_output_v1
+      type:  linux.service_v1
       parameters:
       - parameter: 
-          name: loadable
+          name: service
           type: string
-          value: [ARTIFACT TYPE PARAMETER VALUE]
+          value: [service.value]
     test:
       type: [TestType Name]
       parameters:
       - parameter:
-          name: loaded
+          name: enabled
           type: string
-          value: [TestType.value.value]
+          value: [enabled.value]
 ```
 
 #### JSON
 
 ```
-"artifact-expression": {
-  "artifact-unique-id": [ARTIFACT-OVAL-ID],
-  "artifact-title": [RECOMMENDATION TITLE],
-  "artifact": {
-    "type": "linux.service_v1",
-    "parameters": [
-      {
-        "parameter": {
-          "name": "loadable",
-          "type": "string",
-          "value": [ARTIFACT TYPE PARAMETER VALUE]
+{
+  "artifact-expression": {
+    "artifact-unique-id": [
+      "ARTIFACT-OVAL-ID"
+    ],
+    "artifact-title": [
+      "RECOMMENDATION TITLE"
+    ],
+    "artifact": {
+      "type": "linux.service_v1",
+      "parameters": [
+        {
+          "parameter": {
+            "name": "service",
+            "type": "string",
+            "value": [
+              "service.value"
+            ]
+          }
         }
-      }
-    ]
-  },
-  "test": {
-    "type": [TestType Name],
-    "parameters": [
-      {
-        "parameter": {
-          "name": "loaded",
-          "type": "string",
-          "value": [TestType.value.value]
+      ]
+    },
+    "test": {
+      "type": [
+        "TestType Name"
+      ],
+      "parameters": [
+        {
+          "parameter": {
+            "name": "enabled",
+            "type": "string",
+            "value": [
+              "enabled.value"
+            ]
+          }
         }
-      }
-    ]
+      ]
+    }
   }
 }
 ``` 

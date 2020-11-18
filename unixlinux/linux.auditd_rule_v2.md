@@ -97,54 +97,63 @@ For ` linux.auditd_rule_v2` artifacts, the xccdf:check looks like this.  There i
 
 
 ```
-- artifact-expression:
+artifact-expression:
     artifact-unique-id: [ARTIFACT-OVAL-ID]
     artifact-title: [RECOMMENDATION TITLE]
     artifact:
-      type: unix.command_output_v1
+      type: linux.auditd_rule_v2
       parameters:
       - parameter: 
-          name: loadable
+          name: existence
           type: string
-          value: [ARTIFACT TYPE PARAMETER VALUE]
+          value: [check_existence.value]
+      - parameter: 
+          name: rule
+          type: string
+          value: [rule.value]
     test:
       type: [TestType Name]
-      parameters:
-      - parameter:
-          name: loaded
-          type: string
-          value: [TestType.value.value]
 ```
 
 #### JSON
 
 ```
-"artifact-expression": {
-  "artifact-unique-id": [ARTIFACT-OVAL-ID],
-  "artifact-title": [RECOMMENDATION TITLE],
-  "artifact": {
-    "type": "linux.audit_rule_v2",
-    "parameters": [
-      {
-        "parameter": {
-          "name": "loadable",
-          "type": "string",
-          "value": [ARTIFACT TYPE PARAMETER VALUE]
+{
+  "artifact-expression": {
+    "artifact-unique-id": [
+      "ARTIFACT-OVAL-ID"
+    ],
+    "artifact-title": [
+      "RECOMMENDATION TITLE"
+    ],
+    "artifact": {
+      "type": "linux.auditd_rule_v2",
+      "parameters": [
+        {
+          "parameter": {
+            "name": "existence",
+            "type": "string",
+            "value": [
+              "check_existence.value"
+            ]
+          }
+        },
+        {
+          "parameter": {
+            "name": "rule",
+            "type": "string",
+            "value": [
+              "rule.value"
+            ]
+          }
         }
-      }
-    ]
-  },
-  "test": {
-    "type": [TestType Name],
-    "parameters": [
-      {
-        "parameter": {
-          "name": "loaded",
-          "type": "string",
-          "value": [TestType.value.value]
-        }
-      }
-    ]
+      ]
+    },
+    "test": {
+      "type": [
+        "TestType Name"
+      ]
+    }
   }
 }
 ``` 

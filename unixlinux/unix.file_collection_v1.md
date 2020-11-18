@@ -149,65 +149,276 @@ For `unix.file_collection_v1` artifacts, an XCCDF check looks like this. an XCCD
 #### YAML
 
 ```
-- artifact-expression:
+artifact-expression:
     artifact-unique-id: [ARTIFACT-OVAL-ID]
     artifact-title: [RECOMMENDATION TITLE]
     artifact:
       type: unix.file_collection_v1
       parameters:
       - parameter: 
-          name: command
+          name: existence
           type: string
-          value: [ARTIFACT TYPE PARAMETER VALUE]
+          value: [existence.value]
+      - parameter: 
+          name: path
+          type: string
+          value: [path.value]
+      - parameter: 
+          name: file_name
+          type: string
+          value: [file_name.value]
+      - parameter: 
+          name: recurse
+          type: string
+          value: [recurse.value]
+      - parameter: 
+          name: max_depth
+          type: int
+          value: [max_depth.value]
+      - parameter: 
+          name: file_system
+          type: string
+          value: [file_system.value]
     test:
       type: [TestType Name]
       parameters:
-      - parameter:
-          name: value
-          type: string
-          value: [TestType.value.value]
       - parameter: 
-          name: data_type
+          name: uread
           type: string
-          value: [TestType.data_type.value]
+          value: [uread.value]
+      - parameter: 
+          name: uwrite
+          type: string
+          value: [uwrite.value]                   
+      - parameter: 
+          name: uexec
+          type: string
+          value: [uexec.value]
+      - parameter: 
+          name: gread
+          type: string
+          value: [gread.value]                   
+      - parameter: 
+          name: gwrite
+          type: string
+          value: [gwrite.value]
+      - parameter: 
+          name: gexec
+          type: string
+          value: [gexec.value]                   
+      - parameter: 
+          name: oread
+          type: string
+          value: [oread.value]
+      - parameter: 
+          name: owrite
+          type: string
+          value: [owrite.value]                   
+      - parameter: 
+          name: oexec
+          type: string
+          value: [oexec.value]
+      - parameter: 
+          name: suid
+          type: string
+          value: [suid.value]                   
+      - parameter: 
+          name: sgid
+          type: string
+          value: [sgid.value]
+      - parameter: 
+          name: sticky
+          type: string
+          value: [sticky.value]                   
+               
+                        
 ```
 
 #### JSON
 
 ```
-"artifact-expression": {
-  "artifact-unique-id": [ARTIFACT-OVAL-ID],
-  "artifact-title": [RECOMMENDATION TITLE],
-  "artifact": {
-    "type": "unix_command_output_v1",
-    "parameters": [
-      {
-        "parameter": {
-          "name": "command",
-          "type": "string",
-          "value": [ARTIFACT TYPE PARAMETER VALUE]
+{
+  "artifact-expression": {
+    "artifact-unique-id": [
+      "ARTIFACT-OVAL-ID"
+    ],
+    "artifact-title": [
+      "RECOMMENDATION TITLE"
+    ],
+    "artifact": {
+      "type": "unix.file_collection_v1",
+      "parameters": [
+        {
+          "parameter": {
+            "name": "existence",
+            "type": "string",
+            "value": [
+              "existence.value"
+            ]
+          }
+        },
+        {
+          "parameter": {
+            "name": "path",
+            "type": "string",
+            "value": [
+              "path.value"
+            ]
+          }
+        },
+        {
+          "parameter": {
+            "name": "file_name",
+            "type": "string",
+            "value": [
+              "file_name.value"
+            ]
+          }
+        },
+        {
+          "parameter": {
+            "name": "recurse",
+            "type": "string",
+            "value": [
+              "recurse.value"
+            ]
+          }
+        },
+        {
+          "parameter": {
+            "name": "max_depth",
+            "type": "int",
+            "value": [
+              "max_depth.value"
+            ]
+          }
+        },
+        {
+          "parameter": {
+            "name": "file_system",
+            "type": "string",
+            "value": [
+              "file_system.value"
+            ]
+          }
         }
-      }
-    ]
-  },
-  "test": {
-    "type": [TestType Name],
-    "parameters": [
-      {
-        "parameter": {
-          "name": "value",
-          "type": "string",
-          "value": [TestType.value.value]
+      ]
+    },
+    "test": {
+      "type": [
+        "TestType Name"
+      ],
+      "parameters": [
+        {
+          "parameter": {
+            "name": "uread",
+            "type": "string",
+            "value": [
+              "uread.value"
+            ]
+          }
+        },
+        {
+          "parameter": {
+            "name": "uwrite",
+            "type": "string",
+            "value": [
+              "uwrite.value"
+            ]
+          }
+        },
+        {
+          "parameter": {
+            "name": "uexec",
+            "type": "string",
+            "value": [
+              "uexec.value"
+            ]
+          }
+        },
+        {
+          "parameter": {
+            "name": "gread",
+            "type": "string",
+            "value": [
+              "gread.value"
+            ]
+          }
+        },
+        {
+          "parameter": {
+            "name": "gwrite",
+            "type": "string",
+            "value": [
+              "gwrite.value"
+            ]
+          }
+        },
+        {
+          "parameter": {
+            "name": "gexec",
+            "type": "string",
+            "value": [
+              "gexec.value"
+            ]
+          }
+        },
+        {
+          "parameter": {
+            "name": "oread",
+            "type": "string",
+            "value": [
+              "oread.value"
+            ]
+          }
+        },
+        {
+          "parameter": {
+            "name": "owrite",
+            "type": "string",
+            "value": [
+              "owrite.value"
+            ]
+          }
+        },
+        {
+          "parameter": {
+            "name": "oexec",
+            "type": "string",
+            "value": [
+              "oexec.value"
+            ]
+          }
+        },
+        {
+          "parameter": {
+            "name": "suid",
+            "type": "string",
+            "value": [
+              "suid.value"
+            ]
+          }
+        },
+        {
+          "parameter": {
+            "name": "sgid",
+            "type": "string",
+            "value": [
+              "sgid.value"
+            ]
+          }
+        },
+        {
+          "parameter": {
+            "name": "sticky",
+            "type": "string",
+            "value": [
+              "sticky.value"
+            ]
+          }
         }
-      },
-      {
-        "parameter": {
-          "name": "data_type",
-          "type": "string",
-          "value": [TestType.data_type.value]
-        }
-      }
-    ]
+      ]
+    }
   }
 }
 ```

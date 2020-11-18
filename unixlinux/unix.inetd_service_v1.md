@@ -121,65 +121,80 @@ For `unix.inetd_service_v1` artifacts, an XCCDF check element is generated:
 #### YAML
 
 ```
-- artifact-expression:
+artifact-expression:
     artifact-unique-id: [ARTIFACT-OVAL-ID]
     artifact-title: [RECOMMENDATION TITLE]
     artifact:
       type: unix.inetd_service_v1
       parameters:
       - parameter: 
-          name: command
+          name: service
           type: string
-          value: [ARTIFACT TYPE PARAMETER VALUE]
-    test:
-      type: [TestType Name]
-      parameters:
-      - parameter:
-          name: value
-          type: string
-          value: [TestType.value.value]
+          value: [service.value]
       - parameter: 
-          name: data_type
+          name: protocol
           type: string
-          value: [TestType.data_type.value]
+          value: [protocol.value]
+    test:
+      type: [Testtype name]
+      parameters:
+      - parameter: 
+          name: enabled
+          type: string
+          value: [enabled.value]
+    
 ```
 
 #### JSON
 
 ```
-"artifact-expression": {
-  "artifact-unique-id": [ARTIFACT-OVAL-ID],
-  "artifact-title": [RECOMMENDATION TITLE],
-  "artifact": {
-    "type": "unix_command_output_v1",
-    "parameters": [
-      {
-        "parameter": {
-          "name": "command",
-          "type": "string",
-          "value": [ARTIFACT TYPE PARAMETER VALUE]
+{
+  "artifact-expression": {
+    "artifact-unique-id": [
+      "ARTIFACT-OVAL-ID"
+    ],
+    "artifact-title": [
+      "RECOMMENDATION TITLE"
+    ],
+    "artifact": {
+      "type": "unix.inetd_service_v1",
+      "parameters": [
+        {
+          "parameter": {
+            "name": "service",
+            "type": "string",
+            "value": [
+              "service.value"
+            ]
+          }
+        },
+        {
+          "parameter": {
+            "name": "protocol",
+            "type": "string",
+            "value": [
+              "protocol.value"
+            ]
+          }
         }
-      }
-    ]
-  },
-  "test": {
-    "type": [TestType Name],
-    "parameters": [
-      {
-        "parameter": {
-          "name": "value",
-          "type": "string",
-          "value": [TestType.value.value]
+      ]
+    },
+    "test": {
+      "type": [
+        "Testtype name"
+      ],
+      "parameters": [
+        {
+          "parameter": {
+            "name": "enabled",
+            "type": "string",
+            "value": [
+              "enabled.value"
+            ]
+          }
         }
-      },
-      {
-        "parameter": {
-          "name": "data_type",
-          "type": "string",
-          "value": [TestType.data_type.value]
-        }
-      }
-    ]
+      ]
+    }
   }
 }
 ```

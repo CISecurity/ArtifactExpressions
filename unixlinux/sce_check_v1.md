@@ -72,55 +72,89 @@ There are no tests, objects or states generated.
 
 
 ```
-- artifact-expression:
+artifact-expression:
     artifact-unique-id: [ARTIFACT-OVAL-ID]
     artifact-title: [RECOMMENDATION TITLE]
     artifact:
-      type: unix.command_output_v1
+      type: sce_check_v1
       parameters:
       - parameter: 
-          name: loadable
+          name: script
           type: string
-          value: [ARTIFACT TYPE PARAMETER VALUE]
+          value: [script.value]
+      - parameter: 
+          name: export_variable_value
+          type: string
+          value: [export_variable_value.value]
+      - parameter: 
+          name: export_variable_type
+          type: string
+          value: [export_variable_type.value]    
+      - parameter: 
+          name: export_variable_name
+          type: string
+          value: [export_variable_name.value]
     test:
-      type: [TestType Name]
-      parameters:
-      - parameter:
-          name: loaded
-          type: string
-          value: [TestType.value.value]
+      type: [TestType Name]  
 ```
 
 #### JSON
 
 ```
-"artifact-expression": {
-  "artifact-unique-id": [ARTIFACT-OVAL-ID],
-  "artifact-title": [RECOMMENDATION TITLE],
-  "artifact": {
-    "type": "sce_check_v1
-",
-    "parameters": [
-      {
-        "parameter": {
-          "name": "loadable",
-          "type": "string",
-          "value": [ARTIFACT TYPE PARAMETER VALUE]
+{
+  "artifact-expression": {
+    "artifact-unique-id": [
+      "ARTIFACT-OVAL-ID"
+    ],
+    "artifact-title": [
+      "RECOMMENDATION TITLE"
+    ],
+    "artifact": {
+      "type": "sce_check_v1",
+      "parameters": [
+        {
+          "parameter": {
+            "name": "script",
+            "type": "string",
+            "value": [
+              "script.value"
+            ]
+          }
+        },
+        {
+          "parameter": {
+            "name": "export_variable_value",
+            "type": "string",
+            "value": [
+              "export_variable_value.value"
+            ]
+          }
+        },
+        {
+          "parameter": {
+            "name": "export_variable_type",
+            "type": "string",
+            "value": [
+              "export_variable_type.value"
+            ]
+          }
+        },
+        {
+          "parameter": {
+            "name": "export_variable_name",
+            "type": "string",
+            "value": [
+              "export_variable_name.value"
+            ]
+          }
         }
-      }
-    ]
-  },
-  "test": {
-    "type": [TestType Name],
-    "parameters": [
-      {
-        "parameter": {
-          "name": "loaded",
-          "type": "string",
-          "value": [TestType.value.value]
-        }
-      }
-    ]
+      ]
+    },
+    "test": {
+      "type": [
+        "TestType Name"
+      ]
+    }
   }
 }
 ``` 

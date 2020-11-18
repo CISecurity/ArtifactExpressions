@@ -86,21 +86,21 @@ For `linux.debian_package_v1` artifacts, the xccdf:check looks like this.  There
 
 
 ```
-- artifact-expression:
+artifact-expression:
     artifact-unique-id: [ARTIFACT-OVAL-ID]
     artifact-title: [RECOMMENDATION TITLE]
     artifact:
-      type: unix.command_output_v1
+      type: linux.debian_package_v1
       parameters:
       - parameter: 
-          name: loadable
+          name: name
           type: string
-          value: [ARTIFACT TYPE PARAMETER VALUE]
+          value: [name.value]
     test:
       type: [TestType Name]
       parameters:
       - parameter:
-          name: loaded
+          name: value
           type: string
           value: [TestType.value.value]
 ```
@@ -108,32 +108,44 @@ For `linux.debian_package_v1` artifacts, the xccdf:check looks like this.  There
 #### JSON
 
 ```
-"artifact-expression": {
-  "artifact-unique-id": [ARTIFACT-OVAL-ID],
-  "artifact-title": [RECOMMENDATION TITLE],
-  "artifact": {
-    "type": "linux.debian_package_v1",
-    "parameters": [
-      {
-        "parameter": {
-          "name": "loadable",
-          "type": "string",
-          "value": [ARTIFACT TYPE PARAMETER VALUE]
+{
+  "artifact-expression": {
+    "artifact-unique-id": [
+      "ARTIFACT-OVAL-ID"
+    ],
+    "artifact-title": [
+      "RECOMMENDATION TITLE"
+    ],
+    "artifact": {
+      "type": "linux.debian_package_v1",
+      "parameters": [
+        {
+          "parameter": {
+            "name": "name",
+            "type": "string",
+            "value": [
+              "name.value"
+            ]
+          }
         }
-      }
-    ]
-  },
-  "test": {
-    "type": [TestType Name],
-    "parameters": [
-      {
-        "parameter": {
-          "name": "loaded",
-          "type": "string",
-          "value": [TestType.value.value]
+      ]
+    },
+    "test": {
+      "type": [
+        "TestType Name"
+      ],
+      "parameters": [
+        {
+          "parameter": {
+            "name": "value",
+            "type": "string",
+            "value": [
+              "TestType.value.value"
+            ]
+          }
         }
-      }
-    ]
+      ]
+    }
   }
 }
 ``` 

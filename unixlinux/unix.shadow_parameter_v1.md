@@ -149,65 +149,119 @@ For `unix.shadow_parameter_v1` artifacts, artifacts, an XCCDF Value element is g
 #### YAML
 
 ```
-- artifact-expression:
+artifact-expression:
     artifact-unique-id: [ARTIFACT-OVAL-ID]
     artifact-title: [RECOMMENDATION TITLE]
     artifact:
-      type: unix.shadow_parameter_v1
+      type: unix.process58_v2
       parameters:
       - parameter: 
-          name: command
+          name: username
           type: string
-          value: [ARTIFACT TYPE PARAMETER VALUE]
+          value: [username.value]
+      - parameter: 
+          name: parameter
+          type: string
+          value: [parameter.value]
+      - parameter: 
+          name: command_line_operation
+          type: string
+          value: [command_line_operation.value]
+      - parameter: 
+          name: pid_operation
+          type: string
+          value: [pid_operation.value]
     test:
-      type: [TestType Name]
+      type: [testType name]
       parameters:
-      - parameter:
+      - parameter: 
           name: value
           type: string
-          value: [TestType.value.value]
+          value: [value.value]
       - parameter: 
           name: data_type
           type: string
-          value: [TestType.data_type.value]
+          value: [data_type.value]
+     
 ```
 
 #### JSON
 
 ```
-"artifact-expression": {
-  "artifact-unique-id": [ARTIFACT-OVAL-ID],
-  "artifact-title": [RECOMMENDATION TITLE],
-  "artifact": {
-    "type": "unix_command_output_v1",
-    "parameters": [
-      {
-        "parameter": {
-          "name": "command",
-          "type": "string",
-          "value": [ARTIFACT TYPE PARAMETER VALUE]
+{
+  "artifact-expression": {
+    "artifact-unique-id": [
+      "ARTIFACT-OVAL-ID"
+    ],
+    "artifact-title": [
+      "RECOMMENDATION TITLE"
+    ],
+    "artifact": {
+      "type": "unix.process58_v2",
+      "parameters": [
+        {
+          "parameter": {
+            "name": "username",
+            "type": "string",
+            "value": [
+              "username.value"
+            ]
+          }
+        },
+        {
+          "parameter": {
+            "name": "parameter",
+            "type": "string",
+            "value": [
+              "parameter.value"
+            ]
+          }
+        },
+        {
+          "parameter": {
+            "name": "command_line_operation",
+            "type": "string",
+            "value": [
+              "command_line_operation.value"
+            ]
+          }
+        },
+        {
+          "parameter": {
+            "name": "pid_operation",
+            "type": "string",
+            "value": [
+              "pid_operation.value"
+            ]
+          }
         }
-      }
-    ]
-  },
-  "test": {
-    "type": [TestType Name],
-    "parameters": [
-      {
-        "parameter": {
-          "name": "value",
-          "type": "string",
-          "value": [TestType.value.value]
+      ]
+    },
+    "test": {
+      "type": [
+        "testType name"
+      ],
+      "parameters": [
+        {
+          "parameter": {
+            "name": "value",
+            "type": "string",
+            "value": [
+              "value.value"
+            ]
+          }
+        },
+        {
+          "parameter": {
+            "name": "data_type",
+            "type": "string",
+            "value": [
+              "data_type.value"
+            ]
+          }
         }
-      },
-      {
-        "parameter": {
-          "name": "data_type",
-          "type": "string",
-          "value": [TestType.data_type.value]
-        }
-      }
-    ]
+      ]
+    }
   }
 }
 ```

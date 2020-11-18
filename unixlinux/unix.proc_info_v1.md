@@ -113,65 +113,482 @@ For `unix.proc_info_v1` artifacts, an XCCDF Check element is generated:
 #### YAML
 
 ```
-- artifact-expression:
+artifact-expression:
     artifact-unique-id: [ARTIFACT-OVAL-ID]
     artifact-title: [RECOMMENDATION TITLE]
     artifact:
       type: unix.proc_info_v1
       parameters:
       - parameter: 
-          name: command
+          name: command_line
           type: string
-          value: [ARTIFACT TYPE PARAMETER VALUE]
-    test:
-      type: [TestType Name]
-      parameters:
-      - parameter:
-          name: value
-          type: string
-          value: [TestType.value.value]
+          value: [command_line.value]
       - parameter: 
-          name: data_type
+          name: pid
           type: string
-          value: [TestType.data_type.value]
+          value: [pid.value]
+      - parameter: 
+          name: command_line_operation
+          type: string
+          value: [command_line_operation.value]
+      - parameter: 
+          name: pid_operation
+          type: string
+          value: [pid_operation.value]
+    test:
+      type: [testType name]
+      parameters:
+      - parameter: 
+          name: command_line
+          type: string
+          value: [command_line.value]
+      - parameter: 
+          name: cmd_operation
+          type: string
+          value: [cmd_operation.value]
+      - parameter: 
+          name: exec_time
+          type: string
+          value: [exec_time.value]
+      - parameter: 
+          name: exec_time_operation
+          type: string
+          value: [exec_time_operation.value]
+      - parameter: 
+          name: pid
+          type: string
+          value: [pid.value]
+      - parameter: 
+          name: pid_operation
+          type: string
+          value: [pid_operation.value]
+      - parameter: 
+          name: ppid
+          type: string
+          value: [ppid.value]
+      - parameter: 
+          name: ppid_operation
+          type: string
+          value: [ppid_operation.value]
+      - parameter: 
+          name: priority
+          type: string
+          value: [priority.value]
+      - parameter: 
+          name: priority_operation
+          type: string
+          value: [priority_operation.value]     
+      - parameter: 
+          name: ruid_operation
+          type: string
+          value: [ruid_operation.value]
+      - parameter: 
+          name: ruid
+          type: string
+          value: [ruid.value]
+      - parameter: 
+          name: scheduling_class
+          type: string
+          value: [scheduling_class.value]
+      - parameter: 
+          name: scheduling_class_operation
+          type: string
+          value: [scheduling_class_operation.value]
+      - parameter: 
+          name: start_time
+          type: string
+          value: [start_time.value]
+      - parameter: 
+          name: start_time_operation
+          type: string
+          value: [start_time_operation.value]
+      - parameter: 
+          name: tty_operation
+          type: string
+          value: [tty_operation.value]
+      - parameter: 
+          name: user_id
+          type: string
+          value: [user_id.value]     
+      - parameter: 
+          name: tty
+          type: string
+          value: [tty.value]
+      - parameter: 
+          name: user_id_operation
+          type: string
+          value: [user_id_operation.value]
+      - parameter: 
+          name: exec_shield
+          type: string
+          value: [exec_shield.value]
+      - parameter: 
+          name: exec_shield_operation
+          type: string
+          value: [exec_shield_operation.value]
+      - parameter: 
+          name: loginuid
+          type: string
+          value: [loginuid.value]
+      - parameter: 
+          name: loginuid_operation
+          type: string
+          value: [loginuid_operation.value]     
+      - parameter: 
+          name: posix_capability_operation
+          type: string
+          value: [posix_capability_operation.value]
+      - parameter: 
+          name: selinux_domain_label
+          type: string
+          value: [selinux_domain_label.value]
+      - parameter: 
+          name: selinux_domain_label_operation
+          type: string
+          value: [selinux_domain_label_operation.value]
+      - parameter: 
+          name: session_id
+          type: string
+          value: [session_id.value]
+      - parameter: 
+          name: session_id_operation
+          type: string
+          value: [session_id_operation.value]     
+      - parameter: 
+          name: posix_capability
+          type: string
+          value: [posix_capability.value]
 ```
 
 #### JSON
 
 ```
-"artifact-expression": {
-  "artifact-unique-id": [ARTIFACT-OVAL-ID],
-  "artifact-title": [RECOMMENDATION TITLE],
-  "artifact": {
-    "type": "unix_command_output_v1",
-    "parameters": [
-      {
-        "parameter": {
-          "name": "command",
-          "type": "string",
-          "value": [ARTIFACT TYPE PARAMETER VALUE]
+{
+  "artifact-expression": {
+    "artifact-unique-id": [
+      "ARTIFACT-OVAL-ID"
+    ],
+    "artifact-title": [
+      "RECOMMENDATION TITLE"
+    ],
+    "artifact": {
+      "type": "unix.proc_info_v1",
+      "parameters": [
+        {
+          "parameter": {
+            "name": "command_line",
+            "type": "string",
+            "value": [
+              "command_line.value"
+            ]
+          }
+        },
+        {
+          "parameter": {
+            "name": "pid",
+            "type": "string",
+            "value": [
+              "pid.value"
+            ]
+          }
+        },
+        {
+          "parameter": {
+            "name": "command_line_operation",
+            "type": "string",
+            "value": [
+              "command_line_operation.value"
+            ]
+          }
+        },
+        {
+          "parameter": {
+            "name": "pid_operation",
+            "type": "string",
+            "value": [
+              "pid_operation.value"
+            ]
+          }
         }
-      }
-    ]
-  },
-  "test": {
-    "type": [TestType Name],
-    "parameters": [
-      {
-        "parameter": {
-          "name": "value",
-          "type": "string",
-          "value": [TestType.value.value]
+      ]
+    },
+    "test": {
+      "type": [
+        "testType name"
+      ],
+      "parameters": [
+        {
+          "parameter": {
+            "name": "command_line",
+            "type": "string",
+            "value": [
+              "command_line.value"
+            ]
+          }
+        },
+        {
+          "parameter": {
+            "name": "cmd_operation",
+            "type": "string",
+            "value": [
+              "cmd_operation.value"
+            ]
+          }
+        },
+        {
+          "parameter": {
+            "name": "exec_time",
+            "type": "string",
+            "value": [
+              "exec_time.value"
+            ]
+          }
+        },
+        {
+          "parameter": {
+            "name": "exec_time_operation",
+            "type": "string",
+            "value": [
+              "exec_time_operation.value"
+            ]
+          }
+        },
+        {
+          "parameter": {
+            "name": "pid",
+            "type": "string",
+            "value": [
+              "pid.value"
+            ]
+          }
+        },
+        {
+          "parameter": {
+            "name": "pid_operation",
+            "type": "string",
+            "value": [
+              "pid_operation.value"
+            ]
+          }
+        },
+        {
+          "parameter": {
+            "name": "ppid",
+            "type": "string",
+            "value": [
+              "ppid.value"
+            ]
+          }
+        },
+        {
+          "parameter": {
+            "name": "ppid_operation",
+            "type": "string",
+            "value": [
+              "ppid_operation.value"
+            ]
+          }
+        },
+        {
+          "parameter": {
+            "name": "priority",
+            "type": "string",
+            "value": [
+              "priority.value"
+            ]
+          }
+        },
+        {
+          "parameter": {
+            "name": "priority_operation",
+            "type": "string",
+            "value": [
+              "priority_operation.value"
+            ]
+          }
+        },
+        {
+          "parameter": {
+            "name": "ruid_operation",
+            "type": "string",
+            "value": [
+              "ruid_operation.value"
+            ]
+          }
+        },
+        {
+          "parameter": {
+            "name": "ruid",
+            "type": "string",
+            "value": [
+              "ruid.value"
+            ]
+          }
+        },
+        {
+          "parameter": {
+            "name": "scheduling_class",
+            "type": "string",
+            "value": [
+              "scheduling_class.value"
+            ]
+          }
+        },
+        {
+          "parameter": {
+            "name": "scheduling_class_operation",
+            "type": "string",
+            "value": [
+              "scheduling_class_operation.value"
+            ]
+          }
+        },
+        {
+          "parameter": {
+            "name": "start_time",
+            "type": "string",
+            "value": [
+              "start_time.value"
+            ]
+          }
+        },
+        {
+          "parameter": {
+            "name": "start_time_operation",
+            "type": "string",
+            "value": [
+              "start_time_operation.value"
+            ]
+          }
+        },
+        {
+          "parameter": {
+            "name": "tty_operation",
+            "type": "string",
+            "value": [
+              "tty_operation.value"
+            ]
+          }
+        },
+        {
+          "parameter": {
+            "name": "user_id",
+            "type": "string",
+            "value": [
+              "user_id.value"
+            ]
+          }
+        },
+        {
+          "parameter": {
+            "name": "tty",
+            "type": "string",
+            "value": [
+              "tty.value"
+            ]
+          }
+        },
+        {
+          "parameter": {
+            "name": "user_id_operation",
+            "type": "string",
+            "value": [
+              "user_id_operation.value"
+            ]
+          }
+        },
+        {
+          "parameter": {
+            "name": "exec_shield",
+            "type": "string",
+            "value": [
+              "exec_shield.value"
+            ]
+          }
+        },
+        {
+          "parameter": {
+            "name": "exec_shield_operation",
+            "type": "string",
+            "value": [
+              "exec_shield_operation.value"
+            ]
+          }
+        },
+        {
+          "parameter": {
+            "name": "loginuid",
+            "type": "string",
+            "value": [
+              "loginuid.value"
+            ]
+          }
+        },
+        {
+          "parameter": {
+            "name": "loginuid_operation",
+            "type": "string",
+            "value": [
+              "loginuid_operation.value"
+            ]
+          }
+        },
+        {
+          "parameter": {
+            "name": "posix_capability_operation",
+            "type": "string",
+            "value": [
+              "posix_capability_operation.value"
+            ]
+          }
+        },
+        {
+          "parameter": {
+            "name": "selinux_domain_label",
+            "type": "string",
+            "value": [
+              "selinux_domain_label.value"
+            ]
+          }
+        },
+        {
+          "parameter": {
+            "name": "selinux_domain_label_operation",
+            "type": "string",
+            "value": [
+              "selinux_domain_label_operation.value"
+            ]
+          }
+        },
+        {
+          "parameter": {
+            "name": "session_id",
+            "type": "string",
+            "value": [
+              "session_id.value"
+            ]
+          }
+        },
+        {
+          "parameter": {
+            "name": "session_id_operation",
+            "type": "string",
+            "value": [
+              "session_id_operation.value"
+            ]
+          }
+        },
+        {
+          "parameter": {
+            "name": "posix_capability",
+            "type": "string",
+            "value": [
+              "posix_capability.value"
+            ]
+          }
         }
-      },
-      {
-        "parameter": {
-          "name": "data_type",
-          "type": "string",
-          "value": [TestType.data_type.value]
-        }
-      }
-    ]
+      ]
+    }
   }
 }
 ```

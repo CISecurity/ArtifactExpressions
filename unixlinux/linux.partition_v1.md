@@ -148,54 +148,131 @@ For `linux.partition_v1` artifacts, the xccdf:check looks like this.  There is n
 
 
 ```
-- artifact-expression:
+artifact-expression:
     artifact-unique-id: [ARTIFACT-OVAL-ID]
     artifact-title: [RECOMMENDATION TITLE]
     artifact:
-      type: unix.command_output_v1
+      type: linux.partition_v1
       parameters:
       - parameter: 
-          name: loadable
+          name: existence
           type: string
-          value: [ARTIFACT TYPE PARAMETER VALUE]
+          value: [existence.value]
+      - parameter: 
+          name: check
+          type: set
+          value: [check.value]
+      - parameter: 
+          name: mount_point
+          type: string
+          value: [mount_point.value]
     test:
       type: [TestType Name]
       parameters:
       - parameter:
-          name: loaded
+          name: value
           type: string
-          value: [TestType.value.value]
+          value: [value.value]
+      - parameter:
+          name: data_type
+          type: string
+          value: [data_type.value]
+      - parameter:
+          name: operation
+          type: set
+          value: [operation.value]
+      - parameter:
+          name: check
+          type: string
+          value: [check.value]
 ```
 
 #### JSON
 
 ```
-"artifact-expression": {
-  "artifact-unique-id": [ARTIFACT-OVAL-ID],
-  "artifact-title": [RECOMMENDATION TITLE],
-  "artifact": {
-    "type": "linux.partition_v1",
-    "parameters": [
-      {
-        "parameter": {
-          "name": "loadable",
-          "type": "string",
-          "value": [ARTIFACT TYPE PARAMETER VALUE]
+{
+  "artifact-expression": {
+    "artifact-unique-id": [
+      "ARTIFACT-OVAL-ID"
+    ],
+    "artifact-title": [
+      "RECOMMENDATION TITLE"
+    ],
+    "artifact": {
+      "type": "linux.partition_v1",
+      "parameters": [
+        {
+          "parameter": {
+            "name": "existence",
+            "type": "string",
+            "value": [
+              "existence.value"
+            ]
+          }
+        },
+        {
+          "parameter": {
+            "name": "check",
+            "type": "set",
+            "value": [
+              "check.value"
+            ]
+          }
+        },
+        {
+          "parameter": {
+            "name": "mount_point",
+            "type": "string",
+            "value": [
+              "mount_point.value"
+            ]
+          }
         }
-      }
-    ]
-  },
-  "test": {
-    "type": [TestType Name],
-    "parameters": [
-      {
-        "parameter": {
-          "name": "loaded",
-          "type": "string",
-          "value": [TestType.value.value]
+      ]
+    },
+    "test": {
+      "type": [
+        "TestType Name"
+      ],
+      "parameters": [
+        {
+          "parameter": {
+            "name": "value",
+            "type": "string",
+            "value": [
+              "value.value"
+            ]
+          }
+        },
+        {
+          "parameter": {
+            "name": "data_type",
+            "type": "string",
+            "value": [
+              "data_type.value"
+            ]
+          }
+        },
+        {
+          "parameter": {
+            "name": "operation",
+            "type": "set",
+            "value": [
+              "operation.value"
+            ]
+          }
+        },
+        {
+          "parameter": {
+            "name": "check",
+            "type": "string",
+            "value": [
+              "check.value"
+            ]
+          }
         }
-      }
-    ]
+      ]
+    }
   }
 }
 ``` 

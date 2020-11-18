@@ -18,9 +18,9 @@ TBD
 - not equal
 - less than
 - less than or equal
-- greater than 
-- greater than or equal 
-- pattern match 
+- greater than
+- greater than or equal
+- pattern match
 - pattern not match
 - existence_test
 
@@ -39,7 +39,6 @@ NOTE: This parameter is governed by a constraint allowing only the following val
 - string
 - version
 - set
-
 
 existence_test
 NOTE: This parameter is governed by a constraint allowing only the following values:
@@ -113,8 +112,7 @@ For `unix.sshd_parameter_v1` artifacts, artifacts, an XCCDF Value element is gen
 
 ###### Object
 
-```
-<textfilecontent54_object
+```<textfilecontent54_object
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent"
     id="oval:org.cisecurity.benchmarks.centos_centos_7:obj:[ARTIFACT_OVAL_ID]"
     comment="[RECOMMENDATION_TITLE]"
@@ -140,74 +138,88 @@ For `unix.sshd_parameter_v1` artifacts, artifacts, an XCCDF Value element is gen
 ###### Variable
 
 ```
-<external_variable comment="This value is used in [RECOMMENDATION TITLE]" 
-  datatype="[string]" 
-        id="oval:org.cisecurity.benchmarks.PLATFORM:var:ARTIFACT-OVAL-ID" 
+<external_variable comment="This value is used in [RECOMMENDATION TITLE]"
+  datatype="[string]"
+        id="oval:org.cisecurity.benchmarks.PLATFORM:var:ARTIFACT-OVAL-ID"
    version="1"/>
 ```
 
 #### YAML
 
 ```
-- artifact-expression:
+artifact-expression:
     artifact-unique-id: [ARTIFACT-OVAL-ID]
     artifact-title: [RECOMMENDATION TITLE]
     artifact:
       type: unix.sshd_parameter_v1
       parameters:
-      - parameter: 
-          name: command
+      - parameter:
+          name: parameter
           type: string
-          value: [ARTIFACT TYPE PARAMETER VALUE]
+          value: [parameter.value]
     test:
-      type: [TestType Name]
+      type: [testType name]
       parameters:
       - parameter:
           name: value
           type: string
-          value: [TestType.value.value]
-      - parameter: 
+          value: [value.value]
+      - parameter:
           name: data_type
           type: string
-          value: [TestType.data_type.value]
+          value: [data_type.value]
 ```
 
 #### JSON
 
 ```
-"artifact-expression": {
-  "artifact-unique-id": [ARTIFACT-OVAL-ID],
-  "artifact-title": [RECOMMENDATION TITLE],
-  "artifact": {
-    "type": "unix_command_output_v1",
-    "parameters": [
-      {
-        "parameter": {
-          "name": "command",
-          "type": "string",
-          "value": [ARTIFACT TYPE PARAMETER VALUE]
+{
+  "artifact-expression": {
+    "artifact-unique-id": [
+      "ARTIFACT-OVAL-ID"
+    ],
+    "artifact-title": [
+      "RECOMMENDATION TITLE"
+    ],
+    "artifact": {
+      "type": "unix.sshd_parameter_v1",
+      "parameters": [
+        {
+          "parameter": {
+            "name": "parameter",
+            "type": "string",
+            "value": [
+              "parameter.value"
+            ]
+          }
         }
-      }
-    ]
-  },
-  "test": {
-    "type": [TestType Name],
-    "parameters": [
-      {
-        "parameter": {
-          "name": "value",
-          "type": "string",
-          "value": [TestType.value.value]
+      ]
+    },
+    "test": {
+      "type": [
+        "testType name"
+      ],
+      "parameters": [
+        {
+          "parameter": {
+            "name": "value",
+            "type": "string",
+            "value": [
+              "value.value"
+            ]
+          }
+        },
+        {
+          "parameter": {
+            "name": "data_type",
+            "type": "string",
+            "value": [
+              "data_type.value"
+            ]
+          }
         }
-      },
-      {
-        "parameter": {
-          "name": "data_type",
-          "type": "string",
-          "value": [TestType.data_type.value]
-        }
-      }
-    ]
+      ]
+    }
   }
 }
 ```

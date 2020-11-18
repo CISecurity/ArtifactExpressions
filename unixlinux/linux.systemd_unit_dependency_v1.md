@@ -141,54 +141,119 @@ For ` linux.systemd_unit_property_v1` artifacts, the xccdf:check looks like this
 
 
 ```
-- artifact-expression:
+artifact-expression:
     artifact-unique-id: [ARTIFACT-OVAL-ID]
     artifact-title: [RECOMMENDATION TITLE]
     artifact:
-      type: unix.command_output_v1
+      type: linux.systemd_unit_dependency_v1
       parameters:
       - parameter: 
-          name: loadable
+          name: unit
           type: string
-          value: [ARTIFACT TYPE PARAMETER VALUE]
+          value: [unit.value]
+      - parameter: 
+          name: operation
+          type: string
+          value: [operation.value]
     test:
       type: [TestType Name]
       parameters:
       - parameter:
-          name: loaded
+          name: dependency_operation
           type: string
-          value: [TestType.value.value]
+          value: [dependency_operation.value]
+      - parameter:
+          name: unit
+          type: string
+          value: [unit.value]
+      - parameter:
+          name: unit_operation
+          type: string
+          value: [unit_operation.value]
+      - parameter:
+          name: dependency
+          type: string
+          value: [dependency.value]
+                             
 ```
 
 #### JSON
 
 ```
-"artifact-expression": {
-  "artifact-unique-id": [ARTIFACT-OVAL-ID],
-  "artifact-title": [RECOMMENDATION TITLE],
-  "artifact": {
-    "type": "linux.systemd_unit_dependency_v1",
-    "parameters": [
-      {
-        "parameter": {
-          "name": "loadable",
-          "type": "string",
-          "value": [ARTIFACT TYPE PARAMETER VALUE]
+{
+  "artifact-expression": {
+    "artifact-unique-id": [
+      "ARTIFACT-OVAL-ID"
+    ],
+    "artifact-title": [
+      "RECOMMENDATION TITLE"
+    ],
+    "artifact": {
+      "type": "linux.systemd_unit_dependency_v1",
+      "parameters": [
+        {
+          "parameter": {
+            "name": "unit",
+            "type": "string",
+            "value": [
+              "unit.value"
+            ]
+          }
+        },
+        {
+          "parameter": {
+            "name": "operation",
+            "type": "string",
+            "value": [
+              "operation.value"
+            ]
+          }
         }
-      }
-    ]
-  },
-  "test": {
-    "type": [TestType Name],
-    "parameters": [
-      {
-        "parameter": {
-          "name": "loaded",
-          "type": "string",
-          "value": [TestType.value.value]
+      ]
+    },
+    "test": {
+      "type": [
+        "TestType Name"
+      ],
+      "parameters": [
+        {
+          "parameter": {
+            "name": "dependency_operation",
+            "type": "string",
+            "value": [
+              "dependency_operation.value"
+            ]
+          }
+        },
+        {
+          "parameter": {
+            "name": "unit",
+            "type": "string",
+            "value": [
+              "unit.value"
+            ]
+          }
+        },
+        {
+          "parameter": {
+            "name": "unit_operation",
+            "type": "string",
+            "value": [
+              "unit_operation.value"
+            ]
+          }
+        },
+        {
+          "parameter": {
+            "name": "dependency",
+            "type": "string",
+            "value": [
+              "dependency.value"
+            ]
+          }
         }
-      }
-    ]
+      ]
+    }
   }
 }
 ``` 

@@ -119,54 +119,80 @@ For ` linux.auditd_rule_v1` artifacts, the xccdf:check looks like this.  There i
 
 
 ```
-- artifact-expression:
+artifact-expression:
     artifact-unique-id: [ARTIFACT-OVAL-ID]
     artifact-title: [RECOMMENDATION TITLE]
     artifact:
-      type: unix.command_output_v1
+      type: unix.auditd_rule_v1
       parameters:
       - parameter: 
-          name: loadable
+          name: check_existence
           type: string
-          value: [ARTIFACT TYPE PARAMETER VALUE]
+          value: [check_existence.value]
     test:
       type: [TestType Name]
       parameters:
       - parameter:
-          name: loaded
+          name: value
           type: string
           value: [TestType.value.value]
+      - parameter: 
+      		name: data_type
+          type: string
+          value: [TestType.data_type.value]
 ```
 
 #### JSON
 
 ```
-"artifact-expression": {
-  "artifact-unique-id": [ARTIFACT-OVAL-ID],
-  "artifact-title": [RECOMMENDATION TITLE],
-  "artifact": {
-    "type": "linux.audit_rule_v1",
-    "parameters": [
-      {
-        "parameter": {
-          "name": "loadable",
-          "type": "string",
-          "value": [ARTIFACT TYPE PARAMETER VALUE]
-        }
+  {
+    "artifact-expression": {
+      "artifact-unique-id": [
+        "ARTIFACT-OVAL-ID"
+      ],
+      "artifact-title": [
+        "RECOMMENDATION TITLE"
+      ],
+      "artifact": {
+        "type": "linux.auditd_rule_v1",
+        "parameters": [
+          {
+            "parameter": {
+              "name": "check_existence",
+              "type": "string",
+              "value": [
+                "check_existence.value"
+              ]
+            }
+          }
+        ]
+      },
+      "test": {
+        "type": [
+          "TestType Name"
+        ],
+        "parameters": [
+          {
+            "parameter": {
+              "name": "value",
+              "type": "string",
+              "value": [
+                "TestType.value.value"
+              ]
+            }
+          },
+          {
+            "parameter": {
+              "name": "data_type",
+              "type": "string",
+              "value": [
+                "TestType.data_type.value"
+              ]
+            }
+          }
+        ]
       }
-    ]
-  },
-  "test": {
-    "type": [TestType Name],
-    "parameters": [
-      {
-        "parameter": {
-          "name": "loaded",
-          "type": "string",
-          "value": [TestType.value.value]
-        }
-      }
-    ]
+    }
   }
-}
+
 ``` 
