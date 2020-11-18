@@ -38,8 +38,12 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
       <ae:title>[RECOMMENDATION TITLE]</ae:title>
       <ae:artifact type="[ARTIFACTTYPE NAME]">
         <ae:parameters>
-          <ae:parameter dt="string" name="applicationpool_name"
-            >[applicationpool_name.value]</ae:parameter>
+          <ae:parameter dt="string" name="site_name"
+            >[site_name.value]</ae:parameter>
+          <ae:parameter dt="string" name="application_name"
+            >[application_name.value]</ae:parameter>  
+          <ae:parameter dt="string" name="virtual_directory_name"
+            >[virtual_directory_name.value]</ae:parameter>  
         </ae:parameters>
       </ae:artifact>
       <ae:test type="[TESTTYPE NAME]">
@@ -86,33 +90,37 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
 ###### Test
 
 ```
-<iis:applicationpool_test check="all" check_existence="at_least_one_exists"
+<iis:webconfig_test check="all" check_existence="at_least_one_exists"
    comment="[RECOMMENDATION TITLE]"
    id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]" version="1">
    <iis:object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:"/>
    <iis:state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"/>
-</iis:applicationpool_test>
+</iis:webconfig_test>
 
 ```
 
 ###### Object
 
 ```
-<iis:applicationpool_object id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
+<iis:webconfig_object id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
    version="1">
-   <iis:applicationpool_name operation="[operator.value]">[applicationpool_name.value]</iis:applicationpool_name>
-</iis:applicationpool_object>   
+   <iis:site_name operation="pattern match">[site_name.value]</iis:site_name>
+   <iis:application_name operation="pattern match">[application_name.value]</iis:application_name>
+   <iis:virtual_directory_name operation="pattern match">[virtual_directory_name.value]</iis:virtual_directory_name>
+   <filter action="include">oval:org.cisecurity.benchmarks.iis:ste:20000</filter>
+</iis:webconfig_object> 
+  
 ```
 
 ###### State
 
 ```
-<iis:applicationhostconfig_state
+<iis:webconfig_state
    id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" version="1">
-   <identity_type xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#iis"
+   <directory_browse_enabled xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#iis"
       datatype="[data_type.value]" operation="[operator.value]"
       var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"/>
-</iis:applicationhostconfig_state>   
+</iis:webconfig_state> 
 
 ```
 
@@ -134,9 +142,17 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
       type: [ARTIFACTTYPE NAME]
       parameters:
       - parameter: 
-          name: applicationpool_name
+          name: site_name
           type: string
-          value: [applicationpool_name.value]
+          value: [site_name.value]
+      - parameter: 
+          name: application_name
+          type: string
+          value: [application_name.value]
+      - parameter: 
+          name: virtual_directory_name
+          type: string
+          value: [virtual_directory_name.value]        
     test:
       type: [TESTTYPE NAME]
       parameters:
@@ -169,9 +185,23 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
     "parameters": [
       {
         "parameter": {
-          "name": "applicationpool_name",
+          "name": "site_name",
           "type": "string",
-          "value": [applicationpool_name.value]
+          "value": [site_name.value]
+        }
+      },
+      {
+        "parameter": {
+          "name": "application_name",
+          "type": "string",
+          "value": [application_name.value]
+        }
+      },
+      {
+        "parameter": {
+          "name": "virtual_directory_name",
+          "type": "string",
+          "value": [virtual_directory_name.value]
         }
       }
     ]
