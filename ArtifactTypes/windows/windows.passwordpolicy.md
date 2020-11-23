@@ -29,37 +29,37 @@ NOTE: This parameter is governed by a constraint allowing only the following val
 - Greater Than or Equal
 
 ### Test Type Parameters
-####Equals 
+#### Equals 
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
 | data_type | String | datatype of the value |
 | value | String | the value included within the set of results/ value to be tested |
 
-####Not Equal
+#### Not Equal
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
 | data_type | String | datatype of the value |
 | value | String | the value included within the set of results/ value to be tested |
 
-####Less Than 
+#### Less Than 
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
 | data_type | String | datatype of the value |
 | value | String | the value included within the set of results/ value to be tested |
 
-####Less Than or Equal 
+#### Less Than or Equal 
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
 | data_type | String | datatype of the value |
 | value | String | the value included within the set of results/ value to be tested |
 
-####Greater Than
+#### Greater Than
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
 | data_type | String | datatype of the value |
 | value | String | the value included within the set of results/ value to be tested |
 
-####Greater Than or Equal 
+#### Greater Than or Equal 
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
 | data_type | String | datatype of the value |
