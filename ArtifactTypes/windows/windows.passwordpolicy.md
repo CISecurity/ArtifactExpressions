@@ -21,7 +21,7 @@ NOTE: This parameter is governed by a constraint allowing only the following val
 - Reversible Encryption
 
 ### Supported Test Types
-- [Equals](../TestTypes/Equals.md) 
+- [Equals](../../TestTypes/Equals.md) 
 - Not Equal
 - Less Than
 - Less Than or Equal
