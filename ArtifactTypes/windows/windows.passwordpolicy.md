@@ -28,7 +28,6 @@ NOTE: This parameter is governed by a constraint allowing only the following val
 - [Greater Than](../../TestTypes/Generic.md) 
 - [Greater Than or Equal](../../TestTypes/Generic.md) 
 
-
 ### Generated Content
 #### XCCDF+AE
 This is what the AE check looks like, inside a Rule, in the XCCDF
