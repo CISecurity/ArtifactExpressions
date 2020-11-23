@@ -23,38 +23,8 @@ NOTE: This parameter is governed by a constraint allowing only the following val
 - ALL
 
 ### Supported Test Types
-- cisco_asa.acl_config_line_with_entity_check
+- [cisco_asa.acl_config_line_with_entity_check](../../TestTypes/cisco_asa.acl_config_line_with_entity_check.md) 
 
-### Test Type Parameters
-| Name                  |Type    | Description |
-| ----------------------|--------| ----------- |
-| operation | String | Comparison Operator. |
-| config_line | String | ACL configuration line. |
-| entity_check | String | Number of Config Lines which must match. |
-  
-operation
-NOTE: This parameter is governed by a constraint allowing only the following values:
-- equals
-- not equal
-- case insensitive equals
-- case insensitive not equal
-- greater than
-- less than
-- greater than or equal
-- less than or equal
-- bitwise and
-- bitwise or
-- pattern match
-- subset of
-- superset of 
-
-entity_check
-NOTE: This parameter is governed by a constraint allowing only the following values:
-- all_exist
-- any_exist
-- at_least_one_exists
-- none_exist
-- only_one_exists
 
 ### Generated Content
 #### XCCDF+AE
