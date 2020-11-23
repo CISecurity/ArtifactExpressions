@@ -23,7 +23,7 @@ NOTE: This parameter is governed by a constraint allowing only the following val
 - ALL
 
 ### Supported Test Types
-- [cisco_asa.acl_config_line_with_entity_check](../../TestTypes/cisco_asa.acl_config_line_with_entity_check.md) 
+- [cisco_asa.acl_config_line_with_entity_check](../../TestTypes/ciscoASA/cisco_asa.acl_config_line_with_entity_check.md) 
 
 
 ### Generated Content
