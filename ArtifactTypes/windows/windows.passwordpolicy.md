@@ -21,58 +21,13 @@ NOTE: This parameter is governed by a constraint allowing only the following val
 - Reversible Encryption
 
 ### Supported Test Types
-- [Equals](../../TestTypes/Equals.md) 
-- Not Equal
-- Less Than
-- Less Than or Equal
-- Greater Than
-- Greater Than or Equal
+- [Equals](../../TestTypes/Generic.md) 
+- [Not Equal](../../TestTypes/Generic.md) 
+- [Less Than](../../TestTypes/Generic.md) 
+- [Less Than or Equal](../../TestTypes/Generic.md) 
+- [Greater Than](../../TestTypes/Generic.md) 
+- [Greater Than or Equal](../../TestTypes/Generic.md) 
 
-### Test Type Parameters
-####Equals 
-| Name                  |Type    | Description |
-| ----------------------|--------| ----------- |
-| data_type | String | datatype of the value |
-| value | String | the value included within the set of results/ value to be tested |
-
-####Not Equal
-| Name                  |Type    | Description |
-| ----------------------|--------| ----------- |
-| data_type | String | datatype of the value |
-| value | String | the value included within the set of results/ value to be tested |
-
-####Less Than 
-| Name                  |Type    | Description |
-| ----------------------|--------| ----------- |
-| data_type | String | datatype of the value |
-| value | String | the value included within the set of results/ value to be tested |
-
-####Less Than or Equal 
-| Name                  |Type    | Description |
-| ----------------------|--------| ----------- |
-| data_type | String | datatype of the value |
-| value | String | the value included within the set of results/ value to be tested |
-
-####Greater Than
-| Name                  |Type    | Description |
-| ----------------------|--------| ----------- |
-| data_type | String | datatype of the value |
-| value | String | the value included within the set of results/ value to be tested |
-
-####Greater Than or Equal 
-| Name                  |Type    | Description |
-| ----------------------|--------| ----------- |
-| data_type | String | datatype of the value |
-| value | String | the value included within the set of results/ value to be tested |
-
-data_type
-NOTE: This parameter is governed by a constraint allowing only the following values:
-- boolean
-- float
-- int
-- string
-- version
-- set
 
 ### Generated Content
 #### XCCDF+AE
