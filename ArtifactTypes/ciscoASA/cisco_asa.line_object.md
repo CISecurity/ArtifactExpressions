@@ -13,10 +13,10 @@ TBD
 | show_subcommand | String | The name of a SHOW sub-command. |
 
 ### Supported Test Types
-- cisco_asa.line_config_line
-- cisco_asa.existence_check
-- cisco_asa.expected_value_regex_capture
-- cisco_asa.untrusted_interfaces_state
+- [cisco_asa.line_config_line](../../TestTypes/ciscoASA/cisco_asa.line_config_line.md)
+- [cisco_asa.existence_check](../../TestTypes/ciscoASA/cisco_asa.existence_check.md)
+- [cisco_asa.expected_value_regex_capture](../../TestTypes/ciscoASA/cisco_asa.expected_value_regex_capture.md)
+- [cisco_asa.untrusted_interfaces_state](../../TestTypes/ciscoASA/cisco_asa.untrusted_interface_state.md)
 
 ### Test Type Parameters
 ####cisco_asa.line_config_line

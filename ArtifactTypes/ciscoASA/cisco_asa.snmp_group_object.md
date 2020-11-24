@@ -13,8 +13,8 @@ TBD
 | operator | String | Comparison Operator. |
 
 ### Supported Test Types
-- cisco_asa.snmp_groups_priv
-- cisco_asa.existence_check
+- [cisco_asa.snmp_groups_priv](../../TestTypes/ciscoASA/cisco_asa.snmp_groups_priv.md)
+- [cisco_asa.existence_check](../../TestTypes/ciscoASA/cisco_asa.existence_check.md)
 
 ### Test Type Parameters
 ####cisco_asa.snmp_groups_priv

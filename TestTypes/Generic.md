@@ -13,6 +13,9 @@ The following generic test types utilize common parameters and constraints:
 - Pattern Not Match
 
 
+## Artifact Types Using this Test Type
+TBD - There are LOTS
+
 ## Description
 The generic data types utilize common parameters and constraints to enable the appropriate comparison between collected values and expected values.
 
