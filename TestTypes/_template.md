@@ -9,8 +9,8 @@ TBD
 
 ## Technical Details
 ### Parameters
-| Name                  |Type    | Description |
-| ----------------------|--------| ----------- |
+| Name                  |Type/Constraint    | Description |
+| ----------------------|-------------------| ----------- |
 ||||
 
 ### Constraints
