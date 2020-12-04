@@ -73,7 +73,7 @@ For `cisco_ios.snmp_host` artifacts, the xccdf:check looks like this.
 
 ```
 snmphost_test 
-    xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#ios' 
+    xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]' 
     id='oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]'
     check_existence='[check_existence.value]' 
     check='[check.value]' 
@@ -88,7 +88,7 @@ snmphost_test
 
 ```
 <snmphost_object 
-    xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#ios' 
+    xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]' 
     id='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'
     comment='[RECOMMENDATION TITLE]'
     version='[version.value]'>

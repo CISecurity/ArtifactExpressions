@@ -91,7 +91,7 @@ For `cisco_ios.section_custom_router_ospf` artifacts, the xccdf:check looks like
 
 ```
 <section_test 
-    xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#ios' 
+    xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]' 
     id='oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]'
     check_existence='[check_existence.value]' 
     check='[check.value]' 
@@ -106,26 +106,26 @@ For `cisco_ios.section_custom_router_ospf` artifacts, the xccdf:check looks like
 
 ```
 <section_object 
-    xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#ios' 
+    xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]' 
     id='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'
     comment='[RECOMMENDATION TITLE]'
     version='[version.value]'>
     <section_command>[section_command.value]</section_command>
 </section_object>
 <router_object 
-    xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#ios' 
+    xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]' 
     id='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'
     comment='[RECOMMENDATION TITLE]'
     version='[version.value]'>
-    <protocol>OSPF</protocol>
-    <id datatype='[datatype.value]' operation='[operation.value]'>0</id>
+    <protocol>[protocol.value]</protocol>
+    <id datatype='[datatype.value]' operation='[operation.value]'>[value]</id>
 </router_object>
 ```
 ###### State
 
 ```
 <section_state
-    xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#ios' 
+    xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]' 
     id='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'
     comment='[RECOMMENDATION TITLE]'
     version='[version.value]'>

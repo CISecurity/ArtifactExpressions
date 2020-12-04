@@ -119,7 +119,7 @@ For `kubernetes.kubepsp_v1` artifacts, the xccdf:check looks like this. There is
 ###### Test
 
 ```
-<kubepsp_test xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#kubernetes' 
+<kubepsp_test xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]' 
     id='oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]' 
     check_existence='[check_existence.value]' 
     check='[check.value]' 
@@ -132,7 +132,7 @@ For `kubernetes.kubepsp_v1` artifacts, the xccdf:check looks like this. There is
 ###### Object
 
 ```
-<kubepsp_object xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#kubernetes' 
+<kubepsp_object xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]' 
     id='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'
     comment='[RECOMMENDATION TITLE]'>
     <psp_name operation='[operation.value'>[psp_name.value]</psp_name>
@@ -143,7 +143,7 @@ For `kubernetes.kubepsp_v1` artifacts, the xccdf:check looks like this. There is
 
 ```
 <kubepsp_state 
-    xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#kubernetes' 
+    xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]' 
     id='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'
     comment='[RECOMMENDATION TITLE]'>
     <result datatype='record'>

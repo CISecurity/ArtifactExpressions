@@ -82,7 +82,7 @@ For `cisco_ios.global` artifacts, the xccdf:check looks like this.
 
 ```
 <global_test 
-    xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#ios' 
+    xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]' 
     id='oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]'
     check_existence='[check_existence.value]' 
     check='[check.value]' 
@@ -97,7 +97,7 @@ For `cisco_ios.global` artifacts, the xccdf:check looks like this.
 
 ```
 <global_object 
-    xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#ios' 
+    xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]' 
     id='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'
     comment='[RECOMMENDATION TITLE]' 
     version='[version.value]'>
@@ -109,7 +109,7 @@ For `cisco_ios.global` artifacts, the xccdf:check looks like this.
 
 ```
 <global_state 
-    xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#ios' 
+    xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]' 
     id='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'
     comment='[RECOMMENDATION TITLE]'
     version='[version.value]'>

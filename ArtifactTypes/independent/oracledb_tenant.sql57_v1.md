@@ -170,20 +170,18 @@ For `independent.sql57_v1` artifacts, the xccdf:check looks like this.
     <check-export 
          export-name='oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]' 
          value-id='xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var'/>
-    <check-export 
-         export-name='oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]' 
-         value-id='xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var'/>
     <check-content-ref 
         href='[BENCHMARK NAME]' 
         name='oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]'/>
 </check>
+
 ```
 
 ##### OVAL
 ###### Test
 
 ```
-<sql57_test
+<version_test
     xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]' 
     id='oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]'
     check_existence='[check_existence.value]' 
@@ -192,39 +190,35 @@ For `independent.sql57_v1` artifacts, the xccdf:check looks like this.
     version='[version.value]'>
     <object object_ref='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'/>
     <state state_ref='oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]'/>
-</sql57_test>
+</version_test>
 ```
 
 ###### Object
 
 ```
-<sql57_object 
+<version_object 
     xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]' 
     id='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'
     comment='[RECOMMENDATION TITLE]'>
-    version='[version.value]'>
-    <engine>[engine.value]</engine>
-    <version>[version.value]</version>
-    <connection_string var_ref='oval:org.cisecurity.benchmarks:var:[ID]]'/>
-    <sql>[sql.value]</sql>
-</sql57_object>
+    version='[version.value]'/>
 ```
 ###### State
 
 ```
-<sql57_state 
+<version_state 
     xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]' 
     id='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'
     comment='[RECOMMENDATION TITLE]'>
     version='[version.value]'>
-    <result datatype='[result.value]' entity_check='[entity_check.value]'>
-    <field xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5' 
-        name='[name.value]' 
+    <asa_major_release 
+        datatype='[datatype.value]'
+        operation='[operation.value]' 
+        var_ref='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'/>
+    <asa_minor_release 
         datatype='[datatype.value]'
         operation='[operation.value]'
         var_ref='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'/>
-    </result>
-</sql57_state>
+</version_state>
 ```
 
 #### YAML

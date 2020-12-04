@@ -76,7 +76,7 @@ For `cisco_asa.acl_object` artifacts, the xccdf:check looks like this.
 
 ```
 <acl_test 
-    xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#ios' 
+    xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]' 
     id='oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]'
     check_existence='[check_existence.value]' 
     check='[check.value]' 
@@ -91,7 +91,7 @@ For `cisco_asa.acl_object` artifacts, the xccdf:check looks like this.
 
 ```
 <acl_object 
-    xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#ios' 
+    xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]' 
     id='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'
     comment='[RECOMMENDATION TITLE]'>
     version='[version.value]'>
@@ -104,7 +104,7 @@ For `cisco_asa.acl_object` artifacts, the xccdf:check looks like this.
 
 ```
 <acl_state 
-    xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#ios' 
+    xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]' 
     id='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'
     comment='[RECOMMENDATION TITLE]'>
     version='[version.value]'>
