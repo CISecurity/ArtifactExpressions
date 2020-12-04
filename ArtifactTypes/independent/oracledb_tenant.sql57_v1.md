@@ -1,7 +1,7 @@
-# independent.sql57_v1
+# oracledb_tenant.sql57_v1
 
 ## Description
-The independent.sql57_v1 is used to check information stored in a database. It is often the case that applications store configuration settings in a database as opposed to a file. This test has been designed to enable those settings to be tested. It extends the standard TestType as defined in the oval-definitions-schema and one should refer to the TestType description for more information. The required object element references a wmi_object and the optional state element specifies the metadata to check.
+The oracledb_tenant.sql57_v1 is used to check information stored in a database. 
 
 ## Intent
 TBD
@@ -10,54 +10,13 @@ TBD
 ### Artifact Parameters
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
-| engine | String | The engine entity defines a specific database engine. |
-| sql | String | The sql entity defines a query used to identify the object(s) to test against. |
-| version | String | The version entity defines the specific version of the database engine to use. This is also important in determining the correct driver to use for establishing a connection. |
-| prepend_str | String | String to be prepended to either the SQL query or the result of the SQL query. Leave empty if no string is to be appended. |
-| append_str | String | String to be appended to the result of the SQL query. Leave empty if no string is to be appended. |
-| prepend_type | String | Select 'string' if the prepend string is straight text to be prepended to the result. Select 'SQL' if it is a query from which the result should be prepended. Otherwise leave empty. |
-| append_type | String | Select 'string' if the append string is straight text to be appended to the result of the SQL query. Select 'SQL' if it is a query from which the result should be appended to the result of the SQL query. Otherwise leave empty. |
-
-engine
-NOTE: This parameter is governed by a constraint allowing only the following values:
-- access
-- db2
-- cache
-- firebird
-- firstsql
-- foxpro
-- informix
-- ingres
-- interbase
-- lightbase
-- maxdb
-- monetdb
-- mimer
-- mysql
-- oracle
-- paradox
-- pervasive
-- postgre
-- sqlbase
-- sqlite
-- sqlserver
-- sybase
-
-prepend_type
-NOTE: This parameter is governed by a constraint allowing only the following values:
-- String
-- SQL
-
-append_type
-NOTE: This parameter is governed by a constraint allowing only the following values:
-- String
-- SQL
+| non_multi_tenant_sql | String | This entity defines a query used to identify the object(s) to test against on a non-multi-tenant Oracle DB. |
+| multi_tenant_sql | String | This entity defines a query used to identify the object(s) to test against on a multi-tenant Oracle DB. |
+| version | String | This entity defines the specific version of the database engine to use. This is also important in determining the correct driver to use for establishing a connection. |
 
 ### Supported Test Types
 - independent.sql57_v1
 - existence_test
-- SQL-Unix_File_or_Directory_Permissions_v1
-- SQL-Unix_File_or_Directory_Permissions_v2
 
 ### Test Type Parameters
 ####independent.sql57_v1
@@ -91,39 +50,6 @@ NOTE: This parameter is governed by a constraint allowing only the following val
 | ----------------------|--------| ----------- |
 | value | String | Value to test. |
 
-####SQL-Unix_File_or_Directory_Permissions_v1
-| Name                  |Type    | Description |
-| ----------------------|--------| ----------- |
-| username | String | The name of the user that owns the file or directory. |
-| group | String | The name of the group that owns the file or directory. |
-| uread | String | Determines whether the user that owns the file/directory is permitted to read the contents of it. |
-| uwrite | boolean | Determines whether the user that owns the file/directory is permitted to write to it. |
-| uexec | boolean | Determines whether the user that owns the file/directory is permitted to execute the file or change into the directory. |
-| gread | boolean | Determines whether the group that owns the file/directory is permitted to read the content of it. |
-| gwrite | boolean | Determines whether the group that owns the file/directory is permitted to write to it.|
-| gexec | boolean | Determines whether the group that owns the file/directory is permitted to execute the file or change into the directory. |
-| oread | boolean | Determines whether other users/groups that do not own the file/directory are permitted to read the contents of it. |
-| owrite| boolean | Determines whether other users/groups that do not own the file/directory are permitted to write to it. |
-| oexec | boolean | Determines whether other users/groups that do not own the file/directory are permitted to execute the file or change into the directory. |
-| dir_only | boolean | If this is checking a directory permissions and no file within a directory then this should be set to true. |
-
-####SQL-Unix_File_or_Directory_Permissions_v2
-| Name                  |Type    | Description |
-| ----------------------|--------| ----------- |
-| username | String | The name of the user that owns the file or directory. |
-| group | String | The name of the group that owns the file or directory. |
-| uread | String | Determines whether the user that owns the file/directory is permitted to read the contents of it. |
-| uwrite | boolean | Determines whether the user that owns the file/directory is permitted to write to it. |
-| uexec | boolean | Determines whether the user that owns the file/directory is permitted to execute the file or change into the directory. |
-| gread | boolean | Determines whether the group that owns the file/directory is permitted to read the content of it. |
-| gwrite | boolean | Determines whether the group that owns the file/directory is permitted to write to it.|
-| gexec | boolean | Determines whether the group that owns the file/directory is permitted to execute the file or change into the directory. |
-| oread | boolean | Determines whether other users/groups that do not own the file/directory are permitted to read the contents of it. |
-| owrite| boolean | Determines whether other users/groups that do not own the file/directory are permitted to write to it. |
-| oexec | boolean | Determines whether other users/groups that do not own the file/directory are permitted to execute the file or change into the directory. |
-| dir_only | boolean | If this is checking a directory permissions and no file within a directory then this should be set to true. |
-
- 
 
 ### Generated Content
 #### XCCDF+AE
@@ -137,13 +63,9 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
             <ae:title>[RECOMMENDATION TITLE]</ae:title>
             <ae:artifact type="[ARTIFACTTYPE NAME]">
                 <ae:parameters>
-                    <ae:parameter dt="string" name="engine">[engine.value]</ae:parameter>
-                    <ae:parameter dt="string" name="sql">[sql.value]</ae:parameter>
+                    <ae:parameter dt="string" name="non_multi_tenant_sql">[non_multi_tenant_sql.value]</ae:parameter>
+                    <ae:parameter dt="string" name="multi_tenant_sql">[multi_tenant_sql.value]</ae:parameter>
                     <ae:parameter dt="string" name="version">[version.value]</ae:parameter>
-                    <ae:parameter dt="string" name="prepend_str">[prepend_str.value]</ae:parameter>
-                    <ae:parameter dt="string" name="append_str">[append_str.value]</ae:parameter>
-                    <ae:parameter dt="string" name="prepend_type">[prepend_type.value]</ae:parameter>
-                    <ae:parameter dt="string" name="append_type">[append_type.value]</ae:parameter>
                 </ae:parameters>
             </ae:artifact>
             <ae:test type="[TESTTYPE NAME]">
@@ -163,10 +85,13 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
 
 #### SCAP
 ##### XCCDF
-For `independent.sql57_v1` artifacts, the xccdf:check looks like this. 
+For `oracledb_tenant.sql57_v1` artifacts, the xccdf:check looks like this. 
 
 ```
 <check system='http://oval.mitre.org/XMLSchema/oval-definitions-5'>
+    <check-export 
+         export-name='oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]' 
+         value-id='xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var'/>
     <check-export 
          export-name='oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]' 
          value-id='xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var'/>
@@ -181,7 +106,7 @@ For `independent.sql57_v1` artifacts, the xccdf:check looks like this.
 ###### Test
 
 ```
-<version_test
+<sql57_test
     xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]' 
     id='oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]'
     check_existence='[check_existence.value]' 
@@ -190,35 +115,39 @@ For `independent.sql57_v1` artifacts, the xccdf:check looks like this.
     version='[version.value]'>
     <object object_ref='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'/>
     <state state_ref='oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]'/>
-</version_test>
+</sql57_test>
 ```
 
 ###### Object
 
 ```
-<version_object 
-    xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]' 
-    id='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'
-    comment='[RECOMMENDATION TITLE]'>
-    version='[version.value]'/>
-```
-###### State
-
-```
-<version_state 
+<sql57_object 
     xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]' 
     id='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'
     comment='[RECOMMENDATION TITLE]'>
     version='[version.value]'>
-    <asa_major_release 
-        datatype='[datatype.value]'
-        operation='[operation.value]' 
-        var_ref='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'/>
-    <asa_minor_release 
+    <engine>[engine.value]</engine>
+    <version>[version.value]</version>
+    <connection_string var_ref='oval:org.cisecurity.benchmarks:var:[ID]]'/>
+    <sql>[sql.value]</sql>
+</sql57_object>
+```
+###### State
+
+```
+<sql57_state 
+    xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]' 
+    id='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'
+    comment='[RECOMMENDATION TITLE]'>
+    version='[version.value]'>
+    <result datatype='[result.value]' entity_check='[entity_check.value]'>
+    <field xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5' 
+        name='[name.value]' 
         datatype='[datatype.value]'
         operation='[operation.value]'
         var_ref='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'/>
-</version_state>
+    </result>
+</sql57_state>
 ```
 
 #### YAML
@@ -231,33 +160,17 @@ For `independent.sql57_v1` artifacts, the xccdf:check looks like this.
       type: [ARTIFACTTYPE NAME]
       parameters:
       - parameter: 
-          name: engine
+          name: non_multi_tenant_sql
           type: string
-          value: [engine.value]
+          value: [non_multi_tenant_sql.value]
       - parameter: 
-           name: sql
+           name: multi_tenant_sql
            type: string
-           value: [sql.value]
+           value: [multi_tenant_sql.value]
       - parameter: 
            name: version
            type: string
            value: [version.value]
-      - parameter: 
-           name: prepend_str
-           type: string
-           value: prepend_str.value]
-      - parameter: 
-           name: append_str
-           type: string
-           value: [append_str.value]
-      - parameter: 
-           name: prepend_type
-           type: string
-           value: [prepend_type.value]
-      - parameter: 
-           name: append_type
-           type: string
-           value: append_type.value]
     test:
       type: [TESTTYPE NAME]
       parameters:   
@@ -305,19 +218,19 @@ For `independent.sql57_v1` artifacts, the xccdf:check looks like this.
         "parameters": [
           {
             "parameter": {
-              "name": "engine",
+              "name": "non_multi_tenant_sql",
               "type": "string",
               "value": [
-                "engine.value"
+                "non_multi_tenant_sql.value"
               ]
             }
           },
           {
             "parameter": {
-              "name": "sql",
+              "name": "multi_tenant_sql",
               "type": "string",
               "value": [
-                "sql.value"
+                "multi_tenant_sql.value"
               ]
             }
           },
@@ -328,38 +241,6 @@ For `independent.sql57_v1` artifacts, the xccdf:check looks like this.
               "value": [
                 "version.value"
               ]
-            }
-          },
-          {
-            "parameter": {
-              "name": "prepend_str",
-              "type": "string",
-              "value": "prepend_str.value]"
-            }
-          },
-          {
-            "parameter": {
-              "name": "append_str",
-              "type": "string",
-              "value": [
-                "append_str.value"
-              ]
-            }
-          },
-          {
-            "parameter": {
-              "name": "prepend_type",
-              "type": "string",
-              "value": [
-                "prepend_type.value"
-              ]
-            }
-          },
-          {
-            "parameter": {
-              "name": "append_type",
-              "type": "string",
-              "value": "append_type.value]"
             }
           }
         ]
