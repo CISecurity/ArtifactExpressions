@@ -1,7 +1,7 @@
 # vmware.vmhost_acceptancelevel_v2
 
 ## Description
-The gatekeeper_test is used to check the status of Gatekeeper and any unsigned applications that have been granted execute permission.
+The vmhost_acceptancelevel_test is used to determine if the software installed for the VMHost represents untested code. It extends the standard TestType as defined in the oval-definitions-schema and one should refer to the TestType description for more information. The required object element references a vmhost_acceptancelevel_object and the optional state element specifies the data to check.
 
 ## Intent
 TBD

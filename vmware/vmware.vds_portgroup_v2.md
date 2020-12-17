@@ -98,10 +98,10 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
     <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION_NUMBER]">
       <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
       <ae:title>[RECOMMENDATION TITLE]</ae:title>
-      <ae:artifact type="[ARTIFACTTYPE NAME]">
+      <ae:artifact type="[ARTIFACTTYPE NAME]" />
         <ae:parameters>
-          <ae:parameter dt="string" name="gatekeeper"
-            >[gatekeeper.value]</ae:parameter>
+          <ae:parameter dt="string" name="applicationpool_name"
+            >[applicationpool_name.value]</ae:parameter>
         </ae:parameters>
       </ae:artifact>
       <ae:test type="[TESTTYPE NAME]">
@@ -120,6 +120,37 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
     </ae:artifact_expression>
   </xccdf:check-content>
 </xccdf:check>
+
+
+
+
+      <xccdf:complex-check operator="AND">
+        <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
+          <xccdf:check-content>
+            <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_4.9.1">
+              <ae:artifact_oval_id>188808</ae:artifact_oval_id>
+              <ae:title>Ensure 'allow_unlisted_isapis' is 'equals' to
+                'false'</ae:title>
+              <ae:artifact type="iis.applicationhostconfig"/>
+              <ae:test type="iis.applicationhostconfig">
+                <ae:parameters>
+                  <ae:parameter dt="string" name="operator">equals</ae:parameter>
+                  <ae:parameter dt="string" name="configuration_setting"
+                    >allow_unlisted_isapis</ae:parameter>
+                  <ae:parameter dt="string" name="data_type"
+                    >boolean</ae:parameter>
+                  <ae:parameter dt="string" name="value">false</ae:parameter>
+                </ae:parameters>
+              </ae:test>
+              <ae:profiles>
+                <ae:profile
+                  idref="xccdf_org.cisecurity.benchmarks_profile_Level_1_-_IIS_10"
+                />
+              </ae:profiles>
+            </ae:artifact_expression>
+          </xccdf:check-content>
+        </xccdf:check>
+      </xccdf:complex-check>
 ```
 
 #### SCAP
