@@ -1,7 +1,7 @@
 # independent.xmlfilecontent_tomcat_v1
 
 ## Description
-The independent.xmlfilecontent_tomcat_v1 is  used to explore the contents of an xml file.
+The independent.xmlfilecontent_tomcat_v1 is used to explore the contents of an xml file.
 
 ## Intent
 TBD
