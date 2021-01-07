@@ -43,7 +43,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
                 <ae:parameters>
                     <ae:parameter dt="string" name="cisco_ios.snmp_group_name">[cisco_ios.snmp_group_name.value]</ae:parameter>
                     <ae:parameter dt="string" name="cisco_ios.snmp_group_op">[cisco_ios.snmp_group_op.value]</ae:parameter>
-                    <ae:parameter dt="string" name="cisco_ios.snmpv3_filter">[cisco_ios.snmpv3_filter.value]</ae:parameter>
+                    <ae:parameter dt="boolean" name="cisco_ios.snmpv3_filter">[cisco_ios.snmpv3_filter.value]</ae:parameter>
                 </ae:parameters>
             </ae:artifact>
             <ae:test type="[TESTTYPE NAME]">
@@ -134,7 +134,7 @@ For `cisco_ios.snmp_group` artifacts, the xccdf:check looks like this.
           value: [cisco_ios.snmp_group_op.value]
       - parameter: 
           name: cisco_ios.snmpv3_filter
-          type: string
+          type: boolean
           value: [cisco_ios.snmpv3_filter.value]
     test:
       type: [TESTTYPE NAME]
@@ -186,7 +186,7 @@ For `cisco_ios.snmp_group` artifacts, the xccdf:check looks like this.
           {
             "parameter": {
               "name": "cisco_ios.snmpv3_filter",
-              "type": "string",
+              "type": "boolean",
               "value": [
                 "cisco_ios.snmpv3_filter.value"
               ]

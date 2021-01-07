@@ -10,9 +10,12 @@ TBD
 ### Artifact Parameters
 | Name                  |Type    | Description |
 | ----------------------|--------| ----------- |
-| non_multi_tenant_sql | String | This entity defines a query used to identify the object(s) to test against on a non-multi-tenant Oracle DB. |
-| multi_tenant_sql | String | This entity defines a query used to identify the object(s) to test against on a multi-tenant Oracle DB. |
-| version | String | The version entity defines the specific version of the database engine to use. This is also important in determining the correct driver to use for establishing a connection. |
+| path | String | Directory component of the absolute path to the file. |
+| filename| String | Filename component of the absolute path to the file. |
+| recurse | String | Should subdirectories be recursed through. |
+| max_depth | Int | Max depth for recursion. -1 for unlimited recursion. |
+| file_system | String | Filesystem limitation for recursion. All filesystems, restrict to local only, or restrict to filesystem defined by Path. |
+| pattern | String | This defines a chunk of text in a file and is represented using a regular expression. A subexpression (using parentheses) can call out a piece of the text block to test. Must be a valid expression according to Perl 5's regular expression specification. |
 
 ### Supported Test Types
 - pattern match
@@ -134,9 +137,12 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
             <ae:title>[RECOMMENDATION TITLE]</ae:title>
             <ae:artifact type="[ARTIFACTTYPE NAME]">
                 <ae:parameters>
-                    <ae:parameter dt="string" name="non_multi_tenant_sql">[non_multi_tenant_sql.value]</ae:parameter>
-                    <ae:parameter dt="string" name="multi_tenant_sql">[multi_tenant_sql.value]</ae:parameter>
-                    <ae:parameter dt="string" name="version">[version.value]</ae:parameter>
+                    <ae:parameter dt="string" name="path">[path.value]</ae:parameter>
+                    <ae:parameter dt="string" name="filename">[filename.value]</ae:parameter>
+                    <ae:parameter dt="string" name="recurse">[recurse.value]</ae:parameter>
+                    <ae:parameter dt="int" name="max_depth">[max_depth.value]</ae:parameter>
+                    <ae:parameter dt="string" name="file_system">[file_system.value]</ae:parameter>
+                    <ae:parameter dt="string" name="pattern">[pattern.value]</ae:parameter>
                 </ae:parameters>
             </ae:artifact>
             <ae:test type="[TESTTYPE NAME]">
@@ -223,17 +229,29 @@ For `independent.text_file_content_v1` artifacts, the xccdf:check looks like thi
       type: [ARTIFACTTYPE NAME]
       parameters:
       - parameter: 
-          name: non_multi_tenant_sql
+          name: path
           type: string
-          value: [non_multi_tenant_sql.value]
+          value: [path.value]
       - parameter: 
-           name: multi_tenant_sql
+           name: filename
            type: string
-           value: [multi_tenant_sql.value]
+           value: [filename.value]
       - parameter: 
-           name: version
+           name: recurse
            type: string
-           value: [version.value]
+           value: [recurse.value]
+      - parameter: 
+          name: max_depth
+          type: int
+          value: [max_depth.value]
+      - parameter: 
+           name: file_system
+           type: string
+           value: [file_system.value]
+      - parameter: 
+           name: pattern
+           type: string
+           value: [pattern.value]
     test:
       type: [TESTTYPE NAME]
       parameters:   
@@ -265,28 +283,55 @@ For `independent.text_file_content_v1` artifacts, the xccdf:check looks like thi
         "parameters": [
           {
             "parameter": {
-              "name": "non_multi_tenant_sql",
+              "name": "path",
               "type": "string",
               "value": [
-                "non_multi_tenant_sql.value"
+                "path.value"
               ]
             }
           },
           {
             "parameter": {
-              "name": "multi_tenant_sql",
+              "name": "filename",
               "type": "string",
               "value": [
-                "multi_tenant_sql.value"
+                "filename.value"
               ]
             }
           },
           {
             "parameter": {
-              "name": "version",
+              "name": "recurse",
               "type": "string",
               "value": [
-                "version.value"
+                "recurse.value"
+              ]
+            }
+          },
+          {
+            "parameter": {
+              "name": "max_depth",
+              "type": "int",
+              "value": [
+                "max_depth.value"
+              ]
+            }
+          },
+          {
+            "parameter": {
+              "name": "file_system",
+              "type": "string",
+              "value": [
+                "file_system.value"
+              ]
+            }
+          },
+          {
+            "parameter": {
+              "name": "pattern",
+              "type": "string",
+              "value": [
+                "pattern.value"
               ]
             }
           }

@@ -57,7 +57,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
                 <ae:parameters>
                     <ae:parameter dt="string" name="sql">[sql.value]</ae:parameter>
                     <ae:parameter dt="string" name="version">[version.value]</ae:parameter>
-                    <ae:parameter dt="string" name="exclude_system_db">[exclude_system_db.value]</ae:parameter>
+                    <ae:parameter dt="boolean" name="exclude_system_db">[exclude_system_db.value]</ae:parameter>
                     <ae:parameter dt="string" name="check_existence">[check_existence.value]</ae:parameter>
                 </ae:parameters>
             </ae:artifact>
@@ -144,7 +144,7 @@ n/a
            value: [version.value]
       - parameter: 
            name: exclude_system_db
-           type: string
+           type: boolean
            value: exclude_system_db.value]
       - parameter: 
            name: check_existence
@@ -212,7 +212,7 @@ n/a
           {
             "parameter": {
               "name": "exclude_system_db",
-              "type": "string",
+              "type": "boolean",
               "value": "exclude_system_db.value]"
             }
           },
