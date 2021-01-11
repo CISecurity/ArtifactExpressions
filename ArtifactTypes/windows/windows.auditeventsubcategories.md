@@ -1,9 +1,10 @@
 # windows.auditeventsubcategories.md
 
 ## Description
-The auditeventpolicysubcategories_test is used to check the audit event policy settings on a Windows system. 
+The auditeventpolicysubcategories_test is used to check the audit event policy settings on a Windows system. These settings are used to specify which system and network events are monitored. For example, if the credential_validation element has a value of AUDIT_FAILURE, it means that the system is configured to log all unsuccessful attempts to validate a user account on a system.
+
 ## Intent
-TBD
+The intent of the `windows.auditeventsubcategories` artifact type is to allow users to create specific checks against the the audit event policy settings on a Windows system.  The `auditeventpolicsubcatgeory` parameter is constrained to the specific list of values, each representing one of the audit event policy attributes that can be collected.
 
 ## Technical Details
 ### Artifact Parameters
@@ -136,6 +137,7 @@ NOTE: This parameter is governed by a constraint allowing only the following val
 - set
 
 ### Generated Content
+#### equal, equals, not equal, less than, less than or equal, greater than, greater than or equal
 #### XCCDF+AE
 This is what the AE check looks like, inside a Rule, in the XCCDF
 
@@ -143,21 +145,21 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
 <xccdf:complex-check operator="AND">
         <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
             <xccdf:check-content>
-                <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_17.2.2.1">
-                    <ae:artifact_oval_id>[ARTIFACT_OVAL_ID]</ae:artifact_oval_id>
+                <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION_NUMBER]">
+                    <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
                     <ae:title>[RECOMMENDATION_TITLE]</ae:title>
-                    <ae:artifact type="[ARTIFACTTYPE_NAME]">
+                    <ae:artifact type="[ARTIFACTTYPE NAME]">
                         <ae:parameters>
                             <ae:parameter dt="string" name="auditeventpolicsubcatgeory"
                                 >[auditeventpolicysubcategory.value]</ae:parameter>
                         </ae:parameters>
                     </ae:artifact>
-                    <ae:test type="[testtype.name]">
+                    <ae:test type="[TESTTYPE NAME]">
                         <ae:parameters>
                             <ae:parameter dt="string" name="value"
-                                >[testType.value]</ae:parameter>
+                                >[value.value]</ae:parameter>
                             <ae:parameter dt="string" name="data_type"
-                                >[testType.datatype.value]</ae:parameter>
+                                >[datatype.value]</ae:parameter>
                         </ae:parameters>
                     </ae:test>
                 </ae:artifact_expression>
@@ -171,11 +173,22 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
 For `windows.auditeventsubcategories` artifacts, an XCCDF Value element is generated:
 
 ```
+
+<xccdf:complex-check operator="AND">
+  <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+    <check-export export-name="oval:org.cisecurity.benchmarks.windows_10:var:[ARTIFACT-OVAL-ID]"
+      value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var"/>
+    <check-content-ref
+      href="CIS_Microsoft_Windows_10_Enterprise_Release_2004_Benchmark_v1.9.0-oval.xml"
+      name="oval:org.cisecurity.benchmarks.windows_10:def:[ARTIFACT-OVAL-ID]"/>
+  </check>
+</xccdf:complex-check>
+
 <Value id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" 
-       operator="[TestType Name]" type="[number|boolean]">
+       operator="[test_type]" type="data_type.value">
   <title>[RECOMMENDATION TITLE]</title>
   <description>This value is used in Rule: [RECOMMENDATION TITLE]</description>
-  <value>[TestType.value.value]</value>
+  <value>[value.value]</value>
 </Value>
 ```
 
@@ -185,12 +198,12 @@ For `windows.auditeventsubcategories` artifacts, an XCCDF Value element is gener
 ```
   <auditeventpolicysubcategories_test
              xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#windows"
-             id="oval:org.cisecurity.benchmarks.windows_10:tst:[ARTIFACT_OVAL_ID]"
+             id="oval:org.cisecurity.benchmarks.windows_10:tst:[ARTIFACT-OVAL-ID]"
              check_existence="at_least_one_exists" check="all"
-             comment="[RECOMMENDATION_TITLE]"
+             comment="[RECOMMENDATION TITLE]"
              version="1">
-             <object object_ref="oval:org.cisecurity.benchmarks.windows_10:obj:[ARTIFACT_OVAL_ID]"/>
-             <state state_ref="oval:org.cisecurity.benchmarks.windows_10:ste:[ARTIFACT_OVAL_ID]"/>
+             <object object_ref="oval:org.cisecurity.benchmarks.windows_10:obj:[ARTIFACT-OVAL-ID]"/>
+             <state state_ref="oval:org.cisecurity.benchmarks.windows_10:ste:[ARTIFACT-OVAL-ID]"/>
  </auditeventpolicysubcategories_test>
 ```
 
@@ -199,8 +212,8 @@ For `windows.auditeventsubcategories` artifacts, an XCCDF Value element is gener
 ```
  <auditeventpolicysubcategories_object
             xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#windows"
-            id="oval:org.cisecurity.benchmarks.windows_10:obj:[ARTIFACT_OVAL_ID]"
-            comment="[RECOMMENDATION_TITLE]"
+            id="oval:org.cisecurity.benchmarks.windows_10:obj:[ARTIFACT-OVAL-ID]"
+            comment="[RECOMMENDATION TITLE]"
             version="1"/>
 ```
 
@@ -210,10 +223,10 @@ For `windows.auditeventsubcategories` artifacts, an XCCDF Value element is gener
 <auditeventpolicysubcategories_state
             xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#windows"
             id="oval:org.cisecurity.benchmarks.windows_10:ste:[ARTIFACT_OVAL_ID]"
-            comment="[RECOMMENDATION_TITLE]"
+            comment="[RECOMMENDATION TITLE]"
             version="1">
-            <pnp_activity operation="[testtype_name]" datatype="string"
-                var_ref="oval:org.cisecurity.benchmarks.windows_10:var:[ARTIFACT_OVAL_ID]"/>
+            <pnp_activity operation="[test_type]" datatype="[data_type.value]"
+                var_ref="oval:org.cisecurity.benchmarks.windows_10:var:[ARTIFACT-OVAL-ID]"/>
 </auditeventpolicysubcategories_state>
 ```
 
@@ -221,7 +234,7 @@ For `windows.auditeventsubcategories` artifacts, an XCCDF Value element is gener
 
 ```
 <external_variable comment="This value is used in [RECOMMENDATION TITLE]" 
-                  datatype="string" 
+                  datatype="[data_type.value]" 
                         id="oval:org.cisecurity.benchmarks.PLATFORM:var:ARTIFACT-OVAL-ID" 
 version="1"/>
 ```
@@ -233,75 +246,63 @@ version="1"/>
     artifact-unique-id: [ARTIFACT-OVAL-ID]
     artifact-title: [RECOMMENDATION TITLE]
     artifact:
-      type: windows.auditeventsubcategories
+      type: [ARTIFACTTYPE NAME]
       parameters:
       - parameter: 
           name: auditeventpolicsubcatgeory
           type: string
-          value: [ARTIFACT TYPE PARAMETER VALUE]
+          value: [auditeventpolicsubcatgeory.value]
     test:
-      type: [TestType Name]
+      type: [TESTTYPE NAME]
       parameters:
       - parameter:
           name: value
           type: string
-          value: [TestType.value.value]
+          value: [value.value]
       - parameter: 
           name: data_type
           type: string
-          value: [TestType.data_type.value]
+          value: [data_type.value]
 ```
 
 #### JSON
 
 ```
-{
-  "artifact-expression": {
-    "artifact-unique-id": [
-      "ARTIFACT-OVAL-ID"
-    ],
-    "artifact-title": [
-      "RECOMMENDATION TITLE"
-    ],
-    "artifact": {
-      "type": "windows.auditeventsubcategories",
-      "parameters": [
-        {
-          "parameter": {
-            "name": "sid",
-            "type": "string",
-            "value": [
-              "ARTIFACT TYPE PARAMETER VALUE"
-            ]
-          }
+
+"artifact-expression": {
+  "artifact-unique-id": [ARTIFACT-OVAL-ID],
+  "artifact-title": [RECOMMENDATION TITLE],
+  "artifact": {
+    "type": "[ARTIFACTTYPE NAME]",
+    "parameters": [
+      {
+        "parameter": {
+          "name": "auditeventpolicsubcatgeory",
+          "type": "string",
+          "value": "[auditeventpolicsubcatgeory.value]"
         }
-      ]
-    },
-    "test": {
-      "type": [
-        "TestType Name"
-      ],
-      "parameters": [
-        {
-          "parameter": {
-            "name": "value",
-            "type": "string",
-            "value": [
-              "TestType.value.value"
-            ]
-          }
-        },
-        {
-          "parameter": {
-            "name": "data_type",
-            "type": "string",
-            "value": [
-              "TestType.data_type.value"
-            ]
-          }
+      }
+    ]
+  },
+  "test": {
+    "type": "[TESTTYPE NAME]",
+    "parameters": [
+      {
+        "parameter": {
+          "name": "value",
+          "type": "string",
+          "value": "[value.value]"
         }
-      ]
-    }
+      },
+      {
+        "parameter": {
+          "name": "data_type",
+          "type": "string",
+          "value": "[data_type.value]"
+        }
+      }
+    ]
   }
 }
+
 ``` 

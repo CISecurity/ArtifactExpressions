@@ -197,8 +197,8 @@ For `macos.gatekeeper_v1` artifacts, the xccdf:check looks like this.  There is 
 
 ```
 "artifact-expression": {
-  "artifact-unique-id": [ARTIFACT-OVAL-ID],
-  "artifact-title": [RECOMMENDATION TITLE],
+  "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
+  "artifact-title": "[RECOMMENDATION TITLE]",
   "artifact": {
     "type": "[ARTIFACTTYPE NAME]",
     "parameters": [
@@ -206,54 +206,54 @@ For `macos.gatekeeper_v1` artifacts, the xccdf:check looks like this.  There is 
         "parameter": {
           "name": "filepath",
           "type": "string",
-          "value": [filepath.value]
+          "value": "[filepath.value]"
         }
       },
       {
         "parameter": {
           "name": "xpath",
           "type": "string",
-          "value": [xpath.value]
+          "value": "[xpath.value]"
         }
       }
     ]
   },
   "test": {
-    "type": [TESTTYPE NAME],
+    "type": "[TESTTYPE NAME]",
     "parameters": [
       {
         "parameter": {
           "name": "check_existence",
           "type": "string",
-          "value": [check_existence.value]
+          "value": "[check_existence.value]"
         }
       },
       {
         "parameter": {
           "name": "check",
           "type": "string",
-          "value": [check.value]
+          "value": "[check.value]"
         }
       },
       {
         "parameter": {
           "name": "operation",
           "type": "string",
-          "value": [operation.value]
+          "value": "[operation.value]"
         }
       },
       {
         "parameter": {
           "name": "datetype",
           "type": "string",
-          "value": [datatype.value]
+          "value": "[datatype.value]"
         }
       },
       {
         "parameter": {
           "name": "value_of",
           "type": "string",
-          "value": [value_of.value]
+          "value": "[value_of.value]"
         }
       }
     ]

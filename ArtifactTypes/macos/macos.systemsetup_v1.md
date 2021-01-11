@@ -220,8 +220,8 @@ For `macos.gatekeeper_v1` artifacts, the xccdf:check looks like this.  There is 
 
 ```
 "artifact-expression": {
-  "artifact-unique-id": [ARTIFACT-OVAL-ID],
-  "artifact-title": [RECOMMENDATION TITLE],
+  "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
+  "artifact-title": "[RECOMMENDATION TITLE]",
   "artifact": {
     "type": "[ARTIFACTTYPE NAME]",
     "parameters": [
@@ -229,47 +229,47 @@ For `macos.gatekeeper_v1` artifacts, the xccdf:check looks like this.  There is 
         "parameter": {
           "name": "systemsetup",
           "type": "string",
-          "value": [systemsetup.value]
+          "value": "[systemsetup.value]"
         }
       }
     ]
   },
   "test": {
-    "type": [TESTTYPE NAME],
+    "type": "[TESTTYPE NAME]",
     "parameters": [
       {
         "parameter": {
           "name": "check_existence",
           "type": "string",
-          "value": [check_existence.value]
+          "value": "[check_existence.value]"
         }
       },
       {
         "parameter": {
           "name": "check",
           "type": "string",
-          "value": [check.value]
+          "value": "[check.value]"
         }
       },
       {
         "parameter": {
           "name": "operation",
           "type": "string",
-          "value": [operation.value]
+          "value": "[operation.value]"
         }
       },
       {
         "parameter": {
           "name": "datetype",
           "type": "string",
-          "value": [datatype.value]
+          "value": "[datatype.value]"
         }
       },
       {
         "parameter": {
           "name": "remoteappleevents",
           "type": "string",
-          "value": [remoteappleevents.value]
+          "value": "[remoteappleevents.value]"
         }
       }
     ]
@@ -401,8 +401,8 @@ For `macos.gatekeeper_v1` artifacts, the xccdf:check looks like this.  There is 
 
 ```
 "artifact-expression": {
-  "artifact-unique-id": [ARTIFACT-OVAL-ID],
-  "artifact-title": [RECOMMENDATION TITLE],
+  "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
+  "artifact-title": "[RECOMMENDATION TITLE]",
   "artifact": {
     "type": "[ARTIFACTTYPE NAME]",
     "parameters": [
@@ -410,47 +410,47 @@ For `macos.gatekeeper_v1` artifacts, the xccdf:check looks like this.  There is 
         "parameter": {
           "name": "systemsetup",
           "type": "string",
-          "value": [systemsetup.value]
+          "value": "[systemsetup.value]"
         }
       }
     ]
   },
   "test": {
-    "type": [TESTTYPE NAME],
+    "type": "[TESTTYPE NAME]",
     "parameters": [
       {
         "parameter": {
           "name": "check_existence",
           "type": "string",
-          "value": [check_existence.value]
+          "value": "[check_existence.value]"
         }
       },
       {
         "parameter": {
           "name": "check",
           "type": "string",
-          "value": [check.value]
+          "value": "[check.value]"
         }
       },
       {
         "parameter": {
           "name": "operation",
           "type": "string",
-          "value": [operation.value]
+          "value": "[operation.value]"
         }
       },
       {
         "parameter": {
           "name": "datetype",
           "type": "string",
-          "value": [datatype.value]
+          "value": "[datatype.value]"
         }
       },
       {
         "parameter": {
           "name": "remotelogin",
           "type": "string",
-          "value": [remotelogin.value]
+          "value": "[remotelogin.value]"
         }
       }
     ]
@@ -582,8 +582,8 @@ For `macos.gatekeeper_v1` artifacts, the xccdf:check looks like this.  There is 
 
 ```
 "artifact-expression": {
-  "artifact-unique-id": [ARTIFACT-OVAL-ID],
-  "artifact-title": [RECOMMENDATION TITLE],
+  "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
+  "artifact-title": "[RECOMMENDATION TITLE]",
   "artifact": {
     "type": "[ARTIFACTTYPE NAME]",
     "parameters": [
@@ -591,47 +591,47 @@ For `macos.gatekeeper_v1` artifacts, the xccdf:check looks like this.  There is 
         "parameter": {
           "name": "systemsetup",
           "type": "string",
-          "value": [systemsetup.value]
+          "value": "[systemsetup.value]"
         }
       }
     ]
   },
   "test": {
-    "type": [TESTTYPE NAME],
+    "type": "[TESTTYPE NAME]",
     "parameters": [
       {
         "parameter": {
           "name": "check_existence",
           "type": "string",
-          "value": [check_existence.value]
+          "value": "[check_existence.value]"
         }
       },
       {
         "parameter": {
           "name": "check",
           "type": "string",
-          "value": [check.value]
+          "value": "[check.value]"
         }
       },
       {
         "parameter": {
           "name": "operation",
           "type": "string",
-          "value": [operation.value]
+          "value": "[operation.value]"
         }
       },
       {
         "parameter": {
           "name": "datetype",
           "type": "string",
-          "value": [datatype.value]
+          "value": "[datatype.value]"
         }
       },
       {
         "parameter": {
           "name": "usingnetworktime",
           "type": "string",
-          "value": [usingnetworktime.value]
+          "value": "[usingnetworktime.value]"
         }
       }
     ]
@@ -763,8 +763,8 @@ For `macos.gatekeeper_v1` artifacts, the xccdf:check looks like this.  There is 
 
 ```
 "artifact-expression": {
-  "artifact-unique-id": [ARTIFACT-OVAL-ID],
-  "artifact-title": [RECOMMENDATION TITLE],
+  "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
+  "artifact-title": "[RECOMMENDATION TITLE]",
   "artifact": {
     "type": "[ARTIFACTTYPE NAME]",
     "parameters": [
@@ -772,47 +772,47 @@ For `macos.gatekeeper_v1` artifacts, the xccdf:check looks like this.  There is 
         "parameter": {
           "name": "systemsetup",
           "type": "string",
-          "value": [systemsetup.value]
+          "value": "[systemsetup.value]"
         }
       }
     ]
   },
   "test": {
-    "type": [TESTTYPE NAME],
+    "type": "[TESTTYPE NAME]",
     "parameters": [
       {
         "parameter": {
           "name": "check_existence",
           "type": "string",
-          "value": [check_existence.value]
+          "value": "[check_existence.value]"
         }
       },
       {
         "parameter": {
           "name": "check",
           "type": "string",
-          "value": [check.value]
+          "value": "[check.value]"
         }
       },
       {
         "parameter": {
           "name": "operation",
           "type": "string",
-          "value": [operation.value]
+          "value": "[operation.value]"
         }
       },
       {
         "parameter": {
           "name": "datetype",
           "type": "string",
-          "value": [datatype.value]
+          "value": "[datatype.value]"
         }
       },
       {
         "parameter": {
           "name": "wakeonnetworkaccess",
           "type": "string",
-          "value": [wakeonnetworkaccess.value]
+          "value": "[wakeonnetworkaccess.value]"
         }
       }
     ]

@@ -203,8 +203,8 @@ For `macos.keychain_v1` artifacts, the xccdf:check looks like this.  There is no
 
 ```
 "artifact-expression": {
-  "artifact-unique-id": [ARTIFACT-OVAL-ID],
-  "artifact-title": [RECOMMENDATION TITLE],
+  "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
+  "artifact-title": "[RECOMMENDATION TITLE]",
   "artifact": {
     "type": "[ARTIFACTTYPE NAME]",
     "parameters": [
@@ -212,47 +212,47 @@ For `macos.keychain_v1` artifacts, the xccdf:check looks like this.  There is no
         "parameter": {
           "name": "filepath",
           "type": "string",
-          "value": [filepath.value]
+          "value": "[filepath.value]"
         }
       }
     ]
   },
   "test": {
-    "type": [TESTTYPE NAME],
+    "type": "[TESTTYPE NAME]",
     "parameters": [
       {
         "parameter": {
           "name": "check_existence",
           "type": "string",
-          "value": [check_existence.value]
+          "value": "[check_existence.value]"
         }
       },
       {
         "parameter": {
           "name": "check",
           "type": "string",
-          "value": [check.value]
+          "value": "[check.value]"
         }
       },
       {
         "parameter": {
           "name": "operation",
           "type": "string",
-          "value": [operation.value]
+          "value": "[operation.value]"
         }
       },
       {
         "parameter": {
           "name": "datetype",
           "type": "string",
-          "value": [datatype.value]
+          "value": "[datatype.value]"
         }
       },
       {
         "parameter": {
           "name": "timeout",
           "type": "string",
-          "value": [timeout.value]
+          "value": "[timeout.value]"
         }
       }
     ]
@@ -387,8 +387,8 @@ For `macos.keychain_v1` artifacts, the xccdf:check looks like this.  There is no
 
 ```
 "artifact-expression": {
-  "artifact-unique-id": [ARTIFACT-OVAL-ID],
-  "artifact-title": [RECOMMENDATION TITLE],
+  "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
+  "artifact-title": "[RECOMMENDATION TITLE]",
   "artifact": {
     "type": "[ARTIFACTTYPE NAME]",
     "parameters": [
@@ -396,47 +396,47 @@ For `macos.keychain_v1` artifacts, the xccdf:check looks like this.  There is no
         "parameter": {
           "name": "filepath",
           "type": "string",
-          "value": [filepath.value]
+          "value": "[filepath.value]"
         }
       }
     ]
   },
   "test": {
-    "type": [TESTTYPE NAME],
+    "type": "[TESTTYPE NAME]",
     "parameters": [
       {
         "parameter": {
           "name": "check_existence",
           "type": "string",
-          "value": [check_existence.value]
+          "value": "[check_existence.value]"
         }
       },
       {
         "parameter": {
           "name": "check",
           "type": "string",
-          "value": [check.value]
+          "value": "[check.value]"
         }
       },
       {
         "parameter": {
           "name": "operation",
           "type": "string",
-          "value": [operation.value]
+          "value": "[operation.value]"
         }
       },
       {
         "parameter": {
           "name": "datetype",
           "type": "string",
-          "value": [datatype.value]
+          "value": "[datatype.value]"
         }
       },
       {
         "parameter": {
           "name": "lock_on_sleep",
           "type": "string",
-          "value": [lock_on_sleep.value]
+          "value": "[lock_on_sleep.value]"
         }
       }
     ]

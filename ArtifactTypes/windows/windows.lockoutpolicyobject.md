@@ -4,7 +4,7 @@
 The lockout policy test enumerates various attributes associated with lockout information for users and global groups in the security database. 
 
 ## Intent
-TBD
+The intent of the `windows.lockoutpolicyobject` artifact type is to allow users to create specific checks against the Windows lockout policy.  The `lockoutsetting` parameter is constrained to the specific list of values, each representing one of the lockout policy attributes that can be collected.
 
 ## Technical Details
 ### Artifact Parameters
@@ -87,6 +87,7 @@ NOTE: This parameter is governed by a constraint allowing only the following val
 - set
 
 ### Generated Content
+#### equal, equals, not equal, equal_to, less than, less than or equal, greater than, greater than or equal
 #### XCCDF+AE
 This is what the AE check looks like, inside a Rule, in the XCCDF
 
@@ -97,15 +98,15 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
 			<ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION_NUMBER]">
 				<ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
 				<ae:title>[RECOMMENDATION TITLE]</ae:title>
-				<ae:artifact type="windows.lockoutpolicyobject">
+				<ae:artifact type="[ARTIFACTTYPE NAME]">
 					<ae:parameters>
-						<ae:parameter dt="string" name="lockoutsetting">[SETTING CONSTRAINT VALUE]</ae:parameter>
+						<ae:parameter dt="string" name="lockoutsetting">[lockoutsetting.value]</ae:parameter>
 					</ae:parameters>
 				</ae:artifact>
-				<ae:test type="[TestType Name]">
+				<ae:test type="[TESTTYPE NAME]">
 					<ae:parameters>
-						<ae:parameter dt="string" name="value">[TestType.value]</ae:parameter>
-						<ae:parameter dt="string" name="data_type">[TestType.data_type]</ae:parameter>
+						<ae:parameter dt="string" name="value">[value.value]</ae:parameter>
+						<ae:parameter dt="string" name="data_type">[data_type.data_type]</ae:parameter>
 					</ae:parameters>
 				</ae:test>
 			</ae:artifact_expression>
@@ -119,11 +120,22 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
 For `windows.lockoutpolicyobject` artifacts, an XCCDF Value element is generated:
 
 ```
+
+<xccdf:complex-check operator="AND">
+  <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+    <check-export export-name="oval:org.cisecurity.benchmarks.windows_10:var:[ARTIFACT-OVAL-ID]"
+      value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var"/>
+    <check-content-ref
+      href="CIS_Microsoft_Windows_10_Enterprise_Release_2004_Benchmark_v1.9.0-oval.xml"
+      name="oval:org.cisecurity.benchmarks.windows_10:def:[ARTIFACT-OVAL-ID]"/>
+  </check>
+</xccdf:complex-check>
+
 <Value id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" 
-       operator="[TestType Name]" type="[number|boolean]">
+       operator="test_type" type="data_type.value">
   <title>[RECOMMENDATION TITLE]</title>
   <description>This value is used in Rule: [RECOMMENDATION TITLE]</description>
-  <value>[TestType.value.value]</value>
+  <value>[value.value]</value>
 </Value>
 ```
 
@@ -132,12 +144,12 @@ For `windows.lockoutpolicyobject` artifacts, an XCCDF Value element is generated
 
 ```
     <lockoutpolicy_test xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#windows"
-            id="oval:org.cisecurity.benchmarks.windows_server_2012_r2:tst:ARTIFACT-OVAL-ID"
+            id="oval:org.cisecurity.benchmarks.windows_server_2012_r2:tst:[ARTIFACT-OVAL-ID]"
             check_existence="at_least_one_exists" check="all"
             comment="[RECOMMENDATION TITLE]"
             version="1">
-            <object object_ref="oval:org.cisecurity.benchmarks.windows_server_2012_r2:obj:ARTIFACT-OVAL-ID"/>
-            <state state_ref="oval:org.cisecurity.benchmarks.windows_server_2012_r2:ste:ARTIFACT-OVAL-ID"/>
+            <object object_ref="oval:org.cisecurity.benchmarks.windows_server_2012_r2:obj:[ARTIFACT-OVAL-ID]"/>
+            <state state_ref="oval:org.cisecurity.benchmarks.windows_server_2012_r2:ste:[ARTIFACT-OVAL-ID]"/>
     </lockoutpolicy_test>
 ```
 
@@ -145,7 +157,7 @@ For `windows.lockoutpolicyobject` artifacts, an XCCDF Value element is generated
 
 ```
    <lockoutpolicy_object xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#windows"
-            id="oval:org.cisecurity.benchmarks.windows_server_2012_r2:obj:ARTIFACT-OVAL-ID"
+            id="oval:org.cisecurity.benchmarks.windows_server_2012_r2:obj:[ARTIFACT-OVAL-ID]"
             comment="[RECOMMENDATION TITLE]"
     version="1"/>
     
@@ -154,11 +166,11 @@ For `windows.lockoutpolicyobject` artifacts, an XCCDF Value element is generated
 
 ```
     <lockoutpolicy_state xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#windows"
-            id="oval:org.cisecurity.benchmarks.windows_server_2012_r2:ste:ARTIFACT-OVAL-ID"
+            id="oval:org.cisecurity.benchmarks.windows_server_2012_r2:ste:[ARTIFACT-OVAL-ID]"
             comment="[RECOMMENDATION TITLE]"
             version="1">
-            <[lockoutsetting] operation="[testtype_name]" datatype="int"
-                var_ref="oval:org.cisecurity.benchmarks.windows_server_2012_r2:var:ARTIFACT-OVAL-ID"/>
+            <[lockoutsetting.value] operation="[test_type]" datatype="[data_type.value]"
+                var_ref="oval:org.cisecurity.benchmarks.windows_server_2012_r2:var:[ARTIFACT-OVAL-ID]"/>
     </lockoutpolicy_state>
 ```
 
@@ -166,8 +178,8 @@ For `windows.lockoutpolicyobject` artifacts, an XCCDF Value element is generated
 
 ```
 <external_variable comment="This value is used in [RECOMMENDATION TITLE]" 
-                  datatype="[int|boolean]" 
-                        id="oval:org.cisecurity.benchmarks.PLATFORM:var:ARTIFACT-OVAL-ID" 
+                  datatype="[data_type.value]" 
+                        id="oval:org.cisecurity.benchmarks.PLATFORM:var:[ARTIFACT-OVAL-ID]" 
                    version="1"/>
 ```
 
@@ -178,23 +190,23 @@ For `windows.lockoutpolicyobject` artifacts, an XCCDF Value element is generated
     artifact-unique-id: [ARTIFACT-OVAL-ID]
     artifact-title: [RECOMMENDATION TITLE]
     artifact:
-      type: windows.lockoutpolicyobject
+      type: [ARTIFACTTYPE NAME]
       parameters:
       - parameter: 
-          name: lockoutpolicyobject
+          name: lockoutsetting
           type: string
-          value: [ARTIFACT TYPE PARAMETER VALUE]
+          value: [lockoutsetting.value]
     test:
-      type: [TestType Name]
+      type: [TESTTYPE NAME]
       parameters:
       - parameter:
           name: value
           type: string
-          value: [TestType.value.value]
+          value: [value.value]
       - parameter: 
           name: data_type
           type: string
-          value: [TestType.data_type.value]
+          value: [data_type.value]
 ```
 
 #### JSON
@@ -204,32 +216,32 @@ For `windows.lockoutpolicyobject` artifacts, an XCCDF Value element is generated
   "artifact-unique-id": [ARTIFACT-OVAL-ID],
   "artifact-title": [RECOMMENDATION TITLE],
   "artifact": {
-    "type": "windows.lockoutpolicyobject",
+    "type": "[ARTIFACTTYPE NAME]",
     "parameters": [
       {
         "parameter": {
-          "name": "lockoutpolicyobject",
+          "name": "lockoutsetting",
           "type": "string",
-          "value": [ARTIFACT TYPE PARAMETER VALUE]
+          "value": "[lockoutsetting.value]"
         }
       }
     ]
   },
   "test": {
-    "type": [TestType Name],
+    "type": "[TESTTYPE NAME]",
     "parameters": [
       {
         "parameter": {
           "name": "value",
           "type": "string",
-          "value": [TestType.value.value]
+          "value": "[value.value]"
         }
       },
       {
         "parameter": {
           "name": "data_type",
           "type": "string",
-          "value": [TestType.data_type.value]
+          "value": "[data_type.value]"
         }
       }
     ]

@@ -21,14 +21,67 @@ NOTE: This parameter is governed by a constraint allowing only the following val
 - Reversible Encryption
 
 ### Supported Test Types
-- [Equals](../../TestTypes/Generic.md) 
-- [Not Equal](../../TestTypes/Generic.md) 
-- [Less Than](../../TestTypes/Generic.md) 
-- [Less Than or Equal](../../TestTypes/Generic.md) 
-- [Greater Than](../../TestTypes/Generic.md) 
-- [Greater Than or Equal](../../TestTypes/Generic.md) 
+- Equals
+- Not Equal
+- Less Than
+- Less Than or Equal
+- Greater Than
+- Greater Than or Equal
+
+### Test Type Parameters
+####Equal
+| Name                  |Type    | Description |
+| ----------------------|--------| ----------- |
+| data_type | String | datatype of the value |
+| value | String | the value included within the set of results/ value to be tested |
+
+####Equals
+| Name                  |Type    | Description |
+| ----------------------|--------| ----------- |
+| data_type | String | datatype of the value |
+| value | String | the value included within the set of results/ value to be tested |
+
+####Not Equal
+| Name                  |Type    | Description |
+| ----------------------|--------| ----------- |
+| data_type | String | datatype of the value |
+| value | String | the value included within the set of results/ value to be tested |
+
+####Less Than 
+| Name                  |Type    | Description |
+| ----------------------|--------| ----------- |
+| data_type | String | datatype of the value |
+| value | String | the value included within the set of results/ value to be tested |
+
+####Less Than or Equal 
+| Name                  |Type    | Description |
+| ----------------------|--------| ----------- |
+| data_type | String | datatype of the value |
+| value | String | the value included within the set of results/ value to be tested |
+
+####Greater Than
+| Name                  |Type    | Description |
+| ----------------------|--------| ----------- |
+| data_type | String | datatype of the value |
+| value | String | the value included within the set of results/ value to be tested |
+
+####Greater Than or Equal 
+| Name                  |Type    | Description |
+| ----------------------|--------| ----------- |
+| data_type | String | datatype of the value |
+| value | String | the value included within the set of results/ value to be tested |
+
+data_type
+NOTE: This parameter is governed by a constraint allowing only the following values:
+- boolean
+- float
+- int
+- string
+- version
+- set
 
 ### Generated Content
+#### equal, equals, not equal, less than, less than or equal, greater than, greater than or equal
 #### XCCDF+AE
 This is what the AE check looks like, inside a Rule, in the XCCDF
 
@@ -174,20 +227,20 @@ For `windows.passwordpolicyobject` artifacts, an XCCDF Value element is generate
     ]
   },
   "test": {
-    "type": [TESTTYPE NAME],
+    "type": "[TESTTYPE NAME]",
     "parameters": [
       {
         "parameter": {
           "name": "value",
           "type": "string",
-          "value": [value.value]
+          "value": "[value.value]""
         }
       },
       {
         "parameter": {
           "name": "data_type",
           "type": "string",
-          "value": [data_type.value]
+          "value": "[data_type.value]"
         }
       }
     ]
