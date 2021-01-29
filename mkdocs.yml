@@ -1,7 +1,7 @@
 site_name: Optimus Artifact Expressions (Artifact Type and Test Type Combinations)
 nav:
    - "Home": index.md
-   - "cisco_asa.acl_object": cisco_asa_acl_object.md
+   - "ArtifactTypes\ciscoASA\cisco_asa.acl_object": cisco_asa_acl_object.md
    - "cisco_asa.line_object": cisco_asa.line_object.md
    - "cisco_asa.line_object_intf_physical_name": cisco_asa.line_object_intf_physical_name.md
    - "cisco_asa.line_object_with_untrusted_interfaces": cisco_asa.line_object_with_untrusted_interfaces.md
