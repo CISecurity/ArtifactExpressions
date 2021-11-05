@@ -1,14 +1,14 @@
-<Family>
+<MacOS>
 =======================================================
 
-<Family Description>
+.. <Family Description>
 
 .. toctree::
    :maxdepth: 1
    :name: toc-<family>
 
-   [artifact-type-name] <artifact-type-filename>
-   
-.. history
-.. authors
-.. license
+   macos.gatekeeper_v1 <macos.gatekeeper_v1>
+   macos.keychain_v1 <macos.keychain_v1>
+   macos.plist511_v1 <macos.plist511_v1>
+   macos.systemprofiler_v1 <macos.systemprofiler_v1>
+   macos.systemsetup_v1 <macos.systemsetup_v1>

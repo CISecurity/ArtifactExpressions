@@ -1,14 +1,10 @@
-<Family>
+<Kubernetes>
 =======================================================
 
-<Family Description>
+.. <Family Description>
 
 .. toctree::
    :maxdepth: 1
    :name: toc-<family>
 
-   [artifact-type-name] <artifact-type-filename>
-   
-.. history
-.. authors
-.. license
+   kubernetes.kubepsp_v1 <kubernetes.kubepsp_v1>

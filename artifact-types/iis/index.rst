@@ -1,14 +1,14 @@
-<Family>
+<IIS>
 =======================================================
 
-<Family Description>
+.. <Family Description>
 
 .. toctree::
    :maxdepth: 1
    :name: toc-<family>
 
-   [artifact-type-name] <artifact-type-filename>
-   
-.. history
-.. authors
-.. license
+   iis.applicationhostconfig <iis.applicationhostconfig>
+   iis.applicationpool <iis.applicationpool>
+   iis.site.binding <iis.site.binding>
+   iis.site.systemweb <iis.site.systemweb>
+   iis.webserverconfig <iis.webserverconfig>
