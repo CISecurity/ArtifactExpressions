@@ -19,5 +19,5 @@ The "Contributing" section provides details on how you can contribute to the dev
    :caption: Artifact Expressions
    :name: artifact-expressions
 
-   Artifact Types <ArtifactTypes/index>
+   Artifact Types <artifact-types/index>
    
