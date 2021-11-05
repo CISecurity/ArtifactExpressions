@@ -15,13 +15,12 @@ The "Contributing" section provides details on how you can contribute to the dev
    :maxdepth: 1
    :name: toc-artifact-types
 
-   Platform Independent <independent/index>
-   Microsoft Windows <windows/index>
-   Linux <linux/index>
-   Unix <unix/index>
-   MacOS <macos/index>
-   VMware <vmware/index>
-   Cisco IOS <cisco-ios/index>
    Cisco ASA <cisco-asa/index>
+   Cisco IOS <cisco-ios/index>
+   Independent <independent/index>
    Kubernetes <kubernetes/index>
-   Other/Miscellaneous <misc/index>
+   MacOS <macos/index>
+   UnixLinux <unixlinux/index>
+   VMware <vmware/index>
+   Windows <windows/index>
+
