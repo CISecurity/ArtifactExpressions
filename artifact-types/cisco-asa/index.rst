@@ -9,6 +9,4 @@
 
    [artifact-type-name] <artifact-type-filename>
    
-.. history
-.. authors
-.. license
+cisco_asa.acl_object <cisco_asa.acl_object>
