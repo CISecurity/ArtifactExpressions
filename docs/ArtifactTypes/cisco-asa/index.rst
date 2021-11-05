@@ -7,8 +7,8 @@
    :maxdepth: 1
    :name: toc-<family>
 
-   [artifact-type-name] <artifact-type-filename>
-   
+   cisco_asa.acl_object <cisco-asa//cisco_asa.acl_object>
+
 .. history
 .. authors
 .. license
