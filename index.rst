@@ -15,7 +15,7 @@ The "Terms of Use" section provides the terms of use policy.
 The "Contributing" section provides details on how you can contribute to the development of Artifact Expressions.
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Artifact Expressions
    :name: artifact-expressions
 
