@@ -16,6 +16,14 @@ The "Contributing" section provides details on how you can contribute to the dev
 
 .. toctree::
    :maxdepth: 1
+   :caption: General
+   :name: api-general
+
+   About Artifact Expressions <about/about>
+   Terms of Use <about/terms-of-use>
+
+.. toctree::
+   :maxdepth: 1
    :caption: Artifact Expressions
    :name: artifact-expressions
 
