@@ -1,4 +1,5 @@
-\`# cisco_asa.line_object_with_untrusted_interfaces
+cisco_asa.line_object_with_untrusted_interfaces
+===============================================
 
 Description
 -----------
