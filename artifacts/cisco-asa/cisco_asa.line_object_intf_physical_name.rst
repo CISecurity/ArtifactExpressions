@@ -8,7 +8,6 @@ The cisco_asa.line_object_intf_physical_name is used to check the
 properties of specific output lines.
 
 Technical Details
------------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
