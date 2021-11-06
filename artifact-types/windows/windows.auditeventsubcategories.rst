@@ -1,4 +1,4 @@
-windows.auditeventsubcategories.md
+windows.auditeventsubcategories
 ==================================
 
 Description
