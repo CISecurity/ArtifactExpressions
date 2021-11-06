@@ -1,7 +1,4 @@
-.. image:: img/CIS_SecureSuite.jpg
-
-
-Artifact Expressions
+Artifact Types
 =====================================
 
 The table of contents below and in the sidebar should let you easily access the documentation for your topic of interest. You can also use the search function in the top left corner.
@@ -16,16 +13,13 @@ The "Contributing" section provides details on how you can contribute to the dev
 
 .. toctree::
    :maxdepth: 1
-   :caption: General
-   :name: api-general
+   :name: toc-artifact-types
 
-   About Artifact Expressions <about/about>
-   Terms of Use <about/terms-of-use>
-
-.. toctree::
-   :maxdepth: 1
-   :caption: Artifact Expressions
-   :name: artifact-expressions
-
-   Artifacts <artifacts/index>
-   
+   Cisco ASA <cisco-asa/index>
+   Cisco IOS <cisco-ios/index>
+   Independent <independent/index>
+   Kubernetes <kubernetes/index>
+   MacOS <macos/index>
+   UnixLinux <unixlinux/index>
+   VMware <vmware/index>
+   Windows <windows/index>
