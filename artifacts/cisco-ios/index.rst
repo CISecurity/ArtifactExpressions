@@ -1,4 +1,4 @@
-<CiscoIOS>
+CiscoIOS
 =======================================================
 
 .. <Family Description>

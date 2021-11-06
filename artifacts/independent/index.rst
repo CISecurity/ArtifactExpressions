@@ -1,4 +1,4 @@
-<Independent>
+Independent
 =======================================================
 
 .. <Family Description>

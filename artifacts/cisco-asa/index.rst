@@ -1,4 +1,4 @@
-<Cisco ASA>
+Cisco ASA
 =======================================================
 
 .. <Family Description>
