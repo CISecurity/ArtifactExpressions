@@ -67,7 +67,7 @@ Test Type Parameters
 |                                     |             | value to be used |
 |                                     |             | in determining   |
 |                                     |             | the result,      |
-|                                     |             | i.e. pass/fail.  |
+|                                     |             | i.e. pass/fail.  |
 +-------------------------------------+-------------+------------------+
 | field_value_datatype                | String      | The datatype of  |
 |                                     |             | the              |
