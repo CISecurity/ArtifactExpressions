@@ -15,19 +15,17 @@ Artifact Parameters
 Human ID:
   - vmware.vmhost.ntp_server
 
-.. table:: vmware.vmhost.ntp_server_parameters
-   :widths: 33, 8, 33
 +-------------------------------------+-------------+------------------+
-  Name                                | Type        | Description      |
+| Name                                | Type        | Description      |
 +=====================================+=============+==================+
-  vmhost_name                         | String      | The name of the  |
-                                      |             | ESXi host to     |
-                                      |             | scope collection |
-                                      |             | to. Set to NA it |
-                                      |             | not applicable   |
+| vmhost_name                         | String      | The name of the  |
+|                                     |             | ESXi host to     |
+|                                     |             | scope collection |
+|                                     |             | to. Set to NA it |
+|                                     |             | not applicable   |
 +-------------------------------------+-------------+------------------+
-  ntp_server_name                     | String      | Set to NA if not |
-                                      |             | applicable       |
+| ntp_server_name                     | String      | Set to NA if not |
+|                                     |             | applicable       |
 +-------------------------------------+-------------+------------------+
 
 Supported Test Types

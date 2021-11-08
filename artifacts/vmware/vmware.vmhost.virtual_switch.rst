@@ -15,21 +15,20 @@ Artifact Parameters
 Human ID:
   - vmware.vmhost.virtual_switch
 
-.. table:: vmware.vmhost.virtual_switch_parameters
-   :widths: 33, 8, 33
 +-------------------------------------+-------------+------------------+
-  Name                                | Type        | Description      |
+| Name                                | Type        | Description      |
 +=====================================+=============+==================+
-  vswitch_name                        | String      | The name of a    |
-                                      |             | target vswitch.  |
-                                      |             | Set to NA if not |
-                                      |             | applicable       |
+| vswitch_name                        | String      | The name of a    |
+|                                     |             | target vswitch.  |
+|                                     |             | Set to NA if not |
+|                                     |             | applicable       |
 +-------------------------------------+-------------+------------------+
-  vmhost_name                         | String      | The ESXi host to |
-                                      |             | scope results    |
-                                      |             | to. Set it NA if |
-                                      |             | not applicable   |
+| vmhost_name                         | String      | The ESXi host to |
+|                                     |             | scope results    |
+|                                     |             | to. Set it NA if |
+|                                     |             | not applicable   |
 +-------------------------------------+-------------+------------------+
+
 
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~

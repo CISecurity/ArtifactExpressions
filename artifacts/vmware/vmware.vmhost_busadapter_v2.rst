@@ -15,29 +15,27 @@ Artifact Parameters
 Human ID:
   - vmware.vmhost_busadapter_v2
 
-.. table:: vmware.vmhost_busadapter_v2_parameters
-   :widths: 33, 8, 33
 +-------------------------------------+-------------+------------------+
-  Name                                | Type        | Description      |
+| Name                                | Type        | Description      |
 +=====================================+=============+==================+
-  check_existence                     | String      | Defines how many |
-                                      |             | items should be  |
-                                      |             | collected        |
+| check_existence                     | String      | Defines how many |
+|                                     |             | items should be  |
+|                                     |             | collected        |
 +-------------------------------------+-------------+------------------+
-  vmhost_name                         | String      | The name of the  |
-                                      |             | ESXi host to     |
-                                      |             | scope collection |
-                                      |             | to. Set to NA if |
-                                      |             | not applicable   |
+| vmhost_name                         | String      | The name of the  |
+|                                     |             | ESXi host to     |
+|                                     |             | scope collection |
+|                                     |             | to. Set to NA if |
+|                                     |             | not applicable   |
 +-------------------------------------+-------------+------------------+
-  vmhost_name_operation               | String      | comparison       |
-                                      |             | operation        |
+| vmhost_name_operation               | String      | comparison       |
+|                                     |             | operation        |
 +-------------------------------------+-------------+------------------+
-  busadapter_type                     | String      | Valid values are |
-                                      |             | Block,           |
-                                      |             | FibreChannel,    |
-                                      |             | IScsi, and       |
-                                      |             | ParallelScsi     |
+| busadapter_type                     | String      | Valid values are |
+|                                     |             | Block,           |
+|                                     |             | FibreChannel,    |
+|                                     |             | IScsi, and       |
+|                                     |             | ParallelScsi     |
 +-------------------------------------+-------------+------------------+
 
 Supported Test Types
@@ -49,20 +47,20 @@ Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
 +-------------------------------------+-------------+------------------+
-  Name                                | Type        | Description      |
+| Name                                | Type        | Description      |
 +=====================================+=============+==================+
-  check                               | String      | Defines how many |
-                                      |             | collected items  |
-                                      |             | must match the   |
-                                      |             | expected state   |
+| check                               | String      | Defines how many |
+|                                     |             | collected items  |
+|                                     |             | must match the   |
+|                                     |             | expected state   |
 +-------------------------------------+-------------+------------------+
-  operation                           | String      | comparison       |
-                                      |             | operation        |
+| operation                           | String      | comparison       |
+|                                     |             | operation        |
 +-------------------------------------+-------------+------------------+
-  datatype                            | String      | datatype         |
+| datatype                            | String      | datatype         |
 +-------------------------------------+-------------+------------------+
-  mutual_chap_enabled                 | Boolean     | Mutual Chap      |
-                                      |             | Enabled?         |
+| mutual_chap_enabled                 | Boolean     | Mutual Chap      |
+|                                     |             | Enabled?         |
 +-------------------------------------+-------------+------------------+
 
 vmhost_name_operation NOTE: This parameter is governed by a constraint

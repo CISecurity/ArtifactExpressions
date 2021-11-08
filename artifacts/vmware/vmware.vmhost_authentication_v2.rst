@@ -15,31 +15,29 @@ Artifact Parameters
 Human ID:
   - vmware.vmhost_authentication_v2
 
-.. table:: vmware.vmhost_authentication_v2_parameters
-   :widths: 33, 8, 33
 +-------------------------------------+-------------+------------------+
-  Name                                | Type        | Description      |
+| Name                                | Type        | Description      |
 +=====================================+=============+==================+
-  check_existence                     | String      | Defines how many |
-                                      |             | items should be  |
-                                      |             | collected        |
+| check_existence                     | String      | Defines how many |
+|                                     |             | items should be  |
+|                                     |             | collected        |
 +-------------------------------------+-------------+------------------+
-  setting_name                        | String      | The name of the  |
-                                      |             | setting.         |
-                                      |             | i.e. Domain      |
-                                      |             | MembershipStatus |
+| setting_name                        | String      | The name of the  |
+|                                     |             | setting.         |
+|                                     |             | i.e. Domain      |
+|                                     |             | MembershipStatus |
 +-------------------------------------+-------------+------------------+
-  vmhost_name                         | String      | Name of ESXi     |
-                                      |             | server to scope  |
-                                      |             | collection to.   |
-                                      |             | Set to NA if not |
-                                      |             | applicable       |
+| vmhost_name                         | String      | Name of ESXi     |
+|                                     |             | server to scope  |
+|                                     |             | collection to.   |
+|                                     |             | Set to NA if not |
+|                                     |             | applicable       |
 +-------------------------------------+-------------+------------------+
-  setting_name_operation              | String      | comparison       |
-                                      |             | operation        |
+| setting_name_operation              | String      | comparison       |
+|                                     |             | operation        |
 +-------------------------------------+-------------+------------------+
-  vmhost_name_operation               | String      | comparison       |
-                                      |             | operation        |
+| vmhost_name_operation               | String      | comparison       |
+|                                     |             | operation        |
 +-------------------------------------+-------------+------------------+
 
 Supported Test Types
@@ -51,23 +49,23 @@ Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
 +-------------------------------------+-------------+------------------+
-  Name                                | Type        | Description      |
+| Name                                | Type        | Description      |
 +=====================================+=============+==================+
-  check                               | String      | Defines how many |
-                                      |             | collected items  |
-                                      |             | must match the   |
-                                      |             | expected state   |
+| check                               | String      | Defines how many |
+|                                     |             | collected items  |
+|                                     |             | must match the   |
+|                                     |             | expected state   |
 +-------------------------------------+-------------+------------------+
-  operation                           | String      | comparison       |
-                                      |             | operation        |
+| operation                           | String      | comparison       |
+|                                     |             | operation        |
 +-------------------------------------+-------------+------------------+
-  datatype                            | String      | datatype         |
+| datatype                            | String      | datatype         |
 +-------------------------------------+-------------+------------------+
-  domain_membership_status            | String      | Value from       |
-                                      |             | Domain           |
-                                      |             | Membership       |
-                                      |             | Status           |
-                                      |             | constraint       |
+| domain_membership_status            | String      | Value from       |
+|                                     |             | Domain           |
+|                                     |             | Membership       |
+|                                     |             | Status           |
+|                                     |             | constraint       |
 +-------------------------------------+-------------+------------------+
 
 setting_name_operation NOTE: This parameter is governed by a constraint

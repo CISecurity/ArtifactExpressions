@@ -15,30 +15,28 @@ Artifact Parameters
 Human ID:
   - vmware.vmhost_service_v2
 
-.. table:: vmware.vmhost_service_v2_parameters
-   :widths: 33, 8, 33
 +-------------------------------------+-------------+------------------+
-  Name                                | Type        | Description      |
+| Name                                | Type        | Description      |
 +=====================================+=============+==================+
-  check_existence                     | String      | Defines how many |
-                                      |             | items should be  |
-                                      |             | collected        |
+| check_existence                     | String      | Defines how many |
+|                                     |             | items should be  |
+|                                     |             | collected        |
 +-------------------------------------+-------------+------------------+
-  service_name                        | String      | The name of the  |
-                                      |             | service.         |
-                                      |             | i.e. DCUI        |
+| service_name                        | String      | The name of the  |
+|                                     |             | service.         |
+|                                     |             | i.e. DCUI        |
 +-------------------------------------+-------------+------------------+
-  vmhost_name                         | String      | Name of the ESXi |
-                                      |             | host to scope    |
-                                      |             | collection to.   |
-                                      |             | Set to NA if not |
-                                      |             | applicable       |
+| vmhost_name                         | String      | Name of the ESXi |
+|                                     |             | host to scope    |
+|                                     |             | collection to.   |
+|                                     |             | Set to NA if not |
+|                                     |             | applicable       |
 +-------------------------------------+-------------+------------------+
-  service_name_operation              | String      | comparison       |
-                                      |             | operation        |
+| service_name_operation              | String      | comparison       |
+|                                     |             | operation        |
 +-------------------------------------+-------------+------------------+
-  vmhost_name_operation               | String      | comparison       |
-                                      |             | operation        |
+| vmhost_name_operation               | String      | comparison       |
+|                                     |             | operation        |
 +-------------------------------------+-------------+------------------+
 
 Supported Test Types
@@ -50,21 +48,21 @@ Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
 +-------------------------------------+-------------+------------------+
-  Name                                | Type        | Description      |
+| Name                                | Type        | Description      |
 +=====================================+=============+==================+
-  check                               | String      | Defines how many |
-                                      |             | collected items  |
-                                      |             | must match the   |
-                                      |             | expected state   |
+| check                               | String      | Defines how many |
+|                                     |             | collected items  |
+|                                     |             | must match the   |
+|                                     |             | expected state   |
 +-------------------------------------+-------------+------------------+
-  operation                           | String      | comparison       |
-                                      |             | operation        |
+| operation                           | String      | comparison       |
+|                                     |             | operation        |
 +-------------------------------------+-------------+------------------+
-  datatype                            | String      | datatype         |
+| datatype                            | String      | datatype         |
 +-------------------------------------+-------------+------------------+
-  service_policy                      | String      | The activation   |
-                                      |             | policy for the   |
-                                      |             | host service.    |
+| service_policy                      | String      | The activation   |
+|                                     |             | policy for the   |
+|                                     |             | host service.    |
 +-------------------------------------+-------------+------------------+
 
 service_name_operation NOTE: This parameter is governed by a constraint

@@ -15,31 +15,29 @@ Artifact Parameters
 Human ID:
   - vmware.vmhost_module_v2
 
-.. table:: vmware.vmhost_module_v2_parameters
-   :widths: 33, 8, 33
 +-------------------------------------+-------------+------------------+
-  Name                                | Type        | Description      |
+| Name                                | Type        | Description      |
 +=====================================+=============+==================+
-  check_existence                     | String      | Defines how many |
-                                      |             | items should be  |
-                                      |             | collected        |
+| check_existence                     | String      | Defines how many |
+|                                     |             | items should be  |
+|                                     |             | collected        |
 +-------------------------------------+-------------+------------------+
-  vmhost_name                         | String      | The ESXi host to |
-                                      |             | scope collection |
-                                      |             | to. Set to NA if |
-                                      |             | not applicable   |
+| vmhost_name                         | String      | The ESXi host to |
+|                                     |             | scope collection |
+|                                     |             | to. Set to NA if |
+|                                     |             | not applicable   |
 +-------------------------------------+-------------+------------------+
-  module_name                         | String      | The name of the  |
-                                      |             | module to        |
-                                      |             | collect. Set to  |
-                                      |             | NA if not        |
-                                      |             | applicable       |
+| module_name                         | String      | The name of the  |
+|                                     |             | module to        |
+|                                     |             | collect. Set to  |
+|                                     |             | NA if not        |
+|                                     |             | applicable       |
 +-------------------------------------+-------------+------------------+
-  vmhost_name_operation               | String      | comparison       |
-                                      |             | operation        |
+| vmhost_name_operation               | String      | comparison       |
+|                                     |             | operation        |
 +-------------------------------------+-------------+------------------+
-  module_name_operation               | String      | comparison       |
-                                      |             | operation        |
+| module_name_operation               | String      | comparison       |
+|                                     |             | operation        |
 +-------------------------------------+-------------+------------------+
 
 Supported Test Types
@@ -51,22 +49,22 @@ Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
 +-------------------------------------+-------------+------------------+
-  Name                                | Type        | Description      |
+| Name                                | Type        | Description      |
 +=====================================+=============+==================+
-  check                               | String      | Defines how many |
-                                      |             | collected items  |
-                                      |             | must match the   |
-                                      |             | expected state   |
+| check                               | String      | Defines how many |
+|                                     |             | collected items  |
+|                                     |             | must match the   |
+|                                     |             | expected state   |
 +-------------------------------------+-------------+------------------+
-  operation                           | String      | comparison       |
-                                      |             | operation        |
+| operation                           | String      | comparison       |
+|                                     |             | operation        |
 +-------------------------------------+-------------+------------------+
-  datatype                            | String      | datatype         |
+| datatype                            | String      | datatype         |
 +-------------------------------------+-------------+------------------+
-  signed_status                       | String      | The digital      |
-                                      |             | signature status |
-                                      |             | of the kernel    |
-                                      |             | module           |
+| signed_status                       | String      | The digital      |
+|                                     |             | signature status |
+|                                     |             | of the kernel    |
+|                                     |             | module           |
 +-------------------------------------+-------------+------------------+
 
 signed_status NOTE: This parameter is governed by a constraint allowing

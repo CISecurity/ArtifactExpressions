@@ -15,16 +15,14 @@ Artifact Parameters
 Human ID:
   - vmware.vmhost.webserverssl
 
-.. table:: vmware.vmhost.webserverssl_parameters
-   :widths: 33, 8, 33
 +-------------------------------------+-------------+------------------+
-  Name                                | Type        | Description      |
+| Name                                | Type        | Description      |
 +=====================================+=============+==================+
-  vmhost_name                         | String      | Name of the ESXi |
-                                      |             | host to scope    |
-                                      |             | collection to.   |
-                                      |             | Set to NA if not |
-                                      |             | applicable       |
+| vmhost_name                         | String      | Name of the ESXi |
+|                                     |             | host to scope    |
+|                                     |             | collection to.   |
+|                                     |             | Set to NA if not |
+|                                     |             | applicable       |
 +-------------------------------------+-------------+------------------+
 
 Supported Test Types

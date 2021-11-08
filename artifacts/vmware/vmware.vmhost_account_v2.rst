@@ -15,28 +15,26 @@ Artifact Parameters
 Human ID:
   - vmware.vmhost_account_v2
 
-.. table:: vmware.vmhost_account_v2_parameters
-   :widths: 33, 8, 33
 +-------------------------------------+-------------+------------------+
-  Name                                | Type        | Description      |
+| Name                                | Type        | Description      |
 +=====================================+=============+==================+
-  check_existence                     | String      | Defines how many |
-                                      |             | items should be  |
-                                      |             | collected        |
+| check_existence                     | String      | Defines how many |
+|                                     |             | items should be  |
+|                                     |             | collected        |
 +-------------------------------------+-------------+------------------+
-  vmhost_name                         | String      | The ESXi host to |
-                                      |             | scope collection |
-                                      |             | to. Set to NA if |
-                                      |             | not applicable   |
+| vmhost_name                         | String      | The ESXi host to |
+|                                     |             | scope collection |
+|                                     |             | to. Set to NA if |
+|                                     |             | not applicable   |
 +-------------------------------------+-------------+------------------+
-  account_name                        | String      | Set to NA if not |
-                                      |             | applicable       |
+| account_name                        | String      | Set to NA if not |
+|                                     |             | applicable       |
 +-------------------------------------+-------------+------------------+
-  vmhost_name_operation               | String      | comparison       |
-                                      |             | operation        |
+| vmhost_name_operation               | String      | comparison       |
+|                                     |             | operation        |
 +-------------------------------------+-------------+------------------+
-  account_name_operation              | String      | comparison       |
-                                      |             | operation        |
+| account_name_operation              | String      | comparison       |
+|                                     |             | operation        |
 +-------------------------------------+-------------+------------------+
 
 Supported Test Types
@@ -48,33 +46,33 @@ Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
 +-------------------------------------+-------------+------------------+
-  Name                                | Type        | Description      |
+| Name                                | Type        | Description      |
 +=====================================+=============+==================+
-  check                               | String      | Defines how many |
-                                      |             | collected items  |
-                                      |             | must match the   |
-                                      |             | expected state   |
+| check                               | String      | Defines how many |
+|                                     |             | collected items  |
+|                                     |             | must match the   |
+|                                     |             | expected state   |
 +-------------------------------------+-------------+------------------+
-  operation                           | String      | comparison       |
-                                      |             | operation        |
+| operation                           | String      | comparison       |
+|                                     |             | operation        |
 +-------------------------------------+-------------+------------------+
-  datatype                            | String      | datatype         |
+| datatype                            | String      | datatype         |
 +-------------------------------------+-------------+------------------+
-  shell_access_enabled_operator       | String      | The test to      |
-                                      |             | perform on the   |
-                                      |             | Shell Access     |
-                                      |             | Enabled field.   |
-                                      |             | Enter NA if not  |
-                                      |             | applicable.      |
+| shell_access_enabled_operator       | String      | The test to      |
+|                                     |             | perform on the   |
+|                                     |             | Shell Access     |
+|                                     |             | Enabled field.   |
+|                                     |             | Enter NA if not  |
+|                                     |             | applicable.      |
 +-------------------------------------+-------------+------------------+
-  shell_access_enabled                | Boolean     | Shell Access     |
-                                      |             | Enabled?         |
+| shell_access_enabled                | Boolean     | Shell Access     |
+|                                     |             | Enabled?         |
 +-------------------------------------+-------------+------------------+
-  role_operator                       | String      | comparison       |
-                                      |             | operation        |
+| role_operator                       | String      | comparison       |
+|                                     |             | operation        |
 +-------------------------------------+-------------+------------------+
-  role                                | String      | Enter NA if not  |
-                                      |             | applicable.      |
+| role                                | String      | Enter NA if not  |
+|                                     |             | applicable.      |
 +-------------------------------------+-------------+------------------+
 
 shell_access_enabled_operator NOTE: This parameter is governed by a

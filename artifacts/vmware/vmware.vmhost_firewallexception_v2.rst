@@ -15,31 +15,29 @@ Artifact Parameters
 Human ID:
   - vmware.vmhost_firewallexception_v2
 
-.. table:: vmware.vmhost_firewallexception_v2_parameters
-   :widths: 33, 8, 33
 +-------------------------------------+-------------+------------------+
-  Name                                | Type        | Description      |
+| Name                                | Type        | Description      |
 +=====================================+=============+==================+
-  check_existence                     | String      | Defines how many |
-                                      |             | items should be  |
-                                      |             | collected        |
+| check_existence                     | String      | Defines how many |
+|                                     |             | items should be  |
+|                                     |             | collected        |
 +-------------------------------------+-------------+------------------+
-  vmhost_name                         | String      | The ESXi host to |
-                                      |             | scope results    |
-                                      |             | to. Set it NA if |
-                                      |             | not applicable   |
+| vmhost_name                         | String      | The ESXi host to |
+|                                     |             | scope results    |
+|                                     |             | to. Set it NA if |
+|                                     |             | not applicable   |
 +-------------------------------------+-------------+------------------+
-  firewall_exception_name             | String      | The firewall     |
-                                      |             | exceptions to    |
-                                      |             | scope collection |
-                                      |             | to. Set to NA if |
-                                      |             | not applicable   |
+| firewall_exception_name             | String      | The firewall     |
+|                                     |             | exceptions to    |
+|                                     |             | scope collection |
+|                                     |             | to. Set to NA if |
+|                                     |             | not applicable   |
 +-------------------------------------+-------------+------------------+
-  vmhost_name_operation               | String      | comparison       |
-                                      |             | operation        |
+| vmhost_name_operation               | String      | comparison       |
+|                                     |             | operation        |
 +-------------------------------------+-------------+------------------+
-  firewall_exception_name_operation   | String      | comparison       |
-                                      |             | operation        |
+| firewall_exception_name_operation   | String      | comparison       |
+|                                     |             | operation        |
 +-------------------------------------+-------------+------------------+
 
 Supported Test Types
@@ -51,35 +49,35 @@ Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
 +-------------------------------------+-------------+------------------+
-  Name                                | Type        | Description      |
+| Name                                | Type        | Description      |
 +=====================================+=============+==================+
-  check                               | String      | Defines how many |
-                                      |             | collected items  |
-                                      |             | must match the   |
-                                      |             | expected state   |
+| check                               | String      | Defines how many |
+|                                     |             | collected items  |
+|                                     |             | must match the   |
+|                                     |             | expected state   |
 +-------------------------------------+-------------+------------------+
-  operation                           | String      | comparison       |
-                                      |             | operation        |
+| operation                           | String      | comparison       |
+|                                     |             | operation        |
 +-------------------------------------+-------------+------------------+
-  datatype                            | String      | datatype         |
+| datatype                            | String      | datatype         |
 +-------------------------------------+-------------+------------------+
-  allowed_hosts_all_ip                | Boolean     | Allowed Hosts    |
-                                      |             | All IP?          |
+| allowed_hosts_all_ip                | Boolean     | Allowed Hosts    |
+|                                     |             | All IP?          |
 +-------------------------------------+-------------+------------------+
-  exception_enabled_datatype          | String      | datatype         |
+| exception_enabled_datatype          | String      | datatype         |
 +-------------------------------------+-------------+------------------+
-  exception_enabled                   | Boolean     | Exception        |
-                                      |             | Enabled?         |
+| exception_enabled                   | Boolean     | Exception        |
+|                                     |             | Enabled?         |
 +-------------------------------------+-------------+------------------+
-  service_running_datatype            | String      | datatype         |
+| service_running_datatype            | String      | datatype         |
 +-------------------------------------+-------------+------------------+
-  service_running                     | Boolean     | Service Running? |
+| service_running                     | Boolean     | Service Running? |
 +-------------------------------------+-------------+------------------+
-  exception_enabled_operation         | String      | comparison       |
-                                      |             | operation        |
+| exception_enabled_operation         | String      | comparison       |
+|                                     |             | operation        |
 +-------------------------------------+-------------+------------------+
-  service_running_operation           | String      | comparison       |
-                                      |             | operation        |
+| service_running_operation           | String      | comparison       |
+|                                     |             | operation        |
 +-------------------------------------+-------------+------------------+
 
 exception_enabled_datatype NOTE: This parameter is governed by a

@@ -15,34 +15,31 @@ Artifact Parameters
 Human ID:
   - vmware.vmhost_advancedsetting_v2
 
-.. table:: vmware.vmhost_advancedsetting_v2_parameters
-   :widths: 33, 8, 33
 +-------------------------------------+-------------+------------------+
-  Name                                | Type        | Description      |
+| Name                                | Type        | Description      |
 +=====================================+=============+==================+
-  check_existence                     | String      | Defines how many |
-                                      |             | items should be  |
-                                      |             | collected        |
+| check_existence                     | String      | Defines how many |
+|                                     |             | items should be  |
+|                                     |             | collected        |
 +-------------------------------------+-------------+------------------+
-  vmhost_name                         | String      | The name of the  |
-                                      |             | ESXi server to   |
-                                      |             | scope results    |
-                                      |             | to. Enter NA if  |
-                                      |             | not applicable   |
+| vmhost_name                         | String      | The name of the  |
+|                                     |             | ESXi server to   |
+|                                     |             | scope results    |
+|                                     |             | to. Enter NA if  |
+|                                     |             | not applicable   |
 +-------------------------------------+-------------+------------------+
-  advanced_setting_name               | String      | The name of the  |
-                                      |             | setting.         |
-                                      |             | i.e. User        |
-                                      |             | Vars.ESXiShellIn |
-                                      |             | teractiveTimeOut |
+| advanced_setting_name               | String      | The name of the  |
+|                                     |             | setting.         |
+|                                     |             | i.e. User        |
+|                                     |             | Vars.ESXiShellIn |
+|                                     |             | teractiveTimeOut |
 +-------------------------------------+-------------+------------------+
-  vmhost_name_operation               | String      | comparison       |
-                                      |             | operation        |
+| vmhost_name_operation               | String      | comparison       |
+|                                     |             | operation        |
 +-------------------------------------+-------------+------------------+
-  advanced_setting_name_operation     | String      | comparison       |
-                                      |             | operation        |
+| advanced_setting_name_operation     | String      | comparison       |
+|                                     |             | operation        |
 +-------------------------------------+-------------+------------------+
-
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
@@ -52,28 +49,28 @@ Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
 +-------------------------------------+-------------+------------------+
-  Name                                | Type        | Description      |
+| Name                                | Type        | Description      |
 +=====================================+=============+==================+
-  check                               | String      | Defines how many |
-                                      |             | collected items  |
-                                      |             | must match the   |
-                                      |             | expected state   |
+| check                               | String      | Defines how many |
+|                                     |             | collected items  |
+|                                     |             | must match the   |
+|                                     |             | expected state   |
 +-------------------------------------+-------------+------------------+
-  operation                           | String      | comparison       |
-                                      |             | operation        |
+| operation                           | String      | comparison       |
+|                                     |             | operation        |
 +-------------------------------------+-------------+------------------+
-  datatype                            | String      | datatype         |
+| datatype                            | String      | datatype         |
 +-------------------------------------+-------------+------------------+
-  advanced_setting_value              | Integer     | The              |
-                                      |             | advanc           |
-                                      |             | ed_setting_value |
-                                      |             | element details  |
-                                      |             | the value of the |
-                                      |             | VMHost’s         |
-                                      |             | advanced         |
-                                      |             | configuration    |
-                                      |             | setting that was |
-                                      |             | collected.       |
+| advanced_setting_value              | Integer     | The              |
+|                                     |             | advanc           |
+|                                     |             | ed_setting_value |
+|                                     |             | element details  |
+|                                     |             | the value of the |
+|                                     |             | VMHost’s         |
+|                                     |             | advanced         |
+|                                     |             | configuration    |
+|                                     |             | setting that was |
+|                                     |             | collected.       |
 +-------------------------------------+-------------+------------------+
 
 vmhost_name_operation NOTE: This parameter is governed by a constraint
