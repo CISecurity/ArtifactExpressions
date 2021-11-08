@@ -19,13 +19,31 @@ Artifact Parameters
 Human ID:
    -  macos.corestorage_v1
 
-================= ======= ===========
-Name              Type    Description
-================= ======= ===========
-uuid     string  Specifies the UUID of the volume about which the plist information should be retrieved. Cannot be blank.
-xpath    string  Specifies an Xpath expression describing the text node(s) or attribute(s) to look at. Any valid Xpath 1.0 statement is usable with one exception, at most one field may be identified in the Xpath. This is because the value_of element in the data section is only designed to work against a single field. The only valid operator for xpath is equals since there is an infinite number of possible xpaths and determinining all those that do not equal a given xpath would be impossible. Cannot be blank.
-check_existence   string  Defines how many items should be collected.
-================= ======= ===========
++-----------------------------+--------+---------------------------------------+
+| Name                        | Type   | Description                           |
++=============================+========+=======================================+
+| uuid                        | string | Specifies the UUID of the volume      |
+|                             |        | about which the plist information     |
+|                             |        | should be retrieved. Cannot be blank. |
++-----------------------------+--------+---------------------------------------+
+| xpath                       | string | Specifies an Xpath expression         |
+|                             |        | describing the text node(s) or        |
+|                             |        | attribute(s) to look at. Any valid    |
+|                             |        | Xpath 1.0 statement is usable with    |
+|                             |        | one exception, at most one field may  |
+|                             |        | be identified in the Xpath. This is   |
+|                             |        | because the value_of element in the   |
+|                             |        | data section is only designed to work |
+|                             |        | against a single field. The only      |
+|                             |        | valid operator for xpath is equals    |
+|                             |        | since there is an infinite number of  |
+|                             |        | possible xpaths and determinining all |
+|                             |        | those that do not equal a given xpath |
+|                             |        | would be impossible. Cannot be blank. |
++-----------------------------+--------+---------------------------------------+
+| check_existence             | string | Defines how many items should be      |
+|                             |        | collected.                            |
++-----------------------------+--------+---------------------------------------+
 
 NOTE: The ``check_existence`` parameter is governed by a constraint allowing only the following values:
    -  all_exist
@@ -46,22 +64,20 @@ Test Type Parameters
 Human ID:
    -  macos.corestorage_v1
 
-+-----------------------------+--------+-----------------------------+
-| Name                        | Type   | Description                 |
-+=============================+========+=============================+
-| check                       | string | Defines how many collected  |
-|                             |        | items must match the        |
-|                             |        | expected state.             |
-+-----------------------------+--------+-----------------------------+
-| operation                   | string | Comparison operation        |
-+-----------------------------+--------+-----------------------------+
-| datatype                    | string | The data type of the value  |
-+-----------------------------+--------+-----------------------------+
-| value_of                    | string | The value_of element checks |
-|                             |        | the value(s) of the text    |
-|                             |        | node(s) or attribute(s)     |
-|                             |        | found. Cannot be blank.     |
-+-----------------------------+--------+-----------------------------+
++-----------------------------+--------+---------------------------------------+
+| Name                        | Type   | Description                           |
++=============================+========+=======================================+
+| check                       | string | Defines how many collecteditems must  |
+|                             |        | match the expected state.             |
++-----------------------------+--------+---------------------------------------+
+| operation                   | string | Comparison operation                  |
++-----------------------------+--------+---------------------------------------+
+| datatype                    | string | The data type of the value            |
++-----------------------------+--------+---------------------------------------+
+| value_of                    | string | The value_of element checks the       |
+|                             |        | value(s) of the text node(s) or       |
+|                             |        | attribute(s) found. Cannot be blank.  |
++-----------------------------+--------+---------------------------------------+
 
 NOTE: The ``check`` parameter is governed by a constraint allowing only the following values:
    -  all
