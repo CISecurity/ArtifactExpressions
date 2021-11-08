@@ -4,7 +4,9 @@ vmware:vds_portgroup
 Description
 -----------
 
-The vmware:vds_portgroup test is used to verify override port policies are disabled for vSphere distributed portgroups on the specified vSphere distributed switch.
+The vmware:vds_portgroup test is used to verify override port policies
+are disabled for vSphere distributed portgroups on the specified vSphere
+distributed switch.
 
 Technical Details
 -----------------
@@ -13,23 +15,28 @@ Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
 Human ID:
-  - vmware.vds_portgroup_v2
+   -  vmware.vds_portgroup_v2
 
 +--------------------------+--------+-----------------------------+
 | Name                     | Type   | Description                 |
 +==========================+========+=============================+
-| check_existence          | String | Defines how many items      |
-|                          |        | should be collected         |
+|    check_existence       | |      | | Defines how many items    |
+|                          | String | | should be collected       |
+|                          | |      |                             |
 +--------------------------+--------+-----------------------------+
-| portgroup_name           | String | The name of a vSphere       |
-|                          |        | Distributed port group      |
+|    portgroup_name        | |      | | The name of a vSphere     |
+|                          | String | | Distributed port group    |
+|                          | |      |                             |
 +--------------------------+--------+-----------------------------+
-| vds_name                 | String | The name of a vSphere       |
-|                          |        | Distributed Switch          |
+|    vds_name              | |      | | The name of a vSphere     |
+|                          | String | | Distributed Switch        |
+|                          | |      |                             |
 +--------------------------+--------+-----------------------------+
-| vds_name_operation       | String | comparison operation        |
+|    vds_name_operation    | |      | | comparison operation      |
+|                          | String |                             |
 +--------------------------+--------+-----------------------------+
-| portgroup_name_operation | String | comparison operation        |
+|                          | |      | | comparison operation      |
+| portgroup_name_operation | String |                             |
 +--------------------------+--------+-----------------------------+
 
 Supported Test Types
@@ -46,81 +53,95 @@ vmware:vds_portgroup_collector_ip_address
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 +-------------------------------------+-------------+------------------+
-| Name                                | Type        | Description      |
+   Name \| Type \| Description \|
+
 +=====================================+=============+==================+
-| check                               | String      | Defines how many |
-|                                     |             | collected items  |
-|                                     |             | must match the   |
-|                                     |             | expected state   |
+   check \| String \| Defines how many \|
+      |             \| collected items \|
+      |             \| must match the \|
+      |             \| expected state \|
+
 +-------------------------------------+-------------+------------------+
-| operation                           | String      | comparison       |
-|                                     |             | operation        |
+   operation \| String \| comparison \|
+      |             \| operation \|
+
 +-------------------------------------+-------------+------------------+
-| datatype                            | String      | datatype         |
+   datatype \| String \| datatype \|
+
 +-------------------------------------+-------------+------------------+
-| te                                  | Boolean     | Teaming and      |
-| aming_failover_health_check_enabled |             | Failover Health  |
-|                                     |             | Check enabled?   |
+   te \| Boolean \| Teaming and \| aming_failover_health_check_enabled
+   \| \| Failover Health \| \| \| Check enabled? \|
+
 +-------------------------------------+-------------+------------------+
 
 vmware:vds_portgroup_collector_port
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 +-------------------------------------+-------------+------------------+
-| Name                                | Type        | Description      |
+   Name \| Type \| Description \|
+
 +=====================================+=============+==================+
-| check                               | String      | Defines how many |
-|                                     |             | collected items  |
-|                                     |             | must match the   |
-|                                     |             | expected state   |
+   check \| String \| Defines how many \|
+      |             \| collected items \|
+      |             \| must match the \|
+      |             \| expected state \|
+
 +-------------------------------------+-------------+------------------+
-| operation                           | String      | comparison       |
-|                                     |             | operation        |
+   operation \| String \| comparison \|
+      |             \| operation \|
+
 +-------------------------------------+-------------+------------------+
-| datatype                            | String      | datatype         |
+   datatype \| String \| datatype \|
+
 +-------------------------------------+-------------+------------------+
-| collector_port                      | String      | Authorized       |
-|                                     |             | collector Port   |
-|                                     |             | to which Virtual |
-|                                     |             | Disributed       |
-|                                     |             | Switch Netflow   |
-|                                     |             | traffic is sent  |
+   collector_port \| String \| Authorized \|
+      |             \| collector Port \|
+      |             \| to which Virtual \|
+      |             \| Disributed \|
+      |             \| Switch Netflow \|
+      |             \| traffic is sent \|
+
 +-------------------------------------+-------------+------------------+
 
 vmware:vds_portgroup_override_port_policies
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 +-------------------------------------+-------------+------------------+
-| Name                                | Type        | Description      |
+   Name \| Type \| Description \|
+
 +=====================================+=============+==================+
-| check                               | String      | Defines how many |
-|                                     |             | collected items  |
-|                                     |             | must match the   |
-|                                     |             | expected state   |
+   check \| String \| Defines how many \|
+      |             \| collected items \|
+      |             \| must match the \|
+      |             \| expected state \|
+
 +-------------------------------------+-------------+------------------+
-| operation                           | String      | comparison       |
-|                                     |             | operation        |
+   operation \| String \| comparison \|
+      |             \| operation \|
+
 +-------------------------------------+-------------+------------------+
-| datatype                            | String      | datatype         |
+   datatype \| String \| datatype \|
+
 +-------------------------------------+-------------+------------------+
-| override_port_policies_enabled      | Boolean     | Port-level       |
-|                                     |             | configuration    |
-|                                     |             | overrides        |
-|                                     |             | enabled?         |
+   override_port_policies_enabled \| Boolean \| Port-level \|
+      |             \| configuration \|
+      |             \| overrides \|
+      |             \| enabled? \|
+
 +-------------------------------------+-------------+------------------+
 
 check_existence NOTE: This parameter is governed by a constraint
-allowing only the following values: - all_exist - any_exist -
-at_least_one_exists - none_satisfy - none_exist - only_one_exists
+allowing only the following values: - all_exist - any_exist
+-at_least_one_exists - none_satisfy - none_exist - only_one_exists
 
 check NOTE: This parameter is governed by a constraint allowing only the
 following values: - all - at least one - none satisfy - only one
 
 operation NOTE: This parameter is governed by a constraint allowing only
-the following values: - equals - not equal - case insensitive equals -
-case insensitive not equal - greater than - less than - greater than or
-equal - less than or equal - bitwise and - bitwise or - pattern match -
-subset of - superset of
+the following values: - equals - not equal - case insensitive equals
+-case insensitive not equal - greater than - less than - greater than or
+equal - less than or equal - bitwise and - bitwise or - pattern match
+-subset of - superset of
 
 datatype NOTE: This parameter is governed by a constraint allowing only
 the following values: - boolean - float - int - string - version - set
@@ -217,7 +238,6 @@ OVAL
 ''''
 
 Test
-    
 
 ::
 
@@ -229,7 +249,6 @@ Test
    </macos:gatekeeper_test>
 
 Object
-      
 
 ::
 
@@ -239,7 +258,6 @@ Object
    </macos:gatekeeper_object>    
 
 State
-     
 
 ::
 
