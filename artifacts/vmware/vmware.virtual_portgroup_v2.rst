@@ -15,30 +15,28 @@ Artifact Parameters
 Human ID:
   - vmware.virtual_portgroup_v2
 
-.. table:: vmware.virtual_portgroup_v2_parameters
-   :widths: 33, 8, 33
 +-------------------------------------+-------------+------------------+
-  Name                                | Type        | Description      |
+| Name                                | Type        | Description      |
 +=====================================+=============+==================+
-  check_existence                     | String      | Defines how many |
-                                      |             | items should be  |
-                                      |             | collected        |
+| check_existence                     | String      | Defines how many |
+|                                     |             | items should be  |
+|                                     |             | collected        |
 +-------------------------------------+-------------+------------------+
-  port_group_name                     | String      | The name of the  |
-                                      |             | port group.      |
-                                      |             | Enter NA if not  |
-                                      |             | applicable       |
+| port_group_name                     | String      | The name of the  |
+|                                     |             | port group.      |
+|                                     |             | Enter NA if not  |
+|                                     |             | applicable       |
 +-------------------------------------+-------------+------------------+
-  virtual_switch_name                 | String      | The name of the  |
-                                      |             | virtual switch.  |
-                                      |             | Enter NA if not  |
-                                      |             | applicable       |
+| virtual_switch_name                 | String      | The name of the  |
+|                                     |             | virtual switch.  |
+|                                     |             | Enter NA if not  |
+|                                     |             | applicable       |
 +-------------------------------------+-------------+------------------+
-  portgroup_name_operation            | String      | comparison       |
-                                      |             | operation        |
+| portgroup_name_operation            | String      | comparison       |
+|                                     |             | operation        |
 +-------------------------------------+-------------+------------------+
-  virtual_switch_name_operation       | String      | comparison       |
-                                      |             | operation        |
+| virtual_switch_name_operation       | String      | comparison       |
+|                                     |             | operation        |
 +-------------------------------------+-------------+------------------+
 
 Supported Test Types
@@ -50,20 +48,20 @@ Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
 +-------------------------------------+-------------+------------------+
-  Name                                | Type        | Description      |
+| Name                                | Type        | Description      |
 +=====================================+=============+==================+
-  check                               | String      | Defines how many |
-                                      |             | collected items  |
-                                      |             | must match the   |
-                                      |             | expected state   |
+| check                               | String      | Defines how many |
+|                                     |             | collected items  |
+|                                     |             | must match the   |
+|                                     |             | expected state   |
 +-------------------------------------+-------------+------------------+
-  operation                           | String      | comparison       |
-                                      |             | operation        |
+| operation                           | String      | comparison       |
+|                                     |             | operation        |
 +-------------------------------------+-------------+------------------+
-  datatype                            | String      | datatype         |
+| datatype                            | String      | datatype         |
 +-------------------------------------+-------------+------------------+
-  vlan_id                             | Integer     | The ID of the    |
-                                      |             | VLAN             |
+| vlan_id                             | Integer     | The ID of the    |
+|                                     |             | VLAN             |
 +-------------------------------------+-------------+------------------+
 
 check_existence NOTE: This parameter is governed by a constraint

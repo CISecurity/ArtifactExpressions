@@ -15,20 +15,19 @@ Artifact Parameters
 Human ID:
   - vmware.virtual_machine.device_state
 
-.. table:: vmware.virtual_machine.device_state_parameters
-   :widths: 33, 8, 33
+
 +-------------------------------------+-------------+------------------+
-  Name                                | Type        | Description      |
+| Name                                | Type        | Description      |
 +=====================================+=============+==================+
-  device_type                         | String      | Value from       |
-                                      |             | device_type      |
-                                      |             | constraints      |
+| device_type                         | String      | Value from       |
+|                                     |             | device_type      |
+|                                     |             | constraints      |
 +-------------------------------------+-------------+------------------+
-  vm_name                             | String      | The name of the  |
-                                      |             | VM to scope      |
-                                      |             | collection to.   |
-                                      |             | Set to NA if not |
-                                      |             | applicable       |
+| vm_name                             | String      | The name of the  |
+|                                     |             | VM to scope      |
+|                                     |             | collection to.   |
+|                                     |             | Set to NA if not |
+|                                     |             | applicable       |
 +-------------------------------------+-------------+------------------+
 
 Supported Test Types

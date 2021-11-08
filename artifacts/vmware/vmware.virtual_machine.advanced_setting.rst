@@ -15,22 +15,20 @@ Artifact Parameters
 Human ID:
   - vmware.virtual_machine.advanced_setting
 
-.. table:: vmware.virtual_machine.advanced_setting_parameters
-   :widths: 33, 8, 33
 +-------------------------------------+-------------+------------------+
-  Name                                | Type        | Description      |
+| Name                                | Type        | Description      |
 +=====================================+=============+==================+
-  name                                | String      | The name of the  |
-                                      |             | VM’s setting.    |
-                                      |             | i                |
-                                      |             | .e. RemoteDispla |
-                                      |             | y.maxConnections |
+| name                                | String      | The name of the  |
+|                                     |             | VM’s setting.    |
+|                                     |             | i                |
+|                                     |             | .e. RemoteDispla |
+|                                     |             | y.maxConnections |
 +-------------------------------------+-------------+------------------+
-  vm_name                             | String      | The name of the  |
-                                      |             | VM to scope the  |
-                                      |             | collection to.   |
-                                      |             | Set to NA if not |
-                                      |             | applicable       |
+| vm_name                             | String      | The name of the  |
+|                                     |             | VM to scope the  |
+|                                     |             | collection to.   |
+|                                     |             | Set to NA if not |
+|                                     |             | applicable       |
 +-------------------------------------+-------------+------------------+
 
 Supported Test Types

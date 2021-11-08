@@ -15,37 +15,33 @@ Artifact Parameters
 Human ID:
   - vmware.virtual_machine.device.harddisk
 
-.. table:: vmware.virtual_machine.device.harddisk_parameters
-   :widths: 33, 8, 33
 +-------------------------------------+-------------+------------------+
-  Name                                | Type        | Description      |
+| Name                                | Type        | Description      |
 +=====================================+=============+==================+
-  persistence                         | String      | NA or acceptable |
-                                      |             | persistence      |
-                                      |             | constraint       |
-                                      |             | values           |
+| persistence                         | String      | NA or acceptable |
+|                                     |             | persistence      |
+|                                     |             | constraint       |
+|                                     |             | values           |
 +-------------------------------------+-------------+------------------+
-  disktype                            | String      | Acceptable disk  |
-                                      |             | type constraint  |
-                                      |             | values           |
+| disktype                            | String      |                  |
 +-------------------------------------+-------------+------------------+
-  filename                            | String      | i.e. hd1,hd2.    |
-                                      |             | Enter NA if not  |
-                                      |             | applicable       |
+| filename                            | String      | i.e.hd1,hd2.     |
+|                                     |             | Enter NA if not  |
+|                                     |             | applicable       |
 +-------------------------------------+-------------+------------------+
-  capacitykb                          | Integer     | i.e. 1000. Enter |
-                                      |             | NA if not        |
-                                      |             | applicable       |
+| capacitykb                          | Integer     | i.e.1000. Enter  |
+|                                     |             | NA if not        |
+|                                     |             | applicable       |
 +-------------------------------------+-------------+------------------+
-  capacitygb                          | Float       | i.e 1.6. Enter   |
-                                      |             | NA if not        |
-                                      |             | applicable       |
+| capacitygb                          | Float       | i.e 1.6. Enter   |
+|                                     |             | NA if not        |
+|                                     |             | applicable       |
 +-------------------------------------+-------------+------------------+
-  vm_name                             | String      | The name of the  |
-                                      |             | VM to scope      |
-                                      |             | collection to.   |
-                                      |             | Set to NA if not |
-                                      |             | applicable       |
+| vm_name                             | String      | The name of the  |
+|                                     |             | VM to scope      |
+|                                     |             | collection to.   |
+|                                     |             | Set to NA if not |
+|                                     |             | applicable       |
 +-------------------------------------+-------------+------------------+
 
 Supported Test Types

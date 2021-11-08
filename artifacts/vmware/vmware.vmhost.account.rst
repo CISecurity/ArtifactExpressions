@@ -15,18 +15,16 @@ Artifact Parameters
 Human ID:
   - vmware.vmhost.account
 
-.. table:: vmware.vmhost.account_parameters
-   :widths: 33, 8, 33
 +-------------------------------------+-------------+------------------+
-  Name                                | Type        | Description      |
+| Name                                | Type        | Description      |
 +=====================================+=============+==================+
-  vmhost_name                         | String      | The ESXi host to |
-                                      |             | scope collection |
-                                      |             | to. Set to NA if |
-                                      |             | not applicable   |
+| vmhost_name                         | String      | The ESXi host to |
+|                                     |             | scope collection |
+|                                     |             | to. Set to NA if |
+|                                     |             | not applicable   |
 +-------------------------------------+-------------+------------------+
-  account_name                        | String      | Set to NA if not |
-                                      |             | applicable       |
+| account_name                        | String      | Set to NA if not |
+|                                     |             | applicable       |
 +-------------------------------------+-------------+------------------+
 
 Supported Test Types
@@ -38,26 +36,26 @@ Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
 +-------------------------------------+-------------+------------------+
-  Name                                | Type        | Description      |
+| Name                                | Type        | Description      |
 +=====================================+=============+==================+
-  shell_access_enabled_operator       | Boolean     | The test to      |
-                                      |             | perform on the   |
-                                      |             | Shell Access     |
-                                      |             | Enabled field.   |
-                                      |             | Enter NA if not  |
-                                      |             | applicable.      |
+| shell_access_enabled_operator       | Boolean     | The test to      |
+|                                     |             | perform on the   |
+|                                     |             | Shell Access     |
+|                                     |             | Enabled field.   |
+|                                     |             | Enter NA if not  |
+|                                     |             | applicable.      |
 +-------------------------------------+-------------+------------------+
-  shell_access_enabled                | Boolean     | Enter NA if not  |
-                                      |             | applicable.      |
+| shell_access_enabled                | Boolean     | Enter NA if not  |
+|                                     |             | applicable.      |
 +-------------------------------------+-------------+------------------+
-  role_operator                       | String      | The test to      |
-                                      |             | perform on the   |
-                                      |             | Role field.      |
-                                      |             | Enter NA if not  |
-                                      |             | applicable.      |
+| role_operator                       | String      | The test to      |
+|                                     |             | perform on the   |
+|                                     |             | Role field.      |
+|                                     |             | Enter NA if not  |
+|                                     |             | applicable.      |
 +-------------------------------------+-------------+------------------+
-  role                                | String      | Enter NA if not  |
-                                      |             | applicable.      |
+| role                                | String      | Enter NA if not  |
+|                                     |             | applicable.      |
 +-------------------------------------+-------------+------------------+
 
 shell_access_enabled_operator NOTE: This parameter is governed by a

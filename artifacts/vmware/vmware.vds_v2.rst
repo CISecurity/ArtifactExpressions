@@ -15,8 +15,6 @@ Artifact Parameters
 Human ID:
   - vmware.vds_v2
 
-.. table:: vmware.vds_v2_parameters
-   :widths: 33, 8, 33
 ================== ====== ==========================================
 Name               Type   Description
 ================== ====== ==========================================
@@ -38,42 +36,42 @@ vmware:vds_teaming_failover
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 +-------------------------------------+-------------+------------------+
-  Name                                | Type        | Description      |
+| Name                                | Type        | Description      |
 +=====================================+=============+==================+
-  check                               | String      | Defines how many |
-                                      |             | collected items  |
-                                      |             | must match the   |
-                                      |             | expected state   |
+| check                               | String      | Defines how many |
+|                                     |             | collected items  |
+|                                     |             | must match the   |
+|                                     |             | expected state   |
 +-------------------------------------+-------------+------------------+
-  operation                           | String      | comparison       |
-                                      |             | operation        |
+| operation                           | String      | comparison       |
+|                                     |             | operation        |
 +-------------------------------------+-------------+------------------+
-  datatype                            | String      | datatype         |
+| datatype                            | String      | datatype         |
 +-------------------------------------+-------------+------------------+
-  te                                  | Boolean     | Teaming and      |
-  aming_failover_health_check_enabled |             | Failover Health  |
-                                      |             | Check enabled?   |
+| te                                  | Boolean     | Teaming and      |
+| aming_failover_health_check_enabled |             | Failover Health  |
+|                                     |             | Check enabled?   |
 +-------------------------------------+-------------+------------------+
 
 vmware:vds_vlan_mtu
 ^^^^^^^^^^^^^^^^^^^
 
 +-------------------------------------+-------------+------------------+
-  Name                                | Type        | Description      |
+| Name                                | Type        | Description      |
 +=====================================+=============+==================+
-  check                               | String      | Defines how many |
-                                      |             | collected items  |
-                                      |             | must match the   |
-                                      |             | expected state   |
+| check                               | String      | Defines how many |
+|                                     |             | collected items  |
+|                                     |             | must match the   |
+|                                     |             | expected state   |
 +-------------------------------------+-------------+------------------+
-  operation                           | String      | comparison       |
-                                      |             | operation        |
+| operation                           | String      | comparison       |
+|                                     |             | operation        |
 +-------------------------------------+-------------+------------------+
-  datatype                            | String      | datatype         |
+| datatype                            | String      | datatype         |
 +-------------------------------------+-------------+------------------+
-  vlan_mtu_health_check_enabled       | Boolean     | VLAN and MTU     |
-                                      |             | Health Check     |
-                                      |             | enabled?         |
+| vlan_mtu_health_check_enabled       | Boolean     | VLAN and MTU     |
+|                                     |             | Health Check     |
+|                                     |             | enabled?         |
 +-------------------------------------+-------------+------------------+
 
 check_existence NOTE: This parameter is governed by a constraint

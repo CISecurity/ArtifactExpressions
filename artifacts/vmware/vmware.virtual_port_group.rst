@@ -15,20 +15,18 @@ Artifact Parameters
 Human ID:
   - vmware.virtual_port_group
 
-.. table:: vmware.virtual_port_group_parameters
-   :widths: 33, 8, 33
 +-------------------------------------+-------------+------------------+
-  Name                                | Type        | Description      |
+| Name                                | Type        | Description      |
 +=====================================+=============+==================+
-  port_group_name                     | String      | The name of the  |
-                                      |             | port group.      |
-                                      |             | Enter NA if not  |
-                                      |             | applicable       |
+| port_group_name                     | String      | The name of the  |
+|                                     |             | port group.      |
+|                                     |             | Enter NA if not  |
+|                                     |             | applicable       |
 +-------------------------------------+-------------+------------------+
-  virtual_switch_name                 | String      | The name of the  |
-                                      |             | virtual switch.  |
-                                      |             | Enter NA if not  |
-                                      |             | applicable       |
+| virtual_switch_name                 | String      | The name of the  |
+|                                     |             | virtual switch.  |
+|                                     |             | Enter NA if not  |
+|                                     |             | applicable       |
 +-------------------------------------+-------------+------------------+
 
 Supported Test Types

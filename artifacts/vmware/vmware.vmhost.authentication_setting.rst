@@ -15,21 +15,19 @@ Artifact Parameters
 Human ID:
   - vmware.vmhost.authentication_setting
 
-.. table:: vmware.vmhost.authentication_setting_parameters
-   :widths: 33, 8, 33
 +-------------------------------------+-------------+------------------+
-  Name                                | Type        | Description      |
+| Name                                | Type        | Description      |
 +=====================================+=============+==================+
-  name                                | String      | The name of the  |
-                                      |             | setting.         |
-                                      |             | e.g. Domain      |
-                                      |             | MembershipStatus |
+| name                                | String      | The name of the  |
+|                                     |             | setting.         |
+|                                     |             | i.e. Domain      |
+|                                     |             | MembershipStatus |
 +-------------------------------------+-------------+------------------+
-  vmhost_name                         | String      | Name of ESXi     |
-                                      |             | server to scope  |
-                                      |             | collection to.   |
-                                      |             | Set to NA if not |
-                                      |             | applicable       |
+| vmhost_name                         | String      | Name of ESXi     |
+|                                     |             | server to scope  |
+|                                     |             | collection to.   |
+|                                     |             | Set to NA if not |
+|                                     |             | applicable       |
 +-------------------------------------+-------------+------------------+
 
 Supported Test Types

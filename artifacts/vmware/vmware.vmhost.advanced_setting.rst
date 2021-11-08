@@ -15,22 +15,20 @@ Artifact Parameters
 Human ID:
   - vmware.vmhost.advanced_setting
 
-.. table:: vmware.vmhost.advanced_setting_parameters
-   :widths: 33, 8, 33
 +-------------------------------------+-------------+------------------+
-  Name                                | Type        | Description      |
+| Name                                | Type        | Description      |
 +=====================================+=============+==================+
-  vmhost_name                         | String      | The name of the  |
-                                      |             | ESXi server to   |
-                                      |             | scope results    |
-                                      |             | to. Enter NA if  |
-                                      |             | not applicable.  |
+| vmhost_name                         | String      | The name of the  |
+|                                     |             | ESXi server to   |
+|                                     |             | scope results    |
+|                                     |             | to. Enter NA if  |
+|                                     |             | not applicable.  |
 +-------------------------------------+-------------+------------------+
-  advanced_setting_name               | String      | The name of the  |
-                                      |             | setting.         |
-                                      |             | i.e. User        |
-                                      |             | Vars.ESXiShellIn |
-                                      |             | teractiveTimeOut |
+| advanced_setting_name               | String      | The name of the  |
+|                                     |             | setting.         |
+|                                     |             | i.e. User        |
+|                                     |             | Vars.ESXiShellIn |
+|                                     |             | teractiveTimeOut |
 +-------------------------------------+-------------+------------------+
 
 Supported Test Types
