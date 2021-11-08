@@ -130,7 +130,7 @@ Txt-Unix_File_or_Directory_Permissions_v2
 | username          | string  | The name of the user that owns the     |
 |                   |         | file or directory.                     |
 +-------------------+---------+----------------------------------------+
-| group             | string  | The name of the group that owns the 
+| group             | string  | The name of the group that owns the    |
 |                   |         | file or directory.                     |
 +-------------------+---------+----------------------------------------+
 | uread             | string  |Determines whether the user that owns   |

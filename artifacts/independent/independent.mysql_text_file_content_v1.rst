@@ -220,7 +220,7 @@ Txt-Unix_File_or_Directory_Permissions_v1
 |                   |         | the file/directory is permitted to     |
 |                   |         | read the contents of it.               |
 +-------------------+---------+----------------------------------------+
-| uwrite            | boolean | Determines whether the user that owns   |
+| uwrite            | boolean | Determines whether the user that owns  |
 |                   |         | the file/directory is permitted to     |
 |                   |         | write to it.                           |
 +-------------------+---------+----------------------------------------+
