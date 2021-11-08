@@ -13,6 +13,8 @@ Windows
    windows.privilegeassignment <windows.privilegeassignment>
    windows.registry.value <windows.registry.value>
    windows.registry_value_v2 <windows.registry_value_v2>
+   windows.registry_guid_sid_v1 <windows.registry_guid_sid_v1>
+   windows.registry_guid_v1 <windows.registry_guid_v1>
    windows.rsop.security_setting_boolean <windows.rsop.security_setting_boolean>
    windows.sid_sid_v1 <windows.sid_sid_v1>
    windows.user <windows.user>

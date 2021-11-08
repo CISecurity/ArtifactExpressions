@@ -9,7 +9,6 @@ VMWare
 
    vmware.vds_portgroup_v2 <vmware.vds_portgroup_v2>
    vmware.vds_v2 <vmware.vds_v2>
-   vmware.vhmost.lockdown_mode <vmware.vmhost.lockdown_mode>
    vmware.virtual_machine.advanced_setting <vmware.virtual_machine.advanced_setting>
    vmware.virtual_machine.device.harddisk <vmware.virtual_machine.device.harddisk>
    vmware.virtual_machine.device_state <vmware.virtual_machine.device_state>
@@ -25,6 +24,7 @@ VMWare
    vmware.vmhost.bus_adapter.iscsi.chap.mutual <vmware.vmhost.bus_adapter.iscsi.chap.mutual>
    vmware.vmhost.core_dump.network_server <vmware.vmhost.core_dump.network_server>
    vmware.vmhost.firewall_exception.all_ip <vmware.vmhost.firewall_exception.all_ip>
+   vmware.vhmost.lockdown_mode <vmware.vmhost.lockdown_mode>
    vmware.vmhost.module.signature_status <vmware.vmhost.module.signature_status>
    vmware.vmhost.ntp_server <vmware.vmhost.ntp_server>
    vmware.vmhost.service.state <vmware.vmhost.service.state>
@@ -45,3 +45,5 @@ VMWare
    vmware.vmhost_vib_v2 <vmware.vmhost_vib_v2>
    vmware.vmhost_vswitchpolicy_v2 <vmware.vmhost_vswitchpolicy_v2>
    vmware.vmhost_webserverssl_v2 <vmware.vmhost_webserverssl_v2>
+
+
