@@ -19,8 +19,8 @@ VMWare
    vmware.vm_harddiskdevice_v2 <vmware.vm_harddiskdevice_v2>
    vmware.vmhost.acceptance_level <vmware.vmhost.acceptance_level>
    vmware.vmhost.account <vmware.vmhost.account>
-   vmware.vmhost.advanced_setting <vmhost.vmhost.advanced_setting>
-   vmware.vmhost.authentication_setting <vmhost.vmhost.authentication_setting>
+   vmware.vmhost.advanced_setting <vmware.vmhost.advanced_setting>
+   vmware.vmhost.authentication_setting <vmware.vmhost.authentication_setting>
    vmware.vmhost.bus_adapter.iscsi.chap.mutual <vmware.vmhost.bus_adapter.iscsi.chap.mutual>
    vmware.vmhost.core_dump.network_server <vmware.vmhost.core_dump.network_server>
    vmware.vmhost.firewall_exception.all_ip <vmware.vmhost.firewall_exception.all_ip>
