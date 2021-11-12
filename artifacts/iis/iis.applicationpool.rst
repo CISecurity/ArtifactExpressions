@@ -122,7 +122,6 @@ OVAL
 ''''
 
 Test
-    
 
 ::
 
@@ -134,7 +133,6 @@ Test
    </iis:applicationpool_test>
 
 Object
-      
 
 ::
 
@@ -144,7 +142,6 @@ Object
    </iis:applicationpool_object>   
 
 State
-     
 
 ::
 

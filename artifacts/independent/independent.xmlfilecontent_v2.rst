@@ -57,10 +57,16 @@ Artifact Parameters
 +-------------------+---------+----------------------------------------+
 
 recurse NOTE: This parameter is governed by a constraint allowing
-only the following values: Yes/No
+only the following values:
+ - Yes
+ - No
 
 file_system NOTE: This parameter is governed by a constraint allowing
-only the following values: NA - local - all - defined
+only the following values: 
+ - NA
+ - local
+ - all
+ - defined
 
 check_existence NOTE: This parameter is governed by a constraint allowing
 only the following values: 
@@ -94,7 +100,13 @@ pattern match
 +-------------------+---------+----------------------------------------+
 
 data_type NOTE: This parameter is governed by a constraint allowing only the 
-following values: - boolean - float - int - string - version – set 
+following values:
+ - boolean
+ - float
+ - int
+ - string
+ - version
+ - set 
 
 pattern not match
 ~~~~~~~~~~~~~~~~~
@@ -108,7 +120,13 @@ pattern not match
 +-------------------+---------+----------------------------------------+
 
 data_type NOTE: This parameter is governed by a constraint allowing only the 
-following values: boolean - float - int - string - version – set 
+following values:
+ - boolean
+ - float
+ - int
+ - string
+ - version
+ - set 
 
 existence_test
 ~~~~~~~~~~~~~~
@@ -161,12 +179,6 @@ independent.xmlfilecontent_v2
 |                   |         | perform on value of.                   |
 +-------------------+---------+----------------------------------------+
 
-data_type NOTE: This parameter is governed by a constraint allowing only the 
-following values: equals - not equal - case insensitive equals - 
-case insensitive not equal - greater than - less than - greater than or equal - 
-less than or equal - bitwise and - bitwise or - pattern match - subset of - 
-superset of
-
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
@@ -189,13 +201,13 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
         <ae:title>[RECOMMENDATION TITLE]</ae:title>
         <ae:artifact type="[ARTIFACTTYPE NAME]">
           <ae:parameters>
-						<ae:parameter dt="string" name="path">[path.value]</ae:parameter>
-						<ae:parameter dt="string" name="filename">[filename.value]</ae:parameter>
-						<ae:parameter dt="string" name="recurse">[recurse.value]</ae:parameter>
-						<ae:parameter dt="binary" name="max_depth">[max_depth.value]</ae:parameter>
-						<ae:parameter dt="string" name="file_system">[pfile_systemath.value]</ae:parameter>
-						<ae:parameter dt="string" name="xpath">[xpath.value]</ae:parameter>
-						<ae:parameter dt="string" name="check_existence">[check_existence.value]</ae:parameter>
+            <ae:parameter dt="string" name="path">[path.value]</ae:parameter>
+            <ae:parameter dt="string" name="filename">[filename.value]</ae:parameter>
+            <ae:parameter dt="string" name="recurse">[recurse.value]</ae:parameter>
+            <ae:parameter dt="binary" name="max_depth">[max_depth.value]</ae:parameter>
+            <ae:parameter dt="string" name="file_system">[pfile_systemath.value]</ae:parameter>
+            <ae:parameter dt="string" name="xpath">[xpath.value]</ae:parameter>
+            <ae:parameter dt="string" name="check_existence">[check_existence.value]</ae:parameter>
           </ae:parameters>
         </ae:artifact>
         <ae:test type="[TESTTYPE NAME]">
@@ -240,7 +252,6 @@ OVAL
 
 Test
 
-
 ::
 
   <xmlfilecontent_test 
@@ -255,7 +266,6 @@ Test
   </xmlfilecontent_test>
 
 Object
-      
 
 ::
 
@@ -278,7 +288,6 @@ Object
   </xmlfilecontent_object>
 
 State
-     
 
 ::
 
@@ -452,13 +461,13 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
         <ae:title>[RECOMMENDATION-TITLE]</ae:title>
         <ae:artifact type="[ARTIFACTTYPE-NAME]">
           <ae:parameters>
-						<ae:parameter dt="string" name="path">[path.value]</ae:parameter>
-						<ae:parameter dt="string" name="filename">[filename.value]</ae:parameter>
-						<ae:parameter dt="string" name="recurse">[recurse.value]</ae:parameter>
-						<ae:parameter dt="binary" name="max_depth">[max_depth.value]</ae:parameter>
-						<ae:parameter dt="string" name="file_system">[pfile_systemath.value]</ae:parameter>
-						<ae:parameter dt="string" name="xpath">[xpath.value]</ae:parameter>
-						<ae:parameter dt="string" name="check_existence">[check_existence.value]</ae:parameter>
+            <ae:parameter dt="string" name="path">[path.value]</ae:parameter>
+            <ae:parameter dt="string" name="filename">[filename.value]</ae:parameter>
+            <ae:parameter dt="string" name="recurse">[recurse.value]</ae:parameter>
+            <ae:parameter dt="binary" name="max_depth">[max_depth.value]</ae:parameter>
+            <ae:parameter dt="string" name="file_system">[pfile_systemath.value]</ae:parameter>
+            <ae:parameter dt="string" name="xpath">[xpath.value]</ae:parameter>
+            <ae:parameter dt="string" name="check_existence">[check_existence.value]</ae:parameter>
           </ae:parameters>
         </ae:artifact>
         <ae:test type="[TESTTYPE-NAME]">
@@ -496,7 +505,6 @@ OVAL
 ''''
 
 Test
-    
 
 ::
 
@@ -511,7 +519,6 @@ Test
   </xmlfilecontent_test> 
 
 Object
-    
 
 ::
 
@@ -527,7 +534,6 @@ Object
   </xmlfilecontent_object>
 
 State
-    
 
 ::
 
@@ -683,13 +689,13 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
         <ae:title>[RECOMMENDATION TITLE]</ae:title>
         <ae:artifact type="[ARTIFACTTYPE NAME]">
           <ae:parameters>
-						<ae:parameter dt="string" name="path">[path.value]</ae:parameter>
-						<ae:parameter dt="string" name="filename">[filename.value]</ae:parameter>
-						<ae:parameter dt="string" name="recurse">[recurse.value]</ae:parameter>
-						<ae:parameter dt="binary" name="max_depth">[max_depth.value]</ae:parameter>
-						<ae:parameter dt="string" name="file_system">[pfile_systemath.value]</ae:parameter>
-						<ae:parameter dt="string" name="xpath">[xpath.value]</ae:parameter>
-						<ae:parameter dt="string" name="check_existence">[check_existence.value]</ae:parameter>
+            <ae:parameter dt="string" name="path">[path.value]</ae:parameter>
+            <ae:parameter dt="string" name="filename">[filename.value]</ae:parameter>
+            <ae:parameter dt="string" name="recurse">[recurse.value]</ae:parameter>
+            <ae:parameter dt="binary" name="max_depth">[max_depth.value]</ae:parameter>
+            <ae:parameter dt="string" name="file_system">[pfile_systemath.value]</ae:parameter>
+            <ae:parameter dt="string" name="xpath">[xpath.value]</ae:parameter>
+            <ae:parameter dt="string" name="check_existence">[check_existence.value]</ae:parameter>
           </ae:parameters>
         </ae:artifact>
         <ae:test type="[TESTTYPE NAME]">
@@ -736,7 +742,6 @@ OVAL
 
 Test
 
-
 ::
 
   <xmlfilecontent_test 
@@ -751,7 +756,6 @@ Test
   </xmlfilecontent_test>
 
 Object
-      
 
 ::
 
@@ -766,7 +770,6 @@ Object
   </xmlfilecontent_object>
 
 State
-     
 
 ::
 

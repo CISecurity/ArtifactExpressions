@@ -144,7 +144,6 @@ OVAL
 ''''
 
 Test
-    
 
 ::
 
@@ -158,7 +157,6 @@ Test
    </kubepsp_test>
 
 Object
-      
 
 ::
 
@@ -170,7 +168,6 @@ Object
    </kubepsp_object>  
 
 State
-     
 
 ::
 

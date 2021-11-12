@@ -177,7 +177,6 @@ OVAL
 ''''
 
 Test
-    
 
 ::
 
@@ -191,7 +190,6 @@ Test
            </registry_test>
 
 Object
-      
 
 ::
 
@@ -205,7 +203,6 @@ Object
            </registry_object>
 
 State
-     
 
 ::
 
@@ -310,8 +307,6 @@ JSON
 ^^^^
 
 ::
-
-
      
        "artifact-expression": {
          "artifact-unique-id": [

@@ -249,7 +249,6 @@ OVAL
 ''''
 
 Test
-    
 
 ::
 
@@ -263,7 +262,6 @@ Test
            </registry_test>
 
 Object
-      
 
 ::
 
@@ -277,7 +275,6 @@ Object
            </registry_object>
 
 State
-     
 
 ::
 

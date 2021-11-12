@@ -96,27 +96,27 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
    <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
      <xccdf:check-content>
        <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION_NUMBER]">
-		 <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-		 <ae:title>[RECOMMENDATION TITLE]</ae:title>
-		 <ae:artifact type="[ARTIFACTTYPE NAME]">
-			<ae:parameters>
+     <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
+     <ae:title>[RECOMMENDATION TITLE]</ae:title>
+     <ae:artifact type="[ARTIFACTTYPE NAME]">
+      <ae:parameters>
               <ae:parameter dt="string" name="check_existence"
                 >[check_existence.value]</ae:parameter>
-			</ae:parameters>
-		 </ae:artifact>
-		 <ae:test type="[TESTTYPE NAME]">
+      </ae:parameters>
+     </ae:artifact>
+     <ae:test type="[TESTTYPE NAME]">
            <ae:parameters>
-			 <ae:parameter dt="string" name="check">[check.value]</ae:parameter>
-			 <ae:parameter dt="string" name="operation">[operation.value]</ae:parameter>
-			 <ae:parameter dt="string" name="datatype">[datatype.value]</ae:parameter>
-			 <ae:parameter dt="boolean" name="schedule">[schedule.value]</ae:parameter>
-			 <ae:parameter dt="string" name="software_title">[software_title.value]</ae:parameter>
+       <ae:parameter dt="string" name="check">[check.value]</ae:parameter>
+       <ae:parameter dt="string" name="operation">[operation.value]</ae:parameter>
+       <ae:parameter dt="string" name="datatype">[datatype.value]</ae:parameter>
+       <ae:parameter dt="boolean" name="schedule">[schedule.value]</ae:parameter>
+       <ae:parameter dt="string" name="software_title">[software_title.value]</ae:parameter>
            </ae:parameters>
-		 </ae:test>
-		 <ae:profiles>
+     </ae:test>
+     <ae:profiles>
            <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1"
          />
-		</ae:profiles>
+    </ae:profiles>
        </ae:artifact_expression>
      </xccdf:check-content>
    </xccdf:check>
@@ -144,7 +144,6 @@ OVAL
 
 Test
 
-
 ::
 
    <softwareupdate_test xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#macos" check="[check.value]" check_existence="[check_existence.value]"
@@ -156,7 +155,6 @@ Test
 
 Object
 
-
 ::
 
    <softwareupdate_object xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#macos"
@@ -165,7 +163,6 @@ Object
    </softwareupdate_object>
 
 State
-
 
 ::
 
@@ -219,7 +216,6 @@ JSON
 ^^^^
 
 ::
-
 
    "artifact-expression": {
      "artifact-unique-id": "[ARTIFACT-OVAL-ID]",

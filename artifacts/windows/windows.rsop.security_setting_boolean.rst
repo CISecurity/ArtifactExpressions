@@ -207,7 +207,6 @@ OVAL
 ''''
 
 Test
-    
 
 ::
 
@@ -221,7 +220,6 @@ Test
        </wmi57_test>
 
 Object
-      
 
 ::
 
@@ -237,7 +235,6 @@ Object
    </wmi57_state>
 
 State
-     
 
 ::
 

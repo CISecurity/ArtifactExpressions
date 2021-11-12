@@ -13,7 +13,7 @@ Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
 Human ID:
-  - 	vmware.vmhost_acceptancelevel_v2
+  -   vmware.vmhost_acceptancelevel_v2
 
 +-------------------------------------+-------------+------------------+
 | Name                                | Type        | Description      |
@@ -147,7 +147,6 @@ OVAL
 ''''
 
 Test
-    
 
 ::
 
@@ -159,7 +158,6 @@ Test
    </macos:gatekeeper_test>
 
 Object
-      
 
 ::
 
@@ -169,7 +167,6 @@ Object
    </macos:gatekeeper_object>    
 
 State
-     
 
 ::
 

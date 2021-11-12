@@ -147,7 +147,6 @@ OVAL
 ''''
 
 Test
-    
 
 ::
 
@@ -159,7 +158,6 @@ Test
    </macos:gatekeeper_test>
 
 Object
-      
 
 ::
 
@@ -169,7 +167,6 @@ Object
    </macos:gatekeeper_object>    
 
 State
-     
 
 ::
 

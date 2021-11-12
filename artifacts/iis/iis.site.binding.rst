@@ -101,7 +101,6 @@ OVAL
 ''''
 
 Test
-    
 
 ::
 
@@ -113,7 +112,6 @@ Test
    </iis:bindings_test>
 
 Object
-      
 
 ::
 
@@ -123,7 +121,6 @@ Object
    </iis:bindings_object>   
 
 State
-     
 
 ::
 

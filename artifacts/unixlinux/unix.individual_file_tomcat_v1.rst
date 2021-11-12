@@ -189,7 +189,7 @@ Test
 
 Object
 
-   CATALINA_HOME
+CATALINA_HOME
 
 ::
 
@@ -218,7 +218,8 @@ Object
      </filename>
    </file_object>
 
-   CATALINA_BASE
+
+CATALINA_BASE
 
 ::
 
@@ -249,7 +250,7 @@ Object
 
 State
 
-:
+::
 
 N/A
 

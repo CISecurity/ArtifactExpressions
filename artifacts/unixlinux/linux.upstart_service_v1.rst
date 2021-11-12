@@ -72,9 +72,9 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
                <ae:parameter dt="string" name="enabled">[enabled.value]</ae:parameter>
              </ae:parameters>
            </ae:test>
-                     <ae:profiles>
-                         <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1 "/>
-                     </ae:profiles>          
+            <ae:profiles>
+              <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1 "/>
+            </ae:profiles>          
          </ae:artifact_expression>
        </xccdf:check-content>
      </xccdf:check>
@@ -92,14 +92,10 @@ this. There is no Value element in the XCCDF for this Artifact.
 ::
 
    <xccdf:complex-check operator="AND">
-     <check system="http://open-
-
-SCAP.org/page/SCE">
+     <check system="http://open-SCAP.org/page/SCE">
    <check-content-ref
       href="[RECOMMENDATION-TITLE]"
-      name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]"
-      />
-
+      name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
    </check> </xccdf:complex-check>
 
 OVAL

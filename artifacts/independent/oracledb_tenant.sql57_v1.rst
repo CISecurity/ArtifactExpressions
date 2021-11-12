@@ -110,11 +110,20 @@ independent.sql57_v1
 +-------------------------------------+-------------+------------------+
 
 check_existence NOTE: This parameter is governed by a constraint
-allowing only the following values: - all_exist - any_exist -
-at_least_one_exists - none_satisfy - none_exist - only_one_exists
+allowing only the following values:
+ - all_exist
+ - any_exist
+ - at_least_one_exists
+ - none_satisfy
+ - none_exist
+ - only_one_exists
 
 check NOTE: This parameter is governed by a constraint allowing only the
-following values: - all - at least one - none satisfy - only one
+following values:
+ - all
+ - at least one
+ - none satisfy
+ - only one
 
 existence_test
 ^^^^^^^^^^^^^^
@@ -188,7 +197,6 @@ OVAL
 ''''
 
 Test
-    
 
 ::
 
@@ -204,7 +212,6 @@ Test
    </sql57_test>
 
 Object
-      
 
 ::
 
@@ -220,7 +227,6 @@ Object
    </sql57_object>
 
 State
-     
 
 ::
 

@@ -85,7 +85,6 @@ OVAL
 ''''
 
 Test
-    
 
 ::
 
@@ -98,14 +97,12 @@ Test
        version='[version.value]'/>
 
 Object
-      
 
 ::
 
    n/a
 
 State
-     
 
 ::
 

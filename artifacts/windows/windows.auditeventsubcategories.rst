@@ -246,7 +246,6 @@ element is generated:
 
 ::
 
-
    <xccdf:complex-check operator="AND">
      <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
        <check-export export-name="oval:org.cisecurity.benchmarks.windows_10:var:[ARTIFACT-OVAL-ID]"
@@ -268,7 +267,6 @@ OVAL
 ''''
 
 Test
-    
 
 ::
 
@@ -283,7 +281,6 @@ Test
     </auditeventpolicysubcategories_test>
 
 Object
-      
 
 ::
 
@@ -294,7 +291,6 @@ Object
                version="[version.value]"/>
 
 State
-     
 
 ::
 
@@ -348,7 +344,6 @@ JSON
 ^^^^
 
 ::
-
 
    "artifact-expression": {
      "artifact-unique-id": [ARTIFACT-OVAL-ID],

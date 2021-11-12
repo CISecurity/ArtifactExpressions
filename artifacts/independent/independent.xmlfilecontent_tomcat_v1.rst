@@ -124,7 +124,11 @@ allowing only the following values:
   - only_one_exists
 
 check NOTE: This parameter is governed by a constraint allowing only the
-following values: - all - at least one - none satisfy - only one
+following values:
+ - all
+ - at least one
+ - none satisfy
+ - only one
 
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
@@ -398,7 +402,6 @@ OVAL
 ''''
 
 Test
-    
 
 ::
 
@@ -413,7 +416,6 @@ Test
    </xmlfilecontent_test>
 
 Object
-      
 
 ::
 
@@ -432,7 +434,6 @@ Object
    </xmlfilecontent_object>
 
 State
-     
 
 ::
 

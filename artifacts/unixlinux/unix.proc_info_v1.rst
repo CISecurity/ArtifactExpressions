@@ -1,10 +1,10 @@
 Unix: Process Information
-=========================
+==========================
 
 Description
 -----------
 
-The Unix: Process Information test test is used to check information found in the UNIX processes. It is equivalent to parsing the output of the ps command. 
+The Unix: Process Information test is used to check information found in the UNIX processes. It is equivalent to parsing the output of the ps command. 
 
 The required process58_object element is used to define the specific process(es) to be evaluated. A process58_object defines the command line used to start the process(es) and pid.
 
@@ -52,19 +52,19 @@ Human ID:
 +-------------------------------------+-------------+------------------+
 
 NOTE: ``command_line_operation`` and ``pid_operation`` parameters are governed by a constraint allowing only the following values:
-	- bitwise and
-	- bitwise or
-	- case insensitive equals 
-	- case insensitive not equal
-	- equals
-	- greater than
-	- greater than or equal
-	- less than
-	- less than or equal
-	- not equal
-	- pattern match 
-	- subset of
-	- superset of 
+  - bitwise and
+  - bitwise or
+  - case insensitive equals 
+  - case insensitive not equal
+  - equals
+  - greater than
+  - greater than or equal
+  - less than
+  - less than or equal
+  - not equal
+  - pattern match 
+  - subset of
+  - superset of 
 
 
 Supported Test Types

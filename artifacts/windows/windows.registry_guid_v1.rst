@@ -46,7 +46,7 @@ Artifact Parameters
 +-------------------+---------+----------------------------------------+
 | windows_view      | string  | Typically left to 'default'. Set to    |
 |                   |         | 32_bit to force collecting 32bit       |
-|                   |         | registry on a 64bit OS.	               |
+|                   |         | registry on a 64bit OS.                 |
 +-------------------+---------+----------------------------------------+
 
 guid_hive NOTE: This parameter is governed by a constraint allowing
@@ -267,7 +267,6 @@ OVAL
 
 Test
 
-
 ::
 
   <registry_test
@@ -282,7 +281,6 @@ Test
   </registry_test>
 
 Object
-      
 
 ::
 
@@ -297,7 +295,6 @@ Object
   </registry_object>
 
 State
-     
 
 ::
 

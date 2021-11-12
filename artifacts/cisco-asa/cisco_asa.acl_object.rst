@@ -169,7 +169,6 @@ OVAL
 
 Test
     
-
 ::
 
    <acl_test 
@@ -185,7 +184,6 @@ Test
 
 Object
       
-
 ::
 
    <acl_object 
@@ -200,7 +198,6 @@ Object
 
 State
      
-
 ::
 
    <acl_state 

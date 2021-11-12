@@ -98,7 +98,6 @@ OVAL
 ''''
 
 Test
-    
 
 ::
 
@@ -114,7 +113,6 @@ Test
    </snmphost_test>
 
 Object
-      
 
 ::
 
@@ -127,7 +125,6 @@ Object
    </snmphost_object>
 
 State
-     
 
 ::
 

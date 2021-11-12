@@ -100,16 +100,13 @@ For ``linux.partition_options_v1`` artifacts, the xccdf:check looks like
 this. There is no Value element in the XCCDF for this Artifact.
 
 ::
-   <xccdf:complex-check operator="AND">
-      <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
-         <check-content-ref
-            href="[BENCHMARK-TITLE]"
-            name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]"
-            />
-
-      </check>
-
-   </xccdf:complex-check>
+  <xccdf:complex-check operator="AND">
+    <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+      <check-content-ref
+        href="[BENCHMARK-TITLE]"
+        name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
+    </check>
+  </xccdf:complex-check>
 
 OVAL
 ''''
