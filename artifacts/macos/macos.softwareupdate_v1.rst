@@ -225,18 +225,18 @@ YAML
 ::
 
    - artifact-expression:
-       artifact-unique-id: "[ARTIFACT-OVAL-ID]"
-       artifact_title: "[RECOMMENDATION-TITLE]"
-       artifact:
-         type: "[ARTIFACT-TYPE-NAME]"
-         parameters:
+     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
+     artifact_title: "[RECOMMENDATION-TITLE]"
+     artifact:
+       type: "[ARTIFACT-TYPE-NAME]"
+       parameters:
          - parameter:
              name: "check_existence"
              dt: "string"
              value: "[check_existence.value]"
-       test:
-         type: "[TEST-TYPE-NAME]"
-         parameters:
+     test:
+       type: "[TEST-TYPE-NAME]"
+       parameters:
          - parameter:
              name: "check"
              dt: "string"
