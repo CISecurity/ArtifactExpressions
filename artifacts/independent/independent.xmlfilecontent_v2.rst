@@ -57,10 +57,16 @@ Artifact Parameters
 +-------------------+---------+----------------------------------------+
 
 recurse NOTE: This parameter is governed by a constraint allowing
-only the following values: Yes/No
+only the following values:
+ - Yes
+ - No
 
 file_system NOTE: This parameter is governed by a constraint allowing
-only the following values: NA - local - all - defined
+only the following values: 
+ - NA
+ - local
+ - all
+ - defined
 
 check_existence NOTE: This parameter is governed by a constraint allowing
 only the following values: 
@@ -94,7 +100,13 @@ pattern match
 +-------------------+---------+----------------------------------------+
 
 data_type NOTE: This parameter is governed by a constraint allowing only the 
-following values: - boolean - float - int - string - version – set 
+following values:
+ - boolean
+ - float
+ - int
+ - string
+ - version
+ - set 
 
 pattern not match
 ~~~~~~~~~~~~~~~~~
@@ -108,7 +120,13 @@ pattern not match
 +-------------------+---------+----------------------------------------+
 
 data_type NOTE: This parameter is governed by a constraint allowing only the 
-following values: boolean - float - int - string - version – set 
+following values:
+ - boolean
+ - float
+ - int
+ - string
+ - version
+ - set 
 
 existence_test
 ~~~~~~~~~~~~~~
@@ -160,12 +178,6 @@ independent.xmlfilecontent_v2
 | valueof_op        | string  | This specifies what operation to       |
 |                   |         | perform on value of.                   |
 +-------------------+---------+----------------------------------------+
-
-data_type NOTE: This parameter is governed by a constraint allowing only the 
-following values: equals - not equal - case insensitive equals - 
-case insensitive not equal - greater than - less than - greater than or equal - 
-less than or equal - bitwise and - bitwise or - pattern match - subset of - 
-superset of
 
 Generated Content
 ~~~~~~~~~~~~~~~~~

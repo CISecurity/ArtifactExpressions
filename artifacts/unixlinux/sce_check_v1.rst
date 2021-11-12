@@ -116,8 +116,7 @@ For ``linux.sce_check_v1`` artifacts, the xccdf:check looks like this.
 
 ::
 
-  <check system="http://open-
-SCAP.org/page/SCE">
+  <check system="http://open-SCAP.org/page/SCE">
     <check-import import-name="stdout" />
     <check-export 
       export-name="[export-name.value]" 

@@ -122,10 +122,14 @@ the following values:
   - sybase
 
 prepend_type NOTE: This parameter is governed by a constraint allowing
-only the following values: - String - SQL
+only the following values:
+ - String
+ - SQL
 
 append_type NOTE: This parameter is governed by a constraint allowing
-only the following values: - String - SQL
+only the following values:
+ - String
+ - SQL
 
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
@@ -201,7 +205,11 @@ allowing only the following values:
   - only_one_exists
 
 check NOTE: This parameter is governed by a constraint allowing only the
-following values: - all - at least one - none satisfy - only one
+following values:
+ - all
+ - at least one
+ - none satisfy
+ - only one
 
 existence_test
 ^^^^^^^^^^^^^^

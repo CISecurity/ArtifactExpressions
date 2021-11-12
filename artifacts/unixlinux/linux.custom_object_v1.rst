@@ -417,8 +417,6 @@ State
 
 --------------
 
---------------
-
 Test
 
    -  Ensure the X Window system is not installed
@@ -452,11 +450,9 @@ Object
 
 State
 
-:
+::
 
 N/A
-
---------------
 
 --------------
 
@@ -1680,8 +1676,6 @@ Variable
 
 --------------
 
---------------
-
 Test
 
    -  No Servers Listening On Port 25
@@ -1724,11 +1718,9 @@ Object
 
 State
 
-:
+::
 
 N/A
-
---------------
 
 --------------
 
@@ -1760,11 +1752,9 @@ Object
 
 State
 
-:
+::
 
 N/A
-
---------------
 
 --------------
 
@@ -2002,8 +1992,6 @@ Variable
 
 --------------
 
---------------
-
 Test
 
    -  There Are No Unconfined Daemons
@@ -2141,8 +2129,6 @@ Variable
        item_field="user_id"
        object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]2" />
    </local_variable>
-
---------------
 
 --------------
 
@@ -2516,8 +2502,6 @@ Variable
 
 --------------
 
---------------
-
 Test
 
    -  Firewall Rule Exists For All Open Ports
@@ -2624,8 +2608,6 @@ Variable
 
 --------------
 
---------------
-
 Test
 
    -  systemd Does Not Default To graphical.target
@@ -2674,8 +2656,6 @@ State
 
 --------------
 
---------------
-
 Test
 
    -  Shadow Group is Empty
@@ -2717,7 +2697,7 @@ Object
 
 State
 
-:
+::
 
 N/A
 
@@ -3018,8 +2998,6 @@ Variable
        </literal_component> 
      </concat>
    </local_variable>
-
---------------
 
 --------------
 

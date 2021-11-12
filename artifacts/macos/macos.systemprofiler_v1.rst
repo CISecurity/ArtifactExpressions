@@ -64,31 +64,47 @@ Artifact Parameters
 |                                     |             | impossible.      |
 +-------------------------------------+-------------+------------------+
 
-| data_type NOTE: This parameter is governed by a constraint allowing
-  only the following values: - SPHardwareDataType
-| - SPNetworkDataType - SPSoftwareDataType
-| - SPParallelATADataType - SPAudioDataType - SPBluetoothDataType -
-  SPDiagnosticsDataType - SPDiscBurningDataType - SPEthernetDataType
-| - SPFibreChannelDataType
-| - SPFireWireDataType
-| - SPDisplaysDataType
-| - SPHardwareRAIDDataType
-| - SPMemoryDataType
-| - SPPCIDataType - SPParallelSCSIDataType
-| - SPPowerDataType - SPPrintersDataType
-| - SPSASDataType - SPSerialATADataType - SPUSBDataType -
-  SPAirPortDataType - SPFirewallDataType
-| - SPNetworkLocationDataType - SPModemDataType -
-  SPNetworkVolumeDataType - SPWWANDataType
-| - SPApplicationsDataType
-| - SPDeveloperToolsDataType
-| - SPExtensionsDataType
-| - SPFontsDataType - SPFrameworksDataType
-| - SPLogsDataType
-| - SPManagedClientDataType - SPPrefPaneDataType
-| - SPStartupItemDataType - SPSyncServicesDataType
-| - SPUniversalAccessDataType - The empty string value is permitted here
-  to allow for empty elements associated with variable references.
+data_type NOTE: This parameter is governed by a constraint allowing
+only the following values: 
+ - SPHardwareDataType
+|- SPNetworkDataType 
+ - SPSoftwareDataType
+ - SPParallelATADataType
+ - SPAudioDataType
+ - SPBluetoothDataType
+ - SPDiagnosticsDataType
+ - SPDiscBurningDataType
+ - SPEthernetDataType
+ - SPFibreChannelDataType
+ - SPFireWireDataType
+ - SPDisplaysDataType
+ - SPHardwareRAIDDataType
+ - SPMemoryDataType
+ - SPPCIDataType
+ - SPParallelSCSIDataType
+ - SPPowerDataType
+ - SPPrintersDataType
+ - SPSASDataType
+ - SPSerialATADataType
+ - SPUSBDataType
+ - SPAirPortDataType
+ - SPFirewallDataType
+ - SPNetworkLocationDataType
+ - SPModemDataType
+ - SPNetworkVolumeDataType
+ - SPWWANDataType
+ - SPApplicationsDataType
+ - SPDeveloperToolsDataType
+ - SPExtensionsDataType
+ - SPFontsDataType
+ - SPFrameworksDataType
+ - SPLogsDataType
+ - SPManagedClientDataType
+ - SPPrefPaneDataType
+ - SPStartupItemDataType
+ - SPSyncServicesDataType
+ - SPUniversalAccessDataType
+ - The empty string value is permitted here to allow for empty elements associated with variable references.
 
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~

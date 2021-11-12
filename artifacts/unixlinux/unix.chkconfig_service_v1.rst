@@ -94,11 +94,8 @@ this. There is no Value element in the XCCDF for this Artifact.
       <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
          <check-content-ref
             href="[BENCHMARK-TITLE]"
-            name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]"
-            />
-
+            name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
       </check>
-
    </xccdf:complex-check>
 
 OVAL

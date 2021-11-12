@@ -98,8 +98,14 @@ pattern match
 | data_type                           | string      | Data type.       |
 +-------------------------------------+-------------+------------------+
 
-data_type NOTE: This parameter is governed by a constraint allowing only
-the following values: - boolean - float - int - string - version - set
+data_type NOTE: This parameter is governed by a constraint allowing only the 
+following values:
+ - boolean
+ - float
+ - int
+ - string
+ - version
+ - set 
 
 .. _test-type-parameters-1:
 
@@ -123,8 +129,14 @@ pattern not match
 | data_type                           | string      | Data type.       |
 +-------------------------------------+-------------+------------------+
 
-data_type NOTE: This parameter is governed by a constraint allowing only
-the following values: - boolean - float - int - string - version - set
+data_type NOTE: This parameter is governed by a constraint allowing only the 
+following values:
+ - boolean
+ - float
+ - int
+ - string
+ - version
+ - set 
 
 existence_test
 ^^^^^^^^^^^^^^

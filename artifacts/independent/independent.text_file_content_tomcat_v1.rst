@@ -86,7 +86,11 @@ Artifact Parameters
 +-------------------------------------+-------------+------------------+
 
 check NOTE: This parameter is governed by a constraint allowing only the
-following values: - all - at least one - none satisfy - only one
+following values:
+ - all
+ - at least one
+ - none satisfy
+ - only one
 
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
@@ -116,7 +120,13 @@ pattern match
 +-------------------+---------+----------------------------------------+
 
 data_type NOTE: This parameter is governed by a constraint allowing only the 
-following values: - boolean - float - int - string - version – set 
+following values:
+ - boolean
+ - float
+ - int
+ - string
+ - version
+ - set 
 
 pattern not match
 ~~~~~~~~~~~~~~~~~
@@ -130,7 +140,13 @@ pattern not match
 +-------------------+---------+----------------------------------------+
 
 data_type NOTE: This parameter is governed by a constraint allowing only the 
-following values: boolean - float - int - string - version – set 
+following values:
+ - boolean
+ - float
+ - int
+ - string
+ - version
+ - set 
 
 existence_test
 ~~~~~~~~~~~~~~
@@ -173,7 +189,10 @@ unix.file_permissions_v1
 +-------------------+---------+----------------------------------------+
 
 NOTE: These parameters are governed by a constraint allowing only the 
-following values: NA - set - unset
+following values: 
+ - NA
+ - set
+ - unset
 
 Txt-Unix_File_or_Directory_Permissions_v1
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -582,7 +601,11 @@ allowing only the following values:
   - superset of
 
 entity_check NOTE: This parameter is governed by a constraint 
-allowing only the following values: all - at least one - none satisfy - only one
+allowing only the following values:
+ - all
+ - at least one
+ - none satisfy
+ - only one
 
 Generated Content
 ~~~~~~~~~~~~~~~~~

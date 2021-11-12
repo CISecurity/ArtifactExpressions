@@ -23,9 +23,14 @@ Artifact Parameters
 |                   |         | collected.                             |
 +-------------------+---------+----------------------------------------+
 
-check_existence NOTE: This parameter is governed by a constraint allowing only
-the following values: all_exist - any_exist - at_least_one_exists - 
-none_satisfy - none_exist - only_one_exists
+check_existence NOTE: This parameter is governed by a constraint
+allowing only the following values:
+ - all_exist
+ - any_exist
+ - at_least_one_exists
+ - none_satisfy
+ - none_exist
+ - only_one_exists
 
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
@@ -72,10 +77,13 @@ following values:
   - superset of
 
 datatype NOTE: This parameter is governed by a constraint allowing only the 
-following values: boolean - float - int - string - version - set
-
-data_type NOTE: This parameter is governed by a constraint allowing only the 
-following values: - boolean - float - int - string - version – set 
+following values: 
+ - boolean
+ - float
+ - int
+ - string
+ - version
+ - set
 
 Generated Content
 ~~~~~~~~~~~~~~~~~

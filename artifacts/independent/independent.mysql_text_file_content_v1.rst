@@ -78,22 +78,51 @@ Artifact Parameters
 +-------------------+---------+----------------------------------------+
 
 engine NOTE: This parameter is governed by a constraint allowing only
-the following values: - access - db2 - cache - firebird - firstsql -
-foxpro - informix - ingres - interbase - lightbase - maxdb - monetdb -
-mimer - mysql - oracle - paradox - pervasive - postgre - sqlbase -
-sqlite - sqlserver - sybase
+the following values:
+ - access
+ - db2
+ - cache
+ - firebird
+ - firstsql
+ - foxpro
+ - informix
+ - ingres
+ - interbase
+ - lightbase
+ - maxdb
+ - monetdb
+ - mimer
+ - mysql
+ - oracle
+ - paradox
+ - pervasive
+ - postgre
+ - sqlbase
+ - sqlite
+ - sqlserver
+ - sybase
 
 prepend_type NOTE: This parameter is governed by a constraint allowing
-only the following values: - String - SQL
+only the following values:
+ - String
+ - SQL
 
 append_type NOTE: This parameter is governed by a constraint allowing
-only the following values: - String - SQL
+only the following values:
+ - String
+ - SQL
 
 recurse NOTE: This parameter is governed by a constraint allowing
-only the following values: Yes - No
+only the following values: 
+ - Yes
+ - No
 
 file_system NOTE: This parameter is governed by a constraint allowing
-only the following values: NA - local - all - defined
+only the following values: 
+ - NA
+ - local
+ - all
+ - defined
 
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
@@ -122,7 +151,13 @@ pattern match
 +-------------------+---------+----------------------------------------+
 
 data_type NOTE: This parameter is governed by a constraint allowing only the 
-following values: - boolean - float - int - string - version – set 
+following values:
+ - boolean
+ - float
+ - int
+ - string
+ - version 
+ - set 
 
 pattern not match
 ~~~~~~~~~~~~~~~~~
@@ -136,7 +171,13 @@ pattern not match
 +-------------------+---------+----------------------------------------+
 
 data_type NOTE: This parameter is governed by a constraint allowing only the 
-following values: - boolean - float - int - string - version – set 
+following values:
+ - boolean
+ - float
+ - int
+ - string
+ - version 
+ - set 
 
 existence_test
 ~~~~~~~~~~~~~~
@@ -351,7 +392,11 @@ independent.txt_file_content_v1
 +-------------------+---------+----------------------------------------+
 
 file_system NOTE: This parameter is governed by a constraint allowing only the 
-following values: NA - local - all - defined
+following values: 
+ - NA
+ - local
+ - all
+ - defined
 
 independent.txt_file_content_v2
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -399,26 +444,59 @@ independent.txt_file_content_v2
 +-------------------+---------+----------------------------------------+
 
 subexp_op NOTE: This parameter is governed by a constraint allowing
-only the following values: equals - not equal - case insensitive equals –
-case insensitive not equal - greater than - less than - greater than or
-equal - less than or equal - bitwise and - bitwise or - pattern match –
-subset of - superset of
+only the following values: 
+ - equals
+ - not equal
+ - case insensitive equals
+ - case insensitive not equal
+ - greater than
+ - less than
+ - greater than or equal
+ - less than or equal
+ - bitwise and
+ - bitwise or
+ - pattern match
+ - subset of
+ - superset of
 
 inst_op NOTE: This parameter is governed by a constraint allowing
-only the following values: equals - not equal - case insensitive equals –
-case insensitive not equal - greater than - less than - greater than or
-equal - less than or equal - bitwise and - bitwise or - pattern match –
-subset of - superset of
+only the following values: 
+ - equals
+ - not equal
+ - case insensitive equals
+ - case insensitive not equal
+ - greater than
+ - less than
+ - greater than or equal
+ - less than or equal
+ - bitwise and
+ - bitwise or
+ - pattern match
+ - subset of
+ - superset of
 
 text_op NOTE: This parameter is governed by a constraint allowing
-only the following values: equals - not equal - case insensitive equals –
-case insensitive not equal - greater than - less than - greater than or
-equal - less than or equal - bitwise and - bitwise or - pattern match –
-subset of - superset of
+only the following values: 
+ - equals
+ - not equal
+ - case insensitive equals
+ - case insensitive not equal
+ - greater than
+ - less than
+ - greater than or equal
+ - less than or equal
+ - bitwise and
+ - bitwise or
+ - pattern match
+ - subset of
+ - superset of
 
 entity_check NOTE: This parameter is governed by a constraint
-allowing only the following values: all - at least one - none satisfy
-- only one
+allowing only the following values: 
+ - all
+ - at least one
+ - none satisfy
+ - only one
 
 Generated Content
 ~~~~~~~~~~~~~~~~~
@@ -493,7 +571,6 @@ OVAL
 
 Test
 
-
 ::
 
   <textfilecontent54_test 
@@ -507,8 +584,7 @@ Test
     <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
   </textfilecontent54_test>
 
-Object
-      
+Object   
 
 ::
 
@@ -530,8 +606,7 @@ Object
     </instance>
   </textfilecontent54_object>
 
-State
-     
+State  
 
 ::
 
@@ -2561,7 +2636,6 @@ External Variable
     
 
 ::
-
 
 <external_variable 
   comment="[RECOMMENDATION TITLE]" 

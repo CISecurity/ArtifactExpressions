@@ -122,10 +122,14 @@ the following values:
   - sybase
 
 prepend_type NOTE: This parameter is governed by a constraint allowing
-only the following values: - String - SQL
+only the following values:
+ - String
+ - SQL
 
 append_type NOTE: This parameter is governed by a constraint allowing
-only the following values: - String - SQL
+only the following values:
+ - String
+ - SQL
 
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
@@ -433,34 +437,64 @@ SQL-Unix_File_or_Directory_Permissions_v2
 +-------------------------------------+-------------+------------------+
 
 uread NOTE: This parameter is governed by a constraint
-allowing only the following values: NA - set - unset
+allowing only the following values:
+ - NA
+ - set
+ - unset
 
 uwrite NOTE: This parameter is governed by a constraint
-allowing only the following values: NA - set - unset
+allowing only the following values:
+ - NA
+ - set
+ - unset
 
 uexec NOTE: This parameter is governed by a constraint
-allowing only the following values: NA - set - unset
+allowing only the following values:
+ - NA
+ - set
+ - unset
 
 gread NOTE: This parameter is governed by a constraint
-allowing only the following values: NA - set - unset
+allowing only the following values:
+ - NA
+ - set
+ - unset
 
 gwrite NOTE: This parameter is governed by a constraint
-allowing only the following values: NA - set - unset
+allowing only the following values:
+ - NA
+ - set
+ - unset
 
 gexec NOTE: This parameter is governed by a constraint
-allowing only the following values: NA - set - unset
+allowing only the following values:
+ - NA
+ - set
+ - unset
 
 oread NOTE: This parameter is governed by a constraint
-allowing only the following values: NA - set - unset
+allowing only the following values:
+ - NA
+ - set
+ - unset
 
 owrite NOTE: This parameter is governed by a constraint
-allowing only the following values: NA - set - unset
+allowing only the following values:
+ - NA
+ - set
+ - unset
 
 oexec NOTE: This parameter is governed by a constraint
-allowing only the following values: NA - set - unset
+allowing only the following values:
+ - NA
+ - set
+ - unset
 
 oexec NOTE: This parameter is governed by a constraint
-allowing only the following values: NA - set - unset
+allowing only the following values:
+ - NA
+ - set
+ - unset
 
 SQL-Unix_File_or_Directory_Basename_Permissions_v2
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -579,34 +613,64 @@ SQL-Unix_File_or_Directory_Basename_Permissions_v2
 +-------------------------------------+-------------+------------------+
 
 uread NOTE: This parameter is governed by a constraint
-allowing only the following values: NA - set - unset
+allowing only the following values:
+ - NA
+ - set
+ - unset
 
 uwrite NOTE: This parameter is governed by a constraint
-allowing only the following values: NA - set - unset
+allowing only the following values:
+ - NA
+ - set
+ - unset
 
 uexec NOTE: This parameter is governed by a constraint
-allowing only the following values: NA - set - unset
+allowing only the following values:
+ - NA
+ - set
+ - unset
 
 gread NOTE: This parameter is governed by a constraint
-allowing only the following values: NA - set - unset
+allowing only the following values:
+ - NA
+ - set
+ - unset
 
 gwrite NOTE: This parameter is governed by a constraint
-allowing only the following values: NA - set - unset
+allowing only the following values:
+ - NA
+ - set
+ - unset
 
 gexec NOTE: This parameter is governed by a constraint
-allowing only the following values: NA - set - unset
+allowing only the following values:
+ - NA
+ - set
+ - unset
 
 oread NOTE: This parameter is governed by a constraint
-allowing only the following values: NA - set - unset
+allowing only the following values:
+ - NA
+ - set
+ - unset
 
 owrite NOTE: This parameter is governed by a constraint
-allowing only the following values: NA - set - unset
+allowing only the following values:
+ - NA
+ - set
+ - unset
 
 oexec NOTE: This parameter is governed by a constraint
-allowing only the following values: NA - set - unset
+allowing only the following values:
+ - NA
+ - set
+ - unset
 
 oexec NOTE: This parameter is governed by a constraint
-allowing only the following values: NA - set - unset
+allowing only the following values:
+ - NA
+ - set
+ - unset
 
 check_existence NOTE: This parameter is governed by a constraint allowing only 
 the following values: 
@@ -618,7 +682,11 @@ the following values:
   - only_one_exists
 
 check NOTE: This parameter is governed by a constraint allowing only the
-following values: - all - at least one - none satisfy - only one
+following values: 
+  - all 
+  - at least one 
+  - none satisfy 
+  - only one
 
 SQL-Unix_File_or_Directory_Permissions_sql57_object_v2
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -736,7 +804,6 @@ SQL-Unix_File_or_Directory_Permissions_sql57_object_v2
 |                                     |             | expected state   |
 +-------------------------------------+-------------+------------------+
 
-
 uread NOTE: This parameter is governed by a constraint
 allowing only the following values: NA - set - unset
 
@@ -777,7 +844,11 @@ the following values:
   - only_one_exists
 
 check NOTE: This parameter is governed by a constraint allowing only the
-following values: - all - at least one - none satisfy - only one
+following values: 
+  - all 
+  - at least one 
+  - none satisfy 
+  - only one
 
 Generated Content
 ~~~~~~~~~~~~~~~~~
