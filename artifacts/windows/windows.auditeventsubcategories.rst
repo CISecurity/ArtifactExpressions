@@ -267,7 +267,6 @@ OVAL
 ''''
 
 Test
-    
 
 ::
 
@@ -282,7 +281,6 @@ Test
     </auditeventpolicysubcategories_test>
 
 Object
-      
 
 ::
 
@@ -293,7 +291,6 @@ Object
                version="[version.value]"/>
 
 State
-     
 
 ::
 

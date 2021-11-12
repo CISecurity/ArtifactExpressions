@@ -337,7 +337,6 @@ Test
   </file_test>
 
 Object
-      
 
 ::
 
@@ -353,7 +352,6 @@ Object
   </file_object>
 
 State
-     
 
 ::
 

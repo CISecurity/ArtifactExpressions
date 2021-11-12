@@ -100,21 +100,18 @@ OVAL
 ''''
 
 Test
-    
 
 ::
 
    n/a
 
 Object
-      
 
 ::
 
    n/a
 
 State
-     
 
 ::
 

@@ -266,7 +266,6 @@ Test
   </xmlfilecontent_test>
 
 Object
-      
 
 ::
 
@@ -289,7 +288,6 @@ Object
   </xmlfilecontent_object>
 
 State
-     
 
 ::
 
@@ -507,7 +505,6 @@ OVAL
 ''''
 
 Test
-    
 
 ::
 
@@ -522,7 +519,6 @@ Test
   </xmlfilecontent_test> 
 
 Object
-    
 
 ::
 
@@ -538,7 +534,6 @@ Object
   </xmlfilecontent_object>
 
 State
-    
 
 ::
 
@@ -761,7 +756,6 @@ Test
   </xmlfilecontent_test>
 
 Object
-      
 
 ::
 
@@ -776,7 +770,6 @@ Object
   </xmlfilecontent_object>
 
 State
-     
 
 ::
 

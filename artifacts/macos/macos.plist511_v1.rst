@@ -190,7 +190,6 @@ OVAL
 ''''
 
 Test
-    
 
 ::
 
@@ -202,7 +201,6 @@ Test
    </macos:plist511_test>
 
 Object
-      
 
 ::
 
@@ -214,7 +212,6 @@ Object
    </macos:plist511_object>
 
 State
-     
 
 ::
 

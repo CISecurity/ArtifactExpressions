@@ -226,7 +226,6 @@ OVAL
 ''''
 
 Test
-    
 
 ::
 
@@ -241,7 +240,6 @@ Test
    </passwordpolicy_test>
 
 Object
-      
 
 ::
 
@@ -252,7 +250,6 @@ Object
      version="[version.value]"/>
 
 State
-     
 
 ::
 

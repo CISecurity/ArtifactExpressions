@@ -127,7 +127,6 @@ OVAL
 ''''
 
 Test
-    
 
 ::
 
@@ -139,7 +138,6 @@ Test
    </iis:applicationhostconfig_test>
 
 Object
-      
 
 ::
 
@@ -147,7 +145,6 @@ Object
       id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" version="[version.value]"/>  
 
 State
-     
 
 ::
 

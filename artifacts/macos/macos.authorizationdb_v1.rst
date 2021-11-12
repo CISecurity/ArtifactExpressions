@@ -173,7 +173,6 @@ OVAL
 ''''
 
 Test
-    
 
 ::
 
@@ -189,7 +188,6 @@ Test
   </authorizationdb_test>
 
 Object
-      
 
 ::
 
@@ -203,7 +201,6 @@ Object
   </authorizationdb_object>
 
 State
-     
 
 ::
 

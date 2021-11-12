@@ -927,7 +927,6 @@ OVAL
 ''''
 
 Test
-    
 
 ::
 
@@ -943,7 +942,6 @@ Test
   </sql57_test> 
 
 Object
-      
 
 ::
 
@@ -959,7 +957,6 @@ Object
   </sql57_object>
 
 State
-     
 
 ::
 
@@ -981,7 +978,6 @@ State
   </sql57_state>
 
 External Variable
-     
 
 ::
 
@@ -1237,7 +1233,6 @@ OVAL
 ''''
 
 Test
-    
 
 ::
 
@@ -1252,7 +1247,6 @@ Test
   </sql57_test> 
 
 Object
-    
 
 ::
 
@@ -1268,7 +1262,6 @@ Object
   </sql57_object>
 
 State
-    
 
 ::
 
@@ -1481,7 +1474,6 @@ OVAL
 ''''
 
 Test
-    
 
 ::
 
@@ -1498,7 +1490,6 @@ Test
 
 
 Test
-    
 
 ::
 
@@ -1515,7 +1506,6 @@ Test
   </file_object>
 
 State
-    
 
 ::
 
@@ -1542,7 +1532,6 @@ State
   </file_state>
   
 Local Variable
-    
 
 ::
 
@@ -1884,7 +1873,6 @@ OVAL
 ''''
 
 Test
-    
 
 ::
 
@@ -1900,7 +1888,6 @@ Test
   </file_test>  
 
 Object
-    
 
 ::
 
@@ -1920,7 +1907,6 @@ Object
   </file_object>
 
 State
-    
 
 ::
 
@@ -1947,7 +1933,6 @@ State
   </file_state>
 
 Local Variable
-    
 
 ::
 
@@ -2294,7 +2279,6 @@ OVAL
 ''''
 
 Test
-    
 
 ::
 
@@ -2310,7 +2294,6 @@ Test
   </file_test>  
 
 Object
-    
 
 ::
 
@@ -2330,7 +2313,6 @@ Object
   </file_object>
 
 State
-    
 
 ::
 
@@ -2357,7 +2339,6 @@ State
   </file_state>
 
 Local Variable
-    
 
 ::
 

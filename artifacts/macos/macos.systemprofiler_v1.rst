@@ -218,7 +218,6 @@ OVAL
 ''''
 
 Test
-    
 
 ::
 
@@ -230,7 +229,6 @@ Test
    </macos:systemprofiler_test>
 
 Object
-      
 
 ::
 
@@ -242,7 +240,6 @@ Object
    </macos:systemprofiler_object>
 
 State
-     
 
 ::
 

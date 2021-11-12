@@ -99,7 +99,6 @@ OVAL
 ''''
 
 Test
-    
 
 ::
 
@@ -115,7 +114,6 @@ Test
    </snmp_test>
 
 Object
-      
 
 ::
 
@@ -127,7 +125,6 @@ Object
    </snmp_object>
 
 State
-     
 
 ::
 

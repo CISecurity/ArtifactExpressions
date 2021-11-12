@@ -500,7 +500,6 @@ OVAL
 ''''
 
 Test
-    
 
 ::
 
@@ -516,7 +515,6 @@ Test
   </sql57_test>
 
 Object
-      
 
 ::
 
@@ -532,7 +530,6 @@ Object
   </sql57_object>
 
 State
-     
 
 ::
 

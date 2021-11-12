@@ -605,7 +605,6 @@ OVAL
 ''''
 
 Test
-    
 
 ::
 
@@ -621,7 +620,6 @@ Test
    </textfilecontent54_test>
 
 Object
-      
 
 ::
 
@@ -639,7 +637,6 @@ Object
    </textfilecontent54_object>
 
 State
-     
 
 ::
 

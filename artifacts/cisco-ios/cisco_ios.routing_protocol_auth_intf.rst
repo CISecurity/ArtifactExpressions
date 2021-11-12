@@ -110,7 +110,6 @@ OVAL
 ''''
 
 Test
-    
 
 ::
 
@@ -126,7 +125,6 @@ Test
    </routingprotocolauthintf_test>
 
 Object
-      
 
 ::
 
@@ -140,7 +138,6 @@ Object
    </routingprotocolauthintf_object>
 
 State
-     
 
 ::
 

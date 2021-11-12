@@ -250,7 +250,6 @@ OVAL
 ''''
 
 Test
-    
 
 ::
 
@@ -264,7 +263,6 @@ Test
        </lockoutpolicy_test>
 
 Object
-      
 
 ::
 
@@ -275,7 +273,6 @@ Object
        
 
 State
-     
 
 ::
 

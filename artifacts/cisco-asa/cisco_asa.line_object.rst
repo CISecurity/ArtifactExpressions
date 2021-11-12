@@ -160,7 +160,6 @@ OVAL
 
 Test
     
-
 ::
 
    <line_test 
@@ -176,7 +175,6 @@ Test
 
 Object
       
-
 ::
 
    <line_object 
@@ -189,7 +187,6 @@ Object
 
 State
      
-
 ::
 
    <line_state 

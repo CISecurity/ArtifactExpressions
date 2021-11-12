@@ -402,7 +402,6 @@ OVAL
 ''''
 
 Test
-    
 
 ::
 
@@ -417,7 +416,6 @@ Test
    </xmlfilecontent_test>
 
 Object
-      
 
 ::
 
@@ -436,7 +434,6 @@ Object
    </xmlfilecontent_object>
 
 State
-     
 
 ::
 

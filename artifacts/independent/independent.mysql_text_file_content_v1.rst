@@ -896,7 +896,6 @@ OVAL
 ''''
 
 Test
-    
 
 ::
 
@@ -911,7 +910,6 @@ Test
   </textfilecontent54_test> 
 
 Object
-    
 
 ::
 
@@ -927,7 +925,6 @@ Object
   </textfilecontent54_object>
 
 State
-    
 
 ::
 
@@ -1211,7 +1208,6 @@ OVAL
 ''''
 
 Test
-    
 
 ::
 
@@ -1227,7 +1223,6 @@ Test
   </textfilecontent54_test> 
   
 Object
-    
 
 ::
 
@@ -1244,7 +1239,6 @@ Object
   </textfilecontent54_object>
   
 State
-    
 
 ::
 
@@ -1266,7 +1260,6 @@ State
   </textfilecontent54_state>
   
 Local Variable
-    
 
 ::
 
@@ -1675,7 +1668,6 @@ OVAL
 ''''
 
 Test
-    
 
 ::
 
@@ -1691,7 +1683,6 @@ Test
   </textfilecontent54_test> 
   
 Object
-    
 
 ::
 
@@ -1707,7 +1698,6 @@ Object
   </textfilecontent54_object>
   
 State
-    
 
 ::
 
@@ -1729,7 +1719,6 @@ State
   </textfilecontent54_state>
   
 Local Variable
-    
 
 ::
 
@@ -2137,7 +2126,6 @@ OVAL
 ''''
 
 Test
-    
 
 ::
 
@@ -2153,7 +2141,6 @@ Test
   </<textfilecontent54_test> 
   
 Object
-    
 
 ::
 
@@ -2177,7 +2164,6 @@ Object
   </textfilecontent54_object>
   
 State
-    
 
 ::
 
@@ -2192,7 +2178,6 @@ State
   </textfilecontent54_state>
   
 External Variable
-    
 
 ::
 
@@ -2576,7 +2561,6 @@ OVAL
 ''''
 
 Test
-    
 
 ::
 
@@ -2592,7 +2576,6 @@ Test
   </<textfilecontent54_test> 
   
 Object
-    
 
 ::
 
@@ -2616,7 +2599,6 @@ Object
   </textfilecontent54_object>
   
 State
-    
 
 ::
 
@@ -2632,7 +2614,6 @@ State
   </textfilecontent54_state>
   
 External Variable
-    
 
 ::
 

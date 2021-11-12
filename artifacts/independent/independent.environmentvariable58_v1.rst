@@ -159,7 +159,6 @@ Test
   </environmentvariable58_test>
 
 Object
-      
 
 ::
 
@@ -172,7 +171,6 @@ Object
   </environmentvariable58_object>
 
 State
-     
 
 ::
 
