@@ -5,12 +5,12 @@ Description
 -----------
 
 The macos:softwareupdate_test is used to check the status of automatic
-software updates on MacOSX. It is a singleton object.
+software updates on MacOSX.
 
-The softwareupdate_object is a singleton used to access automatic
+The required softwareupdate_object is used to access automatic
 software update information.
 
-The softwareupdate_state element makes it possible to make assertions
+The optional softwareupdate_state element makes it possible to make assertions
 about the state of automatic software updates.
 
 Technical Details
@@ -124,31 +124,31 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
 ::
 
    <xccdf:complex-check operator="AND">
-     <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
-       <xccdf:check-content>
-         <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
-  		   <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-  		   <ae:title>[RECOMMENDATION-TITLE]</ae:title>
-  		   <ae:artifact type="[ARTIFACT-TYPE-NAME]">
-  			<ae:parameters>
-              <ae:parameter dt="string" name="check_existence">[check_existence.value]</ae:parameter>
-  			</ae:parameters>
-  		    </ae:artifact>
-  		    <ae:test type="[TEST-TYPE-NAME]">
-              <ae:parameters>
-  			   <ae:parameter dt="string" name="check">[check.value]</ae:parameter>
-  			   <ae:parameter dt="string" name="operation">[operation.value]</ae:parameter>
-  			   <ae:parameter dt="string" name="datatype">[datatype.value]</ae:parameter>
-  			   <ae:parameter dt="boolean" name="schedule">[schedule.value]</ae:parameter>
-  			   <ae:parameter dt="string" name="software_title">[software_title.value]</ae:parameter>
-             </ae:parameters>
-  		    </ae:test>
-  		   <ae:profiles>
-             <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1" />
-  		   </ae:profiles>
-         </ae:artifact_expression>
-       </xccdf:check-content>
-     </xccdf:check>
+    <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
+        <xccdf:check-content>
+            <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
+  		        <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
+  		        <ae:title>[RECOMMENDATION-TITLE]</ae:title>
+  		        <ae:artifact type="[ARTIFACT-TYPE-NAME]">
+  			        <ae:parameters>
+                        <ae:parameter dt="string" name="check_existence">[check_existence.value]</ae:parameter>
+  			        </ae:parameters>
+  		        </ae:artifact>
+  		        <ae:test type="[TEST-TYPE-NAME]">
+                    <ae:parameters>
+  			            <ae:parameter dt="string" name="check">[check.value]</ae:parameter>
+  			            <ae:parameter dt="string" name="operation">[operation.value]</ae:parameter>
+  			            <ae:parameter dt="string" name="datatype">[datatype.value]</ae:parameter>
+  			            <ae:parameter dt="boolean" name="schedule">[schedule.value]</ae:parameter>
+  			            <ae:parameter dt="string" name="software_title">[software_title.value]</ae:parameter>
+                    </ae:parameters>
+  		        </ae:test>
+  		        <ae:profiles>
+                    <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1" />
+  		        </ae:profiles>
+            </ae:artifact_expression>
+        </xccdf:check-content>
+    </xccdf:check>
    </xccdf:complex-check>
 
 SCAP
@@ -176,7 +176,8 @@ Test
 
 ::
 
-   <softwareupdate_test xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#macos"
+   <softwareupdate_test
+     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#macos"
      check="[check.value]"
      check_existence="[check_existence.value]"
      comment="[RECOMMENDATION-TITLE]"
@@ -190,7 +191,8 @@ Object
 
 ::
 
-   <softwareupdate_object xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#macos"
+   <softwareupdate_object
+     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#macos"
      comment="[RECOMMENDATION-TITLE]"
      id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
      version="[version.value]">
@@ -200,7 +202,8 @@ State
 
 ::
 
-   <softwareupdate_state xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#macos"
+   <softwareupdate_state
+     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#macos"
      comment="[RECOMMENDATION-TITLE]"
      id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
      version="[version.value]">
