@@ -739,56 +739,56 @@ YAML
       type: "[ARTIFACTTYPE NAME]"
       parameters:
         - parameter:
-          name: "base_path"
-          dt: "string"
-          value: "[base_path.value]"
+            name: "base_path"
+            dt: "string"
+            value: "[base_path.value]"
         - parameter:
-          name: "path"
-          dt: "string"
-          value: "[path.value]"
+            name: "path"
+            dt: "string"
+            value: "[path.value]"
         - parameter:
-          name: "concat_path"
-          dt: "string"
-          value: "[concat_path.value]"          
+            name: "concat_path"
+            dt: "string"
+            value: "[concat_path.value]"          
         - parameter:
-          name: "filename"
-          dt: "string"
-          value: "[filename.value]"
+            name: "filename"
+            dt: "string"
+            value: "[filename.value]"
         - parameter:
-          name: "recurse"
-          dt: "string"
-          value: "[recurse.value]"
+            name: "recurse"
+            dt: "string"
+            value: "[recurse.value]"
         - parameter:
-          name: "max_depth"
-          dt: "binary"
-          value: "[max_depth.value]"
+            name: "max_depth"
+            dt: "binary"
+            value: "[max_depth.value]"
         - parameter:
-          name: "file_system"
-          dt: "string"
-          value: "[file_system.value]"
+            name: "file_system"
+            dt: "string"
+            value: "[file_system.value]"
         - parameter:
-          name: "xpath"
-          dt: "string"
-          value: "[xpath.value]"
+            name: "xpath"
+            dt: "string"
+            value: "[xpath.value]"
         - parameter:
-          name: "check_existence"
-          dt: "string"
-          value: "[check_existence.value]"          
+            name: "check_existence"
+            dt: "string"
+            value: "[check_existence.value]"          
         - parameter:
-          name: "check"
-          dt: "string"
-          value: "[check.value]"
+            name: "check"
+            dt: "string"
+            value: "[check.value]"
     test:
       type: "[TESTTYPE NAME]"
       parameters:   
         - parameter:
-          name: "value"
-          dt: "string"
-          value: "[value.value]"
+            name: "value"
+            dt: "string"
+            value: "[value.value]"
         - parameter:
-          name: "datatype"
-          dt: "string"
-          value: "[datatype.value]"
+            name: "datatype"
+            dt: "string"
+            value: "[datatype.value]"
 
 JSON
 ^^^^
