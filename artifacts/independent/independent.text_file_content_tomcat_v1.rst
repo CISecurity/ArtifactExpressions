@@ -163,29 +163,29 @@ unix.file_permissions_v1
 +-------------------+---------+----------------------------------------+
 | Name              | Type    | Description                            |
 +===================+=========+========================================+
-| uread	            | string  | Can the owner read the file?           |
+| uread             | string  | Can the owner read the file?           |
 +-------------------+---------+----------------------------------------+
-| uwrite	        | string  | Can the owner write the file?          |
+| uwrite            | string  | Can the owner write the file?          |
 +-------------------+---------+----------------------------------------+
-| uexec	            | string  | Can the owner execute the file?        |
+| uexec             | string  | Can the owner execute the file?        |
 +-------------------+---------+----------------------------------------+
-| gread	            | string  | Can the group read the file?           |
+| gread             | string  | Can the group read the file?           |
 +-------------------+---------+----------------------------------------+
-| gwrite	        | string  | Can the group write the file?          |
+| gwrite            | string  | Can the group write the file?          |
 +-------------------+---------+----------------------------------------+
-| gexec	            | string  | Can the group execute the file?        |
+| gexec             | string  | Can the group execute the file?        |
 +-------------------+---------+----------------------------------------+
-| oread	            | string  | Can the world read the file?           |
+| oread             | string  | Can the world read the file?           |
 +-------------------+---------+----------------------------------------+
-| owrite	        | string  | Can the world write the file?          |
+| owrite            | string  | Can the world write the file?          |
 +-------------------+---------+----------------------------------------+
-| oexec	            | string  | Can the world execute the file?        |
+| oexec             | string  | Can the world execute the file?        |
 +-------------------+---------+----------------------------------------+
-| suid	            | string  | Can the file execute as the owner?     |
+| suid              | string  | Can the file execute as the owner?     |
 +-------------------+---------+----------------------------------------+
-| sgid	            | string  | Can the file execute as the group?     |
+| sgid              | string  | Can the file execute as the group?     |
 +-------------------+---------+----------------------------------------+
-| sticky	        | string  | Is the sticky bit set?                 |
+| sticky            | string  | Is the sticky bit set?                 |
 +-------------------+---------+----------------------------------------+
 
 NOTE: These parameters are governed by a constraint allowing only the 
@@ -630,14 +630,14 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
         <ae:artifact type="[ARTIFACTTYPE NAME]">
           <ae:parameters>
             <ae:parameter dt="string" name="base_path">[base_path.value]</ae:parameter>
-						<ae:parameter dt="string" name="path">[path.value]</ae:parameter>
-						<ae:parameter dt="string" name="concat_path">[concat_path.value]</ae:parameter>
-						<ae:parameter dt="string" name="filename">[filename.value]</ae:parameter>
-						<ae:parameter dt="string" name="recurse">[recurse.value]</ae:parameter>
-						<ae:parameter dt="binary" name="max_depth">[max_depth.value]</ae:parameter>
-						<ae:parameter dt="string" name="file_system">[pfile_systemath.value]</ae:parameter>
-						<ae:parameter dt="string" name="check">[check.value]</ae:parameter>
-						<ae:parameter dt="string" name="pattern">[pattern.value]</ae:parameter>
+            <ae:parameter dt="string" name="path">[path.value]</ae:parameter>
+            <ae:parameter dt="string" name="concat_path">[concat_path.value]</ae:parameter>
+            <ae:parameter dt="string" name="filename">[filename.value]</ae:parameter>
+            <ae:parameter dt="string" name="recurse">[recurse.value]</ae:parameter>
+            <ae:parameter dt="binary" name="max_depth">[max_depth.value]</ae:parameter>
+            <ae:parameter dt="string" name="file_system">[pfile_systemath.value]</ae:parameter>
+            <ae:parameter dt="string" name="check">[check.value]</ae:parameter>
+            <ae:parameter dt="string" name="pattern">[pattern.value]</ae:parameter>
           </ae:parameters>
         </ae:artifact>
         <ae:test type="[TESTTYPE NAME]">
@@ -920,11 +920,11 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
         <ae:artifact type="[ARTIFACTTYPE-NAME]">
           <ae:parameters>
             <ae:parameter dt="string" name="base_path">[base_path.value]</ae:parameter>
-						<ae:parameter dt="string" name="path">[path.value]</ae:parameter>
-						<ae:parameter dt="string" name="concat_path">[concat_path.value]</ae:parameter>
-						<ae:parameter dt="string" name="filename">[filename.value]</ae:parameter>
-						<ae:parameter dt="string" name="file_system">[pfile_systemath.value]</ae:parameter>
-						<ae:parameter dt="string" name="check">[pacheckth.value]</ae:parameter>
+            <ae:parameter dt="string" name="path">[path.value]</ae:parameter>
+            <ae:parameter dt="string" name="concat_path">[concat_path.value]</ae:parameter>
+            <ae:parameter dt="string" name="filename">[filename.value]</ae:parameter>
+            <ae:parameter dt="string" name="file_system">[pfile_systemath.value]</ae:parameter>
+            <ae:parameter dt="string" name="check">[pacheckth.value]</ae:parameter>
             <ae:parameter dt="string" name="check_existence">[check_existence.value]</ae:parameter>
           </ae:parameters>
         </ae:artifact>
@@ -1157,13 +1157,13 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
         <ae:artifact type="[ARTIFACTTYPE-NAME]">
           <ae:parameters>
             <ae:parameter dt="string" name="base_path">[base_path.value]</ae:parameter>
-						<ae:parameter dt="string" name="path">[path.value]</ae:parameter>
-						<ae:parameter dt="string" name="concat_path">[concat_path.value]</ae:parameter>
-						<ae:parameter dt="string" name="filename">[filename.value]</ae:parameter>
-						<ae:parameter dt="string" name="recurse">[recurse.value]</ae:parameter>
-						<ae:parameter dt="binary" name="max_depth">[max_depth.value]</ae:parameter>
-						<ae:parameter dt="string" name="file_system">[pfile_systemath.value]</ae:parameter>
-						<ae:parameter dt="string" name="check">[pacheckth.value]</ae:parameter>
+            <ae:parameter dt="string" name="path">[path.value]</ae:parameter>
+            <ae:parameter dt="string" name="concat_path">[concat_path.value]</ae:parameter>
+            <ae:parameter dt="string" name="filename">[filename.value]</ae:parameter>
+            <ae:parameter dt="string" name="recurse">[recurse.value]</ae:parameter>
+            <ae:parameter dt="binary" name="max_depth">[max_depth.value]</ae:parameter>
+            <ae:parameter dt="string" name="file_system">[pfile_systemath.value]</ae:parameter>
+            <ae:parameter dt="string" name="check">[pacheckth.value]</ae:parameter>
             <ae:parameter dt="string" name="pattern">[pattern.value]</ae:parameter>
           </ae:parameters>
         </ae:artifact>
@@ -1571,11 +1571,11 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
         <ae:title>[RECOMMENDATION-TITLE]</ae:title>
         <ae:artifact type="[ARTIFACTTYPE-NAME]">
           <ae:parameters>
-						<ae:parameter dt="string" name="path">[path.value]</ae:parameter>
-						<ae:parameter dt="string" name="filename">[filename.value]</ae:parameter>
-						<ae:parameter dt="string" name="recurse">[recurse.value]</ae:parameter>
-						<ae:parameter dt="binary" name="max_depth">[max_depth.value]</ae:parameter>
-						<ae:parameter dt="string" name="file_system">[pfile_systemath.value]</ae:parameter>
+            <ae:parameter dt="string" name="path">[path.value]</ae:parameter>
+            <ae:parameter dt="string" name="filename">[filename.value]</ae:parameter>
+            <ae:parameter dt="string" name="recurse">[recurse.value]</ae:parameter>
+            <ae:parameter dt="binary" name="max_depth">[max_depth.value]</ae:parameter>
+            <ae:parameter dt="string" name="file_system">[pfile_systemath.value]</ae:parameter>
             <ae:parameter dt="string" name="pattern">[pattern.value]</ae:parameter>
           </ae:parameters>
         </ae:artifact>
@@ -2741,7 +2741,7 @@ Object
     <instance 
       datatype="int" 
       operation="equals">
-	    [instance.value]
+      [instance.value]
     </instance>
   </textfilecontent54_object>
   

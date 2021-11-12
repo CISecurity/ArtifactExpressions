@@ -13,7 +13,7 @@ Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
 Human ID:
-  - 	vmware.vmhost.acceptance_level
+  -   vmware.vmhost.acceptance_level
 
 +-------------------------------------+-------------+------------------+
 | Name                                | Type        | Description      |

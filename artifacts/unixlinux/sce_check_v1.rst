@@ -29,12 +29,12 @@ export_variable_name               string    The name of the export variable.
 =================================  ========  =================================
 
 NOTE: The ``export_variable_type`` parameter is governed by a constraint allowing only the following values:
-	- boolean
-	- float
-	- int
-	- string
-	- version
-	- set
+  - boolean
+  - float
+  - int
+  - string
+  - version
+  - set
 
 
 Supported Test Types

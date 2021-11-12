@@ -52,19 +52,19 @@ Human ID:
 +-------------------------------------+-------------+------------------+
 
 NOTE: ``command_line_operation`` and ``pid_operation`` parameters are governed by a constraint allowing only the following values:
-	- bitwise and
-	- bitwise or
-	- case insensitive equals 
-	- case insensitive not equal
-	- equals
-	- greater than
-	- greater than or equal
-	- less than
-	- less than or equal
-	- not equal
-	- pattern match 
-	- subset of
-	- superset of 
+  - bitwise and
+  - bitwise or
+  - case insensitive equals 
+  - case insensitive not equal
+  - equals
+  - greater than
+  - greater than or equal
+  - less than
+  - less than or equal
+  - not equal
+  - pattern match 
+  - subset of
+  - superset of 
 
 
 Supported Test Types

@@ -602,7 +602,7 @@ Object
     <instance 
       datatype="[datatype.value]" 
       operation="[operation.value]">
-	    [instance.value]
+      [instance.value]
     </instance>
   </textfilecontent54_object>
 
@@ -2172,7 +2172,7 @@ Object
     <instance 
       datatype="[datatype.value]" 
       operation="operation.value">
-	    [instance.value]
+      [instance.value]
     </instance>
   </textfilecontent54_object>
   
@@ -2612,7 +2612,7 @@ Object
     <instance 
       datatype="[datatype.value]" 
       operation="[operation.value]">
-	    [instance.value]
+      [instance.value]
     </instance>
   </textfilecontent54_object>
   
