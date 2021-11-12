@@ -2196,7 +2196,6 @@ External Variable
 
 ::
 
-
   <external_variable 
     comment="[RECOMMENDATION TITLE]" 
     datatype="[datatype.value]" 

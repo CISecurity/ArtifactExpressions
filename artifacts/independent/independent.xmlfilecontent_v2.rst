@@ -252,7 +252,6 @@ OVAL
 
 Test
 
-
 ::
 
   <xmlfilecontent_test 
@@ -747,7 +746,6 @@ OVAL
 ''''
 
 Test
-
 
 ::
 

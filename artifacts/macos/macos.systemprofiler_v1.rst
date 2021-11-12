@@ -234,7 +234,6 @@ Object
 
 ::
 
-
    <macos:systemprofiler_object
      comment="[RECOMMENDATION TITLE]"
      id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" version="[version.value]">

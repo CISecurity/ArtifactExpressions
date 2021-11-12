@@ -310,8 +310,6 @@ JSON
 ^^^^
 
 ::
-
-
      
        "artifact-expression": {
          "artifact-unique-id": [

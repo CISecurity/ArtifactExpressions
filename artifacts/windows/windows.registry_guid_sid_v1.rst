@@ -268,7 +268,6 @@ OVAL
 
 Test
 
-
 ::
 
   <registry_test
@@ -316,7 +315,6 @@ State
 
 YAML
 ^^^^
-
 
 ::
 

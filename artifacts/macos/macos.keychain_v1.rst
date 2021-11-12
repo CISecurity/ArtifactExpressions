@@ -208,7 +208,6 @@ State
 
 ::
 
-
    <macos:keychain_state
      comment="[RECOMMENDATION TITLE]"
      id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" version="[version.value]">
@@ -422,7 +421,6 @@ State
      
 
 ::
-
 
    <macos:keychain_state
      comment="[RECOMMENDATION TITLE]"

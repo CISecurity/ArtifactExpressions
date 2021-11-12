@@ -267,7 +267,6 @@ OVAL
 
 Test
 
-
 ::
 
   <registry_test

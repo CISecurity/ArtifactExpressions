@@ -676,7 +676,6 @@ OVAL
 
 Test
 
-
 ::
 
   <textfilecontent54_test 
@@ -1901,7 +1900,6 @@ OVAL
 
 Test
 
-
 ::
 
   <file_test 
@@ -2319,7 +2317,6 @@ OVAL
 ''''
 
 Test
-
 
 ::
 

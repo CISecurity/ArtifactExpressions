@@ -144,7 +144,6 @@ OVAL
 
 Test
 
-
 ::
 
    <softwareupdate_test xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#macos" check="[check.value]" check_existence="[check_existence.value]"
@@ -156,7 +155,6 @@ Test
 
 Object
 
-
 ::
 
    <softwareupdate_object xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#macos"
@@ -165,7 +163,6 @@ Object
    </softwareupdate_object>
 
 State
-
 
 ::
 
@@ -219,7 +216,6 @@ JSON
 ^^^^
 
 ::
-
 
    "artifact-expression": {
      "artifact-unique-id": "[ARTIFACT-OVAL-ID]",

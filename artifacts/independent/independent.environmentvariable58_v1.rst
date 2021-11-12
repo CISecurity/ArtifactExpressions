@@ -145,7 +145,6 @@ OVAL
 
 Test
 
-
 ::
 
   <environmentvariable58_test 
