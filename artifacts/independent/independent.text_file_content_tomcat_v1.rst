@@ -795,7 +795,7 @@ JSON
 
 ::
 
-   {
+  {
     "artifact-expression": {
       "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
       "artifact-title": "[RECOMMENDATION TITLE]",
@@ -1019,40 +1019,40 @@ YAML
       type: "[ARTIFACTTYPE NAME]"
       parameters:
         - parameter:
-          name: "base_path"
-          dt: "string"
-          value: "[base_path.value]"
+            name: "base_path"
+            dt: "string"
+            value: "[base_path.value]"
         - parameter:
-          name: "path"
-          dt: "string"
-          value: "[path.value]"
+            name: "path"
+            dt: "string"
+            value: "[path.value]"
         - parameter:
-          name: "concat_path"
-          dt: "string"
-          value: "[concat_path.value]"          
+            name: "concat_path"
+            dt: "string"
+            value: "[concat_path.value]"          
         - parameter:
-          name: "filename"
-          dt: "string"
-          value: "[filename.value]"
+            name: "filename"
+            dt: "string"
+            value: "[filename.value]"
         - parameter:
-          name: "file_system"
-          dt: "string"
-          value: "[file_system.value]"          
+            name: "file_system"
+            dt: "string"
+            value: "[file_system.value]"          
         - parameter:
-          name: "check"
-          dt: "string"
-          value: "[check.value]"
+            name: "check"
+            dt: "string"
+            value: "[check.value]"
         - parameter:
-          name: "check_existence"
-          dt: "string"
-          value: "[check_existence.value]"          
+            name: "check_existence"
+            dt: "string"
+            value: "[check_existence.value]"          
     test:
       type: "[TESTTYPE-NAME]"
       parameters:
-      - parameter:
-          name: "value"
-          dt: "string"
-          value: "[value.value]"
+        - parameter:
+            name: "value"
+            dt: "string"
+            value: "[value.value]"
 
 JSON
 ^^^^
@@ -1280,96 +1280,96 @@ YAML
       type: "[ARTIFACTTYPE NAME]"
       parameters:
         - parameter:
-          name: "base_path"
-          dt: "string"
-          value: "[base_path.value]"
+            name: "base_path"
+            dt: "string"
+            value: "[base_path.value]"
         - parameter:
-          name: "path"
-          dt: "string"
-          value: "[path.value]"
+            name: "path"
+            dt: "string"
+            value: "[path.value]"
         - parameter:
-          name: "concat_path"
-          dt: "string"
-          value: "[concat_path.value]"          
+            name: "concat_path"
+            dt: "string"
+            value: "[concat_path.value]"          
         - parameter:
-          name: "filename"
-          dt: "string"
-          value: "[filename.value]"
+            name: "filename"
+            dt: "string"
+            value: "[filename.value]"
         - parameter:
-          name: "recurse"
-          dt: "string"
-          value: "[recurse.value]"
+            name: "recurse"
+            dt: "string"
+            value: "[recurse.value]"
         - parameter:
-          name: "max_depth"
-          dt: "binary"
-          value: "[max_depth.value]"
+            name: "max_depth"
+            dt: "binary"
+            value: "[max_depth.value]"
         - parameter:
-          name: "file_system"
-          dt: "string"
-          value: "[file_system.value]"
+            name: "file_system"
+            dt: "string"
+            value: "[file_system.value]"
         - parameter:
-          name: "xpath"
-          dt: "string"
-          value: "[xpath.value]"
+            name: "xpath"
+            dt: "string"
+            value: "[xpath.value]"
         - parameter:
-          name: "check_existence"
-          dt: "string"
-          value: "[check_existence.value]"          
+            name: "check_existence"
+            dt: "string"
+            value: "[check_existence.value]"          
         - parameter:
-          name: "check"
-          dt: "string"
-          value: "[check.value]"                
+            name: "check"
+            dt: "string"
+            value: "[check.value]"                
     test:
       type: "[TESTTYPE-NAME]"
       parameters:
-      - parameter:
-          name: "uread"
-          dt: "string"
-          value: "[uread.value]"
-      - parameter:
-          name: "uwrite"
-          dt: "string"
-          value: "[uwrite.value]"
-      - parameter:
-          name: "uexec"
-          dt: "string"
-          value: "[uexec.value]"
-      - parameter:
-          name: "gread"
-          dt: "string"
-          value: "[gread.value]"
-      - parameter:
-          name: "gwrite"
-          dt: "string"
-          value: "[gwrite.value]"
-      - parameter:
-          name: "gexec"
-          dt: "string"
-          value: "[gexec.value]"
-      - parameter:
-          name: "oread"
-          dt: "string"
-          value: "[oread.value]"
-      - parameter:
-          name: "owrite"
-          dt: "string"
-          value: "[owrite.value]"
-      - parameter:
-          name: "oexec"
-          dt: "string"
-          value: "[oexec.value]"
-      - parameter:
-          name: "suid"
-          dt: "string"
-          value: "[suid.value]"
-      - parameter:
-          name: "sgid"
-          dt: "string"
-          value: "[sgid.value]"
-      - parameter:
-          name: "sticky"
-          dt: "string"
-          value: "[sticky.value]"                            
+        - parameter:
+            name: "uread"
+            dt: "string"
+            value: "[uread.value]"
+        - parameter:
+            name: "uwrite"
+            dt: "string"
+            value: "[uwrite.value]"
+        - parameter:
+            name: "uexec"
+            dt: "string"
+            value: "[uexec.value]"
+        - parameter:
+            name: "gread"
+            dt: "string"
+            value: "[gread.value]"
+        - parameter:
+            name: "gwrite"
+            dt: "string"
+            value: "[gwrite.value]"
+        - parameter:
+            name: "gexec"
+            dt: "string"
+            value: "[gexec.value]"
+        - parameter:
+            name: "oread"
+            dt: "string"
+            value: "[oread.value]"
+        - parameter:
+            name: "owrite"
+            dt: "string"
+            value: "[owrite.value]"
+        - parameter:
+            name: "oexec"
+            dt: "string"
+            value: "[oexec.value]"
+        - parameter:
+            name: "suid"
+            dt: "string"
+            value: "[suid.value]"
+        - parameter:
+            name: "sgid"
+            dt: "string"
+            value: "[sgid.value]"
+        - parameter:
+            name: "sticky"
+            dt: "string"
+            value: "[sticky.value]"                            
 
 JSON
 ^^^^
@@ -1680,48 +1680,48 @@ YAML
       type: "[ARTIFACTTYPE NAME]"
       parameters:
         - parameter:
-          name: "base_path"
-          dt: "string"
-          value: "[base_path.value]"
+            name: "base_path"
+            dt: "string"
+            value: "[base_path.value]"
         - parameter:
-          name: "path"
-          dt: "string"
-          value: "[path.value]"
+            name: "path"
+            dt: "string"
+            value: "[path.value]"
         - parameter:
-          name: "concat_path"
-          dt: "string"
-          value: "[concat_path.value]"          
+            name: "concat_path"
+            dt: "string"
+            value: "[concat_path.value]"          
         - parameter:
-          name: "filename"
-          dt: "string"
-          value: "[filename.value]"
+            name: "filename"
+            dt: "string"
+            value: "[filename.value]"
         - parameter:
-          name: "recurse"
-          dt: "string"
-          value: "[recurse.value]"
+            name: "recurse"
+            dt: "string"
+            value: "[recurse.value]"
         - parameter:
-          name: "max_depth"
-          dt: "binary"
-          value: "[max_depth.value]"
+            name: "max_depth"
+            dt: "binary"
+            value: "[max_depth.value]"
         - parameter:
-          name: "file_system"
-          dt: "string"
-          value: "[file_system.value]"          
+            name: "file_system"
+            dt: "string"
+            value: "[file_system.value]"          
         - parameter:
-          name: "check"
-          dt: "string"
-          value: "[check.value]"
+            name: "check"
+            dt: "string"
+            value: "[check.value]"
         - parameter:
-          name: "pattern"
-          dt: "string"
-          value: "[pattern.value]"          
+            name: "pattern"
+            dt: "string"
+            value: "[pattern.value]"          
     test:
       type: "existence_test"
       parameters:
-      - parameter:
-          name: "value"
-          dt: "string"
-          value: "[value.value]"
+        - parameter:
+            name: "value"
+            dt: "string"
+            value: "[value.value]"
 
 JSON
 ^^^^
@@ -1978,140 +1978,141 @@ YAML
       type: "[ARTIFACTTYPE NAME]"
       parameters:
         - parameter:
-          name: "base_path"
-          dt: "string"
-          value: "[base_path.value]"
+            name: "base_path"
+            dt: "string"
+            value: "[base_path.value]"
         - parameter:
-          name: "path"
-          dt: "string"
-          value: "[path.value]"
+            name: "path"
+            dt: "string"
+            value: "[path.value]"
         - parameter:
-          name: "concat_path"
-          dt: "string"
-          value: "[concat_path.value]"          
+            name: "concat_path"
+            dt: "string"
+            value: "[concat_path.value]"          
         - parameter:
-          name: "filename"
-          dt: "string"
-          value: "[filename.value]"
+            name: "filename"
+            dt: "string"
+            value: "[filename.value]"
         - parameter:
-          name: "recurse"
-          dt: "string"
-          value: "[recurse.value]"
+            name: "recurse"
+            dt: "string"
+            value: "[recurse.value]"
         - parameter:
-          name: "max_depth"
-          dt: "binary"
-          value: "[max_depth.value]"
+            name: "max_depth"
+            dt: "binary"
+            value: "[max_depth.value]"
         - parameter:
-          name: "file_system"
-          dt: "string"
-          value: "[file_system.value]"        
+            name: "file_system"
+            dt: "string"
+            value: "[file_system.value]"        
         - parameter:
-          name: "check"
-          dt: "string"
-          value: "[check.value]"
+            name: "check"
+            dt: "string"
+            value: "[check.value]"
         - parameter:
-          name: "pattern"
-          dt: "string"
-          value: "[pattern.value]"          
+            name: "pattern"
+            dt: "string"
+            value: "[pattern.value]"          
     test:
       type: "[TESTTYPE NAME]"
       parameters:   
         - parameter:
-          name: "username"
-          dt: "string"
-          value: "[username.value]"
+            name: "username"
+            dt: "string"
+            value: "[username.value]"
         - parameter:
-          name: "group"
-          dt: "string"
-          value: "[group.value]"
+            name: "group"
+            dt: "string"
+            value: "[group.value]"
         - parameter:
-          name: "uread"
-          dt: "string"
-          value: "[uread.value]"
+            name: "uread"
+            dt: "string"
+            value: "[uread.value]"
         - parameter:
-          name: "uwrite"
-          dt: "string"
-          value: "[uwrite.value]"
+            name: "uwrite"
+            dt: "string"
+            value: "[uwrite.value]"
         - parameter:
-          name: "uexec"
-          dt: "string"
-          value: "[uexec.value]"
+            name: "uexec"
+            dt: "string"
+            value: "[uexec.value]"
         - parameter:
-          name: "gread"
-          dt: "string"
-          value: "[gread.value]"
+            name: "gread"
+            dt: "string"
+            value: "[gread.value]"
         - parameter:
-          name: "gwrite"
-          dt: "string"
-          value: "[gwrite.value]"
+            name: "gwrite"
+            dt: "string"
+            value: "[gwrite.value]"
         - parameter:
-          name: "gexec"
-          dt: "string"
-          value: "[gexec.value]"
+            name: "gexec"
+            dt: "string"
+            value: "[gexec.value]"
         - parameter:
-          name: "oread"
-          dt: "string"
-          value: "[oread.value]"
+            name: "oread"
+            dt: "string"
+            value: "[oread.value]"
         - parameter:
-          name: "owrite"
-          dt: "string"
-          value: "[owrite.value]"
+            name: "owrite"
+            dt: "string"
+            value: "[owrite.value]"
         - parameter:
-          name: "oexec"
-          dt: "string"
-          value: "[oexec.value]"
+            name: "oexec"
+            dt: "string"
+            value: "[oexec.value]"
         - parameter:
-          name: "dir_only"
-          dt: "boolean"
-          value: "[dir_only.value]"
+            name: "dir_only"
+            dt: "boolean"
+            value: "[dir_only.value]"
 
 JSON
 ^^^^
 
 ::
 
-{
-  "artifact-expression": {
-    "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
-    "artifact-title": "[RECOMMENDATION TITLE]",
-    "artifact": {
-      "type": "[ARTIFACTTYPE NAME]",
-      "parameters": [
-        {
-          "parameter": {
-            "name": "base_path",
-            "type": "string",
-            "value": "[base_path.value]"
-          }
-        },
-        {
-          "parameter": {
-            "name": "path",
-            "type": "string",
-            "value": "[path.value]"
-          }
-        },
-        {
-          "parameter": {
-            "name": "concat_path",
-            "type": "string",
-            "value": "[concat_path.value]"
-          }
-        },
-        {
-          "parameter": {
-            "name": "filename",
-            "type": "string",
-            "value": "[filename.value]"
-          }
-        },
-        {
-          "parameter": {
-            "name": "recurse",
-            "type": "string",
-            "value": "[recurse.value]"
-          }
-                  {
+  {
+    "artifact-expression": {
+      "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
+      "artifact-title": "[RECOMMENDATION TITLE]",
+      "artifact": {
+        "type": "[ARTIFACTTYPE NAME]",
+        "parameters": [
+          {
+            "parameter": {
+              "name": "base_path",
+              "type": "string",
+              "value": "[base_path.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "path",
+              "type": "string",
+              "value": "[path.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "concat_path",
+              "type": "string",
+              "value": "[concat_path.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "filename",
+              "type": "string",
+              "value": "[filename.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "recurse",
+              "type": "string",
+              "value": "[recurse.value]"
+            }
+          },
+          {
             "parameter": {
               "name": "max_depth",
               "type": "binary",
@@ -2232,7 +2233,6 @@ JSON
       }
     }
   }
-
   
 .. _generated-content-5:
 
@@ -2392,84 +2392,84 @@ YAML
       type: "[ARTIFACTTYPE NAME]"
       parameters:
         - parameter:
-          name: "base_path"
-          dt: "string"
-          value: "[base_path.value]"
+            name: "base_path"
+            dt: "string"
+            value: "[base_path.value]"
         - parameter:
-          name: "path"
-          dt: "string"
-          value: "[path.value]"
+            name: "path"
+            dt: "string"
+            value: "[path.value]"
         - parameter:
-          name: "concat_path"
-          dt: "string"
-          value: "[concat_path.value]"          
+            name: "concat_path"
+            dt: "string"
+            value: "[concat_path.value]"          
         - parameter:
-          name: "filename"
-          dt: "string"
-          value: "[filename.value]"
+            name: "filename"
+            dt: "string"
+            value: "[filename.value]"
         - parameter:
-          name: "recurse"
-          dt: "string"
-          value: "[recurse.value]"
+            name: "recurse"
+            dt: "string"
+            value: "[recurse.value]"
         - parameter:
-          name: "max_depth"
-          dt: "binary"
-          value: "[max_depth.value]"
+            name: "max_depth"
+            dt: "binary"
+            value: "[max_depth.value]"
         - parameter:
-          name: "file_system"
-          dt: "string"
-          value: "[file_system.value]"        
+            name: "file_system"
+            dt: "string"
+            value: "[file_system.value]"        
         - parameter:
-          name: "check"
-          dt: "string"
-          value: "[check.value]"
+            name: "check"
+            dt: "string"
+            value: "[check.value]"
         - parameter:
-          name: "pattern"
-          dt: "string"
-          value: "[pattern.value]"          
+            name: "pattern"
+            dt: "string"
+            value: "[pattern.value]"          
     test:
       type: "[TESTTYPE NAME]"
       parameters:   
         - parameter:
-          name: "subexpression"
-          dt: "string"
-          value: "[subexpression.value]"
+            name: "subexpression"
+            dt: "string"
+            value: "[subexpression.value]"
         - parameter:
-          name: "filepath"
-          dt: "string"
-          value: "[filepath.value]"
+            name: "filepath"
+            dt: "string"
+            value: "[filepath.value]"
         - parameter:
-          name: "path"
-          dt: "string"
-          value: "[path.value]"
+            name: "path"
+            dt: "string"
+            value: "[path.value]"
         - parameter:
-          name: "filename"
-          dt: "string"
-          value: "[filename.value]"
+            name: "filename"
+            dt: "string"
+            value: "[filename.value]"
         - parameter:
-          name: "pattern"
-          dt: "binary"
-          value: "[pattern.value]"
+            name: "pattern"
+            dt: "binary"
+            value: "[pattern.value]"
         - parameter:
-          name: "instance"
-          dt: "binary"
-          value: "[instance.value]"
+            name: "instance"
+            dt: "binary"
+            value: "[instance.value]"
         - parameter:
-          name: "subexp_op"
-          dt: "string"
-          value: "[subexp_op.value]"
+            name: "subexp_op"
+            dt: "string"
+            value: "[subexp_op.value]"
         - parameter:
-          name: "inst_op"
-          dt: "string"
-          value: "[inst_op.value]"
+            name: "inst_op"
+            dt: "string"
+            value: "[inst_op.value]"
         - parameter:
-          name: "text"
-          dt: "string"
-          value: "[text.value]"
+            name: "text"
+            dt: "string"
+            value: "[text.value]"
         - parameter:
-          name: "text_op"
-          dt: "string"
-          value: "[text_op.value]"
+            name: "text_op"
+            dt: "string"
+            value: "[text_op.value]"
 
 JSON
 ^^^^
@@ -2766,7 +2766,6 @@ External Variable
 
 ::
 
-
 <external_variable 
   comment="[RECOMMENDATION TITLE]" 
   datatype="[datatype.value]" 
@@ -2785,88 +2784,88 @@ YAML
       type: "[ARTIFACTTYPE-NAME]"
       parameters:
         - parameter:
-          name: "base_path"
-          dt: "string"
-          value: "[base_path.value]"
+            name: "base_path"
+            dt: "string"
+            value: "[base_path.value]"
         - parameter:
-          name: "path"
-          dt: "string"
-          value: "[path.value]"
+            name: "path"
+            dt: "string"
+            value: "[path.value]"
         - parameter:
-          name: "concat_path"
-          dt: "string"
-          value: "[concat_path.value]"
+            name: "concat_path"
+            dt: "string"
+            value: "[concat_path.value]"
         - parameter:
-          name: "filename"
-          dt: "string"
-          value: "[filename.value]"
+            name: "filename"
+            dt: "string"
+            value: "[filename.value]"
         - parameter:
-          name: "recurse"
-          dt: "string"
-          value: "[recurse.value]"
+            name: "recurse"
+            dt: "string"
+            value: "[recurse.value]"
         - parameter:
-          name: "max_depth"
-          dt: "binary"
-          value: "[max_depth.value]"
+            name: "max_depth"
+            dt: "binary"
+            value: "[max_depth.value]"
         - parameter:
-          name: "file_system"
-          dt: "string"
-          value: "[file_system.value]"
+            name: "file_system"
+            dt: "string"
+            value: "[file_system.value]"
         - parameter:
-          name: "check"
-          dt: "string"
-          value: "[check.value]"
+            name: "check"
+            dt: "string"
+            value: "[check.value]"
         - parameter:
-          name: "pattern"
-          dt: "string"
-          value: "[pattern.value]"
+            name: "pattern"
+            dt: "string"
+            value: "[pattern.value]"
     test:
       type: "[TESTTYPE-NAME]"
       parameters:
-      - parameter:
-          name: "subexpression"
-          dt: "string"
-          value: "[subexpression.value]"
-      - parameter:
-          name: "filepath"
-          dt: "string"
-          value: "[filepath.value]"
-      - parameter:
-          name: "path"
-          dt: "string"
-          value: "[path.value]"
-      - parameter:
-          name: "filename"
-          dt: "string"
-          value: "[filename.value]"
-      - parameter:
-          name: "pattern"
-          dt: "binary"
-          value: "[pattern.value]"
-      - parameter:
-          name: "instance"
-          dt: "binary"
-          value: "[instance.value]"          
-      - parameter:
-          name: "subexp_op"
-          dt: "string"
-          value: "[subexp_op.value]"
-      - parameter:
-          name: "inst_op"
-          dt: "string"
-          value: "[inst_op.value]"
-      - parameter:
-          name: "text"
-          dt: "string"
-          value: "[text.value]"
-      - parameter:
-          name: "text_op"
-          dt: "string"
-          value: "[text_op.value]"
-      - parameter:
-          name: "entity_check"
-          dt: "string"
-          value: "[entity_check.value]"          
+        - parameter:
+            name: "subexpression"
+            dt: "string"
+            value: "[subexpression.value]"
+        - parameter:
+            name: "filepath"
+            dt: "string"
+            value: "[filepath.value]"
+        - parameter:
+            name: "path"
+            dt: "string"
+            value: "[path.value]"
+        - parameter:
+            name: "filename"
+            dt: "string"
+            value: "[filename.value]"
+        - parameter:
+            name: "pattern"
+            dt: "binary"
+            value: "[pattern.value]"
+        - parameter:
+            name: "instance"
+            dt: "binary"
+            value: "[instance.value]"          
+        - parameter:
+            name: "subexp_op"
+            dt: "string"
+            value: "[subexp_op.value]"
+        - parameter:
+            name: "inst_op"
+            dt: "string"
+            value: "[inst_op.value]"
+        - parameter:
+            name: "text"
+            dt: "string"
+            value: "[text.value]"
+        - parameter:
+            name: "text_op"
+            dt: "string"
+            value: "[text_op.value]"
+        - parameter:
+            name: "entity_check"
+            dt: "string"
+            value: "[entity_check.value]"          
 
 JSON
 ^^^^
