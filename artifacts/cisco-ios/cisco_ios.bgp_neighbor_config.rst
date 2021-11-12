@@ -92,7 +92,6 @@ OVAL
 ''''
 
 Test
-    
 
 ::
 
@@ -107,7 +106,6 @@ Test
    </bgpneighbor_test>
 
 Object
-      
 
 ::
 
@@ -119,7 +117,6 @@ Object
    </bgpneighbor_object>
 
 State
-     
 
 ::
 

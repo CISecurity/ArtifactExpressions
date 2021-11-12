@@ -229,7 +229,6 @@ OVAL
 ''''
 
 Test
-    
 
 ::
 
@@ -241,7 +240,6 @@ Test
    </macos:systemsetup_test>
 
 Object
-      
 
 ::
 
@@ -251,7 +249,6 @@ Object
    </macos:systemsetup_object>
 
 State
-     
 
 ::
 
@@ -440,7 +437,6 @@ OVAL
 .. _test-1:
 
 Test
-    
 
 ::
 
@@ -454,7 +450,6 @@ Test
 .. _object-1:
 
 Object
-      
 
 ::
 
@@ -466,7 +461,6 @@ Object
 .. _state-1:
 
 State
-     
 
 ::
 
@@ -659,7 +653,6 @@ OVAL
 .. _test-2:
 
 Test
-    
 
 ::
 
@@ -673,7 +666,6 @@ Test
 .. _object-2:
 
 Object
-      
 
 ::
 
@@ -685,7 +677,6 @@ Object
 .. _state-2:
 
 State
-     
 
 ::
 
@@ -878,7 +869,6 @@ OVAL
 .. _test-3:
 
 Test
-    
 
 ::
 
@@ -892,7 +882,6 @@ Test
 .. _object-3:
 
 Object
-      
 
 ::
 
@@ -904,7 +893,6 @@ Object
 .. _state-3:
 
 State
-     
 
 ::
 

@@ -157,7 +157,6 @@ OVAL
 ''''
 
 Test
-    
 
 ::
 
@@ -171,7 +170,6 @@ Test
             </sid_sid_v1_test>
 
 Object
-      
 
 ::
 
@@ -183,7 +181,6 @@ Object
    </sid_sid_object>
 
 State
-     
 
 ::
 

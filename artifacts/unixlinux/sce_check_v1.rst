@@ -29,12 +29,12 @@ export_variable_name               string    The name of the export variable.
 =================================  ========  =================================
 
 NOTE: The ``export_variable_type`` parameter is governed by a constraint allowing only the following values:
-	- boolean
-	- float
-	- int
-	- string
-	- version
-	- set
+  - boolean
+  - float
+  - int
+  - string
+  - version
+  - set
 
 
 Supported Test Types
@@ -116,8 +116,7 @@ For ``linux.sce_check_v1`` artifacts, the xccdf:check looks like this.
 
 ::
 
-  <check system="http://open-
-SCAP.org/page/SCE">
+  <check system="http://open-SCAP.org/page/SCE">
     <check-import import-name="stdout" />
     <check-export 
       export-name="[export-name.value]" 

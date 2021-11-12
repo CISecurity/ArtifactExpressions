@@ -192,7 +192,6 @@ OVAL
 ''''
 
 Test
-    
 
 ::
 
@@ -206,7 +205,6 @@ Test
    </accesstoken_test>
 
 Object
-      
 
 ::
 
@@ -218,7 +216,6 @@ Object
            </accesstoken_object>
 
 State
-     
 
 ::
 

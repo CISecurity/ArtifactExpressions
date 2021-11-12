@@ -107,7 +107,6 @@ OVAL
 ''''
 
 Test
-    
 
 ::
 
@@ -123,7 +122,6 @@ Test
    </snmp_group_test>
 
 Object
-      
 
 ::
 
@@ -136,7 +134,6 @@ Object
    </snmp_group_object>
 
 State
-     
 
 ::
 
@@ -183,13 +180,63 @@ YAML
 JSON
 ^^^^
 
-\``\` { "artifact-expression": { "artifact-unique-id": [
-"ARTIFACT-OVAL-ID" ], "artifact-title": [ "RECOMMENDATION TITLE" ],
-"artifact": { "type": [ "ARTIFACTTYPE NAME" ], "parameters": [ {
-"parameter": { "name": "name", "type": "string", "value": [ "name.value"
-] } }, { "parameter": { "name": "operator", "type": "string", "value": [
-"operator.value" ] } } ] }, "test": { "type": [ "TESTTYPE NAME" ],
-"parameters": [ { "parameter": { "name": "operator", "type": "string",
-"value": [ "operator.value" ] } }, { "parameter": { "name":
-"snmpv3_sec_level", "type": "string", "value": [
-"snmpv3_sec_level.value" ] } } ] } } }
+    {
+        "artifact-expression": {
+            "artifact-unique-id": [
+                "ARTIFACT-OVAL-ID"
+            ],
+            "artifact-title": [
+                "RECOMMENDATION TITLE"
+            ],
+            "artifact": {
+                "type": [
+                    "ARTIFACTTYPE NAME"
+                ],
+                "parameters": [
+                    {
+                        "parameter": {
+                            "name": "name",
+                            "type": "string",
+                            "value": [
+                                "name.value"
+                            ]
+                        }
+                    },
+                    {
+                        "parameter": {
+                            "name": "operator",
+                            "type": "string",
+                            "value": [
+                                "operator.value"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "test": {
+                "type": [
+                    "TESTTYPE NAME"
+                ],
+                "parameters": [
+                    {
+                        "parameter": {
+                            "name": "operator",
+                            "type": "string",
+                            "value": [
+                                "operator.value"
+                            ]
+                        }
+                    },
+                    {
+                        "parameter": {
+                            "name": "snmpv3_sec_level",
+                            "type": "string",
+                            "value": [
+                                "snmpv3_sec_level.value"
+                            ]
+                        }
+                    }
+                ]
+            }
+        }
+    }

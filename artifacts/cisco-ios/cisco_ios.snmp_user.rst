@@ -96,7 +96,6 @@ OVAL
 ''''
 
 Test
-    
 
 ::
 
@@ -112,7 +111,6 @@ Test
    </snmpuser_test>
 
 Object
-      
 
 ::
 
@@ -128,7 +126,6 @@ Object
    </snmpuser_object>
 
 State
-     
 
 ::
 

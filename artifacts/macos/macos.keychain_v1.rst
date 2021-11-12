@@ -181,7 +181,6 @@ OVAL
 ''''
 
 Test
-    
 
 ::
 
@@ -193,7 +192,6 @@ Test
    </macos:keychain_test>
 
 Object
-      
 
 ::
 
@@ -204,10 +202,8 @@ Object
    </macos:keychain_object>
 
 State
-     
 
 ::
-
 
    <macos:keychain_state
      comment="[RECOMMENDATION TITLE]"
@@ -392,7 +388,6 @@ OVAL
 .. _test-1:
 
 Test
-    
 
 ::
 
@@ -406,7 +401,6 @@ Test
 .. _object-1:
 
 Object
-      
 
 ::
 
@@ -419,10 +413,8 @@ Object
 .. _state-1:
 
 State
-     
 
 ::
-
 
    <macos:keychain_state
      comment="[RECOMMENDATION TITLE]"

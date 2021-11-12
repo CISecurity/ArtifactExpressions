@@ -217,7 +217,6 @@ OVAL
 ''''
 
 Test
-    
 
 ::
 
@@ -231,7 +230,6 @@ Test
             </user_sid55_test>
 
 Object
-      
 
 ::
 
@@ -243,7 +241,6 @@ Object
    </user_sid55_object>
 
 State
-     
 
 ::
 

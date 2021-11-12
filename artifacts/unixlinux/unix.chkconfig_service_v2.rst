@@ -116,7 +116,7 @@ SCAP
 XCCDF
 '''''
 
-For ``linux.chkconfig_service_v2`` artifacts, the xccdf:check looks like
+For ``unix.chkconfig_service_v2`` artifacts, the xccdf:check looks like
 this. There is no Value element in the XCCDF for this Artifact.
 
 ::

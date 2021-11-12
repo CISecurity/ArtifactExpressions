@@ -128,7 +128,6 @@ OVAL
 ''''
 
 Test
-    
 
 ::
 
@@ -147,7 +146,6 @@ Test
            </userright_test>
 
 Object
-      
 
 ::
 
@@ -159,7 +157,6 @@ Object
            </userright_object>
 
 State
-     
 
 ::
 

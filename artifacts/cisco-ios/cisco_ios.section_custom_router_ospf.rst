@@ -108,7 +108,6 @@ OVAL
 ''''
 
 Test
-    
 
 ::
 
@@ -124,7 +123,6 @@ Test
    </section_test>
 
 Object
-      
 
 ::
 
@@ -145,7 +143,6 @@ Object
    </router_object>
 
 State
-     
 
 ::
 

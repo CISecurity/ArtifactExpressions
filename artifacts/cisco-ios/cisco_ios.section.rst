@@ -129,7 +129,6 @@ OVAL
 ''''
 
 Test
-    
 
 ::
 
@@ -145,7 +144,6 @@ Test
    </section_test>
 
 Object
-      
 
 ::
 
@@ -158,7 +156,6 @@ Object
    </section_object>
 
 State
-     
 
 ::
 

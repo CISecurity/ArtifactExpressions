@@ -102,7 +102,6 @@ OVAL
 ''''
 
 Test
-    
 
 ::
 
@@ -118,7 +117,6 @@ Test
    </line_test>
 
 Object
-      
 
 ::
 
@@ -134,7 +132,6 @@ Object
    </line_object>
 
 State
-     
 
 ::
 

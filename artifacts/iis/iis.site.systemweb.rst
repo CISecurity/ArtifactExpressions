@@ -140,7 +140,6 @@ OVAL
 ''''
 
 Test
-    
 
 ::
 
@@ -152,7 +151,6 @@ Test
    </iis:systemweb_test>
 
 Object
-      
 
 ::
 
@@ -166,7 +164,6 @@ Object
      
 
 State
-     
 
 ::
 

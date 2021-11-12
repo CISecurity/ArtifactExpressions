@@ -162,7 +162,6 @@ OVAL
 ''''
 
 Test
-    
 
 ::
 
@@ -174,7 +173,6 @@ Test
    </vds_test>
 
 Object
-      
 
 ::
 
@@ -186,7 +184,6 @@ Object
    </vds_object>    
 
 State
-     
 
 ::
 

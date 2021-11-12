@@ -151,7 +151,6 @@ OVAL
 ''''
 
 Test
-    
 
 ::
 
@@ -166,7 +165,6 @@ Test
    </interface_test>
 
 Object
-      
 
 ::
 
@@ -179,7 +177,6 @@ Object
    </interface_object>
 
 State
-     
 
 ::
 

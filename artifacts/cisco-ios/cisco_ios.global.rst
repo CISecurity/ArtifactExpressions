@@ -121,7 +121,6 @@ OVAL
 ''''
 
 Test
-    
 
 ::
 
@@ -137,7 +136,6 @@ Test
    </global_test>
 
 Object
-      
 
 ::
 
@@ -150,7 +148,6 @@ Object
    </global_object>
 
 State
-     
 
 ::
 

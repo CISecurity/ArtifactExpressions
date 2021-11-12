@@ -129,7 +129,6 @@ OVAL
 ''''
 
 Test
-    
 
 ::
 
@@ -141,7 +140,6 @@ Test
    </iis:webconfig_test>
 
 Object
-      
 
 ::
 
@@ -155,7 +153,6 @@ Object
      
 
 State
-     
 
 ::
 

@@ -67,7 +67,6 @@ OVAL
 ''''
 
 Test
-    
 
 ::
 
@@ -81,7 +80,6 @@ Test
    </user_test>
 
 Object
-      
 
 ::
 

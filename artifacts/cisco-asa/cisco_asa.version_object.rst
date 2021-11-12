@@ -129,7 +129,6 @@ OVAL
 ''''
 
 Test
-    
 
 ::
 
@@ -145,7 +144,6 @@ Test
    </version_test>
 
 Object
-      
 
 ::
 
@@ -157,7 +155,6 @@ Object
    </version_object >
 
 State
-     
 
 ::
 

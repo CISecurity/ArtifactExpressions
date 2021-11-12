@@ -128,7 +128,6 @@ OVAL
 ''''
 
 Test
-    
 
 ::
 
@@ -144,7 +143,6 @@ Test
    </snmpcommunity_test>
 
 Object
-      
 
 ::
 
@@ -157,7 +155,6 @@ Object
    </snmpcommunity_object>
 
 State
-     
 
 ::
 

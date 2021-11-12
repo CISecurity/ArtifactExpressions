@@ -102,16 +102,26 @@ the following values:
   - sybase
 
 prepend_type NOTE: This parameter is governed by a constraint allowing
-only the following values: - String - SQL
+only the following values:
+ - String
+ - SQL
 
 append_type NOTE: This parameter is governed by a constraint allowing
-only the following values: - String - SQL
+only the following values:
+ - String
+ - SQL
 
 recurse NOTE: This parameter is governed by a constraint allowing
-only the following values: Yes - No
+only the following values:
+ - Yes
+ - No
 
 file_system NOTE: This parameter is governed by a constraint allowing
-only the following values: NA - local - all - defined
+only the following values:
+ - NA
+ - local
+ - all
+ - defined
 
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
@@ -179,31 +189,58 @@ Txt-Unix_File_or_Directory_Permissions_v2
 +-------------------+---------+----------------------------------------+
 
 uread NOTE: This parameter is governed by a constraint allowing only the 
-following values: NA - set - unset 
+following values:
+ - NA
+ - set
+ - unset 
 
 uwrite NOTE: This parameter is governed by a constraint allowing only the 
-following values: NA - set - unset 
+following values:
+ - NA
+ - set
+ - unset 
 
 uexec NOTE: This parameter is governed by a constraint allowing only the 
-following values: NA - set - unset 
+following values:
+ - NA
+ - set
+ - unset 
 
 gread NOTE: This parameter is governed by a constraint allowing only the 
-following values: NA - set - unset 
+following values:
+ - NA
+ - set
+ - unset 
 
 gwrite NOTE: This parameter is governed by a constraint allowing only the 
-following values: NA - set - unset 
+following values:
+ - NA
+ - set
+ - unset 
 
 gexec NOTE: This parameter is governed by a constraint allowing only the 
-following values: NA - set - unset 
+following values:
+ - NA
+ - set
+ - unset 
 
 oread NOTE: This parameter is governed by a constraint allowing only the 
-following values: NA - set - unset 
+following values:
+ - NA
+ - set
+ - unset 
 
 owrite NOTE: This parameter is governed by a constraint allowing only the 
-following values: NA - set - unset 
+following values:
+ - NA
+ - set
+ - unset 
 
 oexec NOTE: This parameter is governed by a constraint allowing only the 
-following values: NA - set - unset 
+following values:
+ - NA
+ - set
+ - unset 
 
 Generated Content
 ~~~~~~~~~~~~~~~~~
@@ -286,7 +323,6 @@ OVAL
 
 Test
 
-
 ::
 
   <file_test 
@@ -301,7 +337,6 @@ Test
   </file_test>
 
 Object
-      
 
 ::
 
@@ -317,7 +352,6 @@ Object
   </file_object>
 
 State
-     
 
 ::
 
