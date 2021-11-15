@@ -112,7 +112,6 @@ NOTE: The ``check`` parameter is governed by a constraint allowing only the foll
 
 NOTE: The ``operation`` parameter is governed by a constraint allowing
 only the following values:
-
    -  equals
    -  not equal
    -  case insensitive equals
