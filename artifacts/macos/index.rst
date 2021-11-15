@@ -7,6 +7,7 @@ MacOS
    :maxdepth: 1
    :name: toc-<family>
 
+   macos.accountinfo_v1 <macos.accountinfo_v1>
    macos.authorizationdb_v1 <macos.authorizationdb_v1>
    macos.corestorage_v1 <macos.corestorage_v1>   
    macos.gatekeeper_v1 <macos.gatekeeper_v1>
