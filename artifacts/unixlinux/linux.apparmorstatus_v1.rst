@@ -26,8 +26,8 @@ Technical Details
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
-|Human ID:
- - linux.apparmorstatus_v1
+Human ID:
+  linux.apparmorstatus_v1
 
 ==== ==== ===========
 Name Type Description
@@ -38,13 +38,13 @@ N/A
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
-  - linux:apparmorstatus_enforce_mode_profiles_count
+| linux:apparmorstatus_enforce_mode_profiles_count
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
 Human ID:
-  - linux.apparmorstatus_enforce_mode_profiles_count_v1
+  linux.apparmorstatus_enforce_mode_profiles_count_v1
 
 +-----------------------------+--------+-----------------------------+
 | Name                        | Type   | Description                 |
