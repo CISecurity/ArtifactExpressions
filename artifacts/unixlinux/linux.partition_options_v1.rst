@@ -21,7 +21,7 @@ Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
 Human ID:
-   -  linux.partition_options_v1
+  - linux.partition_options_v1
 
 =========== ====== =====================================================
 Name        Type   Description
@@ -32,13 +32,13 @@ mount_point string Filesystem mount point being tested. Cannot be blank.
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  Set Includes
+  - Set Includes
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
 Human ID:
-   -  set.includes_v1
+  - set.includes_v1
 
 ========= ====== ===========================
 Name      Type   Description
@@ -48,12 +48,12 @@ data_type string The data type of the value.
 ========= ====== ===========================
 
 NOTE: The ``data_type`` parameter is governed by a constraint allowing only the following values:
-   -  boolean
-   -  float
-   -  int
-   -  string
-   -  version
-   -  set
+  - boolean
+  - float
+  - int
+  - string
+  - version
+  - set
 
 Generated Content
 ~~~~~~~~~~~~~~~~~
@@ -96,8 +96,7 @@ SCAP
 XCCDF
 '''''
 
-For ``linux.partition_options_v1`` artifacts, the xccdf:check looks like
-this. There is no Value element in the XCCDF for this Artifact.
+For ``linux.partition_options_v1`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
 
 ::
   <xccdf:complex-check operator="AND">

@@ -85,8 +85,8 @@ match - subset of - superset of
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  window.registry.value
--  existence_test
+  - window.registry.value
+  - existence_test
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~

@@ -21,7 +21,7 @@ Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
 Human ID:
-   -  linux.systemd_unit_property_v1
+  - linux.systemd_unit_property_v1
 
 +----------+--------+------------------------------------------------+
 | Name     | Type   | Description                                    |
@@ -39,15 +39,15 @@ Human ID:
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  Equals
--  Not Equal
+  - Equals
+  - Not Equal
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
 Human IDs:
-   -  equals
-   -  not equal
+  - equals
+  - not equal
 
 +-----------+--------+-----------------------------------------------------------+
 | Name      | Type   | Description                                               |
@@ -58,12 +58,12 @@ Human IDs:
 +-----------+--------+-----------------------------------------------------------+
 
 NOTE: The ``data_type`` parameter is governed by a constraint allowing only the following values:
-   -  boolean
-   -  float
-   -  int
-   -  string
-   -  version
-   -  set
+  - boolean
+  - float
+  - int
+  - string
+  - version
+  - set
 
 Generated Content
 ~~~~~~~~~~~~~~~~~

@@ -7,136 +7,153 @@ Description
 The Linux: Custom Object test is specified by the Custom Object's
 specified constraint. Please see below:
 
--  The apparmorstatus test is used to check properties representing the
-   counts of profiles and processes as per the results of the
-   "apparmor_status" or "aa-status" command.
+AppArmor Status Test:
+  The apparmorstatus_test is used to check properties representing the counts of profiles and processes as per the results of the 'apparmor_status' or 'aa-status' command.
+
+  The apparmorstatus_object element is used by an apparmorstatus test to define the different information about the current AppArmor policy. There is actually only one object relating to AppArmor Status and this is the system as a whole. Therefore, there are no child entities defined. Any test written to check AppArmor status will reference the same apparmorstatus_object which is basically an empty object element.
+
+  The apparmorstatus_state element displays various information about the current AppArmor policy.  This item maps the counts of profiles and processes as per the results of the "apparmor_status" or "aa-status" command. 
+
+    Applicable Constraints:
+      - AppArmor has loaded profiles
+      - No AppArmor Profiles Are In Complain Mode
+      - No AppArmor Processes Are Unconfined
+
+Debian Package Info Test:
+  The dpkginfo_test is used to check information for a given DPKG package.
+
+  The dpkginfo_object element, consisting of a single name entity that identifies the package being checked, is used by a dpkginfo test to define the object to be evaluated. 
+
+  The dpkginfo_state element defines the different information that can be used to evaluate the specified DPKG package. This includes the architecture, epoch number, release, and version numbers. 
+
+    Applicable Constraints:
+      - Ensure the X Window system is not installed
+
+File Test:
+  The file_test is used to check metadata associated with UNIX files, of the sort returned by either an ls command, stat command or stat() system call.
+
+  The file_object element is used by a file test to define the specific file(s) to be evaluated. The file_object will collect all UNIX file types (directory, regular file, character device, block device, fifo, symbolic link, and socket). 
+  A file object defines the path and filename of the file(s). In addition, a number of behaviors may be provided that help guide the collection of objects. 
+  The set of files to be evaluated may be identified with either a complete filepath or a path and filename. Only one of these options may be selected.
+  It is important to note that the 'max_depth' and 'recurse_direction' attributes of the 'behaviors' element do not apply to the 'filepath' element, only to the 'path' and 'filename' elements.  This is because the 'filepath' element represents an absolute path to a particular file and it is not possible to recurse over a file. 
+
+  The file_state element defines the different metadata associated with a UNIX file. This includes the path, filename, type, group id, user id, size, etc. In addition, the permission associated with the file are also included. 
+
+    Applicable Constraints:
+      - Root Path Directories Are Owned By UID 0 And Not Writable By
+          Group Or Other
+      - No User Home Directories Have Permissions ----w-rwx
+      - No User Dot Files Have Permissions ----w--w-
+      - No User .netrc Files Have Permissions ---rwxrwx
+      - syslog Log Files Have Correct Permissions
+      - rsyslog Log Files Have Correct Permissions
+      - No User Home Directories Contain .rhost Files
+      - No User Home Directories Contain .netrc Files
+      - No User Home Directories Contain .forward Files
+      - All User Home Directories Exist
+      - All World Writable Directories Have Sticky Bit Set
+      - No World Writable Files Exist
+      - No Un-owned Files and Directories
+      - No Un-grouped Files and Directories
+
+Intel Listening Servers:
+  "**The inetlisteningservers_test has been deprecated and replaced by the inetlisteningserver510_test**"
+  
+  The inetlisteningservers_test is used to check if an application is listening on the network, either for a new connection or as part of an ongoing connection. This is limited to applications that are listening for connections that use the TCP or UDP protocols and have addresses represented as IPv4 or IPv6 addresses (AF_INET or AF_INET6). It is generally speaking the parsed output of running the command netstat -tuwlnpe with root privilege.
+
+  The inetlisteningservers_object element is used by an inetlisteningserver test to define the object to be evaluated. 
+
+  The inetlisteningservers_state element defines the different information that can be used to evaluate the specified inet listening server. This includes the local address, foreign address, port information, and process id. 
+
+    Applicable Constraints:
+      - No Servers Listening On Port 25
+
+Invalid Home Directory Ownership Test:
+  The invalidhomedirownership_testis used to determine what user owns the Home directory.
 
       Applicable Constraints:
+        - Check User Home Directory Ownership
 
-         -  AppArmor has loaded profiles
-         -  No AppArmor Profiles Are In Complain Mode
-         -  No AppArmor Processes Are Unconfined
+Password Test:
+  The password test is used to check metadata associated with the UNIX password file, of the sort returned by the passwd command. 
 
--  The Debian Package test is used to check information for a given DPKG
-   package.
+  The password_object element is used by a password test to define the object to be evaluated. A password object consists of a single username entity that identifies the user(s) whose password is to be evaluated.
 
-      Applicable Constraints:
-
-         -  Ensure the X Window system is not installed
-
--  The File test is used to check the contents of a text file (aka a
-   configuration file) by looking at individual blocks of text.
+  The password_state element defines the different information associated with the system passwords. See documentation on /etc/passwd for more details on the fields.
 
       Applicable Constraints:
+        - Default Group Set For root User
+        - System Accounts Disabled
+        - Check That Reserved UIDs Are Assigned to System Accounts
+        - No Users Have Shadow Group as Primary Group
 
-         -  Root Path Directories Are Owned By UID 0 And Not Writable By
-            Group Or Other
-         -  No User Home Directories Have Permissions ----w-rwx
-         -  No User Dot Files Have Permissions ----w--w-
-         -  No User .netrc Files Have Permissions ---rwxrwx
-         -  syslog Log Files Have Correct Permissions
-         -  rsyslog Log Files Have Correct Permissions
-         -  No User Home Directories Contain .rhost Files
-         -  No User Home Directories Contain .netrc Files
-         -  No User Home Directories Contain .forward Files
-         -  All User Home Directories Exist
-         -  All World Writable Directories Have Sticky Bit Set
-         -  No World Writable Files Exist
-         -  No Un-owned Files and Directories
-         -  No Un-grouped Files and Directories
+Process58 Test:
+  The process58_test is used to check information found in the UNIX processes. It is equivalent to parsing the output of the ps command. 
 
--  The inet listening servers test is used to check what applications
-   are listening on the network. This is limited to applications that
-   are listening for connections that use the TCP or UDP protocols and
-   have addresses represented as IPv4 or IPv6 addresses (AF_INET or
-   AF_INET6). It is generally using the parsed output of running the
-   command netstat -tuwlnpe with root privilege.
+  The process58_object element is used by a process58_test to define the specific process(es) to be evaluated. A process58_object defines the command line used to start the process(es) and pid.
+
+  The process58_state element defines the different metadata associated with a UNIX process. This includes the command line, pid, ppid, priority, and user id. 
 
       Applicable Constraints:
+        - There Are No Unconfined Daemons
+        - chronyd is running as chrony user
 
-         -  No Servers Listening On Port 25
+ Shadow Test:
+  The shadow test is used to check information from the /etc/shadow file for a specific user. This file contains a user's password, but also their password aging and lockout information.
 
--  The Invalid Home Directory Ownership test is used to determine what
-   user owns the Home directory.
+  The shadow_object element is used by a shadow test to define the shadow file to be evaluated. A shdow object consists of a single user entity that identifies the username associted with the shadow file.
 
-      Applicable Constraints:
-
-         -  Check User Home Directory Ownership
-
--  The password test is used to check specific policy associated with
-   passwords and the device screen lock.
+  he shadows_state element defines the different information associated with the system shadow file.
 
       Applicable Constraints:
-
-         -  Default Group Set For root User
-         -  System Accounts Disabled
-         -  Check That Reserved UIDs Are Assigned to System Accounts
-         -  No Users Have Shadow Group as Primary Group
-
--  The process58_test is used to check information found in the UNIX
-   processes. It is equivalent to parsing the output of the ps command.
-
-      Applicable Constraints:
-
-         -  There Are No Unconfined Daemons
-         -  chronyd is running as chrony user
-
--  The shadow test is used to check information from the /etc/shadow
-   file for a specific user. This file contains a user's password, but
-   also their password aging and lockout information.
-
-      Applicable Constraints:
-         -  Ensure no users with a Password have password expiration
+        - Ensure no users with a Password have password expiration
             over 365 days
-         -  Ensure no users with a Password have password expiration
+        - Ensure no users with a Password have password expiration
             over 90 days
-         -  Ensure no users with a Password have password change minimum
+        - Ensure no users with a Password have password change minimum
             under 7 days
-         -  Ensure no users with a Password have password expiration
+        - Ensure no users with a Password have password expiration
             warning under 7 days
-         -  Ensure no users with a Password have password inactivation
+        - Ensure no users with a Password have password inactivation
             over 30 days
-         -  System Accounts Locked
+        - System Accounts Locked
 
--  The Shell Command test is used to check the output of executed shell
+Shell Command Test:
+  - The Shell Command test is used to check the output of executed shell
    commands.
 
       Applicable Constraints:
+        - Firewall Rule Exists For All Open Ports
 
-         -  Firewall Rule Exists For All Open Ports
-
--  The symlink_test is used to obtain canonical path information for
+  - The symlink_test is used to obtain canonical path information for
    symbolic links.
 
       Applicable Constraints:
+        - systemd Does Not Default To graphical.target
 
-         -  systemd Does Not Default To graphical.target
-
--  The textfilecontent54_test element is used to check the contents of a
+  - The textfilecontent54_test element is used to check the contents of a
    text file (aka a configuration file) by looking at individual blocks
    of text.
 
       Applicable Constraints:
+        - Shadow Group is Empty
+        - /etc/profile.d/\* contains "umask 077"
+        - All Groups In /etc/passwd Exist In /etc/group
+        - auditd Collects Privileged Command Use
 
-         -  Shadow Group is Empty
-         -  /etc/profile.d/\* contains "umask 077"
-         -  All Groups In /etc/passwd Exist In /etc/group
-         -  auditd Collects Privileged Command Use
-
--  The variable test allows the value of a variable to be compared to a
+  - The variable test allows the value of a variable to be compared to a
    defined value. As an example one might use this test to validate that
    a variable being passed in from an external source falls within a
    specified range.
 
       Applicable Constraints:
-
-         -  Root Path Does Not Include ""
-         -  Root Path Does Not Include "."
-         -  Check For Duplicate UIDs
-         -  Check For Duplicate Group Names
-         -  Check For Duplicate User Names
-         -  Check For Duplicate GIDs
-         -  Ensure all users with a Password have password change date
+        - Root Path Does Not Include ""
+        - Root Path Does Not Include "."
+        - Check For Duplicate UIDs
+        - Check For Duplicate Group Names
+        - Check For Duplicate User Names
+        - Check For Duplicate GIDs
+        - Ensure all users with a Password have password change date
             in the past
 
 Technical Details
@@ -146,7 +163,7 @@ Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
 Human ID:
-   -  linux.custom_object_v1
+  - linux.custom_object_v1
 
 ====== ====== ====================================
 Name   Type   Description
@@ -155,70 +172,70 @@ object string The custom object being implemented.
 ====== ====== ====================================
 
 NOTE: The ``object`` parameter is governed by a constraint allowing only the following values:
-   -  N/A
-   -  All World Writable Directories Have Sticky Bit Set
-   -  No World Writable Files Exist
-   -  There Are No Unconfined Daemons
-   -  No Servers Listening On Port 25
-   -  System Accounts Disabled
-   -  System Accounts Locked
-   -  Default Group Set For root User
-   -  No Un-owned Files and Directories
-   -  No Un-grouped Files and Directories
-   -  systemd Does Not Default To graphical.target
-   -  rsyslog Log Files Have Correct Permissions
-   -  syslog Log Files Have Correct Permissions
-   -  auditd Collects Privileged Command Use
-   -  Check For Duplicate UIDs
-   -  Check For Duplicate GIDs
-   -  Check For Duplicate User Names
-   -  Check For Duplicate Group Names
-   -  No User Home Directories Have Permissions ----w-rwx
-   -  No User Dot Files Have Permissions ----w--w-
-   -  No User .netrc Files Have Permissions ---rwxrwx
-   -  No User Home Directories Contain .rhost Files
-   -  No User Home Directories Contain .netrc Files
-   -  No User Home Directories Contain .forward Files
-   -  All Groups In /etc/passwd Exist In /etc/group
-   -  All User Home Directories Exist
-   -  /etc/profile.d/\* contains "umask 077"
-   -  Check That Reserved UIDs Are Assigned to System Accounts
-   -  Root Path Does Not Include ""
-   -  Root Path Does Not Include "."
-   -  Root Path Directories Are Owned By UID 0 And Not Writable By Group
+  - N/A
+  - All World Writable Directories Have Sticky Bit Set
+  - No World Writable Files Exist
+  - There Are No Unconfined Daemons
+  - No Servers Listening On Port 25
+  - System Accounts Disabled
+  - System Accounts Locked
+  - Default Group Set For root User
+  - No Un-owned Files and Directories
+  - No Un-grouped Files and Directories
+  - systemd Does Not Default To graphical.target
+  - rsyslog Log Files Have Correct Permissions
+  - syslog Log Files Have Correct Permissions
+  - auditd Collects Privileged Command Use
+  - Check For Duplicate UIDs
+  - Check For Duplicate GIDs
+  - Check For Duplicate User Names
+  - Check For Duplicate Group Names
+  - No User Home Directories Have Permissions ----w-rwx
+  - No User Dot Files Have Permissions ----w--w-
+  - No User .netrc Files Have Permissions ---rwxrwx
+  - No User Home Directories Contain .rhost Files
+  - No User Home Directories Contain .netrc Files
+  - No User Home Directories Contain .forward Files
+  - All Groups In /etc/passwd Exist In /etc/group
+  - All User Home Directories Exist
+  - /etc/profile.d/\* contains "umask 077"
+  - Check That Reserved UIDs Are Assigned to System Accounts
+  - Root Path Does Not Include ""
+  - Root Path Does Not Include "."
+  - Root Path Directories Are Owned By UID 0 And Not Writable By Group
       Or Other
-   -  Check User Home Directory Ownership
-   -  AppArmor has loaded profiles
-   -  No AppArmor Profiles Are In Complain Mode
-   -  No AppArmor Processes Are Unconfined
-   -  Shadow Group is Empty
-   -  No Users Have Shadow Group as Primary Group
-   -  Ensure the X Window system is not installed
-   -  Ensure no users with a Password have password expiration over 90
+  - Check User Home Directory Ownership
+  - AppArmor has loaded profiles
+  - No AppArmor Profiles Are In Complain Mode
+  - No AppArmor Processes Are Unconfined
+  - Shadow Group is Empty
+  - No Users Have Shadow Group as Primary Group
+  - Ensure the X Window system is not installed
+  - Ensure no users with a Password have password expiration over 90
       days
-   -  Ensure no users with a Password have password expiration over 365
+  - Ensure no users with a Password have password expiration over 365
       days
-   -  Ensure no users with a Password have password change minimum under
+  - Ensure no users with a Password have password change minimum under
       7 days
-   -  Ensure no users with a Password have password expiration warning
+  - Ensure no users with a Password have password expiration warning
       under 7 days
-   -  Ensure no users with a Password have password inactivation over 30
+  - Ensure no users with a Password have password inactivation over 30
       days
-   -  chronyd is running as chrony user
-   -  Firewall Rule Exists For All Open Ports
-   -  Ensure all users with a Password have password change date in the
+  - chronyd is running as chrony user
+  - Firewall Rule Exists For All Open Ports
+  - Ensure all users with a Password have password change date in the
       past
 
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  Null Test
+  - Null Test
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
 Human ID:
-   -  null_test_v1
+  - null_test_v1
 
 ==== ==== ===========
 Name Type Description
@@ -264,8 +281,7 @@ SCAP
 XCCDF
 '''''
 
-For ``linux.custom_object_v1`` artifacts, the xccdf:check looks like
-this. There is no Value element in the XCCDF for this Artifact.
+For ``linux.custom_object_v1`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
 
 ::
 
@@ -284,7 +300,7 @@ OVAL
 
 Test
 
-   -  AppArmor has loaded profiles
+  - AppArmor has loaded profiles
 
 ::
 
@@ -329,7 +345,7 @@ State
 
 Test
 
-   -  No AppArmor Profiles Are In Complain Mode
+  - No AppArmor Profiles Are In Complain Mode
 
 ::
 
@@ -374,7 +390,7 @@ State
 
 Test
 
-   -  No AppArmor Processes Are Unconfined
+  - No AppArmor Processes Are Unconfined
 
 ::
 
@@ -419,7 +435,7 @@ State
 
 Test
 
-   -  Ensure the X Window system is not installed
+  - Ensure the X Window system is not installed
 
 ::
 
@@ -452,13 +468,13 @@ State
 
 ::
 
-N/A
+  N/A
 
 --------------
 
 Test
 
-   -  Root Path Directories Are Owned By UID 0 And Not Writable By Group
+  - Root Path Directories Are Owned By UID 0 And Not Writable By Group
       Or Other
 
 ::
@@ -541,7 +557,7 @@ Variable
 
 Test
 
-   -  No User Home Directories Have Permissions ----w-rwx
+  - No User Home Directories Have Permissions ----w-rwx
 
 ::
 
@@ -644,7 +660,7 @@ Variable
 
 Test
 
-   -  No User Dot Files Have Permissions ----w--w-
+  - No User Dot Files Have Permissions ----w--w-
 
 ::
 
@@ -742,7 +758,7 @@ Variable
 
 Test
 
-   -  No User .netrc Files Have Permissions ---rwxrwx
+  - No User .netrc Files Have Permissions ---rwxrwx
 
 ::
 
@@ -856,7 +872,7 @@ Variable
 
 Test
 
-   -  syslog Log Files Have Correct Permissions
+  - syslog Log Files Have Correct Permissions
 
 ::
 
@@ -954,7 +970,7 @@ Variable
 
 Test
 
-   -  rsyslog Log Files Have Correct Permissions
+  - rsyslog Log Files Have Correct Permissions
 
 ::
 
@@ -1052,7 +1068,7 @@ Variable
 
 Test
 
-   -  No User Home Directories Contain .rhost Files
+  - No User Home Directories Contain .rhost Files
 
 ::
 
@@ -1134,7 +1150,7 @@ Variable
 
 Test
 
-   -  No User Home Directories Contain .netrc Files
+  - No User Home Directories Contain .netrc Files
 
 ::
 
@@ -1216,7 +1232,7 @@ Variable
 
 Test
 
-   -  No User Home Directories Contain .forward Files
+  - No User Home Directories Contain .forward Files
 
 ::
 
@@ -1298,7 +1314,7 @@ Variable
 
 Test
 
-   -  All User Home Directories Exist
+  - All User Home Directories Exist
 
 ::
 
@@ -1377,7 +1393,7 @@ Variable
 
 Test
 
-   -  All World Writable Directories Have Sticky Bit Set
+  - All World Writable Directories Have Sticky Bit Set
 
 ::
 
@@ -1439,7 +1455,7 @@ State
 
 Test
 
-   -  No World Writable Files Exist
+  - No World Writable Files Exist
 
 ::
 
@@ -1502,7 +1518,7 @@ State
 
 Test
 
-   -  No Un-owned Files and Directories
+  - No Un-owned Files and Directories
 
 ::
 
@@ -1586,7 +1602,7 @@ Variable
 
 Test
 
-   -  No Un-grouped Files and Directories
+  - No Un-grouped Files and Directories
 
 ::
 
@@ -1678,7 +1694,7 @@ Variable
 
 Test
 
-   -  No Servers Listening On Port 25
+  - No Servers Listening On Port 25
 
 ::
 
@@ -1720,13 +1736,13 @@ State
 
 ::
 
-N/A
+  N/A
 
 --------------
 
 Test
 
-   -  Check User Home Directory Ownership
+  - Check User Home Directory Ownership
 
 ::
 
@@ -1754,13 +1770,13 @@ State
 
 ::
 
-N/A
+  N/A
 
 --------------
 
 Test
 
-   -  Default Group Set For root User
+  - Default Group Set For root User
 
 ::
 
@@ -1808,7 +1824,7 @@ State
 
 Test
 
-   -  System Accounts Disabled
+  - System Accounts Disabled
 
 ::
 
@@ -1862,7 +1878,7 @@ State
 
 Test
 
-   -  Check That Reserved UIDs Are Assigned to System Accounts
+  - Check That Reserved UIDs Are Assigned to System Accounts
 
 ::
 
@@ -1912,7 +1928,7 @@ State
 
 Test
 
-   -  No Users Have Shadow Group as Primary Group
+  - No Users Have Shadow Group as Primary Group
 
 ::
 
@@ -1994,7 +2010,7 @@ Variable
 
 Test
 
-   -  There Are No Unconfined Daemons
+  - There Are No Unconfined Daemons
 
 ::
 
@@ -2053,7 +2069,7 @@ State
 
 Test
 
-   -  chronyd is running as chrony user
+  - chronyd is running as chrony user
 
 ::
 
@@ -2134,7 +2150,7 @@ Variable
 
 Test
 
-   -  Ensure no users with a Password have password expiration over 365
+  - Ensure no users with a Password have password expiration over 365
       days
 
 ::
@@ -2190,7 +2206,7 @@ State
 
 Test
 
-   -  Ensure no users with a Password have password expiration over 90
+  - Ensure no users with a Password have password expiration over 90
       days
 
 ::
@@ -2246,7 +2262,7 @@ State
 
 Test
 
-   -  Ensure no users with a Password have password change minimum under
+  - Ensure no users with a Password have password change minimum under
       7 days
 
 ::
@@ -2302,7 +2318,7 @@ State
 
 Test
 
-   -  Ensure no users with a Password have password expiration warning
+  - Ensure no users with a Password have password expiration warning
       under 7 days
 
 ::
@@ -2358,7 +2374,7 @@ State
 
 Test
 
-   -  Ensure no users with a Password have password inactivation over 30
+  - Ensure no users with a Password have password inactivation over 30
       days
 
 ::
@@ -2414,7 +2430,7 @@ State
 
 Test
 
-   -  System Accounts Locked
+  - System Accounts Locked
 
 ::
 
@@ -2504,7 +2520,7 @@ Variable
 
 Test
 
-   -  Firewall Rule Exists For All Open Ports
+  - Firewall Rule Exists For All Open Ports
 
 ::
 
@@ -2610,7 +2626,7 @@ Variable
 
 Test
 
-   -  systemd Does Not Default To graphical.target
+  - systemd Does Not Default To graphical.target
 
 ::
 
@@ -2658,7 +2674,7 @@ State
 
 Test
 
-   -  Shadow Group is Empty
+  - Shadow Group is Empty
 
 ::
 
@@ -2699,13 +2715,13 @@ State
 
 ::
 
-N/A
+  N/A
 
 --------------
 
 Test
 
-   -  /etc/profile.d/\* contains "umask 077"
+  - /etc/profile.d/\* contains "umask 077"
 
 ::
 
@@ -2801,7 +2817,7 @@ Variable
 
 Test
 
-   -  All Groups In /etc/passwd Exist In /etc/group
+  - All Groups In /etc/passwd Exist In /etc/group
 
 ::
 
@@ -2895,7 +2911,7 @@ Variable
 
 Test
 
-   -  auditd Collects Privileged Command Use
+  - auditd Collects Privileged Command Use
 
 ::
 
@@ -3003,7 +3019,7 @@ Variable
 
 Test
 
-   -  Root Path Does Not Include ""
+  - Root Path Does Not Include ""
 
 ::
 
@@ -3080,7 +3096,7 @@ Variable
 
 Test
 
-   -  Root Path Does Not Include "."
+  - Root Path Does Not Include "."
 
 ::
 
@@ -3159,7 +3175,7 @@ Variable
 
 Test
 
-   -  Check For Duplicate UIDs
+  - Check For Duplicate UIDs
 
 ::
 
@@ -3250,7 +3266,7 @@ Variable
 
 Test
 
-   -  Check For Duplicate Group Names
+  - Check For Duplicate Group Names
 
 ::
 
@@ -3348,7 +3364,7 @@ Variable
 
 Test
 
-   -  Check For Duplicate User Names
+  - Check For Duplicate User Names
 
 ::
 
@@ -3445,7 +3461,7 @@ Variable
 
 Test
 
-   -  Check For Duplicate GIDs
+  - Check For Duplicate GIDs
 
 ::
 
@@ -3542,7 +3558,7 @@ Variable
 
 Test
 
-   -  Ensure all users with a Password have password change date in the
+  - Ensure all users with a Password have password change date in the
       past
 
 ::

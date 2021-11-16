@@ -31,7 +31,7 @@ Artifact Parameters
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  cisco_ios.line_config_line
+  - cisco_ios.line_config_line
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~

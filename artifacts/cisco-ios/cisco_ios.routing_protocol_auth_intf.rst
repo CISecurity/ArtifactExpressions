@@ -28,8 +28,8 @@ Artifact Parameters
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  cisco_ios.routing_protocol_auth_keychain
--  cisco_ios.routing_protocol_auth_type
+  - cisco_ios.routing_protocol_auth_keychain
+  - cisco_ios.routing_protocol_auth_type
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~

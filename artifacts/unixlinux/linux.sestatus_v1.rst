@@ -17,7 +17,7 @@ Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
 Human ID:
-   -  linux.service_v1
+  - linux.service_v1
 
 ======= ====== =====================================
 Name    Type   Description
@@ -28,13 +28,13 @@ service string The name of the service to be tested.
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  Unix: Service Enabled
+  - Unix: Service Enabled
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
 Human ID:
-   -  unix.service_enabled_v1
+  - unix.service_enabled_v1
 
 ======= ====== ================================
 Name    Type   Description
@@ -82,8 +82,7 @@ SCAP
 XCCDF
 '''''
 
-For ``linux.service_v1`` artifacts, the xccdf:check looks like this.
-There is no Value element in the XCCDF for this Artifact.
+For ``linux.service_v1`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
 
 ::
 

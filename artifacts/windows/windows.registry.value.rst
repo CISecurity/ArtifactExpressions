@@ -76,10 +76,10 @@ reg_qword_little_endian
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  windows.registry.value
--  existence_test
--  equal
--  equals
+  - windows.registry.value
+  - existence_test
+  - equal
+  - equals
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~

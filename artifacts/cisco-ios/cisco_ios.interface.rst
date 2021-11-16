@@ -39,9 +39,9 @@ subset of - superset of
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  cisco_ios.interface_existence_test
--  cisco_ios.interface_proxy_arp
--  cisco_ios.interface_urpf
+  - cisco_ios.interface_existence_test
+  - cisco_ios.interface_proxy_arp
+  - cisco_ios.interface_urpf
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~

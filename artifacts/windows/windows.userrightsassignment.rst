@@ -59,9 +59,9 @@ userright String The user right setting to be audited.
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  existence_test
--  equals
--  pattern match
+  - existence_test
+  - equals
+  - pattern match
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~

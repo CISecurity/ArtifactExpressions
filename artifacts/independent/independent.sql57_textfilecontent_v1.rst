@@ -126,7 +126,7 @@ only the following values:
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  Txt-Unix_File_or_Directory_Permissions_v2
+  - Txt-Unix_File_or_Directory_Permissions_v2
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~

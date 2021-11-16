@@ -23,8 +23,8 @@ operator String Comparison Operator.
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  cisco_asa.snmp_groups_priv
--  cisco_asa.existence_check
+  - cisco_asa.snmp_groups_priv
+  - cisco_asa.existence_check
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~

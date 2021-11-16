@@ -26,8 +26,8 @@ Artifact Parameters
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  cisco_ios.section_existence_test
--  cisco_ios.section_config_line
+  - cisco_ios.section_existence_test
+  - cisco_ios.section_config_line
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~

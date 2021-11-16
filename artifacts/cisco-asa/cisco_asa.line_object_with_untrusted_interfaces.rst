@@ -22,8 +22,8 @@ show_run_command String Show Run Command Fragment.
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  cisco_asa.line_config_line
--  cisco_asa.untrusted_interfaces_state
+  - cisco_asa.line_config_line
+  - cisco_asa.untrusted_interfaces_state
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~

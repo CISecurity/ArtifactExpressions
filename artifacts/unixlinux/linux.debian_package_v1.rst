@@ -31,7 +31,7 @@ Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
 Human ID:
-   -  linux.debian_package_v1
+  - linux.debian_package_v1
 
 ==== ====== =======================================================
 Name Type   Description
@@ -42,13 +42,13 @@ name string The name of the package being checked. Cannot be blank.
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  Existence Test
+  - Existence Test
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
 Human ID:
-   -  existence_test
+  - existence_test
 
 ===== ====== =======================
 Name  Type   Description
@@ -57,12 +57,12 @@ value string The value to be tested.
 ===== ====== =======================
 
 NOTE: The ``value`` parameter is governed by a constraint allowing only the following values:
-   -  all_exist
-   -  any_exist
-   -  at_least_one_exists
-   -  none_satisfy
-   -  none_exist
-   -  only_one_exists
+  - all_exist
+  - any_exist
+  - at_least_one_exists
+  - none_satisfy
+  - none_exist
+  - only_one_exists
 
 Generated Content
 ~~~~~~~~~~~~~~~~~
@@ -105,8 +105,7 @@ SCAP
 XCCDF
 '''''
 
-For ``linux.debian_package_v1`` artifacts, the xccdf:check looks like
-this. There is no Value element in the XCCDF for this Artifact.
+For ``linux.debian_package_v1`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
 
 ::
 
@@ -153,7 +152,7 @@ State
 
 ::
 
-N/A
+  N/A
 
 YAML
 ^^^^

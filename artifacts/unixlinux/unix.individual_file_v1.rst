@@ -26,7 +26,7 @@ Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
 Human ID:
-   -  unix.individual_file_v1
+  - unix.individual_file_v1
 
 +-----------+--------+-----------------------------------------------+
 | Name      | Type   | Description                                   |
@@ -40,29 +40,29 @@ Human ID:
 +-----------+--------+-----------------------------------------------+
 
 NOTE: The ``existence`` parameter is governed by a constraint allowing only the following values:
-   -  at_least_one_exists
-   -  none_exist
+  - at_least_one_exists
+  - none_exist
 
 NOTE: The ``check`` parameter is governed by a constraint allowing only the following values:
-   -  all
-   -  at least one
-   -  none satisfy
-   -  only one
+  - all
+  - at least one
+  - none satisfy
+  - only one
 
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  Pattern Match
--  Pattern Not Match
--  Null Test
--  Unix: File Attributes
+  - Pattern Match
+  - Pattern Not Match
+  - Null Test
+  - Unix: File Attributes
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
 Human IDs:
-   -  pattern match
-   -  pattern not match
+  - pattern match
+  - pattern not match
 
 ========= ====== ===========================
 Name      Type   Description
@@ -72,15 +72,15 @@ data_type string The data type of the value.
 ========= ====== ===========================
 
 NOTE: The ``data_type`` parameter is governed by a constraint allowing only the following values:
-   -  boolean
-   -  float
-   -  int
-   -  string
-   -  version
-   -  set
+  - boolean
+  - float
+  - int
+  - string
+  - version
+  - set
 
 Human ID:
-   -  null_test_v1
+  - null_test_v1
 
 ==== ==== ===========
 Name Type Description
@@ -89,7 +89,7 @@ N/A
 ==== ==== ===========
 
 Human ID:
-   -  unix.file_attributes_v1
+  - unix.file_attributes_v1
 
 +--------+-----------+-----------------------------------------------+
 | Name   | Type      | Description                                   |
@@ -147,9 +147,9 @@ Human ID:
 +--------+-----------+-----------------------------------------------+
 
 NOTE: All ``unix.file_attributes_v1`` parameters *EXCEPT* ``uid`` and ``gid`` are governed by a constraint allowing only the following values:
-   -  NA
-   -  set
-   -  unset
+  - NA
+  - set
+  - unset
 
 Generated Content
 ~~~~~~~~~~~~~~~~~
@@ -198,8 +198,7 @@ SCAP
 XCCDF
 '''''
 
-For ``unix.file_collection_v2`` artifacts, the xccdf:check looks like
-this. There is no Value element in the XCCDF for this Artifact.
+For ``unix.file_collection_v2`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
 
 ::
 
@@ -254,7 +253,7 @@ State
 
 ::
 
-N/A
+  N/A
 
 YAML
 ^^^^
@@ -348,14 +347,12 @@ JSON
      }
    }
 
-.. _generated-content-1:
 
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
 null_test_v1
 
-.. _xccdfae-1:
 
 XCCDF+AE
 ^^^^^^^^
@@ -399,8 +396,7 @@ SCAP
 XCCDF
 '''''
 
-For ``unix.file_collection_v2`` artifacts, the xccdf:check looks like
-this. There is no Value element in the XCCDF for this Artifact.
+For ``unix.file_collection_v2`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
 
 ::
 
@@ -453,7 +449,7 @@ State
 
 ::
 
-N/A
+  N/A
 
 .. _yaml-1:
 
@@ -596,8 +592,7 @@ SCAP
 XCCDF
 '''''
 
-For ``unix.file_collection_v2`` artifacts, the xccdf:check looks like
-this. There is no Value element in the XCCDF for this Artifact.
+For ``unix.file_collection_v2`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
 
 ::
 

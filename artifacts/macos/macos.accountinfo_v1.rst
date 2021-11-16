@@ -30,7 +30,7 @@ Artifact Parameters
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  macos.accountinfo_v1
+  - macos.accountinfo_v1
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
@@ -97,42 +97,42 @@ Test Type Parameters
 
 
 NOTE: The ``check_existence`` parameter is governed by a constraint allowing only the following values:
-   -  all_exist
-   -  any_exist
-   -  at_least_one_exists
-   -  none_satisfy
-   -  none_exist
-   -  only_one_exists
+  - all_exist
+  - any_exist
+  - at_least_one_exists
+  - none_satisfy
+  - none_exist
+  - only_one_exists
 
 NOTE: The ``check`` parameter is governed by a constraint allowing only the following values:
-   -  all
-   -  at least one
-   -  none satisfy
-   -  only one
+  - all
+  - at least one
+  - none satisfy
+  - only one
 
 NOTE: The ``operation`` parameter is governed by a constraint allowing
 only the following values:
-   -  equals
-   -  not equal
-   -  case insensitive equals
-   -  case insensitive not equal
-   -  greater than
-   -  less than
-   -  greater than or equal
-   -  less than or equal
-   -  bitwise and
-   -  bitwise or
-   -  pattern match
-   -  subset of
-   -  superset of
+  - equals
+  - not equal
+  - case insensitive equals
+  - case insensitive not equal
+  - greater than
+  - less than
+  - greater than or equal
+  - less than or equal
+  - bitwise and
+  - bitwise or
+  - pattern match
+  - subset of
+  - superset of
 
 NOTE: The ``datatype`` parameter is governed by a constraint allowing only the following values:
-   -  boolean
-   -  float
-   -  int
-   -  string
-   -  version
-   -  set
+  - boolean
+  - float
+  - int
+  - string
+  - version
+  - set
 
 
 Generated Content
@@ -185,8 +185,7 @@ SCAP
 XCCDF
 '''''
 
-For ``macos.accountinfo_v1`` artifacts, the xccdf:check looks like this.
-There is no Value in the xccdf for this Artifact.
+For ``macos.accountinfo_v1`` artifacts, the xccdf:check looks like this. There is no Value in the xccdf for this Artifact.
 
 ::
 

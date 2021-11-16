@@ -49,7 +49,7 @@ Artifact Parameters
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  iis.site.systemweb
+  - iis.site.systemweb
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~

@@ -25,8 +25,8 @@ Name Type Description
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  cisco_asa.major_version
--  cisco_asa.major_minor_version
+  - cisco_asa.major_version
+  - cisco_asa.major_minor_version
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~

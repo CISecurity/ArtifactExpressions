@@ -21,7 +21,7 @@ Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
 Human ID:
-   -  linux.partition_v1
+  - linux.partition_v1
 
 +-------------+--------+---------------------------------------------+
 | Name        | Type   | Description                                 |
@@ -37,30 +37,30 @@ Human ID:
 +-------------+--------+---------------------------------------------+
 
 NOTE: The ``existence`` parameter is governed by a constraint allowing only the following values:
-   -  all_exist
-   -  any_exist
-   -  at_least_one_exists
-   -  none_satisfy
-   -  none_exist
-   -  only_one_exists
+  - all_exist
+  - any_exist
+  - at_least_one_exists
+  - none_satisfy
+  - none_exist
+  - only_one_exists
 
 NOTE: The ``check`` parameter is governed by a constraint allowing only the following values:
-   -  all
-   -  at least one
-   -  none satisfy
-   -  only one
+  - all
+  - at least one
+  - none satisfy
+  - only one
 
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  Null Test
--  Linux: Partition Option
+  - Null Test
+  - Linux: Partition Option
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
 Human ID:
-   -  null_test_v1
+  - null_test_v1
 
 ==== ==== ===========
 Name Type Description
@@ -69,7 +69,7 @@ N/A
 ==== ==== ===========
 
 Human ID:
-   -  linux.partition_option_v1
+  - linux.partition_option_v1
 
 +-----------+--------+-----------------------------------------------+
 | Name      | Type   | Description                                   |
@@ -85,33 +85,33 @@ Human ID:
 +-----------+--------+-----------------------------------------------+
 
 NOTE: The ``check`` parameter is governed by a constraint allowing only the following values:
-   -  all
-   -  at least one
-   -  none satisfy
-   -  only one
+  - all
+  - at least one
+  - none satisfy
+  - only one
 
 NOTE: The ``operation`` parameter is governed by a constraint allowing only the following values:
-   -  equals
-   -  not equal
-   -  case insensitive equals
-   -  case insensitive not equal
-   -  greater than
-   -  less than
-   -  greater than or equal
-   -  less than or equal
-   -  bitwise and
-   -  bitwise or
-   -  pattern match
-   -  subset of
-   -  superset of
+  - equals
+  - not equal
+  - case insensitive equals
+  - case insensitive not equal
+  - greater than
+  - less than
+  - greater than or equal
+  - less than or equal
+  - bitwise and
+  - bitwise or
+  - pattern match
+  - subset of
+  - superset of
 
 NOTE: The ``data_type`` parameter is governed by a constraint allowing only the following values:
-   -  boolean
-   -  float
-   -  int
-   -  string
-   -  version
-   -  set
+  - boolean
+  - float
+  - int
+  - string
+  - version
+  - set
 
 Generated Content
 ~~~~~~~~~~~~~~~~~
@@ -143,7 +143,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
            </ae:test>
                      <ae:profiles>
                          <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1 "/>
-                     </ae:profiles>          
+                     </ae:profiles>
          </ae:artifact_expression>
        </xccdf:check-content>
      </xccdf:check>
@@ -155,8 +155,7 @@ SCAP
 XCCDF
 '''''
 
-For ``linux.partition_v1`` artifacts, the xccdf:check looks like this.
-There is no Value element in the XCCDF for this Artifact.
+For ``linux.partition_v1`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
 
 ::
 
@@ -204,7 +203,7 @@ State
 
 ::
 
-N/A
+  N/A
 
 YAML
 ^^^^
@@ -277,14 +276,10 @@ JSON
      }
    }
 
-.. _generated-content-1:
-
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
 linux.partition_option_v1
-
-.. _xccdfae-1:
 
 XCCDF+AE
 ^^^^^^^^
@@ -322,18 +317,13 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
      </xccdf:check>
    </xccdf:complex-check>
 
-.. _scap-1:
-
 SCAP
 ^^^^
-
-.. _xccdf-1:
 
 XCCDF
 '''''
 
-For ``linux.partition_v1`` artifacts, the xccdf:check looks like this.
-There is no Value element in the XCCDF for this Artifact.
+For ``linux.partition_v1`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
 
 ::
 
@@ -344,8 +334,6 @@ There is no Value element in the XCCDF for this Artifact.
          name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
      </check>
    </xccdf:complex-check>
-
-.. _oval-1:
 
 OVAL
 ''''
@@ -396,8 +384,6 @@ State
      </mount_options>
    </partition_state>  
 
-.. _yaml-1:
-
 YAML
 ^^^^
 
@@ -440,8 +426,6 @@ YAML
              name: "check"
              dt: "string"
              value: "[check.value]"
-
-.. _json-1:
 
 JSON
 ^^^^

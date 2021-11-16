@@ -52,7 +52,7 @@ allowing only the following values:
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  independent.sql57_v2
+  - independent.sql57_v2
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~

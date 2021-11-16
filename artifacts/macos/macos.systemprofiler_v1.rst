@@ -109,7 +109,7 @@ only the following values:
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  macos.systemprofiler_v1
+  - macos.systemprofiler_v1
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
@@ -201,8 +201,7 @@ SCAP
 XCCDF
 '''''
 
-For ``macos.systemprofiler_v1`` artifacts, the xccdf:check looks like this.
-There is no Value in the xccdf for this Artifact.
+For ``macos.systemprofiler_v1`` artifacts, the xccdf:check looks like this. There is no Value in the xccdf for this Artifact.
 
 ::
 

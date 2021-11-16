@@ -22,7 +22,7 @@ existence String existence of the user
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  null_test_v1
+  - null_test_v1
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~

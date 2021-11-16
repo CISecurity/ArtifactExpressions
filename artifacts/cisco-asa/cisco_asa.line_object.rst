@@ -26,10 +26,10 @@ show_subcommand String The name of a SHOW sub-command.
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  cisco_asa.line_config_line
--  cisco_asa.existence_check
--  cisco_asa.expected_value_regex_capture
--  cisco_asa.untrusted_interfaces_state
+  - cisco_asa.line_config_line
+  - cisco_asa.existence_check
+  - cisco_asa.expected_value_regex_capture
+  - cisco_asa.untrusted_interfaces_state
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~

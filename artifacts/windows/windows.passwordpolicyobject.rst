@@ -34,12 +34,12 @@ Password Hist Len - Password Complexity - Reversible Encryption
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  Equals
--  Not Equal
--  Less Than
--  Less Than or Equal
--  Greater Than
--  Greater Than or Equal
+  - Equals
+  - Not Equal
+  - Less Than
+  - Less Than or Equal
+  - Greater Than
+  - Greater Than or Equal
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~

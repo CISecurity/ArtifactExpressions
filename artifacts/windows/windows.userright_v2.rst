@@ -69,8 +69,8 @@ Artifact Parameters
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  windows.userright_trustee_name_v2
--  windows.userright_trustee_sid_v2
+  - windows.userright_trustee_name_v2
+  - windows.userright_trustee_sid_v2
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~

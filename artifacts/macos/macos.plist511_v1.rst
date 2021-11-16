@@ -173,8 +173,7 @@ SCAP
 XCCDF
 '''''
 
-For ``macos.plist511_v1`` artifacts, the xccdf:check looks like this.
-There is no Value in the xccdf for this Artifact.
+For ``macos.plist511_v1`` artifacts, the xccdf:check looks like this. There is no Value in the xccdf for this Artifact.
 
 ::
 

@@ -80,10 +80,10 @@ only the following values:
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  pattern match
--  pattern not match
--  existence_test
--  independent.xmlfilecontent_v2
+  - pattern match
+  - pattern not match
+  - existence_test
+  - independent.xmlfilecontent_v2
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~

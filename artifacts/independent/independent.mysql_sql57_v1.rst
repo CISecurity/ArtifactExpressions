@@ -134,12 +134,12 @@ only the following values:
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  independent.sql57_v1
--  existence_test
--  SQL-Unix_File_or_Directory_Permissions_v1
--  SQL-Unix_File_or_Directory_Permissions_v2
--  SQL-Unix_File_or_Directory_Basename_Permissions_v2
--  SQL-Unix_File_or_Directory_Permissions_sql57_object_v2
+  - independent.sql57_v1
+  - existence_test
+  - SQL-Unix_File_or_Directory_Permissions_v1
+  - SQL-Unix_File_or_Directory_Permissions_v2
+  - SQL-Unix_File_or_Directory_Basename_Permissions_v2
+  - SQL-Unix_File_or_Directory_Permissions_sql57_object_v2
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~

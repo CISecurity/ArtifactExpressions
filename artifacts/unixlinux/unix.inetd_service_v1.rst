@@ -34,7 +34,7 @@ Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
 Human ID:
-   -  unix.inetd_service_v1
+  - unix.inetd_service_v1
 
 ======== ====== ======================================================
 Name     Type   Description
@@ -46,13 +46,13 @@ protocol string The protocol the service is running on (tcp/udp).
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  Unix: Service Enabled
+  - Unix: Service Enabled
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
 Human ID:
-   -  unix.service_enabled_v1
+  - unix.service_enabled_v1
 
 ======= ====== ================================
 Name    Type   Description
@@ -101,8 +101,7 @@ SCAP
 XCCDF
 '''''
 
-For ``unix.inetd_service_v1`` artifacts, the xccdf:check looks like
-this. There is no Value element in the XCCDF for this Artifact.
+For ``unix.inetd_service_v1`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
 
 ::
 

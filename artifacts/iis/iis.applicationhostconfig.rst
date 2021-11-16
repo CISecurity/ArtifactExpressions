@@ -30,7 +30,7 @@ Artifact Parameters
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  iis.applicationhostconfig
+  - iis.applicationhostconfig
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~

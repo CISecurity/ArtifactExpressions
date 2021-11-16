@@ -36,7 +36,7 @@ Artifact Parameters
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  iis.applicationpool
+  - iis.applicationpool
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~

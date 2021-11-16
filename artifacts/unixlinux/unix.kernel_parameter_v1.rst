@@ -31,7 +31,7 @@ Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
 Human ID:
-   -  unix.kernel_parameter_v1
+  - unix.kernel_parameter_v1
 
 ========= ====== ===============================================
 Name      Type   Description
@@ -42,27 +42,27 @@ parameter string Kernel parameter to be checked.Cannot be blank.
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  Equals
--  Not Equal
--  Less Than
--  Less Than Or Equal
--  Greater Than
--  Greater Than Or Equal
--  Pattern Match
--  Pattern Not Match
+  - Equals
+  - Not Equal
+  - Less Than
+  - Less Than Or Equal
+  - Greater Than
+  - Greater Than Or Equal
+  - Pattern Match
+  - Pattern Not Match
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
 Human IDs:
-   -  equals
-   -  not equal
-   -  less than
-   -  less than or equal
-   -  greater than
-   -  greater than or equal
-   -  pattern match
-   -  pattern not match
+  - equals
+  - not equal
+  - less than
+  - less than or equal
+  - greater than
+  - greater than or equal
+  - pattern match
+  - pattern not match
 
 ========= ====== ===========================
 Name      Type   Description
@@ -72,12 +72,12 @@ data_type string The data type of the value.
 ========= ====== ===========================
 
 NOTE: The ``data_type`` parameter is governed by a constraint allowing only the following values:
-   -  boolean
-   -  float
-   -  int
-   -  string
-   -  version
-   -  set
+  - boolean
+  - float
+  - int
+  - string
+  - version
+  - set
 
 Generated Content
 ~~~~~~~~~~~~~~~~~

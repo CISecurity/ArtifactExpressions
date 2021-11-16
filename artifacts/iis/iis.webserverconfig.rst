@@ -38,7 +38,7 @@ Artifact Parameters
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  iis.webserverconfig
+  - iis.webserverconfig
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~

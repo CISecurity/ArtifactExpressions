@@ -21,7 +21,7 @@ Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
 Human ID:
-   -  unix.chkconfig_service_v2
+  - unix.chkconfig_service_v2
 
 +--------------------+--------+--------------------------------------+
 | Name               | Type   | Description                          |
@@ -43,30 +43,30 @@ Human ID:
 +--------------------+--------+--------------------------------------+
 
 NOTE: The ``runlevel_operation`` parameter is governed by a constraint allowing only the following values:
-   -  equals
-   -  not equal
-   -  case insensitive equals
-   -  case insensitive not equal
-   -  greater than
-   -  less than
-   -  greater than or equal
-   -  less than or equal
-   -  bitwise and
-   -  bitwise or
-   -  pattern match
-   -  subset of
-   -  superset of
+  - equals
+  - not equal
+  - case insensitive equals
+  - case insensitive not equal
+  - greater than
+  - less than
+  - greater than or equal
+  - less than or equal
+  - bitwise and
+  - bitwise or
+  - pattern match
+  - subset of
+  - superset of
 
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  Unix: Service Enabled
+  - Unix: Service Enabled
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
 Human ID:
-   -  unix.service_enabled_v1
+  - unix.service_enabled_v1
 
 ======= ====== ================================
 Name    Type   Description
@@ -116,8 +116,7 @@ SCAP
 XCCDF
 '''''
 
-For ``unix.chkconfig_service_v2`` artifacts, the xccdf:check looks like
-this. There is no Value element in the XCCDF for this Artifact.
+For ``unix.chkconfig_service_v2`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
 
 ::
 

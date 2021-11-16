@@ -70,13 +70,13 @@ Artifact Parameters
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  pattern match
--  pattern not match
--  existence_test
--  SQL-Unix_File_or_Directory_Permissions_v1
--  independent.txt_file_content_v1
--  Txt-Unix_File_or_Directory_Permissions_v1
--  Txt-Unix_File_or_Directory_Permissions_v2
+  - pattern match
+  - pattern not match
+  - existence_test
+  - SQL-Unix_File_or_Directory_Permissions_v1
+  - independent.txt_file_content_v1
+  - Txt-Unix_File_or_Directory_Permissions_v1
+  - Txt-Unix_File_or_Directory_Permissions_v2
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~

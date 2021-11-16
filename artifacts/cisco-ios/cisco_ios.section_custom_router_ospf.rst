@@ -21,7 +21,7 @@ Name Type Description
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  cisco_ios.section_custom_router_ospf_line
+  - cisco_ios.section_custom_router_ospf_line
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~

@@ -26,8 +26,8 @@ vds_name_operation String comparison operation
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  vmware:vds_vlan_mtu
--  vmware:vds_teaming_failover
+  - vmware:vds_vlan_mtu
+  - vmware:vds_teaming_failover
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~

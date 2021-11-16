@@ -28,7 +28,7 @@ Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
 Human ID:
-   -  linux.pam_cracklib_parameter_v1
+  - linux.pam_cracklib_parameter_v1
 
 ========= ====== ===========================================
 Name      Type   Description
@@ -39,21 +39,21 @@ parameter string The parameter being tested.Cannot be blank.
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  Existence Test
--  Equals
--  Not Equal
--  Less Than
--  Less Than Or Equal
--  Greater Than
--  Greater Than Or Equal
--  Pattern Match
--  Pattern Not Match
+  - Existence Test
+  - Equals
+  - Not Equal
+  - Less Than
+  - Less Than Or Equal
+  - Greater Than
+  - Greater Than Or Equal
+  - Pattern Match
+  - Pattern Not Match
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
 Human ID:
-   -  existence_test
+  - existence_test
 
 ===== ====== =======================
 Name  Type   Description
@@ -62,22 +62,22 @@ value string The value to be tested.
 ===== ====== =======================
 
 NOTE: The ``value`` parameter is governed by a constraint allowing only the following values:
-   -  all_exist
-   -  any_exist
-   -  at_least_one_exists
-   -  none_satisfy
-   -  none_exist
-   -  only_one_exists
+  - all_exist
+  - any_exist
+  - at_least_one_exists
+  - none_satisfy
+  - none_exist
+  - only_one_exists
 
 Human IDs:
-   -  equals
-   -  not equal
-   -  less than
-   -  less than or equal
-   -  greater than
-   -  greater than or equal
-   -  pattern match
-   -  pattern not match
+  - equals
+  - not equal
+  - less than
+  - less than or equal
+  - greater than
+  - greater than or equal
+  - pattern match
+  - pattern not match
 
 ========= ====== ===========================
 Name      Type   Description
@@ -87,10 +87,10 @@ data_type string The data type of the value.
 ========= ====== ===========================
 
 NOTE: The ``data_type`` parameter is governed by a constraint allowing only the following values:
-   -  boolean
-   -  float
-   -  int
-   -  string
+  - boolean
+  - float
+  - int
+  - string
 
    - version – set
 
@@ -193,7 +193,7 @@ State
 
 ::
 
-N/A
+  N/A
 
 YAML
 ^^^^
@@ -254,15 +254,11 @@ JSON
      }
    }
 
-.. _generated-content-1:
-
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
 equals not equal greater than greater than or equal less than less than
 or equal pattern match pattern not match
-
-.. _xccdfae-1:
 
 XCCDF+AE
 ^^^^^^^^
@@ -296,12 +292,8 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
      </xccdf:check>
    </xccdf:complex-check>
 
-.. _scap-1:
-
 SCAP
 ^^^^
-
-.. _xccdf-1:
 
 XCCDF
 '''''
@@ -318,8 +310,6 @@ like this. There is no Value element in the XCCDF for this Artifact.
          name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
      </check>
    </xccdf:complex-check>
-
-.. _oval-1:
 
 OVAL
 ''''
@@ -377,8 +367,6 @@ State
      </subexpression>
    </textfilecontent54_state>
 
-.. _yaml-1:
-
 YAML
 ^^^^
 
@@ -404,9 +392,7 @@ YAML
          - parameter: 
              name: "data_type"
              dt: "string"
-             value: "[data_type.value]"            
-
-.. _json-1:
+             value: "[data_type.value]"
 
 JSON
 ^^^^
@@ -445,7 +431,7 @@ JSON
                "dt": "string",
                "value": "[data_type.value]"
              }
-           }          
+           }
          ]
        }
      }

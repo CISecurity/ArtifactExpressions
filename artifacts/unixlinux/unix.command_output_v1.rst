@@ -20,7 +20,7 @@ Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
 Human ID:
-   -  unix.command_output_v1
+  - unix.command_output_v1
 
 ======= ====== ===================
 Name    Type   Description
@@ -31,18 +31,18 @@ command string The command to run.
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  Equals
--  Pattern Match
--  Pattern Not Match
--  Null Test
+  - Equals
+  - Pattern Match
+  - Pattern Not Match
+  - Null Test
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
 Human IDs:
-   -  equals
-   -  pattern match
-   -  pattern not match
+  - equals
+  - pattern match
+  - pattern not match
 
 ========= ====== ===========================
 Name      Type   Description
@@ -52,15 +52,15 @@ data_type string The data type of the value.
 ========= ====== ===========================
 
 NOTE: The ``data_type`` parameter is governed by a constraint allowing only the following values:
-   -  boolean
-   -  float
-   -  int
-   -  string
-   -  version
-   -  set
+  - boolean
+  - float
+  - int
+  - string
+  - version
+  - set
 
 Human ID:
-   -  null_test_v1
+  - null_test_v1
 
 ==== ==== ===========
 Name Type Description
@@ -272,14 +272,12 @@ JSON
      }
    }
 
-.. _generated-content-1:
 
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
 null_test_v1
 
-.. _xccdfae-1:
 
 XCCDF+AE
 ^^^^^^^^
@@ -320,8 +318,7 @@ SCAP
 XCCDF
 '''''
 
-For ``unix.command_output_v1`` artifacts, the xccdf:check looks like
-this. There is no Value element in the XCCDF for this Artifact.
+For ``unix.command_output_v1`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
 
 ::
 
@@ -370,7 +367,7 @@ State
 
 ::
 
-N/A
+  N/A
 
 .. _yaml-1:
 

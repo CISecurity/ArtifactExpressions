@@ -21,8 +21,8 @@ Name Type Description
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  existence_test
--  cisco_ios.snmp
+  - existence_test
+  - cisco_ios.snmp
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~

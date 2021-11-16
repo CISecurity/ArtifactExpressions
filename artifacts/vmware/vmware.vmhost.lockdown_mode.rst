@@ -28,7 +28,7 @@ Human ID:
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  vmware.vhmost.lockdown_mode
+  - vmware.vhmost.lockdown_mode
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
@@ -83,8 +83,7 @@ SCAP
 XCCDF
 '''''
 
-For ``macos.gatekeeper_v1`` artifacts, the xccdf:check looks like this.
-There is no Value in the xccdf for this Artifact.
+For ``macos.gatekeeper_v1`` artifacts, the xccdf:check looks like this. There is no Value in the xccdf for this Artifact.
 
 ::
 

@@ -31,7 +31,7 @@ only the following values: - default - 32_bit - 64_bit
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  windows.user_registry_value_v1
+  - windows.user_registry_value_v1
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~

@@ -29,7 +29,7 @@ unknown String
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  independent.unknown
+  - independent.unknown
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~

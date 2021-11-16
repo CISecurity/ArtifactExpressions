@@ -50,8 +50,8 @@ Artifact Parameters
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  independent.sql57_v1
--  existence_test
+  - independent.sql57_v1
+  - existence_test
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~

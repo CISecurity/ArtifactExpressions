@@ -31,7 +31,7 @@ Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
 Human ID:
-   -  unix.individual_file_tomcat_v1
+  - unix.individual_file_tomcat_v1
 
 +-----------------+--------+-----------------------------------------+
 | Name            | Type   | Description                             |
@@ -57,29 +57,29 @@ Human ID:
 +-----------------+--------+-----------------------------------------+
 
 NOTE: The ``check`` parameter is governed by a constraint allowing only the following values:
-   -  all
-   -  at least one
-   -  none satisfy
-   -  only one
+  - all
+  - at least one
+  - none satisfy
+  - only one
 
 NOTE: The ``check_existence`` parameter is governed by a constraint allowing only the following values:
-   -  all_exist
-   -  any_exist
-   -  at_least_one_exists
-   -  none_satisfy
-   -  none_exist
-   -  only_one_exists
+  - all_exist
+  - any_exist
+  - at_least_one_exists
+  - none_satisfy
+  - none_exist
+  - only_one_exists
 
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  Existence Test
+  - Existence Test
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
 Human ID:
-   -  existence_test
+  - existence_test
 
 ===== ====== =======================
 Name  Type   Description
@@ -88,12 +88,12 @@ value string The value to be tested.
 ===== ====== =======================
 
 NOTE: The ``value`` parameter is governed by a constraint allowing only the following values:
-   -  all_exist
-   -  any_exist
-   -  at_least_one_exists
-   -  none_satisfy
-   -  none_exist
-   -  only_one_exists
+  - all_exist
+  - any_exist
+  - at_least_one_exists
+  - none_satisfy
+  - none_exist
+  - only_one_exists
 
 Generated Content
 ~~~~~~~~~~~~~~~~~
@@ -252,7 +252,7 @@ State
 
 ::
 
-N/A
+  N/A
 
 Variable
 

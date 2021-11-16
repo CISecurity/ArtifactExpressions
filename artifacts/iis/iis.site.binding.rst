@@ -26,7 +26,7 @@ site_name String The name of the site to collect. Can be a regex
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  iis.site.binding.host_header
+  - iis.site.binding.host_header
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~

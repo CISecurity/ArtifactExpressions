@@ -23,7 +23,7 @@ Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
 Human ID:
-   -  linux.systemd_unit_dependency_v1
+  - linux.systemd_unit_dependency_v1
 
 +-----------+--------+-----------------------------------------------+
 | Name      | Type   | Description                                   |
@@ -39,30 +39,30 @@ Human ID:
 +-----------+--------+-----------------------------------------------+
 
 NOTE: The ``operation`` parameter is governed by a constraint allowing only the following values:
-   -  equals
-   -  not equal
-   -  case insensitive equals
-   -  case insensitive not equal
-   -  greater than
-   -  less than
-   -  greater than or equal
-   -  less than or equal
-   -  bitwise and
-   -  bitwise or
-   -  pattern match
-   -  subset of
-   -  superset of
+  - equals
+  - not equal
+  - case insensitive equals
+  - case insensitive not equal
+  - greater than
+  - less than
+  - greater than or equal
+  - less than or equal
+  - bitwise and
+  - bitwise or
+  - pattern match
+  - subset of
+  - superset of
 
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
-   -  Linux: Systemd Unit Dependency
+  - Linux: Systemd Unit Dependency
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
 Human ID:
-   -  linux.systemd_unit_dependency_v1
+  - linux.systemd_unit_dependency_v1
 
 +----------------------+--------+-----------------------------+
 | Name                 | Type   | Description                 |
@@ -92,8 +92,8 @@ Human ID:
 +----------------------+--------+-----------------------------+
 
 NOTE: The ``unit_operation`` and ``dependency_operation`` parameters are governed by a constraint allowing only the following values:
-   -  equals
-   -  not equal
+  - equals
+  - not equal
 
 Generated Content
 ~~~~~~~~~~~~~~~~~

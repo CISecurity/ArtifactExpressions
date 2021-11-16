@@ -32,7 +32,7 @@ Artifact Parameters
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  cisco_ios.global_command
+  - cisco_ios.global_command
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
