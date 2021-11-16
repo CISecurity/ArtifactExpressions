@@ -35,10 +35,11 @@ Supported Test Types
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
+
 +-------------------------------------+-------------+------------------+
 | Name                                | Type        | Description      |
 +=====================================+=============+==================+
-| existence_check 	                  | String      | Define how many  |
+| existence_check                     | String      | Define how many  |
 |                                     |             | items should be  |
 |                                     |             | collected        |
 +-------------------------------------+-------------+------------------+
@@ -56,13 +57,14 @@ Test Type Parameters
 |                                     |             | user of the      |
 |                                     |             | account to       |
 |                                     |             | gather           |
-|                                     |             | information from.|
+|                                     |             | information      |
+|                                     |             | from.            |
 +-------------------------------------+-------------+------------------+
 | password                            | String      | Obfuscated       |
 |                                     |             | (*****) or       |
 |                                     |             | encrypted        |
-|                                     |             | password         |
-|                                     |             | for this user    |
+|                                     |             | password for     |
+|                                     |             | this user        |
 +-------------------------------------+-------------+------------------+
 | uid                                 | Integer     | The numeric user |
 |                                     |             | id, or uid, is   |
@@ -75,12 +77,13 @@ Test Type Parameters
 |                                     |             | owner of the     |
 |                                     |             | file.            |
 +-------------------------------------+-------------+------------------+
-| gid                                 | Integer     | Group ID of      |
-|                                     |             | this account     |
+| gid                                 | Integer     | Group ID of this |
+|                                     |             | account          |
 +-------------------------------------+-------------+------------------+
-| realname                            | String      | User's real name,|
-|                                     |             | aka gecos field  |
-|                                     |             | of /etc/passwd.  |
+| realname                            | String      | User's real      |
+|                                     |             | name, aka gecos  |
+|                                     |             | field of         |
+|                                     |             | /etc/passwd.     |
 +-------------------------------------+-------------+------------------+
 | home_dir                            | String      | The home         |
 |                                     |             | directory for    |
