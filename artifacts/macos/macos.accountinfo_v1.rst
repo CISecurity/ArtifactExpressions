@@ -139,7 +139,7 @@ Generated Content
 ~~~~~~~~~~~~~~~~~
 
 macos.accountinfo_v1
-^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
 
 XCCDF+AE
 ^^^^^^^^
