@@ -13,7 +13,7 @@ Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
 Human ID:
-  - vmware.virtual_machine.device.harddisk
+  vmware.virtual_machine.device.harddisk
 
 +-------------------------------------+-------------+------------------+
 | Name                                | Type        | Description      |

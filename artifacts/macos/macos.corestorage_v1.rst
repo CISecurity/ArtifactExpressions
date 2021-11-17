@@ -17,7 +17,7 @@ Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
 Human ID:
-  - macos.corestorage_v1
+  macos.corestorage_v1
 
 +-----------------------------+--------+---------------------------------------+
 | Name                        | Type   | Description                           |
@@ -62,7 +62,7 @@ Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
 Human ID:
-  - macos.corestorage_v1
+  macos.corestorage_v1
 
 +-----------------------------+--------+---------------------------------------+
 | Name                        | Type   | Description                           |

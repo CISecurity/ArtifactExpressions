@@ -34,7 +34,7 @@ Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
 Human ID:
-  - unix.xinetd_service_v1
+  unix.xinetd_service_v1
 
 ======== ====== ======================================================
 Name     Type   Description

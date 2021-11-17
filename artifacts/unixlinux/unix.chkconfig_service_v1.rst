@@ -21,7 +21,7 @@ Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
 Human ID:
-  - unix.chkconfig_service_v1
+  unix.chkconfig_service_v1
 
 ======= ====== ======================================================
 Name    Type   Description
@@ -38,7 +38,7 @@ Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
 Human ID:
-  - unix.service_enabled_v1
+  unix.service_enabled_v1
 
 ======= ====== ================================
 Name    Type   Description

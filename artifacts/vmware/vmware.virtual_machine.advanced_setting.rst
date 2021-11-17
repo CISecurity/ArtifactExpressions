@@ -13,7 +13,7 @@ Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
 Human ID:
-  - vmware.virtual_machine.advanced_setting
+  vmware.virtual_machine.advanced_setting
 
 +-------------------------------------+-------------+------------------+
 | Name                                | Type        | Description      |

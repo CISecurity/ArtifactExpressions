@@ -13,7 +13,7 @@ Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
 Human ID:
-  - vmware.virtual_port_group
+  vmware.virtual_port_group
 
 +-------------------------------------+-------------+------------------+
 | Name                                | Type        | Description      |

@@ -36,8 +36,6 @@ Name  Type   Description
 value String Value.
 ===== ====== ===========
 
-.. _cisco_ios.snmp-1:
-
 cisco_ios.snmp
 ^^^^^^^^^^^^^^
 

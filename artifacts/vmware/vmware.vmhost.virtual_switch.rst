@@ -13,7 +13,7 @@ Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
 Human ID:
-  - vmware.vmhost.virtual_switch
+  vmware.vmhost.virtual_switch
 
 +-------------------------------------+-------------+------------------+
 | Name                                | Type        | Description      |

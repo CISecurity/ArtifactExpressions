@@ -23,7 +23,7 @@ Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
 Human ID:
-  - unix.sshd_v2
+  unix.sshd_v2
 
 +------+--------+----------------------------------------------------+
 | Name | Type   | Description                                        |
@@ -42,7 +42,7 @@ Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
 Human ID:
-  - unix.sshd_v2
+  unix.sshd_v2
 
 +-----------------+--------+-----------------------------------------+
 | Name            | Type   | Description                             |

@@ -13,7 +13,7 @@ Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
 Human ID:
-  - vmware.vds_portgroup_v2
+  vmware.vds_portgroup_v2
 
 +--------------------------+--------+-----------------------------+
 | Name                     | Type   | Description                 |

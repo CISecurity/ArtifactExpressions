@@ -23,7 +23,7 @@ Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
 Human ID:
-  - linux.systemd_unit_dependency_v1
+  linux.systemd_unit_dependency_v1
 
 +-----------+--------+-----------------------------------------------+
 | Name      | Type   | Description                                   |
@@ -62,7 +62,7 @@ Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
 Human ID:
-  - linux.systemd_unit_dependency_v1
+  linux.systemd_unit_dependency_v1
 
 +----------------------+--------+-----------------------------+
 | Name                 | Type   | Description                 |

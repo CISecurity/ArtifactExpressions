@@ -13,7 +13,7 @@ Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
 Human ID:
-  - vmware.vmhost.module.signature_status
+  vmware.vmhost.module.signature_status
 
 +-------------------------------------+-------------+------------------+
 | Name                                | Type        | Description      |

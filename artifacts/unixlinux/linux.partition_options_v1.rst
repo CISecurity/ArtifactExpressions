@@ -21,7 +21,7 @@ Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
 Human ID:
-  - linux.partition_options_v1
+  linux.partition_options_v1
 
 =========== ====== =====================================================
 Name        Type   Description
@@ -38,7 +38,7 @@ Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
 Human ID:
-  - set.includes_v1
+  set.includes_v1
 
 ========= ====== ===========================
 Name      Type   Description

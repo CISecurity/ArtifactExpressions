@@ -20,7 +20,7 @@ Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
 Human ID:
-  - macos.softwareupdate_v1
+  macos.softwareupdate_v1
 
 +-------------------------------------+-------------+------------------+
 | Name                                | Type        | Description      |
@@ -48,7 +48,7 @@ Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
 Human ID:
-  - macos.softwareupdate_v1
+  macos.softwareupdate_v1
 
 +-------------------------------------+-------------+------------------+
 | Name                                | Type        | Description      |

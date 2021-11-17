@@ -13,7 +13,7 @@ Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
 Human ID:
-  - vmware.vmhost.ntp_server
+  vmware.vmhost.ntp_server
 
 +-------------------------------------+-------------+------------------+
 | Name                                | Type        | Description      |

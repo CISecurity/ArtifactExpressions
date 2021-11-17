@@ -27,7 +27,7 @@ Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
 Human ID:
-  - unix.sshd_parameter_v1
+  unix.sshd_parameter_v1
 
 ========= ====== ===================================================
 Name      Type   Description
@@ -79,7 +79,7 @@ NOTE: The ``data_type`` parameter is governed by a constraint allowing only the 
   - set
 
 Human ID:
-  - existence_test
+  existence_test
 
 ===== ====== =======================
 Name  Type   Description
@@ -453,8 +453,6 @@ YAML
             name: "value"
             dt: "string"
             value: "[value.value]"
-
-.. _json-1:
 
 JSON
 ^^^^

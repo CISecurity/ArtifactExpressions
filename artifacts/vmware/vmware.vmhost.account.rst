@@ -13,7 +13,7 @@ Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
 Human ID:
-  - vmware.vmhost.account
+  vmware.vmhost.account
 
 +-------------------------------------+-------------+------------------+
 | Name                                | Type        | Description      |

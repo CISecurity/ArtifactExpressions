@@ -13,7 +13,7 @@ Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
 Human ID:
-  - vmware.vmhost.bus_adapter.iscsi.chap.mutual
+  vmware.vmhost.bus_adapter.iscsi.chap.mutual
 
 +-------------------------------------+-------------+------------------+
 | Name                                | Type        | Description      |

@@ -13,7 +13,7 @@ Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
 Human ID:
-  - vmware.vhmost.lockdown_mode
+  vmware.vhmost.lockdown_mode
 
 +-------------------------------------+-------------+------------------+
 | Name                                | Type        | Description      |
