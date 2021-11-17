@@ -2,12 +2,12 @@ VMware: VM Host: Authentication Setting
 =======================================
 
 Description
-  -----------
+-----------
 
 The VMware: VM Host: Authentication Setting test is used to verify an ESXi host is configured to use a directory service such as Active Directory. 
 
 Technical Details
-  -----------------
+-----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~

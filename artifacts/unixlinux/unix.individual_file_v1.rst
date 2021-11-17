@@ -2,7 +2,7 @@ Unix: Individual File
 =====================
 
 Description
-  -----------
+-----------
 
 The Unix: Individual File test is used to check the contents of a text
 file (aka a configuration file) by looking at individual blocks of text.
@@ -20,7 +20,7 @@ the file path and name, as well as the text block in question and the
 value of the subexpressions.
 
 Technical Details
-  -----------------
+-----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~

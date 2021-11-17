@@ -2,12 +2,12 @@ windows.user
 ============
 
 Description
-  -----------
+-----------
 
 The user_test is used to check information about Windows users.
 
 Technical Details
-  -----------------
+-----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~

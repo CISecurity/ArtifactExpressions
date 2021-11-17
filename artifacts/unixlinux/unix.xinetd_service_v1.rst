@@ -2,7 +2,7 @@ Unix: Xinetd Service
 ====================
 
 Description
-  -----------
+-----------
 
 The Unix: Xinetd Service test is used to check information associated
 with different Internet services. The textfilecontent54_test elements
@@ -28,7 +28,7 @@ The optional inetd_state element defines the different information
 associated with a specific Internet service.
 
 Technical Details
-  -----------------
+-----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~

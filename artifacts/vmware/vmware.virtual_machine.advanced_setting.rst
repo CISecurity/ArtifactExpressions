@@ -2,12 +2,12 @@ VMware: Virtual Machine: Advanced Setting
 =========================================
 
 Description
-  -----------
+-----------
 
 The VMware: Virtual Machine: Advanced Setting test is used to verify the status of specified advanced settings in the virtual machine configuration file.
 
 Technical Details
-  -----------------
+-----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~

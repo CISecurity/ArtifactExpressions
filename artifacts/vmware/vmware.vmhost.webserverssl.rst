@@ -2,12 +2,12 @@ VMware: VM Host: WebServerSSL
 =============================
 
 Description
-  -----------
+-----------
 
 The VMware: VM Host: WebServerSSL test is used to verify default self-signed certificates for ESXi communication are not used.
 
 Technical Details
-  -----------------
+-----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~

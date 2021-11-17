@@ -2,7 +2,7 @@ Unix: Shadow Parameter
 ======================
 
 Description
-  -----------
+-----------
 
 The Unix: Shadow Parameter test is used to check information from the
 /etc/shadow file for a specific user. This file contains a user’s
@@ -16,7 +16,7 @@ The optional shadows_state element defines the different information
 associated with the system shadow file.
 
 Technical Details
-  -----------------
+-----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~

@@ -2,12 +2,12 @@ vmware:vmhost_vswitchpolicy
 ===========================
 
 Description
-  -----------
+-----------
 
 The vmware:vmhost_vswitchpolicy test is used to verify the vSwitch Forged Transmits policy is set to reject forged transmissions.
 
 Technical Details
-  -----------------
+-----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~

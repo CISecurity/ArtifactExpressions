@@ -2,7 +2,7 @@ macos.systemprofiler_v1
 =======================
 
 Description
-  -----------
+-----------
 
 The systemprofiler_test is used to check the properties of the
 plist-style XML output from the “system_profiler -xml ” command, for
@@ -14,7 +14,7 @@ optional state element specifies the data to check.
 
 
 Technical Details
-  -----------------
+-----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~

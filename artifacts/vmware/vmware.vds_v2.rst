@@ -2,12 +2,12 @@ vmware:vds
 ==========
 
 Description
-  -----------
+-----------
 
 The vmware:vds test is used to verify vSphere Distributed Switch health checks are disabled.
 
 Technical Details
-  -----------------
+-----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~

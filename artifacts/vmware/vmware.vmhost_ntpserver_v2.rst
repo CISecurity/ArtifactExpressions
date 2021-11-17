@@ -2,12 +2,12 @@ vmware:vmhost_ntpserver
 =======================
 
 Description
-  -----------
+-----------
 
 The vmware:vmhost_ntpserver test is used to verify NTP time synchronization is configured correctly and enabled on each VMware ESXi host.
 
 Technical Details
-  -----------------
+-----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~

@@ -2,14 +2,14 @@ independent.xmlfilecontent_v2
 ==============================
 
 Description
-  -----------
+-----------
 
 The independent.xmlfilecontent_v2 is used to explore the contents of an xml 
 file. This test allows specific pieces of an xml document specified using 
 xpath to be tested. 
 
 Technical Details
-  -----------------
+-----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~

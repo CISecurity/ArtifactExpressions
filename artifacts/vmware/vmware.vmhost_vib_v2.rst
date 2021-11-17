@@ -2,12 +2,12 @@ vmware:vmhost_vib
 =================
 
 Description
-  -----------
+-----------
 
 The vmware:vmhost_vib test is used to verify the Image Profile vSphere Installation Bundle (VIB) acceptance level is configured properly.
 
 Technical Details
-  -----------------
+-----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~

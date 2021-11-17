@@ -2,7 +2,7 @@ Unix: File Collection
 =====================
 
 Description
-  -----------
+-----------
 
 The Unix: File Collection test is used to check metadata associated with
 UNIX files, of the sort returned by either an ls command, stat command
@@ -25,7 +25,7 @@ with a file, including the path, filename, owner, size, last modified
 time, version, etc.
 
 Technical Details
-  -----------------
+-----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~

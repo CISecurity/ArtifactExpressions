@@ -2,7 +2,7 @@ Linux: Custom Object
 ====================
 
 Description
-  -----------
+-----------
 
 The Linux: Custom Object test is specified by the Custom Object's
 specified constraint. Please see below:
@@ -184,7 +184,7 @@ Variable Test:
           in the past
 
 Technical Details
-  -----------------
+-----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~

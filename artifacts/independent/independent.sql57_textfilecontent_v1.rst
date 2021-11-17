@@ -2,13 +2,13 @@ independent.sql57_textfilecontent_v1
 ======================================
 
 Description
-  -----------
+-----------
 
 The independent.sql57_textfilecontent_v1 is used to check the contents of a 
 text file (aka a configuration file) by looking at individual blocks of text. 
 
 Technical Details
-  -----------------
+-----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~

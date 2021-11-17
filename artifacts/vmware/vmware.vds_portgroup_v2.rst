@@ -2,12 +2,12 @@ vmware:vds_portgroup
 ====================
 
 Description
-  -----------
+-----------
 
 The vmware:vds_portgroup test is used to verify override port policies are disabled for vSphere distributed portgroups on the specified vSphere distributed switch.
 
 Technical Details
-  -----------------
+-----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~

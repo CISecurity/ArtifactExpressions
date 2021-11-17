@@ -2,14 +2,14 @@ independent.text_file_content_tomcat_v1
 =======================================
 
 Description
-  -----------
+-----------
 
 The independent.text_file_content_tomcat_v1 is used to check the
 contents of a text file (aka a configuration file) by looking at
 individual blocks of text.
 
 Technical Details
-  -----------------
+-----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~

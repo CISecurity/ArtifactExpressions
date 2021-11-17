@@ -2,12 +2,12 @@ vmware:vmhost_authentication
 ============================
 
 Description
-  -----------
+-----------
 
 The vmware:vmhost_authentication test is used to verify Active Directory is used for local user authentication.
 
 Technical Details
-  -----------------
+-----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~

@@ -2,7 +2,7 @@ Unix: Kernel Parameter
 ======================
 
 Description
-  -----------
+-----------
 
 The Unix: Kernel Parameter test is used to check the values associated
 with the kernel parameters that are used by the local system. Test
@@ -25,7 +25,7 @@ The optional sysctl_state contains two entities that are used to check
 the kernel parameter name and value(s).
 
 Technical Details
-  -----------------
+-----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~

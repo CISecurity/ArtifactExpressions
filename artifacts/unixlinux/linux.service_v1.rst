@@ -2,7 +2,7 @@ Linux: Service
 ==============
 
 Description
-  -----------
+-----------
 
 The Linux: Service test utilizes a systemdunitproperty_test to retrieve 
 information about systemd units in the form of properties. For more information 
@@ -13,7 +13,7 @@ The systemdunitproperty_object element is used by a systemdunitproperty_test to 
 The systemdunitproperty_state element holds information about properties of a specific systemd unit. 
 
 Technical Details
-  -----------------
+-----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~

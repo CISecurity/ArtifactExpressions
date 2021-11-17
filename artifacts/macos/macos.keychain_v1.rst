@@ -2,7 +2,7 @@ macos.keychain_v1
 =================
 
 Description
-  -----------
+-----------
 
 The keychain_test is used to check the properties of the plist-style XML
 output from the “security show-keychain-info >keychain<” command, for
@@ -14,7 +14,7 @@ state element specifies the data to check.
 
 
 Technical Details
-  -----------------
+-----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~

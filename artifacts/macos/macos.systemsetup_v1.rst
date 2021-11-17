@@ -2,7 +2,7 @@ macos.systemsetup_v1
 ====================
 
 Description
-  -----------
+-----------
 
 The systemsetup_test is used to check systemsetup properties. It is a
 singleton object. It extends the standard TestType as defined in the
@@ -11,7 +11,7 @@ for more information. The state element specifies the system setup
 elements to check
 
 Technical Details
-  -----------------
+-----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~

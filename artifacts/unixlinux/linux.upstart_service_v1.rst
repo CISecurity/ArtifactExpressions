@@ -2,7 +2,7 @@ Linux: Upstart Service
 ======================
 
 Description
-  -----------
+-----------
 
 The Linux: Upstart Service test executes a shell command and evaluates
 the lines of output to determine if a service is enabled.
@@ -14,7 +14,7 @@ The optional shellcommand_state element specifies the output value to
 check.
 
 Technical Details
-  -----------------
+-----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~

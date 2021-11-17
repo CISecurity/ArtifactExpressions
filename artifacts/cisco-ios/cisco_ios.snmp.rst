@@ -2,13 +2,13 @@ cisco_ios.snmp
 ==============
 
 Description
-  -----------
+-----------
 
 The cisco_ios.snmp is used to check the properties of specific output
 lines from an SNMP configuration.
 
 Technical Details
-  -----------------
+-----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~

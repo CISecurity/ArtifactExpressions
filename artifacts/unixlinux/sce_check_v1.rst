@@ -2,14 +2,14 @@ Script Check Engine Check
 =========================
 
 Description
-  -----------
+-----------
 
 The Script Check Engine Check test defines a check system by executing scripts in various scripting languages, then evaluating XCCDF rules compliance based on the results. 
 
 There are no OVAL tests, objects or states generated.
 
 Technical Details
-  -----------------
+-----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~

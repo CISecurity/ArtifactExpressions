@@ -2,13 +2,13 @@ independent.xmlfilecontent_tomcat_v1
 ====================================
 
 Description
-  -----------
+-----------
 
 The independent.xmlfilecontent_tomcat_v1 is used to explore the contents
 of an xml file.
 
 Technical Details
-  -----------------
+-----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~

@@ -2,7 +2,7 @@ Linux: Pam_cracklib Parameter
 =============================
 
 Description
-  -----------
+-----------
 
 The Linux: Pam_cracklib Parameter test is used to test the value of
 pam_cracklib parameters by looking at individual blocks of text in
@@ -22,7 +22,7 @@ used to check the file path and name, as well as the text block in
 question and the value of the subexpressions.
 
 Technical Details
-  -----------------
+-----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~

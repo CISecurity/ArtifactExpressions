@@ -2,7 +2,7 @@ macos:softwareupdate
 ===================
 
 Description
-  -----------
+-----------
 
 The macos:softwareupdate_test is used to check the status of automatic
 software updates on MacOSX.
@@ -14,7 +14,7 @@ The softwareupdate_state element makes it possible to make assertions
 about the state of automatic software updates.
 
 Technical Details
-  -----------------
+-----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~

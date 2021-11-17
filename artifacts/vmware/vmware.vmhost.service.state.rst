@@ -2,12 +2,12 @@ VMware: VM Host: Service State
 ==============================
 
 Description
-  -----------
+-----------
 
 The VMware: VM Host: Service State is used to verify the Direct Console User Interface (DCUI) is disabled to prevent any local administration from the Host.
 
 Technical Details
-  -----------------
+-----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~

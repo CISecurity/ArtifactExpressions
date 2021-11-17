@@ -2,13 +2,13 @@ windows.userrightsassignmentdeny
 ================================
 
 Description
-  -----------
+-----------
 
 The userright_test is used to enumerate all of the trustees/SIDs that
 have been granted a specific user right/privilege.
 
 Technical Details
-  -----------------
+-----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~

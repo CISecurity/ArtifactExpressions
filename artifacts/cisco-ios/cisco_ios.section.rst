@@ -2,13 +2,13 @@ cisco_ios.section
 =================
 
 Description
-  -----------
+-----------
 
 The cisco_ios.section is used to check the properties of specific output
 lines from a configuration section.
 
 Technical Details
-  -----------------
+-----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~

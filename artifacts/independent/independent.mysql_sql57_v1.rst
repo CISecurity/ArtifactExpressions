@@ -2,7 +2,7 @@ independent.mysql_sql57_v1
 ==========================
 
 Description
-  -----------
+-----------
 
 The independent.mysql_sql57_v1 is used to check information stored in a
 database. It is often the case that applications store configuration
@@ -14,7 +14,7 @@ references a wmi_object and the optional state element specifies the
 metadata to check.
 
 Technical Details
-  -----------------
+-----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~

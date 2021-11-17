@@ -2,7 +2,7 @@ windows.lockoutpolicyobject
 ===========================
 
 Description
-  -----------
+-----------
 
 The lockout policy test enumerates various attributes associated with
 lockout information for users and global groups in the security
@@ -15,7 +15,7 @@ list of values, each representing one of the lockout policy attributes
 that can be collected.
 
 Technical Details
-  -----------------
+-----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~

@@ -2,7 +2,7 @@ Unix: Uname Parameter
 =====================
 
 Description
-  -----------
+-----------
 
 The Unix: Uname Parameter test The uname test reveals information about
 the hardware the machine is running on. This information is the parsed
@@ -20,7 +20,7 @@ The optional uname_state element defines the information about the
 hardware the machine is running one.
 
 Technical Details
-  -----------------
+-----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~

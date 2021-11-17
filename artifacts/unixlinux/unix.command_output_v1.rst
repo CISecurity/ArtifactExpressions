@@ -2,7 +2,7 @@ Unix: Command Output
 ====================
 
 Description
-  -----------
+-----------
 
 The Unix: Command Output test executes a shell command and evaluates the
 lines of output.
@@ -14,7 +14,7 @@ The optional shellcommand_state element specifies the output value to
 check.
 
 Technical Details
-  -----------------
+-----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~

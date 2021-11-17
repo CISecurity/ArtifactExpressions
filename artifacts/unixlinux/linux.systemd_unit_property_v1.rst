@@ -2,7 +2,7 @@ Linux: Systemd Unit Property
 ============================
 
 Description
-  -----------
+-----------
 
 The Linux: Systemd Unit Property test is used to retrieve information
 about systemd units in form of properties. For more information see the
@@ -15,7 +15,7 @@ The optional systemdunitproperty_state element holds information about
 properties of a specific systemd unit.
 
 Technical Details
-  -----------------
+-----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~

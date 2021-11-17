@@ -2,13 +2,13 @@ cisco_asa.snmp_group_object
 ===========================
 
 Description
-  -----------
+-----------
 
 The cisco_asa.snmp_group_object is used to check the properties of
 specific output lines from an SNMP group configuration.
 
 Technical Details
-  -----------------
+-----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~

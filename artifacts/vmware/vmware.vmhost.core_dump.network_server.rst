@@ -2,12 +2,12 @@ VMware: VM Host: Core Dump: Network Server
 ==========================================
 
 Description
-  -----------
+-----------
 
 The vmware:vmhost_coredump test is used to verify a centralized network server location is configured to collect ESXi host core dumps.
 
 Technical Details
-  -----------------
+-----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~

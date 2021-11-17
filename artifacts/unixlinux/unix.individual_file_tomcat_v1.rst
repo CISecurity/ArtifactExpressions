@@ -2,7 +2,7 @@ Unix: Individual File Tomcat V1
 ===============================
 
 Description
-  -----------
+-----------
 
 The Unix: Individual File Tomcat V1 test is used to check metadata
 associated with UNIX files, of the sort returned by either an ls
@@ -25,7 +25,7 @@ with a file, including the path, filename, owner, size, last modified
 time, version, etc.
 
 Technical Details
-  -----------------
+-----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~

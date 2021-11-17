@@ -2,12 +2,12 @@ vmware:vmhost_acceptancelevel
 =============================
 
 Description
-  -----------
+-----------
 
 The vmware:vmhost_acceptancelevel test is used to determine the ESXi Image Profile  acceptance level (level of trust) supported by the the vSphere Installation Bundle signature file.
 
 Technical Details
-  -----------------
+-----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~

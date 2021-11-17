@@ -2,7 +2,7 @@ Linux: Software Package
 =======================
 
 Description
-  -----------
+-----------
 
 The linux.software_package_v1 test is used to check the RPM header
 information for a given RPM package.
@@ -17,7 +17,7 @@ architecture, epoch number, and version numbers. Most of this
 information can be obtained through the rpm function.
 
 Technical Details
-  -----------------
+-----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~

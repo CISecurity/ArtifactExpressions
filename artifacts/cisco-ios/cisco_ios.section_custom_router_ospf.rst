@@ -2,13 +2,13 @@ cisco_ios.section_custom_router_ospf
 ====================================
 
 Description
-  -----------
+-----------
 
 The cisco_ios.section_custom_router_ospf is used to check section custom
 router ospf authentication
 
 Technical Details
-  -----------------
+-----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~

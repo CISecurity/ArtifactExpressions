@@ -2,7 +2,7 @@ unix:process58
 ==============
 
 Description
-  -----------
+-----------
 
 The unix:process58 test is used to check information found in the UNIX
 processes. It is equivalent to parsing the output of the ps command.
@@ -15,7 +15,7 @@ The optional process58_state element defines the different metadata
 associate with the UNIX processes.
 
 Technical Details
-  -----------------
+-----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~

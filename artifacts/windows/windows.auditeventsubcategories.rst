@@ -2,7 +2,7 @@ windows.auditeventsubcategories
 ==================================
 
 Description
-  -----------
+-----------
 
 The auditeventpolicysubcategories_test is used to check the audit event
 policy settings on a Windows system. These settings are used to specify
@@ -19,7 +19,7 @@ representing one of the audit event policy attributes that can be
 collected.
 
 Technical Details
-  -----------------
+-----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~

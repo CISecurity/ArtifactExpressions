@@ -2,7 +2,7 @@ windows.rsop.security_setting_boolean
 =====================================
 
 Description
-  -----------
+-----------
 
 The wmi57 test is used to check information accessed by WMI. It extends
 the standard TestType as defined in the oval-definitions-schema and one
@@ -11,7 +11,7 @@ required object element references a wmi57_object and the optional state
 element specifies the metadata to check.
 
 Technical Details
-  -----------------
+-----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~

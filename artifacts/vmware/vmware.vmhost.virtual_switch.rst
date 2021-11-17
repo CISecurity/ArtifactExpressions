@@ -2,12 +2,12 @@ VMware: VM Host: Virtual Switch
 ===============================
 
 Description
-  -----------
+-----------
 
 The VMware: VM Host: Virtual Switch test is used to verify the vSwitch Forged Transmits policy is set to reject forged transmissions.
 
 Technical Details
-  -----------------
+-----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~

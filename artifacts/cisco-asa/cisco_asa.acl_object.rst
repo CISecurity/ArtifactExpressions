@@ -2,13 +2,13 @@ cisco_asa.acl_object
 ====================
 
 Description
-  -----------
+-----------
 
 The cisco_asa.acl_object is used to check the properties of specific
 output lines from an ACL configuration.
 
 Technical Details
-  -----------------
+-----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~

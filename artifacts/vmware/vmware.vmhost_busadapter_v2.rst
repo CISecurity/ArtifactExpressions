@@ -2,12 +2,12 @@ vmware:vmhost_busadapter
 ========================
 
 Description
-  -----------
+-----------
 
 The vmware:vmhost_busadapter test is used to verify if Bidirectional (Mutual) CHAP Authentication is enabled for the qualified iSCSI Adapter on a VMware ESXi Host Client. 
 
 Technical Details
-  -----------------
+-----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~

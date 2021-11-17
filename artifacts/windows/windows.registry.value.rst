@@ -2,7 +2,7 @@ windows.registry.value
 ======================
 
 Description
-  -----------
+-----------
 
 The registry test is used to check metadata associated with Windows
 registry key. It extends the standard TestType as defined in the
@@ -12,7 +12,7 @@ registry_object and the optional state element specifies the registry
 data to check.
 
 Technical Details
-  -----------------
+-----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~

@@ -2,13 +2,13 @@ windows.registry_guid_v1
 =========================
 
 Description
-  -----------
+-----------
 
 The windows.registry_guid_v1 is used to check metadata associated with 
 Windows registry key. 
 
 Technical Details
-  -----------------
+-----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~

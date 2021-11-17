@@ -2,12 +2,12 @@ vmware:vm_device
 ================
 
 Description
-  -----------
+-----------
 
 The vmware:vm_device test is used to verify no device is connected to a virtual machine if it is not required.
 
 Technical Details
-  -----------------
+-----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~

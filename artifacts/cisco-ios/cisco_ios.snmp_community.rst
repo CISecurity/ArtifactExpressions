@@ -2,13 +2,13 @@ cisco_ios.snmp_community
 ========================
 
 Description
-  -----------
+-----------
 
 The cisco_ios.snmp_community is used to check the properties of specific
 output lines from an SNMP configuration.
 
 Technical Details
-  -----------------
+-----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~

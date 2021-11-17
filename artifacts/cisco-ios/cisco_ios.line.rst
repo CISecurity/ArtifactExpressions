@@ -2,7 +2,7 @@ cisco_ios.line
 ==============
 
 Description
-  -----------
+-----------
 
 The cisco_ios.line is used to check the properties of specific output
 lines from a SHOW command, such as SHOW RUNNING-CONFIG. It extends the
@@ -12,7 +12,7 @@ required object element references a line_object and the optional state
 element specifies the data to check.
 
 Technical Details
-  -----------------
+-----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~

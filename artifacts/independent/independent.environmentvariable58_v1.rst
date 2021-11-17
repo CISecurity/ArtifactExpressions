@@ -2,13 +2,13 @@ independent:environmentvariable58_v1
 ======================================
 
 Description
-  -----------
+-----------
 
 This item stores information about an environment variable, the process ID of 
 the process from which it was retrieved, and its corresponding value.
 
 Technical Details
-  -----------------
+-----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~

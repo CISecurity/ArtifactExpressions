@@ -2,7 +2,7 @@ macos.accountinfo_v1
 ====================
 
 Description
-  -----------
+-----------
 The accountinfo_test is used to check the properties of user account information (username, uid, gid, etc.).
 
 The accountinfo_object consists of a single username that identifies the account from which to gather information.
@@ -10,7 +10,7 @@ The accountinfo_object consists of a single username that identifies the account
 The accountinfo_state element defines the different information that can be used to evaluate the specified accounts.
 
 Technical Details
-  -----------------
+-----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~

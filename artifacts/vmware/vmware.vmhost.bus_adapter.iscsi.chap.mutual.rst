@@ -2,12 +2,12 @@ VMware: VM Host: Bus Adapter: ISCSI: CHAP: Mutual
 =================================================
 
 Description
-  -----------
+-----------
 
 The VMware: VM Host: Bus Adapter: ISCSI: CHAP: Mutual test is used to verify if Bidirectional (Mutual) CHAP Authentication is enabled for the qualified iSCSI Adapter on a VMware ESXi Host Client. 
 
 Technical Details
-  -----------------
+-----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~

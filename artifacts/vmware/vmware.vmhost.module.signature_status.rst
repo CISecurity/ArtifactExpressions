@@ -2,12 +2,12 @@ VMware: VM Host: Module: Signature Status
 =========================================
 
 Description
-  -----------
+-----------
 
 The VMware: VM Host: Module: Signature Status test is used to verify no unauthorized kernel modules are loaded on the ESXi host.
 
 Technical Details
-  -----------------
+-----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~

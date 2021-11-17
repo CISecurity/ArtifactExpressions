@@ -2,7 +2,7 @@ iis.applicationpool
 ===================
 
 Description
-  -----------
+-----------
 
 An Application Pool Test contains configuration settings for all
 application pools running on your Internet Information Services (IIS) 7
@@ -19,7 +19,7 @@ significantly increase both the reliability and manageability of your
 Web infrastructure.
 
 Technical Details
-  -----------------
+-----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~

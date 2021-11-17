@@ -2,7 +2,7 @@ Unix: Process Information
 ==========================
 
 Description
-  -----------
+-----------
 
 The Unix: Process Information test is used to check information found in the UNIX processes. It is equivalent to parsing the output of the ps command. 
 
@@ -11,7 +11,7 @@ The required process58_object element is used to define the specific process(es)
 The optional process58_state element defines the different metadata associate with the UNIX processes.
 
 Technical Details
-  -----------------
+-----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~

@@ -2,13 +2,13 @@ oracledb_tenant.sql57_v1
 ========================
 
 Description
-  -----------
+-----------
 
 The oracledb_tenant.sql57_v1 is used to check information stored in a
 database.
 
 Technical Details
-  -----------------
+-----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~

@@ -2,7 +2,7 @@ Linux: Systemd Unit Dependency
 ==============================
 
 Description
-  -----------
+-----------
 
 The Linux: Systemd Unit Dependency test is used to retrieve information
 about dependencies of a single systemd unit in the form of a list. This
@@ -17,7 +17,7 @@ The optional systemdunitdependency_state element holds dependencies of a
 specific systemd unit.
 
 Technical Details
-  -----------------
+-----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~

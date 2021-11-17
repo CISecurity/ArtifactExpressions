@@ -2,12 +2,12 @@ VMware: VM Host: Account
 ========================
 
 Description
-  -----------
+-----------
 
 The VMware: VM Host: Account Test is used to verify one or more local ESXi user accounts have been created for the specified ESXi host, and that the specified user account has been granted shell access.
 
 Technical Details
-  -----------------
+-----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~

@@ -2,7 +2,7 @@ cisco_ios.global
 ================
 
 Description
-  -----------
+-----------
 
 The cisco_ios.global is used to check for the existence of a particular
 line in the IOS-XE config file under the global context. It extends the
@@ -12,7 +12,7 @@ required object element references a global_object and the optional
 state element specifies the data to check.
 
 Technical Details
-  -----------------
+-----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~

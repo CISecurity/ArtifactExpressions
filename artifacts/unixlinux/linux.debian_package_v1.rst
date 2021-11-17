@@ -2,7 +2,7 @@ Linux: Debian Package
 =====================
 
 Description
-  -----------
+-----------
 
 The Linux: Debian Package test is used to check information for a given
 DPKG package.
@@ -25,7 +25,7 @@ that a null epoch (or '(none)' as returned by dpkg) is equivalent to '0'
 and would hence have the form 0:UPSTREAM_VERSION-DEBIAN_REVISION.
 
 Technical Details
-  -----------------
+-----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~

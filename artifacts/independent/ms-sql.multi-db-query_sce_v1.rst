@@ -2,7 +2,7 @@ ms-sql.multi-db-query_sce_v1
 ============================
 
 Description
-  -----------
+-----------
 
 The ms-sql.multi-db-query_sce_v1 is used by a sql test to define the
 specific database and query to be evaluated. Connection information is
@@ -10,7 +10,7 @@ supplied allowing the tool to connect to the desired database and a
 query is supplied to call out the desired setting.
 
 Technical Details
-  -----------------
+-----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~

@@ -2,7 +2,7 @@ Unix: Symlink
 =============
 
 Description
-  -----------
+-----------
 
 The Unix: Symlink test is used to obtain canonical path information for
 symbolic links.
@@ -21,7 +21,7 @@ The optional symlink_state element defines a value used to evaluate the
 result of a specific symlink_object item.
 
 Technical Details
-  -----------------
+-----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~

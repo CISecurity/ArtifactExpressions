@@ -2,13 +2,13 @@ cisco_asa.line_object_with_untrusted_interfaces
 ===============================================
 
 Description
-  -----------
+-----------
 
 The cisco_asa.line_object_with_untrusted_interfaces is used to check the
 properties of specific output lines.
 
 Technical Details
-  -----------------
+-----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~

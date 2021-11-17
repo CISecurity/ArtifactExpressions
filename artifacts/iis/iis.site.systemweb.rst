@@ -2,7 +2,7 @@ iis.site.systemweb
 ==================
 
 Description
-  -----------
+-----------
 
 The systemweb_test is used to determine certain aspects of an IIS Site’s
 configuration. It extends the standard TestType as defined in the
@@ -12,7 +12,7 @@ systemweb_object and the optional state element specifies the data to
 check.
 
 Technical Details
-  -----------------
+-----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~

@@ -2,7 +2,7 @@ windows.passwordpolicyobject
 ============================
 
 Description
-  -----------
+-----------
 
 The password policy test is used to check specific policy associated
 with passwords. It is important to note that these policies are specific
@@ -16,7 +16,7 @@ specific list of values, each representing one of the password policy
 attributes that can be collected.
 
 Technical Details
-  -----------------
+-----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~

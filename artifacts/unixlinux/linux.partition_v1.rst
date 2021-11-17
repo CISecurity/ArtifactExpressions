@@ -2,7 +2,7 @@ Linux: Partition
 ================
 
 Description
-  -----------
+-----------
 
 The Linux: Partition test is used to check the information associated
 with partitions on the local system.
@@ -15,7 +15,7 @@ associated with a partition. This includes the name, filesystem type,
 mount options, total space, space used, and space left.
 
 Technical Details
-  -----------------
+-----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~

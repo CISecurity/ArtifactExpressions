@@ -2,13 +2,13 @@ cisco_asa.snmp_user_object
 ==========================
 
 Description
-  -----------
+-----------
 
 The cisco_asa.snmp_user_object is used to check the properties of
 specific output lines from an SNMP user configuration.
 
 Technical Details
-  -----------------
+-----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~

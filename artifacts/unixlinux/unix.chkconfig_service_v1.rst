@@ -2,7 +2,7 @@ Unix: Chkconfig Service
 =======================
 
 Description
-  -----------
+-----------
 
 The Unix: Chkconfig Service test is used to check information about
 which runlevel specified services are scheduled to exist. For more
@@ -15,7 +15,7 @@ The optional runlevel_state element holds information about whether a
 specific service is scheduled to start or stop at a given runlevel.
 
 Technical Details
-  -----------------
+-----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~

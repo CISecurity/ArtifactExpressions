@@ -2,12 +2,12 @@ vmware:vmhost_firewallexception
 ===============================
 
 Description
-  -----------
+-----------
 
 The vmware:vmhost_firewallexception test is used to verify the ESXi host firewall is configured to restrict access to services running on the host.
 
 Technical Details
-  -----------------
+-----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~

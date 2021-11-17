@@ -2,12 +2,12 @@ VMware: VM Host: Advanced Setting
 =================================
 
 Description
-  -----------
+-----------
 
 The vmware:vmhost_advancedsetting test is used to check the value of a specified advanced system setting on an VMware ESXi Host Client
 
 Technical Details
-  -----------------
+-----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~

@@ -2,7 +2,7 @@ independent.unknown
 ===================
 
 Description
-  -----------
+-----------
 
 The independent.unknown test acts as a placeholder for tests whose
 implementation is unknown. This test always evaluates to a result of
@@ -15,7 +15,7 @@ required check attribute that is part of the extended TestType should be
 ignored during evaluation and hence can be set to any valid value.
 
 Technical Details
-  -----------------
+-----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~

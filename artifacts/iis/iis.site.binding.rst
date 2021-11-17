@@ -2,7 +2,7 @@ iis.site.binding
 ================
 
 Description
-  -----------
+-----------
 
 The bindings_test is used to determine the bindings for sites managed in
 IIS, including http and https bindings. It extends the standard TestType
@@ -12,7 +12,7 @@ references a vmhost_modules_object and the optional state element
 specifies the data to check.
 
 Technical Details
-  -----------------
+-----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~

@@ -2,13 +2,13 @@ independent.sql57_sqlserver_query_each_database_v1
 ==================================================
 
 Description
-  -----------
+-----------
 
 The independent.sql57_sqlserver_query_each_database_v1 is used by a sql
 test to define specific databases and queries to be evaluated.
 
 Technical Details
-  -----------------
+-----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~

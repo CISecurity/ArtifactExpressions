@@ -2,12 +2,12 @@ VMware: Virtual Machine: Device: Hard Disk
 ==========================================
 
 Description
-  -----------
+-----------
 
 The VMware: Virtual Machine: Device: Hard Disk test is used to verify the configuration of virtual machine persistent memory settings.
 
 Technical Details
-  -----------------
+-----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~

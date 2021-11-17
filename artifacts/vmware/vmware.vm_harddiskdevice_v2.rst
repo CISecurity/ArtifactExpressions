@@ -2,12 +2,12 @@ vmware:vm_harddiskdevice
 ========================
 
 Description
-  -----------
+-----------
 
 The vmware:vm_harddiskdevice test is used to verify the configuration of virtual machine persistent memory settings.
 
 Technical Details
-  -----------------
+-----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
