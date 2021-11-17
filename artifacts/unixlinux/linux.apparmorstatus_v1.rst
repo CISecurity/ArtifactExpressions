@@ -41,7 +41,6 @@ Supported Test Types
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
-
 linux.apparmorstatus_enforce_mode_profiles_count_v1
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -105,7 +104,6 @@ NOTE: The ``datatype`` parameter is governed by a constraint allowing only the f
 
 Generated Content
 ~~~~~~~~~~~~~~~~~
-
 XCCDF+AE
 ^^^^^^^^
 
