@@ -44,7 +44,7 @@ Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
 Human ID:
-  - linux.apparmorstatus_enforce_mode_profiles_count_v1
+  linux.apparmorstatus_enforce_mode_profiles_count_v1
 
 +-----------------------------+--------+-----------------------------+
 | Name                        | Type   | Description                 |
