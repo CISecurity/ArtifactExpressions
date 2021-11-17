@@ -27,7 +27,7 @@ Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
 Human ID:
-  - linux.apparmorstatus_v1
+  linux.apparmorstatus_v1
 
 ==== ==== ===========
 Name Type Description
