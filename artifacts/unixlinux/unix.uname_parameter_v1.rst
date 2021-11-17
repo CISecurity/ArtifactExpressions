@@ -56,14 +56,14 @@ Supported Test Types
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 Human IDs:
-  equals
-  not equal
-  less than
-  less than or equal
-  greater than
-  greater than or equal
-  pattern match
-  pattern not match
+| equals
+| not equal
+| less than
+| less than or equal
+| greater than
+| greater than or equal
+| pattern match
+| pattern not match
   
 ========= ====== ===========================
 Name      Type   Description
