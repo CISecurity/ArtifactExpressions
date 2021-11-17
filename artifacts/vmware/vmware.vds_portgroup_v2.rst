@@ -12,8 +12,8 @@ Technical Details
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
-Human ID:
-  - vmware.vds_portgroup_v2
+vmware.vds_portgroup_v2
+^^^^^^^^^^^^^^^^^^^^^^^
 
 +--------------------------+--------+-----------------------------+
 | Name                     | Type   | Description                 |
@@ -162,7 +162,6 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
        </ae:artifact_expression>
      </xccdf:check-content>
    </xccdf:check>
-
 
 
 

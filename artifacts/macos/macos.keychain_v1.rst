@@ -12,7 +12,6 @@ should refer to the TestType description for more information. The
 required object element references an keychain_object and the optional
 state element specifies the data to check.
 
-
 Technical Details
 -----------------
 
@@ -119,8 +118,6 @@ the following values: - boolean - float - int - string - version - set
 
 Generated Content
 ~~~~~~~~~~~~~~~~~
-
-.. _macos.keychain_timeout_v1-1:
 
 macos.keychain_timeout_v1
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -311,17 +308,11 @@ JSON
      }
    }
 
-.. _generated-content-1:
-
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
-.. _macos.keychain_lock_on_sleep_v1-1:
-
 macos.keychain_lock_on_sleep_v1
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. _xccdfae-1:
 
 XCCDF+AE
 ^^^^^^^^
@@ -357,12 +348,8 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
      </xccdf:check-content>
    </xccdf:check>
 
-.. _scap-1:
-
 SCAP
 ^^^^
-
-.. _xccdf-1:
 
 XCCDF
 '''''
@@ -378,12 +365,8 @@ For ``macos.keychain_v1`` artifacts, the xccdf:check looks like this. There is n
         name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]"/>
    </xccdf:check>
 
-.. _oval-1:
-
 OVAL
 ''''
-
-.. _test-1:
 
 Test
 
@@ -396,8 +379,6 @@ Test
      <macos:state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"/>
    </macos:keychain_test>
 
-.. _object-1:
-
 Object
 
 ::
@@ -408,8 +389,6 @@ Object
      <macos:filepath>[filepath.value]</macos:filepath>
    </macos:keychain_object>
 
-.. _state-1:
-
 State
 
 ::
@@ -419,8 +398,6 @@ State
      id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" version="[version.value]">
      <macos:lock_on_sleep datatype="[datatype.value]" operation="[operation.value]">[lock_on_sleep.value]</macos:lock_on_sleep>
    </macos:keychain_state>
-
-.. _yaml-1:
 
 YAML
 ^^^^
@@ -460,8 +437,6 @@ YAML
              name: lock_on_sleep
              type: string
              value: [lock_on_sleep.value]  
-
-.. _json-1:
 
 JSON
 ^^^^

@@ -20,8 +20,8 @@ Technical Details
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
-Human ID:
-  unix.process58_v2
+unix.process58_v2
+^^^^^^^^^^^^^^^^^
 
 +------------------------+--------+-----------------------------+
 | Name                   | Type   | Description                 |
@@ -82,8 +82,8 @@ Supported Test Types
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
-Human ID:
-  unix.process58_command_line_v1
+unix.process58_command_line_v1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 +-----------------+--------+-----------------------------------------+
 | Name            | Type   | Description                             |

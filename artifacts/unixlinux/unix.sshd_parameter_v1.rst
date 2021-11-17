@@ -26,8 +26,8 @@ Technical Details
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
-Human ID:
-  unix.sshd_parameter_v1
+unix.sshd_parameter_v1
+^^^^^^^^^^^^^^^^^^^^^^
 
 ========= ====== ===================================================
 Name      Type   Description
@@ -52,16 +52,15 @@ Supported Test Types
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
-Human IDs:
-  equals
-  equal
-  not equal
-  less than
-  less than or equal
-  greater than
-  greater than or equal
-  pattern match
-  pattern not match
+| **equals**
+| **equal**
+| **not equal**
+| **less than**
+| **less than or equal**
+| **greater than**
+| **greater than or equal**
+| **pattern match**
+**pattern not match**
 
 ========= ====== ===========================
 Name      Type   Description
@@ -78,8 +77,8 @@ NOTE: The ``data_type`` parameter is governed by a constraint allowing only the 
   - version
   - set
 
-Human ID:
-  existence_test
+existence_test
+^^^^^^^^^^^^^^
 
 ===== ====== =======================
 Name  Type   Description
@@ -98,15 +97,15 @@ NOTE: The ``value`` parameter is governed by a constraint allowing only the foll
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
-| equals
-| equal
-| not equal
-| less than
-| less than or equal
-| greater than
-| greater than or equal
-| pattern match
-| pattern not match
+| **equals**
+| **equal**
+| **not equal**
+| **less than**
+| **less than or equal**
+| **greater than**
+| **greater than or equal**
+| **pattern match**
+**pattern not match**
 
 XCCDF+AE
 ^^^^^^^^
@@ -316,6 +315,7 @@ Generated Content
 ~~~~~~~~~~~~~~~~~
 
 existence_test
+^^^^^^^^^^^^^^
 
 XCCDF+AE
 ^^^^^^^^
@@ -453,8 +453,6 @@ YAML
             name: "value"
             dt: "string"
             value: "[value.value]"
-
-.. _json-1:
 
 JSON
 ^^^^

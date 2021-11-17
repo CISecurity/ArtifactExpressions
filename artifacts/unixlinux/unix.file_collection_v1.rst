@@ -30,8 +30,8 @@ Technical Details
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
-Human ID:
-  unix.file_collection_v1
+unix.file_collection_v1
+^^^^^^^^^^^^^^^^^^^^^^^
 
 =========== ====== ====================================================
 Name        Type   Description
@@ -68,8 +68,8 @@ Supported Test Types
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
-Human ID:
-   unix.file_permissions_v1
+unix.file_permissions_v1
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 +--------+-----------+-----------------------------------------------+
 | Name   | Type      | Description                                   |
@@ -125,8 +125,8 @@ NOTE: All ``unix.file_permissions_v1`` parameters are governed by a constraint a
   -  set
   -  unset
 
-Human ID:
-   unix.file_ownership_v1
+unix.file_ownership_v1
+^^^^^^^^^^^^^^^^^^^^^^
 
 ==== ==== ============================================================
 Name Type Description
@@ -135,8 +135,8 @@ uid  int  The User ID of the files owner (Positive integer or blank).
 gid  int  The Group ID of the files owner (Positive integer or blank).
 ==== ==== ============================================================
 
-Human ID:
-   null_test_v1
+null_test_v1
+^^^^^^^^^^^^
 
 ==== ==== ===========
 Name Type Description
@@ -148,6 +148,7 @@ Generated Content
 ~~~~~~~~~~~~~~~~~
 
 unix.file_permissions_v1
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 XCCDF+AE
 ^^^^^^^^
@@ -503,12 +504,11 @@ JSON
     }
   }
 
-
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
 unix_file_ownership_v1
-
+^^^^^^^^^^^^^^^^^^^^^^
 
 XCCDF+AE
 ^^^^^^^^
@@ -753,6 +753,7 @@ Generated Content
 ~~~~~~~~~~~~~~~~~
 
 null_test_v1
+^^^^^^^^^^^^
 
 XCCDF+AE
 ^^^^^^^^

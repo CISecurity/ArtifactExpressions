@@ -12,9 +12,8 @@ Technical Details
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
-Human ID:
-  - vmware.virtual_machine.device_state
-
+vmware.virtual_machine.device_state
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 +-------------------------------------+-------------+------------------+
 | Name                                | Type        | Description      |

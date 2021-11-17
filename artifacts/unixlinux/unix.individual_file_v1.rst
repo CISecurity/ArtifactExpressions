@@ -25,8 +25,8 @@ Technical Details
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
-Human ID:
-  unix.individual_file_v1
+unix.individual_file_v1
+^^^^^^^^^^^^^^^^^^^^^^^
 
 +-----------+--------+-----------------------------------------------+
 | Name      | Type   | Description                                   |
@@ -60,9 +60,8 @@ Supported Test Types
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
-Human IDs:
-  pattern match
-  pattern not match
+| **pattern match**
+**pattern not match**
 
 ========= ====== ===========================
 Name      Type   Description
@@ -79,8 +78,8 @@ NOTE: The ``data_type`` parameter is governed by a constraint allowing only the 
   - version
   - set
 
-Human ID:
-  null_test_v1
+null_test_v1
+^^^^^^^^^^^^
 
 ==== ==== ===========
 Name Type Description
@@ -88,8 +87,8 @@ Name Type Description
 N/A       
 ==== ==== ===========
 
-Human ID:
-  unix.file_attributes_v1
+unix.file_attributes_v1
+^^^^^^^^^^^^^^^^^^^^^^^
 
 +--------+-----------+-----------------------------------------------+
 | Name   | Type      | Description                                   |
@@ -154,8 +153,8 @@ NOTE: All ``unix.file_attributes_v1`` parameters *EXCEPT* ``uid`` and ``gid`` ar
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
-| pattern match
-| pattern not match
+| **pattern match**
+**pattern not match**
 
 XCCDF+AE
 ^^^^^^^^
@@ -347,12 +346,11 @@ JSON
     }
   }
 
-
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
 null_test_v1
-
+^^^^^^^^^^^^
 
 XCCDF+AE
 ^^^^^^^^
@@ -520,6 +518,7 @@ Generated Content
 ~~~~~~~~~~~~~~~~~
 
 unix_file_attributes_v1
+^^^^^^^^^^^^^^^^^^^^^^^
 
 XCCDF+AE
 ^^^^^^^^

@@ -12,8 +12,8 @@ Technical Details
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
-Human ID:
-  - vmware.vmhost.webserverssl
+vmware.vmhost.webserverssl
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 +-------------------------------------+-------------+------------------+
 | Name                                | Type        | Description      |

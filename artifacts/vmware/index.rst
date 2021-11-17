@@ -46,4 +46,3 @@ VMWare
    vmware.vmhost_vswitchpolicy_v2 <vmware.vmhost_vswitchpolicy_v2>
    vmware.vmhost_webserverssl_v2 <vmware.vmhost_webserverssl_v2>
 
-

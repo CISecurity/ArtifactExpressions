@@ -921,7 +921,6 @@ State
 
   N/A 
 
-
 YAML
 ^^^^
 
@@ -1112,7 +1111,6 @@ JSON
       }
     }
   }
-
 
 Generated Content
 ~~~~~~~~~~~~~~~~~

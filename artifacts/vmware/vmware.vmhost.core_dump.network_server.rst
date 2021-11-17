@@ -12,8 +12,8 @@ Technical Details
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
-Human ID:
-  - vmware.vmhost.core_dump.network_server
+vmware.vmhost.core_dump.network_server
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 +-------------------------------------+-------------+------------------+
 | Name                                | Type        | Description      |

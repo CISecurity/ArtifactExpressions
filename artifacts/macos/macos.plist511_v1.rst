@@ -14,7 +14,6 @@ for more information. The required object element references a
 plist511_object and the optional plist511_state element specifies the
 data to check.
 
-
 Technical Details
 -----------------
 

@@ -35,7 +35,6 @@ Supported Test Types
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
-
 +-------------------------------------+-------------+------------------+
 | Name                                | Type        | Description      |
 +=====================================+=============+==================+
@@ -95,7 +94,6 @@ Test Type Parameters
 |                                     |             | account.         |
 +-------------------------------------+-------------+------------------+
 
-
 NOTE: The ``check_existence`` parameter is governed by a constraint allowing only the following values:
   - all_exist
   - any_exist
@@ -110,8 +108,7 @@ NOTE: The ``check`` parameter is governed by a constraint allowing only the foll
   - none satisfy
   - only one
 
-NOTE: The ``operation`` parameter is governed by a constraint allowing
-only the following values:
+NOTE: The ``operation`` parameter is governed by a constraint allowing only the following values:
   - equals
   - not equal
   - case insensitive equals
@@ -133,7 +130,6 @@ NOTE: The ``datatype`` parameter is governed by a constraint allowing only the f
   - string
   - version
   - set
-
 
 Generated Content
 ~~~~~~~~~~~~~~~~~
@@ -241,7 +237,6 @@ State
       <home_dir datatype="[DATATYPE.value]" operation="[OPERATION.value]">[VALUE]</home_dir>
       <login_shell datatype="[DATATYPE.value]" operation="[OPERATION.value]">[VALUE]</login_shell>
     </accountinfo_state>
-
 
 YAML
 ^^^^

@@ -84,8 +84,6 @@ Supported Test Types
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
-.. _windows.registry.value-1:
-
 windows.registry.value
 ^^^^^^^^^^^^^^^^^^^^^^
 

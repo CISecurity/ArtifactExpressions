@@ -12,7 +12,6 @@ should refer to the TestType description for more information. The
 required object element references an systemprofiler_object and the
 optional state element specifies the data to check.
 
-
 Technical Details
 -----------------
 
@@ -67,7 +66,7 @@ Artifact Parameters
 data_type NOTE: This parameter is governed by a constraint allowing
 only the following values: 
   - SPHardwareDataType
-|- SPNetworkDataType 
+  - SPNetworkDataType 
   - SPSoftwareDataType
   - SPParallelATADataType
   - SPAudioDataType

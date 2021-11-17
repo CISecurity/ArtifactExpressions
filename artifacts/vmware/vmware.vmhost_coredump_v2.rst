@@ -12,8 +12,8 @@ Technical Details
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
-Human ID:
-  - vmware.vmhost_coredump_v2
+vmware.vmhost_coredump_v2
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 +-------------------------------------+-------------+------------------+
 | Name                                | Type        | Description      |

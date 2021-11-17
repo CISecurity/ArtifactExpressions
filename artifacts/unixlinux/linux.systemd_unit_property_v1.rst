@@ -20,8 +20,8 @@ Technical Details
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
-Human ID:
-  linux.systemd_unit_property_v1
+linux.systemd_unit_property_v1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 +----------+--------+------------------------------------------------+
 | Name     | Type   | Description                                    |
@@ -45,9 +45,8 @@ Supported Test Types
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
-Human IDs:
-  equals
-  not equal
+| **equals**
+**not equal**
 
 +-----------+--------+-----------------------------------------------+
 | Name      | Type   | Description                                   |

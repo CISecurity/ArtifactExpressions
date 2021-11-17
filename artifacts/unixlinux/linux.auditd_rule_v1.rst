@@ -27,8 +27,8 @@ Technical Details
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
-Human ID:
-  linux.auditd_rule_v1
+linux.auditd_rule_v1
+^^^^^^^^^^^^^^^^^^^^
 
 +-----------------+--------+-----------------------------------------+
 | Name            | Type   | Description                             |
@@ -54,8 +54,8 @@ Supported Test Types
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
-Human ID:
-  set.includes_v1
+set.includes_v1
+^^^^^^^^^^^^^^^
 
 ========= ====== =============================================
 Name      Type   Description

@@ -12,8 +12,8 @@ Technical Details
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
-Human ID:
-  - vmware.vmhost.virtual_switch
+vmware.vmhost.virtual_switch
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 +-------------------------------------+-------------+------------------+
 | Name                                | Type        | Description      |
@@ -28,7 +28,6 @@ Human ID:
 |                                     |             | to. Set it NA if |
 |                                     |             | not applicable   |
 +-------------------------------------+-------------+------------------+
-
 
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~

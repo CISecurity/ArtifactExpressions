@@ -12,8 +12,8 @@ Technical Details
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
-Human ID:
-  - vmware.vmhost.bus_adapter.iscsi.chap.mutual
+vmware.vmhost.bus_adapter.iscsi.chap.mutual
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 +-------------------------------------+-------------+------------------+
 | Name                                | Type        | Description      |
@@ -24,7 +24,6 @@ Human ID:
 |                                     |             | to. Set to NA if |
 |                                     |             | not applicable   |
 +-------------------------------------+-------------+------------------+
-
 
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~

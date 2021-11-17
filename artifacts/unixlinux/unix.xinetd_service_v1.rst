@@ -33,8 +33,8 @@ Technical Details
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
-Human ID:
-  unix.xinetd_service_v1
+unix.xinetd_service_v1
+^^^^^^^^^^^^^^^^^^^^^^
 
 ======== ====== ======================================================
 Name     Type   Description
@@ -52,9 +52,8 @@ Supported Test Types
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
-Human IDs:
-  unix.service_enabled_v1
-  unix.xinetd_service_enabled_v1
+| **unix.service_enabled_v1**
+**unix.xinetd_service_enabled_v1**
 
 ======= ====== ================================
 Name    Type   Description

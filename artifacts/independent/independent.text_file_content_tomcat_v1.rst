@@ -104,7 +104,6 @@ Supported Test Types
   - independent.txt_file_content_v1
   - independent.txt_file_content_v2
 
-
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
@@ -668,7 +667,6 @@ For ``pattern match`` or ``pattern not match`` artifacts, the xccdf:check looks 
   </check>
 
 
-
 OVAL
 ''''
 
@@ -992,7 +990,6 @@ State
 ::
 
   N/A 
-
 
 YAML
 ^^^^
@@ -1524,7 +1521,6 @@ JSON
     }
   }
 
-
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
@@ -1636,7 +1632,6 @@ State
 ::
 
   N/A 
-
 
 YAML
 ^^^^
@@ -1785,7 +1780,6 @@ JSON
     }
   }
 
-
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
@@ -1839,13 +1833,11 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
     </xccdf:check-content>
   </xccdf:check>
 
-
 SCAP
 ^^^^
 
 XCCDF
 '''''
-
 
 For ``Txt-Unix_File_or_Directory_Permissions_v2`` artifacts, the xccdf:check looks like this.
 
@@ -2245,7 +2237,6 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
       </ae:artifact_expression>
     </xccdf:check-content>
   </xccdf:check>
-
 
 SCAP
 ^^^^
