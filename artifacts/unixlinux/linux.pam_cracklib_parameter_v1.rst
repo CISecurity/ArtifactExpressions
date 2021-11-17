@@ -266,21 +266,13 @@ Generated Content
 ~~~~~~~~~~~~~~~~~
 
 | equals
-^^^^^^^^
-| not equal
-^^^^^^^^^^^
-| less than
-^^^^^^^^^^^
-| less than or equal
-^^^^^^^^^^^^^^^^^^^^
-| greater than
-^^^^^^^^^^^^^^
-| greater than or equal
-^^^^^^^^^^^^^^^^^^^^^^^
-| pattern match
-^^^^^^^^^^^^^^^
+| not equal 
+| greater than 
+| greater than or equal 
+| less than 
+| less than or equal 
+| pattern match 
 | pattern not match
-^^^^^^^^^^^^^^^^^^^
 
 XCCDF+AE
 ^^^^^^^^
