@@ -38,8 +38,8 @@ Artifact Parameters
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  macos.keychain_timeout_v1
--  macos.keychain_lock_on_sleep_v1
+  - macos.keychain_timeout_v1
+  - macos.keychain_lock_on_sleep_v1
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
@@ -165,8 +165,7 @@ SCAP
 XCCDF
 '''''
 
-For ``macos.keychain_v1`` artifacts, the xccdf:check looks like this.
-There is no Value in the xccdf for this Artifact.
+For ``macos.keychain_v1`` artifacts, the xccdf:check looks like this. There is no Value in the xccdf for this Artifact.
 
 ::
 
@@ -216,7 +215,7 @@ YAML
 
 ::
 
-   - artifact-expression:
+  - artifact-expression:
        artifact-unique-id: [ARTIFACT-OVAL-ID]
        artifact-title: [RECOMMENDATION TITLE]
        artifact:
@@ -368,8 +367,7 @@ SCAP
 XCCDF
 '''''
 
-For ``macos.keychain_v1`` artifacts, the xccdf:check looks like this.
-There is no Value in the xccdf for this Artifact.
+For ``macos.keychain_v1`` artifacts, the xccdf:check looks like this. There is no Value in the xccdf for this Artifact.
 
 ::
 
@@ -429,7 +427,7 @@ YAML
 
 ::
 
-   - artifact-expression:
+  - artifact-expression:
        artifact-unique-id: [ARTIFACT-OVAL-ID]
        artifact-title: [RECOMMENDATION TITLE]
        artifact:

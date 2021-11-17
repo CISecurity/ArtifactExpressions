@@ -24,7 +24,7 @@ cisco_ios.snmpv3_filter   boolean Collect only SNMP v3 Groups?
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  cisco_ios.snmp_groups_priv
+  - cisco_ios.snmp_groups_priv
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
@@ -140,7 +140,7 @@ YAML
 
 ::
 
-   - artifact-expression:
+  - artifact-expression:
        artifact-unique-id: [ARTIFACT-OVAL-ID]
        artifact-title: [RECOMMENDATION TITLE]
        artifact:

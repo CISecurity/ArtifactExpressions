@@ -21,7 +21,7 @@ Name Type Description
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  cisco_ios.section_custom_router_ospf_line
+  - cisco_ios.section_custom_router_ospf_line
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
@@ -47,7 +47,7 @@ Test Type Parameters
 
 entity_check NOTE: This parameter is governed by a constraint allowing
 only the following values: - all_exist - any_exist - at_least_one_exists
-- none_exist - only_one_exists
+  - none_exist - only_one_exists
 
 operation NOTE: This parameter is governed by a constraint allowing only
 the following values: - equals - not equal - case insensitive equals -
@@ -160,7 +160,7 @@ YAML
 
 ::
 
-   - artifact-expression:
+  - artifact-expression:
        artifact-unique-id: [ARTIFACT-OVAL-ID]
        artifact-title: [RECOMMENDATION TITLE]
        artifact:

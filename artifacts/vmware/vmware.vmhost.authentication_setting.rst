@@ -33,7 +33,7 @@ Human ID:
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  vmware.vmhost.authentication.domain_member
+  - vmware.vmhost.authentication.domain_member
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
@@ -51,8 +51,8 @@ DomainMembershipStatus
 
 domain_membership_status NOTE: This parameter is governed by a
 constraint allowing only the following values: - NA - ClientTrustBroken
-- InconsistentTrust - NoServers - Ok - OtherProblem - ServerTrustBroken
-- Unknown
+  - InconsistentTrust - NoServers - Ok - OtherProblem - ServerTrustBroken
+  - Unknown
 
 operator NOTE: This parameter is governed by a constraint allowing only
 the following values: - equals - not equal - case insensitive equals -
@@ -104,8 +104,7 @@ SCAP
 XCCDF
 '''''
 
-For ``macos.gatekeeper_v1`` artifacts, the xccdf:check looks like this.
-There is no Value in the xccdf for this Artifact.
+For ``macos.gatekeeper_v1`` artifacts, the xccdf:check looks like this. There is no Value in the xccdf for this Artifact.
 
 ::
 
@@ -155,7 +154,7 @@ YAML
 
 ::
 
-   - artifact-expression:
+  - artifact-expression:
        artifact-unique-id: [ARTIFACT-OVAL-ID]
        artifact-title: [RECOMMENDATION TITLE]
        artifact:

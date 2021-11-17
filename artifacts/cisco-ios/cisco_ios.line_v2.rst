@@ -27,7 +27,7 @@ Artifact Parameters
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  cisco_ios.line_config_line_v2
+  - cisco_ios.line_config_line_v2
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
@@ -149,7 +149,7 @@ YAML
 
 ::
 
-   - artifact-expression:
+  - artifact-expression:
        artifact-unique-id: [ARTIFACT-OVAL-ID]
        artifact-title: [RECOMMENDATION TITLE]
        artifact:

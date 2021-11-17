@@ -26,8 +26,8 @@ Artifact Parameters
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  cisco_ios.section_existence_test
--  cisco_ios.section_config_line
+  - cisco_ios.section_existence_test
+  - cisco_ios.section_config_line
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
@@ -75,7 +75,7 @@ subset of - superset of
 
 entity_check NOTE: This parameter is governed by a constraint allowing
 only the following values: - all_exist - any_exist - at_least_one_exists
-- none_exist - only_one_exists
+  - none_exist - only_one_exists
 
 Generated Content
 ~~~~~~~~~~~~~~~~~
@@ -173,7 +173,7 @@ YAML
 
 ::
 
-   - artifact-expression:
+  - artifact-expression:
        artifact-unique-id: [ARTIFACT-OVAL-ID]
        artifact-title: [RECOMMENDATION TITLE]
        artifact:

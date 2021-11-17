@@ -43,7 +43,7 @@ Artifact Parameters
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  windows.sid_sid_trustee_name_v1
+  - windows.sid_sid_trustee_name_v1
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
@@ -206,7 +206,7 @@ YAML
 
 ::
 
-   - artifact-expression:
+  - artifact-expression:
        artifact-unique-id: [ARTIFACT-OVAL-ID]
        artifact-title: [RECOMMENDATION TITLE]
        artifact:

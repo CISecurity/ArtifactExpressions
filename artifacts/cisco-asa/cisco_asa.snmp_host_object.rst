@@ -23,7 +23,7 @@ operator String Comparison Operator.
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  cisco_asa.snmp_host_version
+  - cisco_asa.snmp_host_version
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
@@ -134,7 +134,7 @@ YAML
 
 ::
 
-   - artifact-expression:
+  - artifact-expression:
        artifact-unique-id: [ARTIFACT-OVAL-ID]
        artifact-title: [RECOMMENDATION TITLE]
        artifact:

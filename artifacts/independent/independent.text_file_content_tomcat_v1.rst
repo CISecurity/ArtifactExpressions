@@ -87,22 +87,22 @@ Artifact Parameters
 
 check NOTE: This parameter is governed by a constraint allowing only the
 following values:
- - all
- - at least one
- - none satisfy
- - only one
+  - all
+  - at least one
+  - none satisfy
+  - only one
 
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  pattern match
--  pattern not match
--  existence_test
--  unix.file_permissions_v1
--  Txt-Unix_File_or_Directory_Permissions_v1
--  Txt-Unix_File_or_Directory_Permissions_v2
--  independent.txt_file_content_v1
--  independent.txt_file_content_v2
+  - pattern match
+  - pattern not match
+  - existence_test
+  - unix.file_permissions_v1
+  - Txt-Unix_File_or_Directory_Permissions_v1
+  - Txt-Unix_File_or_Directory_Permissions_v2
+  - independent.txt_file_content_v1
+  - independent.txt_file_content_v2
 
 
 Test Type Parameters
@@ -121,12 +121,12 @@ pattern match
 
 data_type NOTE: This parameter is governed by a constraint allowing only the 
 following values:
- - boolean
- - float
- - int
- - string
- - version
- - set 
+  - boolean
+  - float
+  - int
+  - string
+  - version
+  - set 
 
 pattern not match
 ~~~~~~~~~~~~~~~~~
@@ -141,12 +141,12 @@ pattern not match
 
 data_type NOTE: This parameter is governed by a constraint allowing only the 
 following values:
- - boolean
- - float
- - int
- - string
- - version
- - set 
+  - boolean
+  - float
+  - int
+  - string
+  - version
+  - set 
 
 existence_test
 ~~~~~~~~~~~~~~
@@ -190,9 +190,9 @@ unix.file_permissions_v1
 
 NOTE: These parameters are governed by a constraint allowing only the 
 following values: 
- - NA
- - set
- - unset
+  - NA
+  - set
+  - unset
 
 Txt-Unix_File_or_Directory_Permissions_v1
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -602,18 +602,16 @@ allowing only the following values:
 
 entity_check NOTE: This parameter is governed by a constraint 
 allowing only the following values:
- - all
- - at least one
- - none satisfy
- - only one
+  - all
+  - at least one
+  - none satisfy
+  - only one
 
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
-pattern match
-^^^^^^^^^^^^^
-pattern not match
-^^^^^^^^^^^^^^^^^
+| pattern match
+| pattern not match
 
 XCCDF+AE
 ^^^^^^^^
@@ -729,7 +727,7 @@ YAML
 
 ::
 
-  - artifact-expression:
+  artifact-expression:
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
     artifact-title: "[RECOMMENDATION TITLE]"
     artifact:
@@ -892,15 +890,10 @@ JSON
     }
   }
 
-.. _generated-content-1:
-
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
-.. _existence_test:
-
 existence_test
-^^^^^^^^^^^^^^
 
 XCCDF+AE
 ^^^^^^^^
@@ -1006,7 +999,7 @@ YAML
 
 ::
 
-  - artifact-expression:
+  artifact-expression:
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
     artifact-title: "[RECOMMENDATION TITLE]"
     artifact:
@@ -1126,15 +1119,10 @@ JSON
     }
   }
 
-.. _generated-content-2:
-
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
-.. _unix.file_permissions_v1:
-
 unix.file_permissions_v1
-^^^^^^^^^^^^^^^^^^^^^^^^
 
 XCCDF+AE
 ^^^^^^^^
@@ -1263,7 +1251,7 @@ YAML
 
 ::
 
-  - artifact-expression:
+  artifact-expression:
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
     artifact-title: "[RECOMMENDATION TITLE]"
     artifact:
@@ -1537,15 +1525,10 @@ JSON
   }
 
 
-.. _generated-content-3:
-
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
-.. _Txt-Unix_File_or_Directory_Permissions_v1:
-
 Txt-Unix_File_or_Directory_Permissions_v1
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 XCCDF+AE
 ^^^^^^^^
@@ -1660,7 +1643,7 @@ YAML
 
 ::
 
-  - artifact-expression:
+  artifact-expression:
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
     artifact-title: "[RECOMMENDATION TITLE]"
     artifact:
@@ -1803,15 +1786,10 @@ JSON
   }
 
 
-.. _generated-content-4:
-
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
-.. _Txt-Unix_File_or_Directory_Permissions_v2:
-
 Txt-Unix_File_or_Directory_Permissions_v2
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 XCCDF+AE
 ^^^^^^^^
@@ -1937,7 +1915,6 @@ State
 
 Variable
         
-
 ::
 
   <local_variable 
@@ -1955,7 +1932,7 @@ YAML
 
 ::
 
-  - artifact-expression:
+  artifact-expression:
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
     artifact-title: "[RECOMMENDATION TITLE]"
     artifact:
@@ -2218,15 +2195,10 @@ JSON
     }
   }
   
-.. _generated-content-5:
-
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
-.. _independent.txt_file_content_v1:
-
 independent.txt_file_content_v1
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 XCCDF+AE
 ^^^^^^^^
@@ -2280,7 +2252,6 @@ SCAP
 
 XCCDF
 '''''
-
 
 For ``independent.txt_file_content_v1`` artifacts, the xccdf:check looks like this.
 
@@ -2352,7 +2323,6 @@ State
 
 Variable
         
-
 ::
 
   <external_variable 
@@ -2366,7 +2336,7 @@ YAML
 
 ::
 
-  - artifact-expression:
+  artifact-expression:
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
     artifact-title: "[RECOMMENDATION TITLE]"
     artifact:
@@ -2457,164 +2427,159 @@ JSON
 
 ::
 
-{
-  "artifact-expression": {
-    "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
-    "artifact-title": "[RECOMMENDATION TITLE]",
-    "artifact": {
-      "type": "[ARTIFACTTYPE NAME]",
-      "parameters": [
-        {
-          "parameter": {
-            "name": "base_path",
-            "type": "string",
-            "value": "[base_path.value]"
-          }
-        },
-        {
-          "parameter": {
-            "name": "path",
-            "type": "string",
-            "value": "[path.value]"
-          }
-        },
-        {
-          "parameter": {
-            "name": "concat_path",
-            "type": "string",
-            "value": "[concat_path.value]"
-          }
-        },
-        {
-          "parameter": {
-            "name": "filename",
-            "type": "string",
-            "value": "[filename.value]"
-          }
-        },
-        {
-          "parameter": {
-            "name": "recurse",
-            "type": "string",
-            "value": "[recurse.value]"
-          }
-                  {
-            "parameter": {
-              "name": "max_depth",
-              "type": "binary",
-              "value": "[max_depth.value]"
-            }
-          },
-          {
-            "parameter": {
-              "name": "file_system",
-              "dt": "string",
-              "value": "[file_system.value]"
-            }
-          },
-          {
-            "parameter": {
-              "name": "check",
-              "dt": "string",
-              "value": "[check.value]"
-            }
-          },
-          {
-            "parameter": {
-              "name": "pattern",
-              "dt": "string",
-              "value": "[pattern.value]"
-            }
-          }
-        ]
-      },
-      "test": {
-        "type": "[TESTTYPE NAME]",
+  {
+    "artifact-expression": {
+      "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
+      "artifact-title": "[RECOMMENDATION TITLE]",
+      "artifact": {
+        "type": "[ARTIFACTTYPE NAME]",
         "parameters": [
           {
             "parameter": {
-              "name": "subexpression",
-              "dt": "string",
-              "value": "[subexpression.value]"
-            }
-          },
-          {
-            "parameter": {
-              "name": "filepath",
-              "dt": "string",
-              "value": "[filepath.value]"
+              "name": "base_path",
+              "type": "string",
+              "value": "[base_path.value]"
             }
           },
           {
             "parameter": {
               "name": "path",
-              "dt": "string",
+              "type": "string",
               "value": "[path.value]"
             }
           },
           {
             "parameter": {
+              "name": "concat_path",
+              "type": "string",
+              "value": "[concat_path.value]"
+            }
+          },
+          {
+            "parameter": {
               "name": "filename",
-              "dt": "string",
+              "type": "string",
               "value": "[filename.value]"
             }
           },
           {
             "parameter": {
-              "name": "pattern",
-              "dt": "binary",
-              "value": "[pattern.value]"
+              "name": "recurse",
+              "type": "string",
+              "value": "[recurse.value]"
             }
-          },
-          {
-            "parameter": {
-              "name": "instance",
-              "dt": "binary",
-              "value": "[instance.value]"
+                    {
+              "parameter": {
+                "name": "max_depth",
+                "type": "binary",
+                "value": "[max_depth.value]"
+              }
+            },
+            {
+              "parameter": {
+                "name": "file_system",
+                "dt": "string",
+                "value": "[file_system.value]"
+              }
+            },
+            {
+              "parameter": {
+                "name": "check",
+                "dt": "string",
+                "value": "[check.value]"
+              }
+            },
+            {
+              "parameter": {
+                "name": "pattern",
+                "dt": "string",
+                "value": "[pattern.value]"
+              }
             }
-          },
-          {
-            "parameter": {
-              "name": "subexp_op",
-              "dt": "string",
-              "value": "[subexp_op.value]"
+          ]
+        },
+        "test": {
+          "type": "[TESTTYPE NAME]",
+          "parameters": [
+            {
+              "parameter": {
+                "name": "subexpression",
+                "dt": "string",
+                "value": "[subexpression.value]"
+              }
+            },
+            {
+              "parameter": {
+                "name": "filepath",
+                "dt": "string",
+                "value": "[filepath.value]"
+              }
+            },
+            {
+              "parameter": {
+                "name": "path",
+                "dt": "string",
+                "value": "[path.value]"
+              }
+            },
+            {
+              "parameter": {
+                "name": "filename",
+                "dt": "string",
+                "value": "[filename.value]"
+              }
+            },
+            {
+              "parameter": {
+                "name": "pattern",
+                "dt": "binary",
+                "value": "[pattern.value]"
+              }
+            },
+            {
+              "parameter": {
+                "name": "instance",
+                "dt": "binary",
+                "value": "[instance.value]"
+              }
+            },
+            {
+              "parameter": {
+                "name": "subexp_op",
+                "dt": "string",
+                "value": "[subexp_op.value]"
+              }
+            },
+            {
+              "parameter": {
+                "name": "inst_op",
+                "dt": "string",
+                "value": "[inst_op.value]"
+              }
+            },
+            {
+              "parameter": {
+                "name": "text",
+                "dt": "string",
+                "value": "[text.value]"
+              }
+            },
+            {
+              "parameter": {
+                "name": "text_op",
+                "dt": "string",
+                "value": "[text_op.value]"
+              }
             }
-          },
-          {
-            "parameter": {
-              "name": "inst_op",
-              "dt": "string",
-              "value": "[inst_op.value]"
-            }
-          },
-          {
-            "parameter": {
-              "name": "text",
-              "dt": "string",
-              "value": "[text.value]"
-            }
-          },
-          {
-            "parameter": {
-              "name": "text_op",
-              "dt": "string",
-              "value": "[text_op.value]"
-            }
-          }
-        ]
+          ]
+        }
       }
     }
-  }
-
-  .. _generated-content-6:
 
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
-.. _independent.txt_file_content_v2:
-
 independent.txt_file_content_v2
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 XCCDF+AE
 ^^^^^^^^

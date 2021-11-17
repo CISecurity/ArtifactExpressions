@@ -79,62 +79,62 @@ Artifact Parameters
 
 engine NOTE: This parameter is governed by a constraint allowing only
 the following values:
- - access
- - db2
- - cache
- - firebird
- - firstsql
- - foxpro
- - informix
- - ingres
- - interbase
- - lightbase
- - maxdb
- - monetdb
- - mimer
- - mysql
- - oracle
- - paradox
- - pervasive
- - postgre
- - sqlbase
- - sqlite
- - sqlserver
- - sybase
+  - access
+  - db2
+  - cache
+  - firebird
+  - firstsql
+  - foxpro
+  - informix
+  - ingres
+  - interbase
+  - lightbase
+  - maxdb
+  - monetdb
+  - mimer
+  - mysql
+  - oracle
+  - paradox
+  - pervasive
+  - postgre
+  - sqlbase
+  - sqlite
+  - sqlserver
+  - sybase
 
 prepend_type NOTE: This parameter is governed by a constraint allowing
 only the following values:
- - String
- - SQL
+  - String
+  - SQL
 
 append_type NOTE: This parameter is governed by a constraint allowing
 only the following values:
- - String
- - SQL
+  - String
+  - SQL
 
 recurse NOTE: This parameter is governed by a constraint allowing
 only the following values: 
- - Yes
- - No
+  - Yes
+  - No
 
 file_system NOTE: This parameter is governed by a constraint allowing
 only the following values: 
- - NA
- - local
- - all
- - defined
+  - NA
+  - local
+  - all
+  - defined
 
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  pattern match
--  pattern not match
--  existence_test
--  SQL-Unix_File_or_Directory_Permissions_v1
--  Txt-Unix_File_or_Directory_Permissions_v1
--  Txt-Unix_File_or_Directory_Permissions_v2
--  independent.txt_file_content_v1
--  independent.txt_file_content_v2
+  - pattern match
+  - pattern not match
+  - existence_test
+  - SQL-Unix_File_or_Directory_Permissions_v1
+  - Txt-Unix_File_or_Directory_Permissions_v1
+  - Txt-Unix_File_or_Directory_Permissions_v2
+  - independent.txt_file_content_v1
+  - independent.txt_file_content_v2
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
@@ -152,12 +152,12 @@ pattern match
 
 data_type NOTE: This parameter is governed by a constraint allowing only the 
 following values:
- - boolean
- - float
- - int
- - string
- - version 
- - set 
+  - boolean
+  - float
+  - int
+  - string
+  - version 
+  - set 
 
 pattern not match
 ~~~~~~~~~~~~~~~~~
@@ -172,12 +172,12 @@ pattern not match
 
 data_type NOTE: This parameter is governed by a constraint allowing only the 
 following values:
- - boolean
- - float
- - int
- - string
- - version 
- - set 
+  - boolean
+  - float
+  - int
+  - string
+  - version 
+  - set 
 
 existence_test
 ~~~~~~~~~~~~~~
@@ -393,10 +393,10 @@ independent.txt_file_content_v1
 
 file_system NOTE: This parameter is governed by a constraint allowing only the 
 following values: 
- - NA
- - local
- - all
- - defined
+  - NA
+  - local
+  - all
+  - defined
 
 independent.txt_file_content_v2
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -445,66 +445,64 @@ independent.txt_file_content_v2
 
 subexp_op NOTE: This parameter is governed by a constraint allowing
 only the following values: 
- - equals
- - not equal
- - case insensitive equals
- - case insensitive not equal
- - greater than
- - less than
- - greater than or equal
- - less than or equal
- - bitwise and
- - bitwise or
- - pattern match
- - subset of
- - superset of
+  - equals
+  - not equal
+  - case insensitive equals
+  - case insensitive not equal
+  - greater than
+  - less than
+  - greater than or equal
+  - less than or equal
+  - bitwise and
+  - bitwise or
+  - pattern match
+  - subset of
+  - superset of
 
 inst_op NOTE: This parameter is governed by a constraint allowing
 only the following values: 
- - equals
- - not equal
- - case insensitive equals
- - case insensitive not equal
- - greater than
- - less than
- - greater than or equal
- - less than or equal
- - bitwise and
- - bitwise or
- - pattern match
- - subset of
- - superset of
+  - equals
+  - not equal
+  - case insensitive equals
+  - case insensitive not equal
+  - greater than
+  - less than
+  - greater than or equal
+  - less than or equal
+  - bitwise and
+  - bitwise or
+  - pattern match
+  - subset of
+  - superset of
 
 text_op NOTE: This parameter is governed by a constraint allowing
 only the following values: 
- - equals
- - not equal
- - case insensitive equals
- - case insensitive not equal
- - greater than
- - less than
- - greater than or equal
- - less than or equal
- - bitwise and
- - bitwise or
- - pattern match
- - subset of
- - superset of
+  - equals
+  - not equal
+  - case insensitive equals
+  - case insensitive not equal
+  - greater than
+  - less than
+  - greater than or equal
+  - less than or equal
+  - bitwise and
+  - bitwise or
+  - pattern match
+  - subset of
+  - superset of
 
 entity_check NOTE: This parameter is governed by a constraint
 allowing only the following values: 
- - all
- - at least one
- - none satisfy
- - only one
+  - all
+  - at least one
+  - none satisfy
+  - only one
 
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
 pattern match
-^^^^^^^^^^^^^
 pattern not match
-^^^^^^^^^^^^^^^^^
 
 XCCDF+AE
 ^^^^^^^^
@@ -563,8 +561,6 @@ For ``pattern match`` artifacts, the xccdf:check looks like this.
       href="[BENCHMARK_TITLE]" 
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
-
-
 
 OVAL
 ''''
@@ -625,75 +621,75 @@ YAML
 
 ::
 
-  - artifact-expression:
+  artifact-expression:
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
     artifact-title: "[RECOMMENDATION TITLE]"
     artifact:
       type: "[ARTIFACTTYPE NAME]"
       parameters:
         - parameter:   
-          name: "engine"
-          type: "string"
-          value: "[engine.value]"
+            name: "engine"
+            dt: "string"
+            value: "[engine.value]"
         - parameter: 
-          name: "sql"
-          dt: "string"
-          value: "[sql.value]"
+            name: "sql"
+            dt: "string"
+            value: "[sql.value]"
         - parameter: 
-          name: "version"
-          dt: "string"
-          value: "[version.value]"
+            name: "version"
+            dt: "string"
+            value: "[version.value]"
         - parameter: 
-          name: "path"
-          dt: "string"
-          value: "[path.value]"
+            name: "path"
+            dt: "string"
+            value: "[path.value]"
         - parameter: 
-          name: "filename"
-          dt: "string"
-          value: "[filename.value]"
+            name: "filename"
+            dt: "string"
+            value: "[filename.value]"
         - parameter: 
-          name: "recurse"
-          dt: "string"
-          value: "[recurse.value]"
+            name: "recurse"
+            dt: "string"
+            value: "[recurse.value]"
         - parameter: 
-          name: "max_depth"
-          dt: "binary"
-          value: "[max_depth.value]"
+            name: "max_depth"
+            dt: "binary"
+            value: "[max_depth.value]"
         - parameter: 
-          name: "file_system"
-          dt: "string"
-          value: "[file_system.value]"
+            name: "file_system"
+            dt: "string"
+            value: "[file_system.value]"
         - parameter: 
-          name: "prepend_str"
-          dt: "string"
-          value: "[prepend_str.value]"
+            name: "prepend_str"
+            dt: "string"
+            value: "[prepend_str.value]"
         - parameter: 
-          name: "append_str"
-          dt: "string"
-          value: "[append_str.value]"
+            name: "append_str"
+            dt: "string"
+            value: "[append_str.value]"
         - parameter: 
-          name: "prepend_type"
-          dt: "string"
-          value: "[prepend_type.value]"
+            name: "prepend_type"
+            dt: "string"
+            value: "[prepend_type.value]"
         - parameter: 
-          name: "append_type"
-          dt: "string"
-          value: "[append_type.value]"
+            name: "append_type"
+            dt: "string"
+            value: "[append_type.value]"
         - parameter: 
-          name: "pattern"
-          dt: "string"
-          value: "[pattern.value]"
+            name: "pattern"
+            dt: "string"
+            value: "[pattern.value]"
     test:
       type: "[TESTTYPE NAME]"
       parameters:   
         - parameter: 
-          name: "value"
-          dt: "string"
-          value: "[value.value]"
+            name: "value"
+            dt: "string"
+            value: "[value.value]"
         - parameter: 
-          name: "datatype"
-          dt: "string"
-          value: "[datatype.value]"
+            name: "datatype"
+            dt: "string"
+            value: "[datatype.value]"
 
 JSON
 ^^^^
@@ -822,15 +818,10 @@ JSON
     }
   }
 
-.. _generated-content-1:
-
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
-.. _existence_test:
-
 existence_test
-^^^^^^^^^^^^^^
 
 XCCDF+AE
 ^^^^^^^^
@@ -936,71 +927,71 @@ YAML
 
 ::
 
-  - artifact-expression:
+  artifact-expression:
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
     artifact_title: "[RECOMMENDATION-TITLE]" 
     artifact:
       type: "[ARTIFACTTYPE-NAME]"
       parameters:
         - parameter:   
-          name: "engine"
-          type: "string"
-          value: "[engine.value]"
+            name: "engine"
+            dt: "string"
+            value: "[engine.value]"
         - parameter: 
-          name: "sql"
-          dt: "string"
-          value: "[sql.value]"
+            name: "sql"
+            dt: "string"
+            value: "[sql.value]"
         - parameter: 
-          name: "version"
-          dt: "string"
-          value: "[version.value]"
+            name: "version"
+            dt: "string"
+            value: "[version.value]"
         - parameter: 
-          name: "path"
-          dt: "string"
-          value: "[path.value]"
+            name: "path"
+            dt: "string"
+            value: "[path.value]"
         - parameter: 
-          name: "filename"
-          dt: "string"
-          value: "[filename.value]"
+            name: "filename"
+            dt: "string"
+            value: "[filename.value]"
         - parameter: 
-          name: "recurse"
-          dt: "string"
-          value: "[recurse.value]"
+            name: "recurse"
+            dt: "string"
+            value: "[recurse.value]"
         - parameter: 
-          name: "max_depth"
-          dt: "binary"
-          value: "[max_depth.value]"
+            name: "max_depth"
+            dt: "binary"
+            value: "[max_depth.value]"
         - parameter: 
-          name: "file_system"
-          dt: "string"
-          value: "[file_system.value]"
+            name: "file_system"
+            dt: "string"
+            value: "[file_system.value]"
         - parameter: 
-          name: "prepend_str"
-          dt: "string"
-          value: "[prepend_str.value]"
+            name: "prepend_str"
+            dt: "string"
+            value: "[prepend_str.value]"
         - parameter: 
-          name: "append_str"
-          dt: "string"
-          value: "[append_str.value]"
+            name: "append_str"
+            dt: "string"
+            value: "[append_str.value]"
         - parameter: 
-          name: "prepend_type"
-          dt: "string"
-          value: "[prepend_type.value]"
+            name: "prepend_type"
+            dt: "string"
+            value: "[prepend_type.value]"
         - parameter: 
-          name: "append_type"
-          dt: "string"
-          value: "[append_type.value]"
+            name: "append_type"
+            dt: "string"
+            value: "[append_type.value]"
         - parameter: 
-          name: "pattern"
-          dt: "string"
-          value: "[pattern.value]"
+            name: "pattern"
+            dt: "string"
+            value: "[pattern.value]"
     test:
       type: "[TESTTYPE-NAME]"
       parameters:
         - parameter: 
-          name: "value"
-          dt: "string"
-          value: "[value.value]"
+            name: "value"
+            dt: "string"
+            value: "[value.value]"
 
 JSON
 ^^^^
@@ -1122,15 +1113,12 @@ JSON
     }
   }
 
- .. _generated-content-2:
 
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
 SQL-Unix_File_or_Directory_Permissions_v1
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Txt-Unix_File_or_Directory_Permissions_v1
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 XCCDF+AE
 ^^^^^^^^
@@ -1286,108 +1274,108 @@ YAML
       type: "[ARTIFACTTYPE-NAME]"
       parameters:
         - parameter:   
-          name: "engine"
-          type: "string"
-          value: "[engine.value]"
+            name: "engine"
+            dt: "string"
+            value: "[engine.value]"
         - parameter: 
-          name: "sql"
-          dt: "string"
-          value: "[sql.value]"
+            name: "sql"
+            dt: "string"
+            value: "[sql.value]"
         - parameter: 
-          name: "version"
-          dt: "string"
-          value: "[version.value]"
+            name: "version"
+            dt: "string"
+            value: "[version.value]"
         - parameter: 
-          name: "path"
-          dt: "string"
-          value: "[path.value]"
+            name: "path"
+            dt: "string"
+            value: "[path.value]"
         - parameter: 
-          name: "filename"
-          dt: "string"
-          value: "[filename.value]"
+            name: "filename"
+            dt: "string"
+            value: "[filename.value]"
         - parameter: 
-          name: "recurse"
-          dt: "string"
-          value: "[recurse.value]"
+            name: "recurse"
+            dt: "string"
+            value: "[recurse.value]"
         - parameter: 
-          name: "max_depth"
-          dt: "binary"
-          value: "[max_depth.value]"
+            name: "max_depth"
+            dt: "binary"
+            value: "[max_depth.value]"
         - parameter: 
-          name: "file_system"
-          dt: "string"
-          value: "[file_system.value]"
+            name: "file_system"
+            dt: "string"
+            value: "[file_system.value]"
         - parameter: 
-          name: "prepend_str"
-          dt: "string"
-          value: "[prepend_str.value]"
+            name: "prepend_str"
+            dt: "string"
+            value: "[prepend_str.value]"
         - parameter: 
-          name: "append_str"
-          dt: "string"
-          value: "[append_str.value]"
+            name: "append_str"
+            dt: "string"
+            value: "[append_str.value]"
         - parameter: 
-          name: "prepend_type"
-          dt: "string"
-          value: "[prepend_type.value]"
+            name: "prepend_type"
+            dt: "string"
+            value: "[prepend_type.value]"
         - parameter: 
-          name: "append_type"
-          dt: "string"
-          value: "[append_type.value]"
+            name: "append_type"
+            dt: "string"
+            value: "[append_type.value]"
         - parameter: 
-          name: "pattern"
-          dt: "string"
-          value: "[pattern.value]"
+            name: "pattern"
+            dt: "string"
+            value: "[pattern.value]"
     test:
       type: "[TESTTYPE-NAME]"
       parameters:
         - parameter: 
-          name: "username"
-          dt: "string"
-          value: "[username.value]"
+            name: "username"
+            dt: "string"
+            value: "[username.value]"
         - parameter: 
-          name: "group"
-          dt: "string"
-          value: "[group.value]"
+            name: "group"
+            dt: "string"
+            value: "[group.value]"
         - parameter: 
-          name: "uread"
-          dt: "string"
-          value: "[uread.value]"
+            name: "uread"
+            dt: "string"
+            value: "[uread.value]"
         - parameter: 
-          name: "uwrite"
-          dt: "string"
-          value: "[uwrite.value]"
+            name: "uwrite"
+            dt: "string"
+            value: "[uwrite.value]"
         - parameter: 
-          name: "uexec"
-          dt: "string"
-          value: "[uexec.value]"
+            name: "uexec"
+            dt: "string"
+            value: "[uexec.value]"
         - parameter: 
-          name: "gread"
-          dt: "string"
-          value: "[gread.value]"
+            name: "gread"
+            dt: "string"
+            value: "[gread.value]"
         - parameter: 
-          name: "gwrite"
-          dt: "string"
-          value: "[gwrite.value]"
+            name: "gwrite"
+            dt: "string"
+            value: "[gwrite.value]"
         - parameter: 
-          name: "gexec"
-          dt: "string"
-          value: "[gexec.value]"
+            name: "gexec"
+            dt: "string"
+            value: "[gexec.value]"
         - parameter: 
-          name: "oread"
-          dt: "string"
-          value: "[oread.value]"
+            name: "oread"
+            dt: "string"
+            value: "[oread.value]"
         - parameter: 
-          name: "owrite"
-          dt: "string"
-          value: "[owrite.value]"
+            name: "owrite"
+            dt: "string"
+            value: "[owrite.value]"
         - parameter: 
-          name: "oexec"
-          dt: "string"
-          value: "[oexec.value]"
+            name: "oexec"
+            dt: "string"
+            value: "[oexec.value]"
         - parameter: 
-          name: "dir_only"
-          dt: "boolean"
-          value: "[dir_only.value]"
+            name: "dir_only"
+            dt: "boolean"
+            value: "[dir_only.value]"
 
 JSON
 ^^^^
@@ -1586,13 +1574,10 @@ JSON
     }
   }
 
- .. _generated-content-3:
-
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
 Txt-Unix_File_or_Directory_Permissions_v2
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 XCCDF+AE
 ^^^^^^^^
@@ -1646,7 +1631,6 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
       </ae:artifact_expression>
     </xccdf:check-content>
   </xccdf:check>
-
 
 SCAP
 ^^^^
@@ -1744,108 +1728,108 @@ YAML
       type: "[ARTIFACTTYPE-NAME]"
       parameters:
         - parameter:   
-          name: "engine"
-          type: "string"
-          value: "[engine.value]"
+            name: "engine"
+            dt: "string"
+            value: "[engine.value]"
         - parameter: 
-          name: "sql"
-          dt: "string"
-          value: "[sql.value]"
+            name: "sql"
+            dt: "string"
+            value: "[sql.value]"
         - parameter: 
-          name: "version"
-          dt: "string"
-          value: "[version.value]"
+            name: "version"
+            dt: "string"
+            value: "[version.value]"
         - parameter: 
-          name: "path"
-          dt: "string"
-          value: "[path.value]"
+            name: "path"
+            dt: "string"
+            value: "[path.value]"
         - parameter: 
-          name: "filename"
-          dt: "string"
-          value: "[filename.value]"
+            name: "filename"
+            dt: "string"
+            value: "[filename.value]"
         - parameter: 
-          name: "recurse"
-          dt: "string"
-          value: "[recurse.value]"
+            name: "recurse"
+            dt: "string"
+            value: "[recurse.value]"
         - parameter: 
-          name: "max_depth"
-          dt: "binary"
-          value: "[max_depth.value]"
+            name: "max_depth"
+            dt: "binary"
+            value: "[max_depth.value]"
         - parameter: 
-          name: "file_system"
-          dt: "string"
-          value: "[file_system.value]"
+            name: "file_system"
+            dt: "string"
+            value: "[file_system.value]"
         - parameter: 
-          name: "prepend_str"
-          dt: "string"
-          value: "[prepend_str.value]"
+            name: "prepend_str"
+            dt: "string"
+            value: "[prepend_str.value]"
         - parameter: 
-          name: "append_str"
-          dt: "string"
-          value: "[append_str.value]"
+            name: "append_str"
+            dt: "string"
+            value: "[append_str.value]"
         - parameter: 
-          name: "prepend_type"
-          dt: "string"
-          value: "[prepend_type.value]"
+            name: "prepend_type"
+            dt: "string"
+            value: "[prepend_type.value]"
         - parameter: 
-          name: "append_type"
-          dt: "string"
-          value: "[append_type.value]"
+            name: "append_type"
+            dt: "string"
+            value: "[append_type.value]"
         - parameter: 
-          name: "pattern"
-          dt: "string"
-          value: "[pattern.value]"
+            name: "pattern"
+            dt: "string"
+            value: "[pattern.value]"
     test:
       type: "[TESTTYPE-NAME]"
       parameters:
         - parameter: 
-          name: "username"
-          dt: "string"
-          value: "[username.value]"
+            name: "username"
+            dt: "string"
+            value: "[username.value]"
         - parameter: 
-          name: "group"
-          dt: "string"
-          value: "[group.value]"
+            name: "group"
+            dt: "string"
+            value: "[group.value]"
         - parameter: 
-          name: "uread"
-          dt: "string"
-          value: "[uread.value]"
+            name: "uread"
+            dt: "string"
+            value: "[uread.value]"
         - parameter: 
-          name: "uwrite"
-          dt: "string"
-          value: "[uwrite.value]"
+            name: "uwrite"
+            dt: "string"
+            value: "[uwrite.value]"
         - parameter: 
-          name: "uexec"
-          dt: "string"
-          value: "[uexec.value]"
+            name: "uexec"
+            dt: "string"
+            value: "[uexec.value]"
         - parameter: 
-          name: "gread"
-          dt: "string"
-          value: "[gread.value]"
+            name: "gread"
+            dt: "string"
+            value: "[gread.value]"
         - parameter: 
-          name: "gwrite"
-          dt: "string"
-          value: "[gwrite.value]"
+            name: "gwrite"
+            dt: "string"
+            value: "[gwrite.value]"
         - parameter: 
-          name: "gexec"
-          dt: "string"
-          value: "[gexec.value]"
+            name: "gexec"
+            dt: "string"
+            value: "[gexec.value]"
         - parameter: 
-          name: "oread"
-          dt: "string"
-          value: "[oread.value]"
+            name: "oread"
+            dt: "string"
+            value: "[oread.value]"
         - parameter: 
-          name: "owrite"
-          dt: "string"
-          value: "[owrite.value]"
+            name: "owrite"
+            dt: "string"
+            value: "[owrite.value]"
         - parameter: 
-          name: "oexec"
-          dt: "string"
-          value: "[oexec.value]"
+            name: "oexec"
+            dt: "string"
+            value: "[oexec.value]"
         - parameter: 
-          name: "dir_only"
-          dt: "boolean"
-          value: "[dir_only.value]"
+            name: "dir_only"
+            dt: "boolean"
+            value: "[dir_only.value]"
 
 JSON
 ^^^^
@@ -2044,13 +2028,10 @@ JSON
     }
   }
 
- .. _generated-content-3:
-
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
 independent.txt_file_content_v1
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 XCCDF+AE
 ^^^^^^^^
@@ -2199,100 +2180,100 @@ YAML
       type: "[ARTIFACTTYPE-NAME]"
       parameters:
         - parameter:   
-          name: "engine"
-          type: "string"
-          value: "[engine.value]"
+            name: "engine"
+            dt: "string"
+            value: "[engine.value]"
         - parameter: 
-          name: "sql"
-          dt: "string"
-          value: "[sql.value]"
+            name: "sql"
+            dt: "string"
+            value: "[sql.value]"
         - parameter: 
-          name: "version"
-          dt: "string"
-          value: "[version.value]"
+            name: "version"
+            dt: "string"
+            value: "[version.value]"
         - parameter: 
-          name: "path"
-          dt: "string"
-          value: "[path.value]"
+            name: "path"
+            dt: "string"
+            value: "[path.value]"
         - parameter: 
-          name: "filename"
-          dt: "string"
-          value: "[filename.value]"
+            name: "filename"
+            dt: "string"
+            value: "[filename.value]"
         - parameter: 
-          name: "recurse"
-          dt: "string"
-          value: "[recurse.value]"
+            name: "recurse"
+            dt: "string"
+            value: "[recurse.value]"
         - parameter: 
-          name: "max_depth"
-          dt: "binary"
-          value: "[max_depth.value]"
+            name: "max_depth"
+            dt: "binary"
+            value: "[max_depth.value]"
         - parameter: 
-          name: "file_system"
-          dt: "string"
-          value: "[file_system.value]"
+            name: "file_system"
+            dt: "string"
+            value: "[file_system.value]"
         - parameter: 
-          name: "prepend_str"
-          dt: "string"
-          value: "[prepend_str.value]"
+            name: "prepend_str"
+            dt: "string"
+            value: "[prepend_str.value]"
         - parameter: 
-          name: "append_str"
-          dt: "string"
-          value: "[append_str.value]"
+            name: "append_str"
+            dt: "string"
+            value: "[append_str.value]"
         - parameter: 
-          name: "prepend_type"
-          dt: "string"
-          value: "[prepend_type.value]"
+            name: "prepend_type"
+            dt: "string"
+            value: "[prepend_type.value]"
         - parameter: 
-          name: "append_type"
-          dt: "string"
-          value: "[append_type.value]"
+            name: "append_type"
+            dt: "string"
+            value: "[append_type.value]"
         - parameter: 
-          name: "pattern"
-          dt: "string"
-          value: "[pattern.value]"
+            name: "pattern"
+            dt: "string"
+            value: "[pattern.value]"
     test:
       type: "[TESTTYPE-NAME]"
       parameters:
         - parameter: 
-          name: "subexpression"
-          dt: "string"
-          value: "[subexpression.value]"
+            name: "subexpression"
+            dt: "string"
+            value: "[subexpression.value]"
         - parameter: 
-          name: "filepath"
-          dt: "string"
-          value: "[filepath.value]"
+            name: "filepath"
+            dt: "string"
+            value: "[filepath.value]"
         - parameter: 
-          name: "path"
-          dt: "string"
-          value: "[path.value]"
+            name: "path"
+            dt: "string"
+            value: "[path.value]"
         - parameter: 
-          name: "filename"
-          dt: "string"
-          value: "[filename.value]"
+            name: "filename"
+            dt: "string"
+            value: "[filename.value]"
         - parameter: 
-          name: "pattern"
-          dt: "binary"
-          value: "[pattern.value]"
+            name: "pattern"
+            dt: "binary"
+            value: "[pattern.value]"
         - parameter: 
-          name: "instance"
-          dt: "binary"
-          value: "[instance.value]"          
+            name: "instance"
+            dt: "binary"
+            value: "[instance.value]"          
         - parameter: 
-          name: "subexp_op"
-          dt: "string"
-          value: "[subexp_op.value]"
+            name: "subexp_op"
+            dt: "string"
+            value: "[subexp_op.value]"
         - parameter: 
-          name: "inst_op"
-          dt: "string"
-          value: "[inst_op.value]"
+            name: "inst_op"
+            dt: "string"
+            value: "[inst_op.value]"
         - parameter: 
-          name: "text"
-          dt: "string"
-          value: "[text.value]"
+            name: "text"
+            dt: "string"
+            value: "[text.value]"
         - parameter: 
-          name: "text_op"
-          dt: "string"
-          value: "[text_op.value]"
+            name: "text_op"
+            dt: "string"
+            value: "[text_op.value]"
 
 JSON
 ^^^^
@@ -2477,14 +2458,10 @@ JSON
     }
   }
 
-  
- .. _generated-content-4:
-
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
 independent.txt_file_content_v2
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 XCCDF+AE
 ^^^^^^^^
@@ -2635,104 +2612,104 @@ YAML
       type: "[ARTIFACTTYPE-NAME]"
       parameters:
         - parameter:  
-          name: "engine"
-          type: "string"
-          value: "[engine.value]"
+            name: "engine"
+            dt: "string"
+            value: "[engine.value]"
         - parameter: 
-          name: "sql"
-          dt: "string"
-          value: "[sql.value]"
+            name: "sql"
+            dt: "string"
+            value: "[sql.value]"
         - parameter: 
-          name: "version"
-          dt: "string"
-          value: "[version.value]"
+            name: "version"
+            dt: "string"
+            value: "[version.value]"
         - parameter: 
-          name: "path"
-          dt: "string"
-          value: "[path.value]"
+            name: "path"
+            dt: "string"
+            value: "[path.value]"
         - parameter: 
-          name: "filename"
-          dt: "string"
-          value: "[filename.value]"
+            name: "filename"
+            dt: "string"
+            value: "[filename.value]"
         - parameter: 
-          name: "recurse"
-          dt: "string"
-          value: "[recurse.value]"
+            name: "recurse"
+            dt: "string"
+            value: "[recurse.value]"
         - parameter: 
-          name: "max_depth"
-          dt: "binary"
-          value: "[max_depth.value]"
+            name: "max_depth"
+            dt: "binary"
+            value: "[max_depth.value]"
         - parameter: 
-          name: "file_system"
-          dt: "string"
-          value: "[file_system.value]"
+            name: "file_system"
+            dt: "string"
+            value: "[file_system.value]"
         - parameter: 
-          name: "prepend_str"
-          dt: "string"
-          value: "[prepend_str.value]"
+            name: "prepend_str"
+            dt: "string"
+            value: "[prepend_str.value]"
         - parameter: 
-          name: "append_str"
-          dt: "string"
-          value: "[append_str.value]"
+            name: "append_str"
+            dt: "string"
+            value: "[append_str.value]"
         - parameter: 
-          name: "prepend_type"
-          dt: "string"
-          value: "[prepend_type.value]"
+            name: "prepend_type"
+            dt: "string"
+            value: "[prepend_type.value]"
         - parameter: 
-          name: "append_type"
-          dt: "string"
-          value: "[append_type.value]"
+            name: "append_type"
+            dt: "string"
+            value: "[append_type.value]"
         - parameter: 
-          name: "pattern"
-          dt: "string"
-          value: "[pattern.value]"
+            name: "pattern"
+            dt: "string"
+            value: "[pattern.value]"
     test:
       type: "[TESTTYPE-NAME]"
       parameters:
         - parameter: 
-          name: "subexpression"
-          dt: "string"
-          value: "[subexpression.value]"
+            name: "subexpression"
+            dt: "string"
+            value: "[subexpression.value]"
         - parameter: 
-          name: "filepath"
-          dt: "string"
-          value: "[filepath.value]"
+            name: "filepath"
+            dt: "string"
+            value: "[filepath.value]"
         - parameter: 
-          name: "path"
-          dt: "string"
-          value: "[path.value]"
+            name: "path"
+            dt: "string"
+            value: "[path.value]"
         - parameter: 
-          name: "filename"
-          dt: "string"
-          value: "[filename.value]"
+            name: "filename"
+            dt: "string"
+            value: "[filename.value]"
         - parameter: 
-          name: "pattern"
-          dt: "binary"
-          value: "[pattern.value]"
+            name: "pattern"
+            dt: "binary"
+            value: "[pattern.value]"
         - parameter: 
-          name: "instance"
-          dt: "binary"
-          value: "[instance.value]"          
+            name: "instance"
+            dt: "binary"
+            value: "[instance.value]"          
         - parameter: 
-          name: "subexp_op"
-          dt: "string"
-          value: "[subexp_op.value]"
+            name: "subexp_op"
+            dt: "string"
+            value: "[subexp_op.value]"
         - parameter: 
-          name: "inst_op"
-          dt: "string"
-          value: "[inst_op.value]"
+            name: "inst_op"
+            dt: "string"
+            value: "[inst_op.value]"
         - parameter: 
-          name: "text"
-          dt: "string"
-          value: "[text.value]"
+            name: "text"
+            dt: "string"
+            value: "[text.value]"
         - parameter: 
-          name: "text_op"
-          dt: "string"
-          value: "[text_op.value]"
+            name: "text_op"
+            dt: "string"
+            value: "[text_op.value]"
         - parameter: 
-          name: "entity_check"
-          dt: "string"
-          value: "[entity_check.value]"          
+            name: "entity_check"
+            dt: "string"
+            value: "[entity_check.value]"          
 
 JSON
 ^^^^

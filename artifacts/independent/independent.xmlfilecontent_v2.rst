@@ -58,15 +58,15 @@ Artifact Parameters
 
 recurse NOTE: This parameter is governed by a constraint allowing
 only the following values:
- - Yes
- - No
+  - Yes
+  - No
 
 file_system NOTE: This parameter is governed by a constraint allowing
 only the following values: 
- - NA
- - local
- - all
- - defined
+  - NA
+  - local
+  - all
+  - defined
 
 check_existence NOTE: This parameter is governed by a constraint allowing
 only the following values: 
@@ -80,10 +80,10 @@ only the following values:
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  pattern match
--  pattern not match
--  existence_test
--  independent.xmlfilecontent_v2
+  - pattern match
+  - pattern not match
+  - existence_test
+  - independent.xmlfilecontent_v2
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
@@ -101,12 +101,12 @@ pattern match
 
 data_type NOTE: This parameter is governed by a constraint allowing only the 
 following values:
- - boolean
- - float
- - int
- - string
- - version
- - set 
+  - boolean
+  - float
+  - int
+  - string
+  - version
+  - set 
 
 pattern not match
 ~~~~~~~~~~~~~~~~~
@@ -121,12 +121,12 @@ pattern not match
 
 data_type NOTE: This parameter is governed by a constraint allowing only the 
 following values:
- - boolean
- - float
- - int
- - string
- - version
- - set 
+  - boolean
+  - float
+  - int
+  - string
+  - version
+  - set 
 
 existence_test
 ~~~~~~~~~~~~~~
@@ -183,9 +183,7 @@ Generated Content
 ~~~~~~~~~~~~~~~~~
 
 pattern match
-^^^^^^^^^^^^^
 pattern not match
-^^^^^^^^^^^^^^^^^
 
 XCCDF+AE
 ^^^^^^^^
@@ -244,8 +242,6 @@ For ``pattern match`` artifacts, the xccdf:check looks like this.
       href="[BENCHMARK_TITLE]" 
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
-
-
 
 OVAL
 ''''
@@ -306,58 +302,58 @@ YAML
 
 ::
 
-  - artifact-expression:
+  artifact-expression:
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
     artifact-title: "[RECOMMENDATION TITLE]"
     artifact:
       type: "[ARTIFACTTYPE NAME]"
       parameters:
         - parameter:
-          name: "path"
-          dt: "string"
-          value: "[path.value]"        
+            name: "path"
+            dt: "string"
+            value: "[path.value]"        
         - parameter:
-          name: "filename"
-          dt: "string"
-          value: "[filename.value]"
+            name: "filename"
+            dt: "string"
+            value: "[filename.value]"
         - parameter:
-          name: "recurse"
-          dt: "string"
-          value: "[recurse.value]"
+            name: "recurse"
+            dt: "string"
+            value: "[recurse.value]"
         - parameter:
-          name: "max_depth"
-          dt: "binary"
-          value: "[max_depth.value]"
+            name: "max_depth"
+            dt: "binary"
+            value: "[max_depth.value]"
         - parameter:
-          name: "file_system"
-          dt: "string"
-          value: "[file_system.value]"
+            name: "file_system"
+            dt: "string"
+            value: "[file_system.value]"
         - parameter:
-          name: "xpath"
-          dt: "string"
-          value: "[xpath.value]"
+            name: "xpath"
+            dt: "string"
+            value: "[xpath.value]"
         - parameter:
-          name: "check_existence"
-          dt: "string"
-          value: "[check_existence.value]"
+            name: "check_existence"
+            dt: "string"
+            value: "[check_existence.value]"
     test:
       type: "[TESTTYPE NAME]"
       parameters:   
         - parameter:
-          name: "value"
-          dt: "string"
-          value: "[value.value]"
+            name: "value"
+            dt: "string"
+            value: "[value.value]"
         - parameter:
-          name: "datatype"
-          dt: "string"
-          value: "[datatype.value]"
+            name: "datatype"
+            dt: "string"
+            value: "[datatype.value]"
 
 JSON
 ^^^^
 
 ::
 
-   {
+  {
     "artifact-expression": {
       "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
       "artifact-title": "[RECOMMENDATION TITLE]",
@@ -437,15 +433,10 @@ JSON
     }
   }
 
-.. _generated-content-1:
-
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
-.. _existence_test:
-
 existence_test
-^^^^^^^^^^^^^^
 
 XCCDF+AE
 ^^^^^^^^
@@ -545,40 +536,40 @@ YAML
 
 ::
 
-  - artifact-expression:
+  artifact-expression:
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
     artifact-title: "[RECOMMENDATION TITLE]"
     artifact:
       type: "[ARTIFACTTYPE NAME]"
       parameters:
         - parameter:
-          name: "path"
-          dt: "string"
-          value: "[path.value]"        
+            name: "path"
+            dt: "string"
+            value: "[path.value]"        
         - parameter:
-          name: "filename"
-          dt: "string"
-          value: "[filename.value]"
+            name: "filename"
+            dt: "string"
+            value: "[filename.value]"
         - parameter:
-          name: "recurse"
-          dt: "string"
-          value: "[recurse.value]"
+            name: "recurse"
+            dt: "string"
+            value: "[recurse.value]"
         - parameter:
-          name: "max_depth"
-          dt: "binary"
-          value: "[max_depth.value]"
+            name: "max_depth"
+            dt: "binary"
+            value: "[max_depth.value]"
         - parameter:
-          name: "file_system"
-          dt: "string"
-          value: "[file_system.value]"
+            name: "file_system"
+            dt: "string"
+            value: "[file_system.value]"
         - parameter:
-          name: "xpath"
-          dt: "string"
-          value: "[xpath.value]"
+            name: "xpath"
+            dt: "string"
+            value: "[xpath.value]"
         - parameter:
-          name: "check_existence"
-          dt: "string"
-          value: "[check_existence.value]"
+            name: "check_existence"
+            dt: "string"
+            value: "[check_existence.value]"
     test:
       type: "[TESTYPE-NAME]"
       parameters:
@@ -665,15 +656,10 @@ JSON
     }
   }
 
- .. _generated-content-2:
-
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
-.. _independent.xmlfilecontent_v2:
-
 independent.xmlfilecontent_v2
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 XCCDF+AE
 ^^^^^^^^
@@ -785,7 +771,6 @@ State
 
 Variable
         
-
 ::
 
   <external_variable 
@@ -806,60 +791,60 @@ YAML
       type: "[ARTIFACTTYPE NAME]"
       parameters:
         - parameter:
-          name: "path"
-          dt: "string"
-          value: "[path.value]"        
+            name: "path"
+            dt: "string"
+            value: "[path.value]"        
         - parameter:
-          name: "filename"
-          dt: "string"
-          value: "[filename.value]"
+            name: "filename"
+            dt: "string"
+            value: "[filename.value]"
         - parameter:
-          name: "recurse"
-          dt: "string"
-          value: "[recurse.value]"
+            name: "recurse"
+            dt: "string"
+            value: "[recurse.value]"
         - parameter:
-          name: "max_depth"
-          dt: "binary"
-          value: "[max_depth.value]"
+            name: "max_depth"
+            dt: "binary"
+            value: "[max_depth.value]"
         - parameter:
-          name: "file_system"
-          dt: "string"
-          value: "[file_system.value]"
+            name: "file_system"
+            dt: "string"
+            value: "[file_system.value]"
         - parameter:
-          name: "xpath"
-          dt: "string"
-          value: "[xpath.value]"
+            name: "xpath"
+            dt: "string"
+            value: "[xpath.value]"
         - parameter:
-          name: "check_existence"
-          dt: "string"
-          value: "[check_existence.value]"
+            name: "check_existence"
+            dt: "string"
+            value: "[check_existence.value]"
     test:
       type: "[TESTTYPE NAME]"
       parameters:   
         - parameter:
-          name: "xpath"
-          dt: "string"
-          value: "[xpath.value]"
+            name: "xpath"
+            dt: "string"
+            value: "[xpath.value]"
         - parameter:
-          name: "filepath"
-          dt: "string"
-          value: "[filepath.value]"
+            name: "filepath"
+            dt: "string"
+            value: "[filepath.value]"
         - parameter:
-          name: "path"
-          dt: "string"
-          value: "[path.value]"
+            name: "path"
+            dt: "string"
+            value: "[path.value]"
         - parameter:
-          name: "filename"
-          dt: "string"
-          value: "[filename.value]"
+            name: "filename"
+            dt: "string"
+            value: "[filename.value]"
         - parameter:
-          name: "value_of"
-          dt: "binary"
-          value: "[value_of.value]"
+            name: "value_of"
+            dt: "binary"
+            value: "[value_of.value]"
         - parameter:
-          name: "valueof_op"
-          dt: "binary"
-          value: "[valueof_op.value]"
+            name: "valueof_op"
+            dt: "binary"
+            value: "[valueof_op.value]"
 
 JSON
 ^^^^

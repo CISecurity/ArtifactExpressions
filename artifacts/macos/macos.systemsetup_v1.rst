@@ -35,10 +35,10 @@ Artifact Parameters
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  macos.systemsetup_remoteappleevents_v1
--  macos.systemsetup_remotelogin_v1
--  macos.systemsetup_usingnetworktime_v1
--  macos.systemsetup_wakeonnetworkaccess_v1
+  - macos.systemsetup_remoteappleevents_v1
+  - macos.systemsetup_remotelogin_v1
+  - macos.systemsetup_usingnetworktime_v1
+  - macos.systemsetup_wakeonnetworkaccess_v1
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
@@ -212,8 +212,7 @@ SCAP
 XCCDF
 '''''
 
-For ``macos.gatekeeper_v1`` artifacts, the xccdf:check looks like this.
-There is no Value in the xccdf for this Artifact.
+For ``macos.gatekeeper_v1`` artifacts, the xccdf:check looks like this. There is no Value in the xccdf for this Artifact.
 
 ::
 
@@ -263,7 +262,7 @@ YAML
 
 ::
 
-   - artifact-expression:
+  - artifact-expression:
        artifact-unique-id: [ARTIFACT-OVAL-ID]
        artifact-title: [RECOMMENDATION TITLE]
        artifact:
@@ -416,8 +415,7 @@ SCAP
 XCCDF
 '''''
 
-For ``macos.systemsetup_v1`` artifacts, the xccdf:check looks like this.
-There is no Value in the xccdf for this Artifact.
+For ``macos.systemsetup_v1`` artifacts, the xccdf:check looks like this. There is no Value in the xccdf for this Artifact.
 
 ::
 
@@ -477,7 +475,7 @@ YAML
 
 ::
 
-   - artifact-expression:
+  - artifact-expression:
        artifact-unique-id: [ARTIFACT-OVAL-ID]
        artifact-title: [RECOMMENDATION TITLE]
        artifact:
@@ -632,8 +630,7 @@ SCAP
 XCCDF
 '''''
 
-For ``macos.gatekeeper_v1`` artifacts, the xccdf:check looks like this.
-There is no Value in the xccdf for this Artifact.
+For ``macos.gatekeeper_v1`` artifacts, the xccdf:check looks like this. There is no Value in the xccdf for this Artifact.
 
 ::
 
@@ -693,7 +690,7 @@ YAML
 
 ::
 
-   - artifact-expression:
+  - artifact-expression:
        artifact-unique-id: [ARTIFACT-OVAL-ID]
        artifact-title: [RECOMMENDATION TITLE]
        artifact:
@@ -848,8 +845,7 @@ SCAP
 XCCDF
 '''''
 
-For ``macos.gatekeeper_v1`` artifacts, the xccdf:check looks like this.
-There is no Value in the xccdf for this Artifact.
+For ``macos.gatekeeper_v1`` artifacts, the xccdf:check looks like this. There is no Value in the xccdf for this Artifact.
 
 ::
 
@@ -909,7 +905,7 @@ YAML
 
 ::
 
-   - artifact-expression:
+  - artifact-expression:
        artifact-unique-id: [ARTIFACT-OVAL-ID]
        artifact-title: [RECOMMENDATION TITLE]
        artifact:

@@ -44,7 +44,7 @@ Human ID:
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  vmware:vm_advancedsetting_value_v2
+  - vmware:vm_advancedsetting_value_v2
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
@@ -134,8 +134,7 @@ SCAP
 XCCDF
 '''''
 
-For ``macos.gatekeeper_v1`` artifacts, the xccdf:check looks like this.
-There is no Value in the xccdf for this Artifact.
+For ``macos.gatekeeper_v1`` artifacts, the xccdf:check looks like this. There is no Value in the xccdf for this Artifact.
 
 ::
 
@@ -185,7 +184,7 @@ YAML
 
 ::
 
-   - artifact-expression:
+  - artifact-expression:
        artifact-unique-id: [ARTIFACT-OVAL-ID]
        artifact-title: [RECOMMENDATION TITLE]
        artifact:

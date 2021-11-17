@@ -59,7 +59,7 @@ userright String The user right setting to be audited.
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  set.white_list_v1
+  - set.white_list_v1
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
@@ -172,7 +172,7 @@ YAML
 
 ::
 
-   - artifact-expression:
+  - artifact-expression:
        artifact-unique-id: [ARTIFACT-OVAL-ID]
        artifact-title: [RECOMMENDATION TITLE]
        artifact:

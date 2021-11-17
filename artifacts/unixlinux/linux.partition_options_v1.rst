@@ -21,7 +21,7 @@ Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
 Human ID:
-   -  linux.partition_options_v1
+  linux.partition_options_v1
 
 =========== ====== =====================================================
 Name        Type   Description
@@ -32,13 +32,13 @@ mount_point string Filesystem mount point being tested. Cannot be blank.
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  Set Includes
+  - Set Includes
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
 Human ID:
-   -  set.includes_v1
+  set.includes_v1
 
 ========= ====== ===========================
 Name      Type   Description
@@ -48,12 +48,12 @@ data_type string The data type of the value.
 ========= ====== ===========================
 
 NOTE: The ``data_type`` parameter is governed by a constraint allowing only the following values:
-   -  boolean
-   -  float
-   -  int
-   -  string
-   -  version
-   -  set
+  - boolean
+  - float
+  - int
+  - string
+  - version
+  - set
 
 Generated Content
 ~~~~~~~~~~~~~~~~~
@@ -65,30 +65,30 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
 
 ::
 
-   <xccdf:complex-check operator="AND">
-     <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
-       <xccdf:check-content>
-         <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
-           <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-           <ae:title>[RECOMMENDATION-TITLE]</ae:title>
-           <ae:artifact type="[ARTIFACT-TYPE-NAME]">
-             <ae:parameters>
-               <ae:parameter dt="string" name="mount_point">[mount_point.value]</ae:parameter>
-             </ae:parameters>
-           </ae:artifact>
-           <ae:test type="[TEST-TYPE-NAME]">
-             <ae:parameters>
-               <ae:parameter dt="string" name="value">[value.value]</ae:parameter>
-               <ae:parameter dt="string" name="data_type">[data_type.value]</ae:parameter>
-             </ae:parameters>
-           </ae:test>
-           <ae:profiles>
-             <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1" />
-           </ae:profiles>
-         </ae:artifact_expression>
-       </xccdf:check-content>
-     </xccdf:check>
-   </xccdf:complex-check>
+  <xccdf:complex-check operator="AND">
+    <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
+      <xccdf:check-content>
+        <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
+          <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
+          <ae:title>[RECOMMENDATION-TITLE]</ae:title>
+          <ae:artifact type="[ARTIFACT-TYPE-NAME]">
+            <ae:parameters>
+              <ae:parameter dt="string" name="mount_point">[mount_point.value]</ae:parameter>
+            </ae:parameters>
+          </ae:artifact>
+          <ae:test type="[TEST-TYPE-NAME]">
+            <ae:parameters>
+              <ae:parameter dt="string" name="value">[value.value]</ae:parameter>
+              <ae:parameter dt="string" name="data_type">[data_type.value]</ae:parameter>
+            </ae:parameters>
+          </ae:test>
+          <ae:profiles>
+            <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1" />
+          </ae:profiles>
+        </ae:artifact_expression>
+      </xccdf:check-content>
+    </xccdf:check>
+  </xccdf:complex-check>
 
 SCAP
 ^^^^
@@ -96,10 +96,10 @@ SCAP
 XCCDF
 '''''
 
-For ``linux.partition_options_v1`` artifacts, the xccdf:check looks like
-this. There is no Value element in the XCCDF for this Artifact.
+For ``linux.partition_options_v1`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
 
 ::
+
   <xccdf:complex-check operator="AND">
     <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
       <check-content-ref
@@ -115,114 +115,114 @@ Test
 
 ::
 
-   <partition_test 
-     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux"
-     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
-     check_existence="at_least_one_exists" 
-     check="all" 
-     comment="[RECOMMENDATION-TITLE]" 
-     version="1">
-     <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
-     <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
-   </partition_test>
+  <partition_test 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
+    check_existence="at_least_one_exists" 
+    check="all" 
+    comment="[RECOMMENDATION-TITLE]" 
+    version="1">
+    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+    <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
+  </partition_test>
 
 Object
 
 ::
 
-   <partition_object 
-     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux"
-     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
-     comment="[RECOMMENDATION-TITLE]" 
-     version="1">
-     <mount_point>
-       [mount_point.value]
-     </mount_point>
-   </partition_object>
+  <partition_object 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
+    comment="[RECOMMENDATION-TITLE]" 
+    version="1">
+    <mount_point>
+      [mount_point.value]
+    </mount_point>
+  </partition_object>
 
 State
 
 ::
 
-   <partition_state 
-     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux"
-     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
-     comment="[RECOMMENDATION-TITLE]" 
-     version="1">
-     <mount_options 
-       entity_check="at least one" 
-       operation="equals" 
-       datatype="[datatype.value]">
-       [mount_options.value]
-     </mount_options>
-   </partition_state>
+  <partition_state 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
+    comment="[RECOMMENDATION-TITLE]" 
+    version="1">
+    <mount_options 
+      entity_check="at least one" 
+      operation="equals" 
+      datatype="[datatype.value]">
+      [mount_options.value]
+    </mount_options>
+  </partition_state>
 
 YAML
 ^^^^
 
 ::
 
-   artifact-expression:
-     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
-     artifact-title: "[RECOMMENDATION-TITLE]"
-     artifact:
-       type: "[ARTIFACT-TYPE-NAME]"
-       parameters:
-         - parameter: 
-             name: "mount_point"
-             dt: "string"
-             value: "[mount_point.value]"
-     test:
-       type: "[TEST-TYPE-NAME]"
-       parameters:
-         - parameter:
-             name: "value"
-             dt: "string"
-             value: "[value.value]"
-         - parameter:
-             name: "data_type"
-             dt: "string"
-             value: "[data_type.value]"
+  artifact-expression:
+    artifact-unique-id: "[ARTIFACT-OVAL-ID]"
+    artifact-title: "[RECOMMENDATION-TITLE]"
+    artifact:
+      type: "[ARTIFACT-TYPE-NAME]"
+      parameters:
+        - parameter: 
+            name: "mount_point"
+            dt: "string"
+            value: "[mount_point.value]"
+    test:
+      type: "[TEST-TYPE-NAME]"
+      parameters:
+        - parameter:
+            name: "value"
+            dt: "string"
+            value: "[value.value]"
+        - parameter:
+            name: "data_type"
+            dt: "string"
+            value: "[data_type.value]"
 
 JSON
 ^^^^
 
 ::
 
-   {
-     "artifact-expression": {
-       "artifact-unique-id":"[ARTIFACT-OVAL-ID]",
-       "artifact-title": "[RECOMMENDATION-TITLE]",
-       "artifact": {
-         "type": "[ARTIFACT-TYPE-NAME]",
-         "parameters": [
-           {
-             "parameter": {
-               "name": "mount_point",
-               "type": "string",
-               "value": "[mount_point.value]"
-             }
-           }
-         ]
-       },
-       "test": {
-         "type": "[TEST-TYPE-NAME]",
-         "parameters": [
-           {
-             "parameter": {
-               "name": "value",
-               "type": "string",
-               "value": "[value.value]"
-             }
-           },
-           {
-             "parameter": {
-               "name": "data_type",
-               "type": "string",
-               "value": "[data_type.value]"
-             }
-           }
-         ]
-       }
-     }
-   }
+  {
+    "artifact-expression": {
+      "artifact-unique-id":"[ARTIFACT-OVAL-ID]",
+      "artifact-title": "[RECOMMENDATION-TITLE]",
+      "artifact": {
+        "type": "[ARTIFACT-TYPE-NAME]",
+        "parameters": [
+          {
+            "parameter": {
+              "name": "mount_point",
+              "type": "string",
+              "value": "[mount_point.value]"
+            }
+          }
+        ]
+      },
+      "test": {
+        "type": "[TEST-TYPE-NAME]",
+        "parameters": [
+          {
+            "parameter": {
+              "name": "value",
+              "type": "string",
+              "value": "[value.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "data_type",
+              "type": "string",
+              "value": "[data_type.value]"
+            }
+          }
+        ]
+      }
+    }
+  }

@@ -103,30 +103,30 @@ the following values:
 
 prepend_type NOTE: This parameter is governed by a constraint allowing
 only the following values:
- - String
- - SQL
+  - String
+  - SQL
 
 append_type NOTE: This parameter is governed by a constraint allowing
 only the following values:
- - String
- - SQL
+  - String
+  - SQL
 
 recurse NOTE: This parameter is governed by a constraint allowing
 only the following values:
- - Yes
- - No
+  - Yes
+  - No
 
 file_system NOTE: This parameter is governed by a constraint allowing
 only the following values:
- - NA
- - local
- - all
- - defined
+  - NA
+  - local
+  - all
+  - defined
 
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  Txt-Unix_File_or_Directory_Permissions_v2
+  - Txt-Unix_File_or_Directory_Permissions_v2
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
@@ -190,57 +190,57 @@ Txt-Unix_File_or_Directory_Permissions_v2
 
 uread NOTE: This parameter is governed by a constraint allowing only the 
 following values:
- - NA
- - set
- - unset 
+  - NA
+  - set
+  - unset 
 
 uwrite NOTE: This parameter is governed by a constraint allowing only the 
 following values:
- - NA
- - set
- - unset 
+  - NA
+  - set
+  - unset 
 
 uexec NOTE: This parameter is governed by a constraint allowing only the 
 following values:
- - NA
- - set
- - unset 
+  - NA
+  - set
+  - unset 
 
 gread NOTE: This parameter is governed by a constraint allowing only the 
 following values:
- - NA
- - set
- - unset 
+  - NA
+  - set
+  - unset 
 
 gwrite NOTE: This parameter is governed by a constraint allowing only the 
 following values:
- - NA
- - set
- - unset 
+  - NA
+  - set
+  - unset 
 
 gexec NOTE: This parameter is governed by a constraint allowing only the 
 following values:
- - NA
- - set
- - unset 
+  - NA
+  - set
+  - unset 
 
 oread NOTE: This parameter is governed by a constraint allowing only the 
 following values:
- - NA
- - set
- - unset 
+  - NA
+  - set
+  - unset 
 
 owrite NOTE: This parameter is governed by a constraint allowing only the 
 following values:
- - NA
- - set
- - unset 
+  - NA
+  - set
+  - unset 
 
 oexec NOTE: This parameter is governed by a constraint allowing only the 
 following values:
- - NA
- - set
- - unset 
+  - NA
+  - set
+  - unset 
 
 Generated Content
 ~~~~~~~~~~~~~~~~~
@@ -251,7 +251,6 @@ XCCDF+AE
 This is what the AE check looks like, inside a Rule, in the XCCDF
 
 ::
-
    
   <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
     <xccdf:check-content>
@@ -305,7 +304,6 @@ SCAP
 
 XCCDF
 '''''
-
 
 For ``independent.sql57_textfilecontent_v1`` artifacts, the xccdf:check looks like this.
 
@@ -373,7 +371,6 @@ State
   </file_state>
 
 Variable
-        
 
 ::
 
@@ -395,122 +392,122 @@ YAML
 
 ::
 
-  - artifact-expression:
+  artifact-expression:
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
     artifact-title: "[RECOMMENDATION TITLE]"
     artifact:
       type: "[ARTIFACTTYPE NAME]"
       parameters:
-      - parameter: 
-        name: "engine"
-        type: "string"
-        value: "[engine.value]"
-      - parameter: 
-        name: "sql"
-        type: "string"
-        value: "[sql.value]"
-      - parameter: 
-        name: "version"
-        type: "string"
-        value: "[version.value]"
-      - parameter: 
-        name: "path"
-        type: "string"
-        value: "[path.value]"
-      - parameter: 
-        name: "filename"
-        type: "string"
-        value: "[filename.value]"
-      - parameter: 
-        name: "recurse"
-        type: "string"
-        value: "[recurse.value]"
-      - parameter: 
-        name: "max_depth"
-        type: "binary"
-        value: "[max_depth.value]"
-      - parameter: 
-        name: "file_system"
-        type: "string"
-        value: "[file_system.value]"                       
-      - parameter: 
-        name: "prepend_str"
-        type: "string"
-        value: "[prepend_str.value]"
-      - parameter: 
-        name: "append_str"
-        type: "string"
-        value: "[append_str.value]"
-      - parameter: 
-        name: "prepend_type"
-        type: "string"
-        value: "[prepend_type.value]"
-      - parameter: 
-        name: "append_type"
-        type: "string"
-        value: "[append_type.value]"
-      - parameter: 
-        name: "pattern"
-        type: "string"
-        value: "[pattern.value]"
+        - parameter: 
+            name: "engine"
+            type: "string"
+            value: "[engine.value]"
+        - parameter: 
+            name: "sql"
+            type: "string"
+            value: "[sql.value]"
+        - parameter: 
+            name: "version"
+            type: "string"
+            value: "[version.value]"
+        - parameter: 
+            name: "path"
+            type: "string"
+            value: "[path.value]"
+        - parameter: 
+            name: "filename"
+            type: "string"
+            value: "[filename.value]"
+        - parameter: 
+            name: "recurse"
+            type: "string"
+            value: "[recurse.value]"
+        - parameter: 
+            name: "max_depth"
+            type: "binary"
+            value: "[max_depth.value]"
+        - parameter: 
+            name: "file_system"
+            type: "string"
+            value: "[file_system.value]"
+        - parameter: 
+            name: "prepend_str"
+            type: "string"
+            value: "[prepend_str.value]"
+        - parameter: 
+            name: "append_str"
+            type: "string"
+            value: "[append_str.value]"
+        - parameter: 
+            name: "prepend_type"
+            type: "string"
+            value: "[prepend_type.value]"
+        - parameter: 
+            name: "append_type"
+            type: "string"
+            value: "[append_type.value]"
+        - parameter: 
+            name: "pattern"
+            type: "string"
+            value: "[pattern.value]"
     test:
       type: "[TESTTYPE NAME]"
       parameters:   
-      - parameter:
-        name: "username"
-        dt: "string"
-        value: "[username.value]"
-      - parameter:
-        name: "group"
-        dt: "string"
-        value: "[group.value]"
-      - parameter:
-        name: "uread"
-        dt: "string"
-        value: "[uread.value]"
-      - parameter:
-        name: "uwrite"
-        dt: "string"
-        value: "[uwrite.value]"
-      - parameter:
-        name: "uexec"
-        dt: "string"
-        value: "[uexec.value]"
-      - parameter:
-        name: "gread"
-        dt: "string"
-        value: "[gread.value]"
-      - parameter:
-        name: "gwrite"
-        dt: "string"
-        value: "[gwrite.value]"
-      - parameter:
-        name: "gexec"
-        dt: "string"
-        value: "[gexec.value]"
-      - parameter:
-        name: "oread"
-        dt: "string"
-        value: "[oread.value]"
-      - parameter:
-        name: "owrite"
-        dt: "string"
-        value: "[owrite.value]"
-      - parameter:
-        name: "oexec"
-        dt: "string"
-        value: "[oexec.value]"
-      - parameter:
-        name: "dir_only"
-        dt: "boolean"
-        value: "[dir_only.value]"
+        - parameter:
+            name: "username"
+            dt: "string"
+            value: "[username.value]"
+        - parameter:
+            name: "group"
+            dt: "string"
+            value: "[group.value]"
+        - parameter:
+            name: "uread"
+            dt: "string"
+            value: "[uread.value]"
+        - parameter:
+            name: "uwrite"
+            dt: "string"
+            value: "[uwrite.value]"
+        - parameter:
+            name: "uexec"
+            dt: "string"
+            value: "[uexec.value]"
+        - parameter:
+            name: "gread"
+            dt: "string"
+            value: "[gread.value]"
+        - parameter:
+            name: "gwrite"
+            dt: "string"
+            value: "[gwrite.value]"
+        - parameter:
+            name: "gexec"
+            dt: "string"
+            value: "[gexec.value]"
+        - parameter:
+            name: "oread"
+            dt: "string"
+            value: "[oread.value]"
+        - parameter:
+            name: "owrite"
+            dt: "string"
+            value: "[owrite.value]"
+        - parameter:
+            name: "oexec"
+            dt: "string"
+            value: "[oexec.value]"
+        - parameter:
+            name: "dir_only"
+            dt: "boolean"
+            value: "[dir_only.value]"
 
 JSON
 ^^^^
 
 ::
 
-   {
+  {
     "artifact-expression": {
       "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
       "artifact-title": "[RECOMMENDATION TITLE]",
