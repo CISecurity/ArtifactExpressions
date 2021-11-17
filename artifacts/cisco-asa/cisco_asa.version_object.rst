@@ -2,7 +2,7 @@ cisco_asa.version_object
 ========================
 
 Description
------------
+  -----------
 
 The cisco_asa.version_object is used to check the version of the PIX
 operating system. It is based off of the SHOW VERSION command. It
@@ -12,7 +12,7 @@ The required object element references a version_object and the optional
 state element specifies the data to check.
 
 Technical Details
------------------
+  -----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
@@ -174,7 +174,7 @@ YAML
 
 ::
 
-   - artifact-expression:
+  - artifact-expression:
        artifact-unique-id: [ARTIFACT-OVAL-ID]
        artifact-title: [RECOMMENDATION TITLE]
        artifact:

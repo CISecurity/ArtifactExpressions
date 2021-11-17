@@ -2,7 +2,7 @@ Unix: Uname Parameter
 =====================
 
 Description
------------
+  -----------
 
 The Unix: Uname Parameter test The uname test reveals information about
 the hardware the machine is running on. This information is the parsed
@@ -20,12 +20,12 @@ The optional uname_state element defines the information about the
 hardware the machine is running one.
 
 Technical Details
------------------
+  -----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 Human ID:
-  - unix.uname_parameter_v1
+  unix.uname_parameter_v1
 
 ========= ====== =================================
 Name      Type   Description
@@ -56,15 +56,15 @@ Supported Test Types
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 Human IDs:
-  - equals
-  - not equal
-  - less than
-  - less than or equal
-  - greater than
-  - greater than or equal
-  - pattern match
-  - pattern not match
-
+  equals
+  not equal
+  less than
+  less than or equal
+  greater than
+  greater than or equal
+  pattern match
+  pattern not match
+  
 ========= ====== ===========================
 Name      Type   Description
 ========= ====== ===========================

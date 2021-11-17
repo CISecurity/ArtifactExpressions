@@ -2,7 +2,7 @@ Linux: Auditd Rule (v2)
 =======================
 
 Description
------------
+  -----------
 
 The Linux: Auditd Rule (v2) test is used to check the contents of audit
 configuration and audit log files by looking at individual blocks of
@@ -22,13 +22,13 @@ used to check the file path and name, as well as the text block in
 question and the value of the subexpressions.
 
 Technical Details
------------------
+  -----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
 Human ID:
-  - linux.auditd_rule_v2
+  linux.auditd_rule_v2
 
 ========= ====== ======================
 Name      Type   Description
@@ -54,7 +54,7 @@ Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
 Human ID:
-  - null_test_v1
+  null_test_v1
 
 ==== ==== ===========
 Name Type Description

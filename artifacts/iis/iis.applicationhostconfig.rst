@@ -2,7 +2,7 @@ iis.applicationhostconfig
 =========================
 
 Description
------------
+  -----------
 
 The Application Host Configuration Test evaluates global configuration
 settings that are used by the Windows Process Activation Service (WAS)
@@ -16,7 +16,7 @@ system.webServer, settings in the Application Host Configuration Item
 element cannot be delegated.
 
 Technical Details
------------------
+  -----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
@@ -169,7 +169,7 @@ YAML
 
 ::
 
-   - artifact-expression:
+  - artifact-expression:
        artifact-unique-id: [ARTIFACT-OVAL-ID]
        artifact-title: [RECOMMENDATION TITLE]
        artifact:

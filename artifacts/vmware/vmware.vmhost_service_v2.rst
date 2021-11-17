@@ -2,12 +2,12 @@ vmware:vmhost_service
 =====================
 
 Description
------------
+  -----------
 
 The vmware:vmhost_service test is used to verify the Direct Console User Interface (DCUI) is disabled to prevent any local administration from the Host.
 
 Technical Details
------------------
+  -----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
@@ -187,7 +187,7 @@ YAML
 
 ::
 
-   - artifact-expression:
+  - artifact-expression:
        artifact-unique-id: [ARTIFACT-OVAL-ID]
        artifact-title: [RECOMMENDATION TITLE]
        artifact:

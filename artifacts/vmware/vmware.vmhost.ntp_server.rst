@@ -2,12 +2,12 @@ VMware: VM Host: NTP Server
 ===========================
 
 Description
------------
+  -----------
 
 The VMware: VM Host: NTP Server test is used to verify NTP time synchronization is configured correctly and enabled on each VMware ESXi host.
 
 Technical Details
------------------
+  -----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
@@ -142,7 +142,7 @@ YAML
 
 ::
 
-   - artifact-expression:
+  - artifact-expression:
        artifact-unique-id: [ARTIFACT-OVAL-ID]
        artifact-title: [RECOMMENDATION TITLE]
        artifact:

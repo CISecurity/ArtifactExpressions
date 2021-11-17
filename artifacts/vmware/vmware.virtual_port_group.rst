@@ -2,12 +2,12 @@ VMware: Virtual Port Group
 ==========================
 
 Description
------------
+  -----------
 
 The VMware: Virtual Port Group test is used to verify the ESXi Server virtual switch port groups configuration in relation to the VLAN ID in use. 
 
 Technical Details
------------------
+  -----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
@@ -144,7 +144,7 @@ YAML
 
 ::
 
-   - artifact-expression:
+  - artifact-expression:
        artifact-unique-id: [ARTIFACT-OVAL-ID]
        artifact-title: [RECOMMENDATION TITLE]
        artifact:

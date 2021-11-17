@@ -2,12 +2,12 @@ VMware: VM Host: Lockdown Mode
 ==============================
 
 Description
------------
+  -----------
 
 The VMware: VM Host: Lockdown Mode test is used to verify Lockdown mode is enabled on an ESXi host.
 
 Technical Details
------------------
+  -----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
@@ -133,7 +133,7 @@ YAML
 
 ::
 
-   - artifact-expression:
+  - artifact-expression:
        artifact-unique-id: [ARTIFACT-OVAL-ID]
        artifact-title: [RECOMMENDATION TITLE]
        artifact:

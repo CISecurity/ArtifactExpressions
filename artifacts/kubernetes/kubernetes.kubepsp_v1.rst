@@ -2,13 +2,13 @@ kubernetes.kubepsp_v1
 =====================
 
 Description
------------
+  -----------
 
 The kubernetes.kubepsp_v1 is used to check the properties of the Pod
 Security Policy (PSP)
 
 Technical Details
------------------
+  -----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
@@ -186,7 +186,7 @@ YAML
 
 ::
 
-   - artifact-expression:
+  - artifact-expression:
        artifact-unique-id: [ARTIFACT-OVAL-ID]
        artifact-title: [RECOMMENDATION TITLE]
        artifact:

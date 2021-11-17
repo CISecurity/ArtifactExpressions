@@ -2,7 +2,7 @@ macos.plist511_v1
 =================
 
 Description
------------
+  -----------
 
 The plist511_test is used to check the value(s) associated with property
 list preference keys. It can be used to represent any plist file in XML
@@ -16,7 +16,7 @@ data to check.
 
 
 Technical Details
------------------
+  -----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
@@ -225,7 +225,7 @@ YAML
 
 ::
 
-   - artifact-expression:
+  - artifact-expression:
        artifact-unique-id: [ARTIFACT-OVAL-ID]
        artifact-title: [RECOMMENDATION TITLE]
        artifact:

@@ -2,12 +2,12 @@ vmware:vmhost_webserverssl
 ==========================
 
 Description
------------
+  -----------
 
 The vmware:vmhost_webserverssl test is used to verify default self-signed certificates for ESXi communication are not used.
 
 Technical Details
------------------
+  -----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
@@ -175,7 +175,7 @@ YAML
 
 ::
 
-   - artifact-expression:
+  - artifact-expression:
        artifact-unique-id: [ARTIFACT-OVAL-ID]
        artifact-title: [RECOMMENDATION TITLE]
        artifact:

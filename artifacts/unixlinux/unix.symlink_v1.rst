@@ -2,7 +2,7 @@ Unix: Symlink
 =============
 
 Description
------------
+  -----------
 
 The Unix: Symlink test is used to obtain canonical path information for
 symbolic links.
@@ -21,13 +21,13 @@ The optional symlink_state element defines a value used to evaluate the
 result of a specific symlink_object item.
 
 Technical Details
------------------
+  -----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
 Human ID:
-  - unix.symlink_v1
+  unix.symlink_v1
 
 +--------------------+--------+--------------------------------------+
 | Name               | Type   | Description                          |
@@ -64,7 +64,7 @@ Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
 Human ID:
-  - unix.symlink_v1
+  unix.symlink_v1
 
 +--------------------------+--------+-----------------------------+
 | Name                     | Type   | Description                 |
@@ -117,7 +117,7 @@ NOTE: The ``canonical_path_operation`` parameter is governed by a constraint all
   - superset of
 
 Human ID:
-  - unix.symlink_password_object_v1
+  unix.symlink_password_object_v1
 
 +--------------------------+--------+-----------------------------+
 | Name                     | Type   | Description                 |

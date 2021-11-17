@@ -2,7 +2,7 @@ linux:apparmorstatus
 ====================
 
 Description
------------
+  -----------
 
 The linux:apparmorstatus test is used to check properties representing
 the counts of profiles and processes as per the results of the
@@ -21,7 +21,7 @@ and processes as per the results of the "apparmor_status" or "aa-status"
 command.
 
 Technical Details
------------------
+  -----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~

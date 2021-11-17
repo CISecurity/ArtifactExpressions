@@ -2,13 +2,13 @@ cisco_ios.snmp_group
 ====================
 
 Description
------------
+  -----------
 
 The cisco_ios.snmp_group is used to check the properties of specific
 output lines from an SNMP group configuration.
 
 Technical Details
------------------
+  -----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
@@ -140,7 +140,7 @@ YAML
 
 ::
 
-   - artifact-expression:
+  - artifact-expression:
        artifact-unique-id: [ARTIFACT-OVAL-ID]
        artifact-title: [RECOMMENDATION TITLE]
        artifact:

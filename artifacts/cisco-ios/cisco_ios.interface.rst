@@ -2,7 +2,7 @@ cisco_ios.interface
 ===================
 
 Description
------------
+  -----------
 
 The cisco_ios.interface test enumerate various attributes about the
 interfaces on a system. It extends the standard TestType as defined in
@@ -12,7 +12,7 @@ an interface_object and the optional state element specifies the
 interface information to check.
 
 Technical Details
------------------
+  -----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
@@ -194,7 +194,7 @@ YAML
 
 ::
 
-   - artifact-expression:
+  - artifact-expression:
        artifact-unique-id: [ARTIFACT-OVAL-ID]
        artifact-title: [RECOMMENDATION TITLE]
        artifact:

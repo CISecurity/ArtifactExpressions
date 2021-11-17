@@ -2,12 +2,12 @@ VMware: Virtual Machine: Device: Hard Disk
 ==========================================
 
 Description
------------
+  -----------
 
 The VMware: Virtual Machine: Device: Hard Disk test is used to verify the configuration of virtual machine persistent memory settings.
 
 Technical Details
------------------
+  -----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
@@ -61,7 +61,7 @@ persistence String NA or acceptable persistence constraint values
 
 persistence NOTE: This parameter is governed by a constraint allowing
 only the following values: - NA - Persistent - NonPersistent - Undoable
-- IndependentPersistent - IndependentNonPersistent - Unknown
+  - IndependentPersistent - IndependentNonPersistent - Unknown
 
 disktype NOTE: This parameter is governed by a constraint allowing only
 the following values: - NA - RawVirtual - RawPhysical - Flat - Unknown
@@ -166,7 +166,7 @@ YAML
 
 ::
 
-   - artifact-expression:
+  - artifact-expression:
        artifact-unique-id: [ARTIFACT-OVAL-ID]
        artifact-title: [RECOMMENDATION TITLE]
        artifact:

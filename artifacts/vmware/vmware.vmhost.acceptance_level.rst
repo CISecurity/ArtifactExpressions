@@ -2,12 +2,12 @@ VMware: VM Host: Acceptance Level
 =================================
 
 Description
------------
+  -----------
 
 The VMware: VM Host: Acceptance Level test is used to determine the ESXi Image Profile  acceptance level (level of trust) supported by the the vSphere Installation Bundle signature file.
 
 Technical Details
------------------
+  -----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
@@ -149,7 +149,7 @@ YAML
 
 ::
 
-   - artifact-expression:
+  - artifact-expression:
        artifact-unique-id: [ARTIFACT-OVAL-ID]
        artifact-title: [RECOMMENDATION TITLE]
        artifact:

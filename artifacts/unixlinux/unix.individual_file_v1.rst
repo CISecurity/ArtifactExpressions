@@ -2,7 +2,7 @@ Unix: Individual File
 =====================
 
 Description
------------
+  -----------
 
 The Unix: Individual File test is used to check the contents of a text
 file (aka a configuration file) by looking at individual blocks of text.
@@ -20,13 +20,13 @@ the file path and name, as well as the text block in question and the
 value of the subexpressions.
 
 Technical Details
------------------
+  -----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
 Human ID:
-  - unix.individual_file_v1
+  unix.individual_file_v1
 
 +-----------+--------+-----------------------------------------------+
 | Name      | Type   | Description                                   |
@@ -61,8 +61,8 @@ Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
 Human IDs:
-  - pattern match
-  - pattern not match
+  pattern match
+  pattern not match
 
 ========= ====== ===========================
 Name      Type   Description
@@ -80,7 +80,7 @@ NOTE: The ``data_type`` parameter is governed by a constraint allowing only the 
   - set
 
 Human ID:
-  - null_test_v1
+  null_test_v1
 
 ==== ==== ===========
 Name Type Description
@@ -89,7 +89,7 @@ N/A
 ==== ==== ===========
 
 Human ID:
-  - unix.file_attributes_v1
+  unix.file_attributes_v1
 
 +--------+-----------+-----------------------------------------------+
 | Name   | Type      | Description                                   |
@@ -137,11 +137,11 @@ Human ID:
 |        |           | permitted to execute the file or change into  |
 |        |           | the directory. directory.                     |
 +--------+-----------+-----------------------------------------------+
-| suid   |    string |    Determines if the file can execute as the  |
-|        |           |    owner.                                     |
+| suid   | string    | Determines if the file can execute as the     |
+|        |           | owner.                                        |
 +--------+-----------+-----------------------------------------------+
-| sgid   |    string |    Determines if the file can execute as      |
-|        |           |    group.                                     |
+| sgid   | string    | Determines if the file can execute as         |
+|        |           | group.                                        |
 +--------+-----------+-----------------------------------------------+
 | sticky | string    | Determines if the sticky bit is set.          |
 +--------+-----------+-----------------------------------------------+
@@ -164,33 +164,33 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
 
 ::
 
-   <xccdf:complex-check operator="AND">
-     <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
-       <xccdf:check-content>
-         <ae:artifact_expression
-             <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
-           <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-           <ae:title>[RECOMMENDATION-TITLE]</ae:title>
-           <ae:artifact type="[ARTIFACT-TYPE-NAME]">
-             <ae:parameters>
-               <ae:parameter dt="string" name="filepath">[filepath.value]</ae:parameter>
-               <ae:parameter dt="string" name="existence">[existence.value]</ae:parameter>
-               <ae:parameter dt="string" name="check">[check.value]</ae:parameter>
-             </ae:parameters>
-           </ae:artifact>
-           <ae:test type="[TEST-TYPE-NAME]">
-             <ae:parameters>
-               <ae:parameter dt="string" name="value">[value.value]</ae:parameter>
-               <ae:parameter dt="string" name="data_type">[data_type.value]</ae:parameter>
-             </ae:parameters>
-           </ae:test>
-           <ae:profiles>
-             <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1 "/>
-           </ae:profiles>          
-         </ae:artifact_expression>
-       </xccdf:check-content>
-     </xccdf:check>
-   </xccdf:complex-check>
+  <xccdf:complex-check operator="AND">
+    <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
+      <xccdf:check-content>
+        <ae:artifact_expression
+            <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
+          <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
+          <ae:title>[RECOMMENDATION-TITLE]</ae:title>
+          <ae:artifact type="[ARTIFACT-TYPE-NAME]">
+            <ae:parameters>
+              <ae:parameter dt="string" name="filepath">[filepath.value]</ae:parameter>
+              <ae:parameter dt="string" name="existence">[existence.value]</ae:parameter>
+              <ae:parameter dt="string" name="check">[check.value]</ae:parameter>
+            </ae:parameters>
+          </ae:artifact>
+          <ae:test type="[TEST-TYPE-NAME]">
+            <ae:parameters>
+              <ae:parameter dt="string" name="value">[value.value]</ae:parameter>
+              <ae:parameter dt="string" name="data_type">[data_type.value]</ae:parameter>
+            </ae:parameters>
+          </ae:test>
+          <ae:profiles>
+            <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1 "/>
+          </ae:profiles>          
+        </ae:artifact_expression>
+      </xccdf:check-content>
+    </xccdf:check>
+  </xccdf:complex-check>
 
 SCAP
 ^^^^
@@ -202,13 +202,13 @@ For ``unix.file_collection_v2`` artifacts, the xccdf:check looks like this. Ther
 
 ::
 
-   <xccdf:complex-check operator="AND">
-     <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
-       <check-content-ref 
-         href="[BENCHMARK-TITLE]"
-         name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
-     </check>
-   </xccdf:complex-check>  
+  <xccdf:complex-check operator="AND">
+    <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+      <check-content-ref 
+        href="[BENCHMARK-TITLE]"
+        name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
+    </check>
+  </xccdf:complex-check>  
 
 OVAL
 ''''
@@ -217,37 +217,37 @@ Test
 
 ::
 
-   <file_test
-     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#iindependent"
-     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
-     check_existence="[check_existence.value]"
-     check="[check.value]"
-     comment="[RECOMMENDATION-TITLE]"
-     version="1">
-     <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
-   </file_test>
+  <file_test
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#iindependent"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
+    check_existence="[check_existence.value]"
+    check="[check.value]"
+    comment="[RECOMMENDATION-TITLE]"
+    version="1">
+    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+  </file_test>
 
 Object
 
 ::
 
-   <file_object
-     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#iindependent"
-     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
-     comment="[RECOMMENDATION-TITLE]"
-     version="1">
-     <filepath>[filepath.value]</filepath>
-     <pattern 
-       operation="pattern match"    
-       datatype="[datatype.value]">
-       [pattern.value] 
-     </pattern>
-     <instance 
-       datatype="int" 
-       operation="equals">
-       1
-     </instance>
-   </file_object>
+  <file_object
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#iindependent"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
+    comment="[RECOMMENDATION-TITLE]"
+    version="1">
+    <filepath>[filepath.value]</filepath>
+    <pattern 
+      operation="pattern match"    
+      datatype="[datatype.value]">
+      [pattern.value] 
+    </pattern>
+    <instance 
+      datatype="int" 
+      operation="equals">
+      1
+    </instance>
+  </file_object>
 
 State
 
@@ -260,92 +260,92 @@ YAML
 
 ::
 
-   artifact-expression:
-     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
-     artifact-title: "[RECOMMENDATION-TITLE]"
-     artifact:
-       type: "[ARTIFACT-TYPE-NAME]"
-       parameters:
-         - parameter: 
-             name: "filepath"
-             dt: "string"
-             value: "[filepath.value]"
-         - parameter: 
-             name: "existence"
-             dt: "string"
-             value: "[existence.value]"
-         - parameter: 
-             name: "check"
-             dt: "string"
-             value: "[check.value]"
-     test:
-       type: "[TEST-TYPE-NAME]"
-       parameters:
-         - parameter: 
-             name: "value"
-             dt: "string"
-             value: [value.value]
-         - parameter: 
-             name: "data_type"
-             dt: "string"
-             value: "[data_type.value]"
+  artifact-expression:
+    artifact-unique-id: "[ARTIFACT-OVAL-ID]"
+    artifact-title: "[RECOMMENDATION-TITLE]"
+    artifact:
+      type: "[ARTIFACT-TYPE-NAME]"
+      parameters:
+        - parameter: 
+            name: "filepath"
+            dt: "string"
+            value: "[filepath.value]"
+        - parameter: 
+            name: "existence"
+            dt: "string"
+            value: "[existence.value]"
+        - parameter: 
+            name: "check"
+            dt: "string"
+            value: "[check.value]"
+    test:
+      type: "[TEST-TYPE-NAME]"
+      parameters:
+        - parameter: 
+            name: "value"
+            dt: "string"
+            value: [value.value]
+        - parameter: 
+            name: "data_type"
+            dt: "string"
+            value: "[data_type.value]"
 
 JSON
 ^^^^
 
 ::
 
-   {
-     "artifact-expression": {
-       "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
-       "artifact-title": "[RECOMMENDATION-TITLE]",
-       "artifact": {
-         "type": "[ARTIFACT-TYPE-NAME]",
-         "parameters": [
-           {
-             "parameter": {
-               "name": "filepath",
-               "type": "string",
-               "value": "[filepath.value]"
-             }
-           },
-           {
-             "parameter": {
-               "name": "existence",
-               "type": "string",
-               "value": "[existence.value]"
-             }
-           },
-           {
-             "parameter": {
-               "name": "check",
-               "type": "string",
-               "value": "[check.value]"
-             }
+  {
+    "artifact-expression": {
+      "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
+      "artifact-title": "[RECOMMENDATION-TITLE]",
+      "artifact": {
+        "type": "[ARTIFACT-TYPE-NAME]",
+        "parameters": [
+          {
+            "parameter": {
+              "name": "filepath",
+              "type": "string",
+              "value": "[filepath.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "existence",
+              "type": "string",
+              "value": "[existence.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "check",
+              "type": "string",
+              "value": "[check.value]"
+            }
 
-         ]
-       },
-       "test": {
-         "type": "[TEST-TYPE-NAME]",
-         "parameters": [
-           {
-             "parameter": {
-               "name": "value",
-               "type": "string",
-               "value": "[value.value]"
-             }
-           },
-           {
-             "parameter": {
-               "name": "data_type",
-               "type": "string",
-               "value": "[data_type.value]"
-             }
-           }
-         ]
-       }
-     }
-   }
+        ]
+      },
+      "test": {
+        "type": "[TEST-TYPE-NAME]",
+        "parameters": [
+          {
+            "parameter": {
+              "name": "value",
+              "type": "string",
+              "value": "[value.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "data_type",
+              "type": "string",
+              "value": "[data_type.value]"
+            }
+          }
+        ]
+      }
+    }
+  }
 
 
 Generated Content
@@ -361,37 +361,33 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
 
 ::
 
-   <xccdf:complex-check operator="AND">
-     <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
-       <xccdf:check-content>
-         <ae:artifact_expression
-             <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
-           <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-           <ae:title>[RECOMMENDATION-TITLE]</ae:title>
-           <ae:artifact type="[ARTIFACT-TYPE-NAME]">
-             <ae:parameters>
-                 <ae:parameter dt="string" name="filepath">[filepath.value]</ae:parameter>
-                 <ae:parameter dt="string" name="existence">[existence.value]</ae:parameter>
-                 <ae:parameter dt="string" name="check">[check.value]</ae:parameter>
-             </ae:parameters>
-           </ae:artifact>
-           <ae:test type="[TEST-TYPE-NAME]">
-             <ae:parameters />
-           </ae:test>
-           <ae:profiles>
-             <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1 "/>
-           </ae:profiles>          
-         </ae:artifact_expression>
-       </xccdf:check-content>
-     </xccdf:check>
-   </xccdf:complex-check>
-
-.. _scap-1:
+  <xccdf:complex-check operator="AND">
+    <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
+      <xccdf:check-content>
+        <ae:artifact_expression
+          <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
+          <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
+          <ae:title>[RECOMMENDATION-TITLE]</ae:title>
+          <ae:artifact type="[ARTIFACT-TYPE-NAME]">
+            <ae:parameters>
+              <ae:parameter dt="string" name="filepath">[filepath.value]</ae:parameter>
+              <ae:parameter dt="string" name="existence">[existence.value]</ae:parameter>
+              <ae:parameter dt="string" name="check">[check.value]</ae:parameter>
+            </ae:parameters>
+          </ae:artifact>
+          <ae:test type="[TEST-TYPE-NAME]">
+            <ae:parameters />
+          </ae:test>
+          <ae:profiles>
+            <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1 "/>
+          </ae:profiles>          
+        </ae:artifact_expression>
+      </xccdf:check-content>
+    </xccdf:check>
+  </xccdf:complex-check>
 
 SCAP
 ^^^^
-
-.. _xccdf-1:
 
 XCCDF
 '''''
@@ -400,15 +396,13 @@ For ``unix.file_collection_v2`` artifacts, the xccdf:check looks like this. Ther
 
 ::
 
-   <xccdf:complex-check operator="AND">
-     <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
-       <check-content-ref 
-         href="[BENCHMARK-TITLE]"
-         name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
-     </check>
-   </xccdf:complex-check>  
-
-.. _oval-1:
+  <xccdf:complex-check operator="AND">
+    <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+      <check-content-ref 
+        href="[BENCHMARK-TITLE]"
+        name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
+    </check>
+  </xccdf:complex-check>  
 
 OVAL
 ''''
@@ -417,33 +411,33 @@ Test
 
 ::
 
-   <file_test
-     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#iindependent"
-     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
-     check_existence="[check_existence.value]"
-     check="[check.value]"
-     comment="[RECOMMENDATION-TITLE]"
-     version="1">
-     <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
-   </file_test>
+  <file_test
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#iindependent"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
+    check_existence="[check_existence.value]"
+    check="[check.value]"
+    comment="[RECOMMENDATION-TITLE]"
+    version="1">
+    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+  </file_test>
 
 Object
 
 ::
 
-   <file_object
-     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#iindependent"
-     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
-     comment="[RECOMMENDATION-TITLE]"
-     version="1">
-     <path>
-       [path.value]
-     </path>
-     <filename 
-       xsi:nil="true">
-       [filename.value]
-     </filename>
-   </file_object>
+  <file_object
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#iindependent"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
+    comment="[RECOMMENDATION-TITLE]"
+    version="1">
+    <path>
+      [path.value]
+    </path>
+    <filename 
+      xsi:nil="true">
+      [filename.value]
+    </filename>
+  </file_object>
 
 State
 
@@ -451,89 +445,81 @@ State
 
   N/A
 
-.. _yaml-1:
-
 YAML
 ^^^^
 
 ::
 
-   artifact-expression:
-     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
-     artifact-title: "[RECOMMENDATION-TITLE]"
-     artifact:
-       type: "[ARTIFACT-TYPE-NAME]"
-       parameters:
-         - parameter: 
-             name: "filepath"
-             dt: "string"
-             value: "[filepath.value]"
-         - parameter: 
-             name: "existence"
-             dt: "string"
-             value: "[existence.value]"
-         - parameter: 
-             name: "check"
-             dt: "string"
-             value: "[check.value]"
-     test:
-       type: "[TEST-TYPE-NAME]"
-       parameters: []
-
-.. _json-1:
+  artifact-expression:
+    artifact-unique-id: "[ARTIFACT-OVAL-ID]"
+    artifact-title: "[RECOMMENDATION-TITLE]"
+    artifact:
+      type: "[ARTIFACT-TYPE-NAME]"
+      parameters:
+        - parameter: 
+            name: "filepath"
+            dt: "string"
+            value: "[filepath.value]"
+        - parameter: 
+            name: "existence"
+            dt: "string"
+            value: "[existence.value]"
+        - parameter: 
+            name: "check"
+            dt: "string"
+            value: "[check.value]"
+    test:
+      type: "[TEST-TYPE-NAME]"
+      parameters: []
 
 JSON
 ^^^^
 
 ::
 
-   {
-     "artifact-expression": {
-       "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
-       "artifact-title": "[RECOMMENDATION-TITLE]",
-       "artifact": {
-         "type": "[ARTIFACT-TYPE-NAME]",
-         "parameters": [
-           {
-             "parameter": {
-               "name": "filepath",
-               "type": "string",
-               "value": "[filepath.value]"
-             }
-           },
-           {
-             "parameter": {
-               "name": "existence",
-               "type": "string",
-               "value": "[existence.value]"
-             }
-           },
-           {
-             "parameter": {
-               "name": "check",
-               "type": "string",
-               "value": "[check.value]"
-             }
-           }
-         ]
-       },
-       "test": {
-         "type": "[TEST-TYPE-NAME]",
-         "parameters": [
+  {
+    "artifact-expression": {
+      "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
+      "artifact-title": "[RECOMMENDATION-TITLE]",
+      "artifact": {
+        "type": "[ARTIFACT-TYPE-NAME]",
+        "parameters": [
+          {
+            "parameter": {
+              "name": "filepath",
+              "type": "string",
+              "value": "[filepath.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "existence",
+              "type": "string",
+              "value": "[existence.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "check",
+              "type": "string",
+              "value": "[check.value]"
+            }
+          }
+        ]
+      },
+      "test": {
+        "type": "[TEST-TYPE-NAME]",
+        "parameters": [
 
-         ]
-       }
-     }
-   }
-
-.. _generated-content-2:
+        ]
+      }
+    }
+  }
 
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
 unix_file_attributes_v1
-
-.. _xccdfae-2:
 
 XCCDF+AE
 ^^^^^^^^
@@ -542,52 +528,48 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
 
 ::
 
-   <xccdf:complex-check operator="AND">
-     <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
-       <xccdf:check-content>
-         <ae:artifact_expression
-             <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
-           <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-           <ae:title>[RECOMMENDATION-TITLE]</ae:title>
-           <ae:artifact type="[ARTIFACT-TYPE-NAME]">
-             <ae:parameters>
-               <ae:parameter dt="string" name="filepath">[filepath.value]</ae:parameter>
-               <ae:parameter dt="string" name="existence">[existence.value]</ae:parameter>
-               <ae:parameter dt="string" name="check">[check.value]</ae:parameter>
-             </ae:parameters>
-           </ae:artifact>
-           <ae:test type="[TEST-TYPE-NAME]">
-             <ae:parameters>
-               <ae:parameter dt="int" name="uid">[uid.value]</ae:parameter>
-               <ae:parameter dt="int" name="gid">[gid.value]</ae:parameter>
-               <ae:parameter dt="string" name="uread">[uread.value]</ae:parameter>
-               <ae:parameter dt="string" name="uwrite">[uwrite.value]</ae:parameter>
-               <ae:parameter dt="string" name="uexec">[uexec.value]</ae:parameter>
-               <ae:parameter dt="string" name="gread">[gread.value]</ae:parameter>
-               <ae:parameter dt="string" name="gwrite">[gwrite.value]</ae:parameter>
-               <ae:parameter dt="string" name="gexec">[gexec.value]</ae:parameter>
-               <ae:parameter dt="string" name="oread">[oread.value]</ae:parameter>
-               <ae:parameter dt="string" name="owrite">[owrite.value]</ae:parameter>
-               <ae:parameter dt="string" name="oexec">[oexec.value]</ae:parameter>
-               <ae:parameter dt="string" name="suid">[suid.value]</ae:parameter>
-               <ae:parameter dt="string" name="sgid">[sgid.value]</ae:parameter>
-               <ae:parameter dt="string" name="sticky">[sticky.value]</ae:parameter>
-             </ae:parameters>
-           </ae:test>
-           <ae:profiles>
-             <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1 "/>
-           </ae:profiles>          
-         </ae:artifact_expression>
-       </xccdf:check-content>
-     </xccdf:check>
-   </xccdf:complex-check>
-
-.. _scap-2:
+  <xccdf:complex-check operator="AND">
+    <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
+      <xccdf:check-content>
+        <ae:artifact_expression
+            <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
+          <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
+          <ae:title>[RECOMMENDATION-TITLE]</ae:title>
+          <ae:artifact type="[ARTIFACT-TYPE-NAME]">
+            <ae:parameters>
+              <ae:parameter dt="string" name="filepath">[filepath.value]</ae:parameter>
+              <ae:parameter dt="string" name="existence">[existence.value]</ae:parameter>
+              <ae:parameter dt="string" name="check">[check.value]</ae:parameter>
+            </ae:parameters>
+          </ae:artifact>
+          <ae:test type="[TEST-TYPE-NAME]">
+            <ae:parameters>
+              <ae:parameter dt="int" name="uid">[uid.value]</ae:parameter>
+              <ae:parameter dt="int" name="gid">[gid.value]</ae:parameter>
+              <ae:parameter dt="string" name="uread">[uread.value]</ae:parameter>
+              <ae:parameter dt="string" name="uwrite">[uwrite.value]</ae:parameter>
+              <ae:parameter dt="string" name="uexec">[uexec.value]</ae:parameter>
+              <ae:parameter dt="string" name="gread">[gread.value]</ae:parameter>
+              <ae:parameter dt="string" name="gwrite">[gwrite.value]</ae:parameter>
+              <ae:parameter dt="string" name="gexec">[gexec.value]</ae:parameter>
+              <ae:parameter dt="string" name="oread">[oread.value]</ae:parameter>
+              <ae:parameter dt="string" name="owrite">[owrite.value]</ae:parameter>
+              <ae:parameter dt="string" name="oexec">[oexec.value]</ae:parameter>
+              <ae:parameter dt="string" name="suid">[suid.value]</ae:parameter>
+              <ae:parameter dt="string" name="sgid">[sgid.value]</ae:parameter>
+              <ae:parameter dt="string" name="sticky">[sticky.value]</ae:parameter>
+            </ae:parameters>
+          </ae:test>
+          <ae:profiles>
+            <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1 "/>
+          </ae:profiles>          
+        </ae:artifact_expression>
+      </xccdf:check-content>
+    </xccdf:check>
+  </xccdf:complex-check>
 
 SCAP
 ^^^^
-
-.. _xccdf-2:
 
 XCCDF
 '''''
@@ -596,15 +578,13 @@ For ``unix.file_collection_v2`` artifacts, the xccdf:check looks like this. Ther
 
 ::
 
-   <xccdf:complex-check operator="AND">  
-     <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
-       <check-content-ref 
-         href="[BENCHMARK-TITLE]"
-         name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
-     </check> 
-   </xccdf:complex-check>
-
-.. _oval-2:
+  <xccdf:complex-check operator="AND">  
+    <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+      <check-content-ref 
+        href="[BENCHMARK-TITLE]"
+        name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
+    </check> 
+  </xccdf:complex-check>
 
 OVAL
 ''''
@@ -613,302 +593,298 @@ Test
 
 ::
 
-   <file_test 
-     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent" 
-     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]" 
-     check="[check.value]" 
-     check_existence="[check_existence.value]" 
-     comment="[RECOMMENDATION-TITLE]" 
-     version="1">
-     <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
-     <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
-   </file_test> 
+  <file_test 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent" 
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]" 
+    check="[check.value]" 
+    check_existence="[check_existence.value]" 
+    comment="[RECOMMENDATION-TITLE]" 
+    version="1">
+    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+    <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
+  </file_test> 
 
 Object
 
 ::
 
-   <file_object
-     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent"
-     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" 
-     comment="[RECOMMENDATION-TITLE]" 
-     version="1">
-     <path>[path.value]</path>
-     <filename xsi:nil="true" />
-     <filepath>[filepath.value]</filepath>
-   </file_object>
+  <file_object
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" 
+    comment="[RECOMMENDATION-TITLE]" 
+    version="1">
+    <path>[path.value]</path>
+    <filename xsi:nil="true" />
+    <filepath>[filepath.value]</filepath>
+  </file_object>
 
 State
 
 ::
 
-   <file_state 
-     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent" 
-     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" 
-     comment="[RECOMMENDATION-TITLE]" 
-     version="1">
-     <group_id
-       datatype="int">
-       [group_id.value]
-     </group_id>
-     <user_id
-       datatype="int">
-       [user_id.value]
-     </user_id>
-     <uread
-       datatype="boolean">
-       [uread.value]
-     </uread>
-     <gread
-       datatype="boolean">
-       [gread.value]
-     </gread>
-     <gwrite
-       datatype="boolean">
-       [gwrite.value]
-     </gwrite>
-     <gexec
-       datatype="boolean">
-       [gexec.value]
-     </gexec>
-     <oread
-       datatype="boolean">
-       [oread.value]
-     </oread>
-     <owrite
-       datatype="boolean">
-       [owrite.value]
-     </owrite>
-     <oexec
-       datatype="boolean">
-       [oexec.value]
-     </oexec>
-   </file_state>
-
-.. _yaml-2:
+  <file_state 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent" 
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" 
+    comment="[RECOMMENDATION-TITLE]" 
+    version="1">
+    <group_id
+      datatype="int">
+      [group_id.value]
+    </group_id>
+    <user_id
+      datatype="int">
+      [user_id.value]
+    </user_id>
+    <uread
+      datatype="boolean">
+      [uread.value]
+    </uread>
+    <gread
+      datatype="boolean">
+      [gread.value]
+    </gread>
+    <gwrite
+      datatype="boolean">
+      [gwrite.value]
+    </gwrite>
+    <gexec
+      datatype="boolean">
+      [gexec.value]
+    </gexec>
+    <oread
+      datatype="boolean">
+      [oread.value]
+    </oread>
+    <owrite
+      datatype="boolean">
+      [owrite.value]
+    </owrite>
+    <oexec
+      datatype="boolean">
+      [oexec.value]
+    </oexec>
+  </file_state>
 
 YAML
 ^^^^
 
 ::
 
-   artifact-expression:
-     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
-     artifact-title: "[RECOMMENDATION-TITLE]"
-     artifact:
-       type: "[ARTIFACT-TYPE-NAME]"
-       parameters:
-         - parameter: 
-             name: "filepath"
-             dt: "string"
-             value: "[filepath.value]"
-         - parameter: 
-             name: "existence"
-             dt: "string"
-             value: "[existence.value]"
-         - parameter: 
-             name: "check"
-             dt: "string"
-             value: "[check.value]"
-     test:
-       type: "[TEST-TYPE-NAME]"
-       parameters:
-         - parameter: 
-             name: "uid"
-             dt: "int"
-             value: "[uid.value]"
-         - parameter: 
-             name: "gid"
-             dt: "int"
-             value: "[gid.value]"
-         - parameter: 
-             name: "uread"
-             dt: "string"
-             value: "[uread.value]"
-         - parameter: 
-             name: "uwrite"
-             dt: "string"
-             value: "[uwrite.value]"
-         - parameter: 
-             name: "uexec"
-             dt: "string"
-             value: "[uexec.value]"
-         - parameter: 
-             name: "gread"
-             dt: "string"
-             value: "[gread.value]"
-         - parameter: 
-             name: "gwrite"
-             dt: "string"
-             value: "[gwrite.value]"
-         - parameter: 
-             name: "gexec"
-             dt: "string"
-             value: "[gexec.value]"
-         - parameter: 
-             name: "oread"
-             dt: "string"
-             value: "[oread.value]"
-         - parameter: 
-             name: "owrite"
-             dt: "string"
-             value: "[owrite.value]"
-         - parameter: 
-             name: "oexec"
-             dt: "string"
-             value: "[oexec.value]"
-         - parameter: 
-             name: "suid"
-             dt: "string"
-             value: "[suid.value]"
-         - parameter: 
-             name: "sgid"
-             dt: "string"
-             value: "[sgid.value]"
-         - parameter: 
-             name: "sticky"
-             dt: "string"
-             value: "[sticky.value]"
-
-.. _json-2:
+  artifact-expression:
+    artifact-unique-id: "[ARTIFACT-OVAL-ID]"
+    artifact-title: "[RECOMMENDATION-TITLE]"
+    artifact:
+      type: "[ARTIFACT-TYPE-NAME]"
+      parameters:
+        - parameter: 
+            name: "filepath"
+            dt: "string"
+            value: "[filepath.value]"
+        - parameter: 
+            name: "existence"
+            dt: "string"
+            value: "[existence.value]"
+        - parameter: 
+            name: "check"
+            dt: "string"
+            value: "[check.value]"
+    test:
+      type: "[TEST-TYPE-NAME]"
+      parameters:
+        - parameter: 
+            name: "uid"
+            dt: "int"
+            value: "[uid.value]"
+        - parameter: 
+            name: "gid"
+            dt: "int"
+            value: "[gid.value]"
+        - parameter: 
+            name: "uread"
+            dt: "string"
+            value: "[uread.value]"
+        - parameter: 
+            name: "uwrite"
+            dt: "string"
+            value: "[uwrite.value]"
+        - parameter: 
+            name: "uexec"
+            dt: "string"
+            value: "[uexec.value]"
+        - parameter: 
+            name: "gread"
+            dt: "string"
+            value: "[gread.value]"
+        - parameter: 
+            name: "gwrite"
+            dt: "string"
+            value: "[gwrite.value]"
+        - parameter: 
+            name: "gexec"
+            dt: "string"
+            value: "[gexec.value]"
+        - parameter: 
+            name: "oread"
+            dt: "string"
+            value: "[oread.value]"
+        - parameter: 
+            name: "owrite"
+            dt: "string"
+            value: "[owrite.value]"
+        - parameter: 
+            name: "oexec"
+            dt: "string"
+            value: "[oexec.value]"
+        - parameter: 
+            name: "suid"
+            dt: "string"
+            value: "[suid.value]"
+        - parameter: 
+            name: "sgid"
+            dt: "string"
+            value: "[sgid.value]"
+        - parameter: 
+            name: "sticky"
+            dt: "string"
+            value: "[sticky.value]"
 
 JSON
 ^^^^
 
 ::
 
-   {
-     "artifact-expression": {
-       "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
-       "artifact-title": "[RECOMMENDATION-TITLE]",
-       "artifact": {
-         "type": "[ARTIFACT-TYPE-NAME]",
-         "parameters": [
-           {
-             "parameter": {
-               "name": "filepath",
-               "type": "string",
-               "value": "[filepath.value]"
-             }
-           },
-           {
-             "parameter": {
-               "name": "existence",
-               "type": "string",
-               "value": "[existence.value]"
-             }
-           },
-           {
-             "parameter": {
-               "name": "check",
-               "type": "string",
-               "value": "[check.value]"
-             }
-           }
-         ]
-       },
-       "test": {
-         "type": "[TEST-TYPE-NAME]",
-         "parameters": [
-           {
-             "parameter": {
-               "name": "uid",
-               "dt": "int",
-               "value": "[uid.value]"
-             }
-           },
-           {
-             "parameter": {
-               "name": "gid",
-               "dt": "int",
-               "value": "[gid.value]"
-             }
-           },
-           {
-             "parameter": {
-               "name": "uread",
-               "dt": "string",
-               "value": "[uread.value]"
-             }
-           },
-           {
-             "parameter": {
-               "name": "uwrite",
-               "dt": "string",
-               "value": "[uwrite.value]"
-             }
-           },
-           {
-             "parameter": {
-               "name": "uexec",
-               "dt": "string",
-               "value": "[uexec.value]"
-             }
-           },
-           {
-             "parameter": {
-               "name": "gread",
-               "dt": "string",
-               "value": "[gread.value]"
-             }
-           },
-           {
-             "parameter": {
-               "name": "gwrite",
-               "dt": "string",
-               "value": "[gwrite.value]"
-             }
-           },
-           {
-             "parameter": {
-               "name": "gexec",
-               "dt": "string",
-               "value": "[gexec.value]"
-             }
-           },
-           {
-             "parameter": {
-               "name": "oread",
-               "dt": "string",
-               "value": "[oread.value]"
-             }
-           },
-           {
-             "parameter": {
-               "name": "owrite",
-               "dt": "string",
-               "value": "[owrite.value]"
-             }
-           },
-           {
-             "parameter": {
-               "name": "oexec",
-               "dt": "string",
-               "value": "[oexec.value]"
-             }
-           },
-           {
-             "parameter": {
-               "name": "suid",
-               "dt": "string",
-               "value": "[suid.value]"
-             }
-           },
-           {
-             "parameter": {
-               "name": "sgid",
-               "dt": "string",
-               "value": "[sgid.value]"
-             }
-           },
-           {
-             "parameter": {
-               "name": "sticky",
-               "dt": "string",
-               "value": "[sticky.value]"
-             }
-           }
-         ]
-       }
-     }
-   }  
+  {
+    "artifact-expression": {
+      "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
+      "artifact-title": "[RECOMMENDATION-TITLE]",
+      "artifact": {
+        "type": "[ARTIFACT-TYPE-NAME]",
+        "parameters": [
+          {
+            "parameter": {
+              "name": "filepath",
+              "type": "string",
+              "value": "[filepath.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "existence",
+              "type": "string",
+              "value": "[existence.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "check",
+              "type": "string",
+              "value": "[check.value]"
+            }
+          }
+        ]
+      },
+      "test": {
+        "type": "[TEST-TYPE-NAME]",
+        "parameters": [
+          {
+            "parameter": {
+              "name": "uid",
+              "dt": "int",
+              "value": "[uid.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "gid",
+              "dt": "int",
+              "value": "[gid.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "uread",
+              "dt": "string",
+              "value": "[uread.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "uwrite",
+              "dt": "string",
+              "value": "[uwrite.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "uexec",
+              "dt": "string",
+              "value": "[uexec.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "gread",
+              "dt": "string",
+              "value": "[gread.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "gwrite",
+              "dt": "string",
+              "value": "[gwrite.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "gexec",
+              "dt": "string",
+              "value": "[gexec.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "oread",
+              "dt": "string",
+              "value": "[oread.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "owrite",
+              "dt": "string",
+              "value": "[owrite.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "oexec",
+              "dt": "string",
+              "value": "[oexec.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "suid",
+              "dt": "string",
+              "value": "[suid.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "sgid",
+              "dt": "string",
+              "value": "[sgid.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "sticky",
+              "dt": "string",
+              "value": "[sticky.value]"
+            }
+          }
+        ]
+      }
+    }
+  }

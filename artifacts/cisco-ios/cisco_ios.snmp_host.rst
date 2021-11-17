@@ -2,13 +2,13 @@ cisco_ios.snmp_host
 ===================
 
 Description
------------
+  -----------
 
 The cisco_ios.snmp_host is used to check the properties of specific
 output lines from an SNMP configuration.
 
 Technical Details
------------------
+  -----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
@@ -128,14 +128,14 @@ State
 
 ::
 
-   n/a
+   N/A
 
 YAML
 ^^^^
 
 ::
 
-   - artifact-expression:
+  - artifact-expression:
        artifact-unique-id: [ARTIFACT-OVAL-ID]
        artifact-title: [RECOMMENDATION TITLE]
        artifact:

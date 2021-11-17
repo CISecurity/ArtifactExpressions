@@ -2,7 +2,7 @@ macos:corestorage
 =================
 
 Description
------------
+  -----------
 
 The macos:corestorage test is used to check the properties of the plist-style XML output from the "diskutil cs list -plist" command, for reading information about the CoreStorage setup on MacOSX.
 
@@ -11,7 +11,7 @@ The corestorage_object element consists of a uuid entity that contains the UUID 
 The corestorage_state element defines a value used to evaluate the result of a specific corestorage_object item.
 
 Technical Details
------------------
+  -----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
@@ -213,7 +213,7 @@ YAML
 
 ::
 
-   - artifact-expression:
+  - artifact-expression:
      artifact-unique-id: "[ARTIFACT-OVAL-ID]"
      artifact-title: "[RECOMMENDATION-TITLE]"
      artifact:

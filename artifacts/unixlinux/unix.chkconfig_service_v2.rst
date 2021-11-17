@@ -2,7 +2,7 @@ Unix: Chkconfig Service v2
 ==========================
 
 Description
------------
+  -----------
 
 The Unix: Chkconfig Service v2 test is used to check information about
 which runlevel specified services are scheduled to exist. For more
@@ -15,13 +15,13 @@ The optional runlevel_state element holds information about whether a
 specific service is scheduled to start or stop at a given runlevel.
 
 Technical Details
------------------
+  -----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
 Human ID:
-  - unix.chkconfig_service_v2
+  unix.chkconfig_service_v2
 
 +--------------------+--------+--------------------------------------+
 | Name               | Type   | Description                          |
@@ -66,7 +66,7 @@ Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
 Human ID:
-  - unix.service_enabled_v1
+  unix.service_enabled_v1
 
 ======= ====== ================================
 Name    Type   Description
@@ -84,31 +84,31 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
 
 ::
 
-   <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
-     <xccdf:check-content>
-       <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
-         <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-         <ae:title>[RECOMMENDATION-TITLE]</ae:title>
-         <ae:artifact type="[ARTIFACT-TYPE-NAME]">
-           <ae:parameters>
-             <ae:parameter dt="string" name="service">[service.value]</ae:parameter>
-             <ae:parameter dt="string" name="name_operation">[name_operaton.value]
-             </ae:parameter>
-             <ae:parameter dt="string" name="runlevel">[runlevel.value]</ae:parameter>
-             <ae:parameter dt="string" name="runlevel_operation">[runlevel_operation.value]</ae:parameter>
-           </ae:parameters>
-         </ae:artifact>
-         <ae:test type="[TEST-TYPE-NAME]">
-           <ae:parameters>
-             <ae:parameter dt="string" name="enabled">[enabled.value]</ae:parameter>
-           </ae:parameters>
-         </ae:test>
-         <ae:profiles>
-           <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1" />
-         </ae:profiles>            
-       </ae:artifact_expression>
-     </xccdf:check-content>
-   </xccdf:check>
+  <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
+    <xccdf:check-content>
+      <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
+        <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
+        <ae:title>[RECOMMENDATION-TITLE]</ae:title>
+        <ae:artifact type="[ARTIFACT-TYPE-NAME]">
+          <ae:parameters>
+            <ae:parameter dt="string" name="service">[service.value]</ae:parameter>
+            <ae:parameter dt="string" name="name_operation">[name_operaton.value]
+            </ae:parameter>
+            <ae:parameter dt="string" name="runlevel">[runlevel.value]</ae:parameter>
+            <ae:parameter dt="string" name="runlevel_operation">[runlevel_operation.value]</ae:parameter>
+          </ae:parameters>
+        </ae:artifact>
+        <ae:test type="[TEST-TYPE-NAME]">
+          <ae:parameters>
+            <ae:parameter dt="string" name="enabled">[enabled.value]</ae:parameter>
+          </ae:parameters>
+        </ae:test>
+        <ae:profiles>
+          <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1" />
+        </ae:profiles>            
+      </ae:artifact_expression>
+    </xccdf:check-content>
+  </xccdf:check>
 
 SCAP
 ^^^^
@@ -120,11 +120,11 @@ For ``unix.chkconfig_service_v2`` artifacts, the xccdf:check looks like this. Th
 
 ::
 
-   <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
-     <check-content-ref 
-       href="[BENCHMARK-TITLE]"
-       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
-   </check>
+  <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+    <check-content-ref 
+      href="[BENCHMARK-TITLE]"
+      name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
+  </check>
 
 OVAL
 ''''
@@ -133,140 +133,140 @@ Test
 
 ::
 
-   <runlevel_test 
-     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
-     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
-     check_existence="[check_existence.value]"
-     check="[check.value]"
-     comment="[RECOMMENDATION-TITLE]"
-     version="1">
-     <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
-     <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
-   </runlevel_test>
+  <runlevel_test 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
+    check_existence="[check_existence.value]"
+    check="[check.value]"
+    comment="[RECOMMENDATION-TITLE]"
+    version="1">
+    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+    <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
+  </runlevel_test>
 
 Object
 
 ::
 
-   <runlevel_object 
-     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
-     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
-     comment="[RECOMMENDATION-TITLE]"
-     version="1">
-     <service_name 
-       operation="[operation.value]">
-       [service_name.value]
-     </service_name>
-     <runlevel 
-       operation="[operation.value]">
-       [runlevel.value]
-     </runlevel>
-   </runlevel_object>
+  <runlevel_object 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
+    comment="[RECOMMENDATION-TITLE]"
+    version="1">
+    <service_name 
+      operation="[operation.value]">
+      [service_name.value]
+    </service_name>
+    <runlevel 
+      operation="[operation.value]">
+      [runlevel.value]
+    </runlevel>
+  </runlevel_object>
 
 State
 
 ::
 
-   <runlevel_state 
-     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
-     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
-     comment="[RECOMMENDATION-TITLE]"
-     version="1">
-     <start 
-       datatype="boolean" 
-       operation="equals">
-       [start.value]
-     </start>
-   </runlevel_state>
+  <runlevel_state 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
+    comment="[RECOMMENDATION-TITLE]"
+    version="1">
+    <start 
+      datatype="boolean" 
+      operation="equals">
+      [start.value]
+    </start>
+  </runlevel_state>
 
 YAML
 ^^^^
 
 ::
 
-   artifact-expression:
-     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
-     artifact-title: "[RECOMMENDATION-TITLE]"
-     artifact:
-       type: u"[ARTIFACT-TYPE-NAME]"
-       parameters:
-         - parameter: 
-             name: "service_name"
-             dt: "string"
-             value: "[service_name.value]"
-         - parameter: 
-             name: "name_operationname_operation"
-             dt: "string"
-             value: "[name_operation.value]"
-         - parameter: 
-             name: "runlevel"
-             dt: "string"
-             value: "[runlevel.value]"
-         - parameter: 
-             name: "runlevel_operation"
-             dt: "string"
-             value: "[runlevel_operation.value]"
-     test:
-       type: "[TEST-TYPE-NAME]"
-       parameters:
-         - parameter: 
-             name: "enabled"
-             dt: "string"
-             value: "[enabled.value]"                           
+  artifact-expression:
+    artifact-unique-id: "[ARTIFACT-OVAL-ID]"
+    artifact-title: "[RECOMMENDATION-TITLE]"
+    artifact:
+      type: u"[ARTIFACT-TYPE-NAME]"
+      parameters:
+        - parameter: 
+            name: "service_name"
+            dt: "string"
+            value: "[service_name.value]"
+        - parameter: 
+            name: "name_operationname_operation"
+            dt: "string"
+            value: "[name_operation.value]"
+        - parameter: 
+            name: "runlevel"
+            dt: "string"
+            value: "[runlevel.value]"
+        - parameter: 
+            name: "runlevel_operation"
+            dt: "string"
+            value: "[runlevel_operation.value]"
+    test:
+      type: "[TEST-TYPE-NAME]"
+      parameters:
+        - parameter: 
+            name: "enabled"
+            dt: "string"
+            value: "[enabled.value]"                           
 
 JSON
 ^^^^
 
 ::
 
-   {
-     "artifact-expression": {
-       "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
-       "artifact-title": "[RECOMMENDATION-TITLE]",
-       "artifact": {
-         "type": "unix.chkconfig_service_v2",
-         "parameters": [
-           {
-             "parameter": {
-               "name": "service_name",
-               "type": "string",
-               "value": "[service_name.value]"
-             }
-           },
-           {
-             "parameter": {
-               "name": "name_operationname_operation",
-               "type": "string",
-               "value": "[name_operation.value]"
-             }
-           },
-           {
-             "parameter": {
-               "name": "runlevel",
-               "type": "string",
-               "value": "[runlevel.value]"
-             }
-           },
-           {
-             "parameter": {
-               "name": "runlevel_operation",
-               "type": "string",
-               "value": "[runlevel_operation.value]"
-             }
-           }
-         ]
-       },
-       "test": {
-         "type": "[TEST-TYPE-NAME]",
-         "parameters": [
-           {
-             "parameter": {
-               "name": "enabled",
-               "type": "string",
-               "value": "[enabled.value]"
-             }
-           }
-         ]
-       }
-     }
-   }
+  {
+    "artifact-expression": {
+      "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
+      "artifact-title": "[RECOMMENDATION-TITLE]",
+      "artifact": {
+        "type": "unix.chkconfig_service_v2",
+        "parameters": [
+          {
+            "parameter": {
+              "name": "service_name",
+              "type": "string",
+              "value": "[service_name.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "name_operationname_operation",
+              "type": "string",
+              "value": "[name_operation.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "runlevel",
+              "type": "string",
+              "value": "[runlevel.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "runlevel_operation",
+              "type": "string",
+              "value": "[runlevel_operation.value]"
+            }
+          }
+        ]
+      },
+      "test": {
+        "type": "[TEST-TYPE-NAME]",
+        "parameters": [
+          {
+            "parameter": {
+              "name": "enabled",
+              "type": "string",
+              "value": "[enabled.value]"
+            }
+          }
+        ]
+      }
+    }
+  }

@@ -2,7 +2,7 @@ Linux: Partition Device
 =======================
 
 Description
------------
+  -----------
 
 The linux.partition_device_v1 test is used to check the information
 associated with partitions on the local system.
@@ -15,13 +15,13 @@ associated with a partition. This includes the name, filesystem type,
 mount options, total space, space used, and space left.
 
 Technical Details
------------------
+  -----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
 Human ID:
-  - linux.partition_device_v1
+  linux.partition_device_v1
 
 =========== ====== =====================================================
 Name        Type   Description
@@ -38,7 +38,7 @@ Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
 Human ID:
-  - existence_test
+  existence_test
 
 ===== ====== =======================
 Name  Type   Description
@@ -64,30 +64,30 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
 
 ::
 
-   <xccdf:complex-check operator="AND">
-     <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
-       <xccdf:check-content>
-         <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
-           <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-           <ae:title>[RECOMMENDATION-TITLE]</ae:title>
-           <ae:artifact type="[ARTIFACT-TYPE-NAME]">
-             <ae:parameters>
-               <ae:parameter dt="string" name="mount_point">[mount_point.value]</ae:parameter>
-             </ae:parameters>
-           </ae:artifact>
-           <ae:test type="[TEST-TYPE-NAME]">
-             <ae:parameters>
-               <ae:parameter dt="string" name="value">[value.value]</ae:parameter>
-             </ae:parameters>
-           </ae:test>
-           <ae:profiles>
-             <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1" />
-           </ae:profiles>          
-           <ae:profiles/>
-         </ae:artifact_expression>
-       </xccdf:check-content>
-     </xccdf:check>
-   </xccdf:complex-check>
+  <xccdf:complex-check operator="AND">
+    <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
+      <xccdf:check-content>
+        <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
+          <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
+          <ae:title>[RECOMMENDATION-TITLE]</ae:title>
+          <ae:artifact type="[ARTIFACT-TYPE-NAME]">
+            <ae:parameters>
+              <ae:parameter dt="string" name="mount_point">[mount_point.value]</ae:parameter>
+            </ae:parameters>
+          </ae:artifact>
+          <ae:test type="[TEST-TYPE-NAME]">
+            <ae:parameters>
+              <ae:parameter dt="string" name="value">[value.value]</ae:parameter>
+            </ae:parameters>
+          </ae:test>
+          <ae:profiles>
+            <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1" />
+          </ae:profiles>          
+          <ae:profiles/>
+        </ae:artifact_expression>
+      </xccdf:check-content>
+    </xccdf:check>
+  </xccdf:complex-check>
 
 SCAP
 ^^^^
@@ -99,11 +99,11 @@ For ``linux.partition_options_v1`` artifacts, the xccdf:check looks like this. T
 
 ::
 
-   <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
-     <check-content-ref
-       href="[BENCHMARK-TITLE]"
-       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
-   </check>
+  <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+    <check-content-ref
+      href="[BENCHMARK-TITLE]"
+      name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
+  </check>
 
 OVAL
 ''''
@@ -112,29 +112,29 @@ Test
 
 ::
 
-   <partition_test 
-     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux"
-     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
-     check_existence="[check_existence.value]" 
-     check="all" 
-     comment="[RECOMMENDATION-TITLE]" 
-     version="1">
-     <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
-    </partition_test>
+  <partition_test 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
+    check_existence="[check_existence.value]" 
+    check="all" 
+    comment="[RECOMMENDATION-TITLE]" 
+    version="1">
+    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+  </partition_test>
 
 Object
 
 ::
 
-   <partition_object 
-     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux"
-     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
-     comment="[RECOMMENDATION-TITLE]" 
-     version="1">
-     <mount_point>
-       [mount_point.value]
-     </mount_point>
-   </partition_object>
+  <partition_object 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
+    comment="[RECOMMENDATION-TITLE]" 
+    version="1">
+    <mount_point>
+      [mount_point.value]
+    </mount_point>
+  </partition_object>
 
 State
 
@@ -147,56 +147,56 @@ YAML
 
 ::
 
-   artifact-expression:
-     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
-     artifact-title: "[RECOMMENDATION-TITLE]"
-     artifact:
-       type: "[ARTIFACT-TYPE-NAME]"
-       parameters:
-         - parameter: 
-             name: "mount_point"
-             dt: "string"
-             value: "[mount_point.value]"
-     test:
-       type: "[TEST-TYPE-NAME]"
-       parameters:
-         - parameter:
-             name: "value"
-             dt: "string"
-             value: "[value.value]"
+  artifact-expression:
+    artifact-unique-id: "[ARTIFACT-OVAL-ID]"
+    artifact-title: "[RECOMMENDATION-TITLE]"
+    artifact:
+      type: "[ARTIFACT-TYPE-NAME]"
+      parameters:
+        - parameter: 
+            name: "mount_point"
+            dt: "string"
+            value: "[mount_point.value]"
+    test:
+      type: "[TEST-TYPE-NAME]"
+      parameters:
+        - parameter:
+            name: "value"
+            dt: "string"
+            value: "[value.value]"
 
 JSON
 ^^^^
 
 ::
 
-   {
-     "artifact-expression": {
-       "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
-       "artifact-title": "[RECOMMENDATION-TITLE]",
-       "artifact": {
-         "type": "[ARTIFACT-TYPE-NAME]",
-         "parameters": [
-           {
-             "parameter": {
-               "name": "mount_point",
-               "type": "string",
-               "value": "[mount_point.value]"
-             }
-           }
-         ]
-       },
-       "test": {
-         "type": "[TEST-TYPE-NAME]",
-         "parameters": [
-           {
-             "parameter": {
-               "name": "value",
-               "type": "string",
-               "value": "[value.value]"
-             }
-           }
-         ]
-       }
-     }
-   }
+  {
+    "artifact-expression": {
+      "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
+      "artifact-title": "[RECOMMENDATION-TITLE]",
+      "artifact": {
+        "type": "[ARTIFACT-TYPE-NAME]",
+        "parameters": [
+          {
+            "parameter": {
+              "name": "mount_point",
+              "type": "string",
+              "value": "[mount_point.value]"
+            }
+          }
+        ]
+      },
+      "test": {
+        "type": "[TEST-TYPE-NAME]",
+        "parameters": [
+          {
+            "parameter": {
+              "name": "value",
+              "type": "string",
+              "value": "[value.value]"
+            }
+          }
+        ]
+      }
+    }
+  }

@@ -2,12 +2,12 @@ vmware:vm_harddiskdevice
 ========================
 
 Description
------------
+  -----------
 
 The vmware:vm_harddiskdevice test is used to verify the configuration of virtual machine persistent memory settings.
 
 Technical Details
------------------
+  -----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
@@ -86,7 +86,7 @@ Test Type Parameters
 
 persistence NOTE: This parameter is governed by a constraint allowing
 only the following values: - NA - Persistent - NonPersistent - Undoable
-- IndependentPersistent - IndependentNonPersistent - Unknown
+  - IndependentPersistent - IndependentNonPersistent - Unknown
 
 check_existence NOTE: This parameter is governed by a constraint
 allowing only the following values: - all_exist - any_exist -
@@ -198,7 +198,7 @@ YAML
 
 ::
 
-   - artifact-expression:
+  - artifact-expression:
        artifact-unique-id: [ARTIFACT-OVAL-ID]
        artifact-title: [RECOMMENDATION TITLE]
        artifact:

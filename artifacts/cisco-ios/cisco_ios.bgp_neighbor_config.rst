@@ -2,13 +2,13 @@ cisco_ios.bgp_neighbor_config
 =============================
 
 Description
------------
+  -----------
 
 The cisco_ios.bgp_neighbor_config is used to check the bgp neighbpr
 properties of bgp instances in IOS.
 
 Technical Details
------------------
+  -----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
@@ -133,7 +133,7 @@ YAML
 
 ::
 
-   - artifact-expression:
+  - artifact-expression:
        artifact-unique-id: [ARTIFACT-OVAL-ID]
        artifact-title: [RECOMMENDATION TITLE]
        artifact:

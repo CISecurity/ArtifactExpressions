@@ -2,13 +2,13 @@ cisco_asa.password_policy
 =========================
 
 Description
------------
+  -----------
 
 The cisco_asa.password_policy is used to check the properties of the
 password policy.
 
 Technical Details
------------------
+  -----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
@@ -153,7 +153,7 @@ YAML
 
 ::
 
-   - artifact-expression:
+  - artifact-expression:
        artifact-unique-id: [ARTIFACT-OVAL-ID]
        artifact-title: [RECOMMENDATION TITLE]
        artifact:

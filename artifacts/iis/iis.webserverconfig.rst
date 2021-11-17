@@ -2,7 +2,7 @@ iis.webserverconfig
 ===================
 
 Description
------------
+  -----------
 
 The Web Configuration Test evaluates many of the site-level and
 application-level configuration settings for Internet Information
@@ -11,7 +11,7 @@ contains configuration elements that define the settings used by the Web
 server engine and modules.
 
 Technical Details
------------------
+  -----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
@@ -177,7 +177,7 @@ YAML
 
 ::
 
-   - artifact-expression:
+  - artifact-expression:
        artifact-unique-id: [ARTIFACT-OVAL-ID]
        artifact-title: [RECOMMENDATION TITLE]
        artifact:

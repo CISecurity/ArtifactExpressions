@@ -2,7 +2,7 @@ Unix: Xinetd Service
 ====================
 
 Description
------------
+  -----------
 
 The Unix: Xinetd Service test is used to check information associated
 with different Internet services. The textfilecontent54_test elements
@@ -28,12 +28,13 @@ The optional inetd_state element defines the different information
 associated with a specific Internet service.
 
 Technical Details
------------------
+  -----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
+
 Human ID:
-  - unix.xinetd_service_v1
+  unix.xinetd_service_v1
 
 ======== ====== ======================================================
 Name     Type   Description
@@ -44,14 +45,16 @@ protocol string Protocol the service is running on (tcp/udp).
 
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
+
   - Unix: Service Enabled
   - Unix: Xinetd Service Enabled
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
+
 Human IDs:
-  - unix.service_enabled_v1
-  - unix.xinetd_service_enabled_v1
+  unix.service_enabled_v1
+  unix.xinetd_service_enabled_v1
 
 ======= ====== ================================
 Name    Type   Description

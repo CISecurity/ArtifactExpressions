@@ -2,12 +2,12 @@ VMware: VM Host: Authentication Setting
 =======================================
 
 Description
------------
+  -----------
 
 The VMware: VM Host: Authentication Setting test is used to verify an ESXi host is configured to use a directory service such as Active Directory. 
 
 Technical Details
------------------
+  -----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
@@ -51,8 +51,8 @@ DomainMembershipStatus
 
 domain_membership_status NOTE: This parameter is governed by a
 constraint allowing only the following values: - NA - ClientTrustBroken
-- InconsistentTrust - NoServers - Ok - OtherProblem - ServerTrustBroken
-- Unknown
+  - InconsistentTrust - NoServers - Ok - OtherProblem - ServerTrustBroken
+  - Unknown
 
 operator NOTE: This parameter is governed by a constraint allowing only
 the following values: - equals - not equal - case insensitive equals -
@@ -154,7 +154,7 @@ YAML
 
 ::
 
-   - artifact-expression:
+  - artifact-expression:
        artifact-unique-id: [ARTIFACT-OVAL-ID]
        artifact-title: [RECOMMENDATION TITLE]
        artifact:

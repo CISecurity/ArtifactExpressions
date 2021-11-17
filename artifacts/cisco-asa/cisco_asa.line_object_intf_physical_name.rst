@@ -2,7 +2,7 @@ cisco_asa.line_object_intf_physical_name
 ========================================
 
 Description
------------
+  -----------
 
 The cisco_asa.line_object_intf_physical_name is used to check the
 properties of specific output lines.
@@ -145,7 +145,7 @@ YAML
 
 ::
 
-   - artifact-expression:
+  - artifact-expression:
        artifact-unique-id: [ARTIFACT-OVAL-ID]
        artifact-title: [RECOMMENDATION TITLE]
        artifact:

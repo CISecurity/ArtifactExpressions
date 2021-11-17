@@ -2,12 +2,12 @@ VMware: VM Host: Firewall Exception: All IP
 ===========================================
 
 Description
------------
+  -----------
 
 The VMware: VM Host: Firewall Exception: All IP test is used to verify the ESXi host firewall is configured to restrict access to services running on the host.
 
 Technical Details
------------------
+  -----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
@@ -145,7 +145,7 @@ YAML
 
 ::
 
-   - artifact-expression:
+  - artifact-expression:
        artifact-unique-id: [ARTIFACT-OVAL-ID]
        artifact-title: [RECOMMENDATION TITLE]
        artifact:

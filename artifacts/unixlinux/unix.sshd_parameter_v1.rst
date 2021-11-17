@@ -2,7 +2,7 @@ Unix: Sshd Parameter
 ====================
 
 Description
------------
+  -----------
 
 The Unix: Sshd Parameter test is used to check the contents of an sshd
 configuration file, by looking at individual blocks of text.
@@ -21,13 +21,13 @@ used to check the file path and name, as well as the text block in
 question and the value of the subexpressions.
 
 Technical Details
------------------
+  -----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
 Human ID:
-  - unix.sshd_parameter_v1
+  unix.sshd_parameter_v1
 
 ========= ====== ===================================================
 Name      Type   Description
@@ -53,15 +53,15 @@ Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
 Human IDs:
-  - equals
-  - equal
-  - not equal
-  - less than
-  - less than or equal
-  - greater than
-  - greater than or equal
-  - pattern match
-  - pattern not match
+  equals
+  equal
+  not equal
+  less than
+  less than or equal
+  greater than
+  greater than or equal
+  pattern match
+  pattern not match
 
 ========= ====== ===========================
 Name      Type   Description
@@ -79,7 +79,7 @@ NOTE: The ``data_type`` parameter is governed by a constraint allowing only the 
   - set
 
 Human ID:
-  - existence_test
+  existence_test
 
 ===== ====== =======================
 Name  Type   Description
@@ -146,8 +146,7 @@ SCAP
 XCCDF
 '''''
 
-For ``unix.sshd_parameter_v1`` artifacts, an XCCDF Value element is
-generated.
+For ``unix.sshd_parameter_v1`` artifacts, an XCCDF Value element is generated.
 
 ::
 
@@ -162,8 +161,7 @@ generated.
     </Value>
   </Values>
 
-For ``unix.sshd_parameter_v1`` artifacts, the xccdf:check looks like
-this.
+For ``unix.sshd_parameter_v1`` artifacts, the xccdf:check looks like this.
 
 ::
 
@@ -357,8 +355,7 @@ SCAP
 XCCDF
 '''''
 
-For ``unix.sshd_parameter_v1`` artifacts, an XCCDF Value element is
-generated.
+For ``unix.sshd_parameter_v1`` artifacts, an XCCDF Value element is generated.
 
 ::
 
@@ -373,8 +370,7 @@ generated.
     </Value>
   </Values>
 
-For ``unix.sshd_parameter_v1`` artifacts, the xccdf:check looks like
-this.
+For ``unix.sshd_parameter_v1`` artifacts, the xccdf:check looks like this.
 
 ::
 
@@ -440,23 +436,23 @@ YAML
 
 ::
 
-   artifact-expression:
-     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
-     artifact-title: "[RECOMMENDATION-TITLE]"
-     artifact:
-       type: "[ARTIFACT-TYPE-NAME]"
-       parameters:
-         - parameter:
-             name: "parameter"
-             dt: "string"
-             value: "[parameter.value]"
-     test:
-       type: "[TEST-TYPE-NAME]"
-       parameters:
-         - parameter:
-             name: "value"
-             dt: "string"
-             value: "[value.value]"
+  artifact-expression:
+    artifact-unique-id: "[ARTIFACT-OVAL-ID]"
+    artifact-title: "[RECOMMENDATION-TITLE]"
+    artifact:
+      type: "[ARTIFACT-TYPE-NAME]"
+      parameters:
+        - parameter:
+            name: "parameter"
+            dt: "string"
+            value: "[parameter.value]"
+    test:
+      type: "[TEST-TYPE-NAME]"
+      parameters:
+        - parameter:
+            name: "value"
+            dt: "string"
+            value: "[value.value]"
 
 .. _json-1:
 
@@ -465,33 +461,33 @@ JSON
 
 ::
 
-   {
-     "artifact-expression": {
-       "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
-       "artifact-title": "[RECOMMENDATION-TITLE]",
-       "artifact": {
-         "type": "[ARTIFACT-TYPE-NAME]",
-         "parameters": [
-           {
-             "parameter": {
-               "name": "parameter",
-               "type": "string",
-               "value": "[parameter.value]"
-             }
-           }
-         ]
-       },
-       "test": {
-         "type": "[TEST-TYPE-NAME]",
-         "parameters": [
-           {
-             "parameter": {
-               "name": "value",
-               "type": "string",
-               "value": "[value.value]"
-             }
-           }
-         ]
-       }
-     }
-   }  
+  {
+    "artifact-expression": {
+      "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
+      "artifact-title": "[RECOMMENDATION-TITLE]",
+      "artifact": {
+        "type": "[ARTIFACT-TYPE-NAME]",
+        "parameters": [
+          {
+            "parameter": {
+              "name": "parameter",
+              "type": "string",
+              "value": "[parameter.value]"
+            }
+          }
+        ]
+      },
+      "test": {
+        "type": "[TEST-TYPE-NAME]",
+        "parameters": [
+          {
+            "parameter": {
+              "name": "value",
+              "type": "string",
+              "value": "[value.value]"
+            }
+          }
+        ]
+      }
+    }
+  }  

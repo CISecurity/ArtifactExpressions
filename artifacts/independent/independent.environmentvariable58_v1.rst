@@ -2,13 +2,13 @@ independent:environmentvariable58_v1
 ======================================
 
 Description
------------
+  -----------
 
 This item stores information about an environment variable, the process ID of 
 the process from which it was retrieved, and its corresponding value.
 
 Technical Details
------------------
+  -----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
@@ -25,17 +25,17 @@ Artifact Parameters
 
 check_existence NOTE: This parameter is governed by a constraint
 allowing only the following values:
- - all_exist
- - any_exist
- - at_least_one_exists
- - none_satisfy
- - none_exist
- - only_one_exists
+  - all_exist
+  - any_exist
+  - at_least_one_exists
+  - none_satisfy
+  - none_exist
+  - only_one_exists
 
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
-- independent:environmentvariable58_v1
+  - independent:environmentvariable58_v1
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
@@ -58,7 +58,11 @@ independent:environmentvariable58_v1
 +-------------------+---------+----------------------------------------+
 
 check NOTE: This parameter is governed by a constraint allowing only the 
-following values: all - at least one - none satisfy - only one
+following values: 
+  - all
+  - at least one
+  - none satisfy
+  - only one
 
 operation NOTE: This parameter is governed by a constraint allowing only the 
 following values: 
@@ -78,12 +82,12 @@ following values:
 
 datatype NOTE: This parameter is governed by a constraint allowing only the 
 following values: 
- - boolean
- - float
- - int
- - string
- - version
- - set
+  - boolean
+  - float
+  - int
+  - string
+  - version
+  - set
 
 Generated Content
 ~~~~~~~~~~~~~~~~~
@@ -191,39 +195,39 @@ YAML
 
 ::
 
-  - artifact-expression:
+  artifact-expression:
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
     artifact-title: "[RECOMMENDATION TITLE]"
     artifact:
       type: "[ARTIFACTTYPE NAME]"
       parameters:
-      - parameter: 
-        name: "name"
-        type: "string"
-        value: "[name.value]"
-      - parameter: 
-        name: "check_existence"
-        type: "string"
-        value: "[check_existence.value]"
+        - parameter: 
+            name: "name"
+            type: "string"
+            value: "[name.value]"
+        - parameter: 
+            name: "check_existence"
+            type: "string"
+            value: "[check_existence.value]"
     test:
       type: "[TESTTYPE NAME]"
       parameters:   
-      - parameter: 
-        name: "check"
-        type: "string"
-        value: "[check.value]"
-      - parameter: 
-        name: "operation"
-        type: "string"
-        value: "operation.value]"
-      - parameter: 
-        name: "datatype"
-        type: "string"
-        value: "[datatype.value]"
-      - parameter: 
-        name: "value"
-        type: "string"
-        value: "value.value]"
+        - parameter: 
+            name: "check"
+            type: "string"
+            value: "[check.value]"
+        - parameter: 
+            name: "operation"
+            type: "string"
+            value: "operation.value]"
+        - parameter: 
+            name: "datatype"
+            type: "string"
+            value: "[datatype.value]"
+        - parameter: 
+            name: "value"
+            type: "string"
+            value: "value.value]"
 
 JSON
 ^^^^

@@ -2,7 +2,7 @@ Unix: File Collection
 =====================
 
 Description
------------
+  -----------
 
 The Unix: File Collection test is used to check metadata associated with
 UNIX files, of the sort returned by either an ls command, stat command
@@ -25,13 +25,13 @@ with a file, including the path, filename, owner, size, last modified
 time, version, etc.
 
 Technical Details
------------------
+  -----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
 Human ID:
-  - unix.file_collection_v1
+  unix.file_collection_v1
 
 =========== ====== ====================================================
 Name        Type   Description
@@ -69,7 +69,7 @@ Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
 Human ID:
-  -  unix.file_permissions_v1
+   unix.file_permissions_v1
 
 +--------+-----------+-----------------------------------------------+
 | Name   | Type      | Description                                   |
@@ -126,7 +126,7 @@ NOTE: All ``unix.file_permissions_v1`` parameters are governed by a constraint a
   -  unset
 
 Human ID:
-  -  unix.file_ownership_v1
+   unix.file_ownership_v1
 
 ==== ==== ============================================================
 Name Type Description
@@ -136,7 +136,7 @@ gid  int  The Group ID of the files owner (Positive integer or blank).
 ==== ==== ============================================================
 
 Human ID:
-  -  null_test_v1
+   null_test_v1
 
 ==== ==== ===========
 Name Type Description
@@ -547,12 +547,8 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
     </xccdf:check>
   </xccdf:complex-check>
 
-.. _scap-1:
-
 SCAP
 ^^^^
-
-.. _xccdf-1:
 
 XCCDF
 '''''
@@ -568,8 +564,6 @@ There is no Value element in the XCCDF for this Artifact.
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
     </check>
   </xccdf:complex-check>
-
-.. _oval-1:
 
 OVAL
 ''''
@@ -630,8 +624,6 @@ State
     </user_id>
   </file_state>
 
-.. _yaml-1:
-
 YAML
 ^^^^
 
@@ -678,8 +670,6 @@ YAML
             name: "gid"
             dt: "int"
             value: "[gid.value]"
-
-.. _json-1:
 
 JSON
 ^^^^
@@ -759,14 +749,10 @@ JSON
     }
   }
 
-.. _generated-content-2:
-
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
 null_test_v1
-
-.. _xccdfae-2:
 
 XCCDF+AE
 ^^^^^^^^
@@ -802,12 +788,8 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
     </xccdf:check>
   </xccdf:complex-check>
 
-.. _scap-2:
-
 SCAP
 ^^^^
-
-.. _xccdf-2:
 
 XCCDF
 '''''
@@ -823,8 +805,6 @@ There is no Value element in the XCCDF for this Artifact.
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
     </check>
   </xccdf:complex-check>
-
-.. _oval-2:
 
 OVAL
 ''''
@@ -870,8 +850,6 @@ State
 
   N/A
 
-.. _yaml-2:
-
 YAML
 ^^^^
 
@@ -910,8 +888,6 @@ YAML
     test:
       type: "[TEST-TYPE-NAME]"
       parameters: []
-
-.. _json-2:
 
 JSON
 ^^^^

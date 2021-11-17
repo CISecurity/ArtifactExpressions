@@ -2,12 +2,12 @@ VMware: Virtual Machine: Device State
 =====================================
 
 Description
------------
+  -----------
 
 The VMware: Virtual Machine: Device State test is used to verify no device is connected to a virtual machine if it is not required.
 
 Technical Details
------------------
+  -----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
@@ -142,7 +142,7 @@ YAML
 
 ::
 
-   - artifact-expression:
+  - artifact-expression:
        artifact-unique-id: [ARTIFACT-OVAL-ID]
        artifact-title: [RECOMMENDATION TITLE]
        artifact:

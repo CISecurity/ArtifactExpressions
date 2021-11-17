@@ -2,7 +2,7 @@ windows.user_sid55
 ==================
 
 Description
------------
+  -----------
 
 The user_sid55_test is used to check information about Windows users.
 When the user_sid55_test collects the user SIDs on the system, it should
@@ -17,7 +17,7 @@ defined in the oval-definitions-schema and one should refer to the
 TestType description for more information.
 
 Technical Details
------------------
+  -----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
@@ -257,7 +257,7 @@ YAML
 
 ::
 
-   - artifact-expression:
+  - artifact-expression:
        artifact-unique-id: [ARTIFACT-OVAL-ID]
        artifact-title: [RECOMMENDATION TITLE]
        artifact:

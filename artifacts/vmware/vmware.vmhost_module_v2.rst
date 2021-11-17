@@ -2,12 +2,12 @@ vmware:vmhost_module
 ====================
 
 Description
------------
+  -----------
 
 The vmware:vmhost_module test is used to verify no unauthorized kernel modules are loaded on the ESXi host.
 
 Technical Details
------------------
+  -----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
@@ -192,7 +192,7 @@ YAML
 
 ::
 
-   - artifact-expression:
+  - artifact-expression:
        artifact-unique-id: [ARTIFACT-OVAL-ID]
        artifact-title: [RECOMMENDATION TITLE]
        artifact:

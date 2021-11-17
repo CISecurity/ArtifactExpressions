@@ -2,13 +2,13 @@ windows.privilegeassignment
 ===========================
 
 Description
------------
+  -----------
 
 The accesstoken_test is used to check the properties of a Windows access
 token as well as individual privileges and rights associated with it.
 
 Technical Details
------------------
+  -----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
@@ -231,7 +231,7 @@ YAML
 
 ::
 
-   - artifact-expression:
+  - artifact-expression:
        artifact-unique-id: [ARTIFACT-OVAL-ID]
        artifact-title: [RECOMMENDATION TITLE]
        artifact:

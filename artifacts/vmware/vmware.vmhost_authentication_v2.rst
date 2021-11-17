@@ -2,12 +2,12 @@ vmware:vmhost_authentication
 ============================
 
 Description
------------
+  -----------
 
 The vmware:vmhost_authentication test is used to verify Active Directory is used for local user authentication.
 
 Technical Details
------------------
+  -----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
@@ -82,8 +82,8 @@ bitwise or - pattern match - subset of - superset of
 
 domain_membership_status NOTE: This parameter is governed by a
 constraint allowing only the following values: - NA - ClientTrustBroken
-- InconsistentTrust - NoServers - Ok - OtherProblem - ServerTrustBroken
-- Unknown
+  - InconsistentTrust - NoServers - Ok - OtherProblem - ServerTrustBroken
+  - Unknown
 
 check_existence NOTE: This parameter is governed by a constraint
 allowing only the following values: - all_exist - any_exist -
@@ -195,7 +195,7 @@ YAML
 
 ::
 
-   - artifact-expression:
+  - artifact-expression:
        artifact-unique-id: [ARTIFACT-OVAL-ID]
        artifact-title: [RECOMMENDATION TITLE]
        artifact:

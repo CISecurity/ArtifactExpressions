@@ -2,13 +2,13 @@ cisco_ios.routing_protocol_auth_intf
 ====================================
 
 Description
------------
+  -----------
 
 The cisco_ios.routing_protocol_auth_intf is used to check the properties
 of routing protocol authentication configured under interfaces in IOS.
 
 Technical Details
------------------
+  -----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
@@ -154,7 +154,7 @@ YAML
 
 ::
 
-   - artifact-expression:
+  - artifact-expression:
        artifact-unique-id: [ARTIFACT-OVAL-ID]
        artifact-title: [RECOMMENDATION TITLE]
        artifact:

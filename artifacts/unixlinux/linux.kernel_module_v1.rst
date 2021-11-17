@@ -2,7 +2,7 @@ Linux: Kernel Module
 ====================
 
 Description
------------
+  -----------
 
 The Linux: Kernel Module test executes a shell command and evaluates the
 lines of output to determine if a kernel module is loaded or loadable.
@@ -14,13 +14,13 @@ The optional shellcommand_state element specifies the output value to
 check.
 
 Technical Details
------------------
+  -----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
 Human ID:
-  - linux.kernel_module_v1
+  linux.kernel_module_v1
 
 ====== ====== ====================================
 Name   Type   Description
@@ -38,7 +38,7 @@ Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
 Human ID:
-  - linux.kernel_module.loadable_v1
+  linux.kernel_module.loadable_v1
 
 ======== ====== ================================
 Name     Type   Description
@@ -47,7 +47,7 @@ loadable string Is the module loadable? (Yes/No)
 ======== ====== ================================
 
 Human ID:
-  - linux.kernel_module.loaded_v1
+  linux.kernel_module.loaded_v1
 
 ====== ====== ==========================================
 Name   Type   Description

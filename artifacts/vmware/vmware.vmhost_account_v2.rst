@@ -2,12 +2,12 @@ vmware:vmhost_account
 =====================
 
 Description
------------
+  -----------
 
 The vmware:vmhost_account Test is used to verify one or more local ESXi user accounts have been created for the specified ESXi host, and that the specified user account has been granted shell access. 
 
 Technical Details
------------------
+  -----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
@@ -197,7 +197,7 @@ YAML
 
 ::
 
-   - artifact-expression:
+  - artifact-expression:
        artifact-unique-id: [ARTIFACT-OVAL-ID]
        artifact-title: [RECOMMENDATION TITLE]
        artifact:

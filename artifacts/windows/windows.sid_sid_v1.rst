@@ -2,7 +2,7 @@ windows.sid_sid_v1
 ==================
 
 Description
------------
+  -----------
 
 The sid_sid_test is used to check properties associated with the
 specified SID. It extends the standard TestType as defined in the
@@ -12,7 +12,7 @@ sid_sid_object and the optional state element specifies the metadata to
 check.
 
 Technical Details
------------------
+  -----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
@@ -206,7 +206,7 @@ YAML
 
 ::
 
-   - artifact-expression:
+  - artifact-expression:
        artifact-unique-id: [ARTIFACT-OVAL-ID]
        artifact-title: [RECOMMENDATION TITLE]
        artifact:

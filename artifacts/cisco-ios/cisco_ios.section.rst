@@ -2,13 +2,13 @@ cisco_ios.section
 =================
 
 Description
------------
+  -----------
 
 The cisco_ios.section is used to check the properties of specific output
 lines from a configuration section.
 
 Technical Details
------------------
+  -----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
@@ -75,7 +75,7 @@ subset of - superset of
 
 entity_check NOTE: This parameter is governed by a constraint allowing
 only the following values: - all_exist - any_exist - at_least_one_exists
-- none_exist - only_one_exists
+  - none_exist - only_one_exists
 
 Generated Content
 ~~~~~~~~~~~~~~~~~
@@ -173,7 +173,7 @@ YAML
 
 ::
 
-   - artifact-expression:
+  - artifact-expression:
        artifact-unique-id: [ARTIFACT-OVAL-ID]
        artifact-title: [RECOMMENDATION TITLE]
        artifact:

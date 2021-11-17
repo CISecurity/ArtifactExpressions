@@ -2,7 +2,7 @@ Unix: Inetd Service
 ===================
 
 Description
------------
+  -----------
 
 The Unix: Inetd Service test is used to check information associated
 with different Internet services. The textfilecontent54_test elements
@@ -28,13 +28,13 @@ The optional inetd_state element defines the different information
 associated with a specific Internet service.
 
 Technical Details
------------------
+  -----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
 Human ID:
-  - unix.inetd_service_v1
+  unix.inetd_service_v1
 
 ======== ====== ======================================================
 Name     Type   Description
@@ -52,7 +52,7 @@ Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
 Human ID:
-  - unix.service_enabled_v1
+  unix.service_enabled_v1
 
 ======= ====== ================================
 Name    Type   Description
@@ -70,30 +70,30 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
 
 ::
 
-   <xccdf:complex-check operator="AND">
-     <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
-       <xccdf:check-content>
-         <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
-           <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-           <ae:title>[RECOMMENDATION-TITLE]</ae:title>
-           <ae:artifact type="[ARTIFACT-TYPE-NAME]">
-             <ae:parameters>
-               <ae:parameter dt="string" name="service">[service.value]</ae:parameter>
-               <ae:parameter dt="string" name="protocol">[protocol.value]</ae:parameter>
-             </ae:parameters>
-           </ae:artifact>
-           <ae:test type="[TEST-TYPE-NAME]">
-             <ae:parameters>
-               <ae:parameter dt="string" name="enabled">[enabled.value]</ae:parameter>
-             </ae:parameters>
-           </ae:test>
-           <ae:profiles>
-             <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1" />
-           </ae:profiles>          
-         </ae:artifact_expression>
-       </xccdf:check-content>
-     </xccdf:check>
-   </xccdf:complex-check>
+  <xccdf:complex-check operator="AND">
+    <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
+      <xccdf:check-content>
+        <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
+          <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
+          <ae:title>[RECOMMENDATION-TITLE]</ae:title>
+          <ae:artifact type="[ARTIFACT-TYPE-NAME]">
+            <ae:parameters>
+              <ae:parameter dt="string" name="service">[service.value]</ae:parameter>
+              <ae:parameter dt="string" name="protocol">[protocol.value]</ae:parameter>
+            </ae:parameters>
+          </ae:artifact>
+          <ae:test type="[TEST-TYPE-NAME]">
+            <ae:parameters>
+              <ae:parameter dt="string" name="enabled">[enabled.value]</ae:parameter>
+            </ae:parameters>
+          </ae:test>
+          <ae:profiles>
+            <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1" />
+          </ae:profiles>          
+        </ae:artifact_expression>
+      </xccdf:check-content>
+    </xccdf:check>
+  </xccdf:complex-check>
 
 SCAP
 ^^^^
@@ -105,13 +105,13 @@ For ``unix.inetd_service_v1`` artifacts, the xccdf:check looks like this. There 
 
 ::
 
-   <xccdf:complex-check operator="AND">
-     <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
-       <check-content-ref 
-         href="[BENCHMARK-TITLE]"
-         name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
-     </check>
-   </xccdf:complex-check>
+  <xccdf:complex-check operator="AND">
+    <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+      <check-content-ref 
+        href="[BENCHMARK-TITLE]"
+        name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
+    </check>
+  </xccdf:complex-check>
 
 OVAL
 ''''
@@ -120,181 +120,181 @@ Test
 
 ::
 
-   <xinetd_test
-     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
-     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]1"
-     check_existence="[check_existence.value]"
-     check="all"
-     comment="[RECOMMENDATION-TITLE]"
-     version="1">
-     <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]1" />
-     <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]1" />
-   </xinetd_test>
+  <xinetd_test
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]1"
+    check_existence="[check_existence.value]"
+    check="all"
+    comment="[RECOMMENDATION-TITLE]"
+    version="1">
+    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]1" />
+    <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]1" />
+  </xinetd_test>
 
-   <textfilecontent54_test
-     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent"
-     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]2"
-     check_existence="[check_existence.value]"
-     check="all"
-     comment="[RECOMMENDATION-TITLE]"
-     version="1">
-     <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]2" />
-   </textfilecontent54_test>
+  <textfilecontent54_test
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]2"
+    check_existence="[check_existence.value]"
+    check="all"
+    comment="[RECOMMENDATION-TITLE]"
+    version="1">
+    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]2" />
+  </textfilecontent54_test>
 
-   <textfilecontent54_test
-     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent"
-     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]3"
-     check_existence="[check_existence.value]"
-     check="all"
-     comment="[RECOMMENDATION-TITLE]"
-     version="1">
-     <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]3" />
-   </textfilecontent54_test>    
+  <textfilecontent54_test
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]3"
+    check_existence="[check_existence.value]"
+    check="all"
+    comment="[RECOMMENDATION-TITLE]"
+    version="1">
+    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]3" />
+  </textfilecontent54_test>    
 
 Object
 
 ::
 
-   <xinetd_object 
-     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
-     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]1"
-     comment="[RECOMMENDATION-TITLE]"
-     version="1">
-     <protocol
-       operation="pattern match"> 
-       [protocol.value]
-     </protocol>
-     <service_name>
-       [service_name.value]
-     </service_name>
-   </xinetd_object>
+  <xinetd_object 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]1"
+    comment="[RECOMMENDATION-TITLE]"
+    version="1">
+    <protocol
+      operation="pattern match"> 
+      [protocol.value]
+    </protocol>
+    <service_name>
+      [service_name.value]
+    </service_name>
+  </xinetd_object>
 
-   <textfilecontent54_object
-     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent"
-     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]2"
-     comment="[RECOMMENDATION-TITLE]"
-     version="1">
-     <filepath>
-       /etc/inetd.conf
-     </filepath>
-     <pattern 
-       operation="pattern match"
-       datatype="string">
-       [pattern.value]  
-     </pattern>
-     <instance
-       datatype="int" 
-       operation="equals">
-       1
-     </instance>
-   </textfilecontent54_object>
+  <textfilecontent54_object
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]2"
+    comment="[RECOMMENDATION-TITLE]"
+    version="1">
+    <filepath>
+      /etc/inetd.conf
+    </filepath>
+    <pattern 
+      operation="pattern match"
+      datatype="string">
+      [pattern.value]  
+    </pattern>
+    <instance
+      datatype="int" 
+      operation="equals">
+      1
+    </instance>
+  </textfilecontent54_object>
 
-   <textfilecontent54_object
-     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent"
-     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]3"
-     comment="[RECOMMENDATION-TITLE]"
-     version="1">
-     <path>
-       /etc/inetd.d
-     </path>
-     <filename
-       operation="pattern match">
-       .+
-     </filename>
-     <pattern 
-       operation="pattern match"
-       datatype="string">
-       [pattern.value]  
-     </pattern>
-     <instance
-       datatype="int" 
-       operation="equals">
-       1
-     </instance>
-   </textfilecontent54_object>
+  <textfilecontent54_object
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]3"
+    comment="[RECOMMENDATION-TITLE]"
+    version="1">
+    <path>
+      /etc/inetd.d
+    </path>
+    <filename
+      operation="pattern match">
+      .+
+    </filename>
+    <pattern 
+      operation="pattern match"
+      datatype="string">
+      [pattern.value]  
+    </pattern>
+    <instance
+      datatype="int" 
+      operation="equals">
+      1
+    </instance>
+  </textfilecontent54_object>
 
 State
 
 ::
 
-   <xinetd_state 
-     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
-     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]1"
-     comment="[RECOMMENDATION-TITLE]"
-     version="1">
-     <disabled 
-       datatype="boolean" 
-       operation="equals">
-       [disabled.value]
-     </disabled>
-   </xinetd_state>
+  <xinetd_state 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]1"
+    comment="[RECOMMENDATION-TITLE]"
+    version="1">
+    <disabled 
+      datatype="boolean" 
+      operation="equals">
+      [disabled.value]
+    </disabled>
+  </xinetd_state>
 
 YAML
 ^^^^
 
 ::
 
-   artifact-expression:
-     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
-     artifact-title: "[RECOMMENDATION-TITLE]"
-     artifact:
-       type: "[ARTIFACT-TYPE-NAME]"
-       parameters:
-         - parameter: 
-             name: "service"
-             dt: "string"
-             value: "[service.value]"
-         - parameter: 
-             name: "protocol"
-             dt: "string"
-             value: "[protocol.value]"
-     test:
-       type: "[TEST-TYPE-NAME]"
-       parameters:
-         - parameter: 
-             name: "enabled"
-             dt: "string"
-             value: "[enabled.value]"
+  artifact-expression:
+    artifact-unique-id: "[ARTIFACT-OVAL-ID]"
+    artifact-title: "[RECOMMENDATION-TITLE]"
+    artifact:
+      type: "[ARTIFACT-TYPE-NAME]"
+      parameters:
+        - parameter: 
+            name: "service"
+            dt: "string"
+            value: "[service.value]"
+        - parameter: 
+            name: "protocol"
+            dt: "string"
+            value: "[protocol.value]"
+    test:
+      type: "[TEST-TYPE-NAME]"
+      parameters:
+        - parameter: 
+            name: "enabled"
+            dt: "string"
+            value: "[enabled.value]"
 
 JSON
 ^^^^
 
 ::
 
-   {
-     "artifact-expression": {
-       "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
-       "artifact-title": "[RECOMMENDATION-TITLE]",
-       "artifact": {
-         "type": "[ARTIFACT-TYPE-NAME]",
-         "parameters": [
-           {
-             "parameter": {
-               "name": "service",
-               "type": "string",
-               "value": "[service.value]"
-             }
-           },
-           {
-             "parameter": {
-               "name": "protocol",
-               "type": "string",
-               "value": "[protocol.value]"
-             }
-           }
-         ]
-       },
-       "test": {
-         "type": "[TEST-TYPE-NAME]",
-         "parameters": [
-           {
-             "parameter": {
-               "name": "enabled",
-               "type": "string",
-               "value": "[enabled.value]"
-             }
-           }
-         ]
-       }
-     }
-   }
+  {
+    "artifact-expression": {
+      "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
+      "artifact-title": "[RECOMMENDATION-TITLE]",
+      "artifact": {
+        "type": "[ARTIFACT-TYPE-NAME]",
+        "parameters": [
+          {
+            "parameter": {
+              "name": "service",
+              "type": "string",
+              "value": "[service.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "protocol",
+              "type": "string",
+              "value": "[protocol.value]"
+            }
+          }
+        ]
+      },
+      "test": {
+        "type": "[TEST-TYPE-NAME]",
+        "parameters": [
+          {
+            "parameter": {
+              "name": "enabled",
+              "type": "string",
+              "value": "[enabled.value]"
+            }
+          }
+        ]
+      }
+    }
+  }

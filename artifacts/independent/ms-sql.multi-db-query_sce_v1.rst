@@ -2,7 +2,7 @@ ms-sql.multi-db-query_sce_v1
 ============================
 
 Description
------------
+  -----------
 
 The ms-sql.multi-db-query_sce_v1 is used by a sql test to define the
 specific database and query to be evaluated. Connection information is
@@ -10,7 +10,7 @@ supplied allowing the tool to connect to the desired database and a
 query is supplied to call out the desired setting.
 
 Technical Details
------------------
+  -----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
@@ -80,21 +80,21 @@ like this.
 
 ::
 
-   <check system='http://open-scap.org/page/SCE'>
-       <check-import 
-           import-name='[import-name.value]'/>
-       <check-export 
-            export-name='oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]' 
-            value-id='xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var'/>
-       <check-export 
-            export-name='oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]' 
-            value-id='xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var'/>
-       <check-export 
-            export-name='oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]' 
-            value-id='xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var'/>
-       <check-content-ref 
-           href='[BENCHMARK NAME]'/>
-   </check>
+  <check system='http://open-scap.org/page/SCE'>
+    <check-import 
+      import-name='[import-name.value]'/>
+    <check-export 
+      export-name='oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]' 
+      value-id='xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var'/>
+    <check-export 
+      export-name='oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]' 
+      value-id='xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var'/>
+    <check-export 
+      export-name='oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]' 
+      value-id='xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var'/>
+    <check-content-ref 
+      href='[BENCHMARK NAME]'/>
+  </check>
 
 OVAL
 ''''
@@ -103,86 +103,86 @@ Test
 
 ::
 
-   n/a
+  N/A
 
 Object
 
 ::
 
-   n/a
+  N/A
 
 State
 
 ::
 
-   n/a
+  N/A
 
 YAML
 ^^^^
 
 ::
 
-   - artifact-expression:
-       artifact-unique-id: [ARTIFACT-OVAL-ID]
-       artifact-title: [RECOMMENDATION TITLE]
-       artifact:
-         type: [ARTIFACTTYPE NAME]
-         parameters:
-         - parameter: 
-              name: sql
-              type: string
-              value: [sql.value]
-         - parameter: 
-              name: sysdbs
-              type: string
-              value: [sysdbs.value]
-       test:
-         type: [TESTTYPE NAME]
-         parameters:   
+  artifact-expression:
+    artifact-unique-id: [ARTIFACT-OVAL-ID]
+    artifact-title: [RECOMMENDATION TITLE]
+    artifact:
+      type: [ARTIFACTTYPE NAME]
+      parameters:
+      - parameter: 
+          name: sql
+          dt: string
+          value: [sql.value]
+      - parameter: 
+          name: sysdbs
+          dt: string
+          value: [sysdbs.value]
+    test:
+      type: [TESTTYPE NAME]
+      parameters: []   
 
 JSON
 ^^^^
 
 ::
 
-   {
-       "artifact-expression": {
-         "artifact-unique-id": [
-           "ARTIFACT-OVAL-ID"
-         ],
-         "artifact-title": [
-           "RECOMMENDATION TITLE"
-         ],
-         "artifact": {
-           "type": [
-             "ARTIFACTTYPE NAME"
-           ],
-           "parameters": [
-             {
-               "parameter": {
-                 "name": "sql",
-                 "type": "string",
-                 "value": [
-                   "sql.value"
-                 ]
-               }
-             },
-             {
-               "parameter": {
-                 "name": "sysdbs",
-                 "type": "string",
-                 "value": [
-                   "sysdbs.value"
-                 ]
-               }
-             }
-           ]
-         },
-         "test": {
-           "type": [
-             "TESTTYPE NAME"
-           ],
-           "parameters": null
-         }
-       }
-     }
+  {
+    "artifact-expression": {
+      "artifact-unique-id": [
+        "ARTIFACT-OVAL-ID"
+      ],
+      "artifact-title": [
+        "RECOMMENDATION TITLE"
+      ],
+      "artifact": {
+        "type": [
+          "ARTIFACTTYPE NAME"
+        ],
+        "parameters": [
+          {
+            "parameter": {
+              "name": "sql",
+              "type": "string",
+              "value": [
+                "sql.value"
+              ]
+            }
+          },
+          {
+            "parameter": {
+              "name": "sysdbs",
+              "type": "string",
+              "value": [
+                "sysdbs.value"
+              ]
+            }
+          }
+        ]
+      },
+      "test": {
+        "type": [
+          "TESTTYPE NAME"
+        ],
+        "parameters": null
+      }
+    }
+  }
