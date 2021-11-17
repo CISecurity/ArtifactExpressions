@@ -123,7 +123,7 @@ NOTE: The ``operation`` parameter is governed by a constraint allowing only the 
   - subset of
   - superset of
 
-  NOTE: The ``datatype`` parameter is governed by a constraint allowing only the following values:
+NOTE: The ``datatype`` parameter is governed by a constraint allowing only the following values:
   - boolean
   - float
   - int
