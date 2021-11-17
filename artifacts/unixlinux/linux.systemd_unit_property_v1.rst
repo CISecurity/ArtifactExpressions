@@ -40,7 +40,7 @@ Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
   - Equals
-- Not Equal
+  - Not Equal
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~

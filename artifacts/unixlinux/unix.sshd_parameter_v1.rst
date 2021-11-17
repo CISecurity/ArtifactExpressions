@@ -39,15 +39,15 @@ Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
   - Existence Test
-- Equals
-- Equal
-- Not Equal
-- Less Than
-- Less Than Or Equal
-- Greater Than
-- Greater Than Or Equal
-- Pattern Match
-- Pattern Not Match
+  - Equals
+  - Equal
+  - Not Equal
+  - Less Than
+  - Less Than Or Equal
+  - Greater Than
+  - Greater Than Or Equal
+  - Pattern Match
+  - Pattern Not Match
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~

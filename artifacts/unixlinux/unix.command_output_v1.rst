@@ -32,9 +32,9 @@ Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
   - Equals
-- Pattern Match
-- Pattern Not Match
-- Null Test
+  - Pattern Match
+  - Pattern Not Match
+  - Null Test
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~

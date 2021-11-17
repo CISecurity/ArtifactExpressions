@@ -53,9 +53,9 @@ Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
   - Pattern Match
-- Pattern Not Match
-- Null Test
-- Unix: File Attributes
+  - Pattern Not Match
+  - Null Test
+  - Unix: File Attributes
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~

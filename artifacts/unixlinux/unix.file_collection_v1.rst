@@ -62,8 +62,8 @@ Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
   -  Unix File Permissions
--  Unix File Ownership
--  Null Test
+  -  Unix File Ownership
+  -  Null Test
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~

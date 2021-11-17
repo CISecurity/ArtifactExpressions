@@ -58,7 +58,7 @@ Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
   - Unix: Symlink
-- Unix: Symlink Password Object v1
+  - Unix: Symlink Password Object v1
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~

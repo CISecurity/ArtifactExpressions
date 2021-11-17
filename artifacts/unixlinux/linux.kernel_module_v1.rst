@@ -32,7 +32,7 @@ Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
   - Linux: Kernel Module: Loadable
-- Linux: Kernel Module: Loaded
+  - Linux: Kernel Module: Loaded
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~

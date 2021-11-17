@@ -47,7 +47,7 @@ Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
   - Unix: Service Enabled
-- Unix: Xinetd Service Enabled
+  - Unix: Xinetd Service Enabled
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~

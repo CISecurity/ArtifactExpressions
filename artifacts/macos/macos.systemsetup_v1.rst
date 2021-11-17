@@ -36,9 +36,9 @@ Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
   - macos.systemsetup_remoteappleevents_v1
-- macos.systemsetup_remotelogin_v1
-- macos.systemsetup_usingnetworktime_v1
-- macos.systemsetup_wakeonnetworkaccess_v1
+  - macos.systemsetup_remotelogin_v1
+  - macos.systemsetup_usingnetworktime_v1
+  - macos.systemsetup_wakeonnetworkaccess_v1
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~

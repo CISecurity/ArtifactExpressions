@@ -54,7 +54,7 @@ Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
   - Null Test
-- Linux: Partition Option
+  - Linux: Partition Option
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~

@@ -42,7 +42,7 @@ Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
   - Null Test
-- Existence Test
+  - Existence Test
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~

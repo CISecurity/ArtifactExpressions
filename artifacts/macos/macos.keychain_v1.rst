@@ -38,7 +38,7 @@ Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
   - macos.keychain_timeout_v1
-- macos.keychain_lock_on_sleep_v1
+  - macos.keychain_lock_on_sleep_v1
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
