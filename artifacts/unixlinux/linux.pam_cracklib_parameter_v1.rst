@@ -264,7 +264,7 @@ Generated Content
 | **greater than**
 | **greater than or equal**
 | **pattern match**
-| **pattern not match**
+**pattern not match**
 
 XCCDF+AE
 ^^^^^^^^

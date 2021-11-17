@@ -60,7 +60,7 @@ Test Type Parameters
 | **greater than**
 | **greater than or equal**
 | **pattern match**
-| **pattern not match**
+**pattern not match**
 
 ========= ====== ===========================
 Name      Type   Description
@@ -105,7 +105,7 @@ Generated Content
 | **greater than**
 | **greater than or equal**
 | **pattern match**
-| **pattern not match**
+**pattern not match**
 
 XCCDF+AE
 ^^^^^^^^

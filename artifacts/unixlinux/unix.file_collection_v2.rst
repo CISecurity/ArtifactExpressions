@@ -80,7 +80,7 @@ Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
 | **pattern match**
-| **pattern not match**
+**pattern not match**
 
 ========= ====== ===========================
 Name      Type   Description
@@ -173,7 +173,7 @@ Generated Content
 ~~~~~~~~~~~~~~~~~
 
 | **pattern match**
-| **pattern not match**
+**pattern not match**
 
 XCCDF+AE
 ^^^^^^^^

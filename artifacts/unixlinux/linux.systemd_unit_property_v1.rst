@@ -46,7 +46,7 @@ Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
 | **equals**
-| **not equal**
+**not equal**
 
 +-----------+--------+-----------------------------------------------+
 | Name      | Type   | Description                                   |

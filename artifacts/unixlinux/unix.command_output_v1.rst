@@ -41,7 +41,7 @@ Test Type Parameters
 
 | **equals**
 | **pattern match**
-| **pattern not match**
+**pattern not match**
 
 ========= ====== ===========================
 Name      Type   Description
@@ -72,7 +72,7 @@ Generated Content
 
 | **equals**
 | **pattern match**
-| **pattern not match**
+**pattern not match**
 
 XCCDF+AE
 ^^^^^^^^
