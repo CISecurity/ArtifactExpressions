@@ -238,7 +238,6 @@ State
       <login_shell datatype="[DATATYPE.value]" operation="[OPERATION.value]">[VALUE]</login_shell>
     </accountinfo_state>
 
-
 YAML
 ^^^^
 

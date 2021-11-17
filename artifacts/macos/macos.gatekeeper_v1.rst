@@ -7,7 +7,6 @@ Description
 The gatekeeper_test is used to check the status of Gatekeeper and any
 unsigned applications that have been granted execute permission.
 
-
 Technical Details
 -----------------
 

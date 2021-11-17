@@ -53,16 +53,15 @@ Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
   - Pattern Match
-  - Pattern Not Match
-  - Null Test
-  - Unix: File Attributes
+- Pattern Not Match
+- Null Test
+- Unix: File Attributes
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
-Human IDs:
-  pattern match
-  pattern not match
+| **pattern match**
+| **pattern not match**
 
 ========= ====== ===========================
 Name      Type   Description
@@ -154,8 +153,8 @@ NOTE: All ``unix.file_attributes_v1`` parameters *EXCEPT* ``uid`` and ``gid`` ar
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
-| pattern match
-| pattern not match
+| **pattern match**
+| **pattern not match**
 
 XCCDF+AE
 ^^^^^^^^
@@ -347,12 +346,11 @@ JSON
     }
   }
 
-
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
 null_test_v1
-
+^^^^^^^^^^^^
 
 XCCDF+AE
 ^^^^^^^^
@@ -520,6 +518,7 @@ Generated Content
 ~~~~~~~~~~~~~~~~~
 
 unix_file_attributes_v1
+^^^^^^^^^^^^^^^^^^^^^^^
 
 XCCDF+AE
 ^^^^^^^^

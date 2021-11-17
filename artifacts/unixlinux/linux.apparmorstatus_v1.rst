@@ -38,7 +38,7 @@ N/A
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
-- linux:apparmorstatus_enforce_mode_profiles_count
+  - linux:apparmorstatus_enforce_mode_profiles_count
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~

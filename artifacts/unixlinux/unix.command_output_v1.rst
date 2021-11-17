@@ -32,17 +32,16 @@ Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
   - Equals
-  - Pattern Match
-  - Pattern Not Match
-  - Null Test
+- Pattern Match
+- Pattern Not Match
+- Null Test
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
-Human IDs:
-  equals
-  pattern match
-  pattern not match
+| **equals**
+| **pattern match**
+| **pattern not match**
 
 ========= ====== ===========================
 Name      Type   Description
@@ -71,9 +70,9 @@ N/A
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
-| equals
-| pattern match
-| pattern not match
+| **equals**
+| **pattern match**
+| **pattern not match**
 
 XCCDF+AE
 ^^^^^^^^
@@ -270,12 +269,11 @@ JSON
     }
   }
 
-
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
 null_test_v1
-
+^^^^^^^^^^^^
 
 XCCDF+AE
 ^^^^^^^^

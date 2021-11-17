@@ -298,7 +298,6 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
     </xccdf:check-content>
   </xccdf:check>
 
-
 SCAP
 ^^^^
 

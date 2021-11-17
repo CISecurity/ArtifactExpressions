@@ -62,8 +62,8 @@ Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
   -  Unix File Permissions
-  -  Unix File Ownership
-  -  Null Test
+-  Unix File Ownership
+-  Null Test
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
@@ -148,6 +148,7 @@ Generated Content
 ~~~~~~~~~~~~~~~~~
 
 unix.file_permissions_v1
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 XCCDF+AE
 ^^^^^^^^
@@ -503,12 +504,11 @@ JSON
     }
   }
 
-
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
 unix_file_ownership_v1
-
+^^^^^^^^^^^^^^^^^^^^^^
 
 XCCDF+AE
 ^^^^^^^^
@@ -753,6 +753,7 @@ Generated Content
 ~~~~~~~~~~~~~~~~~
 
 null_test_v1
+^^^^^^^^^^^^
 
 XCCDF+AE
 ^^^^^^^^

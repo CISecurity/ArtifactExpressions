@@ -42,7 +42,7 @@ Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
   - Null Test
-  - Existence Test
+- Existence Test
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
@@ -77,6 +77,7 @@ Generated Content
 ~~~~~~~~~~~~~~~~~
 
 null_test_v1
+^^^^^^^^^^^^
 
 XCCDF+AE
 ^^^^^^^^
@@ -238,6 +239,7 @@ Generated Content
 ~~~~~~~~~~~~~~~~~
 
 existence_test
+^^^^^^^^^^^^^^
 
 XCCDF+AE
 ^^^^^^^^

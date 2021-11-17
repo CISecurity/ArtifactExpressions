@@ -16,8 +16,8 @@ Technical Details
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
-Human ID: 
-  - unix.proc_info_v1
+unix.proc_info_v1
+^^^^^^^^^^^^^^^^^
 
 +---------------------------------+---------+-------------------------------+
 | Name                            | Type    | Description                   |
@@ -63,8 +63,8 @@ Supported Test Types
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
-Human ID: 
-  - unix.proc_info_v1
+unix.proc_info_v1
+^^^^^^^^^^^^^^^^^
 
 +---------------------------------+---------+-------------------------------+
 | Name                            | Type    | Description                   |
@@ -203,7 +203,6 @@ Human ID:
 |                                 |         | information.                  |
 +---------------------------------+---------+-------------------------------+
 
-
 :emphasis:`NOTE: The following _operation parameters:`
   +------------------------------------+------------------------------------+
   | ``cmd_operation``                  | ``exec_time_operation``            |
@@ -235,7 +234,6 @@ Human ID:
     - pattern match 
     - subset of
     - superset of 
-
 
 :emphasis:`NOTE: The exec_time and start_time parameters are governed by a constraint allowing only values conforming to the following regex pattern:` 
   ``^(([0-9]{0,2}-)?(([0-1][0-9])|([2][0-3])):([0-5][0-9]):([0-5][0-9])){0,1}$``
@@ -354,7 +352,6 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
     </xccdf:check-content>
   </xccdf:check>
 
-
 SCAP
 ^^^^
 
@@ -371,7 +368,6 @@ There is no Value element in the XCCDF for this Artifact.
       href="[BENCHMARK-TITLE]"
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
-
 
 OVAL
 ''''

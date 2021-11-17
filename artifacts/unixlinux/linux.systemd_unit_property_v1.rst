@@ -40,14 +40,13 @@ Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
   - Equals
-  - Not Equal
+- Not Equal
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
-Human IDs:
-  equals
-  not equal
+| **equals**
+| **not equal**
 
 +-----------+--------+-----------------------------------------------+
 | Name      | Type   | Description                                   |

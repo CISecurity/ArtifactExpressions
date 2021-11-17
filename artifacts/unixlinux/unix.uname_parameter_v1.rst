@@ -24,6 +24,7 @@ Technical Details
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
+
 unix.uname_parameter_v1
 ^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -44,7 +45,8 @@ only the following values:
 
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
-- Equals
+
+  - Equals
 - Not Equal
 - Less Than
 - Less Than Or Equal
@@ -55,22 +57,15 @@ Supported Test Types
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
-| equals
-^^^^^^^^
-| not equal
-^^^^^^^^^^^
-| less than
-^^^^^^^^^^^
-| less than or equal
-^^^^^^^^^^^^^^^^^^^^
-| greater than
-^^^^^^^^^^^^^^
-| greater than or equal
-^^^^^^^^^^^^^^^^^^^^^^^
-| pattern match
-^^^^^^^^^^^^^^^
-| pattern not match
-^^^^^^^^^^^^^^^^^^^
+
+| **equals**
+| **not equal**
+| **less than**
+| **less than or equal**
+| **greater than**
+| **greater than or equal**
+| **pattern match**
+| **pattern not match**
   
 ========= ====== ===========================
 Name      Type   Description
@@ -89,6 +84,7 @@ NOTE: The ``data_type`` parameter is governed by a constraint allowing only the 
 
 Generated Content
 ~~~~~~~~~~~~~~~~~
+
 XCCDF+AE
 ^^^^^^^^
 

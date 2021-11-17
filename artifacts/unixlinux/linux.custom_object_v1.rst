@@ -256,7 +256,7 @@ NOTE: The ``object`` parameter is governed by a constraint allowing only the fol
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
-- Null Test
+  - Null Test
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~

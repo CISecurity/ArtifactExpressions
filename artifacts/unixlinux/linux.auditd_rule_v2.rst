@@ -48,7 +48,7 @@ NOTE: The ``existence`` parameter is governed by a constraint allowing only the 
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
-- Null Test
+  - Null Test
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~

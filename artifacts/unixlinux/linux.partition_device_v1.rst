@@ -23,7 +23,6 @@ Artifact Parameters
 linux.partition_device_v1
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-
 =========== ====== =====================================================
 Name        Type   Description
 =========== ====== =====================================================
@@ -40,7 +39,6 @@ Test Type Parameters
 
 existence_test
 ^^^^^^^^^^^^^^
-
 
 ===== ====== =======================
 Name  Type   Description

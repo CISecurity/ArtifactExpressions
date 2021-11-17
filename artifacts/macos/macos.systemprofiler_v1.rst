@@ -12,7 +12,6 @@ should refer to the TestType description for more information. The
 required object element references an systemprofiler_object and the
 optional state element specifies the data to check.
 
-
 Technical Details
 -----------------
 

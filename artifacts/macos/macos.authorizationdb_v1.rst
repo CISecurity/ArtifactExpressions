@@ -12,7 +12,6 @@ and one should refer to the TestType description for more information. The
 required object element references an authorizationdb_object and the optional
 state element specifies the data to check.
 
-
 Technical Details
 -----------------
 
@@ -166,7 +165,6 @@ For ``macos.authorizationdb_v1`` artifacts, the xccdf:check looks like this. The
       href="[BENCHMARK NAME]"
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </xccdf:check>
-
 
 OVAL
 ''''

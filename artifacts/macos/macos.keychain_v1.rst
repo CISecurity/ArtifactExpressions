@@ -12,7 +12,6 @@ should refer to the TestType description for more information. The
 required object element references an keychain_object and the optional
 state element specifies the data to check.
 
-
 Technical Details
 -----------------
 
@@ -39,7 +38,7 @@ Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
   - macos.keychain_timeout_v1
-  - macos.keychain_lock_on_sleep_v1
+- macos.keychain_lock_on_sleep_v1
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~

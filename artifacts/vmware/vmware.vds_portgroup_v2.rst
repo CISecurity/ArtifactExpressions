@@ -165,7 +165,6 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
 
 
 
-
          <xccdf:complex-check operator="AND">
            <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
              <xccdf:check-content>

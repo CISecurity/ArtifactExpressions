@@ -25,7 +25,6 @@ vmware.vmhost.bus_adapter.iscsi.chap.mutual
 |                                     |             | not applicable   |
 +-------------------------------------+-------------+------------------+
 
-
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 

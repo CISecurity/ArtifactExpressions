@@ -1014,7 +1014,6 @@ External Variable
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" 
     version="[version.value]" />
 
-
 YAML
 ^^^^
 
@@ -1289,7 +1288,6 @@ State
 
   N/A 
 
-
 YAML
 ^^^^
 
@@ -1504,7 +1502,6 @@ Test
     <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"> />
   </file_test> 
 
-
 Test
 
 ::
@@ -1561,7 +1558,6 @@ Local Variable
       object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" 
       record_field="[record_field.value]" />
   </local_variable>
-
 
 YAML
 ^^^^

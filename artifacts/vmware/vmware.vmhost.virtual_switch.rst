@@ -29,7 +29,6 @@ vmware.vmhost.virtual_switch
 |                                     |             | not applicable   |
 +-------------------------------------+-------------+------------------+
 
-
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 

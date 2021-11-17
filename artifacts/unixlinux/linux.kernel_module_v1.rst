@@ -31,7 +31,7 @@ module string The name of the module being tested.
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
-- Linux: Kernel Module: Loadable
+  - Linux: Kernel Module: Loadable
 - Linux: Kernel Module: Loaded
 
 Test Type Parameters

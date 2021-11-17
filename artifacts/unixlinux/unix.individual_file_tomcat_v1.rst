@@ -218,7 +218,6 @@ CATALINA_HOME
     </filename>
   </file_object>
 
-
 CATALINA_BASE
 
 ::

@@ -39,29 +39,28 @@ Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
   - Existence Test
-  - Equals
-  - Equal
-  - Not Equal
-  - Less Than
-  - Less Than Or Equal
-  - Greater Than
-  - Greater Than Or Equal
-  - Pattern Match
-  - Pattern Not Match
+- Equals
+- Equal
+- Not Equal
+- Less Than
+- Less Than Or Equal
+- Greater Than
+- Greater Than Or Equal
+- Pattern Match
+- Pattern Not Match
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
-Human IDs:
-  equals
-  equal
-  not equal
-  less than
-  less than or equal
-  greater than
-  greater than or equal
-  pattern match
-  pattern not match
+| **equals**
+| **equal**
+| **not equal**
+| **less than**
+| **less than or equal**
+| **greater than**
+| **greater than or equal**
+| **pattern match**
+| **pattern not match**
 
 ========= ====== ===========================
 Name      Type   Description
@@ -98,15 +97,15 @@ NOTE: The ``value`` parameter is governed by a constraint allowing only the foll
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
-| equals
-| equal
-| not equal
-| less than
-| less than or equal
-| greater than
-| greater than or equal
-| pattern match
-| pattern not match
+| **equals**
+| **equal**
+| **not equal**
+| **less than**
+| **less than or equal**
+| **greater than**
+| **greater than or equal**
+| **pattern match**
+| **pattern not match**
 
 XCCDF+AE
 ^^^^^^^^
@@ -316,6 +315,7 @@ Generated Content
 ~~~~~~~~~~~~~~~~~
 
 existence_test
+^^^^^^^^^^^^^^
 
 XCCDF+AE
 ^^^^^^^^

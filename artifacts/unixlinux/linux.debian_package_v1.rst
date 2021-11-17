@@ -42,7 +42,7 @@ name string The name of the package being checked. Cannot be blank.
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
-- Existence Test
+  - Existence Test
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~

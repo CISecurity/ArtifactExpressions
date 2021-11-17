@@ -23,7 +23,6 @@ Artifact Parameters
 linux.partition_v1
 ^^^^^^^^^^^^^^^^^^
 
-
 +-------------+--------+---------------------------------------------+
 | Name        | Type   | Description                                 |
 +=============+========+=============================================+
@@ -55,14 +54,13 @@ Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
   - Null Test
-  - Linux: Partition Option
+- Linux: Partition Option
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
 null_test_v1
 ^^^^^^^^^^^^
-
 
 ==== ==== ===========
 Name Type Description
@@ -72,7 +70,6 @@ N/A
 
 linux.partition_option_v1
 ^^^^^^^^^^^^^^^^^^^^^^^^^
-
 
 +-----------+--------+-----------------------------------------------+
 | Name      | Type   | Description                                   |
@@ -120,6 +117,7 @@ Generated Content
 ~~~~~~~~~~~~~~~~~
 
 null_test_v1
+^^^^^^^^^^^^
 
 XCCDF+AE
 ^^^^^^^^
@@ -283,6 +281,7 @@ Generated Content
 ~~~~~~~~~~~~~~~~~
 
 linux.partition_option_v1
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 XCCDF+AE
 ^^^^^^^^
