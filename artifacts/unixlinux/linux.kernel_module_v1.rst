@@ -31,8 +31,8 @@ module string The name of the module being tested.
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
-  - Linux: Kernel Module: Loadable
-  - Linux: Kernel Module: Loaded
+- Linux: Kernel Module: Loadable
+- Linux: Kernel Module: Loaded
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
@@ -59,6 +59,7 @@ Generated Content
 ~~~~~~~~~~~~~~~~~
 
 linux.kernel_module.loadable_v1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 XCCDF+AE
 ^^^^^^^^
@@ -224,6 +225,7 @@ Generated Content
 ~~~~~~~~~~~~~~~~~
 
 linux.kernel_module.loaded_v1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 XCCDF+AE
 ^^^^^^^^

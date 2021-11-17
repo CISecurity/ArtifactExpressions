@@ -49,7 +49,7 @@ NOTE: The ``check_existence`` parameter is governed by a constraint allowing onl
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
-  - Set Includes
+- Set Includes
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~

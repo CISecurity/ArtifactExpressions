@@ -39,22 +39,21 @@ parameter string The parameter being tested.Cannot be blank.
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
-  - Existence Test
-  - Equals
-  - Not Equal
-  - Less Than
-  - Less Than Or Equal
-  - Greater Than
-  - Greater Than Or Equal
-  - Pattern Match
-  - Pattern Not Match
+- Existence Test
+- Equals
+- Not Equal
+- Less Than
+- Less Than Or Equal
+- Greater Than
+- Greater Than Or Equal
+- Pattern Match
+- Pattern Not Match
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
 existence_test
 ^^^^^^^^^^^^^^
-
 
 ===== ====== =======================
 Name  Type   Description
@@ -106,6 +105,7 @@ Generated Content
 ~~~~~~~~~~~~~~~~~
 
 existence_test
+^^^^^^^^^^^^^^
 
 XCCDF+AE
 ^^^^^^^^
@@ -266,13 +266,21 @@ Generated Content
 ~~~~~~~~~~~~~~~~~
 
 | equals
-| not equal 
-| greater than 
-| greater than or equal 
-| less than 
-| less than or equal 
-| pattern match 
+^^^^^^^^
+| not equal
+^^^^^^^^^^^
+| less than
+^^^^^^^^^^^
+| less than or equal
+^^^^^^^^^^^^^^^^^^^^
+| greater than
+^^^^^^^^^^^^^^
+| greater than or equal
+^^^^^^^^^^^^^^^^^^^^^^^
+| pattern match
+^^^^^^^^^^^^^^^
 | pattern not match
+^^^^^^^^^^^^^^^^^^^
 
 XCCDF+AE
 ^^^^^^^^

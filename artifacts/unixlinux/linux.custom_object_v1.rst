@@ -256,7 +256,7 @@ NOTE: The ``object`` parameter is governed by a constraint allowing only the fol
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
-  - Null Test
+- Null Test
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
@@ -323,7 +323,7 @@ For ``linux.custom_object_v1`` artifacts, the xccdf:check looks like this. There
 OVAL
 ''''
 
-  --------------
+--------------
 
 Test
 
@@ -368,7 +368,7 @@ State
     </loaded_profiles_count>  
   </apparmorstatus_state>
 
-  --------------
+--------------
 
 Test
 
@@ -413,7 +413,7 @@ State
     </complain_mode_profiles_count>  
   </apparmorstatus_state>
 
-  --------------
+--------------
 
 Test
 
@@ -458,7 +458,7 @@ State
     </unconfined_processes_with_profiles_count>    
   </apparmorstatus_state>
 
-  --------------
+--------------
 
 Test
 
@@ -497,7 +497,7 @@ State
 
   N/A
 
-  --------------
+--------------
 
 Test
 
@@ -580,7 +580,7 @@ Variable
     </split>
   </local_variable>
 
-  --------------
+--------------
 
 Test
 
@@ -683,7 +683,7 @@ Variable
     </split>
   </local_variable>
 
-  --------------
+--------------
 
 Test
 
@@ -781,7 +781,7 @@ Variable
     </split>
   </local_variable>
 
-  --------------
+--------------
 
 Test
 
@@ -895,7 +895,7 @@ Variable
     </split>
   </local_variable>
 
-  --------------
+--------------
 
 Test
 
@@ -993,7 +993,7 @@ Variable
     </regex_capture>
   </local_variable>  
 
-  --------------
+--------------
 
 Test
 
@@ -1091,7 +1091,7 @@ Variable
     </regex_capture>
   </local_variable>  
 
-  --------------
+--------------
 
 Test
 
@@ -1173,7 +1173,7 @@ Variable
     </split>
   </local_variable>
 
-  --------------
+--------------
 
 Test
 
@@ -1255,7 +1255,7 @@ Variable
     </split>
   </local_variable>
 
-  --------------
+--------------
 
 Test
 
@@ -1337,7 +1337,7 @@ Variable
     </split>
   </local_variable>
 
-  --------------
+--------------
 
 Test
 
@@ -1416,7 +1416,7 @@ Variable
     </split>
   </local_variable>
 
-  --------------
+--------------
 
 Test
 
@@ -1478,7 +1478,7 @@ State
     </owrite>
   </file_state>
 
-  --------------
+--------------
 
 Test
 
@@ -1541,7 +1541,7 @@ State
     </owrite>
   </file_state>
 
-  --------------
+--------------
 
 Test
 
@@ -1625,7 +1625,7 @@ Variable
       object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]2" />
   </local_variable>
 
-  --------------
+--------------
 
 Test
 
@@ -1717,7 +1717,7 @@ Variable
       object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]2" />
   </local_variable>  
 
-  --------------
+--------------
 
 Test
 
@@ -1765,7 +1765,7 @@ State
 
   N/A
 
-  --------------
+--------------
 
 Test
 
@@ -1799,7 +1799,7 @@ State
 
   N/A
 
-  --------------
+--------------
 
 Test
 
@@ -1847,7 +1847,7 @@ State
     </group_id>
   </password_state>
 
-  --------------
+--------------
 
 Test
 
@@ -1901,7 +1901,7 @@ State
     </login_shell>
   </password_state>
 
-  --------------
+--------------
 
 Test
 
@@ -1951,7 +1951,7 @@ State
     </user_id>
   </password_state>
 
-  --------------
+--------------
 
 Test
 
@@ -2033,7 +2033,7 @@ Variable
       object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]2" />
   </local_variable>
 
-  --------------
+--------------
 
 Test
 
@@ -2092,7 +2092,7 @@ State
     </selinux_domain_label>
   </process58_state>
 
-  --------------
+--------------
 
 Test
 
@@ -2173,7 +2173,7 @@ Variable
       object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]2" />
   </local_variable>
 
-  --------------
+--------------
 
 Test
 
@@ -2229,7 +2229,7 @@ State
     </chg_req>
   </shadow_state>
 
-  --------------
+--------------
 
 Test
 
@@ -2285,7 +2285,7 @@ State
     </chg_reg>
   </shadow_state>
 
-  --------------
+--------------
 
 Test
 
@@ -2341,7 +2341,7 @@ State
     </chg_allow>  
   </shadow_state>
 
-  --------------
+--------------
 
 Test
 
@@ -2397,7 +2397,7 @@ State
     </exp_warn>
   </shadow_state>
 
-  --------------
+--------------
 
 Test
 
@@ -2453,7 +2453,7 @@ State
     </exp_inact>
   </shadow_state>
 
-  --------------
+--------------
 
 Test
 
@@ -2543,7 +2543,7 @@ Variable
       object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]2" />
   </local_variable>
 
-  --------------
+--------------
 
 Test
 
@@ -2649,7 +2649,7 @@ Variable
       </concat>
     </local_variable>
 
-  --------------
+--------------
 
 Test
 
@@ -2697,7 +2697,7 @@ State
     </canonical_path>
   </symlink_state>
 
-  --------------
+--------------
 
 Test
 
@@ -2744,7 +2744,7 @@ State
 
   N/A
 
-  --------------
+--------------
 
 Test
 
@@ -2840,7 +2840,7 @@ Variable
     </concat>
   </local_variable>
 
-  --------------
+--------------
 
 Test
 
@@ -2934,7 +2934,7 @@ Variable
     </concat>
   </local_variable>
 
-  --------------
+--------------
 
 Test
 
@@ -3042,7 +3042,7 @@ Variable
     </concat>
   </local_variable>
 
-  --------------
+--------------
 
 Test
 
@@ -3119,7 +3119,7 @@ Variable
     </split>
   </local_variable>
 
-  --------------
+--------------
 
 Test
 
@@ -3198,7 +3198,7 @@ Variable
     </split>
   </local_variable>
 
-  --------------
+--------------
 
 Test
 
@@ -3289,7 +3289,7 @@ Variable
     </count>
   </local_variable>  
 
-  --------------
+--------------
 
 Test
 
@@ -3387,7 +3387,7 @@ Variable
     </count>
   </local_variable>
 
-  --------------
+--------------
 
 Test
 
@@ -3484,7 +3484,7 @@ Variable
     </count>
   </local_variable>  
 
-  --------------
+--------------
 
 Test
 
@@ -3581,7 +3581,7 @@ Variable
     </count>
   </local_variable> 
 
-  --------------
+--------------
 
 Test
 
@@ -3686,7 +3686,7 @@ Variable
     </arithmetic>
   </local_variable>      
 
-  --------------
+--------------
 
 YAML
 ^^^^
