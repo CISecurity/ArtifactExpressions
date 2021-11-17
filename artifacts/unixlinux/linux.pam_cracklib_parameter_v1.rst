@@ -69,8 +69,8 @@ NOTE: The ``value`` parameter is governed by a constraint allowing only the foll
   - none_exist
   - only_one_exists
 
-|"**equals**"
-|not equal
+| "**equals**"
+| not equal
 |less than
 |less than or equal
 |greater than
