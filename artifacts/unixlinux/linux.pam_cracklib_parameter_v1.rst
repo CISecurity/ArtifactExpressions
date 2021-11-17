@@ -69,22 +69,14 @@ NOTE: The ``value`` parameter is governed by a constraint allowing only the foll
   - none_exist
   - only_one_exists
 
-|equals
-|^^^^^^
+|"**equals**"
 |not equal
-|^^^^^^^^^
 |less than
-|^^^^^^^^^
 |less than or equal
-|^^^^^^^^^^^^^^^^^^
 |greater than
-|^^^^^^^^^^^^
 |greater than or equal
-|^^^^^^^^^^^^^^^^^^^^^
 |pattern match
-|^^^^^^^^^^^^^
 |pattern not match
-|^^^^^^^^^^^^^^^^^
 
 ========= ====== ===========================
 Name      Type   Description
