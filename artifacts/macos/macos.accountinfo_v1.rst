@@ -35,7 +35,6 @@ Supported Test Types
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
-
 +-------------------------------------+-------------+------------------+
 | Name                                | Type        | Description      |
 +=====================================+=============+==================+
@@ -95,7 +94,6 @@ Test Type Parameters
 |                                     |             | account.         |
 +-------------------------------------+-------------+------------------+
 
-
 NOTE: The ``check_existence`` parameter is governed by a constraint allowing only the following values:
   - all_exist
   - any_exist
@@ -132,7 +130,6 @@ NOTE: The ``operation`` parameter is governed by a constraint allowing only the 
   - string
   - version
   - set
-
 
 Generated Content
 ~~~~~~~~~~~~~~~~~
