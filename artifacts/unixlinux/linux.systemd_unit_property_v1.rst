@@ -21,7 +21,7 @@ Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
 Human ID:
-  linux.systemd_unit_property_v1
+  - linux.systemd_unit_property_v1
 
 +----------+--------+------------------------------------------------+
 | Name     | Type   | Description                                    |

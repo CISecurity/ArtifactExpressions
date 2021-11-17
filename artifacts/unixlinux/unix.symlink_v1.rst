@@ -27,7 +27,7 @@ Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
 Human ID:
-  unix.symlink_v1
+  - unix.symlink_v1
 
 +--------------------+--------+--------------------------------------+
 | Name               | Type   | Description                          |
@@ -64,7 +64,7 @@ Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
 Human ID:
-  unix.symlink_v1
+  - unix.symlink_v1
 
 +--------------------------+--------+-----------------------------+
 | Name                     | Type   | Description                 |
@@ -117,7 +117,7 @@ NOTE: The ``canonical_path_operation`` parameter is governed by a constraint all
   - superset of
 
 Human ID:
-  unix.symlink_password_object_v1
+  - unix.symlink_password_object_v1
 
 +--------------------------+--------+-----------------------------+
 | Name                     | Type   | Description                 |

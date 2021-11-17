@@ -20,7 +20,7 @@ Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
 Human ID:
-  unix.command_output_v1
+  - unix.command_output_v1
 
 ======= ====== ===================
 Name    Type   Description
@@ -60,7 +60,7 @@ NOTE: The ``data_type`` parameter is governed by a constraint allowing only the 
   - set
 
 Human ID:
-  null_test_v1
+  - null_test_v1
 
 ==== ==== ===========
 Name Type Description

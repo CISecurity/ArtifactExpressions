@@ -31,7 +31,7 @@ Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
 Human ID:
-  unix.kernel_parameter_v1
+  - unix.kernel_parameter_v1
 
 ========= ====== ===============================================
 Name      Type   Description

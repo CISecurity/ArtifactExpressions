@@ -25,7 +25,7 @@ Technical Details
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 Human ID:
-  unix.uname_parameter_v1
+  - unix.uname_parameter_v1
 
 ========= ====== =================================
 Name      Type   Description

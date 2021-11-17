@@ -31,7 +31,7 @@ Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
 Human ID:
-  linux.debian_package_v1
+  - linux.debian_package_v1
 
 ==== ====== =======================================================
 Name Type   Description
@@ -48,7 +48,7 @@ Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
 Human ID:
-  existence_test
+  - existence_test
 
 ===== ====== =======================
 Name  Type   Description

@@ -190,7 +190,7 @@ Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
 Human ID:
-  linux.custom_object_v1
+  - linux.custom_object_v1
 
 ====== ====== ====================================
 Name   Type   Description
@@ -262,7 +262,7 @@ Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
 Human ID:
-  null_test_v1
+  - null_test_v1
 
 ==== ==== ===========
 Name Type Description

@@ -23,7 +23,7 @@ Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
 Human ID:
-  linux.software_package_v1
+  - linux.software_package_v1
 
 +-----------+--------+-----------------------------------------------+
 | Name      | Type   | Description                                   |
@@ -48,7 +48,7 @@ Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
 Human ID:
-  null_test_v1
+  - null_test_v1
 
 ==== ==== ===========
 Name Type Description
@@ -57,7 +57,7 @@ N/A
 ==== ==== ===========
 
 Human ID:
-  existence_test
+  - existence_test
 
 ===== ====== =======================
 Name  Type   Description
