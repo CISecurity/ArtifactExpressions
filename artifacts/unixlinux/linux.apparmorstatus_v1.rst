@@ -25,6 +25,7 @@ Technical Details
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
+
 linux.apparmorstatus_v1
 ^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -37,10 +38,11 @@ N/A
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
-  - linux:apparmorstatus_enforce_mode_profiles_count
+- linux:apparmorstatus_enforce_mode_profiles_count
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
+
 linux.apparmorstatus_enforce_mode_profiles_count_v1
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -104,6 +106,7 @@ NOTE: The ``datatype`` parameter is governed by a constraint allowing only the f
 
 Generated Content
 ~~~~~~~~~~~~~~~~~
+
 XCCDF+AE
 ^^^^^^^^
 
