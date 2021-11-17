@@ -110,8 +110,7 @@ NOTE: The ``check`` parameter is governed by a constraint allowing only the foll
   - none satisfy
   - only one
 
-NOTE: The ``operation`` parameter is governed by a constraint allowing
-only the following values:
+NOTE: The ``operation`` parameter is governed by a constraint allowing only the following values:
   - equals
   - not equal
   - case insensitive equals
@@ -126,7 +125,7 @@ only the following values:
   - subset of
   - superset of
 
-NOTE: The ``datatype`` parameter is governed by a constraint allowing only the following values:
+  NOTE: The ``datatype`` parameter is governed by a constraint allowing only the following values:
   - boolean
   - float
   - int

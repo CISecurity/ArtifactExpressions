@@ -32,6 +32,7 @@ Technical Details
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
+
 unix.xinetd_service_v1
 ^^^^^^^^^^^^^^^^^^^^^^
 
@@ -49,6 +50,7 @@ Supported Test Types
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
+
 | unix.service_enabled_v1
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 | unix.xinetd_service_enabled_v1

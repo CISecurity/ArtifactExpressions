@@ -25,10 +25,8 @@ Technical Details
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
-
-
-  linux.apparmorstatus_v1
-  ^^^^^^^^^^^^^^^^^^^^^^^
+linux.apparmorstatus_v1
+^^^^^^^^^^^^^^^^^^^^^^^
 
 ==== ==== ===========
 Name Type Description

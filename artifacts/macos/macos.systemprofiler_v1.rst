@@ -67,7 +67,7 @@ Artifact Parameters
 data_type NOTE: This parameter is governed by a constraint allowing
 only the following values: 
   - SPHardwareDataType
-|- SPNetworkDataType 
+  - SPNetworkDataType 
   - SPSoftwareDataType
   - SPParallelATADataType
   - SPAudioDataType
