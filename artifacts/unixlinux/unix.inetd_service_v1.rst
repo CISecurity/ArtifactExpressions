@@ -33,8 +33,8 @@ Technical Details
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
-Human ID:
-  unix.inetd_service_v1
+unix.inetd_service_v1
+^^^^^^^^^^^^^^^^^^^^^
 
 ======== ====== ======================================================
 Name     Type   Description
@@ -51,8 +51,8 @@ Supported Test Types
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
-Human ID:
-  unix.service_enabled_v1
+unix.service_enabled_v1
+^^^^^^^^^^^^^^^^^^^^^^^
 
 ======= ====== ================================
 Name    Type   Description

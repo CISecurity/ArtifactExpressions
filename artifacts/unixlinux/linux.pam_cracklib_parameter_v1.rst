@@ -27,8 +27,8 @@ Technical Details
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
-Human ID:
-  linux.pam_cracklib_parameter_v1
+linux.pam_cracklib_parameter_v1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ========= ====== ===========================================
 Name      Type   Description
@@ -52,8 +52,9 @@ Supported Test Types
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
-Human ID:
-  existence_test
+existence_test
+^^^^^^^^^^^^^^
+
 
 ===== ====== =======================
 Name  Type   Description
@@ -69,15 +70,22 @@ NOTE: The ``value`` parameter is governed by a constraint allowing only the foll
   - none_exist
   - only_one_exists
 
-Human IDs:
-  equals
-  not equal
-  less than
-  less than or equal
-  greater than
-  greater than or equal
-  pattern match
-  pattern not match
+equals
+^^^^^^
+not equal
+^^^^^^^^
+less than
+^^^^^^^^
+less than or equal
+^^^^^^^^^^^^^^^
+greater than
+^^^^^^^^^^
+greater than or equal
+^^^^^^^^^^^^^^^^^^
+pattern match
+^^^^^^^^^^^^
+pattern not match
+^^^^^^^^^^^^^^^
 
 ========= ====== ===========================
 Name      Type   Description

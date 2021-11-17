@@ -24,8 +24,8 @@ Technical Details
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
-Human ID:
-  unix.uname_parameter_v1
+unix.uname_parameter_v1
+^^^^^^^^^^^^^^^^^^^^^^^
 
 ========= ====== =================================
 Name      Type   Description
@@ -44,26 +44,33 @@ only the following values:
 
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
-  - Equals
-  - Not Equal
-  - Less Than
-  - Less Than Or Equal
-  - Greater Than
-  - Greater Than Or Equal
-  - Pattern Match
-  - Pattern Not Match
+- Equals
+- Not Equal
+- Less Than
+- Less Than Or Equal
+- Greater Than
+- Greater Than Or Equal
+- Pattern Match
+- Pattern Not Match
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
-Human IDs:
 | equals
+^^^^^^^^
 | not equal
+^^^^^^^^^^^
 | less than
+^^^^^^^^^^^
 | less than or equal
+^^^^^^^^^^^^^^^^^^^^
 | greater than
+^^^^^^^^^^^^^^
 | greater than or equal
+^^^^^^^^^^^^^^^^^^^^^^^
 | pattern match
+^^^^^^^^^^^^^^^
 | pattern not match
+^^^^^^^^^^^^^^^^^^^
   
 ========= ====== ===========================
 Name      Type   Description
@@ -82,7 +89,6 @@ NOTE: The ``data_type`` parameter is governed by a constraint allowing only the 
 
 Generated Content
 ~~~~~~~~~~~~~~~~~
-
 XCCDF+AE
 ^^^^^^^^
 

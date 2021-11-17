@@ -20,8 +20,9 @@ Technical Details
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
-Human ID:
-  linux.partition_v1
+linux.partition_v1
+^^^^^^^^^^^^^^^^^^
+
 
 +-------------+--------+---------------------------------------------+
 | Name        | Type   | Description                                 |
@@ -59,8 +60,9 @@ Supported Test Types
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
-Human ID:
-  null_test_v1
+null_test_v1
+^^^^^^^^^^^^
+
 
 ==== ==== ===========
 Name Type Description
@@ -68,8 +70,9 @@ Name Type Description
 N/A       
 ==== ==== ===========
 
-Human ID:
-  linux.partition_option_v1
+linux.partition_option_v1
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
 
 +-----------+--------+-----------------------------------------------+
 | Name      | Type   | Description                                   |

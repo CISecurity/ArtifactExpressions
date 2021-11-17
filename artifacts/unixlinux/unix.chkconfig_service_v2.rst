@@ -20,8 +20,8 @@ Technical Details
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
-Human ID:
-  unix.chkconfig_service_v2
+unix.chkconfig_service_v2
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 +--------------------+--------+--------------------------------------+
 | Name               | Type   | Description                          |
@@ -65,8 +65,8 @@ Supported Test Types
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
-Human ID:
-  unix.service_enabled_v1
+unix.service_enabled_v1
+^^^^^^^^^^^^^^^^^^^^^^^
 
 ======= ====== ================================
 Name    Type   Description

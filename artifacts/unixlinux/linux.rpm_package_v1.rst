@@ -22,8 +22,9 @@ Technical Details
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
-Human ID:
-  linux.rpm_package_v1
+linux.rpm_package_v1
+^^^^^^^^^^^^^^^^^^^^
+
 
 ==== ====== =======================================================
 Name Type   Description
@@ -39,8 +40,8 @@ Supported Test Types
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
-Human ID:
-  existence_test
+existence_test
+^^^^^^^^^^^^^^
 
 ===== ====== =======================
 Name  Type   Description

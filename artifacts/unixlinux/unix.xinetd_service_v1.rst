@@ -32,9 +32,8 @@ Technical Details
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
-
-Human ID:
-  unix.xinetd_service_v1
+unix.xinetd_service_v1
+^^^^^^^^^^^^^^^^^^^^^^
 
 ======== ====== ======================================================
 Name     Type   Description
@@ -45,16 +44,15 @@ protocol string Protocol the service is running on (tcp/udp).
 
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
-
-  - Unix: Service Enabled
-  - Unix: Xinetd Service Enabled
+- Unix: Service Enabled
+- Unix: Xinetd Service Enabled
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
-
-Human IDs:
-  unix.service_enabled_v1
-  unix.xinetd_service_enabled_v1
+| unix.service_enabled_v1
+^^^^^^^^^^^^^^^^^^^^^^^^^
+| unix.xinetd_service_enabled_v1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ======= ====== ================================
 Name    Type   Description
@@ -64,7 +62,6 @@ enabled string Is the service enabled? (Yes/No)
 
 Generated Content
 ~~~~~~~~~~~~~~~~~
-
 XCCDF+AE
 ^^^^^^^^
 

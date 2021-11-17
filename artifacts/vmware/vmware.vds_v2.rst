@@ -12,8 +12,8 @@ Technical Details
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
-Human ID:
-  vmware.vds_v2
+vmware.vds_v2
+^^^^^^^^^^^^^
 
 ================== ====== ==========================================
 Name               Type   Description
