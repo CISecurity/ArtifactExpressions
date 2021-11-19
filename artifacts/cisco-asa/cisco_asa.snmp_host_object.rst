@@ -78,11 +78,11 @@ this.
 ::
 
    <check system='http://oval.mitre.org/XMLSchema/oval-definitions-5'>
-       <check-export 
-            export-name='oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]' 
+       <check-export
+            export-name='oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]'
             value-id='xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var'/>
-       <check-content-ref 
-           href='[BENCHMARK NAME]' 
+       <check-content-ref
+           href='[BENCHMARK NAME]'
            name='oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]'/>
    </check>
 
@@ -93,11 +93,11 @@ Test
 
 ::
 
-   <snmp_host_test 
-       xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]' 
+   <snmp_host_test
+       xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]'
        id='oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]'
-       check_existence='[check_existence.value]' 
-       check='[check.value]' 
+       check_existence='[check_existence.value]'
+       check='[check.value]'
        comment='[RECOMMENDATION TITLE]'
        version='[version.value]'>
        <object object_ref='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'/>
@@ -108,8 +108,8 @@ Object
 
 ::
 
-   <snmp_host_object 
-       xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]' 
+   <snmp_host_object
+       xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]'
        id='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'
        comment='[RECOMMENDATION TITLE]'
        version='[version.value]'>
@@ -120,8 +120,8 @@ State
 
 ::
 
-   <snmp_host_state 
-       xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]' 
+   <snmp_host_state
+       xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]'
        id='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'
        comment='[RECOMMENDATION TITLE]'
        version='[version.value]'>
@@ -140,22 +140,22 @@ YAML
        artifact:
          type: [ARTIFACTTYPE NAME]
          parameters:
-         - parameter: 
+         - parameter:
              name: host
              type: string
              value: [host.value]
-         - parameter: 
+         - parameter:
              name: operator
              type: string
              value: [operator.value]
        test:
          type: [TESTTYPE NAME]
-         parameters:   
-         - parameter: 
+         parameters:
+         - parameter:
              name: operator
              type: string
              value: [operator.value]
-         - parameter: 
+         - parameter:
               name: snmp_version
               type: string
               value: [snmp_version.value]

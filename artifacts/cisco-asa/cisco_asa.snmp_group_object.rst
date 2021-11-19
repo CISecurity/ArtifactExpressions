@@ -29,8 +29,7 @@ Supported Test Types
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
-cisco_asa.snmp_groups_priv
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+**cisco_asa.snmp_groups_priv**
 
 ================ ====== =============================================
 Name             Type   Description
@@ -39,8 +38,7 @@ operator         String Comparison Operator.
 snmpv3_sec_level String The SNMPv3 security configured for the group.
 ================ ====== =============================================
 
-cisco_asa.existence_check
-^^^^^^^^^^^^^^^^^^^^^^^^^
+**cisco_asa.existence_check**
 
 =============== ====== =========================================
 Name            Type   Description
@@ -48,8 +46,7 @@ Name            Type   Description
 existence_check String Number of lines expected to be collected.
 =============== ====== =========================================
 
-existence_check NOTE: This parameter is governed by a constraint
-allowing only the following values:
+NOTE: The ``existence_check`` parameter is governed by a constraint allowing only the following values:
   - all_exist
   - any_exist
   - at_least_one_exists
@@ -111,11 +108,11 @@ Test
 
 ::
 
-  <snmp_group_test 
-    xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]' 
+  <snmp_group_test
+    xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]'
     id='oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]'
-    check_existence='[check_existence.value]' 
-    check='[check.value]' 
+    check_existence='[check_existence.value]'
+    check='[check.value]'
     comment='[RECOMMENDATION TITLE]'
     version='[version.value]'>
     <object object_ref='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'/>
@@ -126,8 +123,8 @@ Object
 
 ::
 
-  <snmp_group_object 
-    xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]' 
+  <snmp_group_object
+    xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]'
     id='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'
     comment='[RECOMMENDATION TITLE]'
     version='[version.value]'>
@@ -138,12 +135,12 @@ State
 
 ::
 
-  <snmp_group_state 
-    xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]' 
+  <snmp_group_state
+    xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]'
     id='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'
     comment='[RECOMMENDATION TITLE]'
     version='[version.value]'>
-    <snmpv3_sec_level operation='[operation.value]' 
+    <snmpv3_sec_level operation='[operation.value]'
     var_ref='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'/>
   </snmp_group_state>
 
@@ -158,22 +155,22 @@ YAML
     artifact:
       type: [ARTIFACTTYPE NAME]
       parameters:
-        - parameter: 
+        - parameter:
             name: name
             type: string
             value: [name.value]
-        - parameter: 
+        - parameter:
             name: operator
             type: string
             value: [operator.value]
     test:
       type: [TESTTYPE NAME]
-      parameters:   
-        - parameter: 
+      parameters:
+        - parameter:
             name: operator
             type: string
             value: [operator.value]
-        - parameter: 
+        - parameter:
             name: snmpv3_sec_level
             type: string
             value: [snmpv3_sec_level.value]

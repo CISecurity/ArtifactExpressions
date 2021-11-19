@@ -28,8 +28,7 @@ Supported Test Types
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
-cisco_asa.line_config_line
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+**cisco_asa.line_config_line**
 
 =========== ====== =================================
 Name        Type   Description
@@ -39,17 +38,28 @@ config_line String The collected configuration line.
 check       String Check enumeration value.
 =========== ====== =================================
 
-operation NOTE: This parameter is governed by a constraint allowing only
-the following values: - equals - not equal - case insensitive equals -
-case insensitive not equal - greater than - less than - greater than or
-equal - less than or equal - bitwise and - bitwise or - pattern match -
-subset of - superset of
+NOTE: The ``operation`` parameter is governed by a constraint allowing only the following values:
+  - equals
+  - not equal
+  - case insensitive equals
+  - case insensitive not equal
+  - greater than
+  - less than
+  - greater than or equal
+  - less than or equal
+  - bitwise and
+  - bitwise or
+  - pattern match
+  - subset of
+  - superset of
 
-check NOTE: This parameter is governed by a constraint allowing only the
-following values: - all - at least one - none satisfy - only one
+NOTE: The ``check`` parameter is governed by a constraint allowing only the following values:
+  - all
+  - at least one
+  - none satisfy
+  - only one
 
-cisco_asa.untrusted_interfaces_state
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**cisco_asa.untrusted_interfaces_state**
 
 ============ ====== ==========================
 Name         Type   Description
@@ -59,8 +69,11 @@ regex_suffix String Regular Expression Suffix.
 check        String Check enumeration value.
 ============ ====== ==========================
 
-check NOTE: This parameter is governed by a constraint allowing only the
-following values: - all - at least one - none satisfy - only one
+NOTE: The ``check`` parameter is governed by a constraint allowing only the following values:
+  - all
+  - at least one
+  - none satisfy
+  - only one
 
 Generated Content
 ~~~~~~~~~~~~~~~~~
@@ -105,11 +118,11 @@ xccdf:check looks like this.
 ::
 
    <check system='http://oval.mitre.org/XMLSchema/oval-definitions-5'>
-       <check-export 
-            export-name='oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]' 
+       <check-export
+            export-name='oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]'
             value-id='xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var'/>
-       <check-content-ref 
-           href='[BENCHMARK NAME]' 
+       <check-content-ref
+           href='[BENCHMARK NAME]'
            name='oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]'/>
    </check>
 
@@ -120,11 +133,11 @@ Test
 
 ::
 
-   <line_test 
-       xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]' 
+   <line_test
+       xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]'
        id='oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]'
-       check_existence='[check_existence.value]' 
-       check='[check.value]' 
+       check_existence='[check_existence.value]'
+       check='[check.value]'
        comment='[RECOMMENDATION TITLE]'
        version='[version.value]'>
        <object object_ref='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'/>
@@ -135,8 +148,8 @@ Object
 
 ::
 
-   <line_object 
-       xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]' 
+   <line_object
+       xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]'
        id='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'
        comment='[RECOMMENDATION TITLE]'
        version='[version.value]'>
@@ -147,12 +160,12 @@ State
 
 ::
 
-   <line_state 
-       xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]' 
+   <line_state
+       xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]'
        id='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'
        comment='[RECOMMENDATION TITLE]'
        version='[version.value]'>
-       <config_line operation='[operation.value]' 
+       <config_line operation='[operation.value]'
            var_ref='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'/>
    </line_state>
 
@@ -167,22 +180,22 @@ YAML
        artifact:
          type: [ARTIFACTTYPE NAME]
          parameters:
-         - parameter: 
+         - parameter:
              name: show_run_command
              type: string
              value: [show_run_command.value]
        test:
          type: [TESTTYPE NAME]
          parameters:
-         - parameter: 
+         - parameter:
               name: operation
               type: string
               value: [operation.value]
-         - parameter: 
+         - parameter:
               name: config_line
               type: string
               value: [config_line.value]
-         - parameter: 
+         - parameter:
               name: check
               type: string
               value: check_line.value]

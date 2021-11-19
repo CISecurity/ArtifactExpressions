@@ -33,8 +33,11 @@ Artifact Parameters
 |                                     |             | Version values.  |
 +-------------------------------------+-------------+------------------+
 
-ip_version NOTE: This parameter is governed by a constraint allowing
-only the following values: - IPV4 - IPV6 - IPV4_V6 - ALL
+NOTE: The ``ip_version`` parameter is governed by a constraint allowing only the following values:
+  - IPV4
+  - IPV6
+  - IPV4_V6
+  - ALL
 
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
@@ -44,8 +47,7 @@ Supported Test Types
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
-cisco_asa.acl_config_line_with_entity_check
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**cisco_asa.acl_config_line_with_entity_check**
 
 +-----------------------------+-------------------------+--------------+
 | Name                        | Type/Constraint         | Description  |
@@ -101,15 +103,27 @@ cisco_asa.acl_config_line_with_entity_check
 |                             |                         | result.      |
 +-----------------------------+-------------------------+--------------+
 
-operation NOTE: This parameter is governed by a constraint allowing only
-the following values: - equals - not equal - case insensitive equals -
-case insensitive not equal - greater than - less than - greater than or
-equal - less than or equal - bitwise and - bitwise or - pattern match -
-subset of - superset of
+NOTE: The ``entity_check`` parameter is governed by a constraint allowing only the following values:
+  - all_exist
+  - any_exist
+  - at_least_one_exists
+  - none_exist
+  - only_one_exists
 
-entity_check NOTE: This parameter is governed by a constraint allowing
-only the following values: - all - at least one - none satisfy - only
-one
+NOTE: The ``operation`` parameter is governed by a constraint allowing only the following values:
+  - bitwise and
+  - bitwise or
+  - case insensitive equals
+  - case insensitive not equal
+  - equals
+  - greater than
+  - greater than or equal
+  - less than
+  - less than or equal
+  - pattern match
+  - not equal
+  - set white list
+  - set is empty
 
 Generated Content
 ~~~~~~~~~~~~~~~~~
@@ -156,11 +170,11 @@ For ``cisco_asa.acl_object`` artifacts, the xccdf:check looks like this.
 ::
 
    <check system='http://oval.mitre.org/XMLSchema/oval-definitions-5'>
-       <check-export 
-            export-name='oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]' 
+       <check-export
+            export-name='oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]'
             value-id='xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var'/>
-       <check-content-ref 
-           href='[BENCHMARK NAME]' 
+       <check-content-ref
+           href='[BENCHMARK NAME]'
            name='oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]'/>
    </check>
 
@@ -168,14 +182,14 @@ OVAL
 ''''
 
 Test
-    
+
 ::
 
-   <acl_test 
-       xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]' 
+   <acl_test
+       xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]'
        id='oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]'
-       check_existence='[check_existence.value]' 
-       check='[check.value]' 
+       check_existence='[check_existence.value]'
+       check='[check.value]'
        comment='[RECOMMENDATION TITLE]'
        version='[version.value]'>
        <object object_ref='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'/>
@@ -183,30 +197,30 @@ Test
    </acl_test>
 
 Object
-      
+
 ::
 
-   <acl_object 
-       xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]' 
+   <acl_object
+       xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]'
        id='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'
        comment='[RECOMMENDATION TITLE]'
        version='[version.value]'>
        <name operation='[operation.value]'>[name.value]</name>
-       <ip_version operation='[operation.value]' 
+       <ip_version operation='[operation.value]'
            var_ref='oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]'/>
    </acl_object>
 
 State
-     
+
 ::
 
-   <acl_state 
-       xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]' 
+   <acl_state
+       xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]'
        id='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'
        comment='[RECOMMENDATION TITLE]'
        version='[version.value]'>
-       <config_line operation='[operation.value]' 
-           entity_check='[entity_check.value]' 
+       <config_line operation='[operation.value]'
+           entity_check='[entity_check.value]'
            var_ref='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]
    </acl_state>
 
@@ -221,34 +235,34 @@ YAML
        artifact:
          type: [ARTIFACTTYPE NAME]
          parameters:
-         - parameter: 
+         - parameter:
              name: name
              type: string
              value: [name.value]
-         - parameter: 
+         - parameter:
              name: ip_version
              type: string
              value: [ip_version.value]
-         - parameter: 
+         - parameter:
              name: name_operator
              type: string
              value: [name_operator.value]
-         - parameter: 
+         - parameter:
              name: ip_version_operator
              type: string
              value: [ip_version_operator.value]
        test:
          type: [TESTTYPE NAME]
-         parameters:   
-         - parameter: 
+         parameters:
+         - parameter:
               name: operation
               type: string
               value: [operation.value]
-         - parameter: 
+         - parameter:
               name: config_line
               type: string
               value: [config_line.value]
-         - parameter: 
+         - parameter:
              name: entity_check
              type: string
              value: [entity_check.value]

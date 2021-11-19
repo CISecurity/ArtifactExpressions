@@ -19,10 +19,14 @@ Name                   Type   Description
 password_policy_option String Password Policy configuration option.
 ====================== ====== =====================================
 
-password_policy_option NOTE: This parameter is governed by a constraint
-allowing only the following values: - lifetime - minimum-changes -
-minimum-uppercase - minimum-lowercase - minimum-numeric -
-minimum-special - minimum-length
+NOTE: The ``password_policy_option`` parameter is governed by a constraint allowing only the following values:
+  - lifetime
+  - minimum-changes
+  - minimum-uppercase
+  - minimum-lowercase
+  - minimum-numeric
+  - minimum-special
+  - minimum-length
 
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
@@ -96,11 +100,11 @@ this.
 ::
 
    <check system='http://oval.mitre.org/XMLSchema/oval-definitions-5'>
-       <check-export 
-            export-name='oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]' 
+       <check-export
+            export-name='oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]'
             value-id='xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var'/>
-       <check-content-ref 
-           href='[BENCHMARK NAME]' 
+       <check-content-ref
+           href='[BENCHMARK NAME]'
            name='oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]'/>
    </check>
 
@@ -111,11 +115,11 @@ Test
 
 ::
 
-   <variable_test 
-       xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]' 
+   <variable_test
+       xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]'
        id='oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]'
-       check_existence='[check_existence.value]' 
-       check='[check.value]' 
+       check_existence='[check_existence.value]'
+       check='[check.value]'
        comment='[RECOMMENDATION TITLE]'
        version='[version.value]'>
        <object object_ref='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'/>
@@ -126,8 +130,8 @@ Object
 
 ::
 
-   <variable_object 
-       xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]' 
+   <variable_object
+       xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]'
        id='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'
        comment='[RECOMMENDATION TITLE]'
        version='[version.value]'>
@@ -138,13 +142,13 @@ State
 
 ::
 
-   <variable_state 
-       xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]' 
+   <variable_state
+       xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]'
        id='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'
        comment='[RECOMMENDATION TITLE]'
        version='[version.value]'>
-       <value operation='[operation.value]' 
-           datatype='[datatype.value]' 
+       <value operation='[operation.value]'
+           datatype='[datatype.value]'
            var_ref='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'/>
    </variable_state>
 
@@ -159,26 +163,26 @@ YAML
        artifact:
          type: [ARTIFACTTYPE NAME]
          parameters:
-         - parameter: 
+         - parameter:
              name: password_policy_option
              type: string
              value: [password_policy_option.value]
        test:
          type: [TESTTYPE NAME]
-         parameters:   
-         - parameter: 
+         parameters:
+         - parameter:
               name: operator
               type: string
               value: [operator.value]
-         - parameter: 
+         - parameter:
               name: expected_value
               type: string
               value: [expected_value.value]
-         - parameter: 
+         - parameter:
               name: regex_capture
               type: string
               value: [regex_capture.value]
-         - parameter: 
+         - parameter:
               name: expected_value_type
               type: string
               value: [expected_value_type.value]

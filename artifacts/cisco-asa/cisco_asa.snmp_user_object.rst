@@ -82,11 +82,11 @@ this.
 ::
 
    <check system='http://oval.mitre.org/XMLSchema/oval-definitions-5'>
-       <check-export 
-            export-name='oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]' 
+       <check-export
+            export-name='oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]'
             value-id='xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var'/>
-       <check-content-ref 
-           href='[BENCHMARK NAME]' 
+       <check-content-ref
+           href='[BENCHMARK NAME]'
            name='oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]'/>
    </check>
 
@@ -97,11 +97,11 @@ Test
 
 ::
 
-   <snmp_user_test 
-       xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]' 
+   <snmp_user_test
+       xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]'
        id='oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]'
-       check_existence='[check_existence.value]' 
-       check='[check.value]' 
+       check_existence='[check_existence.value]'
+       check='[check.value]'
        comment='[RECOMMENDATION TITLE]'
        version='[version.value]'>
        <object object_ref='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'/>
@@ -112,8 +112,8 @@ Object
 
 ::
 
-   <snmp_user_object 
-       xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]' 
+   <snmp_user_object
+       xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]'
        id='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'
        comment='[RECOMMENDATION TITLE]'
        version='[version.value]'>
@@ -124,14 +124,14 @@ State
 
 ::
 
-   <snmp_user_state 
-       xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]' 
+   <snmp_user_state
+       xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]'
        id='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'
        comment='[RECOMMENDATION TITLE]'
        version='[version.value]'>
-       <priv operation='[operation.value]' 
+       <priv operation='[operation.value]'
            var_ref='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'/>
-       <auth operation='[operation.value]' 
+       <auth operation='[operation.value]'
            var_ref='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'/>
    </snmp_user_state>
 
@@ -146,30 +146,30 @@ YAML
        artifact:
          type: [ARTIFACTTYPE NAME]
          parameters:
-         - parameter: 
+         - parameter:
              name: name
              type: string
              value: [name.value]
-         - parameter: 
+         - parameter:
              name: operator
              type: string
              value: [operator.value]
        test:
          type: [TESTTYPE NAME]
-         parameters:   
-         - parameter: 
+         parameters:
+         - parameter:
               name: auth_operator
               type: string
               value: [auth_operator.value]
-         - parameter: 
+         - parameter:
               name: auth
               type: string
               value: [auth.value]
-         - parameter: 
+         - parameter:
               name: priv_operator
               type: string
               value: [priv_operator.value]
-         - parameter: 
+         - parameter:
               name: priv
               type: string
               value: [priv.value]

@@ -32,8 +32,7 @@ Supported Test Types
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
-cisco_asa.major_version
-^^^^^^^^^^^^^^^^^^^^^^^
+**cisco_asa.major_version**
 
 ============= ====== ====================
 Name          Type   Description
@@ -42,14 +41,22 @@ operation     String Comparison Operator.
 major_version String Major Version.
 ============= ====== ====================
 
-operation NOTE: This parameter is governed by a constraint allowing only
-the following values: - equals - not equal - case insensitive equals -
-case insensitive not equal - greater than - less than - greater than or
-equal - less than or equal - bitwise and - bitwise or - pattern match -
-subset of - superset of
+NOTE: The ``operation`` parameter is governed by a constraint allowing only the following values:
+  - equals
+  - not equal
+  - case insensitive equals
+  - case insensitive not equal
+  - greater than
+  - less than
+  - greater than or equal
+  - less than or equal
+  - bitwise and
+  - bitwise or
+  - pattern match
+  - subset of
+  - superset of
 
-cisco_asa.major_minor_version
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**cisco_asa.major_minor_version**
 
 +-------------------------------------+-------------+------------------+
 | Name                                | Type        | Description      |
@@ -118,11 +125,11 @@ this.
 ::
 
    <check system='http://oval.mitre.org/XMLSchema/oval-definitions-5'>
-       <check-export 
-            export-name='oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]' 
+       <check-export
+            export-name='oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]'
             value-id='xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var'/>
-       <check-content-ref 
-           href='[BENCHMARK NAME]' 
+       <check-content-ref
+           href='[BENCHMARK NAME]'
            name='oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]'/>
    </check>
 
@@ -133,11 +140,11 @@ Test
 
 ::
 
-   <version_test 
-       xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]' 
+   <version_test
+       xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]'
        id='oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]'
-       check_existence='[check_existence.value]' 
-       check='[check.value]' 
+       check_existence='[check_existence.value]'
+       check='[check.value]'
        comment='[RECOMMENDATION TITLE]'
        version='[version.value]'>
        <object object_ref='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'/>
@@ -148,8 +155,8 @@ Object
 
 ::
 
-   <version_object 
-       xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]' 
+   <version_object
+       xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]'
        id='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'
        comment='[RECOMMENDATION TITLE]'
        version='[version.value]'>
@@ -159,14 +166,14 @@ State
 
 ::
 
-   <version_state 
-       xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]' 
+   <version_state
+       xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]'
        id='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'
        comment='[RECOMMENDATION TITLE]'
        version='[version.value]'>
-       <asa_major_release datatype='[datatype.value]' operation='[operation.value]' 
+       <asa_major_release datatype='[datatype.value]' operation='[operation.value]'
            var_ref='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'/>
-       <asa_minor_release datatype='[datatype.value]' operation='[operation.value]' 
+       <asa_minor_release datatype='[datatype.value]' operation='[operation.value]'
            var_ref='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'/>
    </version_state>
 
@@ -183,12 +190,12 @@ YAML
          parameters:
        test:
          type: [TESTTYPE NAME]
-         parameters:   
-         - parameter: 
+         parameters:
+         - parameter:
               name: operation
               type: string
               value: [operation.value]
-         - parameter: 
+         - parameter:
               name: major_version
               type: string
               value: [major_version.value]
