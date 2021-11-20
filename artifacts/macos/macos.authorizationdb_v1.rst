@@ -12,7 +12,6 @@ and one should refer to the TestType description for more information. The
 required object element references an authorizationdb_object and the optional
 state element specifies the data to check.
 
-
 Technical Details
 -----------------
 
@@ -56,7 +55,7 @@ Artifact Parameters
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  macos.authorizationdb_v1
+  - macos.authorizationdb_v1
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
@@ -157,8 +156,7 @@ SCAP
 XCCDF
 '''''
 
-For ``macos.authorizationdb_v1`` artifacts, the xccdf:check looks like this.
-There is no Value in the xccdf for this Artifact.
+For ``macos.authorizationdb_v1`` artifacts, the xccdf:check looks like this. There is no Value in the xccdf for this Artifact.
 
 ::
 
@@ -167,7 +165,6 @@ There is no Value in the xccdf for this Artifact.
       href="[BENCHMARK NAME]"
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </xccdf:check>
-
 
 OVAL
 ''''

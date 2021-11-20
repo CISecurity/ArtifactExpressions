@@ -123,23 +123,23 @@ the following values:
 
 prepend_type NOTE: This parameter is governed by a constraint allowing
 only the following values:
- - String
- - SQL
+  - String
+  - SQL
 
 append_type NOTE: This parameter is governed by a constraint allowing
 only the following values:
- - String
- - SQL
+  - String
+  - SQL
 
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  independent.sql57_v1
--  existence_test
--  SQL-Unix_File_or_Directory_Permissions_v1
--  SQL-Unix_File_or_Directory_Permissions_v2
--  SQL-Unix_File_or_Directory_Basename_Permissions_v2
--  SQL-Unix_File_or_Directory_Permissions_sql57_object_v2
+  - independent.sql57_v1
+  - existence_test
+  - SQL-Unix_File_or_Directory_Permissions_v1
+  - SQL-Unix_File_or_Directory_Permissions_v2
+  - SQL-Unix_File_or_Directory_Basename_Permissions_v2
+  - SQL-Unix_File_or_Directory_Permissions_sql57_object_v2
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
@@ -438,63 +438,63 @@ SQL-Unix_File_or_Directory_Permissions_v2
 
 uread NOTE: This parameter is governed by a constraint
 allowing only the following values:
- - NA
- - set
- - unset
+  - NA
+  - set
+  - unset
 
 uwrite NOTE: This parameter is governed by a constraint
 allowing only the following values:
- - NA
- - set
- - unset
+  - NA
+  - set
+  - unset
 
 uexec NOTE: This parameter is governed by a constraint
 allowing only the following values:
- - NA
- - set
- - unset
+  - NA
+  - set
+  - unset
 
 gread NOTE: This parameter is governed by a constraint
 allowing only the following values:
- - NA
- - set
- - unset
+  - NA
+  - set
+  - unset
 
 gwrite NOTE: This parameter is governed by a constraint
 allowing only the following values:
- - NA
- - set
- - unset
+  - NA
+  - set
+  - unset
 
 gexec NOTE: This parameter is governed by a constraint
 allowing only the following values:
- - NA
- - set
- - unset
+  - NA
+  - set
+  - unset
 
 oread NOTE: This parameter is governed by a constraint
 allowing only the following values:
- - NA
- - set
- - unset
+  - NA
+  - set
+  - unset
 
 owrite NOTE: This parameter is governed by a constraint
 allowing only the following values:
- - NA
- - set
- - unset
+  - NA
+  - set
+  - unset
 
 oexec NOTE: This parameter is governed by a constraint
 allowing only the following values:
- - NA
- - set
- - unset
+  - NA
+  - set
+  - unset
 
 oexec NOTE: This parameter is governed by a constraint
 allowing only the following values:
- - NA
- - set
- - unset
+  - NA
+  - set
+  - unset
 
 SQL-Unix_File_or_Directory_Basename_Permissions_v2
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -614,63 +614,63 @@ SQL-Unix_File_or_Directory_Basename_Permissions_v2
 
 uread NOTE: This parameter is governed by a constraint
 allowing only the following values:
- - NA
- - set
- - unset
+  - NA
+  - set
+  - unset
 
 uwrite NOTE: This parameter is governed by a constraint
 allowing only the following values:
- - NA
- - set
- - unset
+  - NA
+  - set
+  - unset
 
 uexec NOTE: This parameter is governed by a constraint
 allowing only the following values:
- - NA
- - set
- - unset
+  - NA
+  - set
+  - unset
 
 gread NOTE: This parameter is governed by a constraint
 allowing only the following values:
- - NA
- - set
- - unset
+  - NA
+  - set
+  - unset
 
 gwrite NOTE: This parameter is governed by a constraint
 allowing only the following values:
- - NA
- - set
- - unset
+  - NA
+  - set
+  - unset
 
 gexec NOTE: This parameter is governed by a constraint
 allowing only the following values:
- - NA
- - set
- - unset
+  - NA
+  - set
+  - unset
 
 oread NOTE: This parameter is governed by a constraint
 allowing only the following values:
- - NA
- - set
- - unset
+  - NA
+  - set
+  - unset
 
 owrite NOTE: This parameter is governed by a constraint
 allowing only the following values:
- - NA
- - set
- - unset
+  - NA
+  - set
+  - unset
 
 oexec NOTE: This parameter is governed by a constraint
 allowing only the following values:
- - NA
- - set
- - unset
+  - NA
+  - set
+  - unset
 
 oexec NOTE: This parameter is governed by a constraint
 allowing only the following values:
- - NA
- - set
- - unset
+  - NA
+  - set
+  - unset
 
 check_existence NOTE: This parameter is governed by a constraint allowing only 
 the following values: 
@@ -805,34 +805,64 @@ SQL-Unix_File_or_Directory_Permissions_sql57_object_v2
 +-------------------------------------+-------------+------------------+
 
 uread NOTE: This parameter is governed by a constraint
-allowing only the following values: NA - set - unset
+allowing only the following values: 
+  - NA
+  - set
+  - unset
 
 uwrite NOTE: This parameter is governed by a constraint
-allowing only the following values: NA - set - unset
+allowing only the following values:
+  - NA
+  - set
+  - unset
 
 uexec NOTE: This parameter is governed by a constraint
-allowing only the following values: NA - set - unset
+allowing only the following values:
+  - NA
+  - set
+  - unset
 
 gread NOTE: This parameter is governed by a constraint
-allowing only the following values: NA - set - unset
+allowing only the following values:
+  - NA
+  - set
+  - unset
 
 gwrite NOTE: This parameter is governed by a constraint
-allowing only the following values: NA - set - unset
+allowing only the following values:
+  - NA
+  - set
+  - unset
 
 gexec NOTE: This parameter is governed by a constraint
-allowing only the following values: NA - set - unset
+allowing only the following values:
+  - NA
+  - set
+  - unset
 
 oread NOTE: This parameter is governed by a constraint
-allowing only the following values: NA - set - unset
+allowing only the following values:
+  - NA
+  - set
+  - unset
 
 owrite NOTE: This parameter is governed by a constraint
-allowing only the following values: NA - set - unset
+allowing only the following values:
+  - NA
+  - set
+  - unset
 
 oexec NOTE: This parameter is governed by a constraint
-allowing only the following values: NA - set - unset
+allowing only the following values:
+  - NA
+  - set
+  - unset
 
 oexec NOTE: This parameter is governed by a constraint
-allowing only the following values: NA - set - unset
+allowing only the following values:
+  - NA
+  - set
+  - unset
 
 check_existence NOTE: This parameter is governed by a constraint allowing only 
 the following values: 
@@ -853,10 +883,7 @@ following values:
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
-.. _independent.sql57_v1:
-
 independent.sql57_v1
-^^^^^^^^^^^^^^^^^^^^
 
 XCCDF+AE
 ^^^^^^^^
@@ -987,73 +1014,72 @@ External Variable
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" 
     version="[version.value]" />
 
-
 YAML
 ^^^^
 
 ::
 
-    artifact-expression:
-      artifact-unique-id: "[ARTIFACT-OVAL-ID]"
-      artifact-title: "[RECOMMENDATION-TITLE]"
-      artifact:
-          type: "[ARTIFACTTYPE-NAME]"
-          parameters:
-          - parameter: 
-              name: "engine"
-              type: "string"
-              value: "[engine.value]"
-          - parameter: 
-              name: "sql"
-              type: "string"
-              value: "[sql.value]"
-          - parameter: 
-              name: "version"
-              type: "string"
-              value: "[version.value]"
-          - parameter: 
-              name: "prepend_str"
-              type: "string"
-              value: "[prepend_str.value]"
-          - parameter: 
-              name: "append_str"
-              type: "string"
-              value: "[append_str.value]"
-          - parameter: 
-              name: "prepend_type"
-              type: "string"
-              value: "[prepend_type.value]"
-          - parameter: 
-              name: "append_type"
-              type: "string"
-              value: "[append_type.value]"
-      test:
-          type: "[TESTTYPE-NAME]"
-          parameters:   
-          - parameter: 
-              name: "check_existence"
-              type: "string"
-              value: "[check_existence.value]"
-          - parameter: 
-              name: "check"
-              type: "string"
-              value: "[check.value]"
-          - parameter: 
-              name: "value"
-              type: "string"
-              value: "[value.value]"
-          - parameter: 
-              name: "value_data_type"
-              type: "string"
-              value: "[value_data_type.value]"
-          - parameter: 
-              name: "field_name"
-              type: "string"
-              value: "[field_name.value]"
-          - parameter: 
-              name: "field_operation"
-              type: "string"
-              value: "[field_operation.value]"
+  artifact-expression:
+    artifact-unique-id: "[ARTIFACT-OVAL-ID]"
+    artifact-title: "[RECOMMENDATION-TITLE]"
+    artifact:
+      type: "[ARTIFACTTYPE-NAME]"
+      parameters:
+      - parameter: 
+          name: "engine"
+          dt: "string"
+          value: "[engine.value]"
+      - parameter: 
+          name: "sql"
+          dt: "string"
+          value: "[sql.value]"
+      - parameter: 
+          name: "version"
+          dt: "string"
+          value: "[version.value]"
+      - parameter: 
+          name: "prepend_str"
+          dt: "string"
+          value: "[prepend_str.value]"
+      - parameter: 
+          name: "append_str"
+          dt: "string"
+          value: "[append_str.value]"
+      - parameter: 
+          name: "prepend_type"
+          dt: "string"
+          value: "[prepend_type.value]"
+      - parameter: 
+          name: "append_type"
+          dt: "string"
+          value: "[append_type.value]"
+  test:
+      type: "[TESTTYPE-NAME]"
+      parameters:   
+      - parameter: 
+          name: "check_existence"
+          dt: "string"
+          value: "[check_existence.value]"
+      - parameter: 
+          name: "check"
+          dt: "string"
+          value: "[check.value]"
+      - parameter: 
+          name: "value"
+          dt: "string"
+          value: "[value.value]"
+      - parameter: 
+          name: "value_data_type"
+          dt: "string"
+          value: "[value_data_type.value]"
+      - parameter: 
+          name: "field_name"
+          dt: "string"
+          value: "[field_name.value]"
+      - parameter: 
+          name: "field_operation"
+          dt: "string"
+          value: "[field_operation.value]"
 
 JSON
 ^^^^
@@ -1168,15 +1194,10 @@ JSON
     }
   }
 
-.. _generated-content-1:
-
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
-.. _existence_test:
-
 existence_test
-^^^^^^^^^^^^^^
 
 XCCDF+AE
 ^^^^^^^^
@@ -1267,54 +1288,52 @@ State
 
   N/A 
 
-
 YAML
 ^^^^
 
 ::
 
-  - artifact-expression:
-      artifact-unique-id: "[ARTIFACT-OVAL-ID]"
-      artifact_title: "[RECOMMENDATION-TITLE]" 
-      artifact:
-        type: "[ARTIFACTTYPE-NAME]"
-        parameters:
-        - parameter:
-            name: "engine"
-            dt: "string"
-            value: "[engine.value]"
-        - parameter:
-            name: "sql"
-            dt: "string"
-            value: "[sql.value]"
-        - parameter:
-            name: "version"
-            dt: "string"
-            value: "[version.value]"
-        - parameter:
-            name: "prepend_str"
-            dt: "string"
-            value: "[prepend_str.value]"
-        - parameter:
-            name: "append_str"
-            dt: "string"
-            value: "[append_str.value]"
-        - parameter:
-            name: "prepend_type"
-            dt: "string"
-            value: "[prepend_type.value]"
-        - parameter:
-            name: "append_type"
-            dt: "string"
-            value: "[append_type.value]"
-      test:
-        type: "[TESTTYPE-NAME]"
-        parameters:
-        - parameter:
-            name: "value"
-            dt: "string"
-            value: "[value.value]"
-
+  artifact-expression:
+    artifact-unique-id: "[ARTIFACT-OVAL-ID]"
+    artifact_title: "[RECOMMENDATION-TITLE]" 
+    artifact:
+      type: "[ARTIFACTTYPE-NAME]"
+      parameters:
+      - parameter:
+          name: "engine"
+          dt: "string"
+          value: "[engine.value]"
+      - parameter:
+          name: "sql"
+          dt: "string"
+          value: "[sql.value]"
+      - parameter:
+          name: "version"
+          dt: "string"
+          value: "[version.value]"
+      - parameter:
+          name: "prepend_str"
+          dt: "string"
+          value: "[prepend_str.value]"
+      - parameter:
+          name: "append_str"
+          dt: "string"
+          value: "[append_str.value]"
+      - parameter:
+          name: "prepend_type"
+          dt: "string"
+          value: "[prepend_type.value]"
+      - parameter:
+          name: "append_type"
+          dt: "string"
+          value: "[append_type.value]"
+    test:
+      type: "[TESTTYPE-NAME]"
+      parameters:
+      - parameter:
+          name: "value"
+          dt: "string"
+          value: "[value.value]"
 
 JSON
 ^^^^
@@ -1394,15 +1413,10 @@ JSON
     }
   }
 
-.. _generated-content-2:
-
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
-.. _SQL-Unix_File_or_Directory_Permissions_v1:
-
 SQL-Unix_File_or_Directory_Permissions_v1
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 XCCDF+AE
 ^^^^^^^^
@@ -1488,7 +1502,6 @@ Test
     <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"> />
   </file_test> 
 
-
 Test
 
 ::
@@ -1546,13 +1559,12 @@ Local Variable
       record_field="[record_field.value]" />
   </local_variable>
 
-
 YAML
 ^^^^
 
 ::
 
-  - artifact-expression:
+  artifact-expression:
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
     artifact_title: "[RECOMMENDATION-TITLE]" 
     artifact:
@@ -1793,15 +1805,10 @@ JSON
     }
   }
 
-.. _generated-content-3:
-
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
-.. _SQL-Unix_File_or_Directory_Permissions_v2:
-
 SQL-Unix_File_or_Directory_Permissions_v2
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 XCCDF+AE
 ^^^^^^^^
@@ -1952,7 +1959,7 @@ YAML
 
 ::
 
-  - artifact-expression:
+  artifact-expression:
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
     artifact_title: "[RECOMMENDATION-TITLE]" 
     artifact:
@@ -2193,20 +2200,11 @@ JSON
     }
   }           
      
-.. _generated-content-4:
-
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
-.. _SQL-Unix_File_or_Directory_Basename_Permissions_v2:
-
 SQL-Unix_File_or_Directory_Basename_Permissions_v2
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. _SQL-Unix_File_or_Directory_Permissions_sql57_object_v2:
-
 SQL-Unix_File_or_Directory_Permissions_sql57_object_v2
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 XCCDF+AE
 ^^^^^^^^

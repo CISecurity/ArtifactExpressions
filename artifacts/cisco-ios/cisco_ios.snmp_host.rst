@@ -23,8 +23,8 @@ cisco_ios.snmp_host_op   String SNMP Host Collection Operator.
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  existence_test
--  cisco_ios.snmp_host_traps
+  - existence_test
+  - cisco_ios.snmp_host_traps
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
@@ -128,14 +128,14 @@ State
 
 ::
 
-   n/a
+   N/A
 
 YAML
 ^^^^
 
 ::
 
-   - artifact-expression:
+  - artifact-expression:
        artifact-unique-id: [ARTIFACT-OVAL-ID]
        artifact-title: [RECOMMENDATION TITLE]
        artifact:

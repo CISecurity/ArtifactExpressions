@@ -125,17 +125,17 @@ allowing only the following values:
 
 check NOTE: This parameter is governed by a constraint allowing only the
 following values:
- - all
- - at least one
- - none satisfy
- - only one
+  - all
+  - at least one
+  - none satisfy
+  - only one
 
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  Txt-Unix_File_or_Directory_Permissions_v2
--  existence_test
--  independent.xmlfilecontent_v2
+  - Txt-Unix_File_or_Directory_Permissions_v2
+  - existence_test
+  - independent.xmlfilecontent_v2
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
@@ -350,33 +350,33 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
 
 ::
 
-   <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
-       <xccdf:check-content>
-           <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION_NUMBER]">
-               <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-               <ae:title>[RECOMMENDATION TITLE]</ae:title>
-               <ae:artifact type="[ARTIFACTTYPE NAME]">
-                   <ae:parameters>
-                       <ae:parameter dt="string" name="base_path">[base_path.value]</ae:parameter>
-                       <ae:parameter dt="string" name="path">[path.value]</ae:parameter>
-                       <ae:parameter dt="string" name="concat_path">[concat_path.value]</ae:parameter>
-                       <ae:parameter dt="string" name="filename">[filename.value]</ae:parameter>
-                       <ae:parameter dt="string" name="recurse">[recurse.value]</ae:parameter>
-                       <ae:parameter dt="binary" name="max_depth">[max_depth.value]</ae:parameter>
-                       <ae:parameter dt="string" name="file_system">[file_system.value]</ae:parameter>
-                       <ae:parameter dt="string" name="xpath">[xpath.value]</ae:parameter>
-                       <ae:parameter dt="string" name="check_existence">[check_existence.value]</ae:parameter>
-                       <ae:parameter dt="string" name="check">[check.value]</ae:parameter>
-                   </ae:parameters>
-               </ae:artifact>
-               <ae:test type="[TESTTYPE NAME]">
-                   <ae:parameters>
-                       <ae:parameter dt="string" name="value">[value.value]</ae:parameter>
-                   </ae:parameters>
-               </ae:test>
-           </ae:artifact_expression>
-       </xccdf:check-content>
-   </xccdf:check>
+  <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
+    <xccdf:check-content>
+      <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION_NUMBER]">
+        <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
+        <ae:title>[RECOMMENDATION TITLE]</ae:title>
+        <ae:artifact type="[ARTIFACTTYPE NAME]">
+          <ae:parameters>
+            <ae:parameter dt="string" name="base_path">[base_path.value]</ae:parameter>
+            <ae:parameter dt="string" name="path">[path.value]</ae:parameter>
+            <ae:parameter dt="string" name="concat_path">[concat_path.value]</ae:parameter>
+            <ae:parameter dt="string" name="filename">[filename.value]</ae:parameter>
+            <ae:parameter dt="string" name="recurse">[recurse.value]</ae:parameter>
+            <ae:parameter dt="binary" name="max_depth">[max_depth.value]</ae:parameter>
+            <ae:parameter dt="string" name="file_system">[file_system.value]</ae:parameter>
+            <ae:parameter dt="string" name="xpath">[xpath.value]</ae:parameter>
+            <ae:parameter dt="string" name="check_existence">[check_existence.value]</ae:parameter>
+            <ae:parameter dt="string" name="check">[check.value]</ae:parameter>
+          </ae:parameters>
+        </ae:artifact>
+        <ae:test type="[TESTTYPE NAME]">
+          <ae:parameters>
+            <ae:parameter dt="string" name="value">[value.value]</ae:parameter>
+          </ae:parameters>
+        </ae:test>
+      </ae:artifact_expression>
+    </xccdf:check-content>
+  </xccdf:check>
 
 SCAP
 ^^^^
@@ -389,14 +389,14 @@ looks like this.
 
 ::
 
-   <check system='http://oval.mitre.org/XMLSchema/oval-definitions-5'>
-       <check-export 
-            export-name='oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]' 
-            value-id='xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var'/>
-       <check-content-ref 
-           href='[BENCHMARK NAME]' 
-           name='oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]'/>
-   </check>
+  <check system='http://oval.mitre.org/XMLSchema/oval-definitions-5'>
+    <check-export 
+      export-name='oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]' 
+      value-id='xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var'/>
+    <check-content-ref 
+      href='[BENCHMARK NAME]' 
+      name='oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]'/>
+  </check>
 
 OVAL
 ''''
@@ -405,220 +405,220 @@ Test
 
 ::
 
-   <xmlfilecontent_test 
-       xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]' 
-       id='oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]'
-       check_existence='[check_existence.value]' 
-       check='[check.value]' 
-       comment='[RECOMMENDATION TITLE]'
-       version='[version.value]'>
-       <object object_ref='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'/>
-   </xmlfilecontent_test>
+  <xmlfilecontent_test 
+    xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]' 
+    id='oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]'
+    check_existence='[check_existence.value]' 
+    check='[check.value]' 
+    comment='[RECOMMENDATION TITLE]'
+    version='[version.value]'>
+    <object object_ref='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'/>
+  </xmlfilecontent_test>
 
 Object
 
 ::
 
-   <xmlfilecontent_object
-       xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]' 
-       id='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'
-       comment='[RECOMMENDATION TITLE]'
-       version='[version.value]'>
-       <behaviors
-           recurse_direction='[recurse_direction.value]'/>
-           recurse_file_system='[recurse_file_system.value]'
-           max_depth='[max_depth.value]'
-       <path var_ref='oval:org.cisecurity.benchmarks:var:[ID]'/>
-       <filename xsi:nil='[filename.value]'/>
-       <xpath/>
-   </xmlfilecontent_object>
+  <xmlfilecontent_object
+    xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]' 
+    id='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'
+    comment='[RECOMMENDATION TITLE]'
+    version='[version.value]'>
+    <behaviors
+      recurse_direction='[recurse_direction.value]'/>
+      recurse_file_system='[recurse_file_system.value]'
+      max_depth='[max_depth.value]'
+    <path var_ref='oval:org.cisecurity.benchmarks:var:[ID]'/>
+    <filename xsi:nil='[filename.value]'/>
+    <xpath/>
+  </xmlfilecontent_object>
 
 State
 
 ::
 
-   n/a
+  N/A
 
 YAML
 ^^^^
 
 ::
 
-   - artifact-expression:
-       artifact-unique-id: [ARTIFACT-OVAL-ID]
-       artifact-title: [RECOMMENDATION TITLE]
-       artifact:
-         type: [ARTIFACTTYPE NAME]
-         parameters:
-         - parameter: 
-              name: base_path
-              type: string
-              value: [base_path.value]
-         - parameter: 
-              name: path
-              type: string
-              value: [path.value]
-         - parameter: 
-              name: concat_path
-              type: string
-              value: concat_path.value]
-         - parameter: 
-              name: filename
-              type: string
-              value: [filename.value]
-         - parameter: 
-              name: recurse
-              type: string
-              value: [recurse.value]
-         - parameter: 
-              name: max_depth
-              type: binary
-              value: [max_depth.value]
-         - parameter: 
-              name: file_system
-              type: string
-              value: file_system.value]
-         - parameter: 
-              name: xpath
-              type: string
-              value: [xpath.value]
-         - parameter: 
-              name: check_existence
-              type: string
-              value: [check_existence.value]
-         - parameter: 
-              name: check
-              type: string
-              value: [check.value]
-       test:
-         type: [TESTTYPE NAME]
-         parameters:   
-         - parameter: 
-              name: value
-              type: string
-              value: [value.value]
+  artifact-expression:
+    artifact-unique-id: [ARTIFACT-OVAL-ID]
+    artifact-title: [RECOMMENDATION TITLE]
+    artifact:
+      type: [ARTIFACTTYPE NAME]
+      parameters:
+      - parameter: 
+          name: base_path
+          type: string
+          value: [base_path.value]
+      - parameter: 
+          name: path
+          type: string
+          value: [path.value]
+      - parameter: 
+          name: concat_path
+          type: string
+          value: concat_path.value]
+      - parameter: 
+          name: filename
+          type: string
+          value: [filename.value]
+      - parameter: 
+          name: recurse
+          type: string
+          value: [recurse.value]
+      - parameter: 
+          name: max_depth
+          type: binary
+          value: [max_depth.value]
+      - parameter: 
+          name: file_system
+          type: string
+          value: file_system.value]
+      - parameter: 
+          name: xpath
+          type: string
+          value: [xpath.value]
+      - parameter: 
+          name: check_existence
+          type: string
+          value: [check_existence.value]
+      - parameter: 
+          name: check
+          type: string
+          value: [check.value]
+    test:
+      type: [TESTTYPE NAME]
+      parameters:   
+      - parameter: 
+          name: value
+          type: string
+          value: [value.value]
 
 JSON
 ^^^^
 
 ::
 
-   {
-       "artifact-expression": {
-         "artifact-unique-id": [
-           "ARTIFACT-OVAL-ID"
-         ],
-         "artifact-title": [
-           "RECOMMENDATION TITLE"
-         ],
-         "artifact": {
-           "type": [
-             "ARTIFACTTYPE NAME"
-           ],
-           "parameters": [
-             {
-               "parameter": {
-                 "name": "base_path",
-                 "type": "string",
-                 "value": [
-                   "base_path.value"
-                 ]
-               }
-             },
-             {
-               "parameter": {
-                 "name": "path",
-                 "type": "string",
-                 "value": [
-                   "path.value"
-                 ]
-               }
-             },
-             {
-               "parameter": {
-                 "name": "concat_path",
-                 "type": "string",
-                 "value": "concat_path.value]"
-               }
-             },
-             {
-               "parameter": {
-                 "name": "filename",
-                 "type": "string",
-                 "value": [
-                   "filename.value"
-                 ]
-               }
-             },
-             {
-               "parameter": {
-                 "name": "recurse",
-                 "type": "string",
-                 "value": [
-                   "recurse.value"
-                 ]
-               }
-             },
-             {
-               "parameter": {
-                 "name": "max_depth",
-                 "type": "binary",
-                 "value": [
-                   "max_depth.value"
-                 ]
-               }
-             },
-             {
-               "parameter": {
-                 "name": "file_system",
-                 "type": "string",
-                 "value": "file_system.value]"
-               }
-             },
-             {
-               "parameter": {
-                 "name": "xpath",
-                 "type": "string",
-                 "value": [
-                   "xpath.value"
-                 ]
-               }
-             },
-             {
-               "parameter": {
-                 "name": "check_existence",
-                 "type": "string",
-                 "value": [
-                   "check_existence.value"
-                 ]
-               }
-             },
-             {
-               "parameter": {
-                 "name": "check",
-                 "type": "string",
-                 "value": [
-                   "check.value"
-                 ]
-               }
-             }
-           ]
-         },
-         "test": {
-           "type": [
-             "TESTTYPE NAME"
-           ],
-           "parameters": [
-             {
-               "parameter": {
-                 "name": "value",
-                 "type": "string",
-                 "value": [
-                   "value.value"
-                 ]
-               }
-             }
-           ]
-         }
-       }
-     }
+  {
+    "artifact-expression": {
+      "artifact-unique-id": [
+        "ARTIFACT-OVAL-ID"
+      ],
+      "artifact-title": [
+        "RECOMMENDATION TITLE"
+      ],
+      "artifact": {
+        "type": [
+          "ARTIFACTTYPE NAME"
+        ],
+        "parameters": [
+          {
+            "parameter": {
+              "name": "base_path",
+              "type": "string",
+              "value": [
+                "base_path.value"
+              ]
+            }
+          },
+          {
+            "parameter": {
+              "name": "path",
+              "type": "string",
+              "value": [
+                "path.value"
+              ]
+            }
+          },
+          {
+            "parameter": {
+              "name": "concat_path",
+              "type": "string",
+              "value": "concat_path.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "filename",
+              "type": "string",
+              "value": [
+                "filename.value"
+              ]
+            }
+          },
+          {
+            "parameter": {
+              "name": "recurse",
+              "type": "string",
+              "value": [
+                "recurse.value"
+              ]
+            }
+          },
+          {
+            "parameter": {
+              "name": "max_depth",
+              "type": "binary",
+              "value": [
+                "max_depth.value"
+              ]
+            }
+          },
+          {
+            "parameter": {
+              "name": "file_system",
+              "type": "string",
+              "value": "file_system.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "xpath",
+              "type": "string",
+              "value": [
+                "xpath.value"
+              ]
+            }
+          },
+          {
+            "parameter": {
+              "name": "check_existence",
+              "type": "string",
+              "value": [
+                "check_existence.value"
+              ]
+            }
+          },
+          {
+            "parameter": {
+              "name": "check",
+              "type": "string",
+              "value": [
+                "check.value"
+              ]
+            }
+          }
+        ]
+      },
+      "test": {
+        "type": [
+          "TESTTYPE NAME"
+        ],
+        "parameters": [
+          {
+            "parameter": {
+              "name": "value",
+              "type": "string",
+              "value": [
+                "value.value"
+              ]
+            }
+          }
+        ]
+      }
+    }
+  }

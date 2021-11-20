@@ -14,7 +14,6 @@ for more information. The required object element references a
 plist511_object and the optional plist511_state element specifies the
 data to check.
 
-
 Technical Details
 -----------------
 
@@ -173,8 +172,7 @@ SCAP
 XCCDF
 '''''
 
-For ``macos.plist511_v1`` artifacts, the xccdf:check looks like this.
-There is no Value in the xccdf for this Artifact.
+For ``macos.plist511_v1`` artifacts, the xccdf:check looks like this. There is no Value in the xccdf for this Artifact.
 
 ::
 
@@ -226,7 +224,7 @@ YAML
 
 ::
 
-   - artifact-expression:
+  - artifact-expression:
        artifact-unique-id: [ARTIFACT-OVAL-ID]
        artifact-title: [RECOMMENDATION TITLE]
        artifact:

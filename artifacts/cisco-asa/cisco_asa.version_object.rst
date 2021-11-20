@@ -20,13 +20,14 @@ Artifact Parameters
 ==== ==== ===========
 Name Type Description
 ==== ==== ===========
+N/A
 ==== ==== ===========
 
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  cisco_asa.major_version
--  cisco_asa.major_minor_version
+  - cisco_asa.major_version
+  - cisco_asa.major_minor_version
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
@@ -174,7 +175,7 @@ YAML
 
 ::
 
-   - artifact-expression:
+  - artifact-expression:
        artifact-unique-id: [ARTIFACT-OVAL-ID]
        artifact-title: [RECOMMENDATION TITLE]
        artifact:

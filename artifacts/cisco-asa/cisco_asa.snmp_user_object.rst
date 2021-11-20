@@ -23,7 +23,7 @@ operator String Comparison Operator.
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  cisco_asa.snmp_user_auth_priv
+  - cisco_asa.snmp_user_auth_priv
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
@@ -140,7 +140,7 @@ YAML
 
 ::
 
-   - artifact-expression:
+  - artifact-expression:
        artifact-unique-id: [ARTIFACT-OVAL-ID]
        artifact-title: [RECOMMENDATION TITLE]
        artifact:

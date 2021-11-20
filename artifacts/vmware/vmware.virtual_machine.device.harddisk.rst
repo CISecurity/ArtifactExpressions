@@ -12,8 +12,8 @@ Technical Details
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
-Human ID:
-  - vmware.virtual_machine.device.harddisk
+vmware.virtual_machine.device.harddisk
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 +-------------------------------------+-------------+------------------+
 | Name                                | Type        | Description      |
@@ -47,7 +47,7 @@ Human ID:
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  vmware.virtual_machine.hard_disk.persistence
+  - vmware.virtual_machine.hard_disk.persistence
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
@@ -61,7 +61,7 @@ persistence String NA or acceptable persistence constraint values
 
 persistence NOTE: This parameter is governed by a constraint allowing
 only the following values: - NA - Persistent - NonPersistent - Undoable
-- IndependentPersistent - IndependentNonPersistent - Unknown
+  - IndependentPersistent - IndependentNonPersistent - Unknown
 
 disktype NOTE: This parameter is governed by a constraint allowing only
 the following values: - NA - RawVirtual - RawPhysical - Flat - Unknown
@@ -116,8 +116,7 @@ SCAP
 XCCDF
 '''''
 
-For ``macos.gatekeeper_v1`` artifacts, the xccdf:check looks like this.
-There is no Value in the xccdf for this Artifact.
+For ``macos.gatekeeper_v1`` artifacts, the xccdf:check looks like this. There is no Value in the xccdf for this Artifact.
 
 ::
 
@@ -167,7 +166,7 @@ YAML
 
 ::
 
-   - artifact-expression:
+  - artifact-expression:
        artifact-unique-id: [ARTIFACT-OVAL-ID]
        artifact-title: [RECOMMENDATION TITLE]
        artifact:

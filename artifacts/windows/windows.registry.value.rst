@@ -76,15 +76,13 @@ reg_qword_little_endian
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  windows.registry.value
--  existence_test
--  equal
--  equals
+  - windows.registry.value
+  - existence_test
+  - equal
+  - equals
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
-
-.. _windows.registry.value-1:
 
 windows.registry.value
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -304,7 +302,7 @@ YAML
 
 ::
 
-   - artifact-expression:
+  - artifact-expression:
        artifact-unique-id: [ARTIFACT-OVAL-ID]
        artifact-title: [RECOMMENDATION TITLE]
        artifact:

@@ -22,7 +22,7 @@ show_run_command_suffix String Show Run Command Suffix.
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  cisco_asa.line_config_line
+  - cisco_asa.line_config_line
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
@@ -145,7 +145,7 @@ YAML
 
 ::
 
-   - artifact-expression:
+  - artifact-expression:
        artifact-unique-id: [ARTIFACT-OVAL-ID]
        artifact-title: [RECOMMENDATION TITLE]
        artifact:

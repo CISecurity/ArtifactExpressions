@@ -24,7 +24,7 @@ cisco_ios.snmp_user_snmpv3 boolean Collect only SNMPv3 Users?
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  cisco_ios.snmp_user_priv
+  - cisco_ios.snmp_user_priv
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
@@ -142,7 +142,7 @@ YAML
 
 ::
 
-   - artifact-expression:
+  - artifact-expression:
        artifact-unique-id: [ARTIFACT-OVAL-ID]
        artifact-title: [RECOMMENDATION TITLE]
        artifact:

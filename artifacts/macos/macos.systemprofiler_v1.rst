@@ -12,7 +12,6 @@ should refer to the TestType description for more information. The
 required object element references an systemprofiler_object and the
 optional state element specifies the data to check.
 
-
 Technical Details
 -----------------
 
@@ -66,50 +65,50 @@ Artifact Parameters
 
 data_type NOTE: This parameter is governed by a constraint allowing
 only the following values: 
- - SPHardwareDataType
-|- SPNetworkDataType 
- - SPSoftwareDataType
- - SPParallelATADataType
- - SPAudioDataType
- - SPBluetoothDataType
- - SPDiagnosticsDataType
- - SPDiscBurningDataType
- - SPEthernetDataType
- - SPFibreChannelDataType
- - SPFireWireDataType
- - SPDisplaysDataType
- - SPHardwareRAIDDataType
- - SPMemoryDataType
- - SPPCIDataType
- - SPParallelSCSIDataType
- - SPPowerDataType
- - SPPrintersDataType
- - SPSASDataType
- - SPSerialATADataType
- - SPUSBDataType
- - SPAirPortDataType
- - SPFirewallDataType
- - SPNetworkLocationDataType
- - SPModemDataType
- - SPNetworkVolumeDataType
- - SPWWANDataType
- - SPApplicationsDataType
- - SPDeveloperToolsDataType
- - SPExtensionsDataType
- - SPFontsDataType
- - SPFrameworksDataType
- - SPLogsDataType
- - SPManagedClientDataType
- - SPPrefPaneDataType
- - SPStartupItemDataType
- - SPSyncServicesDataType
- - SPUniversalAccessDataType
- - The empty string value is permitted here to allow for empty elements associated with variable references.
+  - SPHardwareDataType
+  - SPNetworkDataType 
+  - SPSoftwareDataType
+  - SPParallelATADataType
+  - SPAudioDataType
+  - SPBluetoothDataType
+  - SPDiagnosticsDataType
+  - SPDiscBurningDataType
+  - SPEthernetDataType
+  - SPFibreChannelDataType
+  - SPFireWireDataType
+  - SPDisplaysDataType
+  - SPHardwareRAIDDataType
+  - SPMemoryDataType
+  - SPPCIDataType
+  - SPParallelSCSIDataType
+  - SPPowerDataType
+  - SPPrintersDataType
+  - SPSASDataType
+  - SPSerialATADataType
+  - SPUSBDataType
+  - SPAirPortDataType
+  - SPFirewallDataType
+  - SPNetworkLocationDataType
+  - SPModemDataType
+  - SPNetworkVolumeDataType
+  - SPWWANDataType
+  - SPApplicationsDataType
+  - SPDeveloperToolsDataType
+  - SPExtensionsDataType
+  - SPFontsDataType
+  - SPFrameworksDataType
+  - SPLogsDataType
+  - SPManagedClientDataType
+  - SPPrefPaneDataType
+  - SPStartupItemDataType
+  - SPSyncServicesDataType
+  - SPUniversalAccessDataType
+  - The empty string value is permitted here to allow for empty elements associated with variable references.
 
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  macos.systemprofiler_v1
+  - macos.systemprofiler_v1
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
@@ -201,8 +200,7 @@ SCAP
 XCCDF
 '''''
 
-For ``macos.systemprofiler_v1`` artifacts, the xccdf:check looks like this.
-There is no Value in the xccdf for this Artifact.
+For ``macos.systemprofiler_v1`` artifacts, the xccdf:check looks like this. There is no Value in the xccdf for this Artifact.
 
 ::
 
@@ -254,7 +252,7 @@ YAML
 
 ::
 
-   - artifact-expression:
+  - artifact-expression:
        artifact-unique-id: [ARTIFACT-OVAL-ID]
        artifact-title: [RECOMMENDATION TITLE]
        artifact:

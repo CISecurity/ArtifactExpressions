@@ -39,7 +39,7 @@ only the following values: - IPV4 - IPV6 - IPV4_V6 - ALL
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  cisco_asa.acl_config_line_with_entity_check
+  - cisco_asa.acl_config_line_with_entity_check
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
@@ -215,7 +215,7 @@ YAML
 
 ::
 
-   - artifact-expression:
+  - artifact-expression:
        artifact-unique-id: [ARTIFACT-OVAL-ID]
        artifact-title: [RECOMMENDATION TITLE]
        artifact:

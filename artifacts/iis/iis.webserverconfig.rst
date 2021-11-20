@@ -38,7 +38,7 @@ Artifact Parameters
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  iis.webserverconfig
+  - iis.webserverconfig
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
@@ -177,7 +177,7 @@ YAML
 
 ::
 
-   - artifact-expression:
+  - artifact-expression:
        artifact-unique-id: [ARTIFACT-OVAL-ID]
        artifact-title: [RECOMMENDATION TITLE]
        artifact:

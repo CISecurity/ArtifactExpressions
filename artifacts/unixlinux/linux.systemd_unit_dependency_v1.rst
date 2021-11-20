@@ -22,8 +22,8 @@ Technical Details
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
-Human ID:
-   -  linux.systemd_unit_dependency_v1
+linux.systemd_unit_dependency_v1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 +-----------+--------+-----------------------------------------------+
 | Name      | Type   | Description                                   |
@@ -39,30 +39,30 @@ Human ID:
 +-----------+--------+-----------------------------------------------+
 
 NOTE: The ``operation`` parameter is governed by a constraint allowing only the following values:
-   -  equals
-   -  not equal
-   -  case insensitive equals
-   -  case insensitive not equal
-   -  greater than
-   -  less than
-   -  greater than or equal
-   -  less than or equal
-   -  bitwise and
-   -  bitwise or
-   -  pattern match
-   -  subset of
-   -  superset of
+  - equals
+  - not equal
+  - case insensitive equals
+  - case insensitive not equal
+  - greater than
+  - less than
+  - greater than or equal
+  - less than or equal
+  - bitwise and
+  - bitwise or
+  - pattern match
+  - subset of
+  - superset of
 
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
-   -  Linux: Systemd Unit Dependency
+  - Linux: Systemd Unit Dependency
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
-Human ID:
-   -  linux.systemd_unit_dependency_v1
+linux.systemd_unit_dependency_v1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 +----------------------+--------+-----------------------------+
 | Name                 | Type   | Description                 |
@@ -92,8 +92,8 @@ Human ID:
 +----------------------+--------+-----------------------------+
 
 NOTE: The ``unit_operation`` and ``dependency_operation`` parameters are governed by a constraint allowing only the following values:
-   -  equals
-   -  not equal
+  - equals
+  - not equal
 
 Generated Content
 ~~~~~~~~~~~~~~~~~
@@ -105,31 +105,31 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
 
 ::
 
-   <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
-     <xccdf:check-content>
-       <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
-         <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-         <ae:title>[RECOMMENDATION-TITLE]</ae:title>
-         <ae:artifact type="[ARTIFACT-TYPE-NAME]">
-           <ae:parameters>
-             <ae:parameter dt="string" name="unit">[unit.value]</ae:parameter>
-             <ae:parameter dt="string" name="operation">[operation.value]</ae:parameter>
-           </ae:parameters>
-         </ae:artifact>
-         <ae:test type="[TEST-TYPE-NAME]">
-           <ae:parameters>
-             <ae:parameter dt="string" name="unit">[unit.value]</ae:parameter>
-             <ae:parameter dt="string" name="unit_operation">[unit_operation.value]</ae:parameter>
-             <ae:parameter dt="string" name="dependency">[dependency.value]</ae:parameter>
-             <ae:parameter dt="string" name="dependency_operation">[dependency_operation.value]</ae:parameter>
-           </ae:parameters>
-         </ae:test>
-         <ae:profiles>
-           <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1 "/>
-         </ae:profiles>          
-       </ae:artifact_expression>
-     </xccdf:check-content>
-   </xccdf:check>
+  <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
+    <xccdf:check-content>
+      <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
+        <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
+        <ae:title>[RECOMMENDATION-TITLE]</ae:title>
+        <ae:artifact type="[ARTIFACT-TYPE-NAME]">
+          <ae:parameters>
+            <ae:parameter dt="string" name="unit">[unit.value]</ae:parameter>
+            <ae:parameter dt="string" name="operation">[operation.value]</ae:parameter>
+          </ae:parameters>
+        </ae:artifact>
+        <ae:test type="[TEST-TYPE-NAME]">
+          <ae:parameters>
+            <ae:parameter dt="string" name="unit">[unit.value]</ae:parameter>
+            <ae:parameter dt="string" name="unit_operation">[unit_operation.value]</ae:parameter>
+            <ae:parameter dt="string" name="dependency">[dependency.value]</ae:parameter>
+            <ae:parameter dt="string" name="dependency_operation">[dependency_operation.value]</ae:parameter>
+          </ae:parameters>
+        </ae:test>
+        <ae:profiles>
+          <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1 "/>
+        </ae:profiles>          
+      </ae:artifact_expression>
+    </xccdf:check-content>
+  </xccdf:check>
 
 SCAP
 ^^^^
@@ -142,11 +142,11 @@ like this. There is no Value element in the XCCDF for this Artifact.
 
 ::
 
-   <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
-     <check-content-ref 
-       href="[BENCHMARK-TITLE]"
-       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
-   </check>
+  <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+    <check-content-ref 
+      href="[BENCHMARK-TITLE]"
+      name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
+  </check>
 
 OVAL
 ''''
@@ -155,152 +155,152 @@ Test
 
 ::
 
-   <systemdunitdependency_test 
-     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux"
-     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
-     check_existence="any_exist"
-         check="all"
-     comment="[RECOMMENDATION-TITLE]"
-         version="1">
-     <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
-     <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
-   </systemdunitdependency_test>
+  <systemdunitdependency_test 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
+    check_existence="any_exist"
+        check="all"
+    comment="[RECOMMENDATION-TITLE]"
+        version="1">
+    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+    <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
+  </systemdunitdependency_test>
 
 Object
 
 ::
 
-   <systemdunitdependency_object
-     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux"
-     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
-     comment="[RECOMMENDATION-TITLE]"
-     version="1">
-     <unit
-       operation="[operation.value]">
-       [unit.value]
-     </unit>
-   </systemdunitdependency_object>
+  <systemdunitdependency_object
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
+    comment="[RECOMMENDATION-TITLE]"
+    version="1">
+    <unit
+      operation="[operation.value]">
+      [unit.value]
+    </unit>
+  </systemdunitdependency_object>
 
 State
 
 ::
 
-   <systemdunitdependency_state
-     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux"
-     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
-     comment="[RECOMMENDATION-TITLE]"
-     version="1">
-     <unit 
-       datatype="string" 
-       operation="[operation.value]">
-       [unit.value]
-     </unit>
-     <dependency 
-       entity_check="at least one" 
-       operation="[operation.value]">
-       [dependency.value]
-     </dependency>    
-   </systemdunitdependency_state>
+  <systemdunitdependency_state
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
+    comment="[RECOMMENDATION-TITLE]"
+    version="1">
+    <unit 
+      datatype="string" 
+      operation="[operation.value]">
+      [unit.value]
+    </unit>
+    <dependency 
+      entity_check="at least one" 
+      operation="[operation.value]">
+      [dependency.value]
+    </dependency>    
+  </systemdunitdependency_state>
 
 YAML
 ^^^^
 
 ::
 
-   artifact-expression:
-     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
-     artifact-title: "[RECOMMENDATION-TITLE]"
-     artifact:
-       type: "[ARTIFACT-TYPE-NAME]"
-       parameters:
-         - parameter: 
-             name: "unit"
-             dt: "string"
-             value: "[unit.value]"
-         - parameter: 
-             name: "operation"
-             dt: "string"
-             value: "[operation.value]"
-     test:
-       type: "[TEST-TYPE-NAME]"
-       parameters:
-         - parameter:
-             name: "dependency_operation"
-             dt: "string"
-             value: "[dependency_operation.value]"
-         - parameter:
-             name: "unit"
-             dt: "string"
-             value: "[unit.value]"
-         - parameter:
-             name: "unit_operation"
-             dt: "string"
-             value: "[unit_operation.value]"
-         - parameter:
-             name: "dependency"
-             dt: "string"
-             value: "[dependency.value]"                              
+  artifact-expression:
+    artifact-unique-id: "[ARTIFACT-OVAL-ID]"
+    artifact-title: "[RECOMMENDATION-TITLE]"
+    artifact:
+      type: "[ARTIFACT-TYPE-NAME]"
+      parameters:
+        - parameter: 
+            name: "unit"
+            dt: "string"
+            value: "[unit.value]"
+        - parameter: 
+            name: "operation"
+            dt: "string"
+            value: "[operation.value]"
+    test:
+      type: "[TEST-TYPE-NAME]"
+      parameters:
+        - parameter:
+            name: "dependency_operation"
+            dt: "string"
+            value: "[dependency_operation.value]"
+        - parameter:
+            name: "unit"
+            dt: "string"
+            value: "[unit.value]"
+        - parameter:
+            name: "unit_operation"
+            dt: "string"
+            value: "[unit_operation.value]"
+        - parameter:
+            name: "dependency"
+            dt: "string"
+            value: "[dependency.value]"                              
 
 JSON
 ^^^^
 
 ::
 
-   {
-     "artifact-expression": {
-       "artifact-unique-id":"[ARTIFACT-OVAL-ID]",
-       "artifact-title": "[RECOMMENDATION-TITLE]",
-       "artifact": {
-         "type": "linux.systemd_unit_dependency_v1",
-         "parameters": [
-           {
-             "parameter": {
-               "name": "unit",
-               "type": "string",
-               "value": "[unit.value]"
-             }
-           },
-           {
-             "parameter": {
-               "name": "operation",
-               "type": "string",
-               "value": "[operation.value]"
-             }
-           }
-         ]
-       },
-       "test": {
-         "type": "[TEST-TYPE-NAME]",
-         "parameters": [
-           {
-             "parameter": {
-               "name": "dependency_operation",
-               "type": "string",
-               "value": "[dependency_operation.value]"
-             }
-           },
-           {
-             "parameter": {
-               "name": "unit",
-               "type": "string",
-               "value": "[unit.value]"
-             }
-           },
-           {
-             "parameter": {
-               "name": "unit_operation",
-               "type": "string",
-               "value": "[unit_operation.value]"
-             }
-           },
-           {
-             "parameter": {
-               "name": "dependency",
-               "type": "string",
-               "value": "[dependency.value]"
-             }
-           }
-         ]
-       }
-     }
-   }
+  {
+    "artifact-expression": {
+      "artifact-unique-id":"[ARTIFACT-OVAL-ID]",
+      "artifact-title": "[RECOMMENDATION-TITLE]",
+      "artifact": {
+        "type": "linux.systemd_unit_dependency_v1",
+        "parameters": [
+          {
+            "parameter": {
+              "name": "unit",
+              "type": "string",
+              "value": "[unit.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "operation",
+              "type": "string",
+              "value": "[operation.value]"
+            }
+          }
+        ]
+      },
+      "test": {
+        "type": "[TEST-TYPE-NAME]",
+        "parameters": [
+          {
+            "parameter": {
+              "name": "dependency_operation",
+              "type": "string",
+              "value": "[dependency_operation.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "unit",
+              "type": "string",
+              "value": "[unit.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "unit_operation",
+              "type": "string",
+              "value": "[unit_operation.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "dependency",
+              "type": "string",
+              "value": "[dependency.value]"
+            }
+          }
+        ]
+      }
+    }
+  }

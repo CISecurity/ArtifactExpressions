@@ -12,8 +12,8 @@ Technical Details
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
-Human ID:
-  - vmware.vds_portgroup_v2
+vmware.vds_portgroup_v2
+^^^^^^^^^^^^^^^^^^^^^^^
 
 +--------------------------+--------+-----------------------------+
 | Name                     | Type   | Description                 |
@@ -35,9 +35,9 @@ Human ID:
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  vmware:vds_portgroup_collector_ip_address
--  vmware:vds_portgroup_collector_port
--  vmware:vds_portgroup_override_port_policies
+  - vmware:vds_portgroup_collector_ip_address
+  - vmware:vds_portgroup_collector_port
+  - vmware:vds_portgroup_override_port_policies
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
@@ -165,7 +165,6 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
 
 
 
-
          <xccdf:complex-check operator="AND">
            <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
              <xccdf:check-content>
@@ -200,8 +199,7 @@ SCAP
 XCCDF
 '''''
 
-For ``macos.gatekeeper_v1`` artifacts, the xccdf:check looks like this.
-There is no Value in the xccdf for this Artifact.
+For ``macos.gatekeeper_v1`` artifacts, the xccdf:check looks like this. There is no Value in the xccdf for this Artifact.
 
 ::
 
@@ -251,7 +249,7 @@ YAML
 
 ::
 
-   - artifact-expression:
+  - artifact-expression:
        artifact-unique-id: [ARTIFACT-OVAL-ID]
        artifact-title: [RECOMMENDATION TITLE]
        artifact:

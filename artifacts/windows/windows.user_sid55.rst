@@ -33,13 +33,13 @@ state         String SID State to test
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  equals
--  equal
--  not equal
--  less than
--  less than or equal
--  greater than
--  greater than or equal
+  - equals
+  - equal
+  - not equal
+  - less than
+  - less than or equal
+  - greater than
+  - greater than or equal
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
@@ -257,7 +257,7 @@ YAML
 
 ::
 
-   - artifact-expression:
+  - artifact-expression:
        artifact-unique-id: [ARTIFACT-OVAL-ID]
        artifact-title: [RECOMMENDATION TITLE]
        artifact:

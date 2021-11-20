@@ -123,21 +123,21 @@ the following values:
 
 prepend_type NOTE: This parameter is governed by a constraint allowing
 only the following values:
- - String
- - SQL
+  - String
+  - SQL
 
 append_type NOTE: This parameter is governed by a constraint allowing
 only the following values:
- - String
- - SQL
+  - String
+  - SQL
 
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  independent.sql57_v1
--  existence_test
--  SQL-Unix_File_or_Directory_Permissions_v1
--  SQL-Unix_File_or_Directory_Permissions_v2
+  - independent.sql57_v1
+  - existence_test
+  - SQL-Unix_File_or_Directory_Permissions_v1
+  - SQL-Unix_File_or_Directory_Permissions_v2
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
@@ -206,10 +206,10 @@ allowing only the following values:
 
 check NOTE: This parameter is governed by a constraint allowing only the
 following values:
- - all
- - at least one
- - none satisfy
- - only one
+  - all
+  - at least one
+  - none satisfy
+  - only one
 
 existence_test
 ^^^^^^^^^^^^^^
@@ -555,74 +555,74 @@ YAML
 
 ::
 
-  - artifact-expression:
+  artifact-expression:
     artifact-unique-id: [ARTIFACT-OVAL-ID]
     artifact-title: [RECOMMENDATION TITLE]
     artifact:
       type: [ARTIFACTTYPE NAME]
       parameters:
         - parameter: 
-          name: engine
-          type: string
-          value: [engine.value]
+            name: engine
+            type: string
+            value: [engine.value]
         - parameter: 
-          name: sql
-          type: string
-          value: [sql.value]
+            name: sql
+            type: string
+            value: [sql.value]
         - parameter: 
-          name: version
-          type: string
-          value: [version.value]
+            name: version
+            type: string
+            value: [version.value]
         - parameter: 
-          name: prepend_str
-          type: string
-          value: prepend_str.value]
+            name: prepend_str
+            type: string
+            value: prepend_str.value]
         - parameter: 
-          name: append_str
-          type: string
-          value: [append_str.value]
+            name: append_str
+            type: string
+            value: [append_str.value]
         - parameter: 
-          name: prepend_type
-          type: string
-          value: [prepend_type.value]
+            name: prepend_type
+            type: string
+            value: [prepend_type.value]
         - parameter: 
-          name: append_type
-          type: string
-          value: append_type.value]
+            name: append_type
+            type: string
+            value: append_type.value]
     test:
       type: [TESTTYPE NAME]
       parameters:   
         - parameter: 
-          name: check_existence
-          type: string
-          value: [check_existence.value]
+            name: check_existence
+            type: string
+            value: [check_existence.value]
         - parameter: 
-          name: check
-          type: string
-          value: [check.value]
+            name: check
+            type: string
+            value: [check.value]
         - parameter: 
-          name: value
-          type: string
-          value: value.value]
+            name: value
+            type: string
+            value: value.value]
         - parameter: 
-          name: value_data_type
-          type: string
-          value: [value_data_type.value]
+            name: value_data_type
+            type: string
+            value: [value_data_type.value]
         - parameter: 
-          name: field_name
-          type: string
-          value: [field_name.value]
+            name: field_name
+            type: string
+            value: [field_name.value]
         - parameter: 
-          name: field_operation
-          type: string
-          value: field_operation.value]
+            name: field_operation
+            type: string
+            value: field_operation.value]
 
 JSON
 ^^^^
 
 ::
 
-   {
+    {
     "artifact-expression": {
       "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
       "artifact-title": "[RECOMMENDATION TITLE]",
@@ -681,8 +681,8 @@ JSON
         ]
       },
       "test": {
-        "type": "[TESTTYPE NAME],"
-                "parameters": [
+        "type": "[TESTTYPE NAME]",
+        "parameters": [
           {
             "parameter": {
               "name": "check_existence",
