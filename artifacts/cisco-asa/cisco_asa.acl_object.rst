@@ -45,8 +45,7 @@ Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
 **cisco_asa.acl_config_line_with_entity_check**
-.. cisco_asa.acl_config_line_with_entity_check
-.. ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 
 +-----------------------------+-------------------------+--------------+
 | Name                        | Type/Constraint         | Description  |
