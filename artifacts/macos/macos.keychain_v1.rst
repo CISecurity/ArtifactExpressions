@@ -23,7 +23,7 @@ Artifact Parameters
 | filepath                            | String      | Specifies the    |
 |                                     |             | filepath of the  |
 |                                     |             | keychain to be   |
-|                                     |             | queried. The    |
+|                                     |             | queried. The     |
 |                                     |             | default keychain |
 |                                     |             | for a user is    |
 |                                     |             | normally located |

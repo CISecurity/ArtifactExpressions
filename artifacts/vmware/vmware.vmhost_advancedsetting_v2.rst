@@ -61,7 +61,7 @@ Test Type Parameters
 +-------------------------------------+-------------+------------------+
 | datatype                            | String      | datatype         |
 +-------------------------------------+-------------+------------------+
-| advanced_setting_value              | Integer     | The             |
+| advanced_setting_value              | Integer     | The              |
 |                                     |             | advanc           |
 |                                     |             | ed_setting_value |
 |                                     |             | element details  |
