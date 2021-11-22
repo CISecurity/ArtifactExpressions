@@ -10,7 +10,7 @@ reading information about system inventory data on MacOSX. It extends
 the standard TestType as defined in the oval-definitions-schema and one
 should refer to the TestType description for more information. The
 object element references an systemprofiler_object and the
-optional state element specifies the data to check.
+state element specifies the data to check.
 
 Technical Details
 -----------------
