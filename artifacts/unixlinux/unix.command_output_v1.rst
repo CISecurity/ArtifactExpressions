@@ -7,10 +7,10 @@ Description
 The Unix: Command Output test executes a shell command and evaluates the
 lines of output.
 
-The required shellcommand_object element is used to define the shell
+The  shellcommand_object element is used to define the shell
 command being run.
 
-The optional shellcommand_state element specifies the output value to
+The  shellcommand_state element specifies the output value to
 check.
 
 Technical Details

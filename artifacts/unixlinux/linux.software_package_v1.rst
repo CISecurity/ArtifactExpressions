@@ -7,11 +7,11 @@ Description
 The linux.software_package_v1 test is used to check the RPM header
 information for a given RPM package.
 
-The required rpminfo_object element is used to define the object to be
+The  rpminfo_object element is used to define the object to be
 evaluated. An rpm info object consists of a single name entity that
 identifies the package being checked.
 
-The optional rpminfo_state element defines the different information
+The  rpminfo_state element defines the different information
 that can be used to evaluate the specified rpm. This includes the
 architecture, epoch number, and version numbers. Most of this
 information can be obtained through the rpm function.

@@ -7,7 +7,7 @@ Description
 The Unix: Individual File test is used to check the contents of a text
 file (aka a configuration file) by looking at individual blocks of text.
 
-The required file_object element is used to define the specific block(s)
+The  file_object element is used to define the specific block(s)
 of text of a file(s) to be evaluated. The file_object will only collect
 regular files on UNIX systems.
 
@@ -15,7 +15,7 @@ The file to be evaluated may be identified with either a complete
 filepath or a path and filename. Only one of these options may be
 selected.
 
-The optional file_state element contains entities that are used to check
+The  file_state element contains entities that are used to check
 the file path and name, as well as the text block in question and the
 value of the subexpressions.
 

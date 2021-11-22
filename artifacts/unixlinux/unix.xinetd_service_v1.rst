@@ -10,12 +10,12 @@ are used to check the contents of the inetd configuration file and files
 within the /etc/xinetd.d directory, by looking at individual blocks of
 text within the files.
 
-The required inetd_object element is used to define the specific
+The  inetd_object element is used to define the specific
 protocol-service to be evaluated. An inetd object consists of a protocol
 entity and a service_name entity that identifies the specific service to
 be tested.
 
-The required textfilecontent54_object elements are used to define the
+The  textfilecontent54_object elements are used to define the
 specific block(s) of text of a file(s) to be evaluated. The
 textfilecontent54_object will only collect regular files on UNIX
 systems.
@@ -24,7 +24,7 @@ The set of files to be evaluated may be identified with either a
 complete filepath or a path and filename. Only one of these options may
 be selected.
 
-The optional inetd_state element defines the different information
+The  inetd_state element defines the different information
 associated with a specific Internet service.
 
 Technical Details
