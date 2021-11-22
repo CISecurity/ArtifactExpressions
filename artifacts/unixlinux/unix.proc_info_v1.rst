@@ -6,9 +6,9 @@ Description
 
 The Unix: Process Information test is used to check information found in the UNIX processes. It is equivalent to parsing the output of the ps command. 
 
-The  process58_object element is used to define the specific process(es) to be evaluated. A process58_object defines the command line used to start the process(es) and pid.
+The process58_object element is used to define the specific process(es) to be evaluated. A process58_object defines the command line used to start the process(es) and pid.
 
-The  process58_state element defines the different metadata associate with the UNIX processes.
+The process58_state element defines the different metadata associate with the UNIX processes.
 
 Technical Details
 -----------------

@@ -74,7 +74,7 @@ cisco_ios.interface_proxy_arp
 |                                     |             | proxy_arp        |
 |                                     |             | command is       |
 |                                     |             | enabled on the   |
-|                                     |             | interface. The   |
+|                                     |             | interface. The  |
 |                                     |             | default is true. |
 +-------------------------------------+-------------+------------------+
 
