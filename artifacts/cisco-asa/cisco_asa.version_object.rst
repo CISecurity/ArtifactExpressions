@@ -1,5 +1,5 @@
 Cisco ASA: Version Object
-========================
+=========================
 
 Description
 -----------
@@ -40,7 +40,7 @@ Test Type Parameters
 Name          Type   Description
 ============= ====== ====================
 operation     string Comparison operator.
-major_version string Major Version.
+major_version string Major version.
 ============= ====== ====================
 
 NOTE: The ``operation`` parameter is governed by a constraint allowing only the following values:
