@@ -9,8 +9,8 @@ database. It is often the case that applications store configuration
 settings in a database as opposed to a file. This test has been designed
 to enable those settings to be tested. It extends the standard TestType
 as defined in the oval-definitions-schema and one should refer to the
-TestType description for more information. The required object element
-references a wmi_object and the optional state element specifies the
+TestType description for more information. The object element
+references a wmi_object and The state element specifies the
 metadata to check.
 
 Technical Details
