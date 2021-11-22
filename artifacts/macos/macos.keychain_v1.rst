@@ -9,8 +9,7 @@ output from the “security show-keychain-info >keychain<” command, for
 reading information about keychain settings on MacOSX. It extends the
 standard TestType as defined in the oval-definitions-schema and one
 should refer to the TestType description for more information. The
-required object element references an keychain_object and the optional
-state element specifies the data to check.
+object element references an keychain_object and the state element specifies the data to check.
 
 Technical Details
 -----------------

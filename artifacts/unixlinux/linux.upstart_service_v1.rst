@@ -7,10 +7,10 @@ Description
 The Linux: Upstart Service test executes a shell command and evaluates
 the lines of output to determine if a service is enabled.
 
-The required shellcommand_object element is used to define the shell
+The shellcommand_object element is used to define the shell
 command being run.
 
-The optional shellcommand_state element specifies the output value to
+The shellcommand_state element specifies the output value to
 check.
 
 Technical Details

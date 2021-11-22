@@ -8,11 +8,11 @@ The Unix: Shadow Parameter test is used to check information from the
 /etc/shadow file for a specific user. This file contains a user’s
 password, but also their password aging and lockout information.
 
-The required shadow_object element is used to define the shadow file to
+The shadow_object element is used to define the shadow file to
 be evaluated. A shadow object consists of a single user entity that
 identifies the username associted with the shadow file.
 
-The optional shadows_state element defines the different information
+The shadows_state element defines the different information
 associated with the system shadow file.
 
 Technical Details

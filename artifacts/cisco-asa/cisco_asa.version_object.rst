@@ -8,8 +8,7 @@ The Cisco ASA: Version Object test is used to check the version of the PIX
 operating system. It is based off of the SHOW VERSION command. It
 extends the standard TestType as defined in the oval-definitions-schema
 and one should refer to the TestType description for more information.
-The required object element references a version_object and the optional
-state element specifies the data to check.
+The object element references a version_object and the state element specifies the data to check.
 
 Technical Details
 -----------------

@@ -8,7 +8,7 @@ The Unix: Individual File Tomcat V1 test is used to check metadata
 associated with UNIX files, of the sort returned by either an ls
 command, stat command or stat() system call.
 
-The required file_object element is used to define either the path and
+The file_object element is used to define either the path and
 filename or complete filepath of the specific file(s) to be evaluated.
 The set of files to be evaluated may be identified with either a
 complete filepath or a path and filename. Only one of these options may
@@ -20,7 +20,7 @@ element, only to the 'path' and 'filename' elements. This is because the
 'filepath' element represents an absolute path to a particular file and
 it is not possible to recurse over a file.
 
-The optional file_state element defines the different metadata associate
+The file_state element defines the different metadata associate
 with a file, including the path, filename, owner, size, last modified
 time, version, etc.
 

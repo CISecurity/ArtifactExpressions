@@ -7,8 +7,8 @@ Description
 The registry test is used to check metadata associated with Windows
 registry key. It extends the standard TestType as defined in the
 oval-definitions-schema and one should refer to the TestType description
-for more information. The required object element references a
-registry_object and the optional state element specifies the registry
+for more information. The object element references a
+registry_object and the state element specifies the registry
 data to check.
 
 Technical Details

@@ -9,8 +9,8 @@ plist-style XML output from the “security authorizationdb read >right-name<”
 command, for reading information about rights authorizations on MacOSX.
 It extends the standard TestType as defined in the oval-definitions-schema
 and one should refer to the TestType description for more information. The
-required object element references an authorizationdb_object and the optional
-state element specifies the data to check.
+object element references an authorizationdb_object and the state 
+element specifies the data to check.
 
 Technical Details
 -----------------
