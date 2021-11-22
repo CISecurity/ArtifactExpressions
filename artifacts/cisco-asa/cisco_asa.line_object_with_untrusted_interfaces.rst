@@ -18,7 +18,7 @@ Artifact Parameters
 ================ ====== ==========================
 Name             Type   Description
 ================ ====== ==========================
-show_run_command string Show Run Command Fragment.
+show_run_command string Show Run command fragment.
 ================ ====== ==========================
 
 Supported Test Types
@@ -66,8 +66,8 @@ NOTE: The ``check`` parameter is governed by a constraint allowing only the foll
 ============ ====== ==========================
 Name         Type   Description
 ============ ====== ==========================
-regex_prefix string Regular Expression Prefix.
-regex_suffix string Regular Expression Suffix.
+regex_prefix string Regular expression prefix.
+regex_suffix string Regular expression suffix.
 check        string Check enumeration value.
 ============ ====== ==========================
 
