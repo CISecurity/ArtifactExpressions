@@ -7,6 +7,7 @@ Description
 The Cisco ASA: Line Object With Interface Physical Name test is used to check the properties of specific output lines.
 
 Technical Details
+-----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
@@ -17,7 +18,7 @@ Artifact Parameters
 Name                    Type   Description
 ======================= ====== ========================
 show_run_command_prefix string Show Run command prefix.
-show_run_command_suffix string Show Run Command Suffix.
+show_run_command_suffix string Show Run command suffix.
 ======================= ====== ========================
 
 Supported Test Types
