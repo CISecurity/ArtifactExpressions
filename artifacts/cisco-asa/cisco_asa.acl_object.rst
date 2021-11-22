@@ -52,7 +52,6 @@ NOTE: The ``name_operator`` and ``ip_version_operator`` parameters are governed 
 
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
-
   - Cisco ASA: ACL Config Line W/Entity Check
 
 Test Type Parameters
