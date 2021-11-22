@@ -10,7 +10,7 @@ settings in a database as opposed to a file. This test has been designed
 to enable those settings to be tested. It extends the standard TestType
 as defined in the oval-definitions-schema and one should refer to the
 TestType description for more information. The object element
-references a wmi_object and The state element specifies the
+references a wmi_object and the state element specifies the
 metadata to check.
 
 Technical Details

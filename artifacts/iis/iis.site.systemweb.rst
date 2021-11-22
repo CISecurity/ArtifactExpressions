@@ -8,7 +8,7 @@ The systemweb_test is used to determine certain aspects of an IIS Site’s
 configuration. It extends the standard TestType as defined in the
 oval-definitions-schema and one should refer to the TestType description
 for more information. The object element references a
-systemweb_object and The state element specifies the data to
+systemweb_object and the state element specifies the data to
 check.
 
 Technical Details

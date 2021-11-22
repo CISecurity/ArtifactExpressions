@@ -7,7 +7,7 @@ Description
 The wmi57 test is used to check information accessed by WMI. It extends
 the standard TestType as defined in the oval-definitions-schema and one
 should refer to the TestType description for more information. The
-required object element references a wmi57_object and The state
+required object element references a wmi57_object and the state
 element specifies the metadata to check.
 
 Technical Details
