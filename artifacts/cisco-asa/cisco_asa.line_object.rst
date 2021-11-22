@@ -141,6 +141,8 @@ NOTE: The ``check`` parameter is governed by a constraint allowing only the foll
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
+**cisco_asa.line_config_line**
+
 XCCDF+AE
 ^^^^^^^^
 
