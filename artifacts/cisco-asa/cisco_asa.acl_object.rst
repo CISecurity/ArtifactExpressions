@@ -62,10 +62,10 @@ Test Type Parameters
 +------------------------+---------+-----------------------------------------+
 | Name                   | Type    | Description                             |
 +========================+=========+=========================================+
-| operation              | string  | The operation tobe used when performing |
-|                        |         | the comparison between the collected    |
-|                        |         | configuration line and the expected     |
-|                        |         | ``config_line``.                        |
+| operation              | string  | The operation to be used when           |
+|                        |         | performing the comparison between the   |
+|                        |         | collected configuration line and the    |
+|                        |         | expected ``config_line``.               |
 +------------------------+---------+-----------------------------------------+
 | config_line            | string  | The expected value for the ACL          |
 |                        |         | configuration line. This could be       |
