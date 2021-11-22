@@ -19,7 +19,7 @@ Artifact Parameters
 Name     Type   Description
 ======== ====== =====================================
 name     string The SNMP group name. Cannot be blank.
-operator string Comparison Operator.
+operator string Comparison operator.
 ======== ====== =====================================
 
 NOTE: The ``operator`` parameter is governed by a constraint allowing only the following values:
@@ -51,7 +51,7 @@ Test Type Parameters
 ================ ====== =============================================
 Name             Type   Description
 ================ ====== =============================================
-operator         string Comparison Operator.
+operator         string Comparison operator.
 snmpv3_sec_level string The SNMPv3 security configured for the group.
 ================ ====== =============================================
 

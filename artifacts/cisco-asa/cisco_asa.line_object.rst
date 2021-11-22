@@ -41,7 +41,7 @@ Test Type Parameters
 =========== ====== =================================
 Name        Type   Description
 =========== ====== =================================
-operation   string Comparison Operator.
+operation   string Comparison operator.
 config_line string The collected configuration line.
 check       string Check enumeration value.
 =========== ====== =================================
@@ -88,7 +88,7 @@ NOTE: The ``existence_check`` parameter is governed by a constraint allowing onl
 +------------------------+---------+-----------------------------------------+
 | Name                   | Type    | Description                             |
 +========================+=========+=========================================+
-| operator               | string  | Comparison Operator.                    |
+| operator               | string  | Comparison operator.                    |
 +------------------------+---------+-----------------------------------------+
 | expected_value         | string  | Expected value of the password policy   |
 |                        |         | option.                                 |

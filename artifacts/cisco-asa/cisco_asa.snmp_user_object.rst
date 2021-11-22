@@ -19,7 +19,7 @@ Artifact Parameters
 Name     Type   Description
 ======== ====== ====================================
 name     string The SNMP user name. Cannot be blank.
-operator string Comparison Operator.
+operator string Comparison operator.
 ======== ====== ====================================
 
 NOTE: The ``operator`` parameter is governed by a constraint allowing only the following values:

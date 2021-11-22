@@ -19,7 +19,7 @@ Artifact Parameters
 Name     Type   Description
 ======== ====== ====================================================
 host     string The SNMP host address or host name. Cannot be blank.
-operator string Comparison Operator.
+operator string Comparison operator.
 ======== ====== ====================================================
 
 NOTE: The ``operator`` parameter is governed by a constraint allowing only the following values:
@@ -50,7 +50,7 @@ Test Type Parameters
 ============ ====== ====================
 Name         Type   Description
 ============ ====== ====================
-operator     string Comparison Operator.
+operator     string Comparison operator.
 snmp_version string SNMP Version.
 ============ ====== ====================
 

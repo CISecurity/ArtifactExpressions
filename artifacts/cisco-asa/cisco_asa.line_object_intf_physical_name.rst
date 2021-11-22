@@ -33,7 +33,7 @@ Test Type Parameters
 =========== ====== =================================
 Name        Type   Description
 =========== ====== =================================
-operation   string Comparison Operator.
+operation   string Comparison operator.
 config_line string The collected configuration line.
 check       string Check enumeration value.
 =========== ====== =================================

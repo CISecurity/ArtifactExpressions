@@ -39,7 +39,7 @@ Test Type Parameters
 ============= ====== ====================
 Name          Type   Description
 ============= ====== ====================
-operation     string Comparison Operator.
+operation     string Comparison operator.
 major_version string Major Version.
 ============= ====== ====================
 
@@ -68,7 +68,7 @@ NOTE: The ``operation`` parameter is governed by a constraint allowing only the 
 +-------------------------+---------+----------------------------------------+
 | major_release_operation | string  | Comparison operator.                   |
 +-------------------------+---------+----------------------------------------+
-| minor_release_operation | string  | Minor Release comparison operator.     |
+| minor_release_operation | string  | Minor Release Comparison operator.     |
 +-------------------------+---------+----------------------------------------+
 | asa_minor_release       | string  | The asa_minor_release is the dotted    |
 |                         |         | version that starts a version string.  |
