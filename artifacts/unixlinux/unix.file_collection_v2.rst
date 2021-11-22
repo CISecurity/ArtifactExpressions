@@ -185,8 +185,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
   <xccdf:complex-check operator="AND">
     <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
       <xccdf:check-content>
-        <ae:artifact_expression
-            <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
+        <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
           <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
           <ae:title>[RECOMMENDATION-TITLE]</ae:title>
           <ae:artifact type="[ARTIFACT-TYPE-NAME]">
@@ -262,14 +261,13 @@ Object
       recurse_file_system="[recurse_file_system.value]"
       max_depth="[max_depth.value]" />    
     <path>[path.value]</path>
-    <filename 
-      operation="pattern match">
+    <filename operation="pattern match">
       [filename.value]
     </filename>
-    <pattern 
-      operation="pattern match" 
-      datatype="[datatype.value]"
-      [pattern.value] 
+    <pattern
+      operation="pattern match"
+      datatype="[datatype.value]">
+      [pattern.value]
     </pattern>
     <instance 
       datatype="int" 
@@ -295,41 +293,41 @@ YAML
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
-        - parameter: 
-            name: "existence"
-            dt: "string"
-            value: "[existence.value]"
-        - parameter: 
-            name: "path"
-            dt: "string"
-            value: "[path.value]"
-        - parameter: 
-            name: "file_name"
-            dt: "string"
-            value: "[file_name.value]"
-        - parameter: 
-            name: "recurse"
-            dt: "string"
-            value: "[recurse.value]"
-        - parameter: 
-            name: "check"
-            dt: "string"
-            value: "[filesystem.value]"
-        - parameter: 
-            name: "file_system"
-            dt: "string"
-            value: "[file_system.value]"
+        - parameter:
+          name: "existence"
+          dt: "string"
+          value: "[existence.value]"
+        - parameter:
+          name: "path"
+          dt: "string"
+          value: "[path.value]"
+        - parameter:
+          name: "file_name"
+          dt: "string"
+          value: "[file_name.value]"
+        - parameter:
+          name: "recurse"
+          dt: "string"
+          value: "[recurse.value]"
+        - parameter:
+          name: "check"
+          dt: "string"
+          value: "[filesystem.value]"
+        - parameter:
+          name: "file_system"
+          dt: "string"
+          value: "[file_system.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:
-        - parameter: 
-            name: "value"
-            dt: "string"
-            value: "[value.value]"
-        - parameter: 
-            name: "data_type"
-            dt: "string"
-            value: "[data_type.value]"
+        - parameter:
+          name: "value"
+          dt: "string"
+          value: "[value.value]"
+        - parameter:
+          name: "data_type"
+          dt: "string"
+          value: "[data_type.value]"
 
 JSON
 ^^^^
@@ -425,8 +423,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
   <xccdf:complex-check operator="AND">
     <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
       <xccdf:check-content>
-        <ae:artifact_expression
-            <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
+        <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
           <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
           <ae:title>[RECOMMENDATION-TITLE]</ae:title>
           <ae:artifact type="[ARTIFACT-TYPE-NAME]">
@@ -498,11 +495,8 @@ Object
       recurse_direction="down"
       recurse_file_system="[recurse_file_system.value]"
       max_depth="-1" />
-    <path>
-      [path.value]
-    </path>
-    <filename 
-      operation="pattern match">
+    <path>[path.value]</path>
+    <filename operation="pattern match">
       [filename.value]
     </filename>
   </file_object>
@@ -524,30 +518,30 @@ YAML
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
-        - parameter: 
-            name: "existence"
-            dt: "string"
-            value: "[existence.value]"
-        - parameter: 
-            name: "path"
-            dt: "string"
-            value: "[path.value]"
-        - parameter: 
-            name: "file_name"
-            dt: "string"
-            value: "[file_name.value]"
-        - parameter: 
-            name: "recurse"
-            dt: "string"
-            value: "[recurse.value]"
-        - parameter: 
-            name: "check"
-            dt: "string"
-            value: "[filesystem.value]"
-        - parameter: 
-            name: "file_system"
-            dt: "string"
-            value: "[file_system.value]"
+        - parameter:
+          name: "existence"
+          dt: "string"
+          value: "[existence.value]"
+        - parameter:
+          name: "path"
+          dt: "string"
+          value: "[path.value]"
+        - parameter:
+          name: "file_name"
+          dt: "string"
+          value: "[file_name.value]"
+        - parameter:
+          name: "recurse"
+          dt: "string"
+          value: "[recurse.value]"
+        - parameter:
+          name: "check"
+          dt: "string"
+          value: "[filesystem.value]"
+        - parameter:
+          name: "file_system"
+          dt: "string"
+          value: "[file_system.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters: []
@@ -633,8 +627,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
   <xccdf:complex-check operator="AND">
     <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
       <xccdf:check-content>
-        <ae:artifact_expression
-            <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
+        <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
           <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
           <ae:title>[RECOMMENDATION-TITLE]</ae:title>
           <ae:artifact type="[ARTIFACT-TYPE-NAME]">
@@ -719,8 +712,7 @@ Object
       recurse_file_system="[recurse_file_system.value]"
       max_depth="-1" />
     <path>[path.value]</path>
-    <filename 
-      operation="pattern match">
+    <filename operation="pattern match">
       [filename.value]
     </filename>
   </file_object>
@@ -734,60 +726,46 @@ State
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
     comment="[RECOMMENDATION-TITLE]"
     version="1">
-    <group_id
-      datatype="int">
+    <group_id datatype="int">
       [group_id.value]
     </group_id>
-    <user_id
-      datatype="int">
+    <user_id datatype="int">
       [user_id.value]
     </user_id>
-    <suid
-      datatype="boolean">
+    <suid datatype="boolean">
       [suid.value]
     </suid>
-    <sgid
-      datatype="boolean">
+    <sgid datatype="boolean">
       [sgid.value]
     </sgid>
-    <sticky
-      datatype="boolean">
+    <sticky datatype="boolean">
       [sticky.value]
     </sticky>
-    <uread
-      datatype="boolean">
+    <uread datatype="boolean">
       [uread.value]
     </uread>
-    <uwrite
-      datatype="boolean">
+    <uwrite datatype="boolean">
       [uwrite.value]
     </uwrite>
-    <uexec
-      datatype="boolean">
+    <uexec datatype="boolean">
       [uexec.value]
     </uexec>
-    <gread
-      datatype="boolean">
+    <gread datatype="boolean">
       [gread.value]
     </gread>
-    <gwrite
-      datatype="boolean">
+    <gwrite datatype="boolean">
       [gwrite.value]
     </gwrite>
-    <gexec
-      datatype="boolean">
+    <gexec datatype="boolean">
       [gexec.value]
     </gexec>
-    <oread
-      datatype="boolean">
+    <oread datatype="boolean">
       [oread.value]
     </oread>
-    <owrite
-      datatype="boolean">
+    <owrite datatype="boolean">
       [owrite.value]
     </owrite>
-    <oexec
-      datatype="boolean">
+    <oexec datatype="boolean">
       [oexec.value]
     </oexec>
   </file_state>
@@ -803,89 +781,89 @@ YAML
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
-        - parameter: 
-            name: "existence"
-            dt: "string"
-            value: "[existence.value]"
-        - parameter: 
-            name: "path"
-            dt: "string"
-            value: "[path.value]"
-        - parameter: 
-            name: "file_name"
-            dt: "string"
-            value: "[file_name.value]"
-        - parameter: 
-            name: "recurse"
-            dt: "string"
-            value: "[recurse.value]"
-        - parameter: 
-            name: "check"
-            dt: "string"
-            value: "[filesystem.value]"
-        - parameter: 
-            name: "file_system"
-            dt: "string"
-            value: "[file_system.value]"
+        - parameter:
+          name: "existence"
+          dt: "string"
+          value: "[existence.value]"
+        - parameter:
+          name: "path"
+          dt: "string"
+          value: "[path.value]"
+        - parameter:
+          name: "file_name"
+          dt: "string"
+          value: "[file_name.value]"
+        - parameter:
+          name: "recurse"
+          dt: "string"
+          value: "[recurse.value]"
+        - parameter:
+          name: "check"
+          dt: "string"
+          value: "[filesystem.value]"
+        - parameter:
+          name: "file_system"
+          dt: "string"
+          value: "[file_system.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:
-        - parameter: 
-            name: "group_id"
-            dt: "int"
-            value: "[group_id.value]"
-        - parameter: 
-            name: "user_id"
-            dt: "int"
-            value: "[user_id.value]"
-        - parameter: 
-            name: "suid"
-            dt: "boolean"
-            value: "[suid.value]"
-        - parameter: 
-            name: "sgid"
-            dt: "boolean"
-            value: "[sgid.value]"
-        - parameter: 
-            name: "sticky"
-            dt: "boolean"
-            value: "[sticky.value]"
-        - parameter: 
-            name: "uread"
-            dt: "boolean"
-            value: "[uread.value]"
-        - parameter: 
-            name: "uwrite"
-            dt: "boolean"
-            value: "[uwrite.value]"
-        - parameter: 
-            name: "uexec"
-            dt: "boolean"
-            value: "[uexec.value]"
-        - parameter: 
-            name: "gread"
-            dt: "boolean"
-            value: "[gread.value]"
-        - parameter: 
-            name: "gwrite"
-            dt: "boolean"
-            value: "[gwrite.value]"
-        - parameter: 
-            name: "gexec"
-            dt: "boolean"
-            value: "[gexec.value]"
-        - parameter: 
-            name: "oread"
-            dt: "boolean"
-            value: "[oread.value]"
-        - parameter: 
-            name: "owrite"
-            dt: "boolean"
-            value: "[owrite.value]"
-        - parameter: 
-            name: "oexec"
-            dt: "boolean"
-            value: "[oexec.value]"
+        - parameter:
+          name: "group_id"
+          dt: "int"
+          value: "[group_id.value]"
+        - parameter:
+          name: "user_id"
+          dt: "int"
+          value: "[user_id.value]"
+        - parameter:
+          name: "suid"
+          dt: "boolean"
+          value: "[suid.value]"
+        - parameter:
+          name: "sgid"
+          dt: "boolean"
+          value: "[sgid.value]"
+        - parameter:
+          name: "sticky"
+          dt: "boolean"
+          value: "[sticky.value]"
+        - parameter:
+          name: "uread"
+          dt: "boolean"
+          value: "[uread.value]"
+        - parameter:
+          name: "uwrite"
+          dt: "boolean"
+          value: "[uwrite.value]"
+        - parameter:
+          name: "uexec"
+          dt: "boolean"
+          value: "[uexec.value]"
+        - parameter:
+          name: "gread"
+          dt: "boolean"
+          value: "[gread.value]"
+        - parameter:
+          name: "gwrite"
+          dt: "boolean"
+          value: "[gwrite.value]"
+        - parameter:
+          name: "gexec"
+          dt: "boolean"
+          value: "[gexec.value]"
+        - parameter:
+          name: "oread"
+          dt: "boolean"
+          value: "[oread.value]"
+        - parameter:
+          name: "owrite"
+          dt: "boolean"
+          value: "[owrite.value]"
+        - parameter:
+          name: "oexec"
+          dt: "boolean"
+          value: "[oexec.value]"
 
 JSON
 ^^^^
@@ -948,99 +926,99 @@ JSON
         "parameters": [
           {
             "parameter": {
-              "name": "group_id"
-              "type": "int"
+              "name": "group_id",
+              "type": "int",
               "value": "[group_id.value]"
             }
           },
           {
             "parameter": {
-              "name": "user_id"
-              "type": "int"
+              "name": "user_id",
+              "type": "int",
               "value": "[user_id.value]"
             }
           },
           {
             "parameter": {
-              "name": "suid"
-              "type": "boolean"
+              "name": "suid",
+              "type": "boolean",
               "value": "[suid.value]"
             }
           },
           {
             "parameter": {
-              "name": "sgid"
-              "type": "boolean"
+              "name": "sgid",
+              "type": "boolean",
               "value": "[sgid.value]"
             }
           },
           {
             "parameter": {
-              "name": "sticky"
-              "type": "boolean"
+              "name": "sticky",
+              "type": "boolean",
               "value": "[sticky.value]"
             }
           },
           {
             "parameter": {
-              "name": "uread"
-              "type": "boolean"
+              "name": "uread",
+              "type": "boolean",
               "value": "[uread.value]"
             }
           },
           {
             "parameter": {
-              "name": "uwrite"
-              "type": "boolean"
+              "name": "uwrite",
+              "type": "boolean",
               "value": "[uwrite.value]"
             }
           },
           {
             "parameter": {
-              "name": "uexec"
-              "type": "boolean"
+              "name": "uexec",
+              "type": "boolean",
               "value": "[uexec.value]"
             }
           },
           {
             "parameter": {
-              "name": "gread"
-              "type": "boolean"
+              "name": "gread",
+              "type": "boolean",
               "value": "[gread.value]"
             }
           },
           {
             "parameter": {
-              "name": "gwrite"
-              "type": "boolean"
+              "name": "gwrite",
+              "type": "boolean",
               "value": "[gwrite.value]"
             }
           },
           {
             "parameter": {
-              "name": "gexec"
-              "type": "boolean"
+              "name": "gexec",
+              "type": "boolean",
               "value": "[gexec.value]"
             }
           },
           {
             "parameter": {
-              "name": "oread"
-              "type": "boolean"
+              "name": "oread",
+              "type": "boolean",
               "value": "[oread.value]"
             }
           },
           {
             "parameter": {
-              "name": "owrite"
-              "type": "boolean"
+              "name": "owrite",
+              "type": "boolean",
               "value": "[owrite.value]"
             }
           },
           {
             "parameter": {
-              "name": "oexec"
-              "type": "boolean"
+              "name": "oexec",
+              "type": "boolean",
               "value": "[oexec.value]"
             }
           }

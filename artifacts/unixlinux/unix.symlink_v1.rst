@@ -311,32 +311,32 @@ YAML
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
         - parameter: 
-            name: "filepath"
-            dt: "string"
-            value: "[filepath.value]"
+          name: "filepath"
+          dt: "string"
+          value: "[filepath.value]"
         - parameter: 
-            name: "filepath_operation"
-            dt: "string"
-            value: "[filepath_operation.value]"
+          name: "filepath_operation"
+          dt: "string"
+          value: "[filepath_operation.value]"
     test:
       type: "[TESTTYPE-NAME]"
       parameters:   
         - parameter:
-            name: "filepath"
-            dt: "string"
-            value: "[filepath.value]"
+          name: "filepath"
+          dt: "string"
+          value: "[filepath.value]"
         - parameter:
-            name: "file_path_operation"
-            dt: "string"
-            value: "[file_path_operation.value]"
+          name: "file_path_operation"
+          dt: "string"
+          value: "[file_path_operation.value]"
         - parameter:
-            name: "canonical_path"
-            dt: "string"
-            value: "[canonical_path.value]"
+          name: "canonical_path"
+          dt: "string"
+          value: "[canonical_path.value]"
         - parameter:
-            name: "canonical_path_operation"
-            dt: "string"
-            value: "[canonical_path_operation.value]"
+          name: "canonical_path_operation"
+          dt: "string"
+          value: "[canonical_path_operation.value]"
 
 JSON
 ^^^^
@@ -365,40 +365,40 @@ JSON
             }
           }
         ]
+      },
+      "test": {
+        "type": "[TEST-TYPE-NAME]",
+        "parameters": [
+          {
+            "parameter": {
+              "name": "filepath",
+              "dt": "string",
+              "value": "[filepath.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "file_path_operation",
+              "dt": "string",
+              "value": "[file_path_operation.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "canonical_path",
+              "dt": "string",
+              "value": "[canonical_path.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "canonical_path_operation",
+              "dt": "string",
+              "value": "[canonical_path_operation.value]"
+            }
+          }
+        ]
       }
-    },
-    "test": {
-      "type": "[TESTTYPE-NAME]",
-      "parameters": [
-        {
-          "parameter": {
-            "name": "filepath",
-            "dt": "string",
-            "value": "[filepath.value]"
-          }
-        },
-        {
-          "parameter": {
-            "name": "file_path_operation",
-            "dt": "string",
-            "value": "[file_path_operation.value]"
-          }
-        },
-        {
-          "parameter": {
-            "name": "canonical_path",
-            "dt": "string",
-            "value": "[canonical_path.value]"
-          }
-        },
-        {
-          "parameter": {
-            "name": "canonical_path_operation",
-            "dt": "string",
-            "value": "[canonical_path_operation.value]"
-          }
-        }
-      ]
     }
   }
 
@@ -566,15 +566,12 @@ Variable
     comment="This value is used in Rule: [RECOMMENDATION-TITLE]"
     version="1">
     <concat>
-      <end
-        character="/">
+      <end character="/">
         <object_component
           object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]1" 
           item_field="home_dir" />
       </end>
-      <literal_component>
-        .mysql_history
-      </.mysql_history>
+      <literal_component>.mysql_history</literal_component>
     </concat>
   </local_variable>
 
@@ -590,32 +587,32 @@ YAML
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
         - parameter: 
-            name: "filepath"
-            dt: "string"
-            value: "[filepath.value]"
+          name: "filepath"
+          dt: "string"
+          value: "[filepath.value]"
         - parameter: 
-            name: "filepath_operation"
-            dt: "string"
-            value: "[filepath_operation.value]"
+          name: "filepath_operation"
+          dt: "string"
+          value: "[filepath_operation.value]"
     test:
       type: "[TESTTYPE-NAME]"
       parameters:   
         - parameter:
-            name: "filepath"
-            dt: "string"
-            value: "[filepath.value]"
+          name: "filepath"
+          dt: "string"
+          value: "[filepath.value]"
         - parameter:
-            name: "file_path_operation"
-            dt: "string"
-            value: "[file_path_operation.value]"
+          name: "file_path_operation"
+          dt: "string"
+          value: "[file_path_operation.value]"
         - parameter:
-            name: "canonical_path"
-            dt: "string"
-            value: "[canonical_path.value]"
+          name: "canonical_path"
+          dt: "string"
+          value: "[canonical_path.value]"
         - parameter:
-            name: "canonical_path_operation"
-            dt: "string"
-            value: "[canonical_path_operation.value]"
+          name: "canonical_path_operation"
+          dt: "string"
+          value: "[canonical_path_operation.value]"
 
 JSON
 ^^^^
@@ -644,39 +641,39 @@ JSON
             }
           }
         ]
+      },
+      "test": {
+        "type": "[TEST-TYPE-NAME]",
+        "parameters": [
+          {
+            "parameter": {
+              "name": "filepath",
+              "dt": "string",
+              "value": "[filepath.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "file_path_operation",
+              "dt": "string",
+              "value": "[file_path_operation.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "canonical_path",
+              "dt": "string",
+              "value": "[canonical_path.value]"
+            }
+          },
+          { 
+            "parameter": {
+              "name": "canonical_path_operation",
+              "dt": "string",
+              "value": "[canonical_path_operation.value]"
+            }
+          }
+        ]
       }
-    },
-    "test": {
-      "type": "[TESTTYPE-NAME]",
-      "parameters": [
-        {
-          "parameter": {
-            "name": "filepath",
-            "dt": "string",
-            "value": "[filepath.value]"
-          }
-        },
-        {
-          "parameter": {
-            "name": "file_path_operation",
-            "dt": "string",
-            "value": "[file_path_operation.value]"
-          }
-        },
-        {
-          "parameter": {
-            "name": "canonical_path",
-            "dt": "string",
-            "value": "[canonical_path.value]"
-          }
-        },
-        {
-          "parameter": {
-            "name": "canonical_path_operation",
-            "dt": "string",
-            "value": "[canonical_path_operation.value]"
-          }
-        }
-      ]
     }
-  }  
+  }

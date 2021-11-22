@@ -195,9 +195,7 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[RECOMMENDATION-TITLE]"
     version="1">
-    <mount_point>
-      [mount_point.value]
-    </mount_point>
+    <mount_point>[mount_point.value]</mount_point>
   </partition_object>
 
 State
@@ -217,18 +215,18 @@ YAML
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
-        - parameter: 
-            name: "existence"
-            dt: "string"
-            value: "[existence.value]"
-        - parameter: 
-            name: "check"
-            type: "set"
-            value: "[check.value]"
-        - parameter: 
-            name: "mount_point"
-            dt: "string"
-            value: "[mount_point.value]"
+        - parameter:
+          name: "existence"
+          dt: "string"
+          value: "[existence.value]"
+        - parameter:
+          name: "check"
+          dt: "set"
+          value: "[check.value]"
+        - parameter:
+          name: "mount_point"
+          dt: "string"
+          value: "[mount_point.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters: []
@@ -290,7 +288,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
 
 ::
 
-   <xccdf:complex-check operator="AND">
+  <xccdf:complex-check operator="AND">
     <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
       <xccdf:check-content>
         <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
@@ -364,9 +362,7 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[RECOMMENDATION-TITLE]"
     version="1">
-    <mount_point>
-      [mount_point.value]
-    </mount_point>
+    <mount_point>[mount_point.value]</mount_point>
   </partition_object>
 
 State
@@ -382,7 +378,7 @@ State
       entity_check="[entity_check.value]" 
       operation="[operation.value]"
       datatype="[datatype.value]">
-      [mount_point.value]
+      [mount_options.value]
     </mount_options>
   </partition_state>  
 
@@ -397,37 +393,37 @@ YAML
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
-        - parameter: 
-            name: "existence"
-            dt: "string"
-            value: "[existence.value]"
-        - parameter: 
-            name: "check"
-            type: "set"
-            value: "[check.value]"
-        - parameter: 
-            name: "mount_point"
-            dt: "string"
-            value: "[mount_point.value]"
+        - parameter:
+          name: "existence"
+          dt: "string"
+          value: "[existence.value]"
+        - parameter:
+          name: "check"
+          dt: "set"
+          value: "[check.value]"
+        - parameter:
+          name: "mount_point"
+          dt: "string"
+          value: "[mount_point.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:
         - parameter:
-            name: "value"
-            dt: "string"
-            value: "[value.value]"
+          name: "value"
+          dt: "string"
+          value: "[value.value]"
         - parameter:
-            name: "data_type"
-            dt: "string"
-            value: "[data_type.value]"
+          name: "data_type"
+          dt: "string"
+          value: "[data_type.value]"
         - parameter:
-            name: "operation"
-            type: "set"
-            value: "[operation.value]"
+          name: "operation"
+          dt: "set"
+          value: "[operation.value]"
         - parameter:
-            name: "check"
-            dt: "string"
-            value: "[check.value]"
+          name: "check"
+          dt: "string"
+          value: "[check.value]"
 
 JSON
 ^^^^

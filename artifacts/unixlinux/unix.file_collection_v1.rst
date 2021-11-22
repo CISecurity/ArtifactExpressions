@@ -242,8 +242,7 @@ Object
     comment="[RECOMMENDATION-TITLE]"
     version="1">
     <path>[path.value]</path>
-    <filename 
-      xsi:nil="[xsi:nil.value]">
+    <filename xsi:nil="[xsi:nil.value]">
       [filename.value]
     </filename>
     <behaviors 
@@ -261,12 +260,24 @@ State
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
     comment="[RECOMMENDATION-TITLE]"
     version="1">
-    <gread datatype="boolean">[gread.value]</gread>
-    <gwrite datatype="boolean">[gwrite.value]</gwrite>
-    <gexec datatype="boolean">[gexec.value]</gexec>
-    <oread datatype="boolean">[oread.value]</oread>
-    <owrite datatype="boolean">[owrite.value]</owrite>
-    <oexec datatype="boolean">[oexec.value]</oexec>    
+    <gread datatype="boolean">
+      [gread.value]
+    </gread>
+    <gwrite datatype="boolean">
+      [gwrite.value]
+    </gwrite>
+    <gexec datatype="boolean">
+      [gexec.value]
+    </gexec>
+    <oread datatype="boolean">
+      [oread.value]
+    </oread>
+    <owrite datatype="boolean">
+      [owrite.value]
+    </owrite>
+    <oexec datatype="boolean">
+      [oexec.value]
+    </oexec>
   </file_state>
 
 YAML
@@ -280,81 +291,81 @@ YAML
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
-        - parameter: 
-            name: "existence"
-            dt: "string"
-            value: "[existence.value]"
-        - parameter: 
-            name: "path"
-            dt: "string"
-            value: "[path.value]"
-        - parameter: 
-            name: "file_name"
-            dt: "string"
-            value: "[file_name.value]"
-        - parameter: 
-            name: "recurse"
-            dt: "string"
-            value: "[recurse.value]"
-        - parameter: 
-            name: "max_depth"
-            dt: "int"
-            value: "[max_depth.value]"
-        - parameter: 
-            name: "file_system"
-            dt: "string"
-            value: "[file_system.value]"
+        - parameter:
+          name: "existence"
+          dt: "string"
+          value: "[existence.value]"
+        - parameter:
+          name: "path"
+          dt: "string"
+          value: "[path.value]"
+        - parameter:
+          name: "file_name"
+          dt: "string"
+          value: "[file_name.value]"
+        - parameter:
+          name: "recurse"
+          dt: "string"
+          value: "[recurse.value]"
+        - parameter:
+          name: "max_depth"
+          dt: "int"
+          value: "[max_depth.value]"
+        - parameter:
+          name: "file_system"
+          dt: "string"
+          value: "[file_system.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:
-        - parameter: 
-            name: "uread"
-            dt: "string"
-            value: [uread.value]
-        - parameter: 
-            name: "uwrite"
-            dt: "string"
-            value: "[uwrite.value]"
-        - parameter: 
-            name: "uexec"
-            dt: "string"
-            value: "[uexec.value]"
-        - parameter: 
-            name: "gread"
-            dt: "string"
-            value: "[gread.value]
+        - parameter:
+          name: "uread"
+          dt: "string"
+          value: [uread.value]
+        - parameter:
+          name: "uwrite"
+          dt: "string"
+          value: "[uwrite.value]"
+        - parameter:
+          name: "uexec"
+          dt: "string"
+          value: "[uexec.value]"
+        - parameter:
+          name: "gread"
+          dt: "string"
+          value: "[gread.value]
         - parameter: "
-            name: "gwrite"
-            dt: "string"
-            value: "[gwrite.value]"
-        - parameter: 
-            name: "gexec"
-            dt: "string"
-            value: "[gexec.value]"
-        - parameter: 
-            name: "oread"
-            dt: "string"
-            value: "[oread.value]"
-        - parameter: 
-            name: "owrite"
-            dt: "string"
-            value: "[owrite.value]"
-        - parameter: 
-            name: "oexec"
-            dt: "string"
-            value: "[oexec.value]"
-        - parameter: 
-            name: "suid"
-            dt: "string"
-            value: "[suid.value]"
-        - parameter: 
-            name: "sgid"
-            dt: "string"
-            value: "[sgid.value]"
-        - parameter: 
-            name: "sticky"
-            dt: "string"
-            value: "[sticky.value]"
+          name: "gwrite"
+          dt: "string"
+          value: "[gwrite.value]"
+        - parameter:
+          name: "gexec"
+          dt: "string"
+          value: "[gexec.value]"
+        - parameter:
+          name: "oread"
+          dt: "string"
+          value: "[oread.value]"
+        - parameter:
+          name: "owrite"
+          dt: "string"
+          value: "[owrite.value]"
+        - parameter:
+          name: "oexec"
+          dt: "string"
+          value: "[oexec.value]"
+        - parameter:
+          name: "suid"
+          dt: "string"
+          value: "[suid.value]"
+        - parameter:
+          name: "sgid"
+          dt: "string"
+          value: "[sgid.value]"
+        - parameter:
+          name: "sticky"
+          dt: "string"
+          value: "[sticky.value]"
 
 JSON
 ^^^^
@@ -592,11 +603,8 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[RECOMMENDATION-TITLE]"
     version="1">
-    <path>
-      [path.value]
-    </path>
-    <filename 
-      xsi:nil="[xsi:nil.value]">
+    <path>[path.value]</path>
+    <filename xsi:nil="[xsi:nil.value]">
       [filename.value]
     </filename>
     <behaviors 
@@ -614,12 +622,10 @@ State
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
     comment="[RECOMMENDATION-TITLE]"
     version="1">
-    <group_id 
-      datatype="int">
+    <group_id datatype="int">
       [group_id.value]
     </group_id>
-    <user_id
-      datatype="int">
+    <user_id datatype="int">
       [user_id.value]
     </user_id>
   </file_state>
@@ -635,41 +641,41 @@ YAML
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
-        - parameter: 
-            name: "existence"
-            dt: "string"
-            value: "[existence.value]"
-        - parameter: 
-            name: "path"
-            dt: "string"
-            value: "[path.value]"
-        - parameter: 
-            name: "file_name"
-            dt: "string"
-            value: "[file_name.value]"
-        - parameter: 
-            name: "recurse"
-            dt: "string"
-            value: "[recurse.value]"
-        - parameter: 
-            name: "max_depth"
-            dt: "int"
-            value: "[max_depth.value]"
-        - parameter: 
-            name: "file_system"
-            dt: "string"
-            value: "[file_system.value]"
+        - parameter:
+          name: "existence"
+          dt: "string"
+          value: "[existence.value]"
+        - parameter:
+          name: "path"
+          dt: "string"
+          value: "[path.value]"
+        - parameter:
+          name: "file_name"
+          dt: "string"
+          value: "[file_name.value]"
+        - parameter:
+          name: "recurse"
+          dt: "string"
+          value: "[recurse.value]"
+        - parameter:
+          name: "max_depth"
+          dt: "int"
+          value: "[max_depth.value]"
+        - parameter:
+          name: "file_system"
+          dt: "string"
+          value: "[file_system.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:
-        - parameter: 
-            name: "uid"
-            dt: "int"
-            value: [uid.value]
-        - parameter: 
-            name: "gid"
-            dt: "int"
-            value: "[gid.value]"
+        - parameter:
+          name: "uid"
+          dt: "int"
+          value: [uid.value]
+        - parameter:
+          name: "gid"
+          dt: "int"
+          value: "[gid.value]"
 
 JSON
 ^^^^
@@ -835,8 +841,7 @@ Object
     comment="[RECOMMENDATION-TITLE]"
     version="1">
     <path>[path.value]</path>
-    <filename 
-      xsi:nil="[xsi:nil.value]>
+    <filename xsi:nil="[xsi:nil.value]>
       [filename.value]
     </filename>
     <behaviors 
@@ -862,30 +867,30 @@ YAML
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
-        - parameter: 
-            name: "existence"
-            dt: "string"
-            value: "[existence.value]"
-        - parameter: 
-            name: "path"
-            dt: "string"
-            value: "[path.value]"
-        - parameter: 
-            name: "file_name"
-            dt: "string"
-            value: "[file_name.value]"
-        - parameter: 
-            name: "recurse"
-            dt: "string"
-            value: "[recurse.value]"
-        - parameter: 
-            name: "max_depth"
-            dt: "int"
-            value: "[max_depth.value]"
-        - parameter: 
-            name: "file_system"
-            dt: "string"
-            value: "[file_system.value]"
+        - parameter:
+          name: "existence"
+          dt: "string"
+          value: "[existence.value]"
+        - parameter:
+          name: "path"
+          dt: "string"
+          value: "[path.value]"
+        - parameter:
+          name: "file_name"
+          dt: "string"
+          value: "[file_name.value]"
+        - parameter:
+          name: "recurse"
+          dt: "string"
+          value: "[recurse.value]"
+        - parameter:
+          name: "max_depth"
+          dt: "int"
+          value: "[max_depth.value]"
+        - parameter:
+          name: "file_system"
+          dt: "string"
+          value: "[file_system.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters: []

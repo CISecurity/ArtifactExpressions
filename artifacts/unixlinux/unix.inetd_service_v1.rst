@@ -63,6 +63,8 @@ enabled string Is the service enabled? (Yes/No)
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
+**unix.service_enabled_v1**
+
 XCCDF+AE
 ^^^^^^^^
 
@@ -160,13 +162,10 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]1"
     comment="[RECOMMENDATION-TITLE]"
     version="1">
-    <protocol
-      operation="pattern match"> 
+    <protocol operation="pattern match">
       [protocol.value]
     </protocol>
-    <service_name>
-      [service_name.value]
-    </service_name>
+    <service_name>[service_name.value]</service_name>
   </xinetd_object>
 
   <textfilecontent54_object
@@ -174,10 +173,8 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]2"
     comment="[RECOMMENDATION-TITLE]"
     version="1">
-    <filepath>
-      /etc/inetd.conf
-    </filepath>
-    <pattern 
+    <filepath>/etc/inetd.conf</filepath>
+    <pattern
       operation="pattern match"
       datatype="string">
       [pattern.value]  
@@ -194,11 +191,8 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]3"
     comment="[RECOMMENDATION-TITLE]"
     version="1">
-    <path>
-      /etc/inetd.d
-    </path>
-    <filename
-      operation="pattern match">
+    <path>/etc/inetd.d</path>
+    <filenameoperation="pattern match">
       .+
     </filename>
     <pattern 
@@ -240,21 +234,21 @@ YAML
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
-        - parameter: 
-            name: "service"
-            dt: "string"
-            value: "[service.value]"
-        - parameter: 
-            name: "protocol"
-            dt: "string"
-            value: "[protocol.value]"
+        - parameter:
+          name: "service"
+          dt: "string"
+          value: "[service.value]"
+        - parameter:
+          name: "protocol"
+          dt: "string"
+          value: "[protocol.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:
-        - parameter: 
-            name: "enabled"
-            dt: "string"
-            value: "[enabled.value]"
+        - parameter:
+          name: "enabled"
+          dt: "string"
+          value: "[enabled.value]"
 
 JSON
 ^^^^

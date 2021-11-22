@@ -54,6 +54,8 @@ N/A
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
+**null_test_v1**
+
 XCCDF+AE
 ^^^^^^^^
 
@@ -133,22 +135,22 @@ YAML
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
-        - parameter: 
-            name: "script"
-            dt: "string"
-            value: "[script.value]"
-        - parameter: 
-            name: "export_variable_value"
-            dt: "string"
-            value: "[export_variable_value.value]"
-        - parameter: 
-            name: "export_variable_type"
-            dt: "string"
-            value: "[export_variable_type.value]"  
-        - parameter: 
-            name: "export_variable_name"
-            dt: "string"
-            value: "[export_variable_name.value]"
+        - parameter:
+          name: "script"
+          dt: "string"
+          value: "[script.value]"
+        - parameter:
+          name: "export_variable_value"
+          dt: "string"
+          value: "[export_variable_value.value]"
+        - parameter:
+          name: "export_variable_type"
+          dt: "string"
+          value: "[export_variable_type.value]"
+        - parameter:
+          name: "export_variable_name"
+          dt: "string"
+          value: "[export_variable_name.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters: []

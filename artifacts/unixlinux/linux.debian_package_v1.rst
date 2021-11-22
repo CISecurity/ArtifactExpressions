@@ -67,6 +67,8 @@ NOTE: The ``value`` parameter is governed by a constraint allowing only the foll
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
+**existence_test**
+
 XCCDF+AE
 ^^^^^^^^
 
@@ -143,9 +145,7 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"     
     comment="[RECOMMENDATION-TITLE]"    
     version="1">
-    <name>
-      value
-    </name>
+    <name>value</name>
   </dpkginfo_object>
 
 State
@@ -159,56 +159,56 @@ YAML
 
 ::
 
-   artifact-expression:
+  artifact-expression:
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
     artifact-title: "[RECOMMENDATION-TITLE]"
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
-        - parameter: 
-            name: "name"
-            dt: "string"
-            value: "[name.value]"
+        - parameter:
+          name: "name"
+          dt: "string"
+          value: "[name.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:
         - parameter:
-            name: "value"
-            dt: "string"
-            value: "[value.value]"
+          name: "value"
+          dt: "string"
+          value: "[value.value]"
 
 JSON
 ^^^^
 
 ::
 
-   {
-     "artifact-expression": {
-       "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
-       "artifact-title": "[RECOMMENDATION-TITLE]",
-       "artifact": {
-         "type": "[ARTIFACT-TYPE-NAME]",
-         "parameters": [
-           {
-             "parameter": {
-               "name": "name",
-               "type": "string",
-               "value": "[name.value]"
-             }
-           }
-         ]
-       },
-       "test": {
-         "type": "[TEST-TYPE-NAME]",
-         "parameters": [
-           {
-             "parameter": {
-               "name": "value",
-               "type": "string",
-               "value": "[value.value]"
-             }
-           }
-         ]
-       }
-     }
-   }
+  {
+    "artifact-expression": {
+      "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
+      "artifact-title": "[RECOMMENDATION-TITLE]",
+      "artifact": {
+        "type": "[ARTIFACT-TYPE-NAME]",
+        "parameters": [
+          {
+            "parameter": {
+              "name": "name",
+              "type": "string",
+              "value": "[name.value]"
+            }
+          }
+        ]
+      },
+      "test": {
+        "type": "[TEST-TYPE-NAME]",
+        "parameters": [
+          {
+            "parameter": {
+              "name": "value",
+              "type": "string",
+              "value": "[value.value]"
+            }
+          }
+        ]
+      }
+    }
+  }

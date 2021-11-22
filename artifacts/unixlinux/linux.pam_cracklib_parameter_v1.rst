@@ -175,17 +175,14 @@ Object
     comment="[RECOMMENDATION-TITLE]" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" 
     version="1">
-    <filepath>
-      [filepath.value]
-    <filepath>
-    <pattern 
-      operation="pattern match">
+    <filepath>[filepath.value]<filepath>
+    <pattern operation="pattern match">
       [pattern.value]
     </pattern>
     <instance 
       datatype="int" 
       operation="equals">
-        1
+      1
     </instance>
   </textfilecontent54_object>
 
@@ -206,17 +203,17 @@ YAML
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
-        - parameter:   
-            name: "parameter"
-            dt: "string"
-            value: "[parameter.value]"
+        - parameter:
+          name: "parameter"
+          dt: "string"
+          value: "[parameter.value]"
     test:
       type: "[TEST-TYPE-NAME]"
-      parameters:   
-        - parameter: 
-            name: "value"
-            dt: "string"
-            value: "[value.value]"
+      parameters:
+        - parameter:
+          name: "value"
+          dt: "string"
+          value: "[value.value]"
 
 JSON
 ^^^^
@@ -342,17 +339,14 @@ Object
     comment="[RECOMMENDATION-TITLE]" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" 
     version="1">
-    <filepath>
-      [filepath.value]
-    <filepath>
-    <pattern 
-      operation="pattern match">
+    <filepath>[filepath.value]<filepath>
+    <pattern operation="pattern match">
       [pattern.value]
     </pattern>
     <instance 
       datatype="int" 
       operation="equals">
-        1
+      1
     </instance>
   </textfilecontent54_object>
 
@@ -383,21 +377,21 @@ YAML
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
-        - parameter:   
-            name: "parameter"
-            dt: "string"
-            value: "[parameter.value]"
+        - parameter:
+          name: "parameter"
+          dt: "string"
+          value: "[parameter.value]"
     test:
       type: "[TEST-TYPE-NAME]"
-      parameters:   
-        - parameter: 
-            name: "value"
-            dt: "string"
-            value: "[value.value]"
-        - parameter: 
-            name: "data_type"
-            dt: "string"
-            value: "[data_type.value]"
+      parameters:
+        - parameter:
+          name: "value"
+          dt: "string"
+          value: "[value.value]"
+        - parameter:
+          name: "data_type"
+          dt: "string"
+          value: "[data_type.value]"
 
 JSON
 ^^^^

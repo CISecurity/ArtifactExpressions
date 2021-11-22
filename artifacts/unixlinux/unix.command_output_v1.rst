@@ -165,11 +165,8 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[RECOMMENDATION-TITLE]"
     version="1">
-    <command>
-      [command.value]
-    </command>
-    <line_selection 
-      operation="pattern match">
+    <command>[command.value]</command>
+    <line_selection operation="pattern match">
       .+
     </line_selection>
   </shellcommand_object>
@@ -210,21 +207,21 @@ YAML
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
-        - parameter: 
-            name: "command"
-            dt: "string"
-            value: "[command.value]"
+        - parameter:
+          name: "command"
+          dt: "string"
+          value: "[command.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:
-        - parameter: 
-            name: "value"
-            dt: "string"
-            value: "[value.value]"
-        - parameter: 
-            name: "datatype"
-            dt: "string"
-            value: "[datatype.value]"                                 
+        - parameter:
+          name: "value"
+          dt: "string"
+          value: "[value.value]"
+        - parameter:
+          name: "datatype"
+          dt: "string"
+          value: "[datatype.value]"
 
 JSON
 ^^^^
@@ -283,25 +280,25 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
 ::
 
   <xccdf:complex-check operator="AND">
-  <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
-    <xccdf:check-content>
-      <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
-        <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-        <ae:title>[RECOMMENDATION-TITLE]</ae:title>
-        <ae:artifact type="[ARTIFACT-TYPE-NAME]">
-          <ae:parameters>
-            <ae:parameter dt="string" name="command">[command.value]</ae:parameter>
-          </ae:parameters>
-        </ae:artifact>
-        <ae:test type="[TEST-TYPE-NAME]">
-          <ae:parameters />
-        </ae:test>
-        <ae:profiles>
-          <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1" />
-        </ae:profiles>          
-      </ae:artifact_expression>
-    </xccdf:check-content>
-  </xccdf:check>
+    <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
+      <xccdf:check-content>
+        <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
+          <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
+          <ae:title>[RECOMMENDATION-TITLE]</ae:title>
+          <ae:artifact type="[ARTIFACT-TYPE-NAME]">
+            <ae:parameters>
+              <ae:parameter dt="string" name="command">[command.value]</ae:parameter>
+            </ae:parameters>
+          </ae:artifact>
+          <ae:test type="[TEST-TYPE-NAME]">
+            <ae:parameters />
+          </ae:test>
+          <ae:profiles>
+            <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1" />
+          </ae:profiles>
+        </ae:artifact_expression>
+      </xccdf:check-content>
+    </xccdf:check>
   </xccdf:complex-check>
 
 SCAP
@@ -347,8 +344,7 @@ Object
     comment="[RECOMMENDATION-TITLE]"
     version="1">
     <command>[command.value]</command>
-    <line_selection 
-      operation="pattern match">
+    <line_selection operation="pattern match">
       .+
     </line_selection>
   </shellcommand_object>
@@ -370,10 +366,10 @@ YAML
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
-        - parameter: 
-            name: "command"
-            dt: "string"
-            value: "[command.value]"
+        - parameter:
+          name: "command"
+          dt: "string"
+          value: "[command.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters: []              

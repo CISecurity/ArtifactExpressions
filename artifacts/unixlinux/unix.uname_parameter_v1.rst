@@ -65,8 +65,8 @@ Test Type Parameters
 | **greater than**
 | **greater than or equal**
 | **pattern match**
-**pattern not match**
-  
+| **pattern not match**
+|
 ========= ====== ===========================
 Name      Type   Description
 ========= ====== ===========================
@@ -85,6 +85,15 @@ NOTE: The ``data_type`` parameter is governed by a constraint allowing only the 
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
+| **equals**
+| **not equal**
+| **less than**
+| **less than or equal**
+| **greater than**
+| **greater than or equal**
+| **pattern match**
+| **pattern not match**
+|
 XCCDF+AE
 ^^^^^^^^
 
@@ -212,20 +221,20 @@ YAML
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
         - parameter: 
-            name: "parameter"
-            dt: "string"
-            value: "[parameter.value]"
+          name: "parameter"
+          dt: "string"
+          value: "[parameter.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:
         - parameter: 
-            name: "value"
-            dt: "string"
-            value: "[value.value]"
+          name: "value"
+          dt: "string"
+          value: "[value.value]"
         - parameter: 
-            name: "data_type"
-            dt: "string"
-            value: "[data_type.value]"        
+          name: "data_type"
+          dt: "string"
+          value: "[data_type.value]"        
 
 JSON
 ^^^^

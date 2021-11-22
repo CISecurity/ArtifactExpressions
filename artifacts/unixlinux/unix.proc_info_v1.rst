@@ -235,7 +235,7 @@ unix.proc_info_v1
     - subset of
     - superset of 
 
-:emphasis:`NOTE: The exec_time and start_time parameters are governed by a constraint allowing only values conforming to the following regex pattern:` 
+:emphasis:`NOTE: The` :emphasis:``exec_time`` :emphasis:`and` :emphasis:``start_time`` :emphasis:`parameters are governed by a constraint allowing only values conforming to the following regex pattern:` 
   ``^(([0-9]{0,2}-)?(([0-1][0-9])|([2][0-3])):([0-5][0-9]):([0-5][0-9])){0,1}$``
 
 :emphasis:`NOTE: The following ID parameters:`
@@ -290,6 +290,8 @@ NOTE: The ``posix_capability`` parameter is governed by a constraint allowing on
 
 Generated Content
 ~~~~~~~~~~~~~~~~~
+
+**unix.proc_info_v1**
 
 XCCDF+AE
 ^^^^^^^^
@@ -396,8 +398,7 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[RECOMMENDATION-TITLE]"
     version="1">
-    <command_line 
-      operation="[operation.value]">
+    <command_line operation="[operation.value]">
       [command_line.value]
     </command_line>
     <pid 
@@ -506,144 +507,144 @@ YAML
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
         - parameter: 
-            name: "command_line"
-            dt: "string"
-            value: "[command_line.value]"
+          name: "command_line"
+          dt: "string"
+          value: "[command_line.value]"
         - parameter: 
-            name: "pid"
-            dt: "int"
-            value: "[pid.value]"
+          name: "pid"
+          dt: "int"
+          value: "[pid.value]"
         - parameter: 
-            name: "command_line_operation"
-            dt: "string"
-            value: "[command_line_operation.value]"
+          name: "command_line_operation"
+          dt: "string"
+          value: "[command_line_operation.value]"
         - parameter: 
-            name: "pid_operation"
-            dt: "string"
-            value: "[pid_operation.value]"
+          name: "pid_operation"
+          dt: "string"
+          value: "[pid_operation.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:
         - parameter: 
-            name: "command_line"
-            dt: "string"
-            value: "[command_line.value]"
+          name: "command_line"
+          dt: "string"
+          value: "[command_line.value]"
         - parameter: 
-            name: "cmd_operation"
-            dt: "string"
-            value: "[cmd_operation.value]"
+          name: "cmd_operation"
+          dt: "string"
+          value: "[cmd_operation.value]"
         - parameter: 
-            name: "exec_time"
-            dt: "string"
-            value: "[exec_time.value]"
+          name: "exec_time"
+          dt: "string"
+          value: "[exec_time.value]"
         - parameter: 
-            name: "exec_time_operation"
-            dt: "string"
-            value: "[exec_time_operation.value]"
+          name: "exec_time_operation"
+          dt: "string"
+          value: "[exec_time_operation.value]"
         - parameter: 
-            name: "pid"
-            dt: "string"
-            value: "[pid.value]"
+          name: "pid"
+          dt: "string"
+          value: "[pid.value]"
         - parameter: 
-            name: "pid_operation"
-            dt: "string"
-            value: ["pid_operation.value]"
+          name: "pid_operation"
+          dt: "string"
+          value: ["pid_operation.value]"
         - parameter: 
-            name: "ppid"
-            dt: "string"
-            value: "[ppid.value]"
+          name: "ppid"
+          dt: "string"
+          value: "[ppid.value]"
         - parameter: 
-            name: "ppid_operation"
-            dt: "string"
-            value: "[ppid_operation.value]"
+          name: "ppid_operation"
+          dt: "string"
+          value: "[ppid_operation.value]"
         - parameter: 
-            name: "priority"
-            dt: "int"
-            value: "[priority.value]"
+          name: "priority"
+          dt: "int"
+          value: "[priority.value]"
         - parameter: 
-            name: "priority_operation"
-            dt: "string"
-            value: "[priority_operation.value]"
+          name: "priority_operation"
+          dt: "string"
+          value: "[priority_operation.value]"
         - parameter: 
-            name: "ruid_operation"
-            dt: "string"
-            value: "[ruid_operation.value]"
+          name: "ruid_operation"
+          dt: "string"
+          value: "[ruid_operation.value]"
         - parameter: 
-            name: "ruid"
-            dt: "string"
-            value: "[ruid.value]"
+          name: "ruid"
+          dt: "string"
+          value: "[ruid.value]"
         - parameter: 
-            name: "scheduling_class"
-            dt: "string"
-            value: "[scheduling_class.value]"
+          name: "scheduling_class"
+          dt: "string"
+          value: "[scheduling_class.value]"
         - parameter: 
-            name: "scheduling_class_operation"
-            dt: "string"
-            value: "[scheduling_class_operation.value]"
+          name: "scheduling_class_operation"
+          dt: "string"
+          value: "[scheduling_class_operation.value]"
         - parameter: 
-            name: "start_time"
-            dt: "string"
-            value: "[start_time.value]"
+          name: "start_time"
+          dt: "string"
+          value: "[start_time.value]"
         - parameter: 
-            name: "start_time_operation"
-            dt: "string"
-            value: "[start_time_operation.value]"
+          name: "start_time_operation"
+          dt: "string"
+          value: "[start_time_operation.value]"
         - parameter: 
-            name: "tty_operation"
-            dt: "string"
-            value: "[tty_operation.value]"
+          name: "tty_operation"
+          dt: "string"
+          value: "[tty_operation.value]"
         - parameter: 
-            name: "user_id"
-            dt: "string"
-            value: "[user_id.value]"  
+          name: "user_id"
+          dt: "string"
+          value: "[user_id.value]"  
         - parameter: 
-            name: "tty"
-            dt: "string"
-            value: "[tty.value]"
+          name: "tty"
+          dt: "string"
+          value: "[tty.value]"
         - parameter: 
-            name: "user_id_operation"
-            dt: "string"
-            value: "[user_id_operation.value]"
+          name: "user_id_operation"
+          dt: "string"
+          value: "[user_id_operation.value]"
         - parameter: 
-            name: "exec_shield"
-            dt: "boolean"
-            value: "[exec_shield.value]"
+          name: "exec_shield"
+          dt: "boolean"
+          value: "[exec_shield.value]"
         - parameter: 
-            name: "exec_shield_operation"
-            dt: "string"
-            value: "[exec_shield_operation.value]"
+          name: "exec_shield_operation"
+          dt: "string"
+          value: "[exec_shield_operation.value]"
         - parameter: 
-            name: "loginuid"
-            dt: "string"
-            value: "[loginuid.value]"
+          name: "loginuid"
+          dt: "string"
+          value: "[loginuid.value]"
         - parameter: 
-            name: "loginuid_operation"
-            dt: "string"
-            value: "[loginuid_operation.value]"    
+          name: "loginuid_operation"
+          dt: "string"
+          value: "[loginuid_operation.value]"    
         - parameter: 
-            name: "posix_capability_operation"
-            dt: "string"
-            value: "[posix_capability_operation.value]"
+          name: "posix_capability_operation"
+          dt: "string"
+          value: "[posix_capability_operation.value]"
         - parameter: 
-            name: "selinux_domain_label"
-            dt: "string"
-            value: "[selinux_domain_label.value]"
+          name: "selinux_domain_label"
+          dt: "string"
+          value: "[selinux_domain_label.value]"
         - parameter: 
-            name: "selinux_domain_label_operation"
-            dt: "string"
-            value: "[selinux_domain_label_operation.value]"
+          name: "selinux_domain_label_operation"
+          dt: "string"
+          value: "[selinux_domain_label_operation.value]"
         - parameter: 
-            name: "session_id"
-            dt: "string"
-            value: "[session_id.value]"
+          name: "session_id"
+          dt: "string"
+          value: "[session_id.value]"
         - parameter: 
-            name: "session_id_operation"
-            dt: "string"
-            value: "[session_id_operation.value]"     
+          name: "session_id_operation"
+          dt: "string"
+          value: "[session_id_operation.value]"     
         - parameter: 
-            name: "posix_capability"
-            dt: "string"
-            value: "[posix_capability.value]"
+          name: "posix_capability"
+          dt: "string"
+          value: "[posix_capability.value]"
 
 JSON
 ^^^^
@@ -655,7 +656,7 @@ JSON
       "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
       "artifact-title": "[RECOMMENDATION-TITLE]",
       "artifact": {
-        "type": "unix.proc_info_v1",
+        "type": "[ARTIFACT-TYPE-NAME]",
         "parameters": [
           {
             "parameter": {

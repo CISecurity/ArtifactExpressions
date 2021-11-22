@@ -98,6 +98,8 @@ NOTE: The ``value`` parameter is governed by a constraint allowing only the foll
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
+**existence_test**
+
 XCCDF+AE
 ^^^^^^^^
 
@@ -203,8 +205,7 @@ CATALINA_HOME
       recurse="directories" 
       recurse_direction="down" />
     <path var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]1" />
-    <filename 
-      xsi:nil="true" />
+    <filename xsi:nil="true" />
   </file_object>
 
   <file_object 
@@ -213,9 +214,7 @@ CATALINA_HOME
     comment="[RECOMMENDATION-TITLE]" 
     version="1">
     <path var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]2" />
-    <filename>
-      [filename.value]
-    </filename>
+    <filename>[filename.value]</filename>
   </file_object>
 
 CATALINA_BASE
@@ -232,8 +231,7 @@ CATALINA_BASE
       recurse="directories" 
       recurse_direction="down" />
     <path var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]" />
-    <filename 
-      xsi:nil="true" />
+    <filename xsi:nil="true" />
   </file_object>
 
   <file_object 
@@ -242,10 +240,8 @@ CATALINA_BASE
     comment="[RECOMMENDATION-TITLE]" 
     version="1">
     <path var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]3" />
-    <filename>
-      [filename.value]
-    </filename>
-  </file_object>  
+    <filename>[filename.value]</filename>
+  </file_object>
 
 State
 
@@ -303,37 +299,37 @@ YAML
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
-        - parameter: 
-            name: "base_path
-            dt: "string"
-            value: "[base_path.value]"
-        - parameter: 
-            name: "path"
-            dt: "string"
-            value: "[path.value]"
-        - parameter: 
-            name: "concat_path"
-            dt: "string"
-            value: "concat_path.value]"
-        - parameter: 
-            name: "filename"
-            dt: "string"
-            value: "[filename.value]"
-        - parameter: 
-            name: "check"
-            dt: "string"
-            value: "[check.value]"
-        - parameter: 
-            name: "check_existence"
-            dt: "string"
-            value: "[check_existence.value]"
+        - parameter:
+          name: "base_path
+          dt: "string"
+          value: "[base_path.value]"
+        - parameter:
+          name: "path"
+          dt: "string"
+          value: "[path.value]"
+        - parameter:
+          name: "concat_path"
+          dt: "string"
+          value: "concat_path.value]"
+        - parameter:
+          name: "filename"
+          dt: "string"
+          value: "[filename.value]"
+        - parameter:
+          name: "check"
+          dt: "string"
+          value: "[check.value]"
+        - parameter:
+          name: "check_existence"
+          dt: "string"
+          value: "[check_existence.value]"
     test:
       type: "[TEST-TYPE-NAME]"
-      parameters:   
-        - parameter: 
-            name: "value"
-            dt: "string"
-            value: "[value.value]"
+      parameters:
+        - parameter:
+          name: "value"
+          dt: "string"
+          value: "[value.value]"
 
 JSON
 ^^^^

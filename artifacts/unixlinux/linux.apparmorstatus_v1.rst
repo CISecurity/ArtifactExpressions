@@ -208,37 +208,37 @@ YAML
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
-        - parameter: 
-            name: "right_name"
-            dt: "string"
-            value: "[right_name.value]"
-        - parameter: 
-            name: xpath
-            dt: "string"
-            value: "[xpath.value]" 
+        - parameter:
+          name: "right_name"
+          dt: "string"
+          value: "[right_name.value]"
+        - parameter:
+          name: xpath
+          dt: "string"
+          value: "[xpath.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:
         - parameter:
-            name: "check_existence"
-            dt: "string"
-            value: "[check_existence.value]"
-        - parameter: 
-            name: "check"
-            dt: "string"
-            value: "[check.value]"
+          name: "check_existence"
+          dt: "string"
+          value: "[check_existence.value]"
         - parameter:
-            name: "operation"
-            dt: "string"
-            value: "[operation.value]"
-        - parameter: 
-            name: "datatype"
-            dt: "string"
-            value: "[datatype.value]"
-        - parameter: 
-            name: "enforce_mode_profiles_count"
-            dt: "integer"
-            value: "[enforce_mode_profiles_count.value]"
+          name: "check"
+          dt: "string"
+          value: "[check.value]"
+        - parameter:
+          name: "operation"
+          dt: "string"
+          value: "[operation.value]"
+        - parameter:
+          name: "datatype"
+          dt: "string"
+          value: "[datatype.value]"
+        - parameter:
+          name: "enforce_mode_profiles_count"
+          dt: "integer"
+          value: "[enforce_mode_profiles_count.value]"
 
 JSON
 ^^^^

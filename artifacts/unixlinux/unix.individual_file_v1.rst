@@ -166,8 +166,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
   <xccdf:complex-check operator="AND">
     <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
       <xccdf:check-content>
-        <ae:artifact_expression
-            <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
+        <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
           <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
           <ae:title>[RECOMMENDATION-TITLE]</ae:title>
           <ae:artifact type="[ARTIFACT-TYPE-NAME]">
@@ -265,29 +264,29 @@ YAML
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
-        - parameter: 
-            name: "filepath"
-            dt: "string"
-            value: "[filepath.value]"
-        - parameter: 
-            name: "existence"
-            dt: "string"
-            value: "[existence.value]"
-        - parameter: 
-            name: "check"
-            dt: "string"
-            value: "[check.value]"
+        - parameter:
+          name: "filepath"
+          dt: "string"
+          value: "[filepath.value]"
+        - parameter:
+          name: "existence"
+          dt: "string"
+          value: "[existence.value]"
+        - parameter:
+          name: "check"
+          dt: "string"
+          value: "[check.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:
-        - parameter: 
-            name: "value"
-            dt: "string"
-            value: [value.value]
-        - parameter: 
-            name: "data_type"
-            dt: "string"
-            value: "[data_type.value]"
+        - parameter:
+          name: "value"
+          dt: "string"
+          value: [value.value]
+        - parameter:
+          name: "data_type"
+          dt: "string"
+          value: "[data_type.value]"
 
 JSON
 ^^^^
@@ -362,8 +361,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
   <xccdf:complex-check operator="AND">
     <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
       <xccdf:check-content>
-        <ae:artifact_expression
-          <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
+        <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
           <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
           <ae:title>[RECOMMENDATION-TITLE]</ae:title>
           <ae:artifact type="[ARTIFACT-TYPE-NAME]">
@@ -428,11 +426,8 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[RECOMMENDATION-TITLE]"
     version="1">
-    <path>
-      [path.value]
-    </path>
-    <filename 
-      xsi:nil="true">
+    <path>[path.value]</path>
+    <filename xsi:nil="true">
       [filename.value]
     </filename>
   </file_object>
@@ -454,18 +449,18 @@ YAML
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
-        - parameter: 
-            name: "filepath"
-            dt: "string"
-            value: "[filepath.value]"
-        - parameter: 
-            name: "existence"
-            dt: "string"
-            value: "[existence.value]"
-        - parameter: 
-            name: "check"
-            dt: "string"
-            value: "[check.value]"
+        - parameter:
+          name: "filepath"
+          dt: "string"
+          value: "[filepath.value]"
+        - parameter:
+          name: "existence"
+          dt: "string"
+          value: "[existence.value]"
+        - parameter:
+          name: "check"
+          dt: "string"
+          value: "[check.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters: []
@@ -530,8 +525,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
   <xccdf:complex-check operator="AND">
     <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
       <xccdf:check-content>
-        <ae:artifact_expression
-            <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
+        <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
           <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
           <ae:title>[RECOMMENDATION-TITLE]</ae:title>
           <ae:artifact type="[ARTIFACT-TYPE-NAME]">
@@ -626,40 +620,31 @@ State
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" 
     comment="[RECOMMENDATION-TITLE]" 
     version="1">
-    <group_id
-      datatype="int">
+    <group_id datatype="int">
       [group_id.value]
     </group_id>
-    <user_id
-      datatype="int">
+    <user_id datatype="int">
       [user_id.value]
     </user_id>
-    <uread
-      datatype="boolean">
+    <uread datatype="boolean">
       [uread.value]
     </uread>
-    <gread
-      datatype="boolean">
+    <gread datatype="boolean">
       [gread.value]
     </gread>
-    <gwrite
-      datatype="boolean">
+    <gwrite datatype="boolean">
       [gwrite.value]
     </gwrite>
-    <gexec
-      datatype="boolean">
+    <gexec datatype="boolean">
       [gexec.value]
     </gexec>
-    <oread
-      datatype="boolean">
+    <oread datatype="boolean">
       [oread.value]
     </oread>
-    <owrite
-      datatype="boolean">
+    <owrite datatype="boolean">
       [owrite.value]
     </owrite>
-    <oexec
-      datatype="boolean">
+    <oexec datatype="boolean">
       [oexec.value]
     </oexec>
   </file_state>
@@ -675,77 +660,77 @@ YAML
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
-        - parameter: 
-            name: "filepath"
-            dt: "string"
-            value: "[filepath.value]"
-        - parameter: 
-            name: "existence"
-            dt: "string"
-            value: "[existence.value]"
-        - parameter: 
-            name: "check"
-            dt: "string"
-            value: "[check.value]"
+        - parameter:
+          name: "filepath"
+          dt: "string"
+          value: "[filepath.value]"
+        - parameter:
+          name: "existence"
+          dt: "string"
+          value: "[existence.value]"
+        - parameter:
+          name: "check"
+          dt: "string"
+          value: "[check.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:
-        - parameter: 
-            name: "uid"
-            dt: "int"
-            value: "[uid.value]"
-        - parameter: 
-            name: "gid"
-            dt: "int"
-            value: "[gid.value]"
-        - parameter: 
-            name: "uread"
-            dt: "string"
-            value: "[uread.value]"
-        - parameter: 
-            name: "uwrite"
-            dt: "string"
-            value: "[uwrite.value]"
-        - parameter: 
-            name: "uexec"
-            dt: "string"
-            value: "[uexec.value]"
-        - parameter: 
-            name: "gread"
-            dt: "string"
-            value: "[gread.value]"
-        - parameter: 
-            name: "gwrite"
-            dt: "string"
-            value: "[gwrite.value]"
-        - parameter: 
-            name: "gexec"
-            dt: "string"
-            value: "[gexec.value]"
-        - parameter: 
-            name: "oread"
-            dt: "string"
-            value: "[oread.value]"
-        - parameter: 
-            name: "owrite"
-            dt: "string"
-            value: "[owrite.value]"
-        - parameter: 
-            name: "oexec"
-            dt: "string"
-            value: "[oexec.value]"
-        - parameter: 
-            name: "suid"
-            dt: "string"
-            value: "[suid.value]"
-        - parameter: 
-            name: "sgid"
-            dt: "string"
-            value: "[sgid.value]"
-        - parameter: 
-            name: "sticky"
-            dt: "string"
-            value: "[sticky.value]"
+        - parameter:
+          name: "uid"
+          dt: "int"
+          value: "[uid.value]"
+        - parameter:
+          name: "gid"
+          dt: "int"
+          value: "[gid.value]"
+        - parameter:
+          name: "uread"
+          dt: "string"
+          value: "[uread.value]"
+        - parameter:
+          name: "uwrite"
+          dt: "string"
+          value: "[uwrite.value]"
+        - parameter:
+          name: "uexec"
+          dt: "string"
+          value: "[uexec.value]"
+        - parameter:
+          name: "gread"
+          dt: "string"
+          value: "[gread.value]"
+        - parameter:
+          name: "gwrite"
+          dt: "string"
+          value: "[gwrite.value]"
+        - parameter:
+          name: "gexec"
+          dt: "string"
+          value: "[gexec.value]"
+        - parameter:
+          name: "oread"
+          dt: "string"
+          value: "[oread.value]"
+        - parameter:
+          name: "owrite"
+          dt: "string"
+          value: "[owrite.value]"
+        - parameter:
+          name: "oexec"
+          dt: "string"
+          value: "[oexec.value]"
+        - parameter:
+          name: "suid"
+          dt: "string"
+          value: "[suid.value]"
+        - parameter:
+          name: "sgid"
+          dt: "string"
+          value: "[sgid.value]"
+        - parameter:
+          name: "sticky"
+          dt: "string"
+          value: "[sticky.value]"
 
 JSON
 ^^^^

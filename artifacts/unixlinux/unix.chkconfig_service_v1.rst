@@ -49,6 +49,8 @@ enabled string Is the service enabled? (Yes/No)
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
+**unix.service_enabled_v1**
+
 XCCDF+AE
 ^^^^^^^^
 
@@ -125,11 +127,8 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[RECOMMENDATION-TITLE]"
     version="1">
-    <service_name>
-      [service_name.value]
-    </service_name>
-    <runlevel 
-      operation="pattern match">
+    <service_name>[service_name.value]</service_name>
+    <runlevel operation="pattern match">
       .*
     </runlevel>
   </runlevel_object>
@@ -161,17 +160,17 @@ YAML
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
-        - parameter: 
-            name: "service_name"
-            dt: "string"
-            value: "[service_name.value]"
+        - parameter:
+          name: "service_name"
+          dt: "string"
+          value: "[service_name.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:
-        - parameter: 
-            name: "enabled"
-            dt: "string"
-            value: "[enabled.value]"
+        - parameter:
+          name: "enabled"
+          dt: "string"
+          value: "[enabled.value]"
 
 JSON
 ^^^^

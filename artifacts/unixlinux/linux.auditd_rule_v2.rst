@@ -65,6 +65,8 @@ N/A
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
+**null_test_v1**
+
 XCCDF+AE
 ^^^^^^^^
 
@@ -135,9 +137,7 @@ Object
     comment="[RECOMMENDATION-TITLE]" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"     
     version="1">
-    <path>
-      /etc/audit/audit.rules
-    </path>
+    <path>/etc/audit/audit.rules</path>
     <filename>[filename.value]</filename>
     <pattern
       datatype="[datatype.value]"
@@ -168,14 +168,14 @@ YAML
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
-        - parameter: 
-            name: "existence"
-            dt: "string"
-            value: "[existence.value]"
-        - parameter: 
-            name: "rule"
-            dt: "string"
-            value: "[rule.value]"
+        - parameter:
+          name: "existence"
+          dt: "string"
+          value: "[existence.value]"
+        - parameter:
+          name: "rule"
+          dt: "string"
+          value: "[rule.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters: []

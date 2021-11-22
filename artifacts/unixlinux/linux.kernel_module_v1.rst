@@ -137,11 +137,8 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[RECOMMENDATION-TITLE]" 
     version="1">
-    <command>
-      [command.value]
-    </command>
-    <line_selection 
-      operation="pattern match">
+    <command>[command.value]</command>
+    <line_selection operation="pattern match">
       [line_selection.value]
     </line_selection>
   </shellcommand_object>
@@ -173,17 +170,17 @@ YAML
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
-        - parameter: 
-            name: "module"
-            dt: "string"
-            value: "[module.value]"
+        - parameter:
+          name: "module"
+          dt: "string"
+          value: "[module.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:
         - parameter:
-            name: "loadable"
-            dt: "string"
-            value: "[loadable.value]"
+          name: "loadable"
+          dt: "string"
+          value: "[loadable.value]"
 
 JSON
 ^^^^
@@ -303,11 +300,8 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[RECOMMENDATION-TITLE]" 
     version="1">
-    <command>
-      [command.value]
-    </command>
-    <line_selection 
-      operation="pattern match">
+    <command>[command.value]</command>
+    <line_selection operation="pattern match">
       [line_selection.value]
     </line_selection>
   </shellcommand_object>
@@ -339,17 +333,17 @@ YAML
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
-        - parameter: 
-            name: "module"
-            dt: "string"
-            value: "[module.value]"
+        - parameter:
+          name: "module"
+          dt: "string"
+          value: "[module.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:
         - parameter:
-            name: "loaded"
-            dt: "string"
-            value: "[loaded.value]"
+          name: "loaded"
+          dt: "string"
+          value: "[loaded.value]"
 
 JSON
 ^^^^

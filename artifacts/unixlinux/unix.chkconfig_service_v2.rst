@@ -77,6 +77,8 @@ enabled string Is the service enabled? (Yes/No)
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
+**unix.service_enabled_v1**
+
 XCCDF+AE
 ^^^^^^^^
 
@@ -153,12 +155,10 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[RECOMMENDATION-TITLE]"
     version="1">
-    <service_name 
-      operation="[operation.value]">
+    <service_name operation="[operation.value]">
       [service_name.value]
     </service_name>
-    <runlevel 
-      operation="[operation.value]">
+    <runlevel operation="[operation.value]">
       [runlevel.value]
     </runlevel>
   </runlevel_object>
@@ -190,29 +190,29 @@ YAML
     artifact:
       type: u"[ARTIFACT-TYPE-NAME]"
       parameters:
-        - parameter: 
-            name: "service_name"
-            dt: "string"
-            value: "[service_name.value]"
-        - parameter: 
-            name: "name_operationname_operation"
-            dt: "string"
-            value: "[name_operation.value]"
-        - parameter: 
-            name: "runlevel"
-            dt: "string"
-            value: "[runlevel.value]"
-        - parameter: 
-            name: "runlevel_operation"
-            dt: "string"
-            value: "[runlevel_operation.value]"
+        - parameter:
+          name: "service_name"
+          dt: "string"
+          value: "[service_name.value]"
+        - parameter:
+          name: "name_operationname_operation"
+          dt: "string"
+          value: "[name_operation.value]"
+        - parameter:
+          name: "runlevel"
+          dt: "string"
+          value: "[runlevel.value]"
+        - parameter:
+          name: "runlevel_operation"
+          dt: "string"
+          value: "[runlevel_operation.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:
-        - parameter: 
-            name: "enabled"
-            dt: "string"
-            value: "[enabled.value]"                           
+        - parameter:
+          name: "enabled"
+          dt: "string"
+          value: "[enabled.value]"
 
 JSON
 ^^^^
@@ -224,7 +224,7 @@ JSON
       "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
       "artifact-title": "[RECOMMENDATION-TITLE]",
       "artifact": {
-        "type": "unix.chkconfig_service_v2",
+        "type": "[ARTIFACT-TYPE-NAME]",
         "parameters": [
           {
             "parameter": {

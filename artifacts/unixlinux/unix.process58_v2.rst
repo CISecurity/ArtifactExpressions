@@ -146,6 +146,8 @@ NOTE: The ``datatype`` parameter is governed by a constraint allowing only the f
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
+**unix.process58_command_line_v1**
+
 XCCDF+AE
 ^^^^^^^^
 
@@ -223,8 +225,7 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[RECOMMENDATION-TITLE]"
     version="1">
-    <command_line 
-      operation="[operation.value]">
+    <command_line operation="[operation.value]">
       [command_line.value]
     </command_line>
     <pid 
@@ -262,44 +263,44 @@ YAML
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
         - parameter: 
-            name: "command_line"
-            dt: "string"
-            value: "[command_line.value]"
+          name: "command_line"
+          dt: "string"
+          value: "[command_line.value]"
         - parameter: 
-            name: "pid"
-            dt: "string"
-            value: "[pid.value]"
+          name: "pid"
+          dt: "string"
+          value: "[pid.value]"
         - parameter: 
-            name: "command_line_operation"
-            dt: "string"
-            value: "[command_line_operation.value]"
+          name: "command_line_operation"
+          dt: "string"
+          value: "[command_line_operation.value]"
         - parameter: 
-            name: "pid_operation"
-            dt: "string"
-            value: "[pid_operation.value]"
+          name: "pid_operation"
+          dt: "string"
+          value: "[pid_operation.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:
         - parameter: 
-            name: "check_existence"
-            dt: "string"
-            value: "[check_existence.value]"
+          name: "check_existence"
+          dt: "string"
+          value: "[check_existence.value]"
         - parameter: 
-            name: "check"
-            dt: "string"
-            value: "[check.value]"
+          name: "check"
+          dt: "string"
+          value: "[check.value]"
         - parameter: 
-            name: "operation"
-            dt: "string"
-            value: "[operation.value]"
+          name: "operation"
+          dt: "string"
+          value: "[operation.value]"
         - parameter: 
-            name: "data_type"
-            dt: "string"
-            value: "[data_type.value]"
+          name: "data_type"
+          dt: "string"
+          value: "[data_type.value]"
         - parameter: 
-            name: "command_line"
-            dt: "string"
-            value: "[command_line.value]"    
+          name: "command_line"
+          dt: "string"
+          value: "[command_line.value]"    
 
 JSON
 ^^^^
@@ -311,7 +312,7 @@ JSON
       "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
       "artifact-title": "[RECOMMENDATION-TITLE]",
       "artifact": {
-        "type": "unix.process58_v2",
+        "type": "[ARTIFACT-TYPE-NAME]",
         "parameters": [
           {
             "parameter": {

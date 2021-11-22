@@ -68,6 +68,9 @@ NOTE: The ``data_type`` parameter is governed by a constraint allowing only the 
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
+| **equals**
+| **not equal**
+| 
 XCCDF+AE
 ^^^^^^^^
 
@@ -164,12 +167,8 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[RECOMMENDATION-TITLE]"
     version="1">
-    <unit>
-      [unit.value]
-    </unit>
-    <property>
-      [property.value]
-    </property>
+    <unit>[unit.value]</unit>
+    <property>[property.value]</property>
   </systemdunitproperty_object>
 
 State
@@ -208,33 +207,33 @@ YAML
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
-        - parameter: 
-            name: "unit"
-            dt: "string"
-            value: "[unit.value]"
-        - parameter: 
-            name: "property"
-            dt: "string"
-            value: "[property.value]"
+        - parameter:
+          name: "unit"
+          dt: "string"
+          value: "[unit.value]"
+        - parameter:
+          name: "property"
+          dt: "string"
+          value: "[property.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:
         - parameter:
-            name: "value"
-            dt: "string"
-            value: "[value.value]"
+          name: "value"
+          dt: "string"
+          value: "[value.value]"
         - parameter:
-            name: "data_type"
-            dt: "string"
-            value: "[data_type.value]"
+          name: "data_type"
+          dt: "string"
+          value: "[data_type.value]"
         - parameter:
-            name: "unit_operation"
-            dt: "string"
-            value: "[unit_operation.value]"
+          name: "unit_operation"
+          dt: "string"
+          value: "[unit_operation.value]"
         - parameter:
-            name: "dependency"
-            dt: "string"
-            value: "[dependency.value]"
+          name: "dependency"
+          dt: "string"
+          value: "[dependency.value]"
 
 JSON
 ^^^^
@@ -246,7 +245,7 @@ JSON
       "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
       "artifact-title": "[RECOMMENDATION-TITLE]",
       "artifact": {
-        "type": "linux.systemd_unit_property_v1",
+        "type": "[ARTIFACT-TYPE-NAME]",
         "parameters": [
           {
             "parameter": {

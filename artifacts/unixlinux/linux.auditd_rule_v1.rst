@@ -75,6 +75,8 @@ NOTE: The ``data_type`` parameter is governed by a constraint allowing only the 
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
+**set.includes_v1**
+
 XCCDF+AE
 ^^^^^^^^
 
@@ -151,12 +153,8 @@ Object
     comment="[RECOMMENDATION-TITLE]" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"     
     version="1">
-    <path>
-      /etc/audit
-    </path>
-    <filename>
-      auditd.rules
-    </filename>
+    <path>/etc/audit</path>
+    <filename>auditd.rules</filename>
     <pattern
       datatype="[datatype.value]"
       operation="pattern match">
@@ -186,21 +184,21 @@ YAML
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
-        - parameter: 
-            name: "check_existence"
-            dt: "string"
-            value: "[check_existence.value]"
+        - parameter:
+          name: "check_existence"
+          dt: "string"
+          value: "[check_existence.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:
         - parameter:
-            name: "value"
-            dt: "string"
-            value: "[value.value]"
-        - parameter: 
-            name: "data_type"
-            dt: "string"
-            value: "[data_type.value]"
+          name: "value"
+          dt: "string"
+          value: "[value.value]"
+        - parameter:
+          name: "data_type"
+          dt: "string"
+          value: "[data_type.value]"
 
 JSON
 ^^^^

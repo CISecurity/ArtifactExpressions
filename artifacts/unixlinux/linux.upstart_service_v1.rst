@@ -48,6 +48,8 @@ enabled string Is the service enabled? (Yes/No)
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
+**unix.service_enabled_v1**
+
 XCCDF+AE
 ^^^^^^^^
 
@@ -92,10 +94,11 @@ For ``linux.upstart_service_v1`` artifacts, the xccdf:check looks like this. The
 
   <xccdf:complex-check operator="AND">
     <check system="http://open-SCAP.org/page/SCE">
-  <check-content-ref
-    href="[RECOMMENDATION-TITLE]"
-    name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
-  </check> </xccdf:complex-check>
+      <check-content-ref
+        href="[RECOMMENDATION-TITLE]"
+        name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
+    </check> 
+  </xccdf:complex-check>
 
 OVAL
 ''''
@@ -124,11 +127,8 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[RECOMMENDATION-TITLE]"
     version="1">
-    <command>
-      [command.value]
-    </command>
-    <line_selection 
-      operation="pattern match">
+    <command>[command.value]</command>
+    <line_selection operation="pattern match">
       "^\\s+start on
     </line_selection>
   </shellcommand_object>
@@ -160,21 +160,21 @@ YAML
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
-        - parameter: 
-            name: "service"
-            dt: "string"
-            value: "[service.value]"
-        - parameter: 
-            name: "protocol"
-            dt: "string"
-            value: "[protocol.value]"
+        - parameter:
+          name: "service"
+          dt: "string"
+          value: "[service.value]"
+        - parameter:
+          name: "protocol"
+          dt: "string"
+          value: "[protocol.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:
         - parameter:
-            name: "enabled"
-            dt: "string"
-            value: "[enabled.value]"
+          name: "enabled"
+          dt: "string"
+          value: "[enabled.value]"
 
 JSON
 ^^^^

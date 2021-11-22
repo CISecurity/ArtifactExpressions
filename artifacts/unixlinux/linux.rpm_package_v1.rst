@@ -59,6 +59,8 @@ NOTE: The ``value`` parameter is governed by a constraint allowing only the foll
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
+**existence_test**
+
 XCCDF+AE
 ^^^^^^^^
 
@@ -132,9 +134,7 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[RECOMMENDATION-TITLE]"
     version="1">
-    <name>
-      [name.value]
-    </name>
+    <name>[name.value]</name>
   </rpminfo_object>
 
 State
@@ -154,17 +154,17 @@ YAML
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
-        - parameter: 
-            name: "name"
-            dt: "string"
-            value: "[name.value]"
+        - parameter:
+          name: "name"
+          dt: "string"
+          value: "[name.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:
         - parameter:
-            name: "value"
-            dt: "string"
-            value: "[value.value]"
+          name: "value"
+          dt: "string"
+          value: "[value.value]"
 
 JSON
 ^^^^

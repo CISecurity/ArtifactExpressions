@@ -98,6 +98,8 @@ NOTE: The ``unit_operation`` and ``dependency_operation`` parameters are governe
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
+**linux.systemd_unit_dependency_v1**
+
 XCCDF+AE
 ^^^^^^^^
 
@@ -159,9 +161,9 @@ Test
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
     check_existence="any_exist"
-        check="all"
+    check="all"
     comment="[RECOMMENDATION-TITLE]"
-        version="1">
+    version="1">
     <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
     <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
   </systemdunitdependency_test>
@@ -175,8 +177,7 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[RECOMMENDATION-TITLE]"
     version="1">
-    <unit
-      operation="[operation.value]">
+    <unit operation="[operation.value]">
       [unit.value]
     </unit>
   </systemdunitdependency_object>
@@ -213,33 +214,33 @@ YAML
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
-        - parameter: 
-            name: "unit"
-            dt: "string"
-            value: "[unit.value]"
-        - parameter: 
-            name: "operation"
-            dt: "string"
-            value: "[operation.value]"
+        - parameter:
+          name: "unit"
+          dt: "string"
+          value: "[unit.value]"
+        - parameter:
+          name: "operation"
+          dt: "string"
+          value: "[operation.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:
         - parameter:
-            name: "dependency_operation"
-            dt: "string"
-            value: "[dependency_operation.value]"
+          name: "dependency_operation"
+          dt: "string"
+          value: "[dependency_operation.value]"
         - parameter:
-            name: "unit"
-            dt: "string"
-            value: "[unit.value]"
+          name: "unit"
+          dt: "string"
+          value: "[unit.value]"
         - parameter:
-            name: "unit_operation"
-            dt: "string"
-            value: "[unit_operation.value]"
+          name: "unit_operation"
+          dt: "string"
+          value: "[unit_operation.value]"
         - parameter:
-            name: "dependency"
-            dt: "string"
-            value: "[dependency.value]"                              
+          name: "dependency"
+          dt: "string"
+          value: "[dependency.value]"
 
 JSON
 ^^^^
@@ -251,7 +252,7 @@ JSON
       "artifact-unique-id":"[ARTIFACT-OVAL-ID]",
       "artifact-title": "[RECOMMENDATION-TITLE]",
       "artifact": {
-        "type": "linux.systemd_unit_dependency_v1",
+        "type": "[ARTIFACT-TYPE-NAME]",
         "parameters": [
           {
             "parameter": {
