@@ -85,7 +85,7 @@ Artifact Parameters
 |                                     |             | (e.g., a nodes   |
 |                                     |             | set) is          |
 |                                     |             | considered an    |
-|                                     |             | error. The       |
+|                                     |             | error. The      |
 |                                     |             | intention is     |
 |                                     |             | that the text    |
 |                                     |             | values be drawn  |
@@ -288,7 +288,7 @@ independent.xmlfilecontent_v2
 |                                     |             | (e.g., a nodes   |
 |                                     |             | set) is          |
 |                                     |             | considered an    |
-|                                     |             | error. The       |
+|                                     |             | error. The      |
 |                                     |             | intention is     |
 |                                     |             | that the text    |
 |                                     |             | values be drawn  |

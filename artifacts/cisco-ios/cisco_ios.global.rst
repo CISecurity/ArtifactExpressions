@@ -42,7 +42,7 @@ Test Type Parameters
 | operator                            | String      | The comparison   |
 |                                     |             | operator.        |
 +-------------------------------------+-------------+------------------+
-| global_command                      | String      | The              |
+| global_command                      | String      | The             |
 |                                     |             | global_command   |
 |                                     |             | entity           |
 |                                     |             | identifies a     |
