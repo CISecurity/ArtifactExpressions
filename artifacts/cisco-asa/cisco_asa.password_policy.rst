@@ -18,7 +18,7 @@ Artifact Parameters
 ====================== ====== =====================================
 Name                   Type   Description
 ====================== ====== =====================================
-password_policy_option String Password Policy configuration option.
+password_policy_option string Password Policy configuration option.
 ====================== ====== =====================================
 
 NOTE: The ``password_policy_option`` parameter is governed by a constraint allowing only the following values:
