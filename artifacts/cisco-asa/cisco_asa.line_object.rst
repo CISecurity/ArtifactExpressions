@@ -8,8 +8,7 @@ The Cisco ASA: Line Object test is used to check the properties of specific
 output lines from a SHOW command, such as SHOW RUNNING-CONFIG. It
 extends the standard TestType as defined in the oval-definitions-schema
 and one should refer to the TestType description for more information.
-The object element references a line_object and The
-state element specifies the data to check.
+The object element references a line_object and the state element specifies the data to check.
 
 Technical Details
 -----------------
