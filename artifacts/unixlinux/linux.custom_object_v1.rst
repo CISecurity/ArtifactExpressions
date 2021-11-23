@@ -292,8 +292,7 @@ NOTE: The ``object`` parameter is governed by a constraint allowing only the fol
   - Check That Reserved UIDs Are Assigned to System Accounts
   - Root Path Does Not Include ""
   - Root Path Does Not Include "."
-  - Root Path Directories Are Owned By UID 0 And Not Writable By Group
-      Or Other
+  - Root Path Directories Are Owned By UID 0 And Not Writable By Group Or Other
   - Check User Home Directory Ownership
   - AppArmor has loaded profiles
   - No AppArmor Profiles Are In Complain Mode
@@ -301,20 +300,14 @@ NOTE: The ``object`` parameter is governed by a constraint allowing only the fol
   - Shadow Group is Empty
   - No Users Have Shadow Group as Primary Group
   - Ensure the X Window system is not installed
-  - Ensure no users with a Password have password expiration over 90
-      days
-  - Ensure no users with a Password have password expiration over 365
-      days
-  - Ensure no users with a Password have password change minimum under
-      7 days
-  - Ensure no users with a Password have password expiration warning
-      under 7 days
-  - Ensure no users with a Password have password inactivation over 30
-      days
+  - Ensure no users with a Password have password expiration over 90 days
+  - Ensure no users with a Password have password expiration over 365 days
+  - Ensure no users with a Password have password change minimum under 7 days
+  - Ensure no users with a Password have password expiration warning under 7 days
+  - Ensure no users with a Password have password inactivation over 30 days
   - chronyd is running as chrony user
   - Firewall Rule Exists For All Open Ports
-  - Ensure all users with a Password have password change date in the
-      past
+  - Ensure all users with a Password have password change date in the past
 
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
