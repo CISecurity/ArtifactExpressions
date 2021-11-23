@@ -24,18 +24,19 @@ Artifact Parameters
 
 **linux.systemd_unit_dependency_v1**
 
-+-----------+--------+-----------------------------------------------+
-| Name      | Type   | Description                                   |
-+===========+========+===============================================+
-| unit      | string | The full systemd unit name, usually also the  |
-|           |        | filename of the unit configuration file       |
-|           |        | located in the /etc/systemd/ and              |
-|           |        | /usr/lib/systemd/ directories.                |
-+-----------+--------+-----------------------------------------------+
-| operation | string | Determines how the unit name should be        |
-|           |        | evaluated (the default operation is           |
-|           |        | 'equals').                                    |
-+-----------+--------+-----------------------------------------------+
++-----------------------------+---------+------------------------------------+
+| Name                        | Type    | Description                        |
++=============================+=========+====================================+
+| unit                        | string  | The full systemd unit name,        |
+|                             |         | usually also the filename of the   |
+|                             |         | unit configuration file located in |
+|                             |         | the /etc/systemd/ and              |
+|                             |         | /usr/lib/systemd/ directories.     |
++-----------------------------+---------+------------------------------------+
+| operation                   | string  | Determines how the unit name       |
+|                             |         | should be evaluated (the default   |
+|                             |         | operation is 'equals').            |
++-----------------------------+---------+------------------------------------+
 
 NOTE: The ``operation`` parameter is governed by a constraint allowing only the following values:
   - equals
