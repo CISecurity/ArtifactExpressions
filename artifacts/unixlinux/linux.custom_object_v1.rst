@@ -382,7 +382,7 @@ OVAL
 
 Test
 
-  **AppArmor has loaded profiles**
+**AppArmor has loaded profiles**
 
 ::
 
@@ -423,11 +423,9 @@ State
     </loaded_profiles_count>  
   </apparmorstatus_state>
 
---------------
-
 Test
 
-  **No AppArmor Profiles Are In Complain Mode**
+**No AppArmor Profiles Are In Complain Mode**
 
 ::
 
@@ -468,11 +466,9 @@ State
     </complain_mode_profiles_count>  
   </apparmorstatus_state>
 
---------------
-
 Test
 
-  **No AppArmor Processes Are Unconfined**
+**No AppArmor Processes Are Unconfined**
 
 ::
 
@@ -513,11 +509,9 @@ State
     </unconfined_processes_with_profiles_count>    
   </apparmorstatus_state>
 
---------------
-
 Test
 
-  **Ensure the X Window system is not installed**
+**Ensure the X Window system is not installed**
 
 ::
 
@@ -551,12 +545,9 @@ State
 
   N/A
 
---------------
-
 Test
 
-  **Root Path Directories Are Owned By UID 0 And Not Writable By Group
-      Or Other**
+**Root Path Directories Are Owned By UID 0 And Not Writable By Group Or Other**
 
 ::
 
@@ -628,11 +619,9 @@ Variable
     </split>
   </local_variable>
 
---------------
-
 Test
 
-  **No User Home Directories Have Permissions ----w-rwx**
+**No User Home Directories Have Permissions ----w-rwx**
 
 ::
 
@@ -724,11 +713,9 @@ Variable
     </split>
   </local_variable>
 
---------------
-
 Test
 
-  **No User Dot Files Have Permissions ----w--w-**
+**No User Dot Files Have Permissions ----w--w-**
 
 ::
 
@@ -816,11 +803,9 @@ Variable
     </split>
   </local_variable>
 
---------------
-
 Test
 
-  **No User .netrc Files Have Permissions ---rwxrwx**
+**No User .netrc Files Have Permissions ---rwxrwx**
 
 ::
 
@@ -920,11 +905,9 @@ Variable
     </split>
   </local_variable>
 
---------------
-
 Test
 
-  **syslog Log Files Have Correct Permissions**
+**syslog Log Files Have Correct Permissions**
 
 ::
 
@@ -956,9 +939,7 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]2" 
     comment="[RECOMMENDATION-TITLE]"
     version="1">
-    <filepath>
-      /etc/syslog.conf
-    </filepath>
+    <filepath>/etc/syslog.conf</filepath>
     <pattern operation="pattern match">
       ^[^#\$\\r\\n](.*\\s+/.*)\$
     </pattern>
@@ -1011,11 +992,9 @@ Variable
     </regex_capture>
   </local_variable>  
 
---------------
-
 Test
 
-  **rsyslog Log Files Have Correct Permissions**
+**rsyslog Log Files Have Correct Permissions**
 
 ::
 
@@ -1047,9 +1026,7 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]2" 
     comment="[RECOMMENDATION-TITLE]"
     version="1">
-    <filepath>
-      /etc/rsyslog.conf
-    </filepath>
+    <filepath>/etc/rsyslog.conf</filepath>
     <pattern operation="pattern match">
       ^[^#\$\\r\\n](.*\\s+/.*)\$
     </pattern>
@@ -1102,11 +1079,9 @@ Variable
     </regex_capture>
   </local_variable>  
 
---------------
-
 Test
 
-  **No User Home Directories Contain .rhost Files**
+**No User Home Directories Contain .rhost Files**
 
 ::
 
@@ -1140,8 +1115,7 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]2" 
     comment="[RECOMMENDATION-TITLE]"
     version="1">
-    <username>
-      operation="pattern match">
+    <username operation="pattern match">
       ^(?!root|halt|sync|shutdown).*
     </username>
     <filter
@@ -1181,11 +1155,9 @@ Variable
     </split>
   </local_variable>
 
---------------
-
 Test
 
-  **No User Home Directories Contain .netrc Files**
+**No User Home Directories Contain .netrc Files**
 
 ::
 
@@ -1219,8 +1191,7 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]2" 
     comment="[RECOMMENDATION-TITLE]"
     version="1">
-    <username>
-      operation="pattern match">
+    <username operation="pattern match">
       ^(?!root|halt|sync|shutdown).*
     </username>
     <filter
@@ -1260,11 +1231,9 @@ Variable
     </split>
   </local_variable>
 
---------------
-
 Test
 
-  **No User Home Directories Contain .forward Files**
+**No User Home Directories Contain .forward Files**
 
 ::
 
@@ -1338,11 +1307,9 @@ Variable
     </split>
   </local_variable>
 
---------------
-
 Test
 
-  **All User Home Directories Exist**
+**All User Home Directories Exist**
 
 ::
 
@@ -1414,11 +1381,9 @@ Variable
     </split>
   </local_variable>
 
---------------
-
 Test
 
-  **All World Writable Directories Have Sticky Bit Set**
+**All World Writable Directories Have Sticky Bit Set**
 
 ::
 
@@ -1445,11 +1410,8 @@ Object
       recurse_direction="down"
       recurse_file_system="local"
       recurse="directories" />
-    <path>
-      /
-    </path>
-    <filename
-      xsi:nil="true" />
+    <path>/</path>
+    <filename xsi:nil="true" />
     <filter
       xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5" 
       action="include">
@@ -1466,8 +1428,7 @@ State
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" 
     comment="[RECOMMENDATION-TITLE]"
     version="1">
-    <sticky 
-      datatype="boolean">
+    <sticky datatype="boolean">
       false
     </sticky>
     <owrite datatype="boolean">
@@ -1475,11 +1436,9 @@ State
     </owrite>
   </file_state>
 
---------------
-
 Test
 
-  **No World Writable Files Exist**
+**No World Writable Files Exist**
 
 ::
 
@@ -1506,12 +1465,8 @@ Object
       recurse_direction="down"
       recurse_file_system="local"
       recurse="directories" />
-    <path>
-      /
-    </path>
-    <filename>
-      .+
-    </filename>
+    <path>/</path>
+    <filename>.+</filename>
     <filter
       xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5" 
       action="include">
@@ -1528,8 +1483,7 @@ State
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" 
     comment="[RECOMMENDATION-TITLE]"
     version="1">
-    <type 
-      datatype="string">
+    <type datatype="string">
       regular
     </type>
     <owrite datatype="boolean">
@@ -1537,11 +1491,9 @@ State
     </owrite>
   </file_state>
 
---------------
-
 Test
 
-  **No Un-owned Files and Directories**
+**No Un-owned Files and Directories**
 
 ::
 
@@ -1568,12 +1520,8 @@ Object
       recurse_direction="down"
       recurse_file_system="local"
       recurse="directories" />
-    <path>
-      /
-    </path>
-    <filename>
-      .*
-    </filename>
+    <path>/</path>
+    <filename>.*</filename>
     <filter
       xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5">
       oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]
@@ -1586,7 +1534,7 @@ Object
     comment="[RECOMMENDATION-TITLE]"
     version="1">
     <username operation="pattern match">
-        .*
+      .*
     </username>
   </password_object>
 
@@ -1620,11 +1568,9 @@ Variable
       object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]2" />
   </local_variable>
 
---------------
-
 Test
 
-  **No Un-grouped Files and Directories**
+**No Un-grouped Files and Directories**
 
 ::
 
@@ -1651,12 +1597,8 @@ Object
       recurse_direction="down"
       recurse_file_system="local"
       recurse="directories" />
-    <path>
-      /
-    </path>
-    <filename>
-      .*
-    </filename>
+    <path>/</path>
+    <filename>.*</filename>
     <filter
       xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5">
       oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]
@@ -1668,9 +1610,7 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]2" 
     comment="[RECOMMENDATION-TITLE]"
     version="1">
-    <filepath>
-      /etc/group
-    </filepath>
+    <filepath>/etc/group</filepath>
     <pattern operation="pattern match">
       ^[^:]+:[^:]*:([\\d]+):[^:]*\$
     </pattern>
@@ -1711,11 +1651,9 @@ Variable
       object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]2" />
   </local_variable>  
 
---------------
-
 Test
 
-  **No Servers Listening On Port 25**
+**No Servers Listening On Port 25**
 
 ::
 
@@ -1738,12 +1676,10 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" 
     comment="[RECOMMENDATION-TITLE]"
     version="1">
-    <protocol 
-      operation="pattern match">
+    <protocol operation="pattern match">
       .*
     </protocol>
-    <local_address 
-      operation="pattern match">
+    <local_address operation="pattern match">
       ^(?!127\\.0\\.0\\.1|::1).*\$  
     </local_address>
     <local_port 
@@ -1759,11 +1695,9 @@ State
 
   N/A
 
---------------
-
 Test
 
-  **Check User Home Directory Ownership**
+**Check User Home Directory Ownership**
 
 ::
 
@@ -1793,11 +1727,9 @@ State
 
   N/A
 
---------------
-
 Test
 
-  **Default Group Set For root User**
+**Default Group Set For root User**
 
 ::
 
@@ -1821,9 +1753,7 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" 
     comment="[RECOMMENDATION-TITLE]"
     version="1">
-    <username 
-      root
-    </username>
+    <username>root</username>
   </password_object>
 
 State
@@ -1835,17 +1765,14 @@ State
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" 
     comment="[RECOMMENDATION-TITLE]"
     version="1">
-    <group_id 
-      datatype="int">
+    <group_id datatype="int">
       0
     </group_id>
   </password_state>
 
---------------
-
 Test
 
-  **System Accounts Disabled**
+**System Accounts Disabled**
 
 ::
 
@@ -1893,11 +1820,9 @@ State
     </login_shell>
   </password_state>
 
---------------
-
 Test
 
-  **Check That Reserved UIDs Are Assigned to System Accounts**
+**Check That Reserved UIDs Are Assigned to System Accounts**
 
 ::
 
@@ -1942,11 +1867,9 @@ State
     </user_id>
   </password_state>
 
---------------
-
 Test
 
-  **No Users Have Shadow Group as Primary Group**
+**No Users Have Shadow Group as Primary Group**
 
 ::
 
@@ -1980,9 +1903,7 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]2" 
     comment="[RECOMMENDATION-TITLE]"
     version="1"> 
-    <filepath>
-      /etc/group
-    </filepath>
+    <filepath>/etc/group</filepath>
     <pattern operation="pattern match">
       ^shadow:[^:]*:([^:]*):[^:]*\$
     </pattern>
@@ -2022,11 +1943,9 @@ Variable
       object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]2" />
   </local_variable>
 
---------------
-
 Test
 
-  **There Are No Unconfined Daemons**
+**There Are No Unconfined Daemons**
 
 ::
 
@@ -2049,8 +1968,7 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" 
     comment="[RECOMMENDATION-TITLE]"
     version="1">
-    <command_line 
-      operation="pattern match">
+    <command_line operation="pattern match">
       .*
     </command_line>
     <pid 
@@ -2081,11 +1999,9 @@ State
     </selinux_domain_label>
   </process58_state>
 
---------------
-
 Test
 
-  **chronyd is running as chrony user**
+**chronyd is running as chrony user**
 
 ::
 
@@ -2108,8 +2024,7 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" 
     comment="[RECOMMENDATION-TITLE]"
     version="1">
-    <command_line 
-      operation="pattern match">
+    <command_line operation="pattern match">
       ^chronyd
     </command_line>
     <pid 
@@ -2129,9 +2044,7 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]2" 
     comment="[RECOMMENDATION-TITLE]"
     version="1">
-    <username>
-      chrony
-    </username>
+    <username>chrony</username>
   </password_object>
 
 State
@@ -2162,12 +2075,9 @@ Variable
       object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]2" />
   </local_variable>
 
---------------
-
 Test
 
-  **Ensure no users with a Password have password expiration over 365
-      days**
+**Ensure no users with a Password have password expiration over 365 days**
 
 ::
 
@@ -2217,12 +2127,9 @@ State
     </chg_req>
   </shadow_state>
 
---------------
-
 Test
 
-  **Ensure no users with a Password have password expiration over 90
-      days**
+**Ensure no users with a Password have password expiration over 90 days**
 
 ::
 
@@ -2272,12 +2179,9 @@ State
     </chg_reg>
   </shadow_state>
 
---------------
-
 Test
 
-  **Ensure no users with a Password have password change minimum under
-      7 days**
+**Ensure no users with a Password have password change minimum under 7 days**
 
 ::
 
@@ -2327,12 +2231,9 @@ State
     </chg_allow>  
   </shadow_state>
 
---------------
-
 Test
 
-  **Ensure no users with a Password have password expiration warning
-      under 7 days**
+**Ensure no users with a Password have password expiration warning under 7 days**
 
 ::
 
@@ -2382,12 +2283,9 @@ State
     </exp_warn>
   </shadow_state>
 
---------------
-
 Test
 
-  **Ensure no users with a Password have password inactivation over 30
-      days**
+**Ensure no users with a Password have password inactivation over 30 days**
 
 ::
 
@@ -2437,11 +2335,9 @@ State
     </exp_inact>
   </shadow_state>
 
---------------
-
 Test
 
-  **System Accounts Locked**
+**System Accounts Locked**
 
 ::
 
@@ -2493,8 +2389,7 @@ State
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"    
     comment="[RECOMMENDATION-TITLE]"
     version="1"> 
-    <password 
-      operation="pattern match">
+    <password operation="pattern match">
       ^!
     </password>
   </shadow_state>  
@@ -2525,11 +2420,9 @@ Variable
       object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]2" />
   </local_variable>
 
---------------
-
 Test
 
-  **Firewall Rule Exists For All Open Ports**
+**Firewall Rule Exists For All Open Ports**
 
 ::
 
@@ -2563,9 +2456,7 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" 
     comment="[RECOMMENDATION-TITLE]"
     version="1">
-    <command>
-      iptables -L INPUT -v -n
-    </command>
+    <command>iptables -L INPUT -v -n</command>
     <line_selection 
       operation="pattern match" 
       var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
@@ -2576,12 +2467,10 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]2" 
     comment="[RECOMMENDATION-TITLE]"
     version="1">
-    <protocol
-      operation="pattern match">
+    <protocol operation="pattern match">
       .*
     </protocol> 
-    <local_address
-      operation="pattern match">
+    <local_address operation="pattern match">
       ^(?!127\\.0\\.0\\.1|::1).*$
     </local_address>
     <local_port
@@ -2616,26 +2505,22 @@ Variable
     datatype="string" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" 
     version="1">
-      <concat>
-        <literal_component 
-          datatype="string">
-          \s+dpt:
-        </literal_component>
-        <object_component 
-          item_field="local_port" 
-          object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]2" />
-        <literal_component 
-          datatype="string">
-          \s+state\s+NEW\s*$
-        </literal_component>
-      </concat>
-    </local_variable>
-
---------------
+    <concat>
+      <literal_component datatype="string">
+        \s+dpt:
+      </literal_component>
+      <object_component 
+        item_field="local_port" 
+        object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]2" />
+      <literal_component datatype="string">
+        \s+state\s+NEW\s*$
+      </literal_component>
+    </concat>
+  </local_variable>
 
 Test
 
-  **systemd Does Not Default To graphical.target**
+**systemd Does Not Default To graphical.target**
 
 ::
 
@@ -2659,9 +2544,7 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" 
     comment="[RECOMMENDATION-TITLE]"
     version="1">
-    <filepath>
-      /etc/systemd/system/default.target
-    </filepath>
+    <filepath>/etc/systemd/system/default.target</filepath>
   </symlink_object> 
 
 State
@@ -2673,17 +2556,14 @@ State
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" 
     comment="[RECOMMENDATION-TITLE]"
     version="1">
-    <canonical_path 
-      operation="pattern match">
+    <canonical_path operation="pattern match">
       ^.*/graphical\.target\$
     </canonical_path>
   </symlink_state>
 
---------------
-
 Test
 
-  **Shadow Group is Empty**
+**Shadow Group is Empty**
 
 ::
 
@@ -2706,9 +2586,7 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" 
     comment="[RECOMMENDATION-TITLE]"
     version="1">
-    <filepath>
-      /etc/group
-    </filepath>
+    <filepath>/etc/group</filepath>
     <pattern operation="pattern match">
       ^shadow:[^:]*:[^:]*:[^:]+\$
     </pattern>
@@ -2725,11 +2603,9 @@ State
 
   N/A
 
---------------
-
 Test
 
-  **/etc/profile.d/\* contains "umask 077"**
+**/etc/profile.d/\* contains "umask 077"**
 
 ::
 
@@ -2752,9 +2628,7 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]2" 
     comment="[RECOMMENDATION-TITLE]"
     version="1">
-    <filepath>
-      /etc/group
-    </filepath>
+    <filepath>/etc/group</filepath>
     <pattern operation="pattern match"
       var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]">
       ^\s*umask\s+077\s*\$
@@ -2790,9 +2664,7 @@ State
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" 
     comment="[RECOMMENDATION-TITLE]"
     version="1"> 
-    <login_shell>
-      /sbin/nologin
-    </login_shell>
+    <login_shell>/sbin/nologin</login_shell>
   </password_state>
 
 Variable
@@ -2805,25 +2677,21 @@ Variable
     comment="[RECOMMENDATION-TITLE]"
     version="1"> 
     <concat>
-      <literal_component
-        datatype="string">
+      <literal_component datatype="string">
         ^[^:]*:[^:]*:
       </literal_component>
       <object_component
         item_field="group_id"
         object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]2" />
-      <literal_component
-        datatype="string">
+      <literal_component datatype="string">
         :[^:]*\$
       </literal_component> 
     </concat>
   </local_variable>
 
---------------
-
 Test
 
-  **All Groups In /etc/passwd Exist In /etc/group**
+**All Groups In /etc/passwd Exist In /etc/group**
 
 ::
 
@@ -2846,9 +2714,7 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]2" 
     comment="[RECOMMENDATION-TITLE]"
     version="1">
-    <filepath>
-      /etc/group
-    </filepath>
+    <filepath>/etc/group</filepath>
     <pattern operation="pattern match"
       var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
     <instance 
@@ -2882,9 +2748,7 @@ State
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" 
     comment="[RECOMMENDATION-TITLE]"
     version="1"> 
-    <login_shell>
-      /sbin/nologin
-    </login_shell>
+    <login_shell>/sbin/nologin</login_shell>
   </password_state>
 
 Variable
@@ -2897,25 +2761,21 @@ Variable
     comment="[RECOMMENDATION-TITLE]"
     version="1"> 
     <concat>
-      <literal_component
-        datatype="string">
+      <literal_component datatype="string">
         ^[^:]*:[^:]*:
       </literal_component>
       <object_component
         item_field="group_id"
         object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]2" />
-      <literal_component
-        datatype="string">
+      <literal_component datatype="string">
         :[^:]*\$
       </literal_component> 
     </concat>
   </local_variable>
 
---------------
-
 Test
 
-  **auditd Collects Privileged Command Use**
+**auditd Collects Privileged Command Use**
 
 ::
 
@@ -2938,9 +2798,7 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]2" 
     comment="[RECOMMENDATION-TITLE]"
     version="1">
-    <filepath>
-      /etc/audit/audit.rules
-    </filepath>
+    <filepath>/etc/audit/audit.rules</filepath>
     <pattern operation="pattern match"
       var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]">
     </pattern>
@@ -2961,9 +2819,7 @@ Object
       recurse_file_system="local"
       recurse="directories"
     </behaviors>
-    <path>
-      /
-    </path>
+    <path>/</path>
     <filename operation="pattern match">
       .+
     </filename>
@@ -2983,12 +2839,10 @@ State
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" 
     comment="[RECOMMENDATION-TITLE]"
     version="1">
-    <suid
-      datatype="boolean"> 
+    <suid datatype="boolean"> 
       false
     </suid>
-    <sgid
-      datatype="boolean">
+    <sgid datatype="boolean">
       false
     </sgid>
   </file_state>
@@ -3003,25 +2857,21 @@ Variable
     comment="[RECOMMENDATION-TITLE]"
     version="1"> 
     <concat>
-      <literal_component
-        datatype="string">
+      <literal_component datatype="string">
         ^\-a (always,exit|exit,always) \-F path=
       </literal_component>
       <object_component
         item_field="filepath"
         object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]2" />
-      <literal_component
-        datatype="string">
+      <literal_component datatype="string">
         \\-F perm=x \\-F auid>=500 \\-F auid!=4294967295 \\-k privileged\$
       </literal_component> 
     </concat>
   </local_variable>
 
---------------
-
 Test
 
-  **Root Path Does Not Include ""**
+**Root Path Does Not Include ""**
 
 ::
 
@@ -3091,11 +2941,9 @@ Variable
     </split>
   </local_variable>
 
---------------
-
 Test
 
-  **Root Path Does Not Include "."**
+**Root Path Does Not Include "."**
 
 ::
 
@@ -3167,11 +3015,9 @@ Variable
     </split>
   </local_variable>
 
---------------
-
 Test
 
-  **Check For Duplicate UIDs**
+**Check For Duplicate UIDs**
 
 ::
 
@@ -3258,11 +3104,9 @@ Variable
     </count>
   </local_variable>  
 
---------------
-
 Test
 
-  **Check For Duplicate Group Names**
+**Check For Duplicate Group Names**
 
 ::
 
@@ -3353,11 +3197,9 @@ Variable
     </count>
   </local_variable>
 
---------------
-
 Test
 
-  **Check For Duplicate User Names**
+**Check For Duplicate User Names**
 
 ::
 
@@ -3447,11 +3289,9 @@ Variable
     </count>
   </local_variable>  
 
---------------
-
 Test
 
-  **Check For Duplicate GIDs**
+**Check For Duplicate GIDs**
 
 ::
 
@@ -3541,12 +3381,9 @@ Variable
     </count>
   </local_variable> 
 
---------------
-
 Test
 
-  **Ensure all users with a Password have password change date in the
-      past**
+**Ensure all users with a Password have password change date in the past**
 
 ::
 
@@ -3634,16 +3471,14 @@ Variable
     comment="[RECOMMENDATION-TITLE]"      
     version="1">
     <arithmetic arithmetic_operation="multiply">
-        <object_component
-          object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
-          item_field="chg_lst" />
-        <literal_component datatype="int">
-          86400
-        </literal_component>
+      <object_component
+        object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
+        item_field="chg_lst" />
+      <literal_component datatype="int">
+        86400
+      </literal_component>
     </arithmetic>
   </local_variable>      
-
---------------
 
 YAML
 ^^^^
@@ -3656,7 +3491,7 @@ YAML
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
-      - parameter: 
+        - parameter: 
           name: "object"
           dt: "string"
           value: "[object.value]"
