@@ -137,16 +137,11 @@ Password Test:
     - No Users Have Shadow Group as Primary Group
 
 Process 58 Test:
-  The process58_test is used to check information found in the UNIX 
-  processes. It is equivalent to parsing the output of the ps command. 
+  The process58_test is used to check information found in the UNIX processes. It is equivalent to parsing the output of the ps command. 
 
-  The process58_object element is used by a process58_test to define the 
-  specific process(es) to be evaluated. A process58_object defines the 
-  command line used to start the process(es) and pid.
+  The process58_object element is used by a process58_test to define the specific process(es) to be evaluated. A process58_object defines the command line used to start the process(es) and pid.
 
-  The process58_state element defines the different metadata associated with 
-  a UNIX process. This includes the command line, pid, ppid, priority, and 
-  user id. 
+  The process58_state element defines the different metadata associated with a UNIX process. This includes the command line, pid, ppid, priority, and user id. 
 
   **Applicable Constraints:**
     - There Are No Unconfined Daemons
@@ -250,8 +245,7 @@ Variable Test:
     - Check For Duplicate Group Names
     - Check For Duplicate User Names
     - Check For Duplicate GIDs
-    - Ensure all users with a Password have password change date
-        in the past
+    - Ensure all users with a Password have password change date in the past
 
 Technical Details
 -----------------
