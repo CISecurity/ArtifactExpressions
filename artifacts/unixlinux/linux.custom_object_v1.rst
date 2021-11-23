@@ -36,7 +36,6 @@ Debian Package Info Test:
   identifies the package being checked, is used by a dpkginfo test to define 
   the object to be evaluated. 
 
-
   The dpkginfo_state element defines the different information that can be 
   used to evaluate the specified DPKG package. This includes the 
   architecture, epoch number, release, and version numbers. 
@@ -72,22 +71,20 @@ File Test:
   included. 
 
   Applicable Constraints:
-    - Root Path Directories Are Owned By UID 0 And Not Writable By
-        Group Or Other
-  |  - No User Home Directories Have Permissions ----w-rwx
-  |  - No User Dot Files Have Permissions ----w--w-
-  |  - No User .netrc Files Have Permissions ---rwxrwx
-  |  - syslog Log Files Have Correct Permissions
-  |  - rsyslog Log Files Have Correct Permissions
-  |  - No User Home Directories Contain .rhost Files
-  |  - No User Home Directories Contain .netrc Files
-  |  - No User Home Directories Contain .forward Files
-  |  - All User Home Directories Exist
-  |  - All World Writable Directories Have Sticky Bit Set
-  |  - No World Writable Files Exist
-  |  - No Un-owned Files and Directories
-  |  - No Un-grouped Files and Directories
-
+    - Root Path Directories Are Owned By UID 0 And Not Writable By Group Or Other
+    - No User Home Directories Have Permissions ----w-rwx
+    - No User Dot Files Have Permissions ----w--w-
+    - No User .netrc Files Have Permissions ---rwxrwx
+    - syslog Log Files Have Correct Permissions
+    - rsyslog Log Files Have Correct Permissions
+    - No User Home Directories Contain .rhost Files
+    - No User Home Directories Contain .netrc Files
+    - No User Home Directories Contain .forward Files
+    - All User Home Directories Exist
+    - All World Writable Directories Have Sticky Bit Set
+    - No World Writable Files Exist
+    - No Un-owned Files and Directories
+    - No Un-grouped Files and Directories
 
 Intel Listening Servers:
   **The inetlisteningservers_test has been deprecated and replaced by the inetlisteningserver510_test**
@@ -168,16 +165,11 @@ Process 58 Test:
   with the system shadow file.
 
   Applicable Constraints:
-    - Ensure no users with a Password have password expiration
-        over 365 days
-    - Ensure no users with a Password have password expiration
-        over 90 days
-    - Ensure no users with a Password have password change minimum
-        under 7 days
-    - Ensure no users with a Password have password expiration
-        warning under 7 days
-    - Ensure no users with a Password have password inactivation
-        over 30 days
+    - Ensure no users with a Password have password expiration over 365 days
+    - Ensure no users with a Password have password expiration over 90 days
+    - Ensure no users with a Password have password change minimum under 7 days
+    - Ensure no users with a Password have password expiration warning under 7 days
+    - Ensure no users with a Password have password inactivation over 30 days
     - System Accounts Locked
 
 Shell Command Test:
