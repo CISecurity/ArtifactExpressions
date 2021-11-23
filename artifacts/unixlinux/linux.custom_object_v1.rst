@@ -380,8 +380,6 @@ For ``linux.custom_object_v1`` artifacts, the xccdf:check looks like this. There
 OVAL
 ''''
 
---------------
-
 Test
 
   **AppArmor has loaded profiles**
