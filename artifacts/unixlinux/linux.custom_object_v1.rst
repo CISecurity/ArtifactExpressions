@@ -136,7 +136,7 @@ Password Test:
     - Check That Reserved UIDs Are Assigned to System Accounts
     - No Users Have Shadow Group as Primary Group
 
-Process 58 Test:
+Process58 Test:
   The process58_test is used to check information found in the UNIX processes. It is equivalent to parsing the output of the ps command. 
 
   The process58_object element is used by a process58_test to define the specific process(es) to be evaluated. A process58_object defines the command line used to start the process(es) and pid.
@@ -147,7 +147,7 @@ Process 58 Test:
     - There Are No Unconfined Daemons
     - chronyd is running as chrony user
 
- Shadow Test:
+Shadow Test:
   The shadow_test is used to check information from the /etc/shadow file for 
   a specific user. This file contains a user's password, but also their 
   password aging and lockout information.
