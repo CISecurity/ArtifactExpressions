@@ -24,10 +24,10 @@ AppArmor Status Test:
   processes as per the results of the "apparmor_status" or "aa-status" 
   command. 
 
-|   Applicable Constraints:
-|   - AppArmor has loaded profiles
-|   - No AppArmor Profiles Are In Complain Mode
-|   - No AppArmor Processes Are Unconfined
+  Applicable Constraints:
+  - AppArmor has loaded profiles
+  - No AppArmor Profiles Are In Complain Mode
+  - No AppArmor Processes Are Unconfined
 
 Debian Package Info Test:
   The dpkginfo_test is used to check information for a given DPKG package.
