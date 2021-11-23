@@ -53,7 +53,7 @@ Test Type Parameters
 
 | **unix.service_enabled_v1**
 | **unix.xinetd_service_enabled_v1**
-
+|
 ======= ====== ================================
 Name    Type   Description
 ======= ====== ================================
@@ -65,7 +65,6 @@ Generated Content
 
 | **unix.service_enabled_v1**
 | **unix.xinetd_service_enabled_v1**
-
 XCCDF+AE
 ^^^^^^^^
 

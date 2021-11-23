@@ -41,7 +41,7 @@ Test Type Parameters
 | **equals**
 | **pattern match**
 | **pattern not match**
-
+|
 ========= ====== ===========================
 Name      Type   Description
 ========= ====== ===========================
