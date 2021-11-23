@@ -190,7 +190,7 @@ Test
 
 Object
 
-CATALINA_HOME
+**CATALINA_HOME**
 
 ::
 
@@ -216,7 +216,7 @@ CATALINA_HOME
     <filename>[filename.value]</filename>
   </file_object>
 
-CATALINA_BASE
+**CATALINA_BASE**
 
 ::
 
@@ -275,15 +275,12 @@ Variable
     comment="\$CATALINA_HOME directory"
     version="1">
     <concat>
-      <end 
-        character="/">
+      <end character="/">
         <object_component
           object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]3" 
           item_field="path" />
       </end>
-      <literal_component>
-        [literal_component.value]
-      </literal_component>
+      <literal_component>[literal_component.value]</literal_component>
     </concat>
   </local_variable>
 

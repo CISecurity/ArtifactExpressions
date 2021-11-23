@@ -181,7 +181,6 @@ Generated Content
 
 | **pattern match**
 | **pattern not match**
-
 XCCDF+AE
 ^^^^^^^^
 

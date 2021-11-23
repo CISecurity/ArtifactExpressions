@@ -232,7 +232,7 @@ Test Type Parameters
     - subset of
     - superset of 
 
-:emphasis:`NOTE: The` :emphasis:``exec_time`` :emphasis:`and` :emphasis:``start_time`` :emphasis:`parameters are governed by a constraint allowing only values conforming to the following regex pattern:` 
+:emphasis:`NOTE: The` ``exec_time`` `and` ``start_time`` `parameters are governed by a constraint allowing only values conforming to the following regex pattern:` 
   ``^(([0-9]{0,2}-)?(([0-1][0-9])|([2][0-3])):([0-5][0-9]):([0-5][0-9])){0,1}$``
 
 :emphasis:`NOTE: The following ID parameters:`
