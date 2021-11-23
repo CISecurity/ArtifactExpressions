@@ -24,7 +24,7 @@ AppArmor Status Test:
   processes as per the results of the "apparmor_status" or "aa-status" 
   command. 
 
-  Applicable Constraints:
+  **Applicable Constraints:**
   - AppArmor has loaded profiles
   - No AppArmor Profiles Are In Complain Mode
   - No AppArmor Processes Are Unconfined
