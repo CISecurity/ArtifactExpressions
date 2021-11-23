@@ -114,9 +114,7 @@ NOTE: The ``check`` parameter is governed by a constraint allowing only the foll
   - none satisfy
   - only one
 
-NOTE: The ``operation`` parameter is governed by a constraint allowing
-only the following values:
-
+NOTE: The ``operation`` parameter is governed by a constraint allowing only the following values:
   - equals
   - not equal
   - case insensitive equals
