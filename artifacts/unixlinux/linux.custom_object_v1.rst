@@ -25,9 +25,9 @@ AppArmor Status Test:
   command. 
 
   **Applicable Constraints:**
-  |- AppArmor has loaded profiles
-  |- No AppArmor Profiles Are In Complain Mode
-  |- No AppArmor Processes Are Unconfined
+- AppArmor has loaded profiles
+- No AppArmor Profiles Are In Complain Mode
+- No AppArmor Processes Are Unconfined
 
 Debian Package Info Test:
   The dpkginfo_test is used to check information for a given DPKG package.
