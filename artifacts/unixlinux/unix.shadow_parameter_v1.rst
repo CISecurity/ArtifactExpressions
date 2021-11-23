@@ -109,7 +109,6 @@ Generated Content
 | **greater than or equal**
 | **pattern match**
 | **pattern not match**
-
 XCCDF+AE
 ^^^^^^^^
 
