@@ -9,9 +9,11 @@ specified constraint. Please see below:
 
 AppArmor Status Test:
 
+
   The apparmorstatus_test is used to check properties representing the counts 
     of profiles and processes as per the results of the 'apparmor_status' or 
     'aa-status' command.
+
 
   The apparmorstatus_object element is used by an apparmorstatus test to 
     define the different information about the current AppArmor policy. There 
@@ -19,6 +21,7 @@ AppArmor Status Test:
     system as a whole. Therefore, there are no child entities defined. Any 
     test written to check AppArmor status will reference the same 
     apparmorstatus_object which is basically an empty object element.
+
 
   The apparmorstatus_state element displays various information about the 
     current AppArmor policy. This item maps the counts of profiles and 
@@ -34,9 +37,11 @@ Debian Package Info Test:
 
   The dpkginfo_test is used to check information for a given DPKG package.
 
+
   The dpkginfo_object element, consisting of a single name entity that 
     identifies the package being checked, is used by a dpkginfo test to define 
     the object to be evaluated. 
+
 
   The dpkginfo_state element defines the different information that can be 
     used to evaluate the specified DPKG package. This includes the 
@@ -47,23 +52,32 @@ Debian Package Info Test:
 
 File Test:
 
+
   The file_test is used to check metadata associated with UNIX files, of the 
     sort returned by either an ls command, stat command or stat() system call.
+
 
   The file_object element is used by a file test to define the specific 
     file(s) to be evaluated. The file_object will collect all UNIX file types 
     (directory, regular file, character device, block device, fifo, symbolic 
-    link, and socket). 
+    link, and socket).
+
+
   A file object defines the path and filename of the file(s). In addition, a 
     number of behaviors may be provided that help guide the collection of 
     objects. 
+
+
   The set of files to be evaluated may be identified with either a complete 
     filepath or a path and filename. Only one of these options may be selected.
+
+
   It is important to note that the 'max_depth' and 'recurse_direction' 
     attributes of the 'behaviors' element do not apply to the 'filepath' 
     element, only to the 'path' and 'filename' elements. This is because the 
     'filepath' element represents an absolute path to a particular file and 
     it is not possible to recurse over a file. 
+
 
   The file_state element defines the different metadata associated with a 
     UNIX file. This includes the path, filename, type, group id, user id, 

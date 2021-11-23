@@ -27,7 +27,7 @@ Technical Details
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
-linux.auditd_rule_v1
+**linux.auditd_rule_v1**
 
 +-----------------------------+---------+------------------------------------+
 | Name                        | Type    | Description                        |
