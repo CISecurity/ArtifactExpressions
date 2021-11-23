@@ -208,32 +208,32 @@ YAML
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
         - parameter:
-          name: "unit"
-          dt: "string"
-          value: "[unit.value]"
+            name: "unit"
+            dt: "string"
+            value: "[unit.value]"
         - parameter:
-          name: "property"
-          dt: "string"
-          value: "[property.value]"
+            name: "property"
+            dt: "string"
+            value: "[property.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:
         - parameter:
-          name: "value"
-          dt: "string"
-          value: "[value.value]"
+            name: "value"
+            dt: "string"
+            value: "[value.value]"
         - parameter:
-          name: "data_type"
-          dt: "string"
-          value: "[data_type.value]"
+            name: "data_type"
+            dt: "string"
+            value: "[data_type.value]"
         - parameter:
-          name: "unit_operation"
-          dt: "string"
-          value: "[unit_operation.value]"
+            name: "unit_operation"
+            dt: "string"
+            value: "[unit_operation.value]"
         - parameter:
-          name: "dependency"
-          dt: "string"
-          value: "[dependency.value]"
+            name: "dependency"
+            dt: "string"
+            value: "[dependency.value]"
 
 JSON
 ^^^^

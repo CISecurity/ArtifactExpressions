@@ -3492,9 +3492,9 @@ YAML
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
         - parameter: 
-          name: "object"
-          dt: "string"
-          value: "[object.value]"
+            name: "object"
+            dt: "string"
+            value: "[object.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters: []

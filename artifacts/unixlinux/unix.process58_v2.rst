@@ -257,44 +257,44 @@ YAML
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
         - parameter: 
-          name: "command_line"
-          dt: "string"
-          value: "[command_line.value]"
+            name: "command_line"
+            dt: "string"
+            value: "[command_line.value]"
         - parameter: 
-          name: "pid"
-          dt: "string"
-          value: "[pid.value]"
+            name: "pid"
+            dt: "string"
+            value: "[pid.value]"
         - parameter: 
-          name: "command_line_operation"
-          dt: "string"
-          value: "[command_line_operation.value]"
+            name: "command_line_operation"
+            dt: "string"
+            value: "[command_line_operation.value]"
         - parameter: 
-          name: "pid_operation"
-          dt: "string"
-          value: "[pid_operation.value]"
+            name: "pid_operation"
+            dt: "string"
+            value: "[pid_operation.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:
         - parameter: 
-          name: "check_existence"
-          dt: "string"
-          value: "[check_existence.value]"
+            name: "check_existence"
+            dt: "string"
+            value: "[check_existence.value]"
         - parameter: 
-          name: "check"
-          dt: "string"
-          value: "[check.value]"
+            name: "check"
+            dt: "string"
+            value: "[check.value]"
         - parameter: 
-          name: "operation"
-          dt: "string"
-          value: "[operation.value]"
+            name: "operation"
+            dt: "string"
+            value: "[operation.value]"
         - parameter: 
-          name: "data_type"
-          dt: "string"
-          value: "[data_type.value]"
+            name: "data_type"
+            dt: "string"
+            value: "[data_type.value]"
         - parameter: 
-          name: "command_line"
-          dt: "string"
-          value: "[command_line.value]"    
+            name: "command_line"
+            dt: "string"
+            value: "[command_line.value]"    
 
 JSON
 ^^^^

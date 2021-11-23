@@ -65,7 +65,6 @@ Generated Content
 
 | **unix.service_enabled_v1**
 | **unix.xinetd_service_enabled_v1**
-
 XCCDF+AE
 ^^^^^^^^
 
@@ -234,20 +233,20 @@ YAML
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
         - parameter: 
-          name: "service_name"
-          dt: "string"
-          value: "[service_name.value]"
+            name: "service_name"
+            dt: "string"
+            value: "[service_name.value]"
         - parameter: 
-          name: "protocol"
-          dt: "string"
-          value: "[protocol.value]"
+            name: "protocol"
+            dt: "string"
+            value: "[protocol.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:
         - parameter: 
-          name: "enabled"
-          dt: "string"
-          value: "[enabled.value]"
+            name: "enabled"
+            dt: "string"
+            value: "[enabled.value]"
 
 JSON
 ^^^^

@@ -167,16 +167,16 @@ YAML
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
         - parameter:
-          name: "module"
-          dt: "string"
-          value: "[module.value]"
+            name: "module"
+            dt: "string"
+            value: "[module.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:
         - parameter:
-          name: "loadable"
-          dt: "string"
-          value: "[loadable.value]"
+            name: "loadable"
+            dt: "string"
+            value: "[loadable.value]"
 
 JSON
 ^^^^
@@ -329,16 +329,16 @@ YAML
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
         - parameter:
-          name: "module"
-          dt: "string"
-          value: "[module.value]"
+            name: "module"
+            dt: "string"
+            value: "[module.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:
         - parameter:
-          name: "loaded"
-          dt: "string"
-          value: "[loaded.value]"
+            name: "loaded"
+            dt: "string"
+            value: "[loaded.value]"
 
 JSON
 ^^^^

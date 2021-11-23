@@ -250,32 +250,32 @@ YAML
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
         - parameter: 
-          name: "username"
-          dt: "string"
-          value: "[username.value]"
+            name: "username"
+            dt: "string"
+            value: "[username.value]"
         - parameter: 
-          name: "parameter"
-          dt: "string"
-          value: "[parameter.value]"
+            name: "parameter"
+            dt: "string"
+            value: "[parameter.value]"
         - parameter: 
-          name: "command_line_operation"
-          dt: "string"
-          value: "[command_line_operation.value]"
+            name: "command_line_operation"
+            dt: "string"
+            value: "[command_line_operation.value]"
         - parameter: 
-          name: "pid_operation"
-          dt: "string"
-          value: "[pid_operation.value]"
+            name: "pid_operation"
+            dt: "string"
+            value: "[pid_operation.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:
         - parameter: 
-          name: "value"
-          dt: "string"
-          value: "[value.value]"
+            name: "value"
+            dt: "string"
+            value: "[value.value]"
         - parameter: 
-          name: "data_type"
-          dt: "string"
-          value: "[data_type.value]"       
+            name: "data_type"
+            dt: "string"
+            value: "[data_type.value]"       
 
 JSON
 ^^^^

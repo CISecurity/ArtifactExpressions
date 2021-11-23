@@ -152,16 +152,16 @@ YAML
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
         - parameter:
-          name: "mount_point"
-          dt: "string"
-          value: "[mount_point.value]"
+            name: "mount_point"
+            dt: "string"
+            value: "[mount_point.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:
         - parameter:
-          name: "value"
-          dt: "string"
-          value: "[value.value]"
+            name: "value"
+            dt: "string"
+            value: "[value.value]"
 
 JSON
 ^^^^

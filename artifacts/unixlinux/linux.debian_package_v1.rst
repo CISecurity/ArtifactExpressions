@@ -164,16 +164,16 @@ YAML
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
         - parameter:
-          name: "name"
-          dt: "string"
-          value: "[name.value]"
+            name: "name"
+            dt: "string"
+            value: "[name.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:
         - parameter:
-          name: "value"
-          dt: "string"
-          value: "[value.value]"
+            name: "value"
+            dt: "string"
+            value: "[value.value]"
 
 JSON
 ^^^^

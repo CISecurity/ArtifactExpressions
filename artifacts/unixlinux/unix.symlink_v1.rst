@@ -81,7 +81,7 @@ Test Type Parameters
 +-----------------------------+---------+------------------------------------+
 | canonical_path_operation    | string  | Specifies what operation is to be  |
 |                             |         | performed using the canonical path |
-|                             |         |  value.                            |
+|                             |         | value.                             |
 +-----------------------------+---------+------------------------------------+
 
 NOTE: The ``file_path_operation`` parameter is governed by a constraint allowing only the following values:
@@ -306,32 +306,32 @@ YAML
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
         - parameter: 
-          name: "filepath"
-          dt: "string"
-          value: "[filepath.value]"
+            name: "filepath"
+            dt: "string"
+            value: "[filepath.value]"
         - parameter: 
-          name: "filepath_operation"
-          dt: "string"
-          value: "[filepath_operation.value]"
+            name: "filepath_operation"
+            dt: "string"
+            value: "[filepath_operation.value]"
     test:
       type: "[TESTTYPE-NAME]"
       parameters:   
         - parameter:
-          name: "filepath"
-          dt: "string"
-          value: "[filepath.value]"
+            name: "filepath"
+            dt: "string"
+            value: "[filepath.value]"
         - parameter:
-          name: "file_path_operation"
-          dt: "string"
-          value: "[file_path_operation.value]"
+            name: "file_path_operation"
+            dt: "string"
+            value: "[file_path_operation.value]"
         - parameter:
-          name: "canonical_path"
-          dt: "string"
-          value: "[canonical_path.value]"
+            name: "canonical_path"
+            dt: "string"
+            value: "[canonical_path.value]"
         - parameter:
-          name: "canonical_path_operation"
-          dt: "string"
-          value: "[canonical_path_operation.value]"
+            name: "canonical_path_operation"
+            dt: "string"
+            value: "[canonical_path_operation.value]"
 
 JSON
 ^^^^
@@ -581,32 +581,32 @@ YAML
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
         - parameter: 
-          name: "filepath"
-          dt: "string"
-          value: "[filepath.value]"
+            name: "filepath"
+            dt: "string"
+            value: "[filepath.value]"
         - parameter: 
-          name: "filepath_operation"
-          dt: "string"
-          value: "[filepath_operation.value]"
+            name: "filepath_operation"
+            dt: "string"
+            value: "[filepath_operation.value]"
     test:
       type: "[TESTTYPE-NAME]"
       parameters:   
         - parameter:
-          name: "filepath"
-          dt: "string"
-          value: "[filepath.value]"
+            name: "filepath"
+            dt: "string"
+            value: "[filepath.value]"
         - parameter:
-          name: "file_path_operation"
-          dt: "string"
-          value: "[file_path_operation.value]"
+            name: "file_path_operation"
+            dt: "string"
+            value: "[file_path_operation.value]"
         - parameter:
-          name: "canonical_path"
-          dt: "string"
-          value: "[canonical_path.value]"
+            name: "canonical_path"
+            dt: "string"
+            value: "[canonical_path.value]"
         - parameter:
-          name: "canonical_path_operation"
-          dt: "string"
-          value: "[canonical_path_operation.value]"
+            name: "canonical_path_operation"
+            dt: "string"
+            value: "[canonical_path_operation.value]"
 
 JSON
 ^^^^

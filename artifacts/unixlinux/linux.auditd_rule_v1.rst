@@ -183,20 +183,20 @@ YAML
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
         - parameter:
-          name: "check_existence"
-          dt: "string"
-          value: "[check_existence.value]"
+            name: "check_existence"
+            dt: "string"
+            value: "[check_existence.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:
         - parameter:
-          name: "value"
-          dt: "string"
-          value: "[value.value]"
+            name: "value"
+            dt: "string"
+            value: "[value.value]"
         - parameter:
-          name: "data_type"
-          dt: "string"
-          value: "[data_type.value]"
+            name: "data_type"
+            dt: "string"
+            value: "[data_type.value]"
 
 JSON
 ^^^^

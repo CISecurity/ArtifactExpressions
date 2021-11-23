@@ -155,16 +155,16 @@ YAML
       type:  "[ARTIFACT-TYPE-NAME]"
       parameters:
         - parameter:
-          name: "service"
-          dt: "string"
+            name: "service"
+            dt: "string"
             value:" [service.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:
         - parameter:
-          name: "enabled"
-          dt: "string"
-          value: "[enabled.value]"
+            name: "enabled"
+            dt: "string"
+            value: "[enabled.value]"
 
 JSON
 ^^^^

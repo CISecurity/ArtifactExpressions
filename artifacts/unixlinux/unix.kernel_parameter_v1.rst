@@ -287,20 +287,20 @@ YAML
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
         - parameter: 
-          name: "parameter"
-          dt: "string"
-          value: "[parameter.value]"
+            name: "parameter"
+            dt: "string"
+            value: "[parameter.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:
         - parameter: 
-          name: "data_type"
-          dt: "string"
-          value: "[data_type.value]"
+            name: "data_type"
+            dt: "string"
+            value: "[data_type.value]"
         - parameter: 
-          name: "value"
-          dt: "string"
-          value: "[value.value]"
+            name: "value"
+            dt: "string"
+            value: "[value.value]"
 
 JSON
 ^^^^

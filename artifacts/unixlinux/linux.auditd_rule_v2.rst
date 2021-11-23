@@ -167,13 +167,13 @@ YAML
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
         - parameter:
-          name: "existence"
-          dt: "string"
-          value: "[existence.value]"
+            name: "existence"
+            dt: "string"
+            value: "[existence.value]"
         - parameter:
-          name: "rule"
-          dt: "string"
-          value: "[rule.value]"
+            name: "rule"
+            dt: "string"
+            value: "[rule.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters: []

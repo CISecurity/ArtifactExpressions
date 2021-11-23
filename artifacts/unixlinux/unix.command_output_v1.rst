@@ -205,20 +205,20 @@ YAML
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
         - parameter:
-          name: "command"
-          dt: "string"
-          value: "[command.value]"
+            name: "command"
+            dt: "string"
+            value: "[command.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:
         - parameter:
-          name: "value"
-          dt: "string"
-          value: "[value.value]"
+            name: "value"
+            dt: "string"
+            value: "[value.value]"
         - parameter:
-          name: "datatype"
-          dt: "string"
-          value: "[datatype.value]"
+            name: "datatype"
+            dt: "string"
+            value: "[datatype.value]"
 
 JSON
 ^^^^
@@ -363,9 +363,9 @@ YAML
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
         - parameter:
-          name: "command"
-          dt: "string"
-          value: "[command.value]"
+            name: "command"
+            dt: "string"
+            value: "[command.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters: []              

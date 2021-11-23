@@ -189,28 +189,28 @@ YAML
       type: u"[ARTIFACT-TYPE-NAME]"
       parameters:
         - parameter:
-          name: "service_name"
-          dt: "string"
-          value: "[service_name.value]"
+            name: "service_name"
+            dt: "string"
+            value: "[service_name.value]"
         - parameter:
-          name: "name_operationname_operation"
-          dt: "string"
-          value: "[name_operation.value]"
+            name: "name_operationname_operation"
+            dt: "string"
+            value: "[name_operation.value]"
         - parameter:
-          name: "runlevel"
-          dt: "string"
-          value: "[runlevel.value]"
+            name: "runlevel"
+            dt: "string"
+            value: "[runlevel.value]"
         - parameter:
-          name: "runlevel_operation"
-          dt: "string"
-          value: "[runlevel_operation.value]"
+            name: "runlevel_operation"
+            dt: "string"
+            value: "[runlevel_operation.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:
         - parameter:
-          name: "enabled"
-          dt: "string"
-          value: "[enabled.value]"
+            name: "enabled"
+            dt: "string"
+            value: "[enabled.value]"
 
 JSON
 ^^^^

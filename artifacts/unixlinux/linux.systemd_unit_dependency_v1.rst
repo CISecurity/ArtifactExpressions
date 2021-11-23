@@ -209,32 +209,32 @@ YAML
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
         - parameter:
-          name: "unit"
-          dt: "string"
-          value: "[unit.value]"
+            name: "unit"
+            dt: "string"
+            value: "[unit.value]"
         - parameter:
-          name: "operation"
-          dt: "string"
-          value: "[operation.value]"
+            name: "operation"
+            dt: "string"
+            value: "[operation.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:
         - parameter:
-          name: "dependency_operation"
-          dt: "string"
-          value: "[dependency_operation.value]"
+            name: "dependency_operation"
+            dt: "string"
+            value: "[dependency_operation.value]"
         - parameter:
-          name: "unit"
-          dt: "string"
-          value: "[unit.value]"
+            name: "unit"
+            dt: "string"
+            value: "[unit.value]"
         - parameter:
-          name: "unit_operation"
-          dt: "string"
-          value: "[unit_operation.value]"
+            name: "unit_operation"
+            dt: "string"
+            value: "[unit_operation.value]"
         - parameter:
-          name: "dependency"
-          dt: "string"
-          value: "[dependency.value]"
+            name: "dependency"
+            dt: "string"
+            value: "[dependency.value]"
 
 JSON
 ^^^^

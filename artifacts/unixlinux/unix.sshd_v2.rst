@@ -213,32 +213,32 @@ YAML
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
         - parameter: 
-          name: "name"
-          dt: "string"
-          value: "[name.value]"
+            name: "name"
+            dt: "string"
+            value: "[name.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:
         - parameter: 
-          name: "value"
-          dt: "string"
-          value: "[value.value]"
+            name: "value"
+            dt: "string"
+            value: "[value.value]"
         - parameter: 
-          name: "data_type"
-          dt: "string"
-          value: "[data_type.value]"
+            name: "data_type"
+            dt: "string"
+            value: "[data_type.value]"
         - parameter: 
-          name: "check_existence"
-          dt: "string"
-          value: "[check_existence.value]"
+            name: "check_existence"
+            dt: "string"
+            value: "[check_existence.value]"
         - parameter: 
-          name: "check"
-          dt: "string"
-          value: "[check.value]"
+            name: "check"
+            dt: "string"
+            value: "[check.value]"
         - parameter: 
-          name: "operation"
-          dt: "string"
-          value: "[operation.value]"
+            name: "operation"
+            dt: "string"
+            value: "[operation.value]"
 
 JSON
 ^^^^

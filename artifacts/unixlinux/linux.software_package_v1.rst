@@ -173,17 +173,17 @@ YAML
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
         - parameter: 
-          name: "existence"
-          dt: "string"
-          value: "[existence.value]"
+            name: "existence"
+            dt: "string"
+            value: "[existence.value]"
         - parameter: 
-          name: "package"
-          dt: "string"
-          value: "[package.value]"
+            name: "package"
+            dt: "string"
+            value: "[package.value]"
         - parameter: 
-          name: "operation"
-          dt: "string"
-          value: "[operation.value]"
+            name: "operation"
+            dt: "string"
+            value: "[operation.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters: []
@@ -334,24 +334,24 @@ YAML
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
         - parameter:
-          name: "existence"
-          dt: "string"
-          value: "[existence.value]"
+            name: "existence"
+            dt: "string"
+            value: "[existence.value]"
         - parameter:
-          name: "package"
-          dt: "string"
-          value: "[package.value]"
+            name: "package"
+            dt: "string"
+            value: "[package.value]"
         - parameter:
-          name: "operation"
-          dt: "string"
-          value: "[operation.value]"
+            name: "operation"
+            dt: "string"
+            value: "[operation.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:
         - parameter:
-          name: "value"
-          dt: "string"
-          value: "[value.value]"
+            name: "value"
+            dt: "string"
+            value: "[value.value]"
 
 JSON
 ^^^^

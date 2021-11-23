@@ -296,36 +296,36 @@ YAML
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
         - parameter:
-          name: "base_path
-          dt: "string"
-          value: "[base_path.value]"
+            name: "base_path
+            dt: "string"
+            value: "[base_path.value]"
         - parameter:
-          name: "path"
-          dt: "string"
-          value: "[path.value]"
+            name: "path"
+            dt: "string"
+            value: "[path.value]"
         - parameter:
-          name: "concat_path"
-          dt: "string"
-          value: "concat_path.value]"
+            name: "concat_path"
+            dt: "string"
+            value: "concat_path.value]"
         - parameter:
-          name: "filename"
-          dt: "string"
-          value: "[filename.value]"
+            name: "filename"
+            dt: "string"
+            value: "[filename.value]"
         - parameter:
-          name: "check"
-          dt: "string"
-          value: "[check.value]"
+            name: "check"
+            dt: "string"
+            value: "[check.value]"
         - parameter:
-          name: "check_existence"
-          dt: "string"
-          value: "[check_existence.value]"
+            name: "check_existence"
+            dt: "string"
+            value: "[check_existence.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:
         - parameter:
-          name: "value"
-          dt: "string"
-          value: "[value.value]"
+            name: "value"
+            dt: "string"
+            value: "[value.value]"
 
 JSON
 ^^^^

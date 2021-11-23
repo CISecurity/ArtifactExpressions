@@ -295,80 +295,80 @@ YAML
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
         - parameter:
-          name: "existence"
-          dt: "string"
-          value: "[existence.value]"
+            name: "existence"
+            dt: "string"
+            value: "[existence.value]"
         - parameter:
-          name: "path"
-          dt: "string"
-          value: "[path.value]"
+            name: "path"
+            dt: "string"
+            value: "[path.value]"
         - parameter:
-          name: "file_name"
-          dt: "string"
-          value: "[file_name.value]"
+            name: "file_name"
+            dt: "string"
+            value: "[file_name.value]"
         - parameter:
-          name: "recurse"
-          dt: "string"
-          value: "[recurse.value]"
+            name: "recurse"
+            dt: "string"
+            value: "[recurse.value]"
         - parameter:
-          name: "max_depth"
-          dt: "int"
-          value: "[max_depth.value]"
+            name: "max_depth"
+            dt: "int"
+            value: "[max_depth.value]"
         - parameter:
-          name: "file_system"
-          dt: "string"
-          value: "[file_system.value]"
+            name: "file_system"
+            dt: "string"
+            value: "[file_system.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:
         - parameter:
-          name: "uread"
-          dt: "string"
-          value: [uread.value]
+            name: "uread"
+            dt: "string"
+            value: [uread.value]
         - parameter:
-          name: "uwrite"
-          dt: "string"
-          value: "[uwrite.value]"
+            name: "uwrite"
+            dt: "string"
+            value: "[uwrite.value]"
         - parameter:
-          name: "uexec"
-          dt: "string"
-          value: "[uexec.value]"
+            name: "uexec"
+            dt: "string"
+            value: "[uexec.value]"
         - parameter:
-          name: "gread"
-          dt: "string"
-          value: "[gread.value]
+            name: "gread"
+            dt: "string"
+            value: "[gread.value]
         - parameter: "
-          name: "gwrite"
-          dt: "string"
-          value: "[gwrite.value]"
+            name: "gwrite"
+            dt: "string"
+            value: "[gwrite.value]"
         - parameter:
-          name: "gexec"
-          dt: "string"
-          value: "[gexec.value]"
+            name: "gexec"
+            dt: "string"
+            value: "[gexec.value]"
         - parameter:
-          name: "oread"
-          dt: "string"
-          value: "[oread.value]"
+            name: "oread"
+            dt: "string"
+            value: "[oread.value]"
         - parameter:
-          name: "owrite"
-          dt: "string"
-          value: "[owrite.value]"
+            name: "owrite"
+            dt: "string"
+            value: "[owrite.value]"
         - parameter:
-          name: "oexec"
-          dt: "string"
-          value: "[oexec.value]"
+            name: "oexec"
+            dt: "string"
+            value: "[oexec.value]"
         - parameter:
-          name: "suid"
-          dt: "string"
-          value: "[suid.value]"
+            name: "suid"
+            dt: "string"
+            value: "[suid.value]"
         - parameter:
-          name: "sgid"
-          dt: "string"
-          value: "[sgid.value]"
+            name: "sgid"
+            dt: "string"
+            value: "[sgid.value]"
         - parameter:
-          name: "sticky"
-          dt: "string"
-          value: "[sticky.value]"
+            name: "sticky"
+            dt: "string"
+            value: "[sticky.value]"
 
 JSON
 ^^^^
@@ -644,40 +644,40 @@ YAML
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
         - parameter:
-          name: "existence"
-          dt: "string"
-          value: "[existence.value]"
+            name: "existence"
+            dt: "string"
+            value: "[existence.value]"
         - parameter:
-          name: "path"
-          dt: "string"
-          value: "[path.value]"
+            name: "path"
+            dt: "string"
+            value: "[path.value]"
         - parameter:
-          name: "file_name"
-          dt: "string"
-          value: "[file_name.value]"
+            name: "file_name"
+            dt: "string"
+            value: "[file_name.value]"
         - parameter:
-          name: "recurse"
-          dt: "string"
-          value: "[recurse.value]"
+            name: "recurse"
+            dt: "string"
+            value: "[recurse.value]"
         - parameter:
-          name: "max_depth"
-          dt: "int"
-          value: "[max_depth.value]"
+            name: "max_depth"
+            dt: "int"
+            value: "[max_depth.value]"
         - parameter:
-          name: "file_system"
-          dt: "string"
-          value: "[file_system.value]"
+            name: "file_system"
+            dt: "string"
+            value: "[file_system.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:
         - parameter:
-          name: "uid"
-          dt: "int"
-          value: [uid.value]
+            name: "uid"
+            dt: "int"
+            value: [uid.value]
         - parameter:
-          name: "gid"
-          dt: "int"
-          value: "[gid.value]"
+            name: "gid"
+            dt: "int"
+            value: "[gid.value]"
 
 JSON
 ^^^^
@@ -869,29 +869,29 @@ YAML
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
         - parameter:
-          name: "existence"
-          dt: "string"
-          value: "[existence.value]"
+            name: "existence"
+            dt: "string"
+            value: "[existence.value]"
         - parameter:
-          name: "path"
-          dt: "string"
-          value: "[path.value]"
+            name: "path"
+            dt: "string"
+            value: "[path.value]"
         - parameter:
-          name: "file_name"
-          dt: "string"
-          value: "[file_name.value]"
+            name: "file_name"
+            dt: "string"
+            value: "[file_name.value]"
         - parameter:
-          name: "recurse"
-          dt: "string"
-          value: "[recurse.value]"
+            name: "recurse"
+            dt: "string"
+            value: "[recurse.value]"
         - parameter:
-          name: "max_depth"
-          dt: "int"
-          value: "[max_depth.value]"
+            name: "max_depth"
+            dt: "int"
+            value: "[max_depth.value]"
         - parameter:
-          name: "file_system"
-          dt: "string"
-          value: "[file_system.value]"
+            name: "file_system"
+            dt: "string"
+            value: "[file_system.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters: []

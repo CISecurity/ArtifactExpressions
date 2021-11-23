@@ -213,17 +213,17 @@ YAML
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
         - parameter:
-          name: "existence"
-          dt: "string"
-          value: "[existence.value]"
+            name: "existence"
+            dt: "string"
+            value: "[existence.value]"
         - parameter:
-          name: "check"
-          dt: "set"
-          value: "[check.value]"
+            name: "check"
+            dt: "set"
+            value: "[check.value]"
         - parameter:
-          name: "mount_point"
-          dt: "string"
-          value: "[mount_point.value]"
+            name: "mount_point"
+            dt: "string"
+            value: "[mount_point.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters: []
@@ -390,36 +390,36 @@ YAML
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
         - parameter:
-          name: "existence"
-          dt: "string"
-          value: "[existence.value]"
+            name: "existence"
+            dt: "string"
+            value: "[existence.value]"
         - parameter:
-          name: "check"
-          dt: "set"
-          value: "[check.value]"
+            name: "check"
+            dt: "set"
+            value: "[check.value]"
         - parameter:
-          name: "mount_point"
-          dt: "string"
-          value: "[mount_point.value]"
+            name: "mount_point"
+            dt: "string"
+            value: "[mount_point.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:
         - parameter:
-          name: "value"
-          dt: "string"
-          value: "[value.value]"
+            name: "value"
+            dt: "string"
+            value: "[value.value]"
         - parameter:
-          name: "data_type"
-          dt: "string"
-          value: "[data_type.value]"
+            name: "data_type"
+            dt: "string"
+            value: "[data_type.value]"
         - parameter:
-          name: "operation"
-          dt: "set"
-          value: "[operation.value]"
+            name: "operation"
+            dt: "set"
+            value: "[operation.value]"
         - parameter:
-          name: "check"
-          dt: "string"
-          value: "[check.value]"
+            name: "check"
+            dt: "string"
+            value: "[check.value]"
 
 JSON
 ^^^^
