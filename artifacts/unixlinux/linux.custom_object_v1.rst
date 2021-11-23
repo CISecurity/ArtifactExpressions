@@ -7,26 +7,23 @@ Description
 The Linux: Custom Object test is specified by the Custom Object's
 specified constraint. Please see below:
 
-AppArmor Status Test:
+**AppArmor Status Test:**
 
+The apparmorstatus_test is used to check properties representing the counts 
+  of profiles and processes as per the results of the 'apparmor_status' or 
+  'aa-status' command.
 
-  The apparmorstatus_test is used to check properties representing the counts 
-    of profiles and processes as per the results of the 'apparmor_status' or 
-    'aa-status' command.
+The apparmorstatus_object element is used by an apparmorstatus test to 
+  define the different information about the current AppArmor policy. There 
+  is actually only one object relating to AppArmor Status and this is the 
+  system as a whole. Therefore, there are no child entities defined. Any 
+  test written to check AppArmor status will reference the same 
+  apparmorstatus_object which is basically an empty object element.
 
-
-  The apparmorstatus_object element is used by an apparmorstatus test to 
-    define the different information about the current AppArmor policy. There 
-    is actually only one object relating to AppArmor Status and this is the 
-    system as a whole. Therefore, there are no child entities defined. Any 
-    test written to check AppArmor status will reference the same 
-    apparmorstatus_object which is basically an empty object element.
-
-
-  The apparmorstatus_state element displays various information about the 
-    current AppArmor policy. This item maps the counts of profiles and 
-    processes as per the results of the "apparmor_status" or "aa-status" 
-    command. 
+The apparmorstatus_state element displays various information about the 
+  current AppArmor policy. This item maps the counts of profiles and 
+  processes as per the results of the "apparmor_status" or "aa-status" 
+  command. 
 
     Applicable Constraints:
       - AppArmor has loaded profiles
