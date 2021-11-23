@@ -71,7 +71,6 @@ Generated Content
 
 | **equals**
 | **not equal**
-
 XCCDF+AE
 ^^^^^^^^
 
