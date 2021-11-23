@@ -86,8 +86,8 @@ File Test:
     - No Un-owned Files and Directories
     - No Un-grouped Files and Directories
 
-Intel Listening Servers:
-  `The inetlisteningservers_test has been deprecated and replaced by the inetlisteningserver510_test`
+Intel Listening Servers: ::
+  The inetlisteningservers_test has been deprecated and replaced by the inetlisteningserver510_test
   
   The inetlisteningservers_test is used to check if an application is 
   listening on the network, either for a new connection or as part of an 
