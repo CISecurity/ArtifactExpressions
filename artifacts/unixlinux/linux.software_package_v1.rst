@@ -22,21 +22,21 @@ Technical Details
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
-linux.software_package_v1
-^^^^^^^^^^^^^^^^^^^^^^^^^
+**linux.software_package_v1**
 
-+-----------+--------+-----------------------------------------------+
-| Name      | Type   | Description                                   |
-+===========+========+===============================================+
-| existence | string | Existence requirement.                        |
-+-----------+--------+-----------------------------------------------+
-| check     | string | Defines how many collected items must match   |
-|           |        | the expected state.                           |
-+-----------+--------+-----------------------------------------------+
-| operation | string | Comparison operation.                         |
-+-----------+--------+-----------------------------------------------+
-| package   | string | The name of the package being checked.        |
-+-----------+--------+-----------------------------------------------+
++-----------------------------+---------+------------------------------------+
+| Name                        | Type    | Description                        |
++=============================+=========+====================================+
+| existence                   | string  | Existence requirement.             |
++-----------------------------+---------+------------------------------------+
+| check                       | string  | Defines how many collected items   |
+|                             |         | must match the expected state.     |
++-----------------------------+---------+------------------------------------+
+| operation                   | string  | Comparison operation.              |
++-----------------------------+---------+------------------------------------+
+| package                     | string  | The name of the package being      |
+|                             |         | checked.                           |
++-----------------------------+---------+------------------------------------+
 
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
@@ -47,8 +47,7 @@ Supported Test Types
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
-null_test_v1
-^^^^^^^^^^^^
+**null_test_v1**
 
 ==== ==== ===========
 Name Type Description
@@ -56,8 +55,7 @@ Name Type Description
 N/A       
 ==== ==== ===========
 
-existence_test
-^^^^^^^^^^^^^^
+**existence_test**
 
 ===== ====== =======================
 Name  Type   Description
@@ -76,8 +74,7 @@ NOTE: The ``value`` parameter is governed by a constraint allowing only the foll
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
-null_test_v1
-^^^^^^^^^^^^
+**null_test_v1**
 
 XCCDF+AE
 ^^^^^^^^
@@ -121,11 +118,11 @@ For ``linux.software_package_v1`` artifacts, the xccdf:check looks like this. Th
 
 ::
 
- <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
-   <check-content-ref 
-     href="[BENCHMARK-TITLE]"
-     name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
- </check>
+  <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+    <check-content-ref 
+      href="[BENCHMARK-TITLE]" 
+      name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
+  </check>
 
 OVAL
 ''''
@@ -134,30 +131,29 @@ Test
 
 ::
 
- <rpminfo_test 
-   xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux"
-   id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
-   check_existence="[check_existence.value]" 
-   check="[check.value]"
-   comment="[RECOMMENDATION-TITLE]"
-   version="1">
-   <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
- </rpminfo_test>
+  <rpminfo_test 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux" 
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]" 
+    check_existence="[check_existence.value]" 
+    check="[check.value]" 
+    comment="[RECOMMENDATION-TITLE]" 
+    version="1">
+    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+  </rpminfo_test>
 
 Object
 
 ::
 
- <rpminfo_object 
-   xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux"
-   id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
-   comment="[RECOMMENDATION-TITLE]"
-   version="1">
-   <name 
-     operation="[operation.value]">
-     [name.value]
-   </name>
- </rpminfo_object>
+  <rpminfo_object 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux" 
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" 
+    comment="[RECOMMENDATION-TITLE]" 
+    version="1">
+    <name operation="[operation.value]">
+      [name.value]
+    </name>
+  </rpminfo_object>
 
 State
 
@@ -170,76 +166,74 @@ YAML
 
 ::
 
- artifact-expression:
-   artifact-unique-id: "[ARTIFACT-OVAL-ID]"
-   artifact-title: "[RECOMMENDATION-TITLE]"
-   artifact:
-     type: "[ARTIFACT-TYPE-NAME]"
-     parameters:
-       - parameter: 
-           name: "existence"
-           dt: "string"
-           value: "[existence.value]"
-       - parameter: 
-           name: "package"
-           dt: "string"
-           value: "[package.value]"
-       - parameter: 
-           name: "operation"
-           dt: "string"
-           value: "[operation.value]"
-   test:
-     type: "[TEST-TYPE-NAME]"
-     parameters: []
+  artifact-expression:
+    artifact-unique-id: "[ARTIFACT-OVAL-ID]"
+    artifact-title: "[RECOMMENDATION-TITLE]"
+    artifact:
+      type: "[ARTIFACT-TYPE-NAME]"
+      parameters:
+        - parameter: 
+            name: "existence"
+            dt: "string"
+            value: "[existence.value]"
+        - parameter: 
+            name: "package"
+            dt: "string"
+            value: "[package.value]"
+        - parameter: 
+            name: "operation"
+            dt: "string"
+            value: "[operation.value]"
+    test:
+      type: "[TEST-TYPE-NAME]"
+      parameters: []
 
 JSON
 ^^^^
 
 ::
 
- {
-   "artifact-expression": {
-     "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
-     "artifact-title": "[RECOMMENDATION-TITLE]",
-     "artifact": {
-       "type": "linux.software_package_v1",
-       "parameters": [
-         {
-           "parameter": {
-             "name": "existence",
-             "type": "string",
-             "value": "[existence.value]"
-           }
-         },
-         {
-           "parameter": {
-             "name": "package",
-             "type": "string",
-             "value": "[package.value]"
-           }
-         },
-         {
-           "parameter": {
-             "name": "operation",
-             "type": "string",
-             "value": "[operation.value]"
-           }
-         }
-       ]
-     },
-     "test": {
-       "type": "[TEST-TYPE-NAME]",
-       "parameters": [
-       ]
-     }
-   }
- }
+  {
+    "artifact-expression": {
+      "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
+      "artifact-title": "[RECOMMENDATION-TITLE]",
+      "artifact": {
+        "type": "[ARTIFACT-TYPE-NAME]",
+        "parameters": [
+          {
+            "parameter": {
+              "name": "existence",
+              "type": "string",
+              "value": "[existence.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "package",
+              "type": "string",
+              "value": "[package.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "operation",
+              "type": "string",
+              "value": "[operation.value]"
+            }
+          }
+        ]
+      },
+      "test": {
+        "type": "[TEST-TYPE-NAME]",
+        "parameters": []
+      }
+    }
+  }
 
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
-existence_test
-^^^^^^^^^^^^^^
+**existence_test**
 
 XCCDF+AE
 ^^^^^^^^
@@ -317,8 +311,7 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[RECOMMENDATION-TITLE]"
     version="1">
-    <name 
-      operation="[operation.value]">
+    <name operation="[operation.value]">
       [name.value]
     </name>
   </rpminfo_object>
@@ -340,22 +333,22 @@ YAML
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
-        - parameter: 
+        - parameter:
             name: "existence"
             dt: "string"
             value: "[existence.value]"
-        - parameter: 
+        - parameter:
             name: "package"
             dt: "string"
             value: "[package.value]"
-        - parameter: 
+        - parameter:
             name: "operation"
             dt: "string"
             value: "[operation.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:
-        - parameter: 
+        - parameter:
             name: "value"
             dt: "string"
             value: "[value.value]"
@@ -370,7 +363,7 @@ JSON
       "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
       "artifact-title": "[RECOMMENDATION-TITLE]",
       "artifact": {
-        "type": "linux.software_package_v1",
+        "type": "[ARTIFACT-TYPE-NAME]",
         "parameters": [
           {
             "parameter": {

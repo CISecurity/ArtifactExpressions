@@ -30,8 +30,7 @@ Technical Details
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
-unix.kernel_parameter_v1
-^^^^^^^^^^^^^^^^^^^^^^^^
+**unix.kernel_parameter_v1**
 
 ========= ====== ===============================================
 Name      Type   Description
@@ -61,8 +60,8 @@ Test Type Parameters
 | **greater than**
 | **greater than or equal**
 | **pattern match**
-**pattern not match**
-
+| **pattern not match**
+|
 ========= ====== ===========================
 Name      Type   Description
 ========= ====== ===========================
@@ -81,6 +80,14 @@ NOTE: The ``data_type`` parameter is governed by a constraint allowing only the 
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
+| **equals**
+| **not equal**
+| **less than**
+| **less than or equal**
+| **greater than**
+| **greater than or equal**
+| **pattern match**
+| **pattern not match**
 XCCDF+AE
 ^^^^^^^^
 
@@ -194,9 +201,7 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]1"
     comment="[RECOMMENDATION-TITLE]"
     version="1">
-    <name>
-      [name.value]
-    </name>
+    <name>[name.value]</name>
   </sysctl_object>
 
   <textfilecontent54_object 
@@ -204,9 +209,7 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]2"
     comment="[RECOMMENDATION-TITLE]"
     version="1">
-    <filepath>
-      /etc/sysctl.conf
-    </filepath>
+    <filepath>/etc/sysctl.conf</filepath>
     <pattern
       operation="pattern match"
       datatype="string">
@@ -224,9 +227,7 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]3"
     comment="[RECOMMENDATION-TITLE]"
     version="1">
-    <path>
-      /etc/sysctl.d
-    </path>
+    <path>/etc/sysctl.d</path>
     <filename
       operation="pattern match"
       datatype="string">
@@ -311,7 +312,7 @@ JSON
       "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
       "artifact-title": "[RECOMMENDATION-TITLE]",
       "artifact": {
-        "type": "unix.kernel_parameter_v1",
+        "type": "[ARTIFACT-TYPE-NAME]",
         "parameters": [
           {
             "parameter": {

@@ -22,8 +22,7 @@ Technical Details
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
-linux.rpm_package_v1
-^^^^^^^^^^^^^^^^^^^^
+**linux.rpm_package_v1**
 
 ==== ====== =======================================================
 Name Type   Description
@@ -39,8 +38,7 @@ Supported Test Types
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
-existence_test
-^^^^^^^^^^^^^^
+**existence_test**
 
 ===== ====== =======================
 Name  Type   Description
@@ -58,6 +56,8 @@ NOTE: The ``value`` parameter is governed by a constraint allowing only the foll
 
 Generated Content
 ~~~~~~~~~~~~~~~~~
+
+**existence_test**
 
 XCCDF+AE
 ^^^^^^^^
@@ -132,9 +132,7 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[RECOMMENDATION-TITLE]"
     version="1">
-    <name>
-      [name.value]
-    </name>
+    <name>[name.value]</name>
   </rpminfo_object>
 
 State
@@ -154,7 +152,7 @@ YAML
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
-        - parameter: 
+        - parameter:
             name: "name"
             dt: "string"
             value: "[name.value]"

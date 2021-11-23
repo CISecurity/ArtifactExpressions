@@ -20,21 +20,22 @@ Technical Details
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
-linux.systemd_unit_property_v1
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**linux.systemd_unit_property_v1**
 
-+----------+--------+------------------------------------------------+
-| Name     | Type   | Description                                    |
-+==========+========+================================================+
-| property | string | The property of the systemd unit to be tested. |
-+----------+--------+------------------------------------------------+
-| unit     | string | The full systemd unit name, in the form of     |
-|          |        | “$name.$type”. For example “cupsd.service”.    |
-|          |        | This name is usually also the filename of the  |
-|          |        | unit configuration file located in the         |
-|          |        | /etc/systemd/ and /usr/lib/systemd/            |
-|          |        | directories.                                   |
-+----------+--------+------------------------------------------------+
++-----------------------------+---------+------------------------------------+
+| Name                        | Type    | Description                        |
++=============================+=========+====================================+
+| property                    | string  | The property of the systemd unit   |
+|                             |         | to be tested.                      |
++-----------------------------+---------+------------------------------------+
+| unit                        | string  | The full systemd unit name, in the |
+|                             |         | form of “$name.$type”. For example |
+|                             |         | “cupsd.service”. This name is      |
+|                             |         | usually also the filename of the   |
+|                             |         | unit configuration file located in |
+|                             |         | the /etc/systemd/ and              |
+|                             |         | /usr/lib/systemd/  directories.    |
++-----------------------------+---------+------------------------------------+
 
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
@@ -46,16 +47,16 @@ Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
 | **equals**
-**not equal**
-
-+-----------+--------+-----------------------------------------------+
-| Name      | Type   | Description                                   |
-+===========+========+===============================================+
-| value     | string | The value of the property associated with a   |
-|           |        | systemd unit.                                 |
-+-----------+--------+-----------------------------------------------+
-| data_type | string | The data type of the value.                   |
-+-----------+--------+-----------------------------------------------+
+| **not equal**
+|
++-----------------------------+---------+------------------------------------+
+| Name                        | Type    | Description                        |
++=============================+=========+====================================+
+| value                       | string  | The value of the property          |
+|                             |         | associated with a systemd unit.    |
++-----------------------------+---------+------------------------------------+
+| data_type                   | string  | The data type of the value.        |
++-----------------------------+---------+------------------------------------+
 
 NOTE: The ``data_type`` parameter is governed by a constraint allowing only the following values:
   - boolean
@@ -68,6 +69,8 @@ NOTE: The ``data_type`` parameter is governed by a constraint allowing only the 
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
+| **equals**
+| **not equal**
 XCCDF+AE
 ^^^^^^^^
 
@@ -164,12 +167,8 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[RECOMMENDATION-TITLE]"
     version="1">
-    <unit>
-      [unit.value]
-    </unit>
-    <property>
-      [property.value]
-    </property>
+    <unit>[unit.value]</unit>
+    <property>[property.value]</property>
   </systemdunitproperty_object>
 
 State
@@ -208,11 +207,11 @@ YAML
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
-        - parameter: 
+        - parameter:
             name: "unit"
             dt: "string"
             value: "[unit.value]"
-        - parameter: 
+        - parameter:
             name: "property"
             dt: "string"
             value: "[property.value]"
@@ -246,7 +245,7 @@ JSON
       "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
       "artifact-title": "[RECOMMENDATION-TITLE]",
       "artifact": {
-        "type": "linux.systemd_unit_property_v1",
+        "type": "[ARTIFACT-TYPE-NAME]",
         "parameters": [
           {
             "parameter": {

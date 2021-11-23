@@ -19,8 +19,7 @@ Technical Details
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
-linux.kernel_module_v1
-^^^^^^^^^^^^^^^^^^^^^^
+**linux.kernel_module_v1**
 
 ====== ====== ====================================
 Name   Type   Description
@@ -37,8 +36,7 @@ Supported Test Types
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
-linux.kernel_module.loadable_v1
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**linux.kernel_module.loadable_v1**
 
 ======== ====== ================================
 Name     Type   Description
@@ -46,8 +44,7 @@ Name     Type   Description
 loadable string Is the module loadable? (Yes/No)
 ======== ====== ================================
 
-linux.kernel_module.loaded_v1
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**linux.kernel_module.loaded_v1**
 
 ====== ====== ==========================================
 Name   Type   Description
@@ -58,8 +55,7 @@ loaded string | Is the module currently loaded? (Yes/No)
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
-linux.kernel_module.loadable_v1
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**linux.kernel_module.loadable_v1**
 
 XCCDF+AE
 ^^^^^^^^
@@ -137,11 +133,8 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[RECOMMENDATION-TITLE]" 
     version="1">
-    <command>
-      [command.value]
-    </command>
-    <line_selection 
-      operation="pattern match">
+    <command>[command.value]</command>
+    <line_selection operation="pattern match">
       [line_selection.value]
     </line_selection>
   </shellcommand_object>
@@ -173,7 +166,7 @@ YAML
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
-        - parameter: 
+        - parameter:
             name: "module"
             dt: "string"
             value: "[module.value]"
@@ -224,8 +217,7 @@ JSON
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
-linux.kernel_module.loaded_v1
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**linux.kernel_module.loaded_v1**
 
 XCCDF+AE
 ^^^^^^^^
@@ -303,11 +295,8 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[RECOMMENDATION-TITLE]" 
     version="1">
-    <command>
-      [command.value]
-    </command>
-    <line_selection 
-      operation="pattern match">
+    <command>[command.value]</command>
+    <line_selection operation="pattern match">
       [line_selection.value]
     </line_selection>
   </shellcommand_object>
@@ -339,7 +328,7 @@ YAML
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
-        - parameter: 
+        - parameter:
             name: "module"
             dt: "string"
             value: "[module.value]"

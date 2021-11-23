@@ -27,8 +27,7 @@ Technical Details
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
-linux.pam_cracklib_parameter_v1
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**linux.pam_cracklib_parameter_v1**
 
 ========= ====== ===========================================
 Name      Type   Description
@@ -52,8 +51,7 @@ Supported Test Types
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
-existence_test
-^^^^^^^^^^^^^^
+**existence_test**
 
 ===== ====== =======================
 Name  Type   Description
@@ -76,8 +74,8 @@ NOTE: The ``value`` parameter is governed by a constraint allowing only the foll
 | **greater than**
 | **greater than or equal**
 | **pattern match**
-**pattern not match**
-
+| **pattern not match**
+|
 ========= ====== ===========================
 Name      Type   Description
 ========= ====== ===========================
@@ -96,8 +94,7 @@ NOTE: The ``data_type`` parameter is governed by a constraint allowing only the 
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
-existence_test
-^^^^^^^^^^^^^^
+**existence_test**
 
 XCCDF+AE
 ^^^^^^^^
@@ -175,17 +172,14 @@ Object
     comment="[RECOMMENDATION-TITLE]" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" 
     version="1">
-    <filepath>
-      [filepath.value]
-    <filepath>
-    <pattern 
-      operation="pattern match">
+    <filepath>[filepath.value]<filepath>
+    <pattern operation="pattern match">
       [pattern.value]
     </pattern>
     <instance 
       datatype="int" 
       operation="equals">
-        1
+      1
     </instance>
   </textfilecontent54_object>
 
@@ -206,14 +200,14 @@ YAML
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
-        - parameter:   
+        - parameter:
             name: "parameter"
             dt: "string"
             value: "[parameter.value]"
     test:
       type: "[TEST-TYPE-NAME]"
-      parameters:   
-        - parameter: 
+      parameters:
+        - parameter:
             name: "value"
             dt: "string"
             value: "[value.value]"
@@ -264,7 +258,7 @@ Generated Content
 | **greater than**
 | **greater than or equal**
 | **pattern match**
-**pattern not match**
+| **pattern not match**
 
 XCCDF+AE
 ^^^^^^^^
@@ -342,17 +336,14 @@ Object
     comment="[RECOMMENDATION-TITLE]" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" 
     version="1">
-    <filepath>
-      [filepath.value]
-    <filepath>
-    <pattern 
-      operation="pattern match">
+    <filepath>[filepath.value]<filepath>
+    <pattern operation="pattern match">
       [pattern.value]
     </pattern>
     <instance 
       datatype="int" 
       operation="equals">
-        1
+      1
     </instance>
   </textfilecontent54_object>
 
@@ -383,18 +374,18 @@ YAML
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
-        - parameter:   
+        - parameter:
             name: "parameter"
             dt: "string"
             value: "[parameter.value]"
     test:
       type: "[TEST-TYPE-NAME]"
-      parameters:   
-        - parameter: 
+      parameters:
+        - parameter:
             name: "value"
             dt: "string"
             value: "[value.value]"
-        - parameter: 
+        - parameter:
             name: "data_type"
             dt: "string"
             value: "[data_type.value]"

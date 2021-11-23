@@ -22,21 +22,21 @@ Technical Details
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
-linux.systemd_unit_dependency_v1
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**linux.systemd_unit_dependency_v1**
 
-+-----------+--------+-----------------------------------------------+
-| Name      | Type   | Description                                   |
-+===========+========+===============================================+
-| unit      | string | The full systemd unit name, usually also the  |
-|           |        | filename of the unit configuration file       |
-|           |        | located in the /etc/systemd/ and              |
-|           |        | /usr/lib/systemd/ directories.                |
-+-----------+--------+-----------------------------------------------+
-| operation | string | Determines how the unit name should be        |
-|           |        | evaluated (the default operation is           |
-|           |        | 'equals').                                    |
-+-----------+--------+-----------------------------------------------+
++-----------------------------+---------+------------------------------------+
+| Name                        | Type    | Description                        |
++=============================+=========+====================================+
+| unit                        | string  | The full systemd unit name,        |
+|                             |         | usually also the filename of the   |
+|                             |         | unit configuration file located in |
+|                             |         | the /etc/systemd/ and              |
+|                             |         | /usr/lib/systemd/ directories.     |
++-----------------------------+---------+------------------------------------+
+| operation                   | string  | Determines how the unit name       |
+|                             |         | should be evaluated (the default   |
+|                             |         | operation is 'equals').            |
++-----------------------------+---------+------------------------------------+
 
 NOTE: The ``operation`` parameter is governed by a constraint allowing only the following values:
   - equals
@@ -61,35 +61,29 @@ Supported Test Types
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
-linux.systemd_unit_dependency_v1
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**linux.systemd_unit_dependency_v1**
 
-+----------------------+--------+-----------------------------+
-| Name                 | Type   | Description                 |
-+======================+========+=============================+
-| unit                 | string | The full systemd unit name, |
-|                      |        | usually also the filename   |
-|                      |        | of the unitconfiguration    |
-|                      |        | file located in the         |
-|                      |        | /etc/systemd/ and           |
-|                      |        | /usr/lib/systemd/           |
-|                      |        | directories.                |
-+----------------------+--------+-----------------------------+
-| unit_operation       | string | Determines how the unit     |
-|                      |        | name should be evaluated    |
-|                      |        | (the default operation is   |
-|                      |        | 'equals').                  |
-+----------------------+--------+-----------------------------+
-| dependency           | string | The name of a unit which is |
-|                      |        | to be confirmed as a        |
-|                      |        | dependency of the given     |
-|                      |        | unit.                       |
-+----------------------+--------+-----------------------------+
-| dependency_operation | string | Determines how the          |
-|                      |        | dependency name should be   |
-|                      |        | evaluated (the default      |
-|                      |        | operation is 'equals').     |
-+----------------------+--------+-----------------------------+
++-----------------------------+---------+------------------------------------+
+| Name                        | Type    | Description                        |
++=============================+=========+====================================+
+| unit                        | string  | The full systemd unit name,        |
+|                             |         | usually also the filename of the   |
+|                             |         | unitconfiguration file located in  |
+|                             |         | the /etc/systemd/ and              |
+|                             |         | /usr/lib/systemd/ directories.     |
++-----------------------------+---------+------------------------------------+
+| unit_operation              | string  | Determines how the unit name       |
+|                             |         | should be evaluated (the default   |
+|                             |         | operation is 'equals').            |
++-----------------------------+---------+------------------------------------+
+| dependency                  | string  | The name of a unit which is to be  |
+|                             |         | confirmed as a dependency of the   |
+|                             |         | given unit.                        |
++-----------------------------+---------+------------------------------------+
+| dependency_operation        | string  | Determines how the dependency name |
+|                             |         | should be evaluated (the default   |
+|                             |         | operation is 'equals').            |
++-----------------------------+---------+------------------------------------+
 
 NOTE: The ``unit_operation`` and ``dependency_operation`` parameters are governed by a constraint allowing only the following values:
   - equals
@@ -97,6 +91,8 @@ NOTE: The ``unit_operation`` and ``dependency_operation`` parameters are governe
 
 Generated Content
 ~~~~~~~~~~~~~~~~~
+
+**linux.systemd_unit_dependency_v1**
 
 XCCDF+AE
 ^^^^^^^^
@@ -159,9 +155,9 @@ Test
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
     check_existence="any_exist"
-        check="all"
+    check="all"
     comment="[RECOMMENDATION-TITLE]"
-        version="1">
+    version="1">
     <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
     <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
   </systemdunitdependency_test>
@@ -175,8 +171,7 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[RECOMMENDATION-TITLE]"
     version="1">
-    <unit
-      operation="[operation.value]">
+    <unit operation="[operation.value]">
       [unit.value]
     </unit>
   </systemdunitdependency_object>
@@ -213,11 +208,11 @@ YAML
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
-        - parameter: 
+        - parameter:
             name: "unit"
             dt: "string"
             value: "[unit.value]"
-        - parameter: 
+        - parameter:
             name: "operation"
             dt: "string"
             value: "[operation.value]"
@@ -239,7 +234,7 @@ YAML
         - parameter:
             name: "dependency"
             dt: "string"
-            value: "[dependency.value]"                              
+            value: "[dependency.value]"
 
 JSON
 ^^^^
@@ -251,7 +246,7 @@ JSON
       "artifact-unique-id":"[ARTIFACT-OVAL-ID]",
       "artifact-title": "[RECOMMENDATION-TITLE]",
       "artifact": {
-        "type": "linux.systemd_unit_dependency_v1",
+        "type": "[ARTIFACT-TYPE-NAME]",
         "parameters": [
           {
             "parameter": {

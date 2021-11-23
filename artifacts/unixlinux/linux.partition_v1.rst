@@ -20,21 +20,21 @@ Technical Details
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
-linux.partition_v1
-^^^^^^^^^^^^^^^^^^
+**linux.partition_v1**
 
-+-------------+--------+---------------------------------------------+
-| Name        | Type   | Description                                 |
-+=============+========+=============================================+
-| mount_point | string | Filesystem mount point being tested. Cannot |
-|             |        | be blank.                                   |
-+-------------+--------+---------------------------------------------+
-| existence   | string | Specifies how many items in the set must    |
-|             |        | exist for the test to evaluate to true.     |
-+-------------+--------+---------------------------------------------+
-| check       | string | Defines how many collected items must match |
-|             |        | the expected state.                         |
-+-------------+--------+---------------------------------------------+
++-----------------------------+---------+------------------------------------+
+| Name                        | Type    | Description                        |
++=============================+=========+====================================+
+| mount_point                 | string  | Filesystem mount point being       |
+|                             |         | tested. Cannot be blank.           |
++-----------------------------+---------+------------------------------------+
+| existence                   | string  | Specifies how many items in the    |
+|                             |         | set must exist for the test to     |
+|                             |         | evaluate to true.                  |
++-----------------------------+---------+------------------------------------+
+| check                       | string  | Defines how many collected items   |
+|                             |         | must match the expected state.     |
++-----------------------------+---------+------------------------------------+
 
 NOTE: The ``existence`` parameter is governed by a constraint allowing only the following values:
   - all_exist
@@ -59,8 +59,7 @@ Supported Test Types
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
-null_test_v1
-^^^^^^^^^^^^
+**null_test_v1**
 
 ==== ==== ===========
 Name Type Description
@@ -68,21 +67,20 @@ Name Type Description
 N/A       
 ==== ==== ===========
 
-linux.partition_option_v1
-^^^^^^^^^^^^^^^^^^^^^^^^^
+**linux.partition_option_v1**
 
-+-----------+--------+-----------------------------------------------+
-| Name      | Type   | Description                                   |
-+===========+========+===============================================+
-| value     | string | The value to be tested.                       |
-+-----------+--------+-----------------------------------------------+
-| check     | string | Defines how many collected items must match   |
-|           |        | the expected state.                           |
-+-----------+--------+-----------------------------------------------+
-| operation | string | Comparison operation.                         |
-+-----------+--------+-----------------------------------------------+
-| data_type | string | The data type of the value.                   |
-+-----------+--------+-----------------------------------------------+
++-----------------------------+---------+------------------------------------+
+| Name                        | Type    | Description                        |
++=============================+=========+====================================+
+| value                       | string  | The value to be tested.            |
++-----------------------------+---------+------------------------------------+
+| check                       | string  | Defines how many collected items   |
+|                             |         | must match the expected state.     |
++-----------------------------+---------+------------------------------------+
+| operation                   | string  | Comparison operation.              |
++-----------------------------+---------+------------------------------------+
+| data_type                   | string  | The data type of the value.        |
++-----------------------------+---------+------------------------------------+
 
 NOTE: The ``check`` parameter is governed by a constraint allowing only the following values:
   - all
@@ -116,8 +114,7 @@ NOTE: The ``data_type`` parameter is governed by a constraint allowing only the 
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
-null_test_v1
-^^^^^^^^^^^^
+**null_test_v1**
 
 XCCDF+AE
 ^^^^^^^^
@@ -195,9 +192,7 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[RECOMMENDATION-TITLE]"
     version="1">
-    <mount_point>
-      [mount_point.value]
-    </mount_point>
+    <mount_point>[mount_point.value]</mount_point>
   </partition_object>
 
 State
@@ -217,15 +212,15 @@ YAML
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
-        - parameter: 
+        - parameter:
             name: "existence"
             dt: "string"
             value: "[existence.value]"
-        - parameter: 
+        - parameter:
             name: "check"
-            type: "set"
+            dt: "set"
             value: "[check.value]"
-        - parameter: 
+        - parameter:
             name: "mount_point"
             dt: "string"
             value: "[mount_point.value]"
@@ -280,8 +275,7 @@ JSON
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
-linux.partition_option_v1
-^^^^^^^^^^^^^^^^^^^^^^^^^
+**linux.partition_option_v1**
 
 XCCDF+AE
 ^^^^^^^^
@@ -290,7 +284,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
 
 ::
 
-   <xccdf:complex-check operator="AND">
+  <xccdf:complex-check operator="AND">
     <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
       <xccdf:check-content>
         <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
@@ -364,9 +358,7 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[RECOMMENDATION-TITLE]"
     version="1">
-    <mount_point>
-      [mount_point.value]
-    </mount_point>
+    <mount_point>[mount_point.value]</mount_point>
   </partition_object>
 
 State
@@ -382,7 +374,7 @@ State
       entity_check="[entity_check.value]" 
       operation="[operation.value]"
       datatype="[datatype.value]">
-      [mount_point.value]
+      [mount_options.value]
     </mount_options>
   </partition_state>  
 
@@ -397,15 +389,15 @@ YAML
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
-        - parameter: 
+        - parameter:
             name: "existence"
             dt: "string"
             value: "[existence.value]"
-        - parameter: 
+        - parameter:
             name: "check"
-            type: "set"
+            dt: "set"
             value: "[check.value]"
-        - parameter: 
+        - parameter:
             name: "mount_point"
             dt: "string"
             value: "[mount_point.value]"
@@ -422,7 +414,7 @@ YAML
             value: "[data_type.value]"
         - parameter:
             name: "operation"
-            type: "set"
+            dt: "set"
             value: "[operation.value]"
         - parameter:
             name: "check"

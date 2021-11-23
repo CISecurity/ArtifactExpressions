@@ -26,8 +26,7 @@ Technical Details
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
-linux.apparmorstatus_v1
-^^^^^^^^^^^^^^^^^^^^^^^
+**linux.apparmorstatus_v1**
 
 ==== ==== ===========
 Name Type Description
@@ -43,29 +42,25 @@ Supported Test Types
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
-linux.apparmorstatus_enforce_mode_profiles_count_v1
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**linux.apparmorstatus_enforce_mode_profiles_count_v1**
 
-+-----------------------------+--------+-----------------------------+
-| Name                        | Type   | Description                 |
-+=============================+========+=============================+
-| check_existence             | string | Defines how many items      |
-|                             |        | should be collected.        |
-|                             |        | Typically set to 'at least  |
-|                             |        | one'.                       |
-+-----------------------------+--------+-----------------------------+
-| check                       | string | Defines how many collected  |
-|                             |        | items must match the        |
-|                             |        | expected state.             |
-+-----------------------------+--------+-----------------------------+
-| operation                   | string | Comparison operation        |
-+-----------------------------+--------+-----------------------------+
-| datatype                    | string | The data type of the value  |
-+-----------------------------+--------+-----------------------------+
-| enforce_mode_profiles_count | int    | Displays the number of      |
-|                             |        | profiles in enforce mode.   |
-|                             |        | Cannot be blank.            |
-+-----------------------------+--------+-----------------------------+
++-----------------------------+---------+------------------------------------+
+| Name                        | Type    | Description                        |
++=============================+=========+====================================+
+| check_existence             | string  | Defines how many items should be   |
+|                             |         | collected. Typically set to 'at    |
+|                             |         | least one'.                        |
++-----------------------------+---------+------------------------------------+
+| check                       | string  | Defines how many collected items   |
+|                             |         | must match the expected state.     |
++-----------------------------+---------+------------------------------------+
+| operation                   | string  | Comparison operation.              |
++-----------------------------+---------+------------------------------------+
+| datatype                    | string  | The data type of the value.        |
++-----------------------------+---------+------------------------------------+
+| enforce_mode_profiles_count | int     | Displays the number of profiles in |
+|                             |         | enforce mode. Cannot be blank.     |
++-----------------------------+---------+------------------------------------+
 
 NOTE: The ``check_existence`` parameter is governed by a constraint allowing only the following values:
   - all_exist
@@ -106,6 +101,8 @@ NOTE: The ``datatype`` parameter is governed by a constraint allowing only the f
 
 Generated Content
 ~~~~~~~~~~~~~~~~~
+
+**linux.apparmorstatus_enforce_mode_profiles_count_v1**
 
 XCCDF+AE
 ^^^^^^^^
@@ -211,14 +208,14 @@ YAML
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
-        - parameter: 
+        - parameter:
             name: "right_name"
             dt: "string"
             value: "[right_name.value]"
-        - parameter: 
+        - parameter:
             name: xpath
             dt: "string"
-            value: "[xpath.value]" 
+            value: "[xpath.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:
@@ -226,7 +223,7 @@ YAML
             name: "check_existence"
             dt: "string"
             value: "[check_existence.value]"
-        - parameter: 
+        - parameter:
             name: "check"
             dt: "string"
             value: "[check.value]"
@@ -234,11 +231,11 @@ YAML
             name: "operation"
             dt: "string"
             value: "[operation.value]"
-        - parameter: 
+        - parameter:
             name: "datatype"
             dt: "string"
             value: "[datatype.value]"
-        - parameter: 
+        - parameter:
             name: "enforce_mode_profiles_count"
             dt: "integer"
             value: "[enforce_mode_profiles_count.value]"

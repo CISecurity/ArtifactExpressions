@@ -33,8 +33,7 @@ Technical Details
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
-unix.xinetd_service_v1
-^^^^^^^^^^^^^^^^^^^^^^
+**unix.xinetd_service_v1**
 
 ======== ====== ======================================================
 Name     Type   Description
@@ -53,8 +52,8 @@ Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
 | **unix.service_enabled_v1**
-**unix.xinetd_service_enabled_v1**
-
+| **unix.xinetd_service_enabled_v1**
+|
 ======= ====== ================================
 Name    Type   Description
 ======= ====== ================================
@@ -64,6 +63,8 @@ enabled string Is the service enabled? (Yes/No)
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
+| **unix.service_enabled_v1**
+| **unix.xinetd_service_enabled_v1**
 XCCDF+AE
 ^^^^^^^^
 
@@ -161,12 +162,8 @@ Object
     id="oval:org.cisecurity.benchmarks:obj:[ARTIFACT-OVAL-ID]1"
     comment="[RECOMMENDATION-TITLE]"
     version="1">
-    <protocol>
-      [protocol.value]
-    </protocol>
-    <service_name>
-      [service_name.value]
-    </service_name>
+    <protocol>[protocol.value]</protocol>
+    <service_name>[service_name.value]</service_name>
   </xinetd_object>
 
   <textfilecontent54_object 
@@ -174,9 +171,7 @@ Object
     id="oval:org.cisecurity.benchmarks:obj:[ARTIFACT-OVAL-ID]2"
     comment="[RECOMMENDATION-TITLE]"
     version="1">
-    <filepath>
-      /etc/inetd.conf
-    </filepath>
+    <filepath>/etc/inetd.conf</filepath>
     <pattern
       operation="pattern match" 
       datatype="string">
@@ -194,11 +189,8 @@ Object
     id="oval:org.cisecurity.benchmarks:obj:[ARTIFACT-OVAL-ID]3"
     comment="[RECOMMENDATION-TITLE]"
     version="1">
-    <path>
-      /etc/inetd.d
-    </path>
-    <filename
-      operation="pattern match">
+    <path>/etc/inetd.d</path>
+    <filename operation="pattern match">
       .+
     </filename>
     <pattern

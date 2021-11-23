@@ -26,18 +26,18 @@ Technical Details
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
-unix.symlink_v1
-^^^^^^^^^^^^^^^
+**unix.symlink_v1**
 
-+--------------------+--------+--------------------------------------+
-| Name               | Type   | Description                          |
-+====================+========+======================================+
-| filepath           | string | Specifies the filepath for the       |
-|                    |        | symbolic link.                       |
-+--------------------+--------+--------------------------------------+
-| filepath_operation | string | Specifies what operation is to be    |
-|                    |        | performed using the filepath value.  |
-+--------------------+--------+--------------------------------------+
++-----------------------------+---------+------------------------------------+
+| Name                        | Type    | Description                        |
++=============================+=========+====================================+
+| filepath                    | string  | Specifies the filepath for the     |
+|                             |         | symbolic link.                     |
++-----------------------------+---------+------------------------------------+
+| filepath_operation          | string  | Specifies what operation is to be  |
+|                             |         | performed using the filepath       |
+|                             |         | value.                             |
++-----------------------------+---------+------------------------------------+
 
 NOTE: The ``filepath_operation`` parameter is governed by a constraint allowing only the following values:
   - equals
@@ -63,28 +63,26 @@ Supported Test Types
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
-unix.symlink_v1
-^^^^^^^^^^^^^^^
+**unix.symlink_v1**
 
-+--------------------------+--------+-----------------------------+
-| Name                     | Type   | Description                 |
-+==========================+========+=============================+
-| filepath                 | string | Specifies the filepath for  |
-|                          |        | the symbolic link.          |
-+--------------------------+--------+-----------------------------+
-| filepath_operation       | string | Specifies what operation is |
-|                          |        | to be performed using the   |
-|                          |        | filepath value.             |
-+--------------------------+--------+-----------------------------+
-| canonical_path           | string | Specifies the canonical     |
-|                          |        | path for the target of a    |
-|                          |        | symbolic link file          |
-|                          |        | specified by the filepath.  |
-+--------------------------+--------+-----------------------------+
-| canonical_path_operation | string | Specifies what operation is |
-|                          |        | to be performed using the   |
-|                          |        | canonical path value.       |
-+--------------------------+--------+-----------------------------+
++-----------------------------+---------+------------------------------------+
+| Name                        | Type    | Description                        |
++=============================+=========+====================================+
+| filepath                    | string  | Specifies the filepath for the     |
+|                             |         | symbolic link.                     |
++-----------------------------+---------+------------------------------------+
+| filepath_operation          | string  | Specifies what operation is to be  |
+|                             |         | performed using the filepath       |
+|                             |         | value.                             |
++-----------------------------+---------+------------------------------------+
+| canonical_path              | string  | Specifies the canonical path for   |
+|                             |         | the target of a symbolic link file |
+|                             |         | specified by the filepath.         |
++-----------------------------+---------+------------------------------------+
+| canonical_path_operation    | string  | Specifies what operation is to be  |
+|                             |         | performed using the canonical path |
+|                             |         | value.                             |
++-----------------------------+---------+------------------------------------+
 
 NOTE: The ``file_path_operation`` parameter is governed by a constraint allowing only the following values:
   - equals
@@ -116,28 +114,26 @@ NOTE: The ``canonical_path_operation`` parameter is governed by a constraint all
   - subset of
   - superset of
 
-unix.symlink_password_object_v1
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**unix.symlink_password_object_v1**
 
-+--------------------------+--------+-----------------------------+
-| Name                     | Type   | Description                 |
-+==========================+========+=============================+
-| filepath                 | string | Specifies the filepath used |
-|                          |        | to create the object.       |
-+--------------------------+--------+-----------------------------+
-| filepath_operation       | string | Specifies what operation is |
-|                          |        | to be performed using the   |
-|                          |        | filepath value.             |
-+--------------------------+--------+-----------------------------+
-| canonical_path           | string | Specifies the canonical     |
-|                          |        | path for the target of a    |
-|                          |        | symbolic link file          |
-|                          |        | specified by the filepath.  |
-+--------------------------+--------+-----------------------------+
-| canonical_path_operation | string | Specifies what operation is |
-|                          |        | to be performed using the   |
-|                          |        | canonical path value.       |
-+--------------------------+--------+-----------------------------+
++-----------------------------+---------+------------------------------------+
+| Name                        | Type    | Description                        |
++=============================+=========+====================================+
+| filepath                    | string  | Specifies the filepath used to     |
+|                             |         | create the object.                 |
++-----------------------------+---------+------------------------------------+
+| filepath_operation          | string  | Specifies what operation is to be  |
+|                             |         | performed using the filepath       |
+|                             |         | value.                             |
++-----------------------------+---------+------------------------------------+
+| canonical_path              | string  | Specifies the canonical path for   |
+|                             |         | the target of a symbolic link file |
+|                             |         | specified by the filepath.         |
++-----------------------------+---------+------------------------------------+
+| canonical_path_operation    | string  | Specifies what operation is to be  |
+|                             |         | performed using the canonical path |
+|                             |         | value.                             |
++-----------------------------+---------+------------------------------------+
 
 NOTE: The ``file_path_operation`` parameter is governed by a constraint allowing only the following values:
   - equals
@@ -172,8 +168,7 @@ NOTE: The ``canonical_path_operation`` parameter is governed by a constraint all
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
-unix.symlink_v1
-^^^^^^^^^^^^^^^
+**unix.symlink_v1**
 
 XCCDF+AE
 ^^^^^^^^
@@ -365,48 +360,47 @@ JSON
             }
           }
         ]
+      },
+      "test": {
+        "type": "[TEST-TYPE-NAME]",
+        "parameters": [
+          {
+            "parameter": {
+              "name": "filepath",
+              "dt": "string",
+              "value": "[filepath.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "file_path_operation",
+              "dt": "string",
+              "value": "[file_path_operation.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "canonical_path",
+              "dt": "string",
+              "value": "[canonical_path.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "canonical_path_operation",
+              "dt": "string",
+              "value": "[canonical_path_operation.value]"
+            }
+          }
+        ]
       }
-    },
-    "test": {
-      "type": "[TESTTYPE-NAME]",
-      "parameters": [
-        {
-          "parameter": {
-            "name": "filepath",
-            "dt": "string",
-            "value": "[filepath.value]"
-          }
-        },
-        {
-          "parameter": {
-            "name": "file_path_operation",
-            "dt": "string",
-            "value": "[file_path_operation.value]"
-          }
-        },
-        {
-          "parameter": {
-            "name": "canonical_path",
-            "dt": "string",
-            "value": "[canonical_path.value]"
-          }
-        },
-        {
-          "parameter": {
-            "name": "canonical_path_operation",
-            "dt": "string",
-            "value": "[canonical_path_operation.value]"
-          }
-        }
-      ]
     }
   }
 
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
-unix.symlink_password_object_v1
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**unix.symlink_password_object_v1**
 
 XCCDF+AE
 ^^^^^^^^
@@ -566,15 +560,12 @@ Variable
     comment="This value is used in Rule: [RECOMMENDATION-TITLE]"
     version="1">
     <concat>
-      <end
-        character="/">
+      <end character="/">
         <object_component
           object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]1" 
           item_field="home_dir" />
       </end>
-      <literal_component>
-        .mysql_history
-      </.mysql_history>
+      <literal_component>.mysql_history</literal_component>
     </concat>
   </local_variable>
 
@@ -644,39 +635,39 @@ JSON
             }
           }
         ]
+      },
+      "test": {
+        "type": "[TEST-TYPE-NAME]",
+        "parameters": [
+          {
+            "parameter": {
+              "name": "filepath",
+              "dt": "string",
+              "value": "[filepath.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "file_path_operation",
+              "dt": "string",
+              "value": "[file_path_operation.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "canonical_path",
+              "dt": "string",
+              "value": "[canonical_path.value]"
+            }
+          },
+          { 
+            "parameter": {
+              "name": "canonical_path_operation",
+              "dt": "string",
+              "value": "[canonical_path_operation.value]"
+            }
+          }
+        ]
       }
-    },
-    "test": {
-      "type": "[TESTTYPE-NAME]",
-      "parameters": [
-        {
-          "parameter": {
-            "name": "filepath",
-            "dt": "string",
-            "value": "[filepath.value]"
-          }
-        },
-        {
-          "parameter": {
-            "name": "file_path_operation",
-            "dt": "string",
-            "value": "[file_path_operation.value]"
-          }
-        },
-        {
-          "parameter": {
-            "name": "canonical_path",
-            "dt": "string",
-            "value": "[canonical_path.value]"
-          }
-        },
-        {
-          "parameter": {
-            "name": "canonical_path_operation",
-            "dt": "string",
-            "value": "[canonical_path_operation.value]"
-          }
-        }
-      ]
     }
-  }  
+  }

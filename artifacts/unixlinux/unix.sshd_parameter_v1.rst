@@ -27,7 +27,6 @@ Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
 unix.sshd_parameter_v1
-^^^^^^^^^^^^^^^^^^^^^^
 
 ========= ====== ===================================================
 Name      Type   Description
@@ -60,8 +59,8 @@ Test Type Parameters
 | **greater than**
 | **greater than or equal**
 | **pattern match**
-**pattern not match**
-
+| **pattern not match**
+|
 ========= ====== ===========================
 Name      Type   Description
 ========= ====== ===========================
@@ -78,7 +77,6 @@ NOTE: The ``data_type`` parameter is governed by a constraint allowing only the 
   - set
 
 existence_test
-^^^^^^^^^^^^^^
 
 ===== ====== =======================
 Name  Type   Description
@@ -105,8 +103,7 @@ Generated Content
 | **greater than**
 | **greater than or equal**
 | **pattern match**
-**pattern not match**
-
+| **pattern not match**
 XCCDF+AE
 ^^^^^^^^
 
@@ -202,9 +199,7 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[RECOMMENDATION-TITLE]"
     version="1">
-    <filepath>
-      /etc/ssh/sshd_config
-    </filepath>
+    <filepath>/etc/ssh/sshd_config</filepath>
     <pattern 
       operation="pattern match">
       [pattern.value]
@@ -314,8 +309,7 @@ JSON
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
-existence_test
-^^^^^^^^^^^^^^
+**existence_test**
 
 XCCDF+AE
 ^^^^^^^^
@@ -411,11 +405,8 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[RECOMMENDATION-TITLE]"
     version="1">
-    <filepath>
-      /etc/ssh/sshd_config
-    </filepath>
-    <pattern 
-      operation="pattern match">
+    <filepath>/etc/ssh/sshd_config</filepath>
+    <pattern operation="pattern match">
       [pattern.value]
     </pattern>
     <instance 

@@ -19,8 +19,7 @@ Technical Details
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
-unix.command_output_v1
-^^^^^^^^^^^^^^^^^^^^^^
+**unix.command_output_v1**
 
 ======= ====== ===================
 Name    Type   Description
@@ -41,8 +40,8 @@ Test Type Parameters
 
 | **equals**
 | **pattern match**
-**pattern not match**
-
+| **pattern not match**
+|
 ========= ====== ===========================
 Name      Type   Description
 ========= ====== ===========================
@@ -58,8 +57,7 @@ NOTE: The ``data_type`` parameter is governed by a constraint allowing only the 
   - version
   - set
 
-null_test_v1
-^^^^^^^^^^^^
+**null_test_v1**
 
 ==== ==== ===========
 Name Type Description
@@ -72,8 +70,7 @@ Generated Content
 
 | **equals**
 | **pattern match**
-**pattern not match**
-
+| **pattern not match**
 XCCDF+AE
 ^^^^^^^^
 
@@ -165,11 +162,8 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[RECOMMENDATION-TITLE]"
     version="1">
-    <command>
-      [command.value]
-    </command>
-    <line_selection 
-      operation="pattern match">
+    <command>[command.value]</command>
+    <line_selection operation="pattern match">
       .+
     </line_selection>
   </shellcommand_object>
@@ -210,21 +204,21 @@ YAML
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
-        - parameter: 
+        - parameter:
             name: "command"
             dt: "string"
             value: "[command.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:
-        - parameter: 
+        - parameter:
             name: "value"
             dt: "string"
             value: "[value.value]"
-        - parameter: 
+        - parameter:
             name: "datatype"
             dt: "string"
-            value: "[datatype.value]"                                 
+            value: "[datatype.value]"
 
 JSON
 ^^^^
@@ -272,8 +266,7 @@ JSON
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
-null_test_v1
-^^^^^^^^^^^^
+**null_test_v1**
 
 XCCDF+AE
 ^^^^^^^^
@@ -283,25 +276,25 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
 ::
 
   <xccdf:complex-check operator="AND">
-  <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
-    <xccdf:check-content>
-      <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
-        <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-        <ae:title>[RECOMMENDATION-TITLE]</ae:title>
-        <ae:artifact type="[ARTIFACT-TYPE-NAME]">
-          <ae:parameters>
-            <ae:parameter dt="string" name="command">[command.value]</ae:parameter>
-          </ae:parameters>
-        </ae:artifact>
-        <ae:test type="[TEST-TYPE-NAME]">
-          <ae:parameters />
-        </ae:test>
-        <ae:profiles>
-          <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1" />
-        </ae:profiles>          
-      </ae:artifact_expression>
-    </xccdf:check-content>
-  </xccdf:check>
+    <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
+      <xccdf:check-content>
+        <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
+          <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
+          <ae:title>[RECOMMENDATION-TITLE]</ae:title>
+          <ae:artifact type="[ARTIFACT-TYPE-NAME]">
+            <ae:parameters>
+              <ae:parameter dt="string" name="command">[command.value]</ae:parameter>
+            </ae:parameters>
+          </ae:artifact>
+          <ae:test type="[TEST-TYPE-NAME]">
+            <ae:parameters />
+          </ae:test>
+          <ae:profiles>
+            <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1" />
+          </ae:profiles>
+        </ae:artifact_expression>
+      </xccdf:check-content>
+    </xccdf:check>
   </xccdf:complex-check>
 
 SCAP
@@ -347,8 +340,7 @@ Object
     comment="[RECOMMENDATION-TITLE]"
     version="1">
     <command>[command.value]</command>
-    <line_selection 
-      operation="pattern match">
+    <line_selection operation="pattern match">
       .+
     </line_selection>
   </shellcommand_object>
@@ -370,7 +362,7 @@ YAML
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
-        - parameter: 
+        - parameter:
             name: "command"
             dt: "string"
             value: "[command.value]"

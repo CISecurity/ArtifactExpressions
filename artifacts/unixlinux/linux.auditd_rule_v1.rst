@@ -27,16 +27,15 @@ Technical Details
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
-linux.auditd_rule_v1
-^^^^^^^^^^^^^^^^^^^^
+**linux.auditd_rule_v1**
 
-+-----------------+--------+-----------------------------------------+
-| Name            | Type   | Description                             |
-+=================+========+=========================================+
-| check_existence | string | Defines how many items should be        |
-|                 |        | collected. Typically set to 'at least   |
-|                 |        | one'.                                   |
-+-----------------+--------+-----------------------------------------+
++-----------------------------+---------+------------------------------------+
+| Name                        | Type    | Description                        |
++=============================+=========+====================================+
+| check_existence             | string  | Defines how many items should be   |
+|                             |         | collected. Typically set to 'at    |
+|                             |         | least one'.                        |
++-----------------------------+---------+------------------------------------+
 
 NOTE: The ``check_existence`` parameter is governed by a constraint allowing only the following values:
   - all_exist
@@ -54,8 +53,7 @@ Supported Test Types
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
-set.includes_v1
-^^^^^^^^^^^^^^^
+**set.includes_v1**
 
 ========= ====== =============================================
 Name      Type   Description
@@ -74,6 +72,8 @@ NOTE: The ``data_type`` parameter is governed by a constraint allowing only the 
 
 Generated Content
 ~~~~~~~~~~~~~~~~~
+
+**set.includes_v1**
 
 XCCDF+AE
 ^^^^^^^^
@@ -151,12 +151,8 @@ Object
     comment="[RECOMMENDATION-TITLE]" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"     
     version="1">
-    <path>
-      /etc/audit
-    </path>
-    <filename>
-      auditd.rules
-    </filename>
+    <path>/etc/audit</path>
+    <filename>auditd.rules</filename>
     <pattern
       datatype="[datatype.value]"
       operation="pattern match">
@@ -186,7 +182,7 @@ YAML
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
-        - parameter: 
+        - parameter:
             name: "check_existence"
             dt: "string"
             value: "[check_existence.value]"
@@ -197,7 +193,7 @@ YAML
             name: "value"
             dt: "string"
             value: "[value.value]"
-        - parameter: 
+        - parameter:
             name: "data_type"
             dt: "string"
             value: "[data_type.value]"

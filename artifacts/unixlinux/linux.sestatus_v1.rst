@@ -18,8 +18,7 @@ Technical Details
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
-linux.service_v1
-^^^^^^^^^^^^^^^^
+**linux.service_v1**
 
 ======= ====== =====================================
 Name    Type   Description
@@ -35,8 +34,7 @@ Supported Test Types
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
-unix.service_enabled_v1
-^^^^^^^^^^^^^^^^^^^^^^^
+**unix.service_enabled_v1**
 
 ======= ====== ================================
 Name    Type   Description
@@ -46,6 +44,8 @@ enabled string Is the service enabled? (Yes/No)
 
 Generated Content
 ~~~~~~~~~~~~~~~~~
+
+**unix.service_enabled_v1**
 
 XCCDF+AE
 ^^^^^^^^
@@ -123,12 +123,8 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[RECOMMENDATION-TITLE]"
     version="1">
-    <unit>
-      [unit.value]
-    </unit>
-    <property>
-      UnitFileState
-    </property>
+    <unit>[unit.value]</unit>
+    <property>UnitFileState</property>
   </systemdunitproperty_object>
 
 State
@@ -158,7 +154,7 @@ YAML
     artifact:
       type:  "[ARTIFACT-TYPE-NAME]"
       parameters:
-        - parameter: 
+        - parameter:
             name: "service"
             dt: "string"
             value:" [service.value]"

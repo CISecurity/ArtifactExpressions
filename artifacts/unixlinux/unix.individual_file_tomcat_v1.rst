@@ -30,31 +30,31 @@ Technical Details
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
-unix.individual_file_tomcat_v1
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**unix.individual_file_tomcat_v1**
 
-+-----------------+--------+-----------------------------------------+
-| Name            | Type   | Description                             |
-+=================+========+=========================================+
-| base_path       | string | Base component of path. Either          |
-|                 |        | $CATALINA_HOME or $CATALINA_BASE.       |
-+-----------------+--------+-----------------------------------------+
-| path            | string | Directory component of the absolute     |
-|                 |        | path to the file after $CATALINA_HOME   |
-|                 |        | or $CATALINA_BASE.                      |
-+-----------------+--------+-----------------------------------------+
-| concat_path     | string | Directory component after <appname>.    |
-+-----------------+--------+-----------------------------------------+
-| filename        | string | Filename component of the absolute path |
-|                 |        | to the file.                            |
-+-----------------+--------+-----------------------------------------+
-| check           | string | Defines how many collected items must   |
-|                 |        | match the expected state.               |
-+-----------------+--------+-----------------------------------------+
-| check_existence | string | Defines how many items should be        |
-|                 |        | collected. Typically set to 'at least   |
-|                 |        | one'.                                   |
-+-----------------+--------+-----------------------------------------+
++-----------------------------+---------+------------------------------------+
+| Name                        | Type    | Description                        |
++=============================+=========+====================================+
+| base_path                   | string  | Base component of path. Either     |
+|                             |         | $CATALINA_HOME or $CATALINA_BASE.  |
++-----------------------------+---------+------------------------------------+
+| path                        | string  | Directory component of the         |
+|                             |         | absolute path to the file after    |
+|                             |         | $CATALINA_HOME or $CATALINA_BASE.  |
++-----------------------------+---------+------------------------------------+
+| concat_path                 | string  | Directory component after          |
+|                             |         | <appname>.                         |
++-----------------------------+---------+------------------------------------+
+| filename                    | string  | Filename component of the absolute |
+|                             |         | path to the file.                  |
++-----------------------------+---------+------------------------------------+
+| check                       | string  | Defines how many collected items   |
+|                             |         | must match the expected state.     |
++-----------------------------+---------+------------------------------------+
+| check_existence             | string  | Defines how many items should be   |
+|                             |         | collected. Typically set to 'at    |
+|                             |         | least one'.                        |
++-----------------------------+---------+------------------------------------+
 
 NOTE: The ``check`` parameter is governed by a constraint allowing only the following values:
   - all
@@ -78,8 +78,7 @@ Supported Test Types
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
-existence_test
-^^^^^^^^^^^^^^
+**existence_test**
 
 ===== ====== =======================
 Name  Type   Description
@@ -97,6 +96,8 @@ NOTE: The ``value`` parameter is governed by a constraint allowing only the foll
 
 Generated Content
 ~~~~~~~~~~~~~~~~~
+
+**existence_test**
 
 XCCDF+AE
 ^^^^^^^^
@@ -189,7 +190,7 @@ Test
 
 Object
 
-CATALINA_HOME
+**CATALINA_HOME**
 
 ::
 
@@ -203,8 +204,7 @@ CATALINA_HOME
       recurse="directories" 
       recurse_direction="down" />
     <path var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]1" />
-    <filename 
-      xsi:nil="true" />
+    <filename xsi:nil="true" />
   </file_object>
 
   <file_object 
@@ -213,12 +213,10 @@ CATALINA_HOME
     comment="[RECOMMENDATION-TITLE]" 
     version="1">
     <path var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]2" />
-    <filename>
-      [filename.value]
-    </filename>
+    <filename>[filename.value]</filename>
   </file_object>
 
-CATALINA_BASE
+**CATALINA_BASE**
 
 ::
 
@@ -232,8 +230,7 @@ CATALINA_BASE
       recurse="directories" 
       recurse_direction="down" />
     <path var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]" />
-    <filename 
-      xsi:nil="true" />
+    <filename xsi:nil="true" />
   </file_object>
 
   <file_object 
@@ -242,10 +239,8 @@ CATALINA_BASE
     comment="[RECOMMENDATION-TITLE]" 
     version="1">
     <path var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]3" />
-    <filename>
-      [filename.value]
-    </filename>
-  </file_object>  
+    <filename>[filename.value]</filename>
+  </file_object>
 
 State
 
@@ -280,15 +275,12 @@ Variable
     comment="\$CATALINA_HOME directory"
     version="1">
     <concat>
-      <end 
-        character="/">
+      <end character="/">
         <object_component
           object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]3" 
           item_field="path" />
       </end>
-      <literal_component>
-        [literal_component.value]
-      </literal_component>
+      <literal_component>[literal_component.value]</literal_component>
     </concat>
   </local_variable>
 
@@ -303,34 +295,34 @@ YAML
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
-        - parameter: 
+        - parameter:
             name: "base_path
             dt: "string"
             value: "[base_path.value]"
-        - parameter: 
+        - parameter:
             name: "path"
             dt: "string"
             value: "[path.value]"
-        - parameter: 
+        - parameter:
             name: "concat_path"
             dt: "string"
             value: "concat_path.value]"
-        - parameter: 
+        - parameter:
             name: "filename"
             dt: "string"
             value: "[filename.value]"
-        - parameter: 
+        - parameter:
             name: "check"
             dt: "string"
             value: "[check.value]"
-        - parameter: 
+        - parameter:
             name: "check_existence"
             dt: "string"
             value: "[check_existence.value]"
     test:
       type: "[TEST-TYPE-NAME]"
-      parameters:   
-        - parameter: 
+      parameters:
+        - parameter:
             name: "value"
             dt: "string"
             value: "[value.value]"

@@ -30,8 +30,7 @@ Technical Details
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
-unix.file_collection_v1
-^^^^^^^^^^^^^^^^^^^^^^^
+**unix.file_collection_v1**
 
 =========== ====== ====================================================
 Name        Type   Description
@@ -68,65 +67,71 @@ Supported Test Types
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
-unix.file_permissions_v1
-^^^^^^^^^^^^^^^^^^^^^^^^
+**unix.file_permissions_v1**
 
-+--------+-----------+-----------------------------------------------+
-| Name   | Type      | Description                                   |
-+========+===========+===============================================+
-| uread  | string    | Determines whether the user that owns the     |
-|        |           | file or directory is permitted to read the    |
-|        |           | contents of it.                               |
-+--------+-----------+-----------------------------------------------+
-| uwrite | string    | Determines whether the user that owns the     |
-|        |           | file or directory is permitted to write to    |
-|        |           | it.                                           |
-+--------+-----------+-----------------------------------------------+
-| uexec  | string    | Determines whether the user that owns the     |
-|        |           | file or directory is permitted to execute the |
-|        |           | file or change into the directory.            |
-+--------+-----------+-----------------------------------------------+
-| gread  | string    | Determines whether the group that owns the    |
-|        |           | file or directory is permitted to read the    |
-|        |           | content of it.                                |
-+--------+-----------+-----------------------------------------------+
-| gwrite | string    | Determines whether the group that owns the    |
-|        |           | file or directory is permitted to write to    |
-|        |           | it.                                           |
-+--------+-----------+-----------------------------------------------+
-| gexec  | string    | Determines whether the group that owns the    |
-|        |           | file or directory is permitted to execute the |
-|        |           | file or change into the directory.            |
-+--------+-----------+-----------------------------------------------+
-| oread  | string    | Determines whether other users or groups that |
-|        |           | do not own the file or directory are          |
-|        |           | permitted to read the contents of it.         |
-+--------+-----------+-----------------------------------------------+
-| owrite | string    | Determines whether other users or groups that |
-|        |           | do not own the file or directory are          |
-|        |           | permitted to write to it.                     |
-+--------+-----------+-----------------------------------------------+
-| oexec  | string    | Determines whether other users or groups that |
-|        |           | do not own the file or directory are          |
-|        |           | permitted to execute the file or change into  |
-|        |           | the directory.                                |
-+--------+-----------+-----------------------------------------------+
-| suid   | string    | Determines if the file can execute as the     |
-|        |           | owner.                                        |
-+--------+-----------+-----------------------------------------------+
-| sgid   | string    | Determines if the file can execute as         |
-|        |           | group.                                        |
-+--------+-----------+-----------------------------------------------+
-| sticky | string    | Determines if the sticky bit is set.          |
-+--------+-----------+-----------------------------------------------+
++-----------------------------+---------+------------------------------------+
+| Name                        | Type    | Description                        |
++=============================+=========+====================================+
+| uread                       | string  | Determines whether the user that   |
+|                             |         | owns the file or directory is      |
+|                             |         | permitted to read the contents of  |
+|                             |         | it.                                |
++-----------------------------+---------+------------------------------------+
+| uwrite                      | string  | Determines whether the user that   |
+|                             |         | owns the file or directory is      |
+|                             |         | permitted to write to it.          |
++-----------------------------+---------+------------------------------------+
+| uexec                       | string  | Determines whether the user that   |
+|                             |         | owns the file or directory is      |
+|                             |         | permitted to execute the file or   |
+|                             |         | change into the directory.         |
++-----------------------------+---------+------------------------------------+
+| gread                       | string  | Determines whether the group that  |
+|                             |         | owns the file or directory is      |
+|                             |         | permitted to read the contents of  |
+|                             |         | it.                                |
++-----------------------------+---------+------------------------------------+
+| gwrite                      | string  | Determines whether the group that  |
+|                             |         | owns the file or directory is      |
+|                             |         | permitted to write to it.          |
++-----------------------------+---------+------------------------------------+
+| gexec                       | string  | Determines whether the group that  |
+|                             |         | owns the file or directory is      |
+|                             |         | permitted to execute the file or   |
+|                             |         | change into the directory.         |
++-----------------------------+---------+------------------------------------+
+| oread                       | string  | Determines whether other users or  |
+|                             |         | groups that do not own the file or |
+|                             |         | directory are permitted to read    |
+|                             |         | the contents of it.                |
++-----------------------------+---------+------------------------------------+
+| owrite                      | string  | Determines whether other users or  |
+|                             |         | groups that do not own the file or |
+|                             |         | directory are permitted to write   |
+|                             |         | to it.                             |
++-----------------------------+---------+------------------------------------+
+| oexec                       | string  | Determines whether other users or  |
+|                             |         | groups that do not own the file or |
+|                             |         | directory are permitted to execute |
+|                             |         | the file or change into            |
+|                             |         | the directory.                     |
++-----------------------------+---------+------------------------------------+
+| suid                        | string  | Determines if the file can execute |
+|                             |         | as the owner.                      |
++-----------------------------+---------+------------------------------------+
+| sgid                        | string  | Determines if the file can execute |
+|                             |         | as the group.                      |
++-----------------------------+---------+------------------------------------+
+| sticky                      | string  | Determines if the sticky bit is    |
+|                             |         | set.                               |
++-----------------------------+---------+------------------------------------+
 
 NOTE: All ``unix.file_permissions_v1`` parameters are governed by a constraint allowing only the following values:
   -  NA
   -  set
   -  unset
 
-unix.file_ownership_v1
-^^^^^^^^^^^^^^^^^^^^^^
+**unix.file_ownership_v1**
 
 ==== ==== ============================================================
 Name Type Description
@@ -135,8 +140,7 @@ uid  int  The User ID of the files owner (Positive integer or blank).
 gid  int  The Group ID of the files owner (Positive integer or blank).
 ==== ==== ============================================================
 
-null_test_v1
-^^^^^^^^^^^^
+**null_test_v1**
 
 ==== ==== ===========
 Name Type Description
@@ -147,8 +151,7 @@ N/A
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
-unix.file_permissions_v1
-^^^^^^^^^^^^^^^^^^^^^^^^
+**unix.file_permissions_v1**
 
 XCCDF+AE
 ^^^^^^^^
@@ -242,8 +245,7 @@ Object
     comment="[RECOMMENDATION-TITLE]"
     version="1">
     <path>[path.value]</path>
-    <filename 
-      xsi:nil="[xsi:nil.value]">
+    <filename xsi:nil="[xsi:nil.value]">
       [filename.value]
     </filename>
     <behaviors 
@@ -261,12 +263,24 @@ State
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
     comment="[RECOMMENDATION-TITLE]"
     version="1">
-    <gread datatype="boolean">[gread.value]</gread>
-    <gwrite datatype="boolean">[gwrite.value]</gwrite>
-    <gexec datatype="boolean">[gexec.value]</gexec>
-    <oread datatype="boolean">[oread.value]</oread>
-    <owrite datatype="boolean">[owrite.value]</owrite>
-    <oexec datatype="boolean">[oexec.value]</oexec>    
+    <gread datatype="boolean">
+      [gread.value]
+    </gread>
+    <gwrite datatype="boolean">
+      [gwrite.value]
+    </gwrite>
+    <gexec datatype="boolean">
+      [gexec.value]
+    </gexec>
+    <oread datatype="boolean">
+      [oread.value]
+    </oread>
+    <owrite datatype="boolean">
+      [owrite.value]
+    </owrite>
+    <oexec datatype="boolean">
+      [oexec.value]
+    </oexec>
   </file_state>
 
 YAML
@@ -280,46 +294,46 @@ YAML
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
-        - parameter: 
+        - parameter:
             name: "existence"
             dt: "string"
             value: "[existence.value]"
-        - parameter: 
+        - parameter:
             name: "path"
             dt: "string"
             value: "[path.value]"
-        - parameter: 
+        - parameter:
             name: "file_name"
             dt: "string"
             value: "[file_name.value]"
-        - parameter: 
+        - parameter:
             name: "recurse"
             dt: "string"
             value: "[recurse.value]"
-        - parameter: 
+        - parameter:
             name: "max_depth"
             dt: "int"
             value: "[max_depth.value]"
-        - parameter: 
+        - parameter:
             name: "file_system"
             dt: "string"
             value: "[file_system.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:
-        - parameter: 
+        - parameter:
             name: "uread"
             dt: "string"
             value: [uread.value]
-        - parameter: 
+        - parameter:
             name: "uwrite"
             dt: "string"
             value: "[uwrite.value]"
-        - parameter: 
+        - parameter:
             name: "uexec"
             dt: "string"
             value: "[uexec.value]"
-        - parameter: 
+        - parameter:
             name: "gread"
             dt: "string"
             value: "[gread.value]
@@ -327,31 +341,31 @@ YAML
             name: "gwrite"
             dt: "string"
             value: "[gwrite.value]"
-        - parameter: 
+        - parameter:
             name: "gexec"
             dt: "string"
             value: "[gexec.value]"
-        - parameter: 
+        - parameter:
             name: "oread"
             dt: "string"
             value: "[oread.value]"
-        - parameter: 
+        - parameter:
             name: "owrite"
             dt: "string"
             value: "[owrite.value]"
-        - parameter: 
+        - parameter:
             name: "oexec"
             dt: "string"
             value: "[oexec.value]"
-        - parameter: 
+        - parameter:
             name: "suid"
             dt: "string"
             value: "[suid.value]"
-        - parameter: 
+        - parameter:
             name: "sgid"
             dt: "string"
             value: "[sgid.value]"
-        - parameter: 
+        - parameter:
             name: "sticky"
             dt: "string"
             value: "[sticky.value]"
@@ -507,8 +521,7 @@ JSON
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
-unix_file_ownership_v1
-^^^^^^^^^^^^^^^^^^^^^^
+**unix_file_ownership_v1**
 
 XCCDF+AE
 ^^^^^^^^
@@ -592,11 +605,8 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[RECOMMENDATION-TITLE]"
     version="1">
-    <path>
-      [path.value]
-    </path>
-    <filename 
-      xsi:nil="[xsi:nil.value]">
+    <path>[path.value]</path>
+    <filename xsi:nil="[xsi:nil.value]">
       [filename.value]
     </filename>
     <behaviors 
@@ -614,12 +624,10 @@ State
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
     comment="[RECOMMENDATION-TITLE]"
     version="1">
-    <group_id 
-      datatype="int">
+    <group_id datatype="int">
       [group_id.value]
     </group_id>
-    <user_id
-      datatype="int">
+    <user_id datatype="int">
       [user_id.value]
     </user_id>
   </file_state>
@@ -635,38 +643,38 @@ YAML
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
-        - parameter: 
+        - parameter:
             name: "existence"
             dt: "string"
             value: "[existence.value]"
-        - parameter: 
+        - parameter:
             name: "path"
             dt: "string"
             value: "[path.value]"
-        - parameter: 
+        - parameter:
             name: "file_name"
             dt: "string"
             value: "[file_name.value]"
-        - parameter: 
+        - parameter:
             name: "recurse"
             dt: "string"
             value: "[recurse.value]"
-        - parameter: 
+        - parameter:
             name: "max_depth"
             dt: "int"
             value: "[max_depth.value]"
-        - parameter: 
+        - parameter:
             name: "file_system"
             dt: "string"
             value: "[file_system.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:
-        - parameter: 
+        - parameter:
             name: "uid"
             dt: "int"
             value: [uid.value]
-        - parameter: 
+        - parameter:
             name: "gid"
             dt: "int"
             value: "[gid.value]"
@@ -752,8 +760,7 @@ JSON
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
-null_test_v1
-^^^^^^^^^^^^
+**null_test_v1**
 
 XCCDF+AE
 ^^^^^^^^
@@ -835,8 +842,7 @@ Object
     comment="[RECOMMENDATION-TITLE]"
     version="1">
     <path>[path.value]</path>
-    <filename 
-      xsi:nil="[xsi:nil.value]>
+    <filename xsi:nil="[xsi:nil.value]>
       [filename.value]
     </filename>
     <behaviors 
@@ -862,27 +868,27 @@ YAML
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
-        - parameter: 
+        - parameter:
             name: "existence"
             dt: "string"
             value: "[existence.value]"
-        - parameter: 
+        - parameter:
             name: "path"
             dt: "string"
             value: "[path.value]"
-        - parameter: 
+        - parameter:
             name: "file_name"
             dt: "string"
             value: "[file_name.value]"
-        - parameter: 
+        - parameter:
             name: "recurse"
             dt: "string"
             value: "[recurse.value]"
-        - parameter: 
+        - parameter:
             name: "max_depth"
             dt: "int"
             value: "[max_depth.value]"
-        - parameter: 
+        - parameter:
             name: "file_system"
             dt: "string"
             value: "[file_system.value]"

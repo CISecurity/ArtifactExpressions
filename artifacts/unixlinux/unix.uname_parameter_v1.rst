@@ -25,8 +25,7 @@ Technical Details
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
-unix.uname_parameter_v1
-^^^^^^^^^^^^^^^^^^^^^^^
+**unix.uname_parameter_v1**
 
 ========= ====== =================================
 Name      Type   Description
@@ -34,8 +33,7 @@ Name      Type   Description
 parameter string The uname parameter to be tested.
 ========= ====== =================================
 
-NOTE: The ``parameter`` parameter is governed by a constraint allowing
-only the following values: 
+NOTE: The ``parameter`` parameter is governed by a constraint allowing only the following values: 
   - machine_class 
   - node_name 
   - os_name 
@@ -65,8 +63,8 @@ Test Type Parameters
 | **greater than**
 | **greater than or equal**
 | **pattern match**
-**pattern not match**
-  
+| **pattern not match**
+|
 ========= ====== ===========================
 Name      Type   Description
 ========= ====== ===========================
@@ -85,6 +83,14 @@ NOTE: The ``data_type`` parameter is governed by a constraint allowing only the 
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
+| **equals**
+| **not equal**
+| **less than**
+| **less than or equal**
+| **greater than**
+| **greater than or equal**
+| **pattern match**
+| **pattern not match**
 XCCDF+AE
 ^^^^^^^^
 

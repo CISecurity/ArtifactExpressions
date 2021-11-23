@@ -14,8 +14,7 @@ Technical Details
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
-sce_check_v1
-^^^^^^^^^^^^
+**sce_check_v1**
 
 ====================== ======== ========================================
 Name                   Type     Description  
@@ -42,8 +41,7 @@ Supported Test Types
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
-null_test_v1
-^^^^^^^^^^^^
+**null_test_v1**
 
 ====================== ======== ========================================
 Name                   Type     Description  
@@ -53,6 +51,8 @@ N/A
 
 Generated Content
 ~~~~~~~~~~~~~~~~~
+
+**null_test_v1**
 
 XCCDF+AE
 ^^^^^^^^
@@ -133,19 +133,19 @@ YAML
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
-        - parameter: 
+        - parameter:
             name: "script"
             dt: "string"
             value: "[script.value]"
-        - parameter: 
+        - parameter:
             name: "export_variable_value"
             dt: "string"
             value: "[export_variable_value.value]"
-        - parameter: 
+        - parameter:
             name: "export_variable_type"
             dt: "string"
-            value: "[export_variable_type.value]"  
-        - parameter: 
+            value: "[export_variable_type.value]"
+        - parameter:
             name: "export_variable_name"
             dt: "string"
             value: "[export_variable_name.value]"

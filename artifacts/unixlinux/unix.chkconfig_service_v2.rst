@@ -20,27 +20,26 @@ Technical Details
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
-unix.chkconfig_service_v2
-^^^^^^^^^^^^^^^^^^^^^^^^^
+**unix.chkconfig_service_v2**
 
-+--------------------+--------+--------------------------------------+
-| Name               | Type   | Description                          |
-+====================+========+======================================+
-| service            | string | The name of the service to be        |
-|                    |        | tested. Cannot be blank.             |
-+--------------------+--------+--------------------------------------+
-| name_operation     | string | Defines what operation should be     |
-|                    |        | performed using the string from the  |
-|                    |        | Service Name parameter.              |
-+--------------------+--------+--------------------------------------+
-| runlevel           | string | The system runlevel to examine. A    |
-|                    |        | runlevel allows only a selected      |
-|                    |        | group of processes to exist.         |
-+--------------------+--------+--------------------------------------+
-| runlevel_operation | string | Defines what operation should be     |
-|                    |        | performed using the string from the  |
-|                    |        | runlevel parameter.                  |
-+--------------------+--------+--------------------------------------+
++-----------------------------+---------+------------------------------------+
+| Name                        | Type    | Description                        |
++=============================+=========+====================================+
+| service                     | string  | The name of the service to be      |
+|                             |         | tested. Cannot be blank.           |
++-----------------------------+---------+------------------------------------+
+| name_operation              | string  | Defines what operation should be   |
+|                             |         | performed using the string from    |
+|                             |         | the Service Name parameter.        |
++-----------------------------+---------+------------------------------------+
+| runlevel                    | string  | The system runlevel to examine. A  |
+|                             |         | runlevel allows only a selected    |
+|                             |         | group of processes to exist.       |
++-----------------------------+---------+------------------------------------+
+| runlevel_operation          | string  | Defines what operation should be   |
+|                             |         | performed using the string from    |
+|                             |         | the runlevel parameter.            |
++-----------------------------+---------+------------------------------------+
 
 NOTE: The ``runlevel_operation`` parameter is governed by a constraint allowing only the following values:
   - equals
@@ -65,8 +64,7 @@ Supported Test Types
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
-unix.service_enabled_v1
-^^^^^^^^^^^^^^^^^^^^^^^
+**unix.service_enabled_v1**
 
 ======= ====== ================================
 Name    Type   Description
@@ -76,6 +74,8 @@ enabled string Is the service enabled? (Yes/No)
 
 Generated Content
 ~~~~~~~~~~~~~~~~~
+
+**unix.service_enabled_v1**
 
 XCCDF+AE
 ^^^^^^^^
@@ -153,12 +153,10 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[RECOMMENDATION-TITLE]"
     version="1">
-    <service_name 
-      operation="[operation.value]">
+    <service_name operation="[operation.value]">
       [service_name.value]
     </service_name>
-    <runlevel 
-      operation="[operation.value]">
+    <runlevel operation="[operation.value]">
       [runlevel.value]
     </runlevel>
   </runlevel_object>
@@ -190,29 +188,29 @@ YAML
     artifact:
       type: u"[ARTIFACT-TYPE-NAME]"
       parameters:
-        - parameter: 
+        - parameter:
             name: "service_name"
             dt: "string"
             value: "[service_name.value]"
-        - parameter: 
+        - parameter:
             name: "name_operationname_operation"
             dt: "string"
             value: "[name_operation.value]"
-        - parameter: 
+        - parameter:
             name: "runlevel"
             dt: "string"
             value: "[runlevel.value]"
-        - parameter: 
+        - parameter:
             name: "runlevel_operation"
             dt: "string"
             value: "[runlevel_operation.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:
-        - parameter: 
+        - parameter:
             name: "enabled"
             dt: "string"
-            value: "[enabled.value]"                           
+            value: "[enabled.value]"
 
 JSON
 ^^^^
@@ -224,7 +222,7 @@ JSON
       "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
       "artifact-title": "[RECOMMENDATION-TITLE]",
       "artifact": {
-        "type": "unix.chkconfig_service_v2",
+        "type": "[ARTIFACT-TYPE-NAME]",
         "parameters": [
           {
             "parameter": {

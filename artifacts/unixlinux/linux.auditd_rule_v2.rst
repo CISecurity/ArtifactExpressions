@@ -27,8 +27,7 @@ Technical Details
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
-linux.auditd_rule_v2
-^^^^^^^^^^^^^^^^^^^^
+**linux.auditd_rule_v2**
 
 ========= ====== ======================
 Name      Type   Description
@@ -53,8 +52,7 @@ Supported Test Types
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
-null_test_v1
-^^^^^^^^^^^^
+**null_test_v1**
 
 ==== ==== ===========
 Name Type Description
@@ -64,6 +62,8 @@ N/A
 
 Generated Content
 ~~~~~~~~~~~~~~~~~
+
+**null_test_v1**
 
 XCCDF+AE
 ^^^^^^^^
@@ -135,9 +135,7 @@ Object
     comment="[RECOMMENDATION-TITLE]" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"     
     version="1">
-    <path>
-      /etc/audit/audit.rules
-    </path>
+    <path>/etc/audit/audit.rules</path>
     <filename>[filename.value]</filename>
     <pattern
       datatype="[datatype.value]"
@@ -168,11 +166,11 @@ YAML
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
-        - parameter: 
+        - parameter:
             name: "existence"
             dt: "string"
             value: "[existence.value]"
-        - parameter: 
+        - parameter:
             name: "rule"
             dt: "string"
             value: "[rule.value]"

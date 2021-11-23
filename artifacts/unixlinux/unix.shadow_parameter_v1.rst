@@ -21,8 +21,7 @@ Technical Details
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
-unix.shadow_parameter_v1
-^^^^^^^^^^^^^^^^^^^^^^^^
+**unix.shadow_parameter_v1**
 
 ========= ====== ===================================
 Name      Type   Description
@@ -82,8 +81,8 @@ Test Type Parameters
 | **greater than**
 | **greater than or equal**
 | **pattern match**
-**pattern not match**
-
+| **pattern not match**
+|
 ========= ====== ===========================
 Name      Type   Description
 ========= ====== ===========================
@@ -102,6 +101,14 @@ NOTE: The ``data_type`` parameter is governed by a constraint allowing only the 
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
+| **equals**
+| **not equal**
+| **less than**
+| **less than or equal**
+| **greater than**
+| **greater than or equal**
+| **pattern match**
+| **pattern not match**
 XCCDF+AE
 ^^^^^^^^
 
@@ -167,7 +174,7 @@ this.
     <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
       <check-export 
         export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" 
-        value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
+        value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL
       <check-content-ref 
         href="CIS_AlmaLinux_OS_8_Benchmark_v1.0.0-oval.xml" 
         name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
@@ -201,8 +208,7 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[RECOMMENDATION-TITLE]"
     version="1">
-    <username 
-      operation="[operation.value]">
+    <username operation="[operation.value]">
       [username.value]
     </username>
   </shadow_object>

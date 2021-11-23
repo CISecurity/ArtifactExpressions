@@ -27,26 +27,27 @@ Technical Details
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
-unix.file_collection_v2
-^^^^^^^^^^^^^^^^^^^^^^^
+**unix.file_collection_v2**
 
-+-------------+--------+---------------------------------------------+
-| Name        | Type   | Description                                 |
-+=============+========+=============================================+
-| existence   | string | Existence requirement.                      |
-+-------------+--------+---------------------------------------------+
-| check       | string | Defines how many collected items must match |
-|             |        | the expected state.                         |
-+-------------+--------+---------------------------------------------+
-| path        | string | Path to the file. Cannot be blank.          |
-+-------------+--------+---------------------------------------------+
-| file_name   | string | The name of the file. Cannot be blank.      |
-+-------------+--------+---------------------------------------------+
-| recurse     | string | Should subdirectories be recursed through?  |
-|             |        | (Yes/No)                                    |
-+-------------+--------+---------------------------------------------+
-| file_system | string | File system limitation for recursion.       |
-+-------------+--------+---------------------------------------------+
++-----------------------------+---------+------------------------------------+
+| Name                        | Type    | Description                        |
++=============================+=========+====================================+
+| existence                   | string  | Existence requirement.             |
++-----------------------------+---------+------------------------------------+
+| check                       | string  | Defines how many collected items   |
+|                             |         | must match the expected state.     |
++-----------------------------+---------+------------------------------------+
+| path                        | string  | Path to the file. Cannot be blank. |
++-----------------------------+---------+------------------------------------+
+| file_name                   | string  | The name of the file. Cannot be    |
+|                             |         | blank.                             |
++-----------------------------+---------+------------------------------------+
+| recurse                     | string  | Should subdirectories be recursed  |
+|                             |         | through? (Yes/No)                  |
++-----------------------------+---------+------------------------------------+
+| file_system                 | string  | File system limitation for         |
+|                             |         | recursion.                         |
++-----------------------------+---------+------------------------------------+
 
 NOTE: The ``existence`` parameter is governed by a constraint allowing only the following values:
   - all_exist
@@ -80,8 +81,8 @@ Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
 | **pattern match**
-**pattern not match**
-
+| **pattern not match**
+|
 ========= ====== ===========================
 Name      Type   Description
 ========= ====== ===========================
@@ -97,8 +98,7 @@ NOTE: The ``data_type`` parameter is governed by a constraint allowing only the 
   - version
   - set
 
-null_test_v1
-^^^^^^^^^^^^
+**null_test_v1**
 
 ==== ==== ===========
 Name Type Description
@@ -106,63 +106,70 @@ Name Type Description
 N/A       
 ==== ==== ===========
 
-unix.file_attributes_v1
-^^^^^^^^^^^^^^^^^^^^^^^
+**unix.file_attributes_v1**
 
-+--------+-----------+-----------------------------------------------+
-| Name   | Type      | Description                                   |
-+========+===========+===============================================+
-| uid    | int       | The User ID of the files owner (Positive      |
-|        |           | integer or blank).                            |
-+--------+-----------+-----------------------------------------------+
-| gid    | int       | The Group ID of the files owner (Positive     |
-|        |           | integer or blank).                            |
-+--------+-----------+-----------------------------------------------+
-| uread  | string    | Determines whether the user that owns the     |
-|        |           | file or directory is permitted to read the    |
-|        |           | contents of it.                               |
-+--------+-----------+-----------------------------------------------+
-| uwrite | string    | Determines whether the user that owns the     |
-|        |           | file or directory is permitted to write to    |
-|        |           | it.                                           |
-+--------+-----------+-----------------------------------------------+
-| uexec  | string    | Determines whether the user that owns the     |
-|        |           | file or directory is permitted to execute the |
-|        |           | file or change into the directory.            |
-+--------+-----------+-----------------------------------------------+
-| gread  | string    | Determines whether the group that owns the    |
-|        |           | file or directory is permitted to read the    |
-|        |           | content of it.                                |
-+--------+-----------+-----------------------------------------------+
-| gwrite | string    | Determines whether the group that owns the    |
-|        |           | file or directory is permitted to write to    |
-|        |           | it.                                           |
-+--------+-----------+-----------------------------------------------+
-| gexec  | string    | Determines whether the group that owns the    |
-|        |           | file or directory is permitted to execute the |
-|        |           | file or change into the directory.            |
-+--------+-----------+-----------------------------------------------+
-| oread  | string    | Determines whether other users or groups that |
-|        |           | do not own the file or directory are          |
-|        |           | permitted to read the contents of it.         |
-+--------+-----------+-----------------------------------------------+
-| owrite | string    | Determines whether other users or groups that |
-|        |           | do not own the file or directory are          |
-|        |           | permitted to write to it.                     |
-+--------+-----------+-----------------------------------------------+
-| oexec  | string    | Determines whether other users or groups that |
-|        |           | do not own the file or directory are          |
-|        |           | permitted to execute the file or change into  |
-|        |           | the directory.                                |
-+--------+-----------+-----------------------------------------------+
-| suid   | string    | Determines if the file can execute as the     |
-|        |           | owner.                                        |
-+--------+-----------+-----------------------------------------------+
-| sgid   | string    | Determines if the file can execute as         |
-|        |           | group.                                        |
-+--------+-----------+-----------------------------------------------+
-| sticky | string    | Determines if the sticky bit is set.          |
-+--------+-----------+-----------------------------------------------+
++-----------------------------+---------+------------------------------------+
+| Name                        | Type    | Description                        |
++=============================+=========+====================================+
+| uid                         | int     | The User ID of the files owner     |
+|                             |         | (Positive integer or blank).       |
++-----------------------------+---------+------------------------------------+
+| gid                         | int     | The Group ID of the files owner    |
+|                             |         | (Positive integer or blank).       |
++-----------------------------+---------+------------------------------------+
+| uread                       | string  | Determines whether the user that   |
+|                             |         | owns the file or directory is      |
+|                             |         | permitted to read the contents of  |
+|                             |         | it.                                |
++-----------------------------+---------+------------------------------------+
+| uwrite                      | string  | Determines whether the user that   |
+|                             |         | owns the file or directory is      |
+|                             |         | permitted to write to it.          |
++-----------------------------+---------+------------------------------------+
+| uexec                       | string  | Determines whether the user that   |
+|                             |         | owns the file or directory is      |
+|                             |         | permitted to execute the file or   |
+|                             |         | change into the directory.         |
++-----------------------------+---------+------------------------------------+
+| gread                       | string  | Determines whether the group that  |
+|                             |         | owns the file or directory is      |
+|                             |         | permitted to read the content of   |
+|                             |         | it.                                |
++-----------------------------+---------+------------------------------------+
+| gwrite                      | string  | Determines whether the group that  |
+|                             |         | owns the file or directory is      |
+|                             |         | permitted to write to it.          |
++-----------------------------+---------+------------------------------------+
+| gexec                       | string  | Determines whether the group that  |
+|                             |         | owns the  file or directory is     |
+|                             |         | permitted to execute the           |
+|                             |         | file or change into the directory. |
++-----------------------------+---------+------------------------------------+
+| oread                       | string  | Determines whether other users or  |
+|                             |         | groups that do not own the file or |
+|                             |         | directory are permitted to read    |
+|                             |         | the contents of it.                |
++-----------------------------+---------+------------------------------------+
+| owrite                      | string  | Determines whether other users or  |
+|                             |         | groups that do not own the file or |
+|                             |         | directory are permitted to write   |
+|                             |         | to it.                             |
++-----------------------------+---------+------------------------------------+
+| oexec                       | string  | Determines whether other users or  |
+|                             |         | groups that do not own the file or |
+|                             |         | directory are permitted to execute |
+|                             |         | the file or change into the        |
+|                             |         | directory.                         |
++-----------------------------+---------+------------------------------------+
+| suid                        | string  | Determines if the file can execute |
+|                             |         | as the owner.                      |
++-----------------------------+---------+------------------------------------+
+| sgid                        | string  | Determines if the file can execute |
+|                             |         | as the group.                      |
++-----------------------------+---------+------------------------------------+
+| sticky                      | string  | Determines if the sticky bit is    |
+|                             |         | set.                               |
++-----------------------------+---------+------------------------------------+
 
 NOTE: All ``unix.file_attributes_v1`` parameters are governed by a constraint allowing only the following values:
   - NA
@@ -173,8 +180,7 @@ Generated Content
 ~~~~~~~~~~~~~~~~~
 
 | **pattern match**
-**pattern not match**
-
+| **pattern not match**
 XCCDF+AE
 ^^^^^^^^
 
@@ -185,8 +191,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
   <xccdf:complex-check operator="AND">
     <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
       <xccdf:check-content>
-        <ae:artifact_expression
-            <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
+        <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
           <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
           <ae:title>[RECOMMENDATION-TITLE]</ae:title>
           <ae:artifact type="[ARTIFACT-TYPE-NAME]">
@@ -262,14 +267,13 @@ Object
       recurse_file_system="[recurse_file_system.value]"
       max_depth="[max_depth.value]" />    
     <path>[path.value]</path>
-    <filename 
-      operation="pattern match">
+    <filename operation="pattern match">
       [filename.value]
     </filename>
-    <pattern 
-      operation="pattern match" 
-      datatype="[datatype.value]"
-      [pattern.value] 
+    <pattern
+      operation="pattern match"
+      datatype="[datatype.value]">
+      [pattern.value]
     </pattern>
     <instance 
       datatype="int" 
@@ -295,38 +299,38 @@ YAML
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
-        - parameter: 
+        - parameter:
             name: "existence"
             dt: "string"
             value: "[existence.value]"
-        - parameter: 
+        - parameter:
             name: "path"
             dt: "string"
             value: "[path.value]"
-        - parameter: 
+        - parameter:
             name: "file_name"
             dt: "string"
             value: "[file_name.value]"
-        - parameter: 
+        - parameter:
             name: "recurse"
             dt: "string"
             value: "[recurse.value]"
-        - parameter: 
+        - parameter:
             name: "check"
             dt: "string"
             value: "[filesystem.value]"
-        - parameter: 
+        - parameter:
             name: "file_system"
             dt: "string"
             value: "[file_system.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:
-        - parameter: 
+        - parameter:
             name: "value"
             dt: "string"
             value: "[value.value]"
-        - parameter: 
+        - parameter:
             name: "data_type"
             dt: "string"
             value: "[data_type.value]"
@@ -412,8 +416,7 @@ JSON
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
-null_test_v1
-^^^^^^^^^^^^
+**null_test_v1**
 
 XCCDF+AE
 ^^^^^^^^
@@ -425,8 +428,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
   <xccdf:complex-check operator="AND">
     <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
       <xccdf:check-content>
-        <ae:artifact_expression
-            <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
+        <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
           <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
           <ae:title>[RECOMMENDATION-TITLE]</ae:title>
           <ae:artifact type="[ARTIFACT-TYPE-NAME]">
@@ -498,11 +500,8 @@ Object
       recurse_direction="down"
       recurse_file_system="[recurse_file_system.value]"
       max_depth="-1" />
-    <path>
-      [path.value]
-    </path>
-    <filename 
-      operation="pattern match">
+    <path>[path.value]</path>
+    <filename operation="pattern match">
       [filename.value]
     </filename>
   </file_object>
@@ -524,27 +523,27 @@ YAML
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
-        - parameter: 
+        - parameter:
             name: "existence"
             dt: "string"
             value: "[existence.value]"
-        - parameter: 
+        - parameter:
             name: "path"
             dt: "string"
             value: "[path.value]"
-        - parameter: 
+        - parameter:
             name: "file_name"
             dt: "string"
             value: "[file_name.value]"
-        - parameter: 
+        - parameter:
             name: "recurse"
             dt: "string"
             value: "[recurse.value]"
-        - parameter: 
+        - parameter:
             name: "check"
             dt: "string"
             value: "[filesystem.value]"
-        - parameter: 
+        - parameter:
             name: "file_system"
             dt: "string"
             value: "[file_system.value]"
@@ -620,8 +619,7 @@ JSON
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
-unix.file_attributes_v1
-^^^^^^^^^^^^^^^^^^^^^^^
+**unix.file_attributes_v1**
 
 XCCDF+AE
 ^^^^^^^^
@@ -633,8 +631,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
   <xccdf:complex-check operator="AND">
     <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
       <xccdf:check-content>
-        <ae:artifact_expression
-            <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
+        <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
           <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
           <ae:title>[RECOMMENDATION-TITLE]</ae:title>
           <ae:artifact type="[ARTIFACT-TYPE-NAME]">
@@ -719,8 +716,7 @@ Object
       recurse_file_system="[recurse_file_system.value]"
       max_depth="-1" />
     <path>[path.value]</path>
-    <filename 
-      operation="pattern match">
+    <filename operation="pattern match">
       [filename.value]
     </filename>
   </file_object>
@@ -734,60 +730,46 @@ State
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
     comment="[RECOMMENDATION-TITLE]"
     version="1">
-    <group_id
-      datatype="int">
+    <group_id datatype="int">
       [group_id.value]
     </group_id>
-    <user_id
-      datatype="int">
+    <user_id datatype="int">
       [user_id.value]
     </user_id>
-    <suid
-      datatype="boolean">
+    <suid datatype="boolean">
       [suid.value]
     </suid>
-    <sgid
-      datatype="boolean">
+    <sgid datatype="boolean">
       [sgid.value]
     </sgid>
-    <sticky
-      datatype="boolean">
+    <sticky datatype="boolean">
       [sticky.value]
     </sticky>
-    <uread
-      datatype="boolean">
+    <uread datatype="boolean">
       [uread.value]
     </uread>
-    <uwrite
-      datatype="boolean">
+    <uwrite datatype="boolean">
       [uwrite.value]
     </uwrite>
-    <uexec
-      datatype="boolean">
+    <uexec datatype="boolean">
       [uexec.value]
     </uexec>
-    <gread
-      datatype="boolean">
+    <gread datatype="boolean">
       [gread.value]
     </gread>
-    <gwrite
-      datatype="boolean">
+    <gwrite datatype="boolean">
       [gwrite.value]
     </gwrite>
-    <gexec
-      datatype="boolean">
+    <gexec datatype="boolean">
       [gexec.value]
     </gexec>
-    <oread
-      datatype="boolean">
+    <oread datatype="boolean">
       [oread.value]
     </oread>
-    <owrite
-      datatype="boolean">
+    <owrite datatype="boolean">
       [owrite.value]
     </owrite>
-    <oexec
-      datatype="boolean">
+    <oexec datatype="boolean">
       [oexec.value]
     </oexec>
   </file_state>
@@ -803,86 +785,86 @@ YAML
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
-        - parameter: 
+        - parameter:
             name: "existence"
             dt: "string"
             value: "[existence.value]"
-        - parameter: 
+        - parameter:
             name: "path"
             dt: "string"
             value: "[path.value]"
-        - parameter: 
+        - parameter:
             name: "file_name"
             dt: "string"
             value: "[file_name.value]"
-        - parameter: 
+        - parameter:
             name: "recurse"
             dt: "string"
             value: "[recurse.value]"
-        - parameter: 
+        - parameter:
             name: "check"
             dt: "string"
             value: "[filesystem.value]"
-        - parameter: 
+        - parameter:
             name: "file_system"
             dt: "string"
             value: "[file_system.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:
-        - parameter: 
+        - parameter:
             name: "group_id"
             dt: "int"
             value: "[group_id.value]"
-        - parameter: 
+        - parameter:
             name: "user_id"
             dt: "int"
             value: "[user_id.value]"
-        - parameter: 
+        - parameter:
             name: "suid"
             dt: "boolean"
             value: "[suid.value]"
-        - parameter: 
+        - parameter:
             name: "sgid"
             dt: "boolean"
             value: "[sgid.value]"
-        - parameter: 
+        - parameter:
             name: "sticky"
             dt: "boolean"
             value: "[sticky.value]"
-        - parameter: 
+        - parameter:
             name: "uread"
             dt: "boolean"
             value: "[uread.value]"
-        - parameter: 
+        - parameter:
             name: "uwrite"
             dt: "boolean"
             value: "[uwrite.value]"
-        - parameter: 
+        - parameter:
             name: "uexec"
             dt: "boolean"
             value: "[uexec.value]"
-        - parameter: 
+        - parameter:
             name: "gread"
             dt: "boolean"
             value: "[gread.value]"
-        - parameter: 
+        - parameter:
             name: "gwrite"
             dt: "boolean"
             value: "[gwrite.value]"
-        - parameter: 
+        - parameter:
             name: "gexec"
             dt: "boolean"
             value: "[gexec.value]"
-        - parameter: 
+        - parameter:
             name: "oread"
             dt: "boolean"
             value: "[oread.value]"
-        - parameter: 
+        - parameter:
             name: "owrite"
             dt: "boolean"
             value: "[owrite.value]"
-        - parameter: 
+        - parameter:
             name: "oexec"
             dt: "boolean"
             value: "[oexec.value]"
@@ -948,99 +930,99 @@ JSON
         "parameters": [
           {
             "parameter": {
-              "name": "group_id"
-              "type": "int"
+              "name": "group_id",
+              "type": "int",
               "value": "[group_id.value]"
             }
           },
           {
             "parameter": {
-              "name": "user_id"
-              "type": "int"
+              "name": "user_id",
+              "type": "int",
               "value": "[user_id.value]"
             }
           },
           {
             "parameter": {
-              "name": "suid"
-              "type": "boolean"
+              "name": "suid",
+              "type": "boolean",
               "value": "[suid.value]"
             }
           },
           {
             "parameter": {
-              "name": "sgid"
-              "type": "boolean"
+              "name": "sgid",
+              "type": "boolean",
               "value": "[sgid.value]"
             }
           },
           {
             "parameter": {
-              "name": "sticky"
-              "type": "boolean"
+              "name": "sticky",
+              "type": "boolean",
               "value": "[sticky.value]"
             }
           },
           {
             "parameter": {
-              "name": "uread"
-              "type": "boolean"
+              "name": "uread",
+              "type": "boolean",
               "value": "[uread.value]"
             }
           },
           {
             "parameter": {
-              "name": "uwrite"
-              "type": "boolean"
+              "name": "uwrite",
+              "type": "boolean",
               "value": "[uwrite.value]"
             }
           },
           {
             "parameter": {
-              "name": "uexec"
-              "type": "boolean"
+              "name": "uexec",
+              "type": "boolean",
               "value": "[uexec.value]"
             }
           },
           {
             "parameter": {
-              "name": "gread"
-              "type": "boolean"
+              "name": "gread",
+              "type": "boolean",
               "value": "[gread.value]"
             }
           },
           {
             "parameter": {
-              "name": "gwrite"
-              "type": "boolean"
+              "name": "gwrite",
+              "type": "boolean",
               "value": "[gwrite.value]"
             }
           },
           {
             "parameter": {
-              "name": "gexec"
-              "type": "boolean"
+              "name": "gexec",
+              "type": "boolean",
               "value": "[gexec.value]"
             }
           },
           {
             "parameter": {
-              "name": "oread"
-              "type": "boolean"
+              "name": "oread",
+              "type": "boolean",
               "value": "[oread.value]"
             }
           },
           {
             "parameter": {
-              "name": "owrite"
-              "type": "boolean"
+              "name": "owrite",
+              "type": "boolean",
               "value": "[owrite.value]"
             }
           },
           {
             "parameter": {
-              "name": "oexec"
-              "type": "boolean"
+              "name": "oexec",
+              "type": "boolean",
               "value": "[oexec.value]"
             }
           }
