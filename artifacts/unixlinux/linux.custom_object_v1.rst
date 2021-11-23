@@ -40,8 +40,8 @@ Debian Package Info Test:
   used to evaluate the specified DPKG package. This includes the 
   architecture, epoch number, release, and version numbers. 
 
-**Applicable Constraints:**
-  - Ensure the X Window system is not installed
+  **Applicable Constraints:**
+    - Ensure the X Window system is not installed
 
 File Test:
   The file_test is used to check metadata associated with UNIX files, of the 
@@ -70,21 +70,21 @@ File Test:
   size, etc. In addition, the permission associated with the file are also 
   included. 
 
-**Applicable Constraints:**
-  - Root Path Directories Are Owned By UID 0 And Not Writable By Group Or Other
-  - No User Home Directories Have Permissions ----w-rwx
-  - No User Dot Files Have Permissions ----w--w-
-  - No User .netrc Files Have Permissions ---rwxrwx
-  - syslog Log Files Have Correct Permissions
-  - rsyslog Log Files Have Correct Permissions
-  - No User Home Directories Contain .rhost Files
-  - No User Home Directories Contain .netrc Files
-  - No User Home Directories Contain .forward Files
-  - All User Home Directories Exist
-  - All World Writable Directories Have Sticky Bit Set
-  - No World Writable Files Exist
-  - No Un-owned Files and Directories
-  - No Un-grouped Files and Directories
+  **Applicable Constraints:**
+    - Root Path Directories Are Owned By UID 0 And Not Writable By Group Or Other
+    - No User Home Directories Have Permissions ----w-rwx
+    - No User Dot Files Have Permissions ----w--w-
+    - No User .netrc Files Have Permissions ---rwxrwx
+    - syslog Log Files Have Correct Permissions
+    - rsyslog Log Files Have Correct Permissions
+    - No User Home Directories Contain .rhost Files
+    - No User Home Directories Contain .netrc Files
+    - No User Home Directories Contain .forward Files
+    - All User Home Directories Exist
+    - All World Writable Directories Have Sticky Bit Set
+    - No World Writable Files Exist
+    - No Un-owned Files and Directories
+    - No Un-grouped Files and Directories
 
 Intel Listening Servers:
   *The inetlisteningservers_test has been deprecated and replaced by the inetlisteningserver510_test*
@@ -105,8 +105,8 @@ Intel Listening Servers:
   includes the local address, foreign address, port information, and 
   process id. 
 
-**Applicable Constraints:**
-  - No Servers Listening On Port 25
+  **Applicable Constraints:**
+    - No Servers Listening On Port 25
 
 Invalid Home Directory Ownership Test:
   The invalidhomedirownership_test is used to determine which user owns the 
@@ -115,8 +115,8 @@ Invalid Home Directory Ownership Test:
   The invalidhomedirownership_object element is used by a 
   invalidhomedirownership_test to define the user to be evaluated.
 
-**Applicable Constraints:**
-  - Check User Home Directory Ownership
+  **Applicable Constraints:**
+    - Check User Home Directory Ownership
 
 Password Test:
   The password_test is used to check metadata associated with the UNIX 
@@ -130,11 +130,11 @@ Password Test:
   with the system passwords. See documentation on /etc/passwd for more 
   details on the fields.
 
-**Applicable Constraints:**
-  - Default Group Set For root User
-  - System Accounts Disabled
-  - Check That Reserved UIDs Are Assigned to System Accounts
-  - No Users Have Shadow Group as Primary Group
+  **Applicable Constraints:**
+    - Default Group Set For root User
+    - System Accounts Disabled
+    - Check That Reserved UIDs Are Assigned to System Accounts
+    - No Users Have Shadow Group as Primary Group
 
 Process 58 Test:
   The process58_test is used to check information found in the UNIX 
@@ -148,9 +148,9 @@ Process 58 Test:
   a UNIX process. This includes the command line, pid, ppid, priority, and 
   user id. 
 
-**Applicable Constraints:**
-  - There Are No Unconfined Daemons
-  - chronyd is running as chrony user
+  **Applicable Constraints:**
+    - There Are No Unconfined Daemons
+    - chronyd is running as chrony user
 
  Shadow Test:
   The shadow_test is used to check information from the /etc/shadow file for 
@@ -164,13 +164,13 @@ Process 58 Test:
   The shadows_state element defines the different information associated 
   with the system shadow file.
 
-**Applicable Constraints:**
-  - Ensure no users with a Password have password expiration over 365 days
-  - Ensure no users with a Password have password expiration over 90 days
-  - Ensure no users with a Password have password change minimum under 7 days
-  - Ensure no users with a Password have password expiration warning under 7 days
-  - Ensure no users with a Password have password inactivation over 30 days
-  - System Accounts Locked
+  **Applicable Constraints:**
+    - Ensure no users with a Password have password expiration over 365 days
+    - Ensure no users with a Password have password expiration over 90 days
+    - Ensure no users with a Password have password change minimum under 7 days
+    - Ensure no users with a Password have password expiration warning under 7 days
+    - Ensure no users with a Password have password inactivation over 30 days
+    - System Accounts Locked
 
 Shell Command Test:
   The shellcommand_test is used to check the output of executed shell 
@@ -182,8 +182,8 @@ Shell Command Test:
   The shellcommand_state element defines a value used to evaluate the 
   result of the executed shell command(s). 
 
-**Applicable Constraints:**
-  - Firewall Rule Exists For All Open Ports
+  **Applicable Constraints:**
+    - Firewall Rule Exists For All Open Ports
 
 Symlink Test:
   The symlink_test is used to obtain canonical path information for 
@@ -202,8 +202,8 @@ Symlink Test:
   The symlink_state element defines a value used to evaluate the result of 
   a specific symlink_object item.
 
-**Applicable Constraints:**
-  - systemd Does Not Default To graphical.target
+  **Applicable Constraints:**
+    - systemd Does Not Default To graphical.target
 
 Text File Content 54 Test:
   The textfilecontent54_test is used to check the contents of a text file 
@@ -225,11 +225,11 @@ Text File Content 54 Test:
   check the file path and name, as well as the text block in question and 
   the value of the subexpressions.
 
-**Applicable Constraints:**
-  - Shadow Group is Empty
-  - /etc/profile.d/\* contains "umask 077"
-  - All Groups In /etc/passwd Exist In /etc/group
-  - auditd Collects Privileged Command Use
+  **Applicable Constraints:**
+    - Shadow Group is Empty
+    - /etc/profile.d/\* contains "umask 077"
+    - All Groups In /etc/passwd Exist In /etc/group
+    - auditd Collects Privileged Command Use
 
 Variable Test:
   The variable_test allows the value of a variable to be compared to a 
@@ -243,15 +243,15 @@ Variable Test:
   The variable_state element contains two entities that are used to check 
   the var_ref of the specified varible and the value associated with it.
 
-**Applicable Constraints:**
-  - Root Path Does Not Include ""
-  - Root Path Does Not Include "."
-  - Check For Duplicate UIDs
-  - Check For Duplicate Group Names
-  - Check For Duplicate User Names
-  - Check For Duplicate GIDs
-  - Ensure all users with a Password have password change date
-      in the past
+  **Applicable Constraints:**
+    - Root Path Does Not Include ""
+    - Root Path Does Not Include "."
+    - Check For Duplicate UIDs
+    - Check For Duplicate Group Names
+    - Check For Duplicate User Names
+    - Check For Duplicate GIDs
+    - Ensure all users with a Password have password change date
+        in the past
 
 Technical Details
 -----------------
