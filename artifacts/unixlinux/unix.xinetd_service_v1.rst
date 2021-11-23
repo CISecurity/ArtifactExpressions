@@ -65,6 +65,7 @@ Generated Content
 
 | **unix.service_enabled_v1**
 | **unix.xinetd_service_enabled_v1**
+
 XCCDF+AE
 ^^^^^^^^
 
