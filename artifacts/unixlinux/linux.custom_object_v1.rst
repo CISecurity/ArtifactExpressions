@@ -48,28 +48,23 @@ File Test:
   The file_test is used to check metadata associated with UNIX files, of the 
   sort returned by either an ls command, stat command or stat() system call.
 
-
   The file_object element is used by a file test to define the specific 
   file(s) to be evaluated. The file_object will collect all UNIX file types 
   (directory, regular file, character device, block device, fifo, symbolic 
   link, and socket).
 
-
   A file object defines the path and filename of the file(s). In addition, a 
   number of behaviors may be provided that help guide the collection of 
   objects. 
 
-
   The set of files to be evaluated may be identified with either a complete 
   filepath or a path and filename. Only one of these options may be selected.
-
 
   It is important to note that the 'max_depth' and 'recurse_direction' 
   attributes of the 'behaviors' element do not apply to the 'filepath' 
   element, only to the 'path' and 'filename' elements. This is because the 
   'filepath' element represents an absolute path to a particular file and 
   it is not possible to recurse over a file. 
-
 
   The file_state element defines the different metadata associated with a 
   UNIX file. This includes the path, filename, type, group id, user id, 
@@ -79,19 +74,20 @@ File Test:
   Applicable Constraints:
     - Root Path Directories Are Owned By UID 0 And Not Writable By
         Group Or Other
-    - No User Home Directories Have Permissions ----w-rwx
-    - No User Dot Files Have Permissions ----w--w-
-    - No User .netrc Files Have Permissions ---rwxrwx
-    - syslog Log Files Have Correct Permissions
-    - rsyslog Log Files Have Correct Permissions
-    - No User Home Directories Contain .rhost Files
-    - No User Home Directories Contain .netrc Files
-    - No User Home Directories Contain .forward Files
-    - All User Home Directories Exist
-    - All World Writable Directories Have Sticky Bit Set
-    - No World Writable Files Exist
-    - No Un-owned Files and Directories
-    - No Un-grouped Files and Directories
+  |  - No User Home Directories Have Permissions ----w-rwx
+  |  - No User Dot Files Have Permissions ----w--w-
+  |  - No User .netrc Files Have Permissions ---rwxrwx
+  |  - syslog Log Files Have Correct Permissions
+  |  - rsyslog Log Files Have Correct Permissions
+  |  - No User Home Directories Contain .rhost Files
+  |  - No User Home Directories Contain .netrc Files
+  |  - No User Home Directories Contain .forward Files
+  |  - All User Home Directories Exist
+  |  - All World Writable Directories Have Sticky Bit Set
+  |  - No World Writable Files Exist
+  |  - No Un-owned Files and Directories
+  |  - No Un-grouped Files and Directories
+
 
 Intel Listening Servers:
   **The inetlisteningservers_test has been deprecated and replaced by the inetlisteningserver510_test**
