@@ -25,12 +25,11 @@ Technical Details
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
-unix.individual_file_v1
-^^^^^^^^^^^^^^^^^^^^^^^
+**unix.individual_file_v1**
 
-+-----------+--------+-----------------------------------------------+
-| Name      | Type   | Description                                   |
-+===========+========+===============================================+
++-----------------------------+---------+------------------------------------+
+| Name                        | Type    | Description                        |
++=============================+=========+====================================+
 | existence | string | Existence requirement.                        |
 +-----------+--------+-----------------------------------------------+
 | check     | string | Defines how many collected items must match   |
@@ -61,8 +60,8 @@ Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
 | **pattern match**
-**pattern not match**
-
+| **pattern not match**
+|
 ========= ====== ===========================
 Name      Type   Description
 ========= ====== ===========================
@@ -78,8 +77,7 @@ NOTE: The ``data_type`` parameter is governed by a constraint allowing only the 
   - version
   - set
 
-null_test_v1
-^^^^^^^^^^^^
+**null_test_v1**
 
 ==== ==== ===========
 Name Type Description
@@ -87,63 +85,70 @@ Name Type Description
 N/A       
 ==== ==== ===========
 
-unix.file_attributes_v1
-^^^^^^^^^^^^^^^^^^^^^^^
+**unix.file_attributes_v1**
 
-+--------+-----------+-----------------------------------------------+
-| Name   | Type      | Description                                   |
-+========+===========+===============================================+
-| uid    | int       | The User ID of the files owner (Positive      |
-|        |           | integer or blank).                            |
-+--------+-----------+-----------------------------------------------+
-| gid    | int       | The Group ID of the files owner (Positive     |
-|        |           | integer or blank).                            |
-+--------+-----------+-----------------------------------------------+
-| uread  | string    | Determines whether the user that owns the     |
-|        |           | file or directory is permitted to read the    |
-|        |           | contents of it.                               |
-+--------+-----------+-----------------------------------------------+
-| uwrite | string    | Determines whether the user that owns the     |
-|        |           | file or directory is permitted to write to    |
-|        |           | it.                                           |
-+--------+-----------+-----------------------------------------------+
-| uexec  | string    | Determines whether the user that owns the     |
-|        |           | file or directory is permitted to execute the |
-|        |           | file or change into the directory.            |
-+--------+-----------+-----------------------------------------------+
-| gread  | string    | Determines whether the group that owns the    |
-|        |           | file or directory is permitted to read the    |
-|        |           | content of it.                                |
-+--------+-----------+-----------------------------------------------+
-| gwrite | string    | Determines whether the group that owns the    |
-|        |           | file or directory is permitted to write to    |
-|        |           | it.                                           |
-+--------+-----------+-----------------------------------------------+
-| gexec  | string    | Determines whether the group that owns the    |
-|        |           | file or directory is permitted to execute the |
-|        |           | file or change into the directory.            |
-+--------+-----------+-----------------------------------------------+
-| oread  | string    | Determines whether other users or groups that |
-|        |           | do not own the file or directory are          |
-|        |           | permitted to read the contents of it.         |
-+--------+-----------+-----------------------------------------------+
-| owrite | string    | Determines whether other users or groups that |
-|        |           | do not own the file or directory are          |
-|        |           | permitted to write to it.                     |
-+--------+-----------+-----------------------------------------------+
-| oexec  | string    | Determines whether other users or groups that |
-|        |           | do not own the file or directory are          |
-|        |           | permitted to execute the file or change into  |
-|        |           | the directory. directory.                     |
-+--------+-----------+-----------------------------------------------+
-| suid   | string    | Determines if the file can execute as the     |
-|        |           | owner.                                        |
-+--------+-----------+-----------------------------------------------+
-| sgid   | string    | Determines if the file can execute as         |
-|        |           | group.                                        |
-+--------+-----------+-----------------------------------------------+
-| sticky | string    | Determines if the sticky bit is set.          |
-+--------+-----------+-----------------------------------------------+
++-----------------------------+---------+------------------------------------+
+| Name                        | Type    | Description                        |
++=============================+=========+====================================+
+| uid                         | int     | The User ID of the files owner     |
+|                             |         | (Positive integer or blank).       |
++-----------------------------+---------+------------------------------------+
+| gid                         | int     | The Group ID of the files owner    |
+|                             |         | (Positive integer or blank).       |
++-----------------------------+---------+------------------------------------+
+| uread                       | string  | Determines whether the user that   |
+|                             |         | owns the file or directory is      |
+|                             |         | permitted to read the contents of  |
+|                             |         | it.                                |
++-----------------------------+---------+------------------------------------+
+| uwrite                      | string  | Determines whether the user that   |
+|                             |         | owns the file or directory is      |
+|                             |         | permitted to write to it.          |
++-----------------------------+---------+------------------------------------+
+| uexec                       | string  | Determines whether the user that   |
+|                             |         | owns the file or directory is      |
+|                             |         | permitted to execute the file or   |
+|                             |         | change into the directory.         |
++-----------------------------+---------+------------------------------------+
+| gread                       | string  | Determines whether the group that  |
+|                             |         | owns the file or directory is      |
+|                             |         | permitted to read the content of   |
+|                             |         | it.                                |
++-----------------------------+---------+------------------------------------+
+| gwrite                      | string  | Determines whether the group that  |
+|                             |         | owns the file or directory is      |
+|                             |         | permitted to write to it.          |
++-----------------------------+---------+------------------------------------+
+| gexec                       | string  | Determines whether the group that  |
+|                             |         | owns the file or directory is      |
+|                             |         | permitted to execute the file or   |
+|                             |         | change into the directory.         |
++-----------------------------+---------+------------------------------------+
+| oread                       | string  | Determines whether other users or  |
+|                             |         | groups that do not own the file or |
+|                             |         | directory are permitted to read    |
+|                             |         | the contents of it.                |
++-----------------------------+---------+------------------------------------+
+| owrite                      | string  | Determines whether other users or  |
+|                             |         | groups that do not own the file or |
+|                             |         | directory are permitted to write   |
+|                             |         | to it.                             |
++-----------------------------+---------+------------------------------------+
+| oexec                       | string  | Determines whether other users or  |
+|                             |         | groups that do not own the file or |
+|                             |         | directory are permitted to execute |
+|                             |         | the file or change into the        |
+|                             |         | directory.                         |
++-----------------------------+---------+------------------------------------+
+| suid                        | string  | Determines if the file can execute |
+|                             |         | as the owner.                      |
++-----------------------------+---------+------------------------------------+
+| sgid                        | string  | Determines if the file can execute |
+|                             |         | as group.                          |
++-----------------------------+---------+------------------------------------+
+| sticky                      | string  | Determines if the sticky bit is    |
+|                             |         | set.                               |
++-----------------------------+---------+------------------------------------+
 
 NOTE: All ``unix.file_attributes_v1`` parameters *EXCEPT* ``uid`` and ``gid`` are governed by a constraint allowing only the following values:
   - NA
@@ -154,8 +159,8 @@ Generated Content
 ~~~~~~~~~~~~~~~~~
 
 | **pattern match**
-**pattern not match**
-
+| **pattern not match**
+|
 XCCDF+AE
 ^^^^^^^^
 
@@ -348,8 +353,7 @@ JSON
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
-null_test_v1
-^^^^^^^^^^^^
+**null_test_v1**
 
 XCCDF+AE
 ^^^^^^^^
@@ -512,8 +516,7 @@ JSON
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
-unix_file_attributes_v1
-^^^^^^^^^^^^^^^^^^^^^^^
+**unix_file_attributes_v1**
 
 XCCDF+AE
 ^^^^^^^^

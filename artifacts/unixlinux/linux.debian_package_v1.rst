@@ -30,8 +30,7 @@ Technical Details
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
-linux.debian_package_v1
-^^^^^^^^^^^^^^^^^^^^^^^
+**linux.debian_package_v1**
 
 ==== ====== =======================================================
 Name Type   Description
@@ -47,8 +46,7 @@ Supported Test Types
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
-existence_test
-^^^^^^^^^^^^^^
+**existence_test**
 
 ===== ====== =======================
 Name  Type   Description

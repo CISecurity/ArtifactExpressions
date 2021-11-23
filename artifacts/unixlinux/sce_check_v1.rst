@@ -14,8 +14,7 @@ Technical Details
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
-sce_check_v1
-^^^^^^^^^^^^
+**sce_check_v1**
 
 ====================== ======== ========================================
 Name                   Type     Description  
@@ -42,8 +41,7 @@ Supported Test Types
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
-null_test_v1
-^^^^^^^^^^^^
+**null_test_v1**
 
 ====================== ======== ========================================
 Name                   Type     Description  

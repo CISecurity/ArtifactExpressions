@@ -20,21 +20,21 @@ Technical Details
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
-linux.partition_v1
-^^^^^^^^^^^^^^^^^^
+**linux.partition_v1**
 
-+-------------+--------+---------------------------------------------+
-| Name        | Type   | Description                                 |
-+=============+========+=============================================+
-| mount_point | string | Filesystem mount point being tested. Cannot |
-|             |        | be blank.                                   |
-+-------------+--------+---------------------------------------------+
-| existence   | string | Specifies how many items in the set must    |
-|             |        | exist for the test to evaluate to true.     |
-+-------------+--------+---------------------------------------------+
-| check       | string | Defines how many collected items must match |
-|             |        | the expected state.                         |
-+-------------+--------+---------------------------------------------+
++-----------------------------+---------+------------------------------------+
+| Name                        | Type    | Description                        |
++=============================+=========+====================================+
+| mount_point                 | string  | Filesystem mount point being       |
+|                             |         | tested. Cannot be blank.           |
++-----------------------------+---------+------------------------------------+
+| existence                   | string  | Specifies how many items in the    |
+|                             |         | set must exist for the test to     |
+|                             |         | evaluate to true.                  |
++-----------------------------+---------+------------------------------------+
+| check                       | string  | Defines how many collected items   |
+|                             |         | must match the expected state.     |
++-----------------------------+---------+------------------------------------+
 
 NOTE: The ``existence`` parameter is governed by a constraint allowing only the following values:
   - all_exist
@@ -59,8 +59,7 @@ Supported Test Types
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
-null_test_v1
-^^^^^^^^^^^^
+**null_test_v1**
 
 ==== ==== ===========
 Name Type Description
@@ -68,21 +67,20 @@ Name Type Description
 N/A       
 ==== ==== ===========
 
-linux.partition_option_v1
-^^^^^^^^^^^^^^^^^^^^^^^^^
+**linux.partition_option_v1**
 
-+-----------+--------+-----------------------------------------------+
-| Name      | Type   | Description                                   |
-+===========+========+===============================================+
-| value     | string | The value to be tested.                       |
-+-----------+--------+-----------------------------------------------+
-| check     | string | Defines how many collected items must match   |
-|           |        | the expected state.                           |
-+-----------+--------+-----------------------------------------------+
-| operation | string | Comparison operation.                         |
-+-----------+--------+-----------------------------------------------+
-| data_type | string | The data type of the value.                   |
-+-----------+--------+-----------------------------------------------+
++-----------------------------+---------+------------------------------------+
+| Name                        | Type    | Description                        |
++=============================+=========+====================================+
+| value                       | string  | The value to be tested.            |
++-----------------------------+---------+------------------------------------+
+| check                       | string  | Defines how many collected items   |
+|                             |         | must match the expected state.     |
++-----------------------------+---------+------------------------------------+
+| operation                   | string  | Comparison operation.              |
++-----------------------------+---------+------------------------------------+
+| data_type                   | string  | The data type of the value.        |
++-----------------------------+---------+------------------------------------+
 
 NOTE: The ``check`` parameter is governed by a constraint allowing only the following values:
   - all
@@ -116,8 +114,7 @@ NOTE: The ``data_type`` parameter is governed by a constraint allowing only the 
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
-null_test_v1
-^^^^^^^^^^^^
+**null_test_v1**
 
 XCCDF+AE
 ^^^^^^^^
@@ -278,8 +275,7 @@ JSON
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
-linux.partition_option_v1
-^^^^^^^^^^^^^^^^^^^^^^^^^
+**linux.partition_option_v1**
 
 XCCDF+AE
 ^^^^^^^^

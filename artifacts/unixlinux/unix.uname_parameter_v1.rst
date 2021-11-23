@@ -25,8 +25,7 @@ Technical Details
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
-unix.uname_parameter_v1
-^^^^^^^^^^^^^^^^^^^^^^^
+**unix.uname_parameter_v1**
 
 ========= ====== =================================
 Name      Type   Description

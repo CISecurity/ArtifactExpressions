@@ -19,8 +19,7 @@ Technical Details
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
-unix.command_output_v1
-^^^^^^^^^^^^^^^^^^^^^^
+**unix.command_output_v1**
 
 ======= ====== ===================
 Name    Type   Description
@@ -41,8 +40,8 @@ Test Type Parameters
 
 | **equals**
 | **pattern match**
-**pattern not match**
-
+| **pattern not match**
+|
 ========= ====== ===========================
 Name      Type   Description
 ========= ====== ===========================
@@ -58,8 +57,7 @@ NOTE: The ``data_type`` parameter is governed by a constraint allowing only the 
   - version
   - set
 
-null_test_v1
-^^^^^^^^^^^^
+**null_test_v1**
 
 ==== ==== ===========
 Name Type Description
@@ -72,8 +70,8 @@ Generated Content
 
 | **equals**
 | **pattern match**
-**pattern not match**
-
+| **pattern not match**
+|
 XCCDF+AE
 ^^^^^^^^
 
@@ -269,8 +267,7 @@ JSON
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
-null_test_v1
-^^^^^^^^^^^^
+**null_test_v1**
 
 XCCDF+AE
 ^^^^^^^^

@@ -27,7 +27,6 @@ Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
 unix.sshd_parameter_v1
-^^^^^^^^^^^^^^^^^^^^^^
 
 ========= ====== ===================================================
 Name      Type   Description
@@ -78,7 +77,6 @@ NOTE: The ``data_type`` parameter is governed by a constraint allowing only the 
   - set
 
 existence_test
-^^^^^^^^^^^^^^
 
 ===== ====== =======================
 Name  Type   Description
@@ -314,8 +312,7 @@ JSON
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
-existence_test
-^^^^^^^^^^^^^^
+**existence_test**
 
 XCCDF+AE
 ^^^^^^^^

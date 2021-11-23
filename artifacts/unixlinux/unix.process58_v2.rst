@@ -20,29 +20,25 @@ Technical Details
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
-unix.process58_v2
-^^^^^^^^^^^^^^^^^
+**unix.process58_v2**
 
-+------------------------+--------+-----------------------------+
-| Name                   | Type   | Description                 |
-+========================+========+=============================+
-| command_line           | string | The string used to start    |
-|                        |        | the process. This includes  |
-|                        |        | any parameters that are     |
-|                        |        | part of the command line.   |
-|                        |        | Cannot be blank.            |
-+------------------------+--------+-----------------------------+
-| pid                    | int    | The process ID of the       |
-|                        |        | process.                    |
-+------------------------+--------+-----------------------------+
-| command_line_operation | string | Specifies what operation is |
-|                        |        | to be performed using the   |
-|                        |        | Command value.              |
-+------------------------+--------+-----------------------------+
-| pid_operation          | string | Specifies what operation is |
-|                        |        | to be performed using the   |
-|                        |        | Process ID value.           |
-+------------------------+--------+-----------------------------+
++-----------------------------+---------+------------------------------------+
+| Name                        | Type    | Description                        |
++=============================+=========+====================================+
+| command_line                | string  | The string used to start the       |
+|                             |         | process. This includes any         |
+|                             |         | parameters that are part of the    |
+|                             |         | command line. Cannot be blank.     |
++-----------------------------+---------+------------------------------------+
+| pid                         | int     | The process ID of the process.     |
++-----------------------------+---------+------------------------------------+
+| command_line_operation      | string  | Specifies what operation is to be  |
+|                             |         | performed using the Command value. |
++-----------------------------+---------+------------------------------------+
+| pid_operation               | string  | Specifies what operation is to be  |
+|                             |         | performed using the Process ID     |
+|                             |         | value.                             |
++-----------------------------+---------+------------------------------------+
 
 NOTE: The ``command_line_operation`` parameter is governed by a constraint allowing only the following values:
   - bitwise and
@@ -82,27 +78,27 @@ Supported Test Types
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
-unix.process58_command_line_v1
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**unix.process58_command_line_v1**
 
-+-----------------+--------+-----------------------------------------+
-| Name            | Type   | Description                             |
-+=================+========+=========================================+
-| check_existence | string | Defines how many items should be        |
-|                 |        | collected. Typically set to 'at least   |
-|                 |        | one'.                                   |
-+-----------------+--------+-----------------------------------------+
-| check           | string | Defines how many collected items must   |
-|                 |        | match the expected state.               |
-+-----------------+--------+-----------------------------------------+
-| operation       | string | Comparison operation.                   |
-+-----------------+--------+-----------------------------------------+
-| datatype        | string | The data type of the value.             |
-+-----------------+--------+-----------------------------------------+
-| command_line    | string | The string used to start the process.   |
-|                 |        | This includes any parameters that are   |
-|                 |        | part of the command line.               |
-+-----------------+--------+-----------------------------------------+
++-----------------------------+---------+------------------------------------+
+| Name                        | Type    | Description                        |
++=============================+=========+====================================+
+| check_existence             | string  | Defines how many items should be   |
+|                             |         | collected. Typically set to 'at    |
+|                             |         | least one'.                        |
++-----------------------------+---------+------------------------------------+
+| check                       | string  | Defines how many collected items   |
+|                             |         | must match the expected state.     |
++-----------------------------+---------+------------------------------------+
+| operation                   | string  | Comparison operation.              |
++-----------------------------+---------+------------------------------------+
+| datatype                    | string  | The data type of the value.        |
++-----------------------------+---------+------------------------------------+
+| command_line                | string  | The string used to start the       |
+|                             |         | process. This includes any         |
+|                             |         | parameters that are part of the    |
+|                             |         | command line.                      |
++-----------------------------+---------+------------------------------------+
 
 NOTE: The ``check_existence`` parameter is governed by a constraint allowing only the following values:
   - all_exist

@@ -28,15 +28,14 @@ Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
 linux.auditd_rule_v1
-^^^^^^^^^^^^^^^^^^^^
 
-+-----------------+--------+-----------------------------------------+
-| Name            | Type   | Description                             |
-+=================+========+=========================================+
-| check_existence | string | Defines how many items should be        |
-|                 |        | collected. Typically set to 'at least   |
-|                 |        | one'.                                   |
-+-----------------+--------+-----------------------------------------+
++-----------------------------+---------+------------------------------------+
+| Name                        | Type    | Description                        |
++=============================+=========+====================================+
+| check_existence             | string  | Defines how many items should be   |
+|                             |         | collected. Typically set to 'at    |
+|                             |         | least one'.                        |
++-----------------------------+---------+------------------------------------+
 
 NOTE: The ``check_existence`` parameter is governed by a constraint allowing only the following values:
   - all_exist
@@ -54,8 +53,7 @@ Supported Test Types
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
-set.includes_v1
-^^^^^^^^^^^^^^^
+**set.includes_v1**
 
 ========= ====== =============================================
 Name      Type   Description

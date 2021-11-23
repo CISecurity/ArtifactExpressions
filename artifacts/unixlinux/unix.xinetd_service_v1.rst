@@ -33,8 +33,7 @@ Technical Details
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
-unix.xinetd_service_v1
-^^^^^^^^^^^^^^^^^^^^^^
+**unix.xinetd_service_v1**
 
 ======== ====== ======================================================
 Name     Type   Description

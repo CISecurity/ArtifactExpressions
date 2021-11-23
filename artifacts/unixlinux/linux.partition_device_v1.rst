@@ -20,8 +20,7 @@ Technical Details
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
-linux.partition_device_v1
-^^^^^^^^^^^^^^^^^^^^^^^^^
+**linux.partition_device_v1**
 
 =========== ====== =====================================================
 Name        Type   Description
@@ -37,8 +36,7 @@ Supported Test Types
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
-existence_test
-^^^^^^^^^^^^^^
+**existence_test**
 
 ===== ====== =======================
 Name  Type   Description

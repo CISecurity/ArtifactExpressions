@@ -22,21 +22,21 @@ Technical Details
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
-linux.software_package_v1
-^^^^^^^^^^^^^^^^^^^^^^^^^
+**linux.software_package_v1**
 
-+-----------+--------+-----------------------------------------------+
-| Name      | Type   | Description                                   |
-+===========+========+===============================================+
-| existence | string | Existence requirement.                        |
-+-----------+--------+-----------------------------------------------+
-| check     | string | Defines how many collected items must match   |
-|           |        | the expected state.                           |
-+-----------+--------+-----------------------------------------------+
-| operation | string | Comparison operation.                         |
-+-----------+--------+-----------------------------------------------+
-| package   | string | The name of the package being checked.        |
-+-----------+--------+-----------------------------------------------+
++-----------------------------+---------+------------------------------------+
+| Name                        | Type    | Description                        |
++=============================+=========+====================================+
+| existence                   | string  | Existence requirement.             |
++-----------------------------+---------+------------------------------------+
+| check                       | string  | Defines how many collected items   |
+|                             |         | must match the expected state.     |
++-----------------------------+---------+------------------------------------+
+| operation                   | string  | Comparison operation.              |
++-----------------------------+---------+------------------------------------+
+| package                     | string  | The name of the package being      |
+|                             |         | checked.                           |
++-----------------------------+---------+------------------------------------+
 
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
@@ -47,8 +47,7 @@ Supported Test Types
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
-null_test_v1
-^^^^^^^^^^^^
+**null_test_v1**
 
 ==== ==== ===========
 Name Type Description
@@ -56,8 +55,7 @@ Name Type Description
 N/A       
 ==== ==== ===========
 
-existence_test
-^^^^^^^^^^^^^^
+**existence_test**
 
 ===== ====== =======================
 Name  Type   Description
@@ -76,8 +74,7 @@ NOTE: The ``value`` parameter is governed by a constraint allowing only the foll
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
-null_test_v1
-^^^^^^^^^^^^
+**null_test_v1**
 
 XCCDF+AE
 ^^^^^^^^
@@ -236,8 +233,7 @@ JSON
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
-existence_test
-^^^^^^^^^^^^^^
+**existence_test**
 
 XCCDF+AE
 ^^^^^^^^

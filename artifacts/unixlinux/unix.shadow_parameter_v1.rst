@@ -21,8 +21,7 @@ Technical Details
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
-unix.shadow_parameter_v1
-^^^^^^^^^^^^^^^^^^^^^^^^
+**unix.shadow_parameter_v1**
 
 ========= ====== ===================================
 Name      Type   Description

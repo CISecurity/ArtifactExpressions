@@ -9,11 +9,21 @@ specified constraint. Please see below:
 
 AppArmor Status Test:
 
-  The apparmorstatus_test is used to check properties representing the counts of profiles and processes as per the results of the 'apparmor_status' or 'aa-status' command.
+  The apparmorstatus_test is used to check properties representing the counts 
+    of profiles and processes as per the results of the 'apparmor_status' or 
+    'aa-status' command.
 
-  The apparmorstatus_object element is used by an apparmorstatus test to define the different information about the current AppArmor policy. There is actually only one object relating to AppArmor Status and this is the system as a whole. Therefore, there are no child entities defined. Any test written to check AppArmor status will reference the same apparmorstatus_object which is basically an empty object element.
+  The apparmorstatus_object element is used by an apparmorstatus test to 
+    define the different information about the current AppArmor policy. There 
+    is actually only one object relating to AppArmor Status and this is the 
+    system as a whole. Therefore, there are no child entities defined. Any 
+    test written to check AppArmor status will reference the same 
+    apparmorstatus_object which is basically an empty object element.
 
-  The apparmorstatus_state element displays various information about the current AppArmor policy. This item maps the counts of profiles and processes as per the results of the "apparmor_status" or "aa-status" command. 
+  The apparmorstatus_state element displays various information about the 
+    current AppArmor policy. This item maps the counts of profiles and 
+    processes as per the results of the "apparmor_status" or "aa-status" 
+    command. 
 
     Applicable Constraints:
       - AppArmor has loaded profiles
@@ -24,23 +34,41 @@ Debian Package Info Test:
 
   The dpkginfo_test is used to check information for a given DPKG package.
 
-  The dpkginfo_object element, consisting of a single name entity that identifies the package being checked, is used by a dpkginfo test to define the object to be evaluated. 
+  The dpkginfo_object element, consisting of a single name entity that 
+    identifies the package being checked, is used by a dpkginfo test to define 
+    the object to be evaluated. 
 
-  The dpkginfo_state element defines the different information that can be used to evaluate the specified DPKG package. This includes the architecture, epoch number, release, and version numbers. 
+  The dpkginfo_state element defines the different information that can be 
+    used to evaluate the specified DPKG package. This includes the 
+    architecture, epoch number, release, and version numbers. 
 
     Applicable Constraints:
       - Ensure the X Window system is not installed
 
 File Test:
 
-  The file_test is used to check metadata associated with UNIX files, of the sort returned by either an ls command, stat command or stat() system call.
+  The file_test is used to check metadata associated with UNIX files, of the 
+    sort returned by either an ls command, stat command or stat() system call.
 
-  The file_object element is used by a file test to define the specific file(s) to be evaluated. The file_object will collect all UNIX file types (directory, regular file, character device, block device, fifo, symbolic link, and socket). 
-  A file object defines the path and filename of the file(s). In addition, a number of behaviors may be provided that help guide the collection of objects. 
-  The set of files to be evaluated may be identified with either a complete filepath or a path and filename. Only one of these options may be selected.
-  It is important to note that the 'max_depth' and 'recurse_direction' attributes of the 'behaviors' element do not apply to the 'filepath' element, only to the 'path' and 'filename' elements. This is because the 'filepath' element represents an absolute path to a particular file and it is not possible to recurse over a file. 
+  The file_object element is used by a file test to define the specific 
+    file(s) to be evaluated. The file_object will collect all UNIX file types 
+    (directory, regular file, character device, block device, fifo, symbolic 
+    link, and socket). 
+  A file object defines the path and filename of the file(s). In addition, a 
+    number of behaviors may be provided that help guide the collection of 
+    objects. 
+  The set of files to be evaluated may be identified with either a complete 
+    filepath or a path and filename. Only one of these options may be selected.
+  It is important to note that the 'max_depth' and 'recurse_direction' 
+    attributes of the 'behaviors' element do not apply to the 'filepath' 
+    element, only to the 'path' and 'filename' elements. This is because the 
+    'filepath' element represents an absolute path to a particular file and 
+    it is not possible to recurse over a file. 
 
-  The file_state element defines the different metadata associated with a UNIX file. This includes the path, filename, type, group id, user id, size, etc. In addition, the permission associated with the file are also included. 
+  The file_state element defines the different metadata associated with a 
+    UNIX file. This includes the path, filename, type, group id, user id, 
+    size, etc. In addition, the permission associated with the file are also 
+    included. 
 
     Applicable Constraints:
       - Root Path Directories Are Owned By UID 0 And Not Writable By
@@ -63,31 +91,48 @@ Intel Listening Servers:
 
   "**The inetlisteningservers_test has been deprecated and replaced by the inetlisteningserver510_test**"
   
-  The inetlisteningservers_test is used to check if an application is listening on the network, either for a new connection or as part of an ongoing connection. This is limited to applications that are listening for connections that use the TCP or UDP protocols and have addresses represented as IPv4 or IPv6 addresses (AF_INET or AF_INET6). It is generally speaking the parsed output of running the command netstat -tuwlnpe with root privilege.
+  The inetlisteningservers_test is used to check if an application is 
+    listening on the network, either for a new connection or as part of an 
+    ongoing connection. This is limited to applications that are listening 
+    for connections that use the TCP or UDP protocols and have addresses 
+    represented as IPv4 or IPv6 addresses (AF_INET or AF_INET6). It is 
+    generally speaking the parsed output of running the command netstat 
+    -tuwlnpe with root privilege.
 
-  The inetlisteningservers_object element is used by an inetlisteningserver test to define the object to be evaluated. 
+  The inetlisteningservers_object element is used by an inetlisteningserver 
+  test to define the object to be evaluated. 
 
-  The inetlisteningservers_state element defines the different information that can be used to evaluate the specified inet listening server. This includes the local address, foreign address, port information, and process id. 
+  The inetlisteningservers_state element defines the different information 
+    that can be used to evaluate the specified inet listening server. This 
+    includes the local address, foreign address, port information, and 
+    process id. 
 
     Applicable Constraints:
       - No Servers Listening On Port 25
 
 Invalid Home Directory Ownership Test:
 
-  The invalidhomedirownership_test is used to determine which user owns the Home directory.
+  The invalidhomedirownership_test is used to determine which user owns the 
+    Home directory.
 
-  The invalidhomedirownership_object element is used by a invalidhomedirownership_test to define the user to be evaluated.
+  The invalidhomedirownership_object element is used by a 
+    invalidhomedirownership_test to define the user to be evaluated.
 
     Applicable Constraints:
       - Check User Home Directory Ownership
 
 Password Test:
 
-  The password_test is used to check metadata associated with the UNIX password file, of the sort returned by the passwd command. 
+  The password_test is used to check metadata associated with the UNIX 
+    password file, of the sort returned by the passwd command. 
 
-  The password_object element is used by a password test to define the object to be evaluated. A password object consists of a single username entity that identifies the user(s) whose password is to be evaluated.
+  The password_object element is used by a password test to define the 
+    object to be evaluated. A password object consists of a single username 
+    entity that identifies the user(s) whose password is to be evaluated.
 
-  The password_state element defines the different information associated with the system passwords. See documentation on /etc/passwd for more details on the fields.
+  The password_state element defines the different information associated 
+    with the system passwords. See documentation on /etc/passwd for more 
+    details on the fields.
 
     Applicable Constraints:
       - Default Group Set For root User
@@ -97,11 +142,16 @@ Password Test:
 
 Process 58 Test:
 
-  The process58_test is used to check information found in the UNIX processes. It is equivalent to parsing the output of the ps command. 
+  The process58_test is used to check information found in the UNIX 
+    processes. It is equivalent to parsing the output of the ps command. 
 
-  The process58_object element is used by a process58_test to define the specific process(es) to be evaluated. A process58_object defines the command line used to start the process(es) and pid.
+  The process58_object element is used by a process58_test to define the 
+    specific process(es) to be evaluated. A process58_object defines the 
+    command line used to start the process(es) and pid.
 
-  The process58_state element defines the different metadata associated with a UNIX process. This includes the command line, pid, ppid, priority, and user id. 
+  The process58_state element defines the different metadata associated with 
+    a UNIX process. This includes the command line, pid, ppid, priority, and 
+    user id. 
 
     Applicable Constraints:
       - There Are No Unconfined Daemons
@@ -109,11 +159,16 @@ Process 58 Test:
 
  Shadow Test:
 
-  The shadow_test is used to check information from the /etc/shadow file for a specific user. This file contains a user's password, but also their password aging and lockout information.
+  The shadow_test is used to check information from the /etc/shadow file for 
+    a specific user. This file contains a user's password, but also their 
+    password aging and lockout information.
 
-  The shadow_object element is used by a shadow test to define the shadow file to be evaluated. A shdow object consists of a single user entity that identifies the username associted with the shadow file.
+  The shadow_object element is used by a shadow test to define the shadow 
+    file to be evaluated. A shdow object consists of a single user entity 
+    that identifies the username associted with the shadow file.
 
-  The shadows_state element defines the different information associated with the system shadow file.
+  The shadows_state element defines the different information associated 
+    with the system shadow file.
 
     Applicable Constraints:
       - Ensure no users with a Password have password expiration
@@ -130,34 +185,59 @@ Process 58 Test:
 
 Shell Command Test:
 
-  The shellcommand_test is used to check the output of executed shell command(s).
+  The shellcommand_test is used to check the output of executed shell 
+    command(s).
 
-  The shellcommand_object element is used by a shellcommand_test to define the shell command(s) to be executed. 
+  The shellcommand_object element is used by a shellcommand_test to define 
+    the shell command(s) to be executed. 
 
-  The shellcommand_state element defines a value used to evaluate the result of the executed shell command(s). 
+  The shellcommand_state element defines a value used to evaluate the 
+    result of the executed shell command(s). 
 
     Applicable Constraints:
       - Firewall Rule Exists For All Open Ports
 
 Symlink Test:
 
-  The symlink_test is used to obtain canonical path information for symbolic links.
+  The symlink_test is used to obtain canonical path information for 
+    symbolic links.
 
-  The symlink_object element is used by a symlink_test to define the object to be evaluated. A symlink_object consists of a filepath entity that contains the path to a symbolic link file. The resulting item identifies the canonical path of the link target (followed to its final destination, if there are intermediate links), an error if the link target does not exist or is a circular link (e.g., a link to itself). If the file located at filepath is not a symlink, or if there is no file located at the filepath, then any resulting item would itself have a status of does not exist.
+  The symlink_object element is used by a symlink_test to define the object 
+    to be evaluated. A symlink_object consists of a filepath entity that 
+    contains the path to a symbolic link file. The resulting item identifies 
+    the canonical path of the link target (followed to its final destination, 
+    if there are intermediate links), an error if the link target does not 
+    exist or is a circular link (e.g., a link to itself). If the file located 
+    at filepath is not a symlink, or if there is no file located at the 
+    filepath, then any resulting item would itself have a status of does not 
+    exist.
 
-  The symlink_state element defines a value used to evaluate the result of a specific symlink_object item.
+  The symlink_state element defines a value used to evaluate the result of 
+    a specific symlink_object item.
 
     Applicable Constraints:
       - systemd Does Not Default To graphical.target
 
 Text File Content 54 Test:
 
-  The textfilecontent54_test is used to check the contents of a text file (aka a configuration file) by looking at individual blocks of text.
+  The textfilecontent54_test is used to check the contents of a text file 
+    (aka a configuration file) by looking at individual blocks of text.
 
-  The textfilecontent54_object element is used by a textfilecontent_test to define the specific block(s) of text of a file(s) to be evaluated. The textfilecontent54_object will only collect regular files on UNIX systems. The set of files to be evaluated may be identified with either a complete filepath or a path and filename. Only one of these options may be selected.
-  It is important to note that the 'max_depth' and 'recurse_direction' attributes of the 'behaviors' element do not apply to the 'filepath' element, only to the 'path' and 'filename' elements. This is because the 'filepath' element represents an absolute path to a particular file and it is not possible to recurse over a file.
+  The textfilecontent54_object element is used by a textfilecontent_test to 
+    define the specific block(s) of text of a file(s) to be evaluated. The 
+    textfilecontent54_object will only collect regular files on UNIX 
+    systems. The set of files to be evaluated may be identified with either 
+    a complete filepath or a path and filename. Only one of these options 
+    may be selected.
+  It is important to note that the 'max_depth' and 'recurse_direction' 
+    attributes of the 'behaviors' element do not apply to the 'filepath' 
+    element, only to the 'path' and 'filename' elements. This is because 
+    the 'filepath' element represents an absolute path to a particular file 
+    and it is not possible to recurse over a file.
   
-  The textfilecontent54_state element contains entities that are used to check the file path and name, as well as the text block in question and the value of the subexpressions.
+  The textfilecontent54_state element contains entities that are used to 
+    check the file path and name, as well as the text block in question and 
+    the value of the subexpressions.
 
     Applicable Constraints:
       - Shadow Group is Empty
@@ -167,11 +247,16 @@ Text File Content 54 Test:
 
 Variable Test:
 
-  The variable_test allows the value of a variable to be compared to a defined value. As an example one might use this test to validate that a variable being passed in from an external source falls within a specified range. 
+  The variable_test allows the value of a variable to be compared to a 
+    defined value. As an example one might use this test to validate that a 
+    variable being passed in from an external source falls within a 
+    specified range. 
 
-  The variable_object element is used by a variable test to define the specific variable(s) to be evaluated.
+  The variable_object element is used by a variable test to define the 
+    specific variable(s) to be evaluated.
 
-  The variable_state element contains two entities that are used to check the var_ref of the specified varible and the value associated with it.
+  The variable_state element contains two entities that are used to check 
+    the var_ref of the specified varible and the value associated with it.
 
     Applicable Constraints:
       - Root Path Does Not Include ""
@@ -189,8 +274,7 @@ Technical Details
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
-linux.custom_object_v1
-^^^^^^^^^^^^^^^^^^^^^^
+**linux.custom_object_v1**
 
 ====== ====== ====================================
 Name   Type   Description
@@ -261,8 +345,7 @@ Supported Test Types
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
-null_test_v1
-^^^^^^^^^^^^
+**null_test_v1**
 
 ==== ==== ===========
 Name Type Description

@@ -22,16 +22,16 @@ value of the subexpressions. Technical Details -----------------
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
-unix.sshd_v2
-^^^^^^^^^^^^
+**unix.sshd_v2**
 
-+------+--------+----------------------------------------------------+
-| Name | Type   | Description                                        |
-+======+========+====================================================+
-| name | string | The name element specifies the name(s) of the sshd |
-|      |        | parameter(s) that should be collected from the     |
-|      |        | local system. Cannot be blank.                     |
-+------+--------+----------------------------------------------------+
++-----------------------------+---------+------------------------------------+
+| Name                        | Type    | Description                        |
++=============================+=========+====================================+
+| name                        | string  | The name element specifies the     |
+|                             |         | name(s) of the sshd parameter(s)   |
+|                             |         | that should be collected from the  |
+|                             |         | local system. Cannot be blank.     |
++-----------------------------+---------+------------------------------------+
 
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
@@ -41,26 +41,25 @@ Supported Test Types
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
-unix.sshd_v2
-^^^^^^^^^^^^
+**unix.sshd_v2**
 
-+-----------------+--------+-----------------------------------------+
-| Name            | Type   | Description                             |
-+=================+========+=========================================+
-| check_existence | string | Defines how many items should be        |
-|                 |        | collected. Typically set to 'at least   |
-|                 |        | one'.                                   |
-+-----------------+--------+-----------------------------------------+
-| check           | string | Defines how many collected items must   |
-|                 |        | match the expected state.               |
-+-----------------+--------+-----------------------------------------+
-| operation       | string | Comparison operation.                   |
-+-----------------+--------+-----------------------------------------+
-| value           | string | The value(s) associated with the        |
-|                 |        | specified sshd parameter.               |
-+-----------------+--------+-----------------------------------------+
-| datatype        | string | The data type of the value.             |
-+-----------------+--------+-----------------------------------------+
++-----------------------------+---------+------------------------------------+
+| Name                        | Type    | Description                        |
++=============================+=========+====================================+
+| check_existence             | string  | Defines how many items should be   |
+|                             |         | collected. Typically set to 'at    |
+|                             |         | least one'.                        |
++-----------------------------+---------+------------------------------------+
+| check                       | string  | Defines how many collected items   |
+|                             |         | must match the expected state.     |
++-----------------------------+---------+------------------------------------+
+| operation                   | string  | Comparison operation.              |
++-----------------------------+---------+------------------------------------+
+| value                       | string  | The value(s) associated with the   |
+|                             |         | specified sshd parameter.          |
++-----------------------------+---------+------------------------------------+
+| datatype                    | string  | The data type of the value.        |
++-----------------------------+---------+------------------------------------+
 
 NOTE: The ``check_existence`` parameter is governed by a constraint allowing only the following values:
   - all_exist

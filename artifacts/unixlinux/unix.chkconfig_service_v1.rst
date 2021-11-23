@@ -20,8 +20,7 @@ Technical Details
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
-unix.chkconfig_service_v1
-^^^^^^^^^^^^^^^^^^^^^^^^^
+**unix.chkconfig_service_v1**
 
 ======= ====== ======================================================
 Name    Type   Description
@@ -37,8 +36,7 @@ Supported Test Types
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
-unix.service_enabled_v1
-^^^^^^^^^^^^^^^^^^^^^^^
+**unix.service_enabled_v1**
 
 ======= ====== ================================
 Name    Type   Description

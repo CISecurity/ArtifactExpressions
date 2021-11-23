@@ -22,8 +22,7 @@ Technical Details
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
-linux.systemd_unit_dependency_v1
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**linux.systemd_unit_dependency_v1**
 
 +-----------+--------+-----------------------------------------------+
 | Name      | Type   | Description                                   |
@@ -61,35 +60,29 @@ Supported Test Types
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
-linux.systemd_unit_dependency_v1
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**linux.systemd_unit_dependency_v1**
 
-+----------------------+--------+-----------------------------+
-| Name                 | Type   | Description                 |
-+======================+========+=============================+
-| unit                 | string | The full systemd unit name, |
-|                      |        | usually also the filename   |
-|                      |        | of the unitconfiguration    |
-|                      |        | file located in the         |
-|                      |        | /etc/systemd/ and           |
-|                      |        | /usr/lib/systemd/           |
-|                      |        | directories.                |
-+----------------------+--------+-----------------------------+
-| unit_operation       | string | Determines how the unit     |
-|                      |        | name should be evaluated    |
-|                      |        | (the default operation is   |
-|                      |        | 'equals').                  |
-+----------------------+--------+-----------------------------+
-| dependency           | string | The name of a unit which is |
-|                      |        | to be confirmed as a        |
-|                      |        | dependency of the given     |
-|                      |        | unit.                       |
-+----------------------+--------+-----------------------------+
-| dependency_operation | string | Determines how the          |
-|                      |        | dependency name should be   |
-|                      |        | evaluated (the default      |
-|                      |        | operation is 'equals').     |
-+----------------------+--------+-----------------------------+
++-----------------------------+---------+------------------------------------+
+| Name                        | Type    | Description                        |
++=============================+=========+====================================+
+| unit                        | string  | The full systemd unit name,        |
+|                             |         | usually also the filename of the   |
+|                             |         | unitconfiguration file located in  |
+|                             |         | the /etc/systemd/ and              |
+|                             |         | /usr/lib/systemd/ directories.     |
++-----------------------------+---------+------------------------------------+
+| unit_operation              | string  | Determines how the unit name       |
+|                             |         | should be evaluated (the default   |
+|                             |         | operation is 'equals').            |
++-----------------------------+---------+------------------------------------+
+| dependency                  | string  | The name of a unit which is to be  |
+|                             |         | confirmed as a dependency of the   |
+|                             |         | given unit.                        |
++-----------------------------+---------+------------------------------------+
+| dependency_operation        | string  | Determines how the dependency name |
+|                             |         | should be evaluated (the default   |
+|                             |         | operation is 'equals').            |
++-----------------------------+---------+------------------------------------+
 
 NOTE: The ``unit_operation`` and ``dependency_operation`` parameters are governed by a constraint allowing only the following values:
   - equals

@@ -30,31 +30,31 @@ Technical Details
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
-unix.individual_file_tomcat_v1
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**unix.individual_file_tomcat_v1**
 
-+-----------------+--------+-----------------------------------------+
-| Name            | Type   | Description                             |
-+=================+========+=========================================+
-| base_path       | string | Base component of path. Either          |
-|                 |        | $CATALINA_HOME or $CATALINA_BASE.       |
-+-----------------+--------+-----------------------------------------+
-| path            | string | Directory component of the absolute     |
-|                 |        | path to the file after $CATALINA_HOME   |
-|                 |        | or $CATALINA_BASE.                      |
-+-----------------+--------+-----------------------------------------+
-| concat_path     | string | Directory component after <appname>.    |
-+-----------------+--------+-----------------------------------------+
-| filename        | string | Filename component of the absolute path |
-|                 |        | to the file.                            |
-+-----------------+--------+-----------------------------------------+
-| check           | string | Defines how many collected items must   |
-|                 |        | match the expected state.               |
-+-----------------+--------+-----------------------------------------+
-| check_existence | string | Defines how many items should be        |
-|                 |        | collected. Typically set to 'at least   |
-|                 |        | one'.                                   |
-+-----------------+--------+-----------------------------------------+
++-----------------------------+---------+------------------------------------+
+| Name                        | Type    | Description                        |
++=============================+=========+====================================+
+| base_path                   | string  | Base component of path. Either     |
+|                             |         | $CATALINA_HOME or $CATALINA_BASE.  |
++-----------------------------+---------+------------------------------------+
+| path                        | string  | Directory component of the         |
+|                             |         | absolute path to the file after    |
+|                             |         | $CATALINA_HOME or $CATALINA_BASE.  |
++-----------------------------+---------+------------------------------------+
+| concat_path                 | string  | Directory component after          |
+|                             |         | <appname>.                         |
++-----------------------------+---------+------------------------------------+
+| filename                    | string  | Filename component of the absolute |
+|                             |         | path to the file.                  |
++-----------------------------+---------+------------------------------------+
+| check                       | string  | Defines how many collected items   |
+|                             |         | must match the expected state.     |
++-----------------------------+---------+------------------------------------+
+| check_existence             | string  | Defines how many items should be   |
+|                             |         | collected. Typically set to 'at    |
+|                             |         | least one'.                        |
++-----------------------------+---------+------------------------------------+
 
 NOTE: The ``check`` parameter is governed by a constraint allowing only the following values:
   - all
@@ -78,8 +78,7 @@ Supported Test Types
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
-existence_test
-^^^^^^^^^^^^^^
+**existence_test**
 
 ===== ====== =======================
 Name  Type   Description

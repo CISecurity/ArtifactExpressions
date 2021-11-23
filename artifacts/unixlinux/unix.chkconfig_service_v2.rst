@@ -20,27 +20,26 @@ Technical Details
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
-unix.chkconfig_service_v2
-^^^^^^^^^^^^^^^^^^^^^^^^^
+**unix.chkconfig_service_v2**
 
-+--------------------+--------+--------------------------------------+
-| Name               | Type   | Description                          |
-+====================+========+======================================+
-| service            | string | The name of the service to be        |
-|                    |        | tested. Cannot be blank.             |
-+--------------------+--------+--------------------------------------+
-| name_operation     | string | Defines what operation should be     |
-|                    |        | performed using the string from the  |
-|                    |        | Service Name parameter.              |
-+--------------------+--------+--------------------------------------+
-| runlevel           | string | The system runlevel to examine. A    |
-|                    |        | runlevel allows only a selected      |
-|                    |        | group of processes to exist.         |
-+--------------------+--------+--------------------------------------+
-| runlevel_operation | string | Defines what operation should be     |
-|                    |        | performed using the string from the  |
-|                    |        | runlevel parameter.                  |
-+--------------------+--------+--------------------------------------+
++-----------------------------+---------+------------------------------------+
+| Name                        | Type    | Description                        |
++=============================+=========+====================================+
+| service                     | string  | The name of the service to be      |
+|                             |         | tested. Cannot be blank.           |
++-----------------------------+---------+------------------------------------+
+| name_operation              | string  | Defines what operation should be   |
+|                             |         | performed using the string from    |
+|                             |         | the Service Name parameter.        |
++-----------------------------+---------+------------------------------------+
+| runlevel                    | string  | The system runlevel to examine. A  |
+|                             |         | runlevel allows only a selected    |
+|                             |         | group of processes to exist.       |
++-----------------------------+---------+------------------------------------+
+| runlevel_operation          | string  | Defines what operation should be   |
+|                             |         | performed using the string from    |
+|                             |         | the runlevel parameter.            |
++-----------------------------+---------+------------------------------------+
 
 NOTE: The ``runlevel_operation`` parameter is governed by a constraint allowing only the following values:
   - equals
@@ -65,8 +64,7 @@ Supported Test Types
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
-unix.service_enabled_v1
-^^^^^^^^^^^^^^^^^^^^^^^
+**unix.service_enabled_v1**
 
 ======= ====== ================================
 Name    Type   Description
