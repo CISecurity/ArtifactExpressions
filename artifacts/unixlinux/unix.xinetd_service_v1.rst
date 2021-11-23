@@ -62,6 +62,7 @@ enabled string Is the service enabled? (Yes/No)
 
 Generated Content
 ~~~~~~~~~~~~~~~~~
+
 | **unix.service_enabled_v1**
 | **unix.xinetd_service_enabled_v1**
 
