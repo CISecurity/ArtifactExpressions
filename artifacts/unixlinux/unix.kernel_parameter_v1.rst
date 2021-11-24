@@ -61,7 +61,6 @@ Test Type Parameters
 | **greater than or equal**
 | **pattern match**
 | **pattern not match**
-|
 ========= ====== ===========================
 Name      Type   Description
 ========= ====== ===========================
