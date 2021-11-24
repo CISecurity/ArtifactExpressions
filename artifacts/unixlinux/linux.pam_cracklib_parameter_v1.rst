@@ -75,7 +75,6 @@ NOTE: The ``value`` parameter is governed by a constraint allowing only the foll
 | **greater than or equal**
 | **pattern match**
 | **pattern not match**
-|
 ========= ====== ===========================
 Name      Type   Description
 ========= ====== ===========================
@@ -259,7 +258,6 @@ Generated Content
 | **greater than or equal**
 | **pattern match**
 | **pattern not match**
-
 XCCDF+AE
 ^^^^^^^^
 

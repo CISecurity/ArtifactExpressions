@@ -82,7 +82,6 @@ Test Type Parameters
 
 | **pattern match**
 | **pattern not match**
-|
 ========= ====== ===========================
 Name      Type   Description
 ========= ====== ===========================
