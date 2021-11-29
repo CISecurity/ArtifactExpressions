@@ -148,7 +148,7 @@ For ``linux.apparmorstatus_v1`` artifacts, the xccdf:check looks like this. Ther
   <xccdf:complex-check operator="AND">
     <xccdf:check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
       <xccdf:check-content-ref
-        href="[BENCHMARK-NAME]"
+        href="[BENCHMARK-TITLE]"
         name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
     </xccdf:check>
   </xccdf:complex-check>

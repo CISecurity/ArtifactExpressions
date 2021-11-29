@@ -189,7 +189,7 @@ For ``unix.process58_v2`` artifacts, the xccdf:check looks like this. There is n
 
   <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
     <check-content-ref 
-      href="{BENCHMARK_NAME]"
+      href="[BENCHMARK-TITLE]"
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 

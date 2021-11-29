@@ -175,7 +175,7 @@ this.
         export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" 
         value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL
       <check-content-ref 
-        href="CIS_AlmaLinux_OS_8_Benchmark_v1.0.0-oval.xml" 
+        href="[BENCHMARK-TITLE]"
         name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
     </check>
   </xccdf:complex-check>

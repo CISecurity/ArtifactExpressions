@@ -93,7 +93,7 @@ For ``linux.upstart_service_v1`` artifacts, the xccdf:check looks like this. The
   <xccdf:complex-check operator="AND">
     <check system="http://open-SCAP.org/page/SCE">
       <check-content-ref
-        href="[RECOMMENDATION-TITLE]"
+        href="[BENCHMARK-TITLE]"
         name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
     </check> 
   </xccdf:complex-check>
