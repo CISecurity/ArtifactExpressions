@@ -244,11 +244,11 @@ Test
 
   <symlink_test 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]" 
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
     check_existence="all_exist"
-    check="all" 
-    comment="[RECOMMENDATION-TITLE]" 
-    version="1"> 
+    check="all"
+    comment="[RECOMMENDATION-TITLE]"
+    version="1">
     <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
     <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
   </symlink_test>
@@ -258,14 +258,13 @@ Object
 ::
 
   <symlink_object 
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix" 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
-    comment="[RECOMMENDATION-TITLE]" 
-    version="1"> 
-    <filepath 
-      datatype="string" 
+    comment="[RECOMMENDATION-TITLE]"
+    version="1">
+    <filepath datatype="string"
       operation="[operation.value]">
-      [filepath.value]
+        [filepath.value]
     </filepath>
   </symlink_object>
 
@@ -274,13 +273,12 @@ State
 ::
 
   <symlink_state 
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix" 
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" 
-    comment="[RECOMMENDATION-TITLE]" 
-    version="1"> 
-    <canonical_path 
-      datatype="string" 
-      operation="[operation.value]" 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
+    comment="[RECOMMENDATION-TITLE]"
+    version="1">
+    <canonical_path datatype="string"
+      operation="[operation.value]"
       var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
   </symlink_state>
 
@@ -288,10 +286,10 @@ Variable
 
 ::
 
-  <external_variable
+  <external_variable 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
-    datatype="string" 
-    version="1" 
+    datatype="string"
+    version="1"
     comment="This value is used in Rule: [RECOMMENDATION-TITLE]" />
 
 YAML
@@ -490,30 +488,30 @@ Object
 ::
 
   <symlink_object 
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix" 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
-    comment="[RECOMMENDATION-TITLE]" 
-    version="1"> 
+    comment="[RECOMMENDATION-TITLE]"
+    version="1">
     <filepath 
-      datatype="string" 
+      datatype="string"
       operation="[operation.value]"
       var_ref= "oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]1" />
   </symlink_object>
 
-  <password_object
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix" 
+  <password_object 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]1"
-    comment="[RECOMMENDATION-TITLE]" 
-    version="1"> 
-    <username
+    comment="[RECOMMENDATION-TITLE]"
+    version="1">
+    <username 
       datatype="string"
       operation="[operation.value]">
-      "^.+\$"
+        "^.+\$"
     </username>
-    <filter
-      xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5" 
+    <filter 
+      xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5"
       action="exclude">
-      oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]1
+        oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]1
     </filter>
   </password_object>
 
@@ -522,47 +520,47 @@ State
 ::
 
   <symlink_state 
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix" 
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" 
-    comment="[RECOMMENDATION-TITLE]" 
-    version="1"> 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
+    comment="[RECOMMENDATION-TITLE]"
+    version="1">
     <canonical_path 
-      datatype="string" 
-      operation="[operation.value]" 
+      datatype="string"
+      operation="[operation.value]"
       var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
   </symlink_state>
 
   <password_state 
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix" 
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]1" 
-    comment="[RECOMMENDATION-TITLE]" 
-    version="1"> 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]1"
+    comment="[RECOMMENDATION-TITLE]"
+    version="1">
     <login_shell 
-      datatype="string" 
+      datatype="string"
       operation="[operation.value]">
-      [login_shell.value]
+        [login_shell.value]
     </login_shell
-  </password_state>  
+    </password_state>  
 
 Variable
 
 ::
 
-  <external_variable
+  <external_variable 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
-    datatype="string" 
-    version="1" 
+    datatype="string"
+    version="1"
     comment="This value is used in Rule: [RECOMMENDATION-TITLE]" />
 
-  <local_variable
+  <local_variable 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]1"
-    datatype="string" 
+    datatype="string"
     comment="This value is used in Rule: [RECOMMENDATION-TITLE]"
     version="1">
     <concat>
       <end character="/">
-        <object_component
-          object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]1" 
+        <object_component 
+          object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]1"
           item_field="home_dir" />
       </end>
       <literal_component>.mysql_history</literal_component>

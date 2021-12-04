@@ -115,7 +115,7 @@ is generated.
 ::
 
   <Value 
-    id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" 
+    id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var"
     type="[type.value]"
     operator="[operator.value]">
     <title>[RECOMMENDATION-TITLE]</title>
@@ -131,10 +131,10 @@ like this.
   <xccdf:complex-check operator="AND">
     <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
       <check-export 
-        export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" 
+        export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
         value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
       <check-content-ref 
-        href="[BENCHMARK-TITLE]" 
+        href="[BENCHMARK-TITLE]"
         name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
     </check>
   </xccdf:complex-check>
@@ -174,13 +174,13 @@ State
 
 ::
 
-  <systemdunitproperty_state>
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux"
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
-    comment="[RECOMMENDATION-TITLE]"
+  <systemdunitproperty_state 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux" 
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" 
+    comment="[RECOMMENDATION-TITLE]" 
     version="1">
     <value 
-      datatype="[datatype.value]" 
+      datatype="[datatype.value]"
       operation="[operation.value]"
       var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
   </systemdunitproperty_state>
@@ -191,7 +191,7 @@ Variable
 
   <external_variable 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
-    datatype="[datatype.value]" 
+    datatype="[datatype.value]"
     version="1"
     comment="This value is used in Rule: [RECOMMENDATION-TITLE]" />
 

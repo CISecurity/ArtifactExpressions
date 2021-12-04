@@ -101,7 +101,7 @@ For ``linux.rpm_package_v1`` artifacts, the xccdf:check looks like this. There i
 ::
 
   <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
-    <check-content-ref
+    <check-content-ref 
       href="[BENCHMARK-TITLE]"
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>

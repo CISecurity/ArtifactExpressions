@@ -154,10 +154,10 @@ Object
     comment="[RECOMMENDATION-TITLE]"
     version="1">
     <service_name operation="[operation.value]">
-      [service_name.value]
+        [service_name.value]
     </service_name>
     <runlevel operation="[operation.value]">
-      [runlevel.value]
+        [runlevel.value]
     </runlevel>
   </runlevel_object>
 
@@ -171,9 +171,9 @@ State
     comment="[RECOMMENDATION-TITLE]"
     version="1">
     <start 
-      datatype="boolean" 
+      datatype="boolean"
       operation="equals">
-      [start.value]
+        [start.value]
     </start>
   </runlevel_state>
 

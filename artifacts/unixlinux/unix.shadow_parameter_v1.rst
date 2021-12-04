@@ -208,7 +208,7 @@ Object
     comment="[RECOMMENDATION-TITLE]"
     version="1">
     <username operation="[operation.value]">
-      [username.value]
+        [username.value]
     </username>
   </shadow_object>
 
@@ -221,8 +221,8 @@ State
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
     comment="[RECOMMENDATION-TITLE]"
     version="1">
-    <[parameterName.value] 
-      datatype="[datatype.value]" 
+    <parameter 
+      datatype="[datatype.value]"
       operation="[operation.value]"
       var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
   </shadow_state>
@@ -232,8 +232,8 @@ Variable
 ::
 
   <external_variable 
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" 
-    datatype="[datatype.value]" 
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
+    datatype="[datatype.value]"
     version="1"
     comment="This value is used in [RECOMMENDATION-TITLE]" />
 

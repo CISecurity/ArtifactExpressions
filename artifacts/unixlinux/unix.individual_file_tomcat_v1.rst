@@ -195,22 +195,22 @@ Object
 ::
 
   <file_object 
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix" 
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]2" 
-    comment="\$CATALINA_HOME file object" 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]2"
+    comment="\$CATALINA_HOME file object"
     version="1">
     <behaviors 
-      max_depth="1" 
-      recurse="directories" 
+      max_depth="1"
+      recurse="directories"
       recurse_direction="down" />
     <path var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]1" />
     <filename xsi:nil="true" />
   </file_object>
 
   <file_object 
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix" 
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" 
-    comment="[RECOMMENDATION-TITLE]" 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
+    comment="[RECOMMENDATION-TITLE]"
     version="1">
     <path var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]2" />
     <filename>[filename.value]</filename>
@@ -221,22 +221,22 @@ Object
 ::
 
   <file_object 
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix" 
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]3" 
-    comment="\$CATALINA_BASE file object" 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]3"
+    comment="\$CATALINA_BASE file object"
     version="1">
     <behaviors 
-      max_depth="1" 
-      recurse="directories" 
+      max_depth="1"
+      recurse="directories"
       recurse_direction="down" />
     <path var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]" />
     <filename xsi:nil="true" />
   </file_object>
 
   <file_object 
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix" 
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" 
-    comment="[RECOMMENDATION-TITLE]" 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
+    comment="[RECOMMENDATION-TITLE]"
     version="1">
     <path var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]3" />
     <filename>[filename.value]</filename>
@@ -258,13 +258,11 @@ Variable
     comment="\$CATALINA_BASE directory"
     version="1">
     <concat>
-      <end 
-        character="/">
-        <variable_component
-          var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]1" />
+      <end character="/">
+        <variable_component var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]1" />
       </end>
       <literal_component>
-        [literal_component.value]
+          [literal_component.value]
       </literal_component>
     </concat>
   </local_variable>
@@ -276,8 +274,8 @@ Variable
     version="1">
     <concat>
       <end character="/">
-        <object_component
-          object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]3" 
+        <object_component 
+          object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]3"
           item_field="path" />
       </end>
       <literal_component>[literal_component.value]</literal_component>

@@ -127,7 +127,7 @@ Object
     version="1">
     <service_name>[service_name.value]</service_name>
     <runlevel operation="pattern match">
-      .*
+        .*
     </runlevel>
   </runlevel_object>
 
@@ -141,9 +141,9 @@ State
     comment="[RECOMMENDATION-TITLE]"
     version="1">
     <start 
-      datatype="boolean" 
+      datatype="boolean"
       operation="equals">
-      [start.value]
+        [start.value]
     </start>
   </runlevel_state>
 

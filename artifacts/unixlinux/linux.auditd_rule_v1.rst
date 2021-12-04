@@ -133,8 +133,8 @@ Test
 ::
 
   <textfilecontent54_test 
-    xmlns: "http://oval.mitre.org/XMLSchema/oval-definitions-5#independent"
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"     
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
     check_existence="at_least_one_exists"
     check="all"
     comment="[RECOMMENDATION-TITLE]"
@@ -147,21 +147,21 @@ Object
 ::
 
   <textfilecontent54_object 
-    xmlns: "http://oval.mitre.org/XMLSchema/oval-definitions-5#independent" 
-    comment="[RECOMMENDATION-TITLE]" 
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"     
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent"
+    comment="[RECOMMENDATION-TITLE]"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     version="1">
     <path>/etc/audit</path>
     <filename>auditd.rules</filename>
-    <pattern
+    <pattern 
       datatype="[datatype.value]"
       operation="pattern match">
-      [pattern.value]
+        [pattern.value]
     </pattern>
     <instance 
-      datatype="int" 
+      datatype="int"
       operation="equals">
-      1
+        1
     </instance>
   </textfilecontent54_object>
 

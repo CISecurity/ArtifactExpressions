@@ -98,12 +98,12 @@ For ``linux.kernel_module_v1`` artifacts, the xccdf:check looks like this. There
 
 ::
 
-  <xccdf:complex-check operator="AND">  
+   <xccdf:complex-check operator="AND">
     <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
       <check-content-ref 
         href="[BENCHMARK-TITLE]"
         name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
-    </check> 
+    </check>
   </xccdf:complex-check>
 
 OVAL
@@ -116,9 +116,9 @@ Test
   <shellcommand_test 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#cmd"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
-    check_existence="at_least_one_exists" 
-    check="[check.value]" 
-    comment="[RECOMMENDATION-TITLE]" 
+    check_existence="at_least_one_exists"
+    check="[check.value]"
+    comment="[RECOMMENDATION-TITLE]"
     version="1">
     <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
     <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
@@ -131,11 +131,11 @@ Object
   <shellcommand_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#cmd"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
-    comment="[RECOMMENDATION-TITLE]" 
+    comment="[RECOMMENDATION-TITLE]"
     version="1">
     <command>[command.value]</command>
     <line_selection operation="pattern match">
-      [line_selection.value]
+          [line_selection.value]
     </line_selection>
   </shellcommand_object>
 
@@ -146,12 +146,11 @@ State
   <shellcommand_state 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#cmd"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
-    comment="[RECOMMENDATION-TITLE]" 
+    comment="[RECOMMENDATION-TITLE]"
     version="1">
-    <stdout_line 
-      entity_check="at least one" 
+    <stdout_line entity_check="at least one"
       operation="pattern match">
-      [stdout_line.value]
+          [stdout_line.value]
     </stdout_line>
   </shellcommand_state>
 
@@ -260,12 +259,12 @@ For ``linux.kernel_module_v1`` artifacts, the xccdf:check looks like this. There
 
 ::
 
-  <xccdf:complex-check operator="AND">  
+  <xccdf:complex-check operator="AND">
     <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
       <check-content-ref 
         href="[BENCHMARK-TITLE]"
         name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
-    </check> 
+    </check>
   </xccdf:complex-check>
 
 OVAL
@@ -278,9 +277,9 @@ Test
   <shellcommand_test 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#cmd"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
-    check_existence="at_least_one_exists" 
-    check="[check.value]" 
-    comment="[RECOMMENDATION-TITLE]" 
+    check_existence="at_least_one_exists"
+    check="[check.value]"
+    comment="[RECOMMENDATION-TITLE]"
     version="1">
     <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
     <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
@@ -293,11 +292,11 @@ Object
   <shellcommand_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#cmd"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
-    comment="[RECOMMENDATION-TITLE]" 
+    comment="[RECOMMENDATION-TITLE]"
     version="1">
     <command>[command.value]</command>
     <line_selection operation="pattern match">
-      [line_selection.value]
+        [line_selection.value]
     </line_selection>
   </shellcommand_object>
 
@@ -308,12 +307,12 @@ State
   <shellcommand_state 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#cmd"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
-    comment="[RECOMMENDATION-TITLE]" 
+    comment="[RECOMMENDATION-TITLE]"
     version="1">
     <stdout_line 
-      entity_check="at least one" 
+      entity_check="at least one"
       operation="pattern match">
-      [stdout_line.value]
+        [stdout_line.value]
     </stdout_line>
   </shellcommand_state>
 

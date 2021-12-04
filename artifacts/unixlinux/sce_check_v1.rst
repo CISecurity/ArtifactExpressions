@@ -97,12 +97,12 @@ For ``linux.sce_check_v1`` artifacts, an XCCDF Value element is generated.
 ::
 
   <Value 
-    id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" 
+    id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var"
     type="string"
     operator="equals">
     <title override>[RECOMMENDATION-TITLE]</title>
-    <description>This value is used in Rule: [RECOMMENDATION-TITLE]</description>
-    <value>[value.value]</value>
+  <description>This value is used in Rule: [RECOMMENDATION-TITLE]</description>
+  <value>[value.value]</value>
   </Value>
 
 For ``linux.sce_check_v1`` artifacts, the xccdf:check looks like this.
@@ -112,7 +112,7 @@ For ``linux.sce_check_v1`` artifacts, the xccdf:check looks like this.
   <check system="http://open-SCAP.org/page/SCE">
     <check-import import-name="stdout" />
     <check-export 
-      export-name="[export-name.value]" 
+      export-name="[export-name.value]"
       value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
     <check-content-ref href="[SCRIPT-PATH]" />
   </check>

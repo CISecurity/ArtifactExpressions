@@ -161,47 +161,46 @@ Object
     comment="[RECOMMENDATION-TITLE]"
     version="1">
     <protocol operation="pattern match">
-      [protocol.value]
+        [protocol.value]
     </protocol>
     <service_name>[service_name.value]</service_name>
   </xinetd_object>
 
-  <textfilecontent54_object
+  <textfilecontent54_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]2"
     comment="[RECOMMENDATION-TITLE]"
     version="1">
     <filepath>/etc/inetd.conf</filepath>
-    <pattern
+    <pattern 
       operation="pattern match"
       datatype="string">
-      [pattern.value]  
+        [pattern.value]  
     </pattern>
-    <instance
-      datatype="int" 
+    <instance datatype="int"
       operation="equals">
-      1
+        1
     </instance>
   </textfilecontent54_object>
 
-  <textfilecontent54_object
+  <textfilecontent54_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]3"
     comment="[RECOMMENDATION-TITLE]"
     version="1">
     <path>/etc/inetd.d</path>
-    <filenameoperation="pattern match">
-      .+
+    <filename operation="pattern match">
+        .+
     </filename>
     <pattern 
       operation="pattern match"
       datatype="string">
-      [pattern.value]  
+        [pattern.value]  
     </pattern>
-    <instance
-      datatype="int" 
+    <instance 
+      datatype="int"
       operation="equals">
-      1
+        1
     </instance>
   </textfilecontent54_object>
 
@@ -215,9 +214,9 @@ State
     comment="[RECOMMENDATION-TITLE]"
     version="1">
     <disabled 
-      datatype="boolean" 
+      datatype="boolean"
       operation="equals">
-      [disabled.value]
+        [disabled.value]
     </disabled>
   </xinetd_state>
 

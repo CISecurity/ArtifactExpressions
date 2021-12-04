@@ -90,7 +90,7 @@ For ``linux.service_v1`` artifacts, the xccdf:check looks like this. There is no
 
   <xccdf:complex-check operator="AND">
     <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
-      <check-content-ref
+      <check-content-ref 
         href="[BENCHMARK-TITLE]"
         name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
     </check>
@@ -118,7 +118,7 @@ Object
 
 ::
 
-  <systemdunitproperty_object 
+  <systemdunitproperty_object
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[RECOMMENDATION-TITLE]"
@@ -137,9 +137,9 @@ State
     comment="[RECOMMENDATION-TITLE]"
     version="1">
     <value 
-      operation="[operation.value]" 
+      operation="[operation.value]"
       datatype="string">
-      enabled
+        enabled
     </value>
   </systemdunitproperty_state>
 
