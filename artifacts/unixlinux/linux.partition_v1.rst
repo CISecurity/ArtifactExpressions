@@ -187,7 +187,7 @@ Object
 
 ::
 
-  <partition_object
+  <partition_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[RECOMMENDATION-TITLE]"
@@ -353,7 +353,7 @@ Object
 
 ::
 
-  <partition_object
+  <partition_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[RECOMMENDATION-TITLE]"
@@ -365,16 +365,16 @@ State
 
 ::
 
-  <partition_state
+  <partition_state 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
     comment="[RECOMMENDATION-TITLE]"
     version="1">
-    <mount_options> 
-      entity_check="[entity_check.value]" 
+    <mount_options 
+      entity_check="[entity_check.value]"
       operation="[operation.value]"
       datatype="[datatype.value]">
-      [mount_options.value]
+          [mount_options.value]
     </mount_options>
   </partition_state>  
 

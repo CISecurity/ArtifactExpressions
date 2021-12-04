@@ -190,14 +190,14 @@ State
 ::
 
   <sshd_state 
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
     comment="[RECOMMENDATION-TITLE]"
     version="1">
     <value 
-      datatype="[datatype.value]" 
+      datatype="[datatype.value]"
       operation="[operation.value]">
-      [value.value]
+        [value.value]
     </value>
   </sshd_state>
 

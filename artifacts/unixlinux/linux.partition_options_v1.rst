@@ -102,7 +102,7 @@ For ``linux.partition_options_v1`` artifacts, the xccdf:check looks like this. T
 
   <xccdf:complex-check operator="AND">
     <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
-      <check-content-ref
+      <check-content-ref 
         href="[BENCHMARK-TITLE]"
         name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
     </check>
@@ -118,9 +118,9 @@ Test
   <partition_test 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
-    check_existence="at_least_one_exists" 
-    check="all" 
-    comment="[RECOMMENDATION-TITLE]" 
+    check_existence="at_least_one_exists"
+    check="all"
+    comment="[RECOMMENDATION-TITLE]"
     version="1">
     <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
     <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
@@ -133,7 +133,7 @@ Object
   <partition_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
-    comment="[RECOMMENDATION-TITLE]" 
+    comment="[RECOMMENDATION-TITLE]"
     version="1">
     <mount_point>[mount_point.value]</mount_point>
   </partition_object>
@@ -145,13 +145,13 @@ State
   <partition_state 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
-    comment="[RECOMMENDATION-TITLE]" 
+    comment="[RECOMMENDATION-TITLE]"
     version="1">
     <mount_options 
-      entity_check="at least one" 
-      operation="equals" 
+      entity_check="at least one"
+      operation="equals"
       datatype="[datatype.value]">
-      [mount_options.value]
+        [mount_options.value]
     </mount_options>
   </partition_state>
 

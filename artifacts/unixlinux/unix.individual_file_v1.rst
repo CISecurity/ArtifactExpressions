@@ -232,21 +232,21 @@ Object
 
 ::
 
-  <file_object
+  <file_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#iindependent"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[RECOMMENDATION-TITLE]"
     version="1">
     <filepath>[filepath.value]</filepath>
     <pattern 
-      operation="pattern match"    
+      operation="pattern match"
       datatype="[datatype.value]">
-      [pattern.value] 
+        [pattern.value] 
     </pattern>
     <instance 
-      datatype="int" 
+      datatype="int"
       operation="equals">
-      1
+        1
     </instance>
   </file_object>
 
@@ -423,14 +423,14 @@ Object
 
 ::
 
-  <file_object
+  <file_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#iindependent"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[RECOMMENDATION-TITLE]"
     version="1">
     <path>[path.value]</path>
     <filename xsi:nil="true">
-      [filename.value]
+        [filename.value]
     </filename>
   </file_object>
 
@@ -617,36 +617,36 @@ State
 ::
 
   <file_state 
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent" 
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" 
-    comment="[RECOMMENDATION-TITLE]" 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
+    comment="[RECOMMENDATION-TITLE]"
     version="1">
     <group_id datatype="int">
-      [group_id.value]
+        [group_id.value]
     </group_id>
     <user_id datatype="int">
-      [user_id.value]
+        [user_id.value]
     </user_id>
     <uread datatype="boolean">
-      [uread.value]
+        [uread.value]
     </uread>
     <gread datatype="boolean">
-      [gread.value]
+        [gread.value]
     </gread>
     <gwrite datatype="boolean">
-      [gwrite.value]
+        [gwrite.value]
     </gwrite>
     <gexec datatype="boolean">
-      [gexec.value]
+        [gexec.value]
     </gexec>
     <oread datatype="boolean">
-      [oread.value]
+        [oread.value]
     </oread>
     <owrite datatype="boolean">
-      [owrite.value]
+        [owrite.value]
     </owrite>
     <oexec datatype="boolean">
-      [oexec.value]
+        [oexec.value]
     </oexec>
   </file_state>
 

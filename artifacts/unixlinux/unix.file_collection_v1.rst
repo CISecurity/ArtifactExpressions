@@ -211,10 +211,10 @@ For ``unix.file_collection_v1`` artifacts, the xccdf:check looks like this. Ther
 ::
 
   <xccdf:complex-check operator="AND">
-    <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
-        href="[BENCHMARK-TITLE]"
-        name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
-    </check>
+    <check 
+      system="http://oval.mitre.org/XMLSchema/oval-definitions-5"
+      href="[BENCHMARK-TITLE]"
+      name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </xccdf:complex-check>
 
 OVAL
@@ -246,7 +246,7 @@ Object
     version="1">
     <path>[path.value]</path>
     <filename xsi:nil="[xsi:nil.value]">
-      [filename.value]
+        [filename.value]
     </filename>
     <behaviors 
       recurse_direction="down"
@@ -264,22 +264,22 @@ State
     comment="[RECOMMENDATION-TITLE]"
     version="1">
     <gread datatype="boolean">
-      [gread.value]
+        [gread.value]
     </gread>
     <gwrite datatype="boolean">
-      [gwrite.value]
+        [gwrite.value]
     </gwrite>
     <gexec datatype="boolean">
-      [gexec.value]
+        [gexec.value]
     </gexec>
     <oread datatype="boolean">
-      [oread.value]
+        [oread.value]
     </oread>
     <owrite datatype="boolean">
-      [owrite.value]
+        [owrite.value]
     </owrite>
     <oexec datatype="boolean">
-      [oexec.value]
+        [oexec.value]
     </oexec>
   </file_state>
 
@@ -607,7 +607,7 @@ Object
     version="1">
     <path>[path.value]</path>
     <filename xsi:nil="[xsi:nil.value]">
-      [filename.value]
+        [filename.value]
     </filename>
     <behaviors 
       recurse_direction="down"
@@ -625,10 +625,10 @@ State
     comment="[RECOMMENDATION-TITLE]"
     version="1">
     <group_id datatype="int">
-      [group_id.value]
+        [group_id.value]
     </group_id>
     <user_id datatype="int">
-      [user_id.value]
+        [user_id.value]
     </user_id>
   </file_state>
 
@@ -842,8 +842,8 @@ Object
     comment="[RECOMMENDATION-TITLE]"
     version="1">
     <path>[path.value]</path>
-    <filename xsi:nil="[xsi:nil.value]>
-      [filename.value]
+    <filename xsi:nil="[xsi:nil.value]">
+        [filename.value]
     </filename>
     <behaviors 
       recurse_direction="down"

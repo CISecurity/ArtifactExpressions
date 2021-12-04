@@ -108,7 +108,7 @@ For ``linux.xinetd_service_v1`` artifacts, the xccdf:check looks like this. Ther
 
   <xccdf:complex-check operator="OR">
     <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
-      <check-content-ref
+      <check-content-ref 
         href="[BENCHMARK-TITLE]"
         name="oval:org.cisecurity.benchmarks:def:[ARTIFACT-OVAL-ID]" />
     </check>
@@ -123,7 +123,7 @@ Test
 
   <xinetd_test 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
-    id="oval:org.cisecurity.benchmarks:tst:[ARTIFACT-OVAL-ID]1" 
+    id="oval:org.cisecurity.benchmarks:tst:[ARTIFACT-OVAL-ID]1"
     check_existence="[check_existence.value]"
     check="all"
     comment="[RECOMMENDATION-TITLE]"
@@ -134,7 +134,7 @@ Test
 
   <textfilecontent54_test 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent"
-    id="oval:org.cisecurity.benchmarks:tst:[ARTIFACT-OVAL-ID]2" 
+    id="oval:org.cisecurity.benchmarks:tst:[ARTIFACT-OVAL-ID]2"
     check_existence="[check_existence.value]"
     check="all"
     comment="[RECOMMENDATION-TITLE]"
@@ -144,7 +144,7 @@ Test
 
   <textfilecontent54_test 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent"
-    id="oval:org.cisecurity.benchmarks:tst:[ARTIFACT-OVAL-ID]3" 
+    id="oval:org.cisecurity.benchmarks:tst:[ARTIFACT-OVAL-ID]3"
     check_existence="[check_existence.value]"
     check="all"
     comment="[RECOMMENDATION-TITLE]"
@@ -171,16 +171,14 @@ Object
     comment="[RECOMMENDATION-TITLE]"
     version="1">
     <filepath>/etc/inetd.conf</filepath>
-    <pattern
-      operation="pattern match" 
+    <pattern operation="pattern match"
       datatype="string">
-      [pattern.value]
+        [pattern.value]
     </pattern>
-    <instance
-      datatype="int"
+    <instance datatype="int"
       operation="equals">
-      1
-    </instance>    
+        1
+    </instance>
   </instance>
 
   <textfilecontent54_object 
@@ -190,18 +188,16 @@ Object
     version="1">
     <path>/etc/inetd.d</path>
     <filename operation="pattern match">
-      .+
+        .+
     </filename>
-    <pattern
-      operation="pattern match" 
+    <pattern operation="pattern match"
       datatype="string">
-      [pattern.value]
+        [pattern.value]
     </pattern>
-    <instance
-      datatype="int"
+    <instance datatype="int"
       operation="equals">
-      1
-    </instance>    
+        1
+    </instance>
   </textfilecontent54_object>
 
 State
@@ -213,10 +209,9 @@ State
     id="oval:org.cisecurity.benchmarks:ste:[ARTIFACT-OVAL-ID]1"
     comment="[RECOMMENDATION-TITLE]"
     version="1">
-    <disabled 
-      datatype="boolean" 
+    <disabled datatype="boolean"
       operation="equals">
-      [disabled.value]
+        [disabled.value]
     </disabled>
   </xinetd_state>
 

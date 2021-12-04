@@ -120,7 +120,7 @@ For ``linux.software_package_v1`` artifacts, the xccdf:check looks like this. Th
 
   <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
     <check-content-ref 
-      href="[BENCHMARK-TITLE]" 
+      href="[BENCHMARK-TITLE]"
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 
@@ -132,11 +132,11 @@ Test
 ::
 
   <rpminfo_test 
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux" 
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]" 
-    check_existence="[check_existence.value]" 
-    check="[check.value]" 
-    comment="[RECOMMENDATION-TITLE]" 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
+    check_existence="[check_existence.value]"
+    check="[check.value]"
+    comment="[RECOMMENDATION-TITLE]"
     version="1">
     <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
   </rpminfo_test>
@@ -146,12 +146,12 @@ Object
 ::
 
   <rpminfo_object 
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux" 
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" 
-    comment="[RECOMMENDATION-TITLE]" 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
+    comment="[RECOMMENDATION-TITLE]"
     version="1">
     <name operation="[operation.value]">
-      [name.value]
+        [name.value]
     </name>
   </rpminfo_object>
 
@@ -295,7 +295,7 @@ Test
   <rpminfo_test 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
-    check_existence="[check_existence.value]" 
+    check_existence="[check_existence.value]"
     check="[check.value]"
     comment="[RECOMMENDATION-TITLE]"
     version="1">
@@ -312,7 +312,7 @@ Object
     comment="[RECOMMENDATION-TITLE]"
     version="1">
     <name operation="[operation.value]">
-      [name.value]
+        [name.value]
     </name>
   </rpminfo_object>
 

@@ -163,7 +163,7 @@ Object
     version="1">
     <command>[command.value]</command>
     <line_selection operation="pattern match">
-      .+
+        .+
     </line_selection>
   </shellcommand_object>
 
@@ -177,7 +177,7 @@ State
     comment='[RECOMMENDATION-TITLE]'
     version="1">
     <stdout_line 
-      entity_check="at least one" 
+      entity_check="at least one"
       operation="[operation.value]"
       var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
   </shellcommand_state> 
@@ -187,9 +187,9 @@ Variable
 ::
 
   <external_variable 
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" 
-    datatype="[datatype.value]" 
-    version="1" 
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
+    datatype="[datatype.value]"
+    version="1"
     comment="This value is used in [RECOMMENDATION-TITLE]" />
 
 YAML
@@ -340,7 +340,7 @@ Object
     version="1">
     <command>[command.value]</command>
     <line_selection operation="pattern match">
-      .+
+        .+
     </line_selection>
   </shellcommand_object>
 

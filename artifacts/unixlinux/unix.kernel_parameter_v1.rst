@@ -130,7 +130,7 @@ For ``unix.kernel_parameter_v1`` artifacts, an XCCDF Value element is generated.
 ::
 
   <Value 
-    id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" 
+    id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var"
     type="string"
     operator="[operator.value]">
     <title>[RECOMMENDATION-TITLE]</title>
@@ -209,15 +209,15 @@ Object
     comment="[RECOMMENDATION-TITLE]"
     version="1">
     <filepath>/etc/sysctl.conf</filepath>
-    <pattern
+    <pattern 
       operation="pattern match"
       datatype="string">
-      [pattern.value]
+        [pattern.value]
     </pattern>
-    <instance
+    <instance 
       datatype="int"
       operation="equals">
-      1
+        1
     </instance>
   </textfilecontent54_object>
 
@@ -227,22 +227,22 @@ Object
     comment="[RECOMMENDATION-TITLE]"
     version="1">
     <path>/etc/sysctl.d</path>
-    <filename
+    <filename 
       operation="pattern match"
       datatype="string">
-      .*
+        .*
     </filename>
-    <pattern
+    <pattern 
       operation="pattern match"
       datatype="string">
-      [pattern.value]
+        [pattern.value]
     </pattern>
-    <instance
+    <instance 
       datatype="int"
       operation="equals">
-      1
+        1
     </instance>
-  </textfilecontent54_object>    
+  </textfilecontent54_object>
 
 State
 
@@ -254,13 +254,13 @@ State
     comment="[RECOMMENDATION-TITLE]"
     version="1">
     <name 
-      datatype="string" 
+      datatype="string"
       operation="equals">
-      [name.value]
+        [name.value]
     </name>
-    <value
-      datatype="[datatype.value]
-      operation="[operation.value]"
+    <value 
+      datatype="[datatype.value]" 
+      operation="[operation.value]" 
       var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
   </sysctl_state>
 

@@ -166,13 +166,13 @@ Object
 
 ::
 
-  <systemdunitdependency_object
+  <systemdunitdependency_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[RECOMMENDATION-TITLE]"
     version="1">
     <unit operation="[operation.value]">
-      [unit.value]
+        [unit.value]
     </unit>
   </systemdunitdependency_object>
 
@@ -180,21 +180,21 @@ State
 
 ::
 
-  <systemdunitdependency_state
+  <systemdunitdependency_state 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
     comment="[RECOMMENDATION-TITLE]"
     version="1">
     <unit 
-      datatype="string" 
+      datatype="string"
       operation="[operation.value]">
-      [unit.value]
+        [unit.value]
     </unit>
     <dependency 
-      entity_check="at least one" 
+      entity_check="at least one"
       operation="[operation.value]">
-      [dependency.value]
-    </dependency>    
+        [dependency.value]
+    </dependency>
   </systemdunitdependency_state>
 
 YAML

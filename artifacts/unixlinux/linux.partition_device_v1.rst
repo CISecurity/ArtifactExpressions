@@ -100,7 +100,7 @@ For ``linux.partition_options_v1`` artifacts, the xccdf:check looks like this. T
 ::
 
   <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
-    <check-content-ref
+    <check-content-ref 
       href="[BENCHMARK-TITLE]"
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
@@ -115,9 +115,9 @@ Test
   <partition_test 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
-    check_existence="[check_existence.value]" 
-    check="all" 
-    comment="[RECOMMENDATION-TITLE]" 
+    check_existence="[check_existence.value]"
+    check="all"
+    comment="[RECOMMENDATION-TITLE]"
     version="1">
     <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
   </partition_test>
@@ -129,7 +129,7 @@ Object
   <partition_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
-    comment="[RECOMMENDATION-TITLE]" 
+    comment="[RECOMMENDATION-TITLE]"
     version="1">
     <mount_point>[mount_point.value]</mount_point>
   </partition_object>

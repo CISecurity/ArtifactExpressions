@@ -131,7 +131,7 @@ For ``unix.uname_parameter_v1`` artifacts, an XCCDF Value element is generated.
 ::
 
   <Value 
-    id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" 
+    id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var"
     type="string"
     operator="[operator.value]">
     <title>[RECOMMENDATION-TITLE]</title>
@@ -145,7 +145,7 @@ For ``unix.uname_parameter_v1`` artifacts, the xccdf:check looks like this.
 
   <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
     <check-export 
-      export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" 
+      export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
       value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
     <check-content-ref 
       href="[BENCHMARK-TITLE]"
@@ -189,8 +189,8 @@ State
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
     comment="[RECOMMENDATION-TITLE]"
     version="1">
-    <[parameterName.value] 
-      datatype="[datatype.value]" 
+    <parameter 
+      datatype="[datatype.value]"
       operation="[operation.value]"
       var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
   </uname_state>
@@ -200,9 +200,9 @@ Variable
 ::
 
   <external_variable 
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" 
-    datatype="[datatype.value]" 
-    comment="This value is used in [RECOMMENDATION-TITLE]" 
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
+    datatype="[datatype.value]"
+    comment="This value is used in [RECOMMENDATION-TITLE]"
     version="1" />
 
 YAML

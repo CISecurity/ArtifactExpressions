@@ -12,115 +12,65 @@ Technical Details
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
-vmware.virtual_machine.advanced_setting
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**vmware.virtual_machine.advanced_setting**
 
-+-------------------------------------+-------------+------------------+
-| Name                                | Type        | Description      |
-+=====================================+=============+==================+
-| name                                | String      | The name of the  |
-|                                     |             | VM’s setting.    |
-|                                     |             | i                |
-|                                     |             | .e. RemoteDispla |
-|                                     |             | y.maxConnections |
-+-------------------------------------+-------------+------------------+
-| vm_name                             | String      | The name of the  |
-|                                     |             | VM to scope the  |
-|                                     |             | collection to.   |
-|                                     |             | Set to NA if not |
-|                                     |             | applicable       |
-+-------------------------------------+-------------+------------------+
++-----------------------------+---------+------------------------------------+
+| Name                        | Type    | Description                        |
++=============================+=========+====================================+
+| name                        | string  | The name of the VM’s setting.      |
+|                             |         | i.e. RemoteDisplay.maxConnections. |
++-----------------------------+---------+------------------------------------+
+| vm_name                     | string  | The name of the VM to scope the    |
+|                             |         | collection to. Set to NA if not    |
+|                             |         | applicable.                        |
++-----------------------------+---------+------------------------------------+
 
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
-  - pattern match
-  - pattern not match
-  - less than or equal
-  - greater than or equal
-  - greater than
-  - less than
-  - equals
+  - Pattern Match
+  - Pattern Not Match
+  - Less Than Or Equal
+  - Greater Than Or Equal
+  - Greater Than
+  - Less Than
+  - Equals
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
-pattern match
-^^^^^^^^^^^^^
-
-========= ====== ================================
+| **pattern match**
+| **pattern not match**
+| **less than or equal**
+| **less than**
+| **greater than or equal**
+| **greater than**
+| **equals**
+========= ====== =================================
 Name      Type   Description
-========= ====== ================================
-data_type String datatype of the value
-value     String Regular expression to be matched
-========= ====== ================================
+========= ====== =================================
+data_type string datatype of the value.
+value     string Regular expression to be matched.
+========= ====== =================================
 
-pattern not match
-^^^^^^^^^^^^^^^^^
-
-========= ====== ================================
-Name      Type   Description
-========= ====== ================================
-data_type String datatype of the value
-value     String Regular expression to be matched
-========= ====== ================================
-
-less than or equal
-^^^^^^^^^^^^^^^^^^
-
-========= ====== ======================
-Name      Type   Description
-========= ====== ======================
-data_type String datatype of the value
-value     String The value to be tested
-========= ====== ======================
-
-less than
-^^^^^^^^^
-
-========= ====== ======================
-Name      Type   Description
-========= ====== ======================
-data_type String datatype of the value
-value     String The value to be tested
-========= ====== ======================
-
-greater than or equal
-^^^^^^^^^^^^^^^^^^^^^
-
-========= ====== ======================
-Name      Type   Description
-========= ====== ======================
-data_type String datatype of the value
-value     String The value to be tested
-========= ====== ======================
-
-greater than
-^^^^^^^^^^^^
-
-========= ====== ======================
-Name      Type   Description
-========= ====== ======================
-data_type String datatype of the value
-value     String The value to be tested
-========= ====== ======================
-
-equals
-^^^^^^
-
-========= ====== ======================
-Name      Type   Description
-========= ====== ======================
-data_type String datatype of the value
-value     String The value to be tested
-========= ====== ======================
-
-data_type NOTE: This parameter is governed by a constraint allowing only
-the following values: - boolean - float - int - string - version - set
+NOTE: The ``data_type`` parameter is governed by a constraint allowing only the following values:
+	- boolean
+	- float
+	- int
+	- string
+	- version
+	- set
 
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
+| **pattern match**
+| **pattern not match**
+| **less than or equal**
+| **less than**
+| **greater than or equal**
+| **greater than**
+| **equals**
 XCCDF+AE
 ^^^^^^^^
 
@@ -128,33 +78,31 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
 
 ::
 
-   <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
-     <xccdf:check-content>
-       <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION_NUMBER]">
-         <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-         <ae:title>[RECOMMENDATION TITLE]</ae:title>
-         <ae:artifact type="[ARTIFACTTYPE NAME]">
-           <ae:parameters>
-             <ae:parameter dt="string" name="gatekeeper"
-               >[gatekeeper.value]</ae:parameter>
-           </ae:parameters>
-         </ae:artifact>
-         <ae:test type="[TESTTYPE NAME]">
-           <ae:parameters>
-             <ae:parameter dt="string" name="check_existence">[check_existence.value]</ae:parameter>
-             <ae:parameter dt="string" name="check">[check.value]</ae:parameter>
-             <ae:parameter dt="string" name="operation">[operation.value]</ae:parameter>
-             <ae:parameter dt="string" name="datatype">[datatype.value]</ae:parameter>
-             <ae:parameter dt="boolean" name="enabled">[enabled.value]</ae:parameter>
-           </ae:parameters>
-         </ae:test>
-         <ae:profiles>
-           <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1"
-           />
-         </ae:profiles>
-       </ae:artifact_expression>
-     </xccdf:check-content>
-   </xccdf:check>
+  <xccdf:complex-check operator="AND">
+    <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
+      <xccdf:check-content>
+        <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
+          <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
+          <ae:title>[RECOMMENDATION-TITLE]</ae:title>
+          <ae:artifact type="[ARTIFACT-TYPE-NAME]">
+            <ae:parameters>
+              <ae:parameter dt="string" name="name">[name.value]</ae:parameter>
+              <ae:parameter dt="string" name="vm_name">[vm_name.value]</ae:parameter>
+            </ae:parameters>
+          </ae:artifact>
+          <ae:test type="[TEST-TYPE-NAME]">
+            <ae:parameters>
+              <ae:parameter dt="string" name="value">[value.value]</ae:parameter>
+              <ae:parameter dt="string" name="data_type">[data_type.value]</ae:parameter>
+            </ae:parameters>
+          </ae:test>
+          <ae:profiles>
+            <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1" />
+          </ae:profiles>
+        </ae:artifact_expression>
+      </xccdf:check-content>
+    </xccdf:check>
+  </xccdf:complex-check>
 
 SCAP
 ^^^^
@@ -162,17 +110,38 @@ SCAP
 XCCDF
 '''''
 
-For ``macos.gatekeeper_v1`` artifacts, the xccdf:check looks like this. There is no Value in the xccdf for this Artifact.
+For ``vmware.virtual_machine.advanced_setting`` artifacts, an XCCDF Value element is generated.
 
 ::
 
-   <xccdf:check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
-      <xccdf:check-content-ref xmlns:ae="http://benchmarks.cisecurity.org/ae/0.5"
-         xmlns:cpe="http://cpe.mitre.org/language/2.0"
-         xmlns:ecl="http://cisecurity.org/check"
-         href="[BENCHMARK NAME]"
-         name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]"/>
-   </xccdf:check>
+  <Value 
+    id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var"
+    operator="equals"
+    type="[type.value]">
+    <title>[RECOMMENDATION-TITLE]</title>
+    <description>
+        This value is used in Rule: [RECOMMENDATION-TITLE]
+    </description>
+    <value>[value.value]</value>
+  </Value>  
+
+For ``vmware.virtual_machine.advanced_setting`` artifacts, the xccdf:check looks like this.
+
+::
+
+  <xccdf:complex-check operator="AND">
+    <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+      <check-export 
+        export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
+        value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
+      <check-export 
+        export-name="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]"
+        value-id="xccdf_org.cisecurity.benchmarks_value_[PLATFORM].connection" />
+      <check-content-ref 
+        href="[BENCHMARK-NAME]"
+        name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
+    </check>
+  </xccdf:complex-check>
 
 OVAL
 ''''
@@ -181,129 +150,140 @@ Test
 
 ::
 
-   <macos:gatekeeper_test check="[check.value]" check_existence="[check_existence.value]"
-     comment="[RECOMMENDATION TITLE]"
-     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:ARTIFACT-OVAL-ID" version="[version.value]">
-     <macos:object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:ARTIFACT-OVAL-ID"/>
-     <macos:state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:ARTIFACT-OVAL-ID"/>
-   </macos:gatekeeper_test>
+  <vm_advancedsetting_test 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
+    check="all"
+    check_existence="at_least_one_exists"
+    comment="[RECOMMENDATION-TITLE]"
+    id="oval:org.cisecurity.benchmarks[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
+    version="1">
+    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+    <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
+  </vm_advancedsetting_test>
 
 Object
 
 ::
 
-   <macos:gatekeeper_object
-     comment="[RECOMMENDATION TITLE]"
-     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:ARTIFACT-OVAL-ID" version="[version.value]"> 
-   </macos:gatekeeper_object>    
+  <vm_advancedsetting_object 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
+    comment="[RECOMMENDATION-TITLE]"
+    id="oval:org.cisecurity.benchmarks[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
+    version="1">
+    <connection_string var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]" />
+    <vm_name operation="pattern match">
+        [vm_name.value]
+    </vm_name>
+    <advanced_setting_name>[vmsafe.enable.value]</advanced_setting_name>
+  </vm_advancedsetting_object>  
 
 State
 
 ::
 
-   <macos:gatekeeper_state
-     comment="[RECOMMENDATION TITLE]"
-     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:ARTIFACT-OVAL-ID" version="[version.value]">
-     <macos:enabled datatype="[datatype.value]" operation="[operation.value]">[enabled.value]</macos:enabled>
-   </macos:gatekeeper_state>    
+  <vm_advancedsetting_state 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
+    comment="[RECOMMENDATION-TITLE]"
+    id="oval:org.cisecurity.benchmarks[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
+    version="1">
+    <advanced_setting_name 
+      datatype="string"
+      operation="equals">
+        [advanced_setting_name.value]
+    </advanced_setting_name>
+    <advanced_setting_value 
+      datatype="[datatype.value]"
+      operation="equals"
+      var_ref="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
+  </vm_advancedsetting_state>
+
+External Variable
+
+::
+
+  <external_variable 
+    id="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]"
+    datatype="boolean"
+    version="1"
+    comment="This value is used in Rule: [RECOMMENDATION-TITLE]" />       
 
 YAML
 ^^^^
 
 ::
 
-  - artifact-expression:
-       artifact-unique-id: [ARTIFACT-OVAL-ID]
-       artifact-title: [RECOMMENDATION TITLE]
-       artifact:
-         type: [ARTIFACTTYPE NAME]
-         parameters:
-         - parameter: 
-             name: gatekeeper
-             type: string
-             value: [gatekeeper.value]
-       test:
-         type: [TESTTYPE NAME]
-         parameters:
-         - parameter:
-             name: check_existence
-             type: string
-             value: [check_existence.value]
-         - parameter: 
-             name: check
-             type: string
-             value: [check.value]
-         - parameter:
-             name: operation
-             type: string
-             value: [operation.value]
-         - parameter: 
-             name: datatype
-             type: string
-             value: [datatype.value]  
-         - parameter: 
-             name: enabled
-             type: string
-             value: [enabled.value]      
+  artifact-expression:
+    artifact-unique-id: "[ARTIFACT-OVAL-ID]"
+    artifact-title: "[RECOMMENDATION-TITLE]"
+    artifact:
+      type: "[ARTIFACT-TYPE-NAME]"
+      parameters:
+        - parameter: 
+            name: "name"
+            type: "string"
+            value: "[name.value]"
+        - parameter: 
+            name: "vm_name"
+            type: "string"
+            value: "[vm_name.value]"          
+    test:
+      type: "[TEST-TYPE-NAME]"
+      parameters:
+        - parameter:
+            name: "data_type"
+            type: "string"
+            value: "[data_type.value]"
+        - parameter: 
+            name: "value"
+            type: "string"
+            value: "[value.value]"
 
 JSON
 ^^^^
 
 ::
 
-   "artifact-expression": {
-     "artifact-unique-id": [ARTIFACT-OVAL-ID],
-     "artifact-title": [RECOMMENDATION TITLE],
-     "artifact": {
-       "type": "[ARTIFACTTYPE NAME]",
-       "parameters": [
-         {
-           "parameter": {
-             "name": "gatekeeper",
-             "type": "string",
-             "value": [gatekeeper.value]
-           }
-         }
-       ]
-     },
-     "test": {
-       "type": [TESTTYPE NAME],
-       "parameters": [
-         {
-           "parameter": {
-             "name": "check_existence",
-             "type": "string",
-             "value": [check_existence.value]
-           }
-         },
-         {
-           "parameter": {
-             "name": "check",
-             "type": "string",
-             "value": [check.value]
-           }
-         },
-         {
-           "parameter": {
-             "name": "operation",
-             "type": "string",
-             "value": [operation.value]
-           }
-         },
-         {
-           "parameter": {
-             "name": "datetype",
-             "type": "string",
-             "value": [datatype.value]
-           }
-         },
-         {
-           "parameter": {
-             "name": "enabled",
-             "type": "string",
-             "value": [enabled.value]
-           }
-         }
-       ]
-     }
-   }
+  {
+    "artifact-expression": {
+      "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
+      "artifact-title": "[RECOMMENDATION-TITLE]",
+      "artifact": {
+        "type": "[ARTIFACT-TYPE-NAME]",
+        "parameters": [
+          {
+            "parameter": {
+              "name": "name",
+              "type": "string",
+              "value": "[name.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "vm_name",
+              "type": "string",
+              "value": "[vm_name.value]"
+            }
+          }        
+        ]
+      },
+      "test": {
+        "type": "[TEST-TYPE-NAME]",
+        "parameters": [
+          {
+            "parameter": {
+              "name": "data_type",
+              "type": "string",
+              "value": "[data_type.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "value",
+              "type": "string",
+              "value": "[value.value]"
+            }
+          }
+        ]
+      }
+    }
+  }

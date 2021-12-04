@@ -12,25 +12,24 @@ Technical Details
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
-vmware.vds_portgroup_v2
-^^^^^^^^^^^^^^^^^^^^^^^
+**vmware.vds_portgroup_v2**
 
-+--------------------------+--------+-----------------------------+
-| Name                     | Type   | Description                 |
-+==========================+========+=============================+
-| check_existence          | String | Defines how many items      |
-|                          |        | should be collected         |
-+--------------------------+--------+-----------------------------+
-| portgroup_name           | String | The name of a vSphere       |
-|                          |        | Distributed port group      |
-+--------------------------+--------+-----------------------------+
-| vds_name                 | String | The name of a vSphere       |
-|                          |        | Distributed Switch          |
-+--------------------------+--------+-----------------------------+
-| vds_name_operation       | String | comparison operation        |
-+--------------------------+--------+-----------------------------+
-| portgroup_name_operation | String | comparison operation        |
-+--------------------------+--------+-----------------------------+
+======================== ====== =============================================
+Name                     Type   Description
+======================== ====== =============================================
+check_existence          string Defines how many items should be collected.
+portgroup_name           string The name of a vSphere Distributed port group.
+vds_name                 string The name of a vSphere Distributed Switch.
+vds_name_operation       string Comparison operation.
+portgroup_name_operation string Comparison operation.
+======================== ====== =============================================
+
+NOTE: The ``check_existence``  parameter is governed by a constraint allowing only the following values:
+  - all_exist
+  - any_exist
+  - at_least_one_exists
+  - none_exist
+  - only_one_exists
 
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
@@ -42,91 +41,153 @@ Supported Test Types
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
-vmware:vds_portgroup_collector_ip_address
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**vmware:vds_portgroup_collector_ip_address**
 
-+-------------------------------------+-------------+------------------+
-| Name                                | Type        | Description      |
-+=====================================+=============+==================+
-| check                               | String      | Defines how many |
-|                                     |             | collected items  |
-|                                     |             | must match the   |
-|                                     |             | expected state   |
-+-------------------------------------+-------------+------------------+
-| operation                           | String      | comparison       |
-|                                     |             | operation        |
-+-------------------------------------+-------------+------------------+
-| datatype                            | String      | datatype         |
-+-------------------------------------+-------------+------------------+
-| te                                  | Boolean     | Teaming and      |
-| aming_failover_health_check_enabled |             | Failover Health  |
-|                                     |             | Check enabled?   |
-+-------------------------------------+-------------+------------------+
++---------------------------------------+---------+--------------------------+
+| Name                                  | Type    | Description              |
++=======================================+=========+==========================+
+| check                                 | string  | Defines how many         |
+|                                       |         | collected items must     |
+|                                       |         | match the expected       |  
+|                                       |         | state.                   |
++---------------------------------------+---------+--------------------------+
+| operation                             | string  | comparison operation.    |
++---------------------------------------+---------+--------------------------+
+| datatype                              | string  | Datatype.                |
++---------------------------------------+---------+--------------------------+
+| teaming_failover_health_check_enabled | boolean | Teaming and Failover     |
+|                                       |         | Health Check enabled?    |
++---------------------------------------+---------+--------------------------+
 
-vmware:vds_portgroup_collector_port
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NOTE: The ``check`` parameter is governed by a constraint allowing only the following values:
+  - all
+  - at least one
+  - none satisfy
+  - only one
 
-+-------------------------------------+-------------+------------------+
-| Name                                | Type        | Description      |
-+=====================================+=============+==================+
-| check                               | String      | Defines how many |
-|                                     |             | collected items  |
-|                                     |             | must match the   |
-|                                     |             | expected state   |
-+-------------------------------------+-------------+------------------+
-| operation                           | String      | comparison       |
-|                                     |             | operation        |
-+-------------------------------------+-------------+------------------+
-| datatype                            | String      | datatype         |
-+-------------------------------------+-------------+------------------+
-| collector_port                      | String      | Authorized       |
-|                                     |             | collector Port   |
-|                                     |             | to which Virtual |
-|                                     |             | Disributed       |
-|                                     |             | Switch Netflow   |
-|                                     |             | traffic is sent  |
-+-------------------------------------+-------------+------------------+
+NOTE: The ``operation`` parameter is governed by a constraint allowing only the following values:
+  - equals
+  - not equal
+  - case insensitive equals
+  - case insensitive not equal
+  - greater than
+  - less than
+  - greater than or equal
+  - less than or equal
+  - bitwise and
+  - bitwise or
+  - pattern match
+  - subset of
+  - superset of
 
-vmware:vds_portgroup_override_port_policies
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NOTE: The ``datatype`` parameter is governed by a constraint allowing only the following values:
+	- boolean
+	- float
+	- int
+	- string
+	- version
+	- set
 
-+-------------------------------------+-------------+------------------+
-| Name                                | Type        | Description      |
-+=====================================+=============+==================+
-| check                               | String      | Defines how many |
-|                                     |             | collected items  |
-|                                     |             | must match the   |
-|                                     |             | expected state   |
-+-------------------------------------+-------------+------------------+
-| operation                           | String      | comparison       |
-|                                     |             | operation        |
-+-------------------------------------+-------------+------------------+
-| datatype                            | String      | datatype         |
-+-------------------------------------+-------------+------------------+
-| override_port_policies_enabled      | Boolean     | Port-level       |
-|                                     |             | configuration    |
-|                                     |             | overrides        |
-|                                     |             | enabled?         |
-+-------------------------------------+-------------+------------------+
+**vmware:vds_portgroup_collector_port**
 
-check_existence NOTE: This parameter is governed by a constraint
-allowing only the following values: - all_exist - any_exist -
-at_least_one_exists - none_satisfy - none_exist - only_one_exists
++---------------------------------------+---------+--------------------------+
+| Name                                  | Type    | Description              |
++=======================================+=========+==========================+
+| check                                 | string  | Defines how many         |
+|                                       |         | collected items must     |
+|                                       |         | match the expected       |
+|                                       |         | state.                   |
++---------------------------------------+---------+--------------------------+
+| operation                             | string  | comparison operation.    |
++---------------------------------------+---------+--------------------------+
+| datatype                              | string  | Datatype.                |
++---------------------------------------+---------+--------------------------+
+| collector_port                        | string  | Authorized collector     |
+|                                       |         | Port to which Virtual    |
+|                                       |         | Disributed Switch        |
+|                                       |         | Netflow traffic is sent. |
++---------------------------------------+---------+--------------------------+
 
-check NOTE: This parameter is governed by a constraint allowing only the
-following values: - all - at least one - none satisfy - only one
+NOTE: The ``check`` parameter is governed by a constraint allowing only the following values:
+  - all
+  - at least one
+  - none satisfy
+  - only one
 
-operation NOTE: This parameter is governed by a constraint allowing only
-the following values: - equals - not equal - case insensitive equals -
-case insensitive not equal - greater than - less than - greater than or
-equal - less than or equal - bitwise and - bitwise or - pattern match -
-subset of - superset of
+NOTE: The ``operation`` parameter is governed by a constraint allowing only the following values:
+  - equals
+  - not equal
+  - case insensitive equals
+  - case insensitive not equal
+  - greater than
+  - less than
+  - greater than or equal
+  - less than or equal
+  - bitwise and
+  - bitwise or
+  - pattern match
+  - subset of
+  - superset of
 
-datatype NOTE: This parameter is governed by a constraint allowing only
-the following values: - boolean - float - int - string - version - set
+NOTE: The ``datatype`` parameter is governed by a constraint allowing only the following values:
+	- boolean
+	- float
+	- int
+	- string
+	- version
+	- set
+
+**vmware:vds_portgroup_override_port_policies**
+
++---------------------------------------+---------+--------------------------+
+| Name                                  | Type    | Description              |
++=======================================+=========+==========================+
+| check                                 | string  | Defines how many         |
+|                                       |         | collected items must     |
+|                                       |         | match the expected       |
+|                                       |         | state.                   |
++---------------------------------------+---------+--------------------------+
+| operation                             | string  | Comparison operation.    |
++---------------------------------------+---------+--------------------------+
+| datatype                              | string  | Datatype.                |
++---------------------------------------+---------+--------------------------+
+| override_port_policies_enabled        | boolean | Port-level configuration |
+|                                       |         | overrides enabled?       |
++---------------------------------------+---------+--------------------------+
+
+NOTE: The ``check`` parameter is governed by a constraint allowing only the following values:
+  - all
+  - at least one
+  - none satisfy
+  - only one
+
+NOTE: The ``operation`` parameter is governed by a constraint allowing only the following values:
+  - equals
+  - not equal
+  - case insensitive equals
+  - case insensitive not equal
+  - greater than
+  - less than
+  - greater than or equal
+  - less than or equal
+  - bitwise and
+  - bitwise or
+  - pattern match
+  - subset of
+  - superset of
+
+NOTE: The ``datatype`` parameter is governed by a constraint allowing only the following values:
+	- boolean
+	- float
+	- int
+	- string
+	- version
+	- set
 
 Generated Content
 ~~~~~~~~~~~~~~~~~
+
+**vmware:vds_portgroup_collector_ip_address**
 
 XCCDF+AE
 ^^^^^^^^
@@ -135,63 +196,34 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
 
 ::
 
-   <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
-     <xccdf:check-content>
-       <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION_NUMBER]">
-         <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-         <ae:title>[RECOMMENDATION TITLE]</ae:title>
-         <ae:artifact type="[ARTIFACTTYPE NAME]" />
-           <ae:parameters>
-             <ae:parameter dt="string" name="applicationpool_name"
-               >[applicationpool_name.value]</ae:parameter>
-           </ae:parameters>
-         </ae:artifact>
-         <ae:test type="[TESTTYPE NAME]">
-           <ae:parameters>
-             <ae:parameter dt="string" name="check_existence">[check_existence.value]</ae:parameter>
-             <ae:parameter dt="string" name="check">[check.value]</ae:parameter>
-             <ae:parameter dt="string" name="operation">[operation.value]</ae:parameter>
-             <ae:parameter dt="string" name="datatype">[datatype.value]</ae:parameter>
-             <ae:parameter dt="boolean" name="enabled">[enabled.value]</ae:parameter>
-           </ae:parameters>
-         </ae:test>
-         <ae:profiles>
-           <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1"
-           />
-         </ae:profiles>
-       </ae:artifact_expression>
-     </xccdf:check-content>
-   </xccdf:check>
-
-
-
-         <xccdf:complex-check operator="AND">
-           <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
-             <xccdf:check-content>
-               <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_4.9.1">
-                 <ae:artifact_oval_id>188808</ae:artifact_oval_id>
-                 <ae:title>Ensure 'allow_unlisted_isapis' is 'equals' to
-                   'false'</ae:title>
-                 <ae:artifact type="iis.applicationhostconfig"/>
-                 <ae:test type="iis.applicationhostconfig">
-                   <ae:parameters>
-                     <ae:parameter dt="string" name="operator">equals</ae:parameter>
-                     <ae:parameter dt="string" name="configuration_setting"
-                       >allow_unlisted_isapis</ae:parameter>
-                     <ae:parameter dt="string" name="data_type"
-                       >boolean</ae:parameter>
-                     <ae:parameter dt="string" name="value">false</ae:parameter>
-                   </ae:parameters>
-                 </ae:test>
-                 <ae:profiles>
-                   <ae:profile
-                     idref="xccdf_org.cisecurity.benchmarks_profile_Level_1_-_IIS_10"
-                   />
-                 </ae:profiles>
-               </ae:artifact_expression>
-             </xccdf:check-content>
-           </xccdf:check>
-         </xccdf:complex-check>
+  <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
+    <xccdf:check-content>
+      <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
+        <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
+        <ae:title>[RECOMMENDATION-TITLE]</ae:title>
+        <ae:artifact type="[ARTIFACT-TYPE-NAME]" />
+          <ae:parameters>
+            <ae:parameter dt="string" name="check_existence">[check_existence.value]</ae:parameter>
+            <ae:parameter dt="string" name="portgroup_name">[portgroup_name.value]</ae:parameter>
+            <ae:parameter dt="string" name="vds_name">[check_exivds_namestence.value]</ae:parameter>
+            <ae:parameter dt="string" name="vds_name_operation">[vds_name_operation.value]</ae:parameter>
+            <ae:parameter dt="string" name="portgroup_name_operation">[portgroup_name_operation.value]</ae:parameter>
+          </ae:parameters>
+        </ae:artifact>
+        <ae:test type="[TEST-TYPE-NAME]">
+          <ae:parameters>
+            <ae:parameter dt="string" name="check">[check.value]</ae:parameter>
+            <ae:parameter dt="string" name="operation">[operation.value]</ae:parameter>
+            <ae:parameter dt="string" name="datatype">[datatype.value]</ae:parameter>
+            <ae:parameter dt="string" name="teaming_failover_health_check_enabled">[teaming_failover_health_check_enabled.value]</ae:parameter>
+          </ae:parameters>
+        </ae:test>
+        <ae:profiles>
+          <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1" />
+        </ae:profiles>
+      </ae:artifact_expression>
+    </xccdf:check-content>
+  </xccdf:check>  
 
 SCAP
 ^^^^
@@ -199,17 +231,18 @@ SCAP
 XCCDF
 '''''
 
-For ``macos.gatekeeper_v1`` artifacts, the xccdf:check looks like this. There is no Value in the xccdf for this Artifact.
+For ``vmware.vds_portgroup_v2`` artifacts, the xccdf:check looks like this. There is no Value in the xccdf for this Artifact.
 
 ::
 
-   <xccdf:check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
-      <xccdf:check-content-ref xmlns:ae="http://benchmarks.cisecurity.org/ae/0.5"
-         xmlns:cpe="http://cpe.mitre.org/language/2.0"
-         xmlns:ecl="http://cisecurity.org/check"
-         href="[BENCHMARK NAME]"
-         name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]"/>
-   </xccdf:check>
+  <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+    <check-export 
+      export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
+      value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
+    <check-content-ref 
+      href="[BENCHMARK-TITLE]"
+      name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
+  </check>    
 
 OVAL
 ''''
@@ -218,129 +251,711 @@ Test
 
 ::
 
-   <macos:gatekeeper_test check="[check.value]" check_existence="[check_existence.value]"
-     comment="[RECOMMENDATION TITLE]"
-     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:ARTIFACT-OVAL-ID" version="[version.value]">
-     <macos:object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:ARTIFACT-OVAL-ID"/>
-     <macos:state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:ARTIFACT-OVAL-ID"/>
-   </macos:gatekeeper_test>
+  <vds_portgroup_test 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
+    id="oval:org.cisecurity.benchmarks:tst:[ARTIFACT-OVAL-ID]"
+    check_existence="[check_existence.value]"
+    check="[check.value]"
+    comment="[RECOMMENDATION-TITLE]"
+    version="1">
+    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+    <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
+  </vds_portgroup_test>
 
 Object
 
 ::
 
-   <macos:gatekeeper_object
-     comment="[RECOMMENDATION TITLE]"
-     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:ARTIFACT-OVAL-ID" version="[version.value]"> 
-   </macos:gatekeeper_object>    
+  <vds_portgroup_object 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
+    id="oval:org.cisecurity.benchmarks:obj:[ARTIFACT-OVAL-ID]"
+    comment="[RECOMMENDATION-TITLE]"
+    version="1">
+    <connection_string var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]" />
+    <vds_name operation="[operation.value]">
+        [vds_name.value]
+    </vds_name>
+    <portgroup_name operation="[operation.value]">
+        [portgroup_name.value]
+    </portgroup_name>
+  </vds_portgroup_object>  
 
 State
 
 ::
 
-   <macos:gatekeeper_state
-     comment="[RECOMMENDATION TITLE]"
-     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:ARTIFACT-OVAL-ID" version="[version.value]">
-     <macos:enabled datatype="[datatype.value]" operation="[operation.value]">[enabled.value]</macos:enabled>
-   </macos:gatekeeper_state>    
+  <vds_portgroup_state 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
+    id="oval:org.cisecurity.benchmarks:ste:[ARTIFACT-OVAL-ID]"
+    comment="[RECOMMENDATION-TITLE]"
+    version="1">
+    <collector_ip_address 
+      datatype="[datatype.value]"
+      operation="[operation.value]">
+        [collector_ip_address.value]
+    </collector_ip_address>
+  </vds_portgroup_state>  
+
+External Variable
+
+::
+
+  <external_variable 
+    id="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]"
+    datatype="boolean"
+    version="1"
+    comment="[RECOMMENDATION-TITLE]" />
 
 YAML
 ^^^^
 
 ::
 
-  - artifact-expression:
-       artifact-unique-id: [ARTIFACT-OVAL-ID]
-       artifact-title: [RECOMMENDATION TITLE]
-       artifact:
-         type: [ARTIFACTTYPE NAME]
-         parameters:
-         - parameter: 
-             name: gatekeeper
-             type: string
-             value: [gatekeeper.value]
-       test:
-         type: [TESTTYPE NAME]
-         parameters:
-         - parameter:
-             name: check_existence
-             type: string
-             value: [check_existence.value]
-         - parameter: 
-             name: check
-             type: string
-             value: [check.value]
-         - parameter:
-             name: operation
-             type: string
-             value: [operation.value]
-         - parameter: 
-             name: datatype
-             type: string
-             value: [datatype.value]  
-         - parameter: 
-             name: enabled
-             type: string
-             value: [enabled.value]      
+  artifact-expression:
+    artifact-unique-id: "[ARTIFACT-OVAL-ID]"
+    artifact-title: "[RECOMMENDATION-TITLE]"
+    artifact:
+      type: "[ARTIFACT-TYPE-NAME]"
+      parameters:
+      - parameter: 
+          name: "check_existence"
+          dt: "string"
+          value: "[check_existence.value]"
+      - parameter: 
+          name: "portgroup_name"
+          dt: "string"
+          value: "[portgroup_name.value]"
+      - parameter: 
+          name: "vds_name"
+          dt: "string"
+          value: "[vds_name.value]"
+      - parameter: 
+          name: "vds_name_operation"
+          dt: "string"
+          value: "[vds_name_operation.value]"
+      - parameter: 
+          name: "portgroup_name_operation"
+          dt: "string"
+          value: "[portgroup_name_operation.value]"
+    test:
+      type: "[TEST-TYPE-NAME]"
+      parameters:
+        - parameter:
+            name: "check"
+            dt: "string"
+            value:"[check.value]"
+        - parameter:
+            name: "operation"
+            dt: "string"
+            value: "[operation.value]"
+        - parameter:
+            name: "datatype"
+            dt: "string"
+            value: "[datatype.value]"
+        - parameter:
+            name: "teaming_failover_health_check_enabled"
+            dt: "string"
+            value: "[teaming_failover_health_check_enabled.value]"
 
 JSON
 ^^^^
 
 ::
 
-   "artifact-expression": {
-     "artifact-unique-id": [ARTIFACT-OVAL-ID],
-     "artifact-title": [RECOMMENDATION TITLE],
-     "artifact": {
-       "type": "[ARTIFACTTYPE NAME]",
-       "parameters": [
-         {
-           "parameter": {
-             "name": "gatekeeper",
-             "type": "string",
-             "value": [gatekeeper.value]
-           }
-         }
-       ]
-     },
-     "test": {
-       "type": [TESTTYPE NAME],
-       "parameters": [
-         {
-           "parameter": {
-             "name": "check_existence",
-             "type": "string",
-             "value": [check_existence.value]
-           }
-         },
-         {
-           "parameter": {
-             "name": "check",
-             "type": "string",
-             "value": [check.value]
-           }
-         },
-         {
-           "parameter": {
-             "name": "operation",
-             "type": "string",
-             "value": [operation.value]
-           }
-         },
-         {
-           "parameter": {
-             "name": "datetype",
-             "type": "string",
-             "value": [datatype.value]
-           }
-         },
-         {
-           "parameter": {
-             "name": "enabled",
-             "type": "string",
-             "value": [enabled.value]
-           }
-         }
-       ]
-     }
-   }
+   {
+    "artifact-expression": {
+      "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
+      "artifact_title": "[RECOMMENDATION-TITLE]",
+      "artifact": {
+        "type": "[ARTIFACT-TYPE-NAME]",
+        "parameters": [
+          {
+            "parameter": {
+              "name": "check_existence",
+              "dt": "string",
+              "value": "[check_existence.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "portgroup_name",
+              "dt": "string",
+              "value": "[portgroup_name.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "vds_name",
+              "dt": "string",
+              "value": "[vds_name.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "vds_name_operation",
+              "dt": "string",
+              "value": "[vds_name_operation.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "portgroup_name_operation",
+              "dt": "string",
+              "value": "[portgroup_name_operation.value]"
+            }
+          }
+        ]
+      },
+      "test": {
+        "type": "[TEST-TYPE-NAME]",
+        "parameters": [
+          {
+            "parameter": {
+              "name": "check",
+              "dt": "string",
+              "value": "[check.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "operation",
+              "dt": "string",
+              "value": "[operation.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "datatype",
+              "dt": "string",
+              "value": "[datatype.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "teaming_failover_health_check_enabled",
+              "dt": "string",
+              "value": "[teaming_failover_health_check_enabled.value]"
+            }
+          }
+        ]
+      }
+    }
+  }
+
+Generated Content
+~~~~~~~~~~~~~~~~~
+
+**vmware:vds_portgroup_collector_port**
+
+XCCDF+AE
+^^^^^^^^
+
+This is what the AE check looks like, inside a Rule, in the XCCDF
+
+::
+
+  <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
+    <xccdf:check-content>
+      <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
+        <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
+        <ae:title>[RECOMMENDATION-TITLE]</ae:title>
+        <ae:artifact type="[ARTIFACT-TYPE-NAME]" />
+          <ae:parameters>
+            <ae:parameter dt="string" name="check_existence">[check_existence.value]</ae:parameter>
+            <ae:parameter dt="string" name="portgroup_name">[portgroup_name.value]</ae:parameter>
+            <ae:parameter dt="string" name="vds_name">[check_exivds_namestence.value]</ae:parameter>
+            <ae:parameter dt="string" name="vds_name_operation">[vds_name_operation.value]</ae:parameter>
+            <ae:parameter dt="string" name="portgroup_name_operation">[portgroup_name_operation.value]</ae:parameter>
+          </ae:parameters>
+        </ae:artifact>
+        <ae:test type="[TEST-TYPE-NAME]">
+          <ae:parameters>
+            <ae:parameter dt="string" name="check">[check.value]</ae:parameter>
+            <ae:parameter dt="string" name="operation">[operation.value]</ae:parameter>
+            <ae:parameter dt="string" name="datatype">[datatype.value]</ae:parameter>
+            <ae:parameter dt="string" name="collector_port">[collector_port.value]</ae:parameter>
+          </ae:parameters>
+        </ae:test>
+        <ae:profiles>
+          <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1" />
+        </ae:profiles>
+      </ae:artifact_expression>
+    </xccdf:check-content>
+  </xccdf:check>
+
+SCAP
+^^^^
+
+XCCDF
+'''''
+
+For ``vmware.vds_portgroup_v2`` artifacts, the xccdf:check looks like this. There is no Value in the xccdf for this Artifact.
+
+::
+
+  <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+    <check-export 
+        export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" 
+        value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
+    <check-content-ref 
+        href="[BENCHMARK-TITLE]" 
+        name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
+  </check>  
+
+OVAL
+''''
+
+Test
+
+::
+
+  <vds_portgroup_test 
+      xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
+      check_existence="[check_existence.value]"
+      check="all"
+      comment="[RECOMMENDATION-TITLE]"
+      id="oval:org.cisecurity.benchmarks:tst:[ARTIFACT-OVAL-ID]" 
+      version="1">
+    <object object_ref="oval:org.cisecurity.benchmarks:obj:[ARTIFACT-OVAL-ID]" />
+    <state state_ref="oval:org.cisecurity.benchmarks:ste:[ARTIFACT-OVAL-ID]" />
+  </vds_portgroup_test>
+
+Object
+
+::
+
+  <vds_portgroup_object 
+      xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
+      id="oval:org.cisecurity.benchmarks:obj:[ARTIFACT-OVAL-ID]"
+      comment="[RECOMMENDATION-TITLE]"
+      version="1">
+    <connection_string 
+        var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]" />
+    <vds_name operation="[operation.value]">
+      [vds_name.value]
+    </vds_name>
+    <portgroup_name operation="[operation.value]">
+      [portgroup_name.value]
+    </portgroup_name>
+  </vds_portgroup_object>  
+
+State
+
+::
+
+  <vds_portgroup_state 
+      xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
+      id="oval:org.cisecurity.benchmarks:obj:[ARTIFACT-OVAL-ID]"
+      comment="[RECOMMENDATION-TITLE]"
+      version="1">
+    <collector_port 
+        datatype="[datatype.value]" 
+        operation="[operation.value]">
+      [collector_port.value]
+    </collector_port>
+  </vds_portgroup_state>
+
+External Variable
+
+::
+
+  <external_variable
+      id="oval:org.cisecurity.benchmarks:obj:[ARTIFACT-OVAL-ID]"
+      datatype="boolean"
+      version="1"
+      comment="[RECOMMENDATION-TITLE]" />  
+
+YAML
+^^^^
+
+::
+
+  artifact-expression:
+    artifact-unique-id: "[ARTIFACT-OVAL-ID]"
+    artifact-title: "[RECOMMENDATION-TITLE]"
+    artifact:
+      type: "[ARTIFACT-TYPE-NAME]"
+      parameters:
+      - parameter: 
+          name: "check_existence"
+          dt: "string"
+          value: "[check_existence.value]"
+      - parameter: 
+          name: "portgroup_name"
+          dt: "string"
+          value: "[portgroup_name.value]"
+      - parameter: 
+          name: "vds_name"
+          dt: "string"
+          value: "[vds_name.value]"
+      - parameter: 
+          name: "vds_name_operation"
+          dt: "string"
+          value: "[vds_name_operation.value]"
+      - parameter: 
+          name: "portgroup_name_operation"
+          dt: "string"
+          value: "[portgroup_name_operation.value]"
+    test:
+      type: "[TEST-TYPE-NAME]"
+      parameters:
+        - parameter:
+            name: "check"
+            dt: "string"
+            value:"[check.value]"
+        - parameter:
+            name: "operation"
+            dt: "string"
+            value: "[operation.value]"
+        - parameter:
+            name: "datatype"
+            dt: "string"
+            value: "[datatype.value]"
+        - parameter:
+            name: "collector_port"
+            dt: "string"
+            value: "[collector_port.value]"
+
+JSON
+^^^^
+
+::
+
+  {
+    "artifact-expression": {
+      "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
+      "artifact_title": "[RECOMMENDATION-TITLE]",
+      "artifact": {
+        "type": "[ARTIFACT-TYPE-NAME]",
+        "parameters": [
+          {
+            "parameter": {
+              "name": "check_existence",
+              "dt": "string",
+              "value": "[check_existence.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "portgroup_name",
+              "dt": "string",
+              "value": "[portgroup_name.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "vds_name",
+              "dt": "string",
+              "value": "[vds_name.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "vds_name_operation",
+              "dt": "string",
+              "value": "[vds_name_operation.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "portgroup_name_operation",
+              "dt": "string",
+              "value": "[portgroup_name_operation.value]"
+            }
+          }
+        ]
+      },
+      "test": {
+        "type": "[TEST-TYPE-NAME]",
+        "parameters": [
+          {
+            "parameter": {
+              "name": "check",
+              "dt": "string",
+              "value": "[check.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "operation",
+              "dt": "string",
+              "value": "[operation.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "datatype",
+              "dt": "string",
+              "value": "[datatype.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "collector_port",
+              "dt": "string",
+              "value": "[collector_port.value]"
+            }
+          }
+        ]
+      }
+    }
+  }
+
+Generated Content
+~~~~~~~~~~~~~~~~~
+
+**vmware.vds_portgroup_override_port_policies_v2**
+
+XCCDF+AE
+^^^^^^^^
+
+This is what the AE check looks like, inside a Rule, in the XCCDF
+
+::
+
+  <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
+    <xccdf:check-content>
+      <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
+        <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
+        <ae:title>[RECOMMENDATION-TITLE]</ae:title>
+        <ae:artifact type="[ARTIFACT-TYPE-NAME]" />
+          <ae:parameters>
+            <ae:parameter dt="string" name="check_existence">[check_existence.value]</ae:parameter>
+            <ae:parameter dt="string" name="portgroup_name">[portgroup_name.value]</ae:parameter>
+            <ae:parameter dt="string" name="vds_name">[check_exivds_namestence.value]</ae:parameter>
+            <ae:parameter dt="string" name="vds_name_operation">[vds_name_operation.value]</ae:parameter>
+            <ae:parameter dt="string" name="portgroup_name_operation">[portgroup_name_operation.value]</ae:parameter>
+          </ae:parameters>
+        </ae:artifact>
+        <ae:test type="[TEST-TYPE-NAME]">
+          <ae:parameters>
+            <ae:parameter dt="string" name="check">[check.value]</ae:parameter>
+            <ae:parameter dt="string" name="operation">[operation.value]</ae:parameter>
+            <ae:parameter dt="string" name="datatype">[datatype.value]</ae:parameter>
+            <ae:parameter dt="string" name="override_port_policies_enabled">[override_port_policies_enabled.value]</ae:parameter>
+          </ae:parameters>
+        </ae:test>
+        <ae:profiles>
+          <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1" />
+        </ae:profiles>
+      </ae:artifact_expression>
+    </xccdf:check-content>
+  </xccdf:check>
+
+SCAP
+^^^^
+
+XCCDF
+'''''
+
+For ``vmware.vds_portgroup_v2`` artifacts, the xccdf:check looks like this. There is no Value in the xccdf for this Artifact.
+
+::
+
+  <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+    <check-export 
+        export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"  
+        value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
+    <check-content-ref 
+        href="[BENCHMARK-TITLE]" 
+        name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
+  </check>  
+
+OVAL
+''''
+
+Test
+
+::
+
+  <vds_portgroup_test 
+      xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
+      check_existence="[check_existence.value]"
+      check="all"
+      comment="[RECOMMENDATION-TITLE]"
+      id="oval:org.cisecurity.benchmarks:tst:[ARTIFACT-OVAL-ID]" 
+      version="1">
+    <object object_ref="oval:org.cisecurity.benchmarks:obj:[ARTIFACT-OVAL-ID]" />
+    <state state_ref="oval:org.cisecurity.benchmarks:ste:[ARTIFACT-OVAL-ID]" />
+  </vds_portgroup_test>
+
+Object
+
+::
+
+  <vds_portgroup_object 
+      xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
+      id="oval:org.cisecurity.benchmarks:obj:[ARTIFACT-OVAL-ID]"
+      comment="[RECOMMENDATION-TITLE]"
+      version="1">
+    <connection_string 
+        var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]" />
+    <vds_name operation="[operation.value]">
+      [vds_name.value]
+    </vds_name>
+    <portgroup_name operation="[operation.value]">
+      [portgroup_name.value]
+    </portgroup_name>
+  </vds_portgroup_object>  
+
+State
+
+::
+
+  <vds_portgroup_state 
+      xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
+      id="oval:org.cisecurity.benchmarks:obj:[ARTIFACT-OVAL-ID]"
+      comment="[RECOMMENDATION-TITLE]"
+      version="1">
+    <override_port_policies_enabled 
+        datatype="[datatype.value]" 
+        operation="[operation.value]">
+      [override_port_policies_enabled.value]
+    </override_port_policies_enabled>
+  </vds_portgroup_state>
+
+External Variable
+
+::
+
+  <external_variable
+      id="oval:org.cisecurity.benchmarks:obj:[ARTIFACT-OVAL-ID]"
+      datatype="boolean"
+      version="1"
+      comment="[RECOMMENDATION-TITLE]" />    
+
+YAML
+^^^^
+
+::
+
+  artifact-expression:
+    artifact-unique-id: "[ARTIFACT-OVAL-ID]"
+    artifact-title: "[RECOMMENDATION-TITLE]"
+    artifact:
+      type: "[ARTIFACT-TYPE-NAME]"
+      parameters:
+      - parameter: 
+          name: "check_existence"
+          dt: "string"
+          value: "[check_existence.value]"
+      - parameter: 
+          name: "portgroup_name"
+          dt: "string"
+          value: "[portgroup_name.value]"
+      - parameter: 
+          name: "vds_name"
+          dt: "string"
+          value: "[vds_name.value]"
+      - parameter: 
+          name: "vds_name_operation"
+          dt: "string"
+          value: "[vds_name_operation.value]"
+      - parameter: 
+          name: "portgroup_name_operation"
+          dt: "string"
+          value: "[portgroup_name_operation.value]"
+    test:
+      type: "[TEST-TYPE-NAME]"
+      parameters:
+        - parameter:
+            name: "check"
+            dt: "string"
+            value:"[check.value]"
+        - parameter:
+            name: "operation"
+            dt: "string"
+            value: "[operation.value]"
+        - parameter:
+            name: "datatype"
+            dt: "string"
+            value: "[datatype.value]"
+        - parameter:
+            name: "override_port_policies_enabled"
+            dt: "string"
+            value: "[override_port_policies_enabled.value]"
+
+JSON
+^^^^
+
+::
+
+  {
+    "artifact-expression": {
+      "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
+      "artifact_title": "[RECOMMENDATION-TITLE]",
+      "artifact": {
+        "type": "[ARTIFACT-TYPE-NAME]",
+        "parameters": [
+          {
+            "parameter": {
+              "name": "check_existence",
+              "dt": "string",
+              "value": "[check_existence.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "portgroup_name",
+              "dt": "string",
+              "value": "[portgroup_name.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "vds_name",
+              "dt": "string",
+              "value": "[vds_name.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "vds_name_operation",
+              "dt": "string",
+              "value": "[vds_name_operation.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "portgroup_name_operation",
+              "dt": "string",
+              "value": "[portgroup_name_operation.value]"
+            }
+          }
+        ]
+      },
+      "test": {
+        "type": "[TEST-TYPE-NAME]",
+        "parameters": [
+          {
+            "parameter": {
+              "name": "check",
+              "dt": "string",
+              "value": "[check.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "operation",
+              "dt": "string",
+              "value": "[operation.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "datatype",
+              "dt": "string",
+              "value": "[datatype.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "override_port_policies_enabled",
+              "dt": "string",
+              "value": "[override_port_policies_enabled.value]"
+            }
+          }
+        ]
+      }
+    }
+  }

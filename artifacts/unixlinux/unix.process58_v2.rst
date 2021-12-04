@@ -220,12 +220,12 @@ Object
     comment="[RECOMMENDATION-TITLE]"
     version="1">
     <command_line operation="[operation.value]">
-      [command_line.value]
+        [command_line.value]
     </command_line>
     <pid 
-      datatype="int" 
+      datatype="int"
       operation="[operation.value]">
-      [pid.value]
+        [pid.value]
     </pid>
   </process58_object>
 
@@ -239,9 +239,9 @@ State
     comment="[RECOMMENDATION-TITLE]"
     version="1">
     <command_line 
-      operation="[operation.value]" 
+      operation="[operation.value]"
       datatype="int">
-      [command_line.value]
+        [command_line.value]
     </command_line>
   </process58_state>
 
