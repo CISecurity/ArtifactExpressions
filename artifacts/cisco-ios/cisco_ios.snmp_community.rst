@@ -22,10 +22,10 @@ cisco_ios.snmp_community_name String The SNMP community name.
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  existence_test
--  cisco_ios.snmp_community_mode
--  cisco_ios.snmp_community_ipv4_acl
--  cisco_ios.snmp_community_ipv6_acl
+  - existence_test
+  - cisco_ios.snmp_community_mode
+  - cisco_ios.snmp_community_ipv4_acl
+  - cisco_ios.snmp_community_ipv6_acl
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
@@ -172,7 +172,7 @@ YAML
 
 ::
 
-   - artifact-expression:
+  - artifact-expression:
        artifact-unique-id: [ARTIFACT-OVAL-ID]
        artifact-title: [RECOMMENDATION TITLE]
        artifact:

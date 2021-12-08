@@ -16,13 +16,14 @@ Artifact Parameters
 ==== ==== ===========
 Name Type Description
 ==== ==== ===========
+N/A
 ==== ==== ===========
 
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  existence_test
--  cisco_ios.snmp
+  - existence_test
+  - cisco_ios.snmp
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
@@ -35,8 +36,6 @@ Name  Type   Description
 ===== ====== ===========
 value String Value.
 ===== ====== ===========
-
-.. _cisco_ios.snmp-1:
 
 cisco_ios.snmp
 ^^^^^^^^^^^^^^
@@ -142,7 +141,7 @@ YAML
 
 ::
 
-   - artifact-expression:
+  - artifact-expression:
        artifact-unique-id: [ARTIFACT-OVAL-ID]
        artifact-title: [RECOMMENDATION TITLE]
        artifact:

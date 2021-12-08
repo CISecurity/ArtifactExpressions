@@ -30,7 +30,7 @@ Artifact Parameters
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  cisco_ios:all_bgp_neighbor_password
+  - cisco_ios:all_bgp_neighbor_password
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
@@ -133,7 +133,7 @@ YAML
 
 ::
 
-   - artifact-expression:
+  - artifact-expression:
        artifact-unique-id: [ARTIFACT-OVAL-ID]
        artifact-title: [RECOMMENDATION TITLE]
        artifact:

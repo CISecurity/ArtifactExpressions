@@ -12,44 +12,43 @@ Technical Details
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
-Human ID:
-  - vmware.virtual_machine.device_state
+**vmware.virtual_machine.device_state**
 
+=========== ====== =======================================
+Name        Type   Description
+=========== ====== =======================================
+device_type string Value from device_type constraints.
+vm_name     string The name of the VM to scope applicable.
+=========== ====== =======================================
 
-+-------------------------------------+-------------+------------------+
-| Name                                | Type        | Description      |
-+=====================================+=============+==================+
-| device_type                         | String      | Value from       |
-|                                     |             | device_type      |
-|                                     |             | constraints      |
-+-------------------------------------+-------------+------------------+
-| vm_name                             | String      | The name of the  |
-|                                     |             | VM to scope      |
-|                                     |             | collection to.   |
-|                                     |             | Set to NA if not |
-|                                     |             | applicable       |
-+-------------------------------------+-------------+------------------+
+NOTE: The ``device_type`` parameter is governed by a constraint allowing only the following values:
+  - floppy
+  - cdrom
+  - parallel_port
+  - serial_port
+  - usb
+  - hard_disk
 
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  vmware.virtual_machine.device_state
+  - VMware: Virtual Machine: Device State Test
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
+**vmware.virtual_machine.device_state**
+
 ========= ======= ===========
 Name      Type    Description
 ========= ======= ===========
-connected Boolean connected?
+connected boolean Connected?
 ========= ======= ===========
-
-device_type NOTE: This parameter is governed by a constraint allowing
-only the following values: - floppy - cdrom - parallel_port -
-serial_port - usb - hard_disk
 
 Generated Content
 ~~~~~~~~~~~~~~~~~
+
+**vmware.virtual_machine.device_state**
 
 XCCDF+AE
 ^^^^^^^^
@@ -58,33 +57,30 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
 
 ::
 
-   <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
-     <xccdf:check-content>
-       <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION_NUMBER]">
-         <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-         <ae:title>[RECOMMENDATION TITLE]</ae:title>
-         <ae:artifact type="[ARTIFACTTYPE NAME]">
-           <ae:parameters>
-             <ae:parameter dt="string" name="gatekeeper"
-               >[gatekeeper.value]</ae:parameter>
-           </ae:parameters>
-         </ae:artifact>
-         <ae:test type="[TESTTYPE NAME]">
-           <ae:parameters>
-             <ae:parameter dt="string" name="check_existence">[check_existence.value]</ae:parameter>
-             <ae:parameter dt="string" name="check">[check.value]</ae:parameter>
-             <ae:parameter dt="string" name="operation">[operation.value]</ae:parameter>
-             <ae:parameter dt="string" name="datatype">[datatype.value]</ae:parameter>
-             <ae:parameter dt="boolean" name="enabled">[enabled.value]</ae:parameter>
-           </ae:parameters>
-         </ae:test>
-         <ae:profiles>
-           <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1"
-           />
-         </ae:profiles>
-       </ae:artifact_expression>
-     </xccdf:check-content>
-   </xccdf:check>
+  <xccdf:complex-check operator="AND">
+    <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
+      <xccdf:check-content>
+        <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
+          <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
+          <ae:title>[RECOMMENDATION-TITLE]</ae:title>
+          <ae:artifact type="[ARTIFACT-TYPE-NAME]">
+            <ae:parameters>
+              <ae:parameter dt="string" name="device_type">[device_type.value]</ae:parameter>
+              <ae:parameter dt="string" name="vm_name">[vm_name.value]</ae:parameter>
+            </ae:parameters>
+          </ae:artifact>
+          <ae:test type="[TEST-TYPE-NAME]">
+            <ae:parameters>
+              <ae:parameter dt="boolean" name="connected">[connected.value]</ae:parameter>
+            </ae:parameters>
+          </ae:test>
+          <ae:profiles>
+            <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1" />
+          </ae:profiles>
+        </ae:artifact_expression>
+      </xccdf:check-content>
+    </xccdf:check>
+  </xccdf:complex-check>
 
 SCAP
 ^^^^
@@ -92,18 +88,38 @@ SCAP
 XCCDF
 '''''
 
-For ``macos.gatekeeper_v1`` artifacts, the xccdf:check looks like this.
-There is no Value in the xccdf for this Artifact.
+For ``vmware.virtual_machine.device_state`` artifacts, an XCCDF Value element is generated.
 
 ::
 
-   <xccdf:check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
-      <xccdf:check-content-ref xmlns:ae="http://benchmarks.cisecurity.org/ae/0.5"
-         xmlns:cpe="http://cpe.mitre.org/language/2.0"
-         xmlns:ecl="http://cisecurity.org/check"
-         href="[BENCHMARK NAME]"
-         name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]"/>
-   </xccdf:check>
+  <Value 
+    id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var"
+    operator="equals"
+    type="[type.value]">
+    <title>[RECOMMENDATION-TITLE]</title>
+    <description>
+        This value is used in Rule: [RECOMMENDATION-TITLE]
+    </description>
+    <value>[value.value]</value>
+  </Value> 
+
+For ``vmware.virtual_machine.device_state`` artifacts, the xccdf:check looks like this.
+
+::
+
+  <xccdf:complex-check operator="AND">
+    <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+      <check-export 
+        export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
+        value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
+      <check-export 
+        export-name="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]"
+        value-id="xccdf_org.cisecurity.benchmarks_value_[PLATFORM].connection" />
+      <check-content-ref 
+        href="[BENCHMARK-NAME]"
+        name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
+    </check>
+  </xccdf:complex-check>
 
 OVAL
 ''''
@@ -112,129 +128,127 @@ Test
 
 ::
 
-   <macos:gatekeeper_test check="[check.value]" check_existence="[check_existence.value]"
-     comment="[RECOMMENDATION TITLE]"
-     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:ARTIFACT-OVAL-ID" version="[version.value]">
-     <macos:object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:ARTIFACT-OVAL-ID"/>
-     <macos:state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:ARTIFACT-OVAL-ID"/>
-   </macos:gatekeeper_test>
+  <vm_device_test 
+      xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi" 
+      check="all" 
+      check_existence="any_exist" 
+      comment="[RECOMMENDATION-TITLE]"
+      id="oval:org.cisecurity.benchmarks[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
+      version="1">
+    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+    <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
+  </vm_device_test>
 
 Object
 
 ::
 
-   <macos:gatekeeper_object
-     comment="[RECOMMENDATION TITLE]"
-     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:ARTIFACT-OVAL-ID" version="[version.value]"> 
-   </macos:gatekeeper_object>    
+  <vm_device_object 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
+    comment="[RECOMMENDATION-TITLE]"
+    id="oval:org.cisecurity.benchmarks[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
+    version="1">
+    <connection_string var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]" />
+    <vm_name operation="pattern match">
+        .*
+    </vm_name>
+    <device_type>
+        [device_type.value]
+    </device_type>
+  </vm_device_object>  
 
 State
 
 ::
 
-   <macos:gatekeeper_state
-     comment="[RECOMMENDATION TITLE]"
-     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:ARTIFACT-OVAL-ID" version="[version.value]">
-     <macos:enabled datatype="[datatype.value]" operation="[operation.value]">[enabled.value]</macos:enabled>
-   </macos:gatekeeper_state>    
+  <vm_device_state 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
+    comment="[RECOMMENDATION-TITLE]"
+    id="oval:org.cisecurity.benchmarks[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
+    version="1">
+    <connected 
+      datatype="boolean"
+      operation="equals"
+      var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
+  </vm_device_state>
+
+External Variable
+
+::
+
+  <external_variable 
+    id="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]"
+    datatype="boolean"
+    version="1"
+    comment="This value is used in Rule: [RECOMMENDATION-TITLE]" />
+       
 
 YAML
 ^^^^
 
 ::
 
-   - artifact-expression:
-       artifact-unique-id: [ARTIFACT-OVAL-ID]
-       artifact-title: [RECOMMENDATION TITLE]
-       artifact:
-         type: [ARTIFACTTYPE NAME]
-         parameters:
-         - parameter: 
-             name: gatekeeper
-             type: string
-             value: [gatekeeper.value]
-       test:
-         type: [TESTTYPE NAME]
-         parameters:
-         - parameter:
-             name: check_existence
-             type: string
-             value: [check_existence.value]
-         - parameter: 
-             name: check
-             type: string
-             value: [check.value]
-         - parameter:
-             name: operation
-             type: string
-             value: [operation.value]
-         - parameter: 
-             name: datatype
-             type: string
-             value: [datatype.value]  
-         - parameter: 
-             name: enabled
-             type: string
-             value: [enabled.value]      
+  artifact-expression:
+    artifact-unique-id: "[ARTIFACT-OVAL-ID]"
+    artifact-title: "[RECOMMENDATION-TITLE]"
+    artifact:
+      type: "[ARTIFACT-TYPE-NAME]"
+      parameters:
+      - parameter: 
+          name: "device_type"
+          type: "string"
+          value: "[device_type.value]"
+      - parameter: 
+          name: "vm_name"
+          type: "string"
+          value: "[vm_name.value]"          
+    test:
+      type: "[TEST-TYPE-NAME]"
+      parameters:
+      - parameter:
+          name: "connected"
+          type: "boolean"
+          value: "[connected.value]"  
 
 JSON
 ^^^^
 
 ::
 
-   "artifact-expression": {
-     "artifact-unique-id": [ARTIFACT-OVAL-ID],
-     "artifact-title": [RECOMMENDATION TITLE],
-     "artifact": {
-       "type": "[ARTIFACTTYPE NAME]",
-       "parameters": [
-         {
-           "parameter": {
-             "name": "gatekeeper",
-             "type": "string",
-             "value": [gatekeeper.value]
-           }
-         }
-       ]
-     },
-     "test": {
-       "type": [TESTTYPE NAME],
-       "parameters": [
-         {
-           "parameter": {
-             "name": "check_existence",
-             "type": "string",
-             "value": [check_existence.value]
-           }
-         },
-         {
-           "parameter": {
-             "name": "check",
-             "type": "string",
-             "value": [check.value]
-           }
-         },
-         {
-           "parameter": {
-             "name": "operation",
-             "type": "string",
-             "value": [operation.value]
-           }
-         },
-         {
-           "parameter": {
-             "name": "datetype",
-             "type": "string",
-             "value": [datatype.value]
-           }
-         },
-         {
-           "parameter": {
-             "name": "enabled",
-             "type": "string",
-             "value": [enabled.value]
-           }
-         }
-       ]
-     }
-   }
+  {
+    "artifact-expression": {
+      "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
+      "artifact-title": "[RECOMMENDATION-TITLE]",
+      "artifact": {
+        "type": "[ARTIFACT-TYPE-NAME]",
+        "parameters": [
+          {
+            "parameter": {
+              "name": "device_type",
+              "type": "string",
+              "value": "[device_type.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "vm_name",
+              "type": "string",
+              "value": "[vm_name.value]"
+            }
+          }
+        ]
+      },
+      "test": {
+        "type": "[TEST-TYPE-NAME]",
+        "parameters": [
+          {
+            "parameter": {
+              "name": "connected",
+              "type": "boolean",
+              "value": "[connected.value]"
+            }
+          }
+        ]
+      }
+    }
+  }

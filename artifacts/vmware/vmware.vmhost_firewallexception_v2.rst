@@ -12,112 +12,149 @@ Technical Details
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
-Human ID:
-  - vmware.vmhost_firewallexception_v2
+**vmware.vmhost_firewallexception_v2**
 
-+-------------------------------------+-------------+------------------+
-| Name                                | Type        | Description      |
-+=====================================+=============+==================+
-| check_existence                     | String      | Defines how many |
-|                                     |             | items should be  |
-|                                     |             | collected        |
-+-------------------------------------+-------------+------------------+
-| vmhost_name                         | String      | The ESXi host to |
-|                                     |             | scope results    |
-|                                     |             | to. Set it NA if |
-|                                     |             | not applicable   |
-+-------------------------------------+-------------+------------------+
-| firewall_exception_name             | String      | The firewall     |
-|                                     |             | exceptions to    |
-|                                     |             | scope collection |
-|                                     |             | to. Set to NA if |
-|                                     |             | not applicable   |
-+-------------------------------------+-------------+------------------+
-| vmhost_name_operation               | String      | comparison       |
-|                                     |             | operation        |
-+-------------------------------------+-------------+------------------+
-| firewall_exception_name_operation   | String      | comparison       |
-|                                     |             | operation        |
-+-------------------------------------+-------------+------------------+
++-------------------------------------+---------+----------------------------+
+| Name                                | Type    | Description                |
++=====================================+=========+============================+
+| check_existence                     | string  | Defines how many items     |
+|                                     |         | should be collected.       |
++-------------------------------------+---------+----------------------------+
+| vmhost_name                         | string  | The ESXi host to scope     |
+|                                     |         | results to. Set it NA if   |
+|                                     |         | not applicable.            |
++-------------------------------------+---------+----------------------------+
+| firewall_exception_name             | string  | The firewall exceptions to |
+|                                     |         | scope collection to. Set   |
+|                                     |         | to NA if not applicable.   |
++-------------------------------------+---------+----------------------------+
+| vmhost_name_operation               | string  | Comparison operation.      |
++-------------------------------------+---------+----------------------------+
+| firewall_exception_name_operation   | string  | Comparison operation.      |
++-------------------------------------+---------+----------------------------+
+
+NOTE: The ``check_existence``  parameter is governed by a constraint allowing only the following values:
+  - all_exist
+  - any_exist
+  - at_least_one_exists
+  - none_exist
+  - only_one_exists
+
+NOTE: The ``exception_enabled_operation`` parameter is governed by a constraint allowing only the following values:
+  - equals
+  - not equal
+  - case insensitive equals
+  - case insensitive not equal
+  - greater than
+  - less than
+  - greater than or equal
+  - less than or equal
+  - bitwise and 
+  - bitwise or
+  - pattern match
+  - subset of
+  - superset of
+
+NOTE: The ``service_running_operation`` parameter is governed by a constraint allowing only the following values:
+  - equals
+  - not equal
+  - case insensitive equals
+  - case insensitive not equal
+  - greater than
+  - less than
+  - greater than or equal
+  - less than or equal
+  - bitwise and 
+  - bitwise or
+  - pattern match
+  - subset of
+  - superset of
 
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  vmware.vmhost_firewallexception
+  - vmware:vmhost_firewallexception
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
-+-------------------------------------+-------------+------------------+
-| Name                                | Type        | Description      |
-+=====================================+=============+==================+
-| check                               | String      | Defines how many |
-|                                     |             | collected items  |
-|                                     |             | must match the   |
-|                                     |             | expected state   |
-+-------------------------------------+-------------+------------------+
-| operation                           | String      | comparison       |
-|                                     |             | operation        |
-+-------------------------------------+-------------+------------------+
-| datatype                            | String      | datatype         |
-+-------------------------------------+-------------+------------------+
-| allowed_hosts_all_ip                | Boolean     | Allowed Hosts    |
-|                                     |             | All IP?          |
-+-------------------------------------+-------------+------------------+
-| exception_enabled_datatype          | String      | datatype         |
-+-------------------------------------+-------------+------------------+
-| exception_enabled                   | Boolean     | Exception        |
-|                                     |             | Enabled?         |
-+-------------------------------------+-------------+------------------+
-| service_running_datatype            | String      | datatype         |
-+-------------------------------------+-------------+------------------+
-| service_running                     | Boolean     | Service Running? |
-+-------------------------------------+-------------+------------------+
-| exception_enabled_operation         | String      | comparison       |
-|                                     |             | operation        |
-+-------------------------------------+-------------+------------------+
-| service_running_operation           | String      | comparison       |
-|                                     |             | operation        |
-+-------------------------------------+-------------+------------------+
+**vmware.vmhost_firewallexception**
 
-exception_enabled_datatype NOTE: This parameter is governed by a
-constraint allowing only the following values: - boolean - float - int -
-string - version - set
++-------------------------------------+---------+----------------------------+
+| Name                                | Type    | Description                |
++=====================================+=========+============================+
+| check                               | string  | Defines how many collected |
+|                                     |         | items must match the       |
+|                                     |         | expected state.            |
++-------------------------------------+---------+----------------------------+
+| operation                           | string  | Comparison operation.      |
++-------------------------------------+---------+----------------------------+
+| datatype                            | string  | Datatype.                  |
++-------------------------------------+---------+----------------------------+
+| allowed_hosts_all_ip                | boolean | Allowed Hosts All IP?      |
++-------------------------------------+---------+----------------------------+
+| exception_enabled_datatype          | string  | Datatype.                  |
++-------------------------------------+---------+----------------------------+
+| exception_enabled                   | boolean | Exception Enabled?         |
++-------------------------------------+---------+----------------------------+
+| service_running_datatype            | string  | Datatype.                  |
++-------------------------------------+---------+----------------------------+
+| service_running                     | boolean | Service Running?           |
++-------------------------------------+---------+----------------------------+
+| exception_enabled_operation         | string  | Comparison operation.      |
++-------------------------------------+---------+----------------------------+
+| service_running_operation           | string  | Comparison operation.      |
++-------------------------------------+---------+----------------------------+
 
-service_running_datatype NOTE: This parameter is governed by a
-constraint allowing only the following values: - boolean - float - int -
-string - version - set
+NOTE: The ``exception_enabled_datatype`` parameter is governed by a constraint allowing only the following values:
+  - boolean
+  - float
+  - int 
+  - string
+  - version
+  - set
 
-exception_enabled_operation NOTE: This parameter is governed by a
-constraint allowing only the following values: - equals - not equal -
-case insensitive equals - case insensitive not equal - greater than -
-less than - greater than or equal - less than or equal - bitwise and -
-bitwise or - pattern match - subset of - superset of
+NOTE: The ``service_running_datatype`` parameter is governed by a constraint allowing only the following values:
+  - boolean
+  - float
+  - int 
+  - string
+  - version
+  - set
 
-service_running_operation NOTE: This parameter is governed by a
-constraint allowing only the following values: - equals - not equal -
-case insensitive equals - case insensitive not equal - greater than -
-less than - greater than or equal - less than or equal - bitwise and -
-bitwise or - pattern match - subset of - superset of
+NOTE: The ``check`` parameter is governed by a constraint allowing only the following values:
+  - all
+  - at least one
+  - none satisfy
+  - only one
 
-check_existence NOTE: This parameter is governed by a constraint
-allowing only the following values: - all_exist - any_exist -
-at_least_one_exists - none_satisfy - none_exist - only_one_exists
+NOTE: The ``operation`` parameter is governed by a constraint allowing only the following values:
+  - equals
+  - not equal
+  - case insensitive equals
+  - case insensitive not equal
+  - greater than
+  - less than
+  - greater than or equal
+  - less than or equal
+  - bitwise and
+  - bitwise or
+  - pattern match
+  - subset of
+  - superset of
 
-check NOTE: This parameter is governed by a constraint allowing only the
-following values: - all - at least one - none satisfy - only one
-
-operation NOTE: This parameter is governed by a constraint allowing only
-the following values: - equals - not equal - case insensitive equals -
-case insensitive not equal - greater than - less than - greater than or
-equal - less than or equal - bitwise and - bitwise or - pattern match -
-subset of - superset of
-
-datatype NOTE: This parameter is governed by a constraint allowing only
-the following values: - boolean - float - int - string - version - set
+NOTE: The ``datatype`` parameter is governed by a constraint allowing only the following values:
+	- boolean
+	- float
+	- int
+	- string
+	- version
+	- set
 
 Generated Content
 ~~~~~~~~~~~~~~~~~
+
+**vmware.vmhost_firewallexception**
 
 XCCDF+AE
 ^^^^^^^^
@@ -126,33 +163,31 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
 
 ::
 
-   <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
-     <xccdf:check-content>
-       <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION_NUMBER]">
-         <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-         <ae:title>[RECOMMENDATION TITLE]</ae:title>
-         <ae:artifact type="[ARTIFACTTYPE NAME]">
-           <ae:parameters>
-             <ae:parameter dt="string" name="gatekeeper"
-               >[gatekeeper.value]</ae:parameter>
-           </ae:parameters>
-         </ae:artifact>
-         <ae:test type="[TESTTYPE NAME]">
-           <ae:parameters>
-             <ae:parameter dt="string" name="check_existence">[check_existence.value]</ae:parameter>
-             <ae:parameter dt="string" name="check">[check.value]</ae:parameter>
-             <ae:parameter dt="string" name="operation">[operation.value]</ae:parameter>
-             <ae:parameter dt="string" name="datatype">[datatype.value]</ae:parameter>
-             <ae:parameter dt="boolean" name="enabled">[enabled.value]</ae:parameter>
-           </ae:parameters>
-         </ae:test>
-         <ae:profiles>
-           <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1"
-           />
-         </ae:profiles>
-       </ae:artifact_expression>
-     </xccdf:check-content>
-   </xccdf:check>
+  <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
+    <xccdf:check-content>
+      <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
+        <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
+        <ae:title>[RECOMMENDATION-TITLE]</ae:title>
+        <ae:artifact type="[ARTIFACT-TYPE-NAME]">
+          <ae:parameters>
+            <ae:parameter dt="string" name="gatekeeper">[gatekeeper.value]</ae:parameter>
+          </ae:parameters>
+        </ae:artifact>
+        <ae:test type="[TEST-TYPE-NAME]">
+          <ae:parameters>
+            <ae:parameter dt="string" name="check_existence">[check_existence.value]</ae:parameter>
+            <ae:parameter dt="string" name="check">[check.value]</ae:parameter>
+            <ae:parameter dt="string" name="operation">[operation.value]</ae:parameter>
+            <ae:parameter dt="string" name="datatype">[datatype.value]</ae:parameter>
+            <ae:parameter dt="boolean" name="enabled">[enabled.value]</ae:parameter>
+          </ae:parameters>
+        </ae:test>
+        <ae:profiles>
+          <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1" />
+        </ae:profiles>
+      </ae:artifact_expression>
+    </xccdf:check-content>
+  </xccdf:check>
 
 SCAP
 ^^^^
@@ -160,18 +195,18 @@ SCAP
 XCCDF
 '''''
 
-For ``macos.gatekeeper_v1`` artifacts, the xccdf:check looks like this.
-There is no Value in the xccdf for this Artifact.
+For ``macos.gatekeeper_v1`` artifacts, the xccdf:check looks like this. There is no Value in the xccdf for this Artifact.
 
 ::
 
-   <xccdf:check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
-      <xccdf:check-content-ref xmlns:ae="http://benchmarks.cisecurity.org/ae/0.5"
-         xmlns:cpe="http://cpe.mitre.org/language/2.0"
-         xmlns:ecl="http://cisecurity.org/check"
-         href="[BENCHMARK NAME]"
-         name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]"/>
-   </xccdf:check>
+  <xccdf:check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+    <xccdf:check-content-ref 
+      xmlns:ae="http://benchmarks.cisecurity.org/ae/0.5"
+      xmlns:cpe="http://cpe.mitre.org/language/2.0"
+      xmlns:ecl="http://cisecurity.org/check"
+      href="[BENCHMARK-NAME]"
+      name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
+  </xccdf:check>
 
 OVAL
 ''''
@@ -180,129 +215,140 @@ Test
 
 ::
 
-   <macos:gatekeeper_test check="[check.value]" check_existence="[check_existence.value]"
-     comment="[RECOMMENDATION TITLE]"
-     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:ARTIFACT-OVAL-ID" version="[version.value]">
-     <macos:object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:ARTIFACT-OVAL-ID"/>
-     <macos:state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:ARTIFACT-OVAL-ID"/>
-   </macos:gatekeeper_test>
+  <macos:gatekeeper_test 
+    check="[check.value]"
+    check_existence="[check_existence.value]"
+    comment="[RECOMMENDATION-TITLE]"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
+    version="1">
+    <macos:object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+    <macos:state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
+  </macos:gatekeeper_test>
 
 Object
 
 ::
 
-   <macos:gatekeeper_object
-     comment="[RECOMMENDATION TITLE]"
-     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:ARTIFACT-OVAL-ID" version="[version.value]"> 
-   </macos:gatekeeper_object>    
+  <macos:gatekeeper_object 
+    comment="[RECOMMENDATION-TITLE]"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
+    version="1" />
+   
 
 State
 
 ::
 
-   <macos:gatekeeper_state
-     comment="[RECOMMENDATION TITLE]"
-     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:ARTIFACT-OVAL-ID" version="[version.value]">
-     <macos:enabled datatype="[datatype.value]" operation="[operation.value]">[enabled.value]</macos:enabled>
-   </macos:gatekeeper_state>    
+  <macos:gatekeeper_state 
+    comment="[RECOMMENDATION-TITLE]"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
+    version="1">
+    <macos:enabled 
+      datatype="[datatype.value]"
+      operation="[operation.value]">
+        [enabled.value]
+    </macos:enabled>
+  </macos:gatekeeper_state>  
 
 YAML
 ^^^^
 
 ::
 
-   - artifact-expression:
-       artifact-unique-id: [ARTIFACT-OVAL-ID]
-       artifact-title: [RECOMMENDATION TITLE]
-       artifact:
-         type: [ARTIFACTTYPE NAME]
-         parameters:
-         - parameter: 
-             name: gatekeeper
-             type: string
-             value: [gatekeeper.value]
-       test:
-         type: [TESTTYPE NAME]
-         parameters:
-         - parameter:
-             name: check_existence
-             type: string
-             value: [check_existence.value]
-         - parameter: 
-             name: check
-             type: string
-             value: [check.value]
-         - parameter:
-             name: operation
-             type: string
-             value: [operation.value]
-         - parameter: 
-             name: datatype
-             type: string
-             value: [datatype.value]  
-         - parameter: 
-             name: enabled
-             type: string
-             value: [enabled.value]      
+  artifact-expression:
+    artifact-unique-id: "[ARTIFACT-OVAL-ID]"
+    artifact-title: "[RECOMMENDATION-TITLE]"
+    artifact:
+      type: "[ARTIFACT-TYPE-NAME]"
+      parameters:
+        - parameter: 
+            name: "gatekeeper"
+            type: "string"
+            value: "[gatekeeper.value]"
+    test:
+      type: "[TEST-TYPE-NAME]"
+      parameters:
+        - parameter:
+            name: "check_existence"
+            type: "string"
+            value: "[check_existence.value]"
+        - parameter: 
+            name: "check"
+            type: "string"
+            value: "[check.value]"
+        - parameter:
+            name: "operation"
+            type: "string"
+            value: "[operation.value]"
+        - parameter: 
+            name: "datatype"
+            type: "string"
+            value: "[datatype.value]"
+        - parameter: 
+            name: "enabled"
+            type: "string"
+            value: "[enabled.value]"
 
 JSON
 ^^^^
 
 ::
 
-   "artifact-expression": {
-     "artifact-unique-id": [ARTIFACT-OVAL-ID],
-     "artifact-title": [RECOMMENDATION TITLE],
-     "artifact": {
-       "type": "[ARTIFACTTYPE NAME]",
-       "parameters": [
-         {
-           "parameter": {
-             "name": "gatekeeper",
-             "type": "string",
-             "value": [gatekeeper.value]
-           }
-         }
-       ]
-     },
-     "test": {
-       "type": [TESTTYPE NAME],
-       "parameters": [
-         {
-           "parameter": {
-             "name": "check_existence",
-             "type": "string",
-             "value": [check_existence.value]
-           }
-         },
-         {
-           "parameter": {
-             "name": "check",
-             "type": "string",
-             "value": [check.value]
-           }
-         },
-         {
-           "parameter": {
-             "name": "operation",
-             "type": "string",
-             "value": [operation.value]
-           }
-         },
-         {
-           "parameter": {
-             "name": "datetype",
-             "type": "string",
-             "value": [datatype.value]
-           }
-         },
-         {
-           "parameter": {
-             "name": "enabled",
-             "type": "string",
-             "value": [enabled.value]
-           }
-         }
-       ]
-     }
-   }
+  {
+    "artifact-expression": {
+      "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
+      "artifact-title": "[RECOMMENDATION-TITLE]",
+      "artifact": {
+        "type": "[ARTIFACT-TYPE-NAME]",
+        "parameters": [
+          {
+            "parameter": {
+              "name": "gatekeeper",
+              "type": "string",
+              "value": "[gatekeeper.value]"
+            }
+          }
+        ]
+      },
+      "test": {
+        "type": "[TEST-TYPE-NAME]",
+        "parameters": [
+          {
+            "parameter": {
+              "name": "check_existence",
+              "type": "string",
+              "value": "[check_existence.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "check",
+              "type": "string",
+              "value": "[check.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "operation",
+              "type": "string",
+              "value": "[operation.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "datetype",
+              "type": "string",
+              "value": "[datatype.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "enabled",
+              "type": "string",
+              "value": "[enabled.value]"
+            }
+          }
+        ]
+      }
+    }
+  }

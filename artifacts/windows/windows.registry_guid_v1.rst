@@ -103,7 +103,7 @@ only the following values: default - 32_bit - 64_bit
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
-- windows.registry_guid_v1
+  - windows.registry_guid_v1
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~

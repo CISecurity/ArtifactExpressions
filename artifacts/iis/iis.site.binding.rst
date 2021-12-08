@@ -7,8 +7,8 @@ Description
 The bindings_test is used to determine the bindings for sites managed in
 IIS, including http and https bindings. It extends the standard TestType
 as defined in the oval-definitions-schema and one should refer to the
-TestType description for more information. The required object element
-references a vmhost_modules_object and the optional state element
+TestType description for more information. The object element
+references a vmhost_modules_object and the state element
 specifies the data to check.
 
 Technical Details
@@ -26,7 +26,7 @@ site_name String The name of the site to collect. Can be a regex
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  iis.site.binding.host_header
+  - iis.site.binding.host_header
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
@@ -145,7 +145,7 @@ YAML
 
 ::
 
-   - artifact-expression:
+  - artifact-expression:
        artifact-unique-id: [ARTIFACT-OVAL-ID]
        artifact-title: [RECOMMENDATION TITLE]
        artifact:

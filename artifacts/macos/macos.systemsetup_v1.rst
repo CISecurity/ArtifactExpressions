@@ -35,10 +35,10 @@ Artifact Parameters
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  macos.systemsetup_remoteappleevents_v1
--  macos.systemsetup_remotelogin_v1
--  macos.systemsetup_usingnetworktime_v1
--  macos.systemsetup_wakeonnetworkaccess_v1
+  - macos.systemsetup_remoteappleevents_v1
+  - macos.systemsetup_remotelogin_v1
+  - macos.systemsetup_usingnetworktime_v1
+  - macos.systemsetup_wakeonnetworkaccess_v1
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
@@ -166,8 +166,6 @@ the following values: - boolean - float - int - string - version - set
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
-.. _macos.systemsetup_remoteappleevents_v1-1:
-
 macos.systemsetup_remoteappleevents_v1
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -212,8 +210,7 @@ SCAP
 XCCDF
 '''''
 
-For ``macos.gatekeeper_v1`` artifacts, the xccdf:check looks like this.
-There is no Value in the xccdf for this Artifact.
+For ``macos.gatekeeper_v1`` artifacts, the xccdf:check looks like this. There is no Value in the xccdf for this Artifact.
 
 ::
 
@@ -263,7 +260,7 @@ YAML
 
 ::
 
-   - artifact-expression:
+  - artifact-expression:
        artifact-unique-id: [ARTIFACT-OVAL-ID]
        artifact-title: [RECOMMENDATION TITLE]
        artifact:
@@ -359,17 +356,11 @@ JSON
      }
    }
 
-.. _generated-content-1:
-
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
-.. _macos.systemsetup_remotelogin_v1-1:
-
 macos.systemsetup_remotelogin_v1
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. _xccdfae-1:
 
 XCCDF+AE
 ^^^^^^^^
@@ -406,18 +397,13 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
      </xccdf:check-content>
    </xccdf:check>
 
-.. _scap-1:
-
 SCAP
 ^^^^
-
-.. _xccdf-1:
 
 XCCDF
 '''''
 
-For ``macos.systemsetup_v1`` artifacts, the xccdf:check looks like this.
-There is no Value in the xccdf for this Artifact.
+For ``macos.systemsetup_v1`` artifacts, the xccdf:check looks like this. There is no Value in the xccdf for this Artifact.
 
 ::
 
@@ -429,12 +415,8 @@ There is no Value in the xccdf for this Artifact.
          name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]"/>
    </xccdf:check>
 
-.. _oval-1:
-
 OVAL
 ''''
-
-.. _test-1:
 
 Test
 
@@ -447,8 +429,6 @@ Test
      <macos:state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"/>
    </macos:systemsetup_test>
 
-.. _object-1:
-
 Object
 
 ::
@@ -457,8 +437,6 @@ Object
      comment="[RECOMMENDATION TITLE]"
      id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" version="[version.value]">
    </macos:systemsetup_object>
-
-.. _state-1:
 
 State
 
@@ -470,14 +448,12 @@ State
      <macos:remotelogin datatype="[datatype.value]" operation="[operation.value]">[remotelogin.value]</macos:remotelogin>
    </macos:systemsetup_state>    
 
-.. _yaml-1:
-
 YAML
 ^^^^
 
 ::
 
-   - artifact-expression:
+  - artifact-expression:
        artifact-unique-id: [ARTIFACT-OVAL-ID]
        artifact-title: [RECOMMENDATION TITLE]
        artifact:
@@ -510,8 +486,6 @@ YAML
              name: remotelogin
              type: string
              value: [remotelogin.value]      
-
-.. _json-1:
 
 JSON
 ^^^^
@@ -575,17 +549,11 @@ JSON
      }
    }
 
-.. _generated-content-2:
-
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
-.. _macos.systemsetup_usingnetworktime_v1-1:
-
 macos.systemsetup_usingnetworktime_v1
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. _xccdfae-2:
 
 XCCDF+AE
 ^^^^^^^^
@@ -622,18 +590,13 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
      </xccdf:check-content>
    </xccdf:check>
 
-.. _scap-2:
-
 SCAP
 ^^^^
-
-.. _xccdf-2:
 
 XCCDF
 '''''
 
-For ``macos.gatekeeper_v1`` artifacts, the xccdf:check looks like this.
-There is no Value in the xccdf for this Artifact.
+For ``macos.gatekeeper_v1`` artifacts, the xccdf:check looks like this. There is no Value in the xccdf for this Artifact.
 
 ::
 
@@ -645,12 +608,8 @@ There is no Value in the xccdf for this Artifact.
          name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]"/>
    </xccdf:check>
 
-.. _oval-2:
-
 OVAL
 ''''
-
-.. _test-2:
 
 Test
 
@@ -663,8 +622,6 @@ Test
      <macos:state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"/>
    </macos:systemsetup_test>
 
-.. _object-2:
-
 Object
 
 ::
@@ -673,8 +630,6 @@ Object
      comment="[RECOMMENDATION TITLE]"
      id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" version="[version.value]">
    </macos:systemsetup_object>
-
-.. _state-2:
 
 State
 
@@ -686,14 +641,12 @@ State
      <macos:usingnetworktime datatype="[datatype.value]" operation="[operation.value]">[usingnetworktime.value]</macos:usingnetworktime>
    </macos:systemsetup_state>    
 
-.. _yaml-2:
-
 YAML
 ^^^^
 
 ::
 
-   - artifact-expression:
+  - artifact-expression:
        artifact-unique-id: [ARTIFACT-OVAL-ID]
        artifact-title: [RECOMMENDATION TITLE]
        artifact:
@@ -726,8 +679,6 @@ YAML
              name: usingnetworktime
              type: string
              value: [usingnetworktime.value]      
-
-.. _json-2:
 
 JSON
 ^^^^
@@ -791,17 +742,11 @@ JSON
      }
    }
 
-.. _generated-content-3:
-
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
-.. _macos.systemsetup_wakeonnetworkaccess_v1-1:
-
 macos.systemsetup_wakeonnetworkaccess_v1
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. _xccdfae-3:
 
 XCCDF+AE
 ^^^^^^^^
@@ -838,18 +783,13 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
      </xccdf:check-content>
    </xccdf:check>
 
-.. _scap-3:
-
 SCAP
 ^^^^
-
-.. _xccdf-3:
 
 XCCDF
 '''''
 
-For ``macos.gatekeeper_v1`` artifacts, the xccdf:check looks like this.
-There is no Value in the xccdf for this Artifact.
+For ``macos.gatekeeper_v1`` artifacts, the xccdf:check looks like this. There is no Value in the xccdf for this Artifact.
 
 ::
 
@@ -861,12 +801,8 @@ There is no Value in the xccdf for this Artifact.
          name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]"/>
    </xccdf:check>
 
-.. _oval-3:
-
 OVAL
 ''''
-
-.. _test-3:
 
 Test
 
@@ -879,8 +815,6 @@ Test
      <macos:state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"/>
    </macos:systemsetup_test>
 
-.. _object-3:
-
 Object
 
 ::
@@ -889,8 +823,6 @@ Object
      comment="[RECOMMENDATION TITLE]"
      id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" version="[version.value]">
    </macos:systemsetup_object>
-
-.. _state-3:
 
 State
 
@@ -902,14 +834,12 @@ State
      <macos:wakeonnetworkaccess datatype="[datatype.value]" operation="[operation.value]">[wakeonnetworkaccess.value]</macos:wakeonnetworkaccess>
    </macos:systemsetup_state>    
 
-.. _yaml-3:
-
 YAML
 ^^^^
 
 ::
 
-   - artifact-expression:
+  - artifact-expression:
        artifact-unique-id: [ARTIFACT-OVAL-ID]
        artifact-title: [RECOMMENDATION TITLE]
        artifact:
@@ -942,8 +872,6 @@ YAML
              name: wakeonnetworkaccess
              type: string
              value: [wakeonnetworkaccess.value]      
-
-.. _json-3:
 
 JSON
 ^^^^

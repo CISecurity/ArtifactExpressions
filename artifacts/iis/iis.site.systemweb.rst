@@ -7,8 +7,8 @@ Description
 The systemweb_test is used to determine certain aspects of an IIS Site’s
 configuration. It extends the standard TestType as defined in the
 oval-definitions-schema and one should refer to the TestType description
-for more information. The required object element references a
-systemweb_object and the optional state element specifies the data to
+for more information. The object element references a
+systemweb_object and the state element specifies the data to
 check.
 
 Technical Details
@@ -49,7 +49,7 @@ Artifact Parameters
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  iis.site.systemweb
+  - iis.site.systemweb
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
@@ -188,7 +188,7 @@ YAML
 
 ::
 
-   - artifact-expression:
+  - artifact-expression:
        artifact-unique-id: [ARTIFACT-OVAL-ID]
        artifact-title: [RECOMMENDATION TITLE]
        artifact:

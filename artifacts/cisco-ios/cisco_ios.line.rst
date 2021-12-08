@@ -8,7 +8,7 @@ The cisco_ios.line is used to check the properties of specific output
 lines from a SHOW command, such as SHOW RUNNING-CONFIG. It extends the
 standard TestType as defined in the oval-definitions-schema and one
 should refer to the TestType description for more information. The
-required object element references a line_object and the optional state
+object element references a line_object and the state
 element specifies the data to check.
 
 Technical Details
@@ -31,7 +31,7 @@ Artifact Parameters
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  cisco_ios.line_config_line
+  - cisco_ios.line_config_line
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
@@ -149,7 +149,7 @@ YAML
 
 ::
 
-   - artifact-expression:
+  - artifact-expression:
        artifact-unique-id: [ARTIFACT-OVAL-ID]
        artifact-title: [RECOMMENDATION TITLE]
        artifact:

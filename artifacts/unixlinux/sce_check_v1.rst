@@ -14,19 +14,16 @@ Technical Details
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
-Human ID: 
-  - sce_check_v1
+**sce_check_v1**
 
-.. table:: sce_check_v1_parameters
-   :widths: 33, 8, 33
-=================================  ========  =================================
-Name                               Type      Description  
-=================================  ========  =================================
-script                             string    The SCE script to run. Cannot be blank.
-export_variable_value              string    The value of the export variable.
-export_variable_type               string    The datatype of the export variable.
-export_variable_name               string    The name of the export variable.
-=================================  ========  =================================
+====================== ======== ========================================
+Name                   Type     Description  
+====================== ======== ========================================
+script                 string   The SCE script to run. Cannot be blank.
+export_variable_value  string   The value of the export variable.
+export_variable_type   string   The datatype of the export variable.
+export_variable_name   string   The name of the export variable.
+====================== ======== ========================================
 
 NOTE: The ``export_variable_type`` parameter is governed by a constraint allowing only the following values:
   - boolean
@@ -36,29 +33,26 @@ NOTE: The ``export_variable_type`` parameter is governed by a constraint allowin
   - version
   - set
 
-
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
-- Null Test
+  - Null Test
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
-Human ID: 
-  - null_test_v1
+**null_test_v1**
 
-.. table:: null_test_v1_parameters
-   :widths: 33, 8, 33
-=================================  ========  =================================
-Name                               Type      Description
-=================================  ========  =================================
+====================== ======== ========================================
+Name                   Type     Description  
+====================== ======== ========================================
 N/A
-=================================  ========  =================================
-
+====================== ======== ========================================
 
 Generated Content
 ~~~~~~~~~~~~~~~~~
+
+**null_test_v1**
 
 XCCDF+AE
 ^^^^^^^^
@@ -92,7 +86,6 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
     </xccdf:check>
   </xccdf:complex-check>
 
-
 SCAP
 ^^^^
 
@@ -104,12 +97,12 @@ For ``linux.sce_check_v1`` artifacts, an XCCDF Value element is generated.
 ::
 
   <Value 
-    id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" 
+    id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var"
     type="string"
     operator="equals">
     <title override>[RECOMMENDATION-TITLE]</title>
-    <description>This value is used in Rule: [RECOMMENDATION-TITLE]</description>
-    <value>[value.value]</value>
+  <description>This value is used in Rule: [RECOMMENDATION-TITLE]</description>
+  <value>[value.value]</value>
   </Value>
 
 For ``linux.sce_check_v1`` artifacts, the xccdf:check looks like this.
@@ -119,17 +112,15 @@ For ``linux.sce_check_v1`` artifacts, the xccdf:check looks like this.
   <check system="http://open-SCAP.org/page/SCE">
     <check-import import-name="stdout" />
     <check-export 
-      export-name="[export-name.value]" 
+      export-name="[export-name.value]"
       value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
     <check-content-ref href="[SCRIPT-PATH]" />
   </check>
-
 
 OVAL
 ''''
 
 There are no OVAL tests, objects or states generated for ``linux.sce_check_v1``.
-
 
 YAML
 ^^^^
@@ -142,26 +133,25 @@ YAML
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
-        - parameter: 
+        - parameter:
             name: "script"
             dt: "string"
             value: "[script.value]"
-        - parameter: 
+        - parameter:
             name: "export_variable_value"
             dt: "string"
             value: "[export_variable_value.value]"
-        - parameter: 
+        - parameter:
             name: "export_variable_type"
             dt: "string"
-            value: "[export_variable_type.value]"  
-        - parameter: 
+            value: "[export_variable_type.value]"
+        - parameter:
             name: "export_variable_name"
             dt: "string"
             value: "[export_variable_name.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters: []
-
 
 JSON
 ^^^^

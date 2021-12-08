@@ -7,7 +7,7 @@ Description
 The wmi57 test is used to check information accessed by WMI. It extends
 the standard TestType as defined in the oval-definitions-schema and one
 should refer to the TestType description for more information. The
-required object element references a wmi57_object and the optional state
+object element references a wmi57_object and the state
 element specifies the metadata to check.
 
 Technical Details
@@ -25,12 +25,12 @@ keyname String RSOP Security Setting Boolean Key Name
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  equals
--  not equal
--  less than
--  less than or equal
--  greater than
--  greater than or equal
+  - equals
+  - not equal
+  - less than
+  - less than or equal
+  - greater than
+  - greater than or equal
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
@@ -264,7 +264,7 @@ YAML
 
 ::
 
-   - artifact-expression:
+  - artifact-expression:
        artifact-unique-id: [ARTIFACT-OVAL-ID]
        artifact-title: [RECOMMENDATION TITLE]
        artifact:

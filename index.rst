@@ -1,6 +1,3 @@
-.. image:: img/CIS_SecureSuite.jpg
-
-
 Artifact Expressions
 =====================================
 

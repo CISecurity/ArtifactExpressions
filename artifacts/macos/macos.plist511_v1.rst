@@ -10,10 +10,9 @@ form (whether its native format is ASCII text, binary, or XML),
 permitting the use of the XPATH query language to explore its contents.
 It extends the standard TestType as defined in the
 oval-definitions-schema and one should refer to the TestType description
-for more information. The required object element references a
-plist511_object and the optional plist511_state element specifies the
+for more information. The object element references a
+plist511_object and The plist511_state element specifies the
 data to check.
-
 
 Technical Details
 -----------------
@@ -173,8 +172,7 @@ SCAP
 XCCDF
 '''''
 
-For ``macos.plist511_v1`` artifacts, the xccdf:check looks like this.
-There is no Value in the xccdf for this Artifact.
+For ``macos.plist511_v1`` artifacts, the xccdf:check looks like this. There is no Value in the xccdf for this Artifact.
 
 ::
 
@@ -226,7 +224,7 @@ YAML
 
 ::
 
-   - artifact-expression:
+  - artifact-expression:
        artifact-unique-id: [ARTIFACT-OVAL-ID]
        artifact-title: [RECOMMENDATION TITLE]
        artifact:

@@ -6,9 +6,9 @@ Description
 
 The Unix: Process Information test is used to check information found in the UNIX processes. It is equivalent to parsing the output of the ps command. 
 
-The required process58_object element is used to define the specific process(es) to be evaluated. A process58_object defines the command line used to start the process(es) and pid.
+The process58_object element is used to define the specific process(es) to be evaluated. A process58_object defines the command line used to start the process(es) and pid.
 
-The optional process58_state element defines the different metadata associate with the UNIX processes.
+The process58_state element defines the different metadata associate with the UNIX processes.
 
 Technical Details
 -----------------
@@ -16,40 +16,28 @@ Technical Details
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
-Human ID: 
-  - unix.proc_info_v1
+**unix.proc_info_v1**
 
-+-------------------------------------+-------------+------------------+
-| Name                                | Type        | Description      |
-+=====================================+=============+==================+
-| command_line                        | String      | The command      |
-|                                     |             | entity is the    |
-|                                     |             | string used to   |
-|                                     |             | start the        |
-|                                     |             | process. This    |
-|                                     |             | includes any     |
-|                                     |             | parameters that  |
-|                                     |             | are part of the  |
-|                                     |             | command line.    |
-+-------------------------------------+-------------+------------------+
-| pid                                 | String      | The pid entity   |
-|                                     |             | is the process   |
-|                                     |             | ID of the        |
-|                                     |             | process.         |
-+-------------------------------------+-------------+------------------+
-| command_line_operation              | String      | Specifies what   |
-|                                     |             | operation is to  |
-|                                     |             | be performed     |
-|                                     |             | using the        |
-|                                     |             | Command value.   |
-+-------------------------------------+-------------+------------------+
-| pid_operation                       | String      | Specifies what   |
-|                                     |             | operation is to  |
-|                                     |             | be performed     |
-|                                     |             | using the        |
-|                                     |             | Process ID       |
-|                                     |             | value.           |
-+-------------------------------------+-------------+------------------+
++---------------------------------+---------+--------------------------------+
+| Name                            | Type    | Description                    |
++=================================+=========+================================+
+| command_line                    | string  | The command entity is the      |
+|                                 |         | string used to start the       |
+|                                 |         | process. This includes any     |
+|                                 |         | parameters that are part of    |
+|                                 |         | the command line.              |
++---------------------------------+---------+--------------------------------+
+| pid                             | string  | The pid entity is the process  |
+|                                 |         | ID of the process.             |
++---------------------------------+---------+--------------------------------+
+| command_line_operation          | string  | Specifies what operation is to |
+|                                 |         | be performed using the Command |
+|                                 |         | value.                         |
++---------------------------------+---------+--------------------------------+
+| pid_operation                   | string  | Specifies what operation is to |
+|                                 |         | be performed using the Process |
+|                                 |         | ID value.                      |
++---------------------------------+---------+--------------------------------+
 
 NOTE: ``command_line_operation`` and ``pid_operation`` parameters are governed by a constraint allowing only the following values:
   - bitwise and
@@ -66,265 +54,168 @@ NOTE: ``command_line_operation`` and ``pid_operation`` parameters are governed b
   - subset of
   - superset of 
 
-
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
-- Unix: Process Information
+  - Unix: Process Information
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
-Human ID: 
-  - unix.proc_info_v1
+**unix.proc_info_v1**
 
-+-------------------------------------+-------------+------------------+
-| Name                                | Type        | Description      |
-+=====================================+=============+==================+
-| command_line                        | String      | This is the      |
-|                                     |             | string used to   |
-|                                     |             | start the        |
-|                                     |             | process. This    |
-|                                     |             | includes any     |
-|                                     |             | parameters that  |
-|                                     |             | are part of the  |
-|                                     |             | command line.    |
-+-------------------------------------+-------------+------------------+
-| cmd_operation                       | String      | Specifies what   |
-|                                     |             | operation is to  |
-|                                     |             | be performed     |
-|                                     |             | using the        |
-|                                     |             | Command value.   |
-+-------------------------------------+-------------+------------------+
-| exec_time                           | String      | This is the      |
-|                                     |             | cumulative CPU   |
-|                                     |             | time, formatted  |
-|                                     |             | in [DD-]HH:MM:SS |
-|                                     |             | where DD is the  |
-|                                     |             | number of days   |
-|                                     |             | when execution   |
-|                                     |             | time is 24 hours |
-|                                     |             | or more.         |
-+-------------------------------------+-------------+------------------+
-| exec_time_operation                 | String      | Specifies what   |
-|                                     |             | operation is to  |
-|                                     |             | be performed     |
-|                                     |             | using the        |
-|                                     |             | execution time   |
-|                                     |             | value.           |
-+-------------------------------------+-------------+------------------+
-| pid                                 | String      | This is the      |
-|                                     |             | process ID of    |
-|                                     |             | the process.     |
-+-------------------------------------+-------------+------------------+
-| pid_operation                       | String      | Specifies what   |
-|                                     |             | operation is to  |
-|                                     |             | be performed     |
-|                                     |             | using the        |
-|                                     |             | process ID       |
-|                                     |             | value.           |
-+-------------------------------------+-------------+------------------+
-| ppid                                | String      | This is the      |
-|                                     |             | process ID of    |
-|                                     |             | the process’s    |
-|                                     |             | parent process.  |
-+-------------------------------------+-------------+------------------+
-| ppid_operation                      | String      | Specifies what   |
-|                                     |             | operation is to  |
-|                                     |             | be performed     |
-|                                     |             | using the parent |
-|                                     |             | process ID       |
-|                                     |             | value.           |
-+-------------------------------------+-------------+------------------+
-| priority                            | int         | This is the      |
-|                                     |             | scheduling       |
-|                                     |             | priority with    |
-|                                     |             | which the        |
-|                                     |             | process runs.    |
-|                                     |             | This can be      |
-|                                     |             | adjusted with    |
-|                                     |             | the nice command |
-|                                     |             | or nice() system |
-|                                     |             | call.            |
-+-------------------------------------+-------------+------------------+
-| priority_operation                  | Specifies   |                  |
-|                                     | what        |                  |
-|                                     | operation   |                  |
-|                                     | is to be    |                  |
-|                                     | performed   |                  |
-|                                     | using the   |                  |
-|                                     | process     |                  |
-|                                     | priority    |                  |
-|                                     | value.      |                  |
-+-------------------------------------+-------------+------------------+
-| ruid                                | String      | This is the real |
-|                                     |             | user id which    |
-|                                     |             | represents the   |
-|                                     |             | user who has     |
-|                                     |             | created the      |
-|                                     |             | process.         |
-+-------------------------------------+-------------+------------------+
-| ruid_operation                      | String      | Specifies what   |
-|                                     |             | operation is to  |
-|                                     |             | be performed     |
-|                                     |             | using the parent |
-|                                     |             | real user ID     |
-|                                     |             | value.           |
-+-------------------------------------+-------------+------------------+
-| scheduling_class                    | String      | A platform       |
-|                                     |             | specific         |
-|                                     |             | characteristic   |
-|                                     |             | maintained by    |
-|                                     |             | the scheduler:   |
-|                                     |             | RT (real-time),  |
-|                                     |             | TS (timeshare),  |
-|                                     |             | FF (fifo), SYS   |
-|                                     |             | (system), etc.   |
-+-------------------------------------+-------------+------------------+
-| scheduling_class_operation          | String      | Specifies what   |
-|                                     |             | operation is to  |
-|                                     |             | be performed     |
-|                                     |             | using the        |
-|                                     |             | scheduling class |
-|                                     |             | value.           |
-+-------------------------------------+-------------+------------------+
-| start_time                          | String      | This is the time |
-|                                     |             | of day the       |
-|                                     |             | process started  |
-|                                     |             | formatted in     |
-|                                     |             | HH:MM:SS if the  |
-|                                     |             | same day the     |
-|                                     |             | process started  |
-|                                     |             | or formatted as  |
-|                                     |             | MMM_DD (Ex.:     |
-|                                     |             | Feb_5) if        |
-|                                     |             | process started  |
-|                                     |             | the previous day |
-|                                     |             | or further in    |
-|                                     |             | the past.        |
-+-------------------------------------+-------------+------------------+
-| start_time_operation                | String      | Specifies what   |
-|                                     |             | operation is to  |
-|                                     |             | be performed     |
-|                                     |             | using the        |
-|                                     |             | process start    |
-|                                     |             | time value.      |
-+-------------------------------------+-------------+------------------+
-| tty                                 | String      | This is the TTY  |
-|                                     |             | on which the     |
-|                                     |             | process was      |
-|                                     |             | started, if      |
-|                                     |             | applicable.      |
-+-------------------------------------+-------------+------------------+
-| tty_operation                       | String      | Specifies what   |
-|                                     |             | operation is to  |
-|                                     |             | be performed     |
-|                                     |             | using the        |
-|                                     |             | process TTY      |
-|                                     |             | value.           |
-+-------------------------------------+-------------+------------------+
-| user_id                             | String      | This is the      |
-|                                     |             | effective user   |
-|                                     |             | id which         |
-|                                     |             | represents the   |
-|                                     |             | actual           |
-|                                     |             | privileges of    |
-|                                     |             | the process.     |
-+-------------------------------------+-------------+------------------+
-| user_id_operation                   | String      | Specifies what   |
-|                                     |             | operation is to  |
-|                                     |             | be performed     |
-|                                     |             | using the user   |
-|                                     |             | ID value.        |
-+-------------------------------------+-------------+------------------+
-| exec_shield                         | boolean     | A boolean that   |
-|                                     |             | when true would  |
-|                                     |             | indicates that   |
-|                                     |             | ExecShield is    |
-|                                     |             | enabled for the  |
-|                                     |             | process.         |
-+-------------------------------------+-------------+------------------+
-| exec_shield_operation               | String      | Specifies what   |
-|                                     |             | operation is to  |
-|                                     |             | be performed     |
-|                                     |             | using the        |
-|                                     |             | ExecShield       |
-|                                     |             | Status value.    |
-+-------------------------------------+-------------+------------------+
-| loginuid                            | String      | The loginuid     |
-|                                     |             | shows which      |
-|                                     |             | account a user   |
-|                                     |             | gained access to |
-|                                     |             | the system with. |
-|                                     |             | The              |
-|                                     |             | /pr              |
-|                                     |             | oc/XXXX/loginuid |
-|                                     |             | shows this       |
-|                                     |             | value.           |
-+-------------------------------------+-------------+------------------+
-| loginuid_operation                  | String      | Specifies what   |
-|                                     |             | operation is to  |
-|                                     |             | be performed     |
-|                                     |             | using the        |
-|                                     |             | process’ account |
-|                                     |             | value.           |
-+-------------------------------------+-------------+------------------+
-| posix_capability_operation          | String      | Specifies what   |
-|                                     |             | operation is to  |
-|                                     |             | be performed     |
-|                                     |             | using the POSIX  |
-|                                     |             | capability       |
-|                                     |             | value.           |
-+-------------------------------------+-------------+------------------+
-| selinux_domain_label                | String      | An selinux       |
-|                                     |             | domain label     |
-|                                     |             | associated with  |
-|                                     |             | the process.     |
-+-------------------------------------+-------------+------------------+
-| selinux_domain_label_operation      | String      | Specifies what   |
-|                                     |             | operation is to  |
-|                                     |             | be performed     |
-|                                     |             | using the        |
-|                                     |             | SELinux domain   |
-|                                     |             | label value.     |
-+-------------------------------------+-------------+------------------+
-| session_id                          | String      | The session ID   |
-|                                     |             | of the process.  |
-+-------------------------------------+-------------+------------------+
-| session_id_operation                | String      | Specifies what   |
-|                                     |             | operation is to  |
-|                                     |             | be performed     |
-|                                     |             | using the        |
-|                                     |             | process’ session |
-|                                     |             | ID value.        |
-+-------------------------------------+-------------+------------------+
-| posix_capability                    | String      | An effective     |
-|                                     |             | capability       |
-|                                     |             | associated with  |
-|                                     |             | the process. See |
-|                                     |             | linux/include/li |
-|                                     |             | nux/capability.h |
-|                                     |             | for more         |
-|                                     |             | information.     |
-+-------------------------------------+-------------+------------------+
-
++---------------------------------+---------+--------------------------------+
+| Name                            | Type    | Description                    |
++=================================+=========+================================+
+| command_line                    | string  | This is the string used to     |
+|                                 |         | start the process. This        |
+|                                 |         | includes any parameters that   |
+|                                 |         | are part of thecommand line.   |
++---------------------------------+---------+--------------------------------+
+| cmd_operation                   | string  | Specifies what operation is to |
+|                                 |         | be performed using the Command |
+|                                 |         | value.                         |
++---------------------------------+---------+--------------------------------+
+| exec_time                       | string  | This is the cumulative CPU     |
+|                                 |         | time, formatted in             |
+|                                 |         | [DD-]HH:MM:SS where DD is the  |
+|                                 |         | number of days when execution  |
+|                                 |         | time is 24 hours or more.      |
++---------------------------------+---------+--------------------------------+
+| exec_time_operation             | string  | Specifies what operation is to |
+|                                 |         | be performed using the         |
+|                                 |         | execution time value.          |
++---------------------------------+---------+--------------------------------+
+| pid                             | string  | This is the process ID of the  |
+|                                 |         | process.                       |
++---------------------------------+---------+--------------------------------+
+| pid_operation                   | string  | Specifies what operation is to |
+|                                 |         | be performed using the process |
+|                                 |         | ID value.                      |
++---------------------------------+---------+--------------------------------+
+| ppid                            | string  | This is the process ID of the  |
+|                                 |         | process’s parent process.      |
++---------------------------------+---------+--------------------------------+
+| ppid_operation                  | string  | Specifies what operation is to |
+|                                 |         | be performed using the parent  |
+|                                 |         | process ID value.              |
++---------------------------------+---------+--------------------------------+
+| priority                        | int     | This is the scheduling         |
+|                                 |         | priority with which the        |
+|                                 |         | process runs. This can be      |
+|                                 |         | adjusted with the nice         |
+|                                 |         | commandor nice() system call.  |
++---------------------------------+---------+--------------------------------+
+| priority_operation              | string  | Specifies what operation is to |
+|                                 |         | be performed using the process |
+|                                 |         | priority value.                |
++---------------------------------+---------+--------------------------------+
+| ruid                            | string  | This is the real user id which |
+|                                 |         | represents the user who has    |
+|                                 |         | created the process.           |
++---------------------------------+---------+--------------------------------+
+| ruid_operation                  | string  | Specifies what operation is to |
+|                                 |         | be performed using the parent  |
+|                                 |         | real user ID value.            |
++---------------------------------+---------+--------------------------------+
+| scheduling_class                | string  | A platform specific            |
+|                                 |         | characteristic maintained by   |
+|                                 |         | the scheduler:                 |
+|                                 |         | RT (real-time),                |
+|                                 |         | TS (timeshare),                |
+|                                 |         | FF (fifo),                     |
+|                                 |         | SYS (system), etc.             |
++---------------------------------+---------+--------------------------------+
+| scheduling_class_operation      | string  | Specifies what operation is to |
+|                                 |         | be performed using the         |
+|                                 |         | scheduling class value.        |
++---------------------------------+---------+--------------------------------+
+| start_time                      | string  | This is the time of day the    |
+|                                 |         | process started formatted in   |
+|                                 |         | HH:MM:SS if the same day the   |
+|                                 |         | process started or formatted   |
+|                                 |         | as MMM_DD (Ex.: Feb_5) if      |
+|                                 |         | process started the previous   |
+|                                 |         | day or further in the past.    |
++---------------------------------+---------+--------------------------------+
+| start_time_operation            | string  | Specifies what operation is to |
+|                                 |         | be performed using the process |
+|                                 |         | start time value.              |
++---------------------------------+---------+--------------------------------+
+| tty                             | string  | This is the TTY on which the   |
+|                                 |         | process was started, if        |
+|                                 |         | applicable.                    |
++---------------------------------+---------+--------------------------------+
+| tty_operation                   | string  | Specifies what operation is to |
+|                                 |         | be performed using the process |
+|                                 |         | TTY value.                     |
++---------------------------------+---------+--------------------------------+
+| user_id                         | string  | This is the effective user id  |
+|                                 |         | which represents the actual    |
+|                                 |         | privileges of the process.     |
++---------------------------------+---------+--------------------------------+
+| user_id_operation               | string  | Specifies what operation is to |
+|                                 |         | be performed using the user ID |
+|                                 |         | value.                         |
++---------------------------------+---------+--------------------------------+
+| exec_shield                     | boolean | A boolean that when true would |
+|                                 |         | indicates that ExecShield is   |
+|                                 |         | enabled for the process.       |
++---------------------------------+---------+--------------------------------+
+| exec_shield_operation           | string  | Specifies what operation is to |
+|                                 |         | be performed using the         |
+|                                 |         | ExecShield Status value.       |
++---------------------------------+---------+--------------------------------+
+| loginuid                        | string  | The loginuid shows which       |
+|                                 |         | account a user gained access   |
+|                                 |         | to the system with.            |
+|                                 |         | The /proc/XXXX/loginuid shows  |
+|                                 |         | this value.                    |
++---------------------------------+---------+--------------------------------+
+| loginuid_operation              | string  | Specifies what operation is to |
+|                                 |         | be performed using the         |
+|                                 |         | process’ account value.        |
++---------------------------------+---------+--------------------------------+
+| posix_capability_operation      | string  | Specifies what operation is to |
+|                                 |         | be performed using the POSIX   |
+|                                 |         | capability value.              |
++---------------------------------+---------+--------------------------------+
+| selinux_domain_label            | string  | An selinux domain label        |
+|                                 |         | associated with the process.   |
++---------------------------------+---------+--------------------------------+
+| selinux_domain_label_operation  | string  | Specifies what operation is to |
+|                                 |         | be performed using the SELinux |
+|                                 |         | domain label value.            |
++---------------------------------+---------+--------------------------------+
+| session_id                      | string  | The session ID of the process. |
++---------------------------------+---------+--------------------------------+
+| session_id_operation            | string  | Specifies what operation is to |
+|                                 |         | be performed using the         |
+|                                 |         | process’ session ID value.     |
++---------------------------------+---------+--------------------------------+
+| posix_capability                | string  | An effective capability        |
+|                                 |         | associated with the process.   |
+|                                 |         | See linux/include/linux        |
+|                                 |         | /capability.h for more         |
+|                                 |         | information.                   |
++---------------------------------+---------+--------------------------------+
 
 :emphasis:`NOTE: The following _operation parameters:`
-  +------------------------------------+------------------------------------+
-  | ``cmd_operation``                  | ``exec_time_operation``            |
-  +------------------------------------+------------------------------------+
-  | ``pid_operation``                  | ``priority_operation``             |
-  +------------------------------------+------------------------------------+       
-  | ``ruid_operation``                 | ``scheduling_class_operation``     |
-  +------------------------------------+------------------------------------+
-  | ``start_time_operation``           | ``tty_operation``                  |
-  +------------------------------------+------------------------------------+
-  | ``user_id_operation``              | ``exec_shield_operation``          |
-  +------------------------------------+------------------------------------+
-  | ``loginuid_operation``             | ``posix_capability_operation``     |
-  +------------------------------------+------------------------------------+
-  | ``selinux_domain_label_operation`` | ``session_id_operation``           |
-  +------------------------------------+------------------------------------+
+  +-------------------------------------+------------------------------------+
+  | ``cmd_operation``                   | ``exec_time_operation``            |
+  +-------------------------------------+------------------------------------+
+  | ``pid_operation``                   | ``priority_operation``             |
+  +-------------------------------------+------------------------------------+       
+  | ``ruid_operation``                  | ``scheduling_class_operation``     |
+  +-------------------------------------+------------------------------------+
+  | ``start_time_operation``            | ``tty_operation``                  |
+  +-------------------------------------+------------------------------------+
+  | ``user_id_operation``               | ``exec_shield_operation``          |
+  +-------------------------------------+------------------------------------+
+  | ``loginuid_operation``              | ``posix_capability_operation``     |
+  +-------------------------------------+------------------------------------+
+  | ``selinux_domain_label_operation``  | ``session_id_operation``           |
+  +-------------------------------------+------------------------------------+
   
   are governed by a constraint allowing only the following values: 
     - equals
@@ -341,8 +232,7 @@ Human ID:
     - subset of
     - superset of 
 
-
-:emphasis:`NOTE: The exec_time and start_time parameters are governed by a constraint allowing only values conforming to the following regex pattern:` 
+:emphasis:`NOTE: The` ``exec_time`` `and` ``start_time`` `parameters are governed by a constraint allowing only values conforming to the following regex pattern:` 
   ``^(([0-9]{0,2}-)?(([0-1][0-9])|([2][0-3])):([0-5][0-9]):([0-5][0-9])){0,1}$``
 
 :emphasis:`NOTE: The following ID parameters:`
@@ -395,9 +285,10 @@ NOTE: The ``posix_capability`` parameter is governed by a constraint allowing on
   - CAP_BLOCK_SUSPEND
   - CAP_AUDIT_READ
 
-
 Generated Content
 ~~~~~~~~~~~~~~~~~
+
+**unix.proc_info_v1**
 
 XCCDF+AE
 ^^^^^^^^
@@ -406,7 +297,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
 
 ::
 
-   <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
+  <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
     <xccdf:check-content>
       <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
         <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
@@ -460,7 +351,6 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
     </xccdf:check-content>
   </xccdf:check>
 
-
 SCAP
 ^^^^
 
@@ -477,7 +367,6 @@ There is no Value element in the XCCDF for this Artifact.
       href="[BENCHMARK-TITLE]"
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
-
 
 OVAL
 ''''
@@ -506,14 +395,13 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[RECOMMENDATION-TITLE]"
     version="1">
-    <command_line 
-      operation="[operation.value]">
-      [command_line.value]
+    <command_line operation="[operation.value]">
+        [command_line.value]
     </command_line>
     <pid 
-      datatype="int" 
+      datatype="int"
       operation="[operation.value]">
-      [pid.value]
+        [pid.value]
     </pid>
   </process58_object>
 
@@ -521,7 +409,7 @@ State
 
 ::
 
-  <process58_state 
+   <process58_state 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
     comment="[RECOMMENDATION-TITLE]"
@@ -529,81 +417,80 @@ State
     <command_line 
       datatype="string"
       operation="[operation.value]">
-      [command_line.value]
+        [command_line.value]
     </command_line>
     <exec_time 
       datatype="string"
       operation="[operation.value]">
-      [exec_time.value]
+        [exec_time.value]
     </exec_time>
     <pid 
       datatype="int"
       operation="[operation.value]">
-      [pid.value]
+        [pid.value]
     </pid>
     <ppid 
       datatype="int"
       operation="[operation.value]">
-      [ppid.value]
+        [ppid.value]
     </ppid>
     <priority 
       datatype="int"
       operation="[operation.value]">
-      [priority.value]
+        [priority.value]
     </priority>
     <ruid 
       datatype="int"
       operation="[operation.value]">
-      [ruid.value]
+        [ruid.value]
     </ruid>
     <scheduling_class 
       datatype="string"
       operation="[operation.value]">
-      [scheduling_class.value]
+        [scheduling_class.value]
     </scheduling_class>
     <start_time 
       datatype="string"
       operation="[operation.value]">
-      [start_time.value]
+        [start_time.value]
     </start_time>
     <tty 
       datatype="string"
       operation="[operation.value]">
-      [tty.value]
+        [tty.value]
     </tty>
     <user_id 
       datatype="int"
       operation="[operation.value]"
       var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]">
-      [user_id.value]
+        [user_id.value]
     </user_id>
     <exec_shield 
       datatype="boolean"
       operation="[operation.value]">
-      [exec_shield.value]
+        [exec_shield.value]
     </exec_shield>
     <loginuid 
       datatype="int"
       operation="[operation.value]">
-      [loginuid.value]
+        [loginuid.value]
     </loginuid>
     <posix_capability 
       datatype="string"
       operation="[operation.value]">
-      [posix_capability.value]
+        [posix_capability.value]
     </posix_capability>
     <selinux_domain_label 
       datatype="string"
       operation="[operation.value]">
-      [selinux_domain_label.value]
+        [selinux_domain_label.value]
     </selinux_domain_label>
     <session_id 
       datatype="int"
       operation="[operation.value]">
-      [session_id.value]
-    </session_id>    
+        [session_id.value]
+    </session_id>
   </process58_state>
-
 
 YAML
 ^^^^
@@ -756,7 +643,6 @@ YAML
             dt: "string"
             value: "[posix_capability.value]"
 
-
 JSON
 ^^^^
 
@@ -767,7 +653,7 @@ JSON
       "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
       "artifact-title": "[RECOMMENDATION-TITLE]",
       "artifact": {
-        "type": "unix.proc_info_v1",
+        "type": "[ARTIFACT-TYPE-NAME]",
         "parameters": [
           {
             "parameter": {

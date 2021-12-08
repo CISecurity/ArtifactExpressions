@@ -7,8 +7,8 @@ Description
 The registry test is used to check metadata associated with Windows
 registry key. It extends the standard TestType as defined in the
 oval-definitions-schema and one should refer to the TestType description
-for more information. The required object element references a
-registry_object and the optional state element specifies the registry
+for more information. The object element references a
+registry_object and the state element specifies the registry
 data to check.
 
 Technical Details
@@ -31,7 +31,7 @@ only the following values: - default - 32_bit - 64_bit
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  windows.user_registry_value_v1
+  - windows.user_registry_value_v1
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
@@ -232,7 +232,7 @@ YAML
 
 ::
 
-   - artifact-expression:
+  - artifact-expression:
        artifact-unique-id: [ARTIFACT-OVAL-ID]
        artifact-title: [RECOMMENDATION TITLE]
        artifact:

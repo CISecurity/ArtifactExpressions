@@ -7,8 +7,8 @@ Description
 The sid_sid_test is used to check properties associated with the
 specified SID. It extends the standard TestType as defined in the
 oval-definitions-schema and one should refer to the TestType description
-for more information. The required object element references a
-sid_sid_object and the optional state element specifies the metadata to
+for more information. The object element references a
+sid_sid_object and the state element specifies the metadata to
 check.
 
 Technical Details
@@ -43,7 +43,7 @@ Artifact Parameters
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  windows.sid_sid_trustee_name_v1
+  - windows.sid_sid_trustee_name_v1
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
@@ -206,7 +206,7 @@ YAML
 
 ::
 
-   - artifact-expression:
+  - artifact-expression:
        artifact-unique-id: [ARTIFACT-OVAL-ID]
        artifact-title: [RECOMMENDATION TITLE]
        artifact:

@@ -8,8 +8,7 @@ The cisco_ios.global is used to check for the existence of a particular
 line in the IOS-XE config file under the global context. It extends the
 standard TestType as defined in the oval-definitions-schema and one
 should refer to the TestType description for more information. The
-required object element references a global_object and the optional
-state element specifies the data to check.
+object element references a global_object and the state element specifies the data to check.
 
 Technical Details
 -----------------
@@ -32,7 +31,7 @@ Artifact Parameters
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  cisco_ios.global_command
+  - cisco_ios.global_command
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
@@ -165,7 +164,7 @@ YAML
 
 ::
 
-   - artifact-expression:
+  - artifact-expression:
        artifact-unique-id: [ARTIFACT-OVAL-ID]
        artifact-title: [RECOMMENDATION TITLE]
        artifact:
