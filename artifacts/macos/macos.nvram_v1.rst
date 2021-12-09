@@ -1,5 +1,5 @@
 macos:nvram
-===================
+===========
 
 Description
 -----------
@@ -16,8 +16,8 @@ Technical Details
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
-Human ID:
-   -  macos.nvram_v1
+macos.nvram_v1
+^^^^^^^^^^^^^^^^^^^^^^^
 
 +-------------------------------------+-------------+------------------+
 | Name                                | Type        | Description      |
@@ -115,33 +115,33 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
 
 ::
 
-   <xccdf:complex-check operator="AND">
-     <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
-       <xccdf:check-content>
-         <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
-           <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-           <ae:title>[RECOMMENDATION-TITLE]</ae:title>
-           <ae:artifact type="[ARTIFACT-TYPE-NAME]">
-             <ae:parameters>
-               <ae:parameter dt="string" name="check_existence">at_least_one_exists</ae:parameter>
-               <ae:parameter dt="string" name="nvram_var">variable</ae:parameter>
-             </ae:parameters>
-           </ae:artifact>
-           <ae:test type="[TEST-TYPE-NAME]">
-             <ae:parameters>
-               <ae:parameter dt="string" name="check">[check.value]</ae:parameter>
-               <ae:parameter dt="string" name="operation">[operation.value]</ae:parameter>
-               <ae:parameter dt="string" name="datatype">[datatype.value]</ae:parameter>
-               <ae:parameter dt="string" name="nvram_value">[nvram_value.value]</ae:parameter>
-             </ae:parameters>
-           </ae:test>
-           <ae:profiles>
-             <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_2"/>
-           </ae:profiles>
-         </ae:artifact_expression>
-       </xccdf:check-content>
-     </xccdf:check>
-   </xccdf:complex-check>
+  <xccdf:complex-check operator="AND">
+    <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
+      <xccdf:check-content>
+        <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
+          <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
+          <ae:title>[RECOMMENDATION-TITLE]</ae:title>
+          <ae:artifact type="[ARTIFACT-TYPE-NAME]">
+            <ae:parameters>
+              <ae:parameter dt="string" name="check_existence">[check_existence.value]</ae:parameter>
+              <ae:parameter dt="string" name="nvram_var">[nvram_var.value]</ae:parameter>
+            </ae:parameters>
+          </ae:artifact>
+          <ae:test type="[TEST-TYPE-NAME]">
+            <ae:parameters>
+              <ae:parameter dt="string" name="check">[check.value]</ae:parameter>
+              <ae:parameter dt="string" name="operation">[operation.value]</ae:parameter>
+              <ae:parameter dt="string" name="datatype">[datatype.value]</ae:parameter>
+              <ae:parameter dt="string" name="nvram_value">[nvram_value.value]</ae:parameter>
+            </ae:parameters>
+          </ae:test>
+          <ae:profiles>
+            <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_2"/>
+          </ae:profiles>
+        </ae:artifact_expression>
+      </xccdf:check-content>
+    </xccdf:check>
+  </xccdf:complex-check>
 
 SCAP
 ^^^^
@@ -154,12 +154,12 @@ There is no Value in the xccdf for this Artifact.
 
 ::
 
-   <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
-      <check-content-ref
-         href="[BENCHMARK-NAME]"
-         name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]">
-      </check-content-ref>
-   </check>
+  <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+    <check-content-ref
+      href="[BENCHMARK-NAME]"
+        name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]">
+    </check-content-ref>
+  </check>
 
 OVAL
 ''''
@@ -168,146 +168,146 @@ Test
 
 ::
 
-   <nvram_test
-     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#macos"
-     check="[check.value]"
-     check_existence="[check_existence.value]"
-     comment="[RECOMMENDATION-TITLE]"
-     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
-     version="[version.value]">
-     <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
-     <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
-   </nvram_test>
+  <nvram_test
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#macos"
+    check="[check.value]"
+    check_existence="[check_existence.value]"
+    comment="[RECOMMENDATION-TITLE]"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
+    version="[version.value]">
+    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+    <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
+  </nvram_test>
 
 Object
 
 ::
 
-   <nvram_object
-     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#macos"
-     comment="[RECOMMENDATION-TITLE]"
-     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
-     version="[version.value]">
-     <nvram_var>
-       [nvram_var.value]
-     </nvram_var>
-   </nvram_object>
+  <nvram_object
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#macos"
+    comment="[RECOMMENDATION-TITLE]"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
+    version="[version.value]">
+    <nvram_var>
+      [nvram_var.value]
+    </nvram_var>
+  </nvram_object>
 
 State
 
 ::
 
-   <nvram_state
-     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#macos"
-     comment="[RECOMMENDATION-TITLE]"
-     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
-     version="[version.value]">
-     <nvram_value
-       datatype="[datatype.value]"
-       operation="[operation.value]">
-       [nvram_value.value]
-     </nvram_value>
-   </nvram_state>
+  <nvram_state
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#macos"
+    comment="[RECOMMENDATION-TITLE]"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
+    version="[version.value]">
+    <nvram_value
+      datatype="[datatype.value]"
+      operation="[operation.value]">
+      [nvram_value.value]
+    </nvram_value>
+  </nvram_state>
 
 YAML
 ^^^^
 
 ::
 
-   - artifact-expression:
-     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
-     artifact_title: "[RECOMMENDATION-TITLE]"
-     artifact:
-       type: "[ARTIFACT-TYPE-NAME]"
-       parameters:
-         - parameter:
-             name: "check_existence"
-             dt: "string"
-             value: "[check_existence.value]"
-         - parameter:
-             name: "nvram_var"
-             dt: "string"
-             value: "[nvram_var.value]"
-     test:
-       type: "[TEST-TYPE-NAME]"
-       parameters:
-         - parameter:
-             name: "check"
-             dt: "string"
-             value: "[check.value]"
-         - parameter:
-             name: "operation"
-             dt: "string"
-             value: "[operation.value]"
-         - parameter:
-             name: "datatype"
-             dt: "string"
-             value: "[datatype.value]"
-         - parameter:
-             name: "nvram_value"
-             dt: "string"
-             value: "[nvram_value.value]"
-
+  artifact-expression:
+    artifact-unique-id: "[ARTIFACT-OVAL-ID]"
+    artifact_title: "[RECOMMENDATION-TITLE]"
+    artifact:
+      type: "[ARTIFACT-TYPE-NAME]"
+      parameters:
+        - parameter:
+            name: "check_existence"
+            dt: "string"
+            value: "[check_existence.value]"
+        - parameter:
+            name: "nvram_var"
+            dt: "string"
+            value: "[nvram_var.value]"
+    test:
+      type: "[TEST-TYPE-NAME]"
+      parameters:
+        - parameter:
+            name: "check"
+            dt: "string"
+            value: "[check.value]"
+        - parameter:
+            name: "operation"
+            dt: "string"
+            value: "[operation.value]"
+        - parameter:
+            name: "datatype"
+            dt: "string"
+            value: "[datatype.value]"
+        - parameter:
+            name: "nvram_value"
+            dt: "string"
+            value: "[nvram_value.value]"
+  
 JSON
 ^^^^
 
 ::
 
-   {
-     "artifact-expression": {
-       "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
-       "artifact_title": "[RECOMMENDATION-TITLE]",
-       "artifact": {
-         "type": "[ARTIFACT-TYPE-NAME]",
-         "parameters": [
-           {
-             "parameter": {
-               "name": "check_existence",
-               "dt": "string",
-               "value": "[check_existence.value]"
-             }
-           },
-           {
-             "parameter": {
-               "name": "nvram_var",
-               "dt": "string",
-               "value": "[nvram_var.value]"
-             }
-           }
-         ]
-       },
-       "test": {
-         "type": "[TEST-TYPE-NAME]",
-         "parameters": [
-           {
-             "parameter": {
-               "name": "check",
-               "dt": "string",
-               "value": "[check.value]"
-             }
-           },
-           {
-             "parameter": {
-               "name": "operation",
-               "dt": "string",
-               "value": "[operation.value]"
-             }
-           },
-           {
-             "parameter": {
-               "name": "datatype",
-               "dt": "string",
-               "value": "[datatype.value]"
-             }
-           },
-           {
-             "parameter": {
-               "name": "nvram_value",
-               "dt": "string",
-               "value": "[nvram_value.value]"
-             }
-           }
-         ]
-       }
-     }
-   }
+  {
+    "artifact-expression": {
+      "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
+      "artifact_title": "[RECOMMENDATION-TITLE]",
+      "artifact": {
+        "type": "[ARTIFACT-TYPE-NAME]",
+        "parameters": [
+          {
+            "parameter": {
+              "name": "check_existence",
+              "dt": "string",
+              "value": "[check_existence.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "nvram_var",
+              "dt": "string",
+              "value": "[nvram_var.value]"
+            }
+          }
+        ]
+      },
+      "test": {
+        "type": "[TEST-TYPE-NAME]",
+        "parameters": [
+          {
+            "parameter": {
+              "name": "check",
+              "dt": "string",
+              "value": "[check.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "operation",
+              "dt": "string",
+              "value": "[operation.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "datatype",
+              "dt": "string",
+              "value": "[datatype.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "nvram_value",
+              "dt": "string",
+              "value": "[nvram_value.value]"
+            }
+          }
+        ]
+      }
+    }
+  }
