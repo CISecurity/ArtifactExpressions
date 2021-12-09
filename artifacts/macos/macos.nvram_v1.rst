@@ -4,11 +4,11 @@ macos:nvram
 Description
 -----------
 
-The macos:nvram_test pulls data from the 'nvram -p' output.
+The macos:nvram test pulls data from the 'nvram -p' output.
 
-The nvram_object element is used by a nvram test to define the object to be evaluated.
+The nvram object element is used by a nvram test to define the object to be evaluated.
 
-The nvram_state element pulls data from the 'nvram -p' output.
+The nvram state element pulls data from the 'nvram -p' output.
 
 Technical Details
 -----------------
@@ -16,8 +16,7 @@ Technical Details
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
-macos.nvram_v1
-^^^^^^^^^^^^^^^^^^^^^^^
+**macos.nvram_v1**
 
 +-------------------------------------+-------------+------------------+
 | Name                                | Type        | Description      |
@@ -50,8 +49,7 @@ Supported Test Types
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
-Human ID:
-   -  macos.nvram_v1
+**macos.nvram_v1**
 
 +-------------------------------------+-------------+------------------+
 | Name                                | Type        | Description      |
@@ -107,6 +105,8 @@ NOTE: The ``nvram_value`` parameter is governed by a constraint allowing only th
 
 Generated Content
 ~~~~~~~~~~~~~~~~~
+
+**macos.nvram_v1**
 
 XCCDF+AE
 ^^^^^^^^
@@ -189,7 +189,7 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     version="[version.value]">
     <nvram_var>
-      [nvram_var.value]
+        [nvram_var.value]
     </nvram_var>
   </nvram_object>
 
@@ -205,7 +205,7 @@ State
     <nvram_value
       datatype="[datatype.value]"
       operation="[operation.value]">
-      [nvram_value.value]
+        [nvram_value.value]
     </nvram_value>
   </nvram_state>
 
