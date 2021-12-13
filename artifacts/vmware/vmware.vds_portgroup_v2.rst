@@ -6,7 +6,7 @@ Description
 
 The vmware:vds_portgroup test is used to verify override port policies are disabled for vSphere distributed portgroups on the specified vSphere Distributed Switch.
 
-The vds_portgroup_object element is used by a vmware:vds test to define the name and connection string of the specific vSphere Distributed Switch, and the portgroup to be evaluated.
+The vds_portgroup_object element is used by a vds_portgroup_test to define the name and connection string of the specific vSphere Distributed Switch, and the portgroup to be evaluated.
 
 The vds_portgroup_state element holds information about whether or not override port policies are enabled for the specified portgroup on the specified vSphere Distributed Switch.
 

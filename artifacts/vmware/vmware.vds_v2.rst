@@ -6,7 +6,7 @@ Description
 
 The vmware:vds test is used to verify vSphere Distributed Switch health checks are disabled.
 
-The vds_object element is used by a vmware:vds test to define the name and connection string of the specific vSphere Distributed Switch to be evaluated.
+The vds_object element is used by a vds_test to define the name and connection string of the specific vSphere Distributed Switch to be evaluated.
 
 The vds_state element holds information about whether or not health checks are enabled for the specified vSphere Distributed Switch.
 

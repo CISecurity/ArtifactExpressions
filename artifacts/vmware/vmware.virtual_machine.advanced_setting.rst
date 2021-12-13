@@ -4,7 +4,11 @@ VMware: Virtual Machine: Advanced Setting
 Description
 -----------
 
-The VMware: Virtual Machine: Advanced Setting test is used to verify the status of specified advanced settings in the virtual machine configuration file.
+The vm_advancedsetting_test is used to verify the status of specified advanced settings in the virtual machine configuration file.
+
+The vm_advancedsetting_object element is used by a vm_advancedsetting_test to define the vm name, connection string, and the name of the advanced setting to be evaluated.
+
+The vm_advancedsetting_state element holds information about the value of the specified advanced setting. 
 
 Technical Details
 -----------------
@@ -131,9 +135,6 @@ For ``vmware.virtual_machine.advanced_setting`` artifacts, the xccdf:check looks
 
   <xccdf:complex-check operator="AND">
     <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
-      <check-export 
-        export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
-        value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
       <check-export 
         export-name="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]"
         value-id="xccdf_org.cisecurity.benchmarks_value_[PLATFORM].connection" />
