@@ -4,7 +4,11 @@ vmware:vds_portgroup
 Description
 -----------
 
-The vmware:vds_portgroup test is used to verify override port policies are disabled for vSphere distributed portgroups on the specified vSphere distributed switch.
+The vmware:vds_portgroup test is used to verify override port policies are disabled for vSphere distributed portgroups on the specified vSphere Distributed Switch.
+
+The vds_portgroup_object element is used by a vmware:vds test to define the name and connection string of the specific vSphere Distributed Switch, and the portgroup to be evaluated.
+
+The vds_portgroup_state element holds information about whether or not override port policies are enabled for the specified portgroup on the specified vSphere Distributed Switch.
 
 Technical Details
 -----------------
@@ -41,7 +45,7 @@ Supported Test Types
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
-**vmware:vds_portgroup_collector_ip_address**
+**vmware.vds_portgroup_collector_ip_address_v2**
 
 +---------------------------------------+---------+--------------------------+
 | Name                                  | Type    | Description              |
@@ -88,7 +92,7 @@ NOTE: The ``datatype`` parameter is governed by a constraint allowing only the f
 	- version
 	- set
 
-**vmware:vds_portgroup_collector_port**
+**vmware.vds_portgroup_collector_port_v2**
 
 +---------------------------------------+---------+--------------------------+
 | Name                                  | Type    | Description              |
@@ -137,7 +141,7 @@ NOTE: The ``datatype`` parameter is governed by a constraint allowing only the f
 	- version
 	- set
 
-**vmware:vds_portgroup_override_port_policies**
+**vmware.vds_portgroup_override_port_policies_v2**
 
 +---------------------------------------+---------+--------------------------+
 | Name                                  | Type    | Description              |
@@ -187,7 +191,7 @@ NOTE: The ``datatype`` parameter is governed by a constraint allowing only the f
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
-**vmware:vds_portgroup_collector_ip_address**
+**vmware.vds_portgroup_collector_ip_address_v2**
 
 XCCDF+AE
 ^^^^^^^^
@@ -215,7 +219,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
             <ae:parameter dt="string" name="check">[check.value]</ae:parameter>
             <ae:parameter dt="string" name="operation">[operation.value]</ae:parameter>
             <ae:parameter dt="string" name="datatype">[datatype.value]</ae:parameter>
-            <ae:parameter dt="string" name="teaming_failover_health_check_enabled">[teaming_failover_health_check_enabled.value]</ae:parameter>
+            <ae:parameter dt="string" name="collector_ip_address">[collector_ip_address.value]</ae:parameter>
           </ae:parameters>
         </ae:test>
         <ae:profiles>
@@ -273,10 +277,10 @@ Object
     version="1">
     <connection_string var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]" />
     <vds_name operation="[operation.value]">
-        [vds_name.value]
+          [vds_name.value]
     </vds_name>
     <portgroup_name operation="[operation.value]">
-        [portgroup_name.value]
+          [portgroup_name.value]
     </portgroup_name>
   </vds_portgroup_object>  
 
@@ -289,10 +293,9 @@ State
     id="oval:org.cisecurity.benchmarks:ste:[ARTIFACT-OVAL-ID]"
     comment="[RECOMMENDATION-TITLE]"
     version="1">
-    <collector_ip_address 
-      datatype="[datatype.value]"
+    <collector_ip_address datatype="[datatype.value]"
       operation="[operation.value]">
-        [collector_ip_address.value]
+          [collector_ip_address.value]
     </collector_ip_address>
   </vds_portgroup_state>  
 
@@ -353,9 +356,9 @@ YAML
             dt: "string"
             value: "[datatype.value]"
         - parameter:
-            name: "teaming_failover_health_check_enabled"
+            name: "collector_ip_address"
             dt: "string"
-            value: "[teaming_failover_health_check_enabled.value]"
+            value: "[collector_ip_address.value]"
 
 JSON
 ^^^^
@@ -432,9 +435,9 @@ JSON
           },
           {
             "parameter": {
-              "name": "teaming_failover_health_check_enabled",
+              "name": "collector_ip_address",
               "dt": "string",
-              "value": "[teaming_failover_health_check_enabled.value]"
+              "value": "[collector_ip_address.value]"
             }
           }
         ]
@@ -445,7 +448,7 @@ JSON
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
-**vmware:vds_portgroup_collector_port**
+**vmware.vds_portgroup_collector_port_v2**
 
 XCCDF+AE
 ^^^^^^^^
@@ -510,12 +513,12 @@ Test
 ::
 
   <vds_portgroup_test 
-      xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
-      check_existence="[check_existence.value]"
-      check="all"
-      comment="[RECOMMENDATION-TITLE]"
-      id="oval:org.cisecurity.benchmarks:tst:[ARTIFACT-OVAL-ID]" 
-      version="1">
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
+    check_existence="[check_existence.value]"
+    check="all"
+    comment="[RECOMMENDATION-TITLE]"
+    id="oval:org.cisecurity.benchmarks:tst:[ARTIFACT-OVAL-ID]"
+    version="1">
     <object object_ref="oval:org.cisecurity.benchmarks:obj:[ARTIFACT-OVAL-ID]" />
     <state state_ref="oval:org.cisecurity.benchmarks:ste:[ARTIFACT-OVAL-ID]" />
   </vds_portgroup_test>
@@ -525,17 +528,16 @@ Object
 ::
 
   <vds_portgroup_object 
-      xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
-      id="oval:org.cisecurity.benchmarks:obj:[ARTIFACT-OVAL-ID]"
-      comment="[RECOMMENDATION-TITLE]"
-      version="1">
-    <connection_string 
-        var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]" />
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
+    id="oval:org.cisecurity.benchmarks:obj:[ARTIFACT-OVAL-ID]"
+    comment="[RECOMMENDATION-TITLE]"
+    version="1">
+    <connection_string var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]" />
     <vds_name operation="[operation.value]">
-      [vds_name.value]
+          [vds_name.value]
     </vds_name>
     <portgroup_name operation="[operation.value]">
-      [portgroup_name.value]
+          [portgroup_name.value]
     </portgroup_name>
   </vds_portgroup_object>  
 
@@ -544,14 +546,13 @@ State
 ::
 
   <vds_portgroup_state 
-      xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
-      id="oval:org.cisecurity.benchmarks:obj:[ARTIFACT-OVAL-ID]"
-      comment="[RECOMMENDATION-TITLE]"
-      version="1">
-    <collector_port 
-        datatype="[datatype.value]" 
-        operation="[operation.value]">
-      [collector_port.value]
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
+    id="oval:org.cisecurity.benchmarks:obj:[ARTIFACT-OVAL-ID]"
+    comment="[RECOMMENDATION-TITLE]"
+    version="1">
+    <collector_port datatype="[datatype.value]"
+      operation="[operation.value]">
+          [collector_port.value]
     </collector_port>
   </vds_portgroup_state>
 
@@ -559,11 +560,12 @@ External Variable
 
 ::
 
-  <external_variable
-      id="oval:org.cisecurity.benchmarks:obj:[ARTIFACT-OVAL-ID]"
-      datatype="boolean"
-      version="1"
-      comment="[RECOMMENDATION-TITLE]" />  
+  <external_variable 
+    id="oval:org.cisecurity.benchmarks:obj:[ARTIFACT-OVAL-ID]"
+    datatype="boolean"
+    version="1"
+    comment="[RECOMMENDATION-TITLE]" />
+
 
 YAML
 ^^^^
@@ -769,12 +771,12 @@ Test
 ::
 
   <vds_portgroup_test 
-      xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
-      check_existence="[check_existence.value]"
-      check="all"
-      comment="[RECOMMENDATION-TITLE]"
-      id="oval:org.cisecurity.benchmarks:tst:[ARTIFACT-OVAL-ID]" 
-      version="1">
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
+    id="oval:org.cisecurity.benchmarks:tst:[ARTIFACT-OVAL-ID]"
+    check_existence="[check_existence.value]"
+    check="all"
+    comment="[RECOMMENDATION-TITLE]"
+    version="1">
     <object object_ref="oval:org.cisecurity.benchmarks:obj:[ARTIFACT-OVAL-ID]" />
     <state state_ref="oval:org.cisecurity.benchmarks:ste:[ARTIFACT-OVAL-ID]" />
   </vds_portgroup_test>
@@ -784,33 +786,32 @@ Object
 ::
 
   <vds_portgroup_object 
-      xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
-      id="oval:org.cisecurity.benchmarks:obj:[ARTIFACT-OVAL-ID]"
-      comment="[RECOMMENDATION-TITLE]"
-      version="1">
-    <connection_string 
-        var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]" />
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
+    id="oval:org.cisecurity.benchmarks:obj:[ARTIFACT-OVAL-ID]"
+    comment="[RECOMMENDATION-TITLE]"
+    version="1">
+    <connection_string var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]" />
     <vds_name operation="[operation.value]">
-      [vds_name.value]
+            [vds_name.value]
     </vds_name>
     <portgroup_name operation="[operation.value]">
-      [portgroup_name.value]
+            [portgroup_name.value]
     </portgroup_name>
   </vds_portgroup_object>  
+
 
 State
 
 ::
 
   <vds_portgroup_state 
-      xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
-      id="oval:org.cisecurity.benchmarks:obj:[ARTIFACT-OVAL-ID]"
-      comment="[RECOMMENDATION-TITLE]"
-      version="1">
-    <override_port_policies_enabled 
-        datatype="[datatype.value]" 
-        operation="[operation.value]">
-      [override_port_policies_enabled.value]
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
+    id="oval:org.cisecurity.benchmarks:obj:[ARTIFACT-OVAL-ID]"
+    comment="[RECOMMENDATION-TITLE]"
+    version="1">
+    <override_port_policies_enabled datatype="[datatype.value]"
+      operation="[operation.value]">
+          [override_port_policies_enabled.value]
     </override_port_policies_enabled>
   </vds_portgroup_state>
 
@@ -818,11 +819,11 @@ External Variable
 
 ::
 
-  <external_variable
-      id="oval:org.cisecurity.benchmarks:obj:[ARTIFACT-OVAL-ID]"
-      datatype="boolean"
-      version="1"
-      comment="[RECOMMENDATION-TITLE]" />    
+  <external_variable 
+    id="oval:org.cisecurity.benchmarks:obj:[ARTIFACT-OVAL-ID]"
+    datatype="boolean"
+    version="1"
+    comment="[RECOMMENDATION-TITLE]" />
 
 YAML
 ^^^^

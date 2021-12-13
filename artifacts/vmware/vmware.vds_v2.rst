@@ -6,6 +6,10 @@ Description
 
 The vmware:vds test is used to verify vSphere Distributed Switch health checks are disabled.
 
+The vds_object element is used by a vmware:vds test to define the name and connection string of the specific vSphere Distributed Switch to be evaluated.
+
+The vds_state element holds information about whether or not health checks are enabled for the specified vSphere Distributed Switch.
+
 Technical Details
 -----------------
 
@@ -243,7 +247,7 @@ Object
     version="1">
     <connection_string var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]" />
     <vds_name operation="[operation.value]">
-        [vds_name.value]
+          [vds_name.value]
     </vds_name>
   </vds_object>    
 
@@ -256,10 +260,9 @@ State
     comment="[RECOMMENDATION-TITLE]"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
     version="1">
-    <teaming_failover_health_check_enabled 
-      datatype="[datatype.value]"
+    <teaming_failover_health_check_enabled datatype="[datatype.value]"
       operation="[operation.value]">
-        [teaming_failover_health_check_enabled.value]
+          [teaming_failover_health_check_enabled.value]
     </teaming_failover_health_check_enabled>
   </vds_state>   
 
@@ -271,7 +274,7 @@ External Variable
     id="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]"
     datatype="boolean"
     version="1"
-    comment="This value is used in Rule: [RECOMMENDATION-TITLE]" />              
+    comment="This value is used in Rule: [RECOMMENDATION-TITLE]" />           
 
 YAML
 ^^^^
