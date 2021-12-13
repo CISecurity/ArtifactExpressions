@@ -8,7 +8,7 @@ The Unix: File Collection (v2) test is used to check the contents of a
 text file (aka a configuration file) by looking at individual blocks of
 text.
 
-The textfilecontent54_object element is used to define the
+The textfilecontent54_object element is used by a textfilecontent54_test to define the
 specific block(s) of text of a file(s) to be evaluated. The
 textfilecontent54_object will only collect regular files on UNIX
 systems.

@@ -9,7 +9,7 @@ the hardware the machine is running on. This information is the parsed
 equivalent of uname -a. For example: "Linux quark 2.6.5-7.108-default #1
 Wed Aug 25 13:34:40 UTC 2004 i686 i686 i386 GNU/Linux".
 
-The uname_object element is used to define those objects to be
+The uname_object element is used by a uname_test to define those objects to be
 evaluated based on a specified state. There is actually only one object
 relating to uname and this is the system as a whole. Therefore, there
 are no child entities defined. Any test written to check uname will

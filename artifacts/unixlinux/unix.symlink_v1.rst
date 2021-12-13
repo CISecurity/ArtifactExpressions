@@ -7,8 +7,8 @@ Description
 The Unix: Symlink test is used to obtain canonical path information for
 symbolic links.
 
-The symlink_object element is used to define the object to be
-evaluated. A symlink_object consists of a filepath entity that contains
+The symlink_object element is used by a symlink_test to define the object 
+to be evaluated. A symlink_object consists of a filepath entity that contains
 the path to a symbolic link file. The resulting item identifies the
 canonical path of the link target (followed to its final destination, if
 there are intermediate links), an error if the link target does not

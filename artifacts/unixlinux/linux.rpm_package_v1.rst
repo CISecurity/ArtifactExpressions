@@ -7,7 +7,7 @@ Description
 The Linux: RPM Package test is used to check the RPM header information
 for a given RPM package.
 
-The rpminfo_object element is used to define the object to be
+The rpminfo_object element is used by a rpminfo_test to define the object to be
 evaluated. An rpm info object consists of a single name entity that
 identifies the package being checked.
 

@@ -8,7 +8,7 @@ The Linux: Pam_cracklib Parameter test is used to test the value of
 pam_cracklib parameters by looking at individual blocks of text in
 configuration and log files, by looking at individual blocks of text.
 
-The textfilecontent54_object element is used to define the
+The textfilecontent54_object element is used by a textfilecontent54_test to define the
 specific block(s) of text of a file(s) to be evaluated. The
 textfilecontent54_object will only collect regular files on UNIX
 systems.

@@ -8,7 +8,7 @@ The linux:apparmorstatus test is used to check properties representing
 the counts of profiles and processes as per the results of the
 "apparmor_status" or "aa-status" command.
 
-The apparmorstatus_object element is used to define the
+The apparmorstatus_object element is used by an apparmorstatus_test to define the
 different information about the current AppArmor policy. There is
 actually only one object relating to AppArmor Status and this is the
 system as a whole. Therefore, there are no child entities defined. Any

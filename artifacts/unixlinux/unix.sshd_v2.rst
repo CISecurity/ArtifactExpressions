@@ -7,7 +7,7 @@ Description
 The unix:sshd_v2 test is used to check the contents of an sshd
 configuration file, by looking at individual blocks of text.
 
-The sshd_object element is used to define the specific block(s)
+The sshd_object element is used by a sshd_test to define the specific block(s)
 of text of a file(s) to be evaluated. The sshd_object will only collect
 regular files on UNIX systems.
 

@@ -7,7 +7,7 @@ Description
 The Linux: Partition Options test is used to check the information
 associated with partitions on the local system.
 
-The partition_object is used to define which partitions on the
+The partition_object is used by a partition_test to define which partitions on the
 local system should be collected.
 
 The partition_state element defines the different information

@@ -9,11 +9,11 @@ with the kernel parameters that are used by the local system. Test
 elements evaluate the sysctl configuration file and files within the
 sysctl.d directory, by looking at individual blocks of text.
 
-The sysctl_object is used to define which kernel parameters on
+The sysctl_object is used by a sysctl_test to define which kernel parameters on
 the local system should be collected.
 
-The textfilecontent54_object elements are used to define the
-specific block(s) of text of a file(s) to be evaluated. The
+The textfilecontent54_object elements are used by a textfilecontent54_test 
+to define the specific block(s) of text of a file(s) to be evaluated. The
 textfilecontent54_object will only collect regular files on UNIX
 systems.
 

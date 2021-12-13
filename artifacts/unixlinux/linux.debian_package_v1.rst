@@ -7,7 +7,7 @@ Description
 The Linux: Debian Package test is used to check information for a given
 DPKG package.
 
-The dpkginfo_object element is used to define the object being
+The dpkginfo_object element is used by a dpkginfo_test to define the object being
 evaluated. A dpkginfo object consists of a single name entity that
 identifies the package being checked.
 

@@ -10,13 +10,13 @@ are used to check the contents of the inetd configuration file and files
 within the /etc/xinetd.d directory, by looking at individual blocks of
 text within the files.
 
-The inetd_object element, which is used to define the specific
+The inetd_object element is used by a xinetd_test to define the specific
 protocol-service to be evaluated. An inetd object consists of a protocol
 entity and a service_name entity that identifies the specific service to
 be tested.
 
-The textfilecontent54_object elements are used to define the
-specific block(s) of text of a file(s) to be evaluated. The
+The textfilecontent54_object elements are used by a textfilecontent54_test 
+to define the specific block(s) of text of a file(s) to be evaluated. The
 textfilecontent54_object will only collect regular files on UNIX
 systems.
 

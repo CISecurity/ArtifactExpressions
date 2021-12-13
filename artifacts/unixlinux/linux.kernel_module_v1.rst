@@ -7,7 +7,7 @@ Description
 The Linux: Kernel Module test executes a shell command and evaluates the
 lines of output to determine if a kernel module is loaded or loadable.
 
-The shellcommand_object element is used to define the shell
+The shellcommand_object element is used by a shellcommand_test to define the shell
 command being run.
 
 The shellcommand_state element specifies the output value to
