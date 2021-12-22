@@ -6,6 +6,10 @@ Description
 
 The VMware: VM Host: VIB test is used to verify the Image Profile vSphere Installation Bundle (VIB) acceptance level is configured properly.
 
+The vmhost_vib_object element is used by a vmhost_vib_test to define the vmhost name and connection string, and name of the vSphere Installation Bundle (VIB) to be evaluated.
+
+The vmhost_service_state element holds information regarding the acceptance level of the specified vSphere Installation Bundle (VIB). 
+
 Technical Details
 -----------------
 
@@ -57,7 +61,7 @@ NOTE: The ``operator`` parameter is governed by a constraint allowing only the f
   - set white list
   - set is empty  
 
- NOTE: The ``acceptance_level`` parameter is governed by a constraint allowing only the following values:
+NOTE: The ``acceptance_level`` parameter is governed by a constraint allowing only the following values:
   - NA
   - VMwareCertified 
   - VMwareAccepted
@@ -81,18 +85,16 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
       <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
         <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
         <ae:title>[RECOMMENDATION-TITLE]</ae:title>
-        <ae:artifact type="[ARTIFACT-TYPE-NAME]">
+        <ae:artifact type="[ARTIFACT-TYPE-NAME]" />
           <ae:parameters>
-            <ae:parameter dt="string" name="gatekeeper">[gatekeeper.value]</ae:parameter>
+            <ae:parameter dt="string" name="vmhost_name">[vmhost_name.value]</ae:parameter>
+            <ae:parameter dt="string" name="vib_name">[vib_name.value]</ae:parameter>
           </ae:parameters>
         </ae:artifact>
         <ae:test type="[TEST-TYPE-NAME]">
           <ae:parameters>
-            <ae:parameter dt="string" name="check_existence">[check_existence.value]</ae:parameter>
-            <ae:parameter dt="string" name="check">[check.value]</ae:parameter>
-            <ae:parameter dt="string" name="operation">[operation.value]</ae:parameter>
-            <ae:parameter dt="string" name="datatype">[datatype.value]</ae:parameter>
-            <ae:parameter dt="boolean" name="enabled">[enabled.value]</ae:parameter>
+            <ae:parameter dt="string" name="operator">[operator.value]</ae:parameter>
+            <ae:parameter dt="string" name="acceptance_level">[acceptance_level.value]</ae:parameter>
           </ae:parameters>
         </ae:test>
         <ae:profiles>
@@ -100,7 +102,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
         </ae:profiles>
       </ae:artifact_expression>
     </xccdf:check-content>
-  </xccdf:check>
+  </xccdf:check>  
 
 SCAP
 ^^^^
@@ -108,18 +110,18 @@ SCAP
 XCCDF
 '''''
 
-For ``macos.gatekeeper_v1`` artifacts, the xccdf:check looks like this. There is no Value in the xccdf for this Artifact.
+For ``vmware.vmhost.vib`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
 
 ::
 
-  <xccdf:check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
-    <xccdf:check-content-ref 
-      xmlns:ae="http://benchmarks.cisecurity.org/ae/0.5"
-      xmlns:cpe="http://cpe.mitre.org/language/2.0"
-      xmlns:ecl="http://cisecurity.org/check"
+  <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+    <check-export 
+      export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
+      value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
+    <check-content-ref 
       href="[BENCHMARK-NAME]"
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
-  </xccdf:check>
+  </check>
 
 OVAL
 ''''
@@ -128,40 +130,60 @@ Test
 
 ::
 
-  <macos:gatekeeper_test 
-    check="[check.value]"
-    check_existence="[check_existence.value]"
-    comment="[RECOMMENDATION-TITLE]"
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
+  <vmhost_vib_test
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
+    id="oval:org.cisecurity.benchmarks[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
+    check_existence="at_least_one_exists"
+    check="all"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <macos:object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
-    <macos:state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
-  </macos:gatekeeper_test>
+      <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+      <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
+  </vmhost_vib_test>
 
 Object
 
 ::
 
-  <macos:gatekeeper_object 
-    comment="[RECOMMENDATION-TITLE]"
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
-    version="1" />
- 
+  <vmhost_vib_object 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
+    id="oval:org.cisecurity.benchmarks[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"       
+    comment="[ARTIFACT-TITLE]"
+    version="1">
+      <connection_string var_ref="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
+      <vmhost_name operation="pattern match">
+          .*
+      </vmhost_name>
+      <vib_name operation="pattern match">
+          .*
+      </vib_name>    
+  </vmhost_vib_object>      
 
 State
 
 ::
 
-  <macos:gatekeeper_state 
-    comment="[RECOMMENDATION-TITLE]"
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
+  <vmhost_vib_state 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
+    id="oval:org.cisecurity.benchmarks[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <macos:enabled 
-      datatype="[datatype.value]"
-      operation="[operation.value]">
-        [enabled.value]
-    </macos:enabled>
-  </macos:gatekeeper_state> 
+      <acceptance_level 
+        datatype="string"
+        operation="[operation.value]">
+          [acceptance_level.value]
+      </acceptance_level>
+  </vmhost_vib_state> 
+
+Variable
+
+::
+
+  <external_variable 
+    id="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
+    datatype="boolean"
+    version="1"
+    comment="This value is used in Rule: [RECOMMENDATION-TITLE]" />
 
 YAML
 ^^^^
@@ -175,32 +197,24 @@ YAML
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
         - parameter: 
-            name: "gatekeeper"
-            type: "string"
-            value: "[gatekeeper.value]"
+            name: "vmhost_name"
+            dt: "string"
+            value: "[vmhost_name.value]"
+        - parameter: 
+            name: "vib_name"
+            dt: "string"
+            value: "[vib_name.value]"            
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:
         - parameter:
-            name: "check_existence"
-            type: "string"
-            value: "[check_existence.value]"
+            name: "operator"
+            dt: "string"
+            value: "[operator.value]"
         - parameter: 
-            name: "check"
-            type: "string"
-            value: "[check.value]"
-        - parameter:
-            name: "operation"
-            type: "string"
-            value: "[operation.value]"
-        - parameter: 
-            name: "datatype"
-            type: "string"
-            value: "[datatype.value]"
-        - parameter: 
-            name: "enabled"
-            type: "string"
-            value: "[enabled.value]"
+            name: "acceptance_level"
+            dt: "string"
+            value: "[acceptance_level.value]"
 
 JSON
 ^^^^
@@ -216,11 +230,18 @@ JSON
         "parameters": [
           {
             "parameter": {
-              "name": "gatekeeper",
-              "type": "string",
-              "value": "[gatekeeper.value]"
+              "name": "vmhost_name",
+              "dt": "string",
+              "value": "[vmhost_name.value]"
             }
-          }
+          },
+          {
+            "parameter": {
+              "name": "vib_name",
+              "dt": "string",
+              "value": "[vib_name.value]"
+            }
+          }          
         ]
       },
       "test": {
@@ -228,37 +249,16 @@ JSON
         "parameters": [
           {
             "parameter": {
-              "name": "check_existence",
-              "type": "string",
-              "value": "[check_existence.value]"
+              "name": "operator",
+              "dt": "string",
+              "value": "[operator.value]"
             }
           },
           {
             "parameter": {
-              "name": "check",
-              "type": "string",
-              "value": "[check.value]"
-            }
-          },
-          {
-            "parameter": {
-              "name": "operation",
-              "type": "string",
-              "value": "[operation.value]"
-            }
-          },
-          {
-            "parameter": {
-              "name": "datetype",
-              "type": "string",
-              "value": "[datatype.value]"
-            }
-          },
-          {
-            "parameter": {
-              "name": "enabled",
-              "type": "string",
-              "value": "[enabled.value]"
+              "name": "acceptance_level",
+              "dt": "string",
+              "value": "[acceptance_level.value]"
             }
           }
         ]

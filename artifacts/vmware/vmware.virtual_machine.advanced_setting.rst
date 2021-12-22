@@ -6,6 +6,10 @@ Description
 
 The VMware: Virtual Machine: Advanced Setting test is used to verify the status of specified advanced settings in the virtual machine configuration file.
 
+The vm_advancedsetting_object element is used by a vm_advancedsetting_test to define the vm name, connection string, and the name of the advanced setting to be evaluated.
+
+The vm_advancedsetting_state element holds information regarding the value of the specified advanced setting in the virtual machine configuration file. 
+
 Technical Details
 -----------------
 
@@ -19,6 +23,7 @@ Artifact Parameters
 +=============================+=========+====================================+
 | name                        | string  | The name of the VM’s setting.      |
 |                             |         | i.e. RemoteDisplay.maxConnections. |
+|                             |         | Cannot be blank.                   |
 +-----------------------------+---------+------------------------------------+
 | vm_name                     | string  | The name of the VM to scope the    |
 |                             |         | collection to. Set to NA if not    |
@@ -132,14 +137,14 @@ For ``vmware.virtual_machine.advanced_setting`` artifacts, the xccdf:check looks
   <xccdf:complex-check operator="AND">
     <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
       <check-export 
-        export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
-        value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
+        export-name="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
+        value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />    
       <check-export 
-        export-name="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]"
-        value-id="xccdf_org.cisecurity.benchmarks_value_[PLATFORM].connection" />
+        export-name="oval:org.cisecurity.benchmarks:var:100000"
+        value-id="xccdf_org.cisecurity.benchmarks_value_esxi.connection" />
       <check-content-ref 
-        href="[BENCHMARK-NAME]"
-        name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
+        href="[BENCHMARK-NAME]-oval.xml"
+        name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
     </check>
   </xccdf:complex-check>
 
@@ -152,13 +157,13 @@ Test
 
   <vm_advancedsetting_test 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
-    check="all"
-    check_existence="at_least_one_exists"
-    comment="[RECOMMENDATION-TITLE]"
     id="oval:org.cisecurity.benchmarks[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
+    check_existence="at_least_one_exists"
+    check="all"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
-    <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
+      <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+      <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
   </vm_advancedsetting_test>
 
 Object
@@ -167,14 +172,14 @@ Object
 
   <vm_advancedsetting_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
-    comment="[RECOMMENDATION-TITLE]"
-    id="oval:org.cisecurity.benchmarks[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
+    id="oval:org.cisecurity.benchmarks[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"       
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <connection_string var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]" />
-    <vm_name operation="pattern match">
-        [vm_name.value]
-    </vm_name>
-    <advanced_setting_name>[vmsafe.enable.value]</advanced_setting_name>
+      <connection_string var_ref="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
+      <vm_name operation="pattern match">
+          .*
+      </vm_name>
+      <advanced_setting_name>[vmsafe.enable.value]</advanced_setting_name>
   </vm_advancedsetting_object>  
 
 State
@@ -183,26 +188,26 @@ State
 
   <vm_advancedsetting_state 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
-    comment="[RECOMMENDATION-TITLE]"
     id="oval:org.cisecurity.benchmarks[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <advanced_setting_name 
-      datatype="string"
-      operation="equals">
-        [advanced_setting_name.value]
-    </advanced_setting_name>
-    <advanced_setting_value 
-      datatype="[datatype.value]"
-      operation="equals"
-      var_ref="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
+      <advanced_setting_name 
+        datatype="string"
+        operation="equals">
+          [advanced_setting_name.value]
+      </advanced_setting_name>
+      <advanced_setting_value 
+        datatype="[datatype.value]"
+        operation="equals"
+        var_ref="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
   </vm_advancedsetting_state>
 
-External Variable
+Variable
 
 ::
 
   <external_variable 
-    id="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]"
+    id="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
     datatype="boolean"
     version="1"
     comment="This value is used in Rule: [RECOMMENDATION-TITLE]" />       
@@ -220,22 +225,22 @@ YAML
       parameters:
         - parameter: 
             name: "name"
-            type: "string"
+            dt: "string"
             value: "[name.value]"
         - parameter: 
             name: "vm_name"
-            type: "string"
+            dt: "string"
             value: "[vm_name.value]"          
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:
         - parameter:
             name: "data_type"
-            type: "string"
+            dt: "string"
             value: "[data_type.value]"
         - parameter: 
             name: "value"
-            type: "string"
+            dt: "string"
             value: "[value.value]"
 
 JSON
@@ -253,14 +258,14 @@ JSON
           {
             "parameter": {
               "name": "name",
-              "type": "string",
+              "dt": "string",
               "value": "[name.value]"
             }
           },
           {
             "parameter": {
               "name": "vm_name",
-              "type": "string",
+              "dt": "string",
               "value": "[vm_name.value]"
             }
           }        
@@ -272,14 +277,14 @@ JSON
           {
             "parameter": {
               "name": "data_type",
-              "type": "string",
+              "dt": "string",
               "value": "[data_type.value]"
             }
           },
           {
             "parameter": {
               "name": "value",
-              "type": "string",
+              "dt": "string",
               "value": "[value.value]"
             }
           }

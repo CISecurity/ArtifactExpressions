@@ -8,7 +8,7 @@ The Linux: Pam_cracklib Parameter test is used to test the value of
 pam_cracklib parameters by looking at individual blocks of text in
 configuration and log files, by looking at individual blocks of text.
 
-The textfilecontent54_object element is used to define the
+The textfilecontent54_object element is used by a textfilecontent54_test to define the
 specific block(s) of text of a file(s) to be evaluated. The
 textfilecontent54_object will only collect regular files on UNIX
 systems.
@@ -157,9 +157,9 @@ Test
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
     check_existence="at_least_one_exists"
     check="all"
-    comment="[RECOMMENDATION-TITLE]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+      <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
   </textfilecontent54_test>
 
 Object
@@ -168,18 +168,18 @@ Object
 
   <textfilecontent54_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent"
-    comment="[RECOMMENDATION-TITLE]"
+    comment="[ARTIFACT-TITLE]"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     version="1">
-    <filepath>[filepath.value]<filepath>
-      <pattern operation="pattern match">
-        [pattern.value]
-      </pattern>
-      <instance 
-        datatype="int"
-        operation="equals">
-        1
-      </instance>
+      <filepath>[filepath.value]<filepath>
+        <pattern operation="pattern match">
+          [pattern.value]
+        </pattern>
+        <instance 
+          datatype="int"
+          operation="equals">
+          1
+        </instance>
     </textfilecontent54_object>
 
 State
@@ -320,9 +320,9 @@ Test
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
     check_existence="at_least_one_exists"
     check="all"
-    comment="[RECOMMENDATION-TITLE]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+      <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
   </textfilecontent54_test>
 
 Object
@@ -331,18 +331,18 @@ Object
 
   <textfilecontent54_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent"
-    comment="[RECOMMENDATION-TITLE]"
+    comment="[ARTIFACT-TITLE]"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     version="1">
-    <filepath>[filepath.value]<filepath>
-      <pattern operation="pattern match">
-        [pattern.value]
-      </pattern>
-      <instance 
-        datatype="int"
-        operation="equals">
-        1
-      </instance>
+      <filepath>[filepath.value]<filepath>
+        <pattern operation="pattern match">
+          [pattern.value]
+        </pattern>
+        <instance 
+          datatype="int"
+          operation="equals">
+          1
+        </instance>
     </textfilecontent54_object>
 
 State
@@ -351,14 +351,14 @@ State
 
     <textfilecontent54_state 
       xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent"
-      comment="[RECOMMENDATION-TITLE]"
+      comment="[ARTIFACT-TITLE]"
       id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
       version="1">
-      <subexpression 
-        datatype="[datatype.value]"
-        operation="[operation.value]">
-        [subexpression.value]
-      </subexpression>
+        <subexpression 
+          datatype="[datatype.value]"
+          operation="[operation.value]">
+          [subexpression.value]
+        </subexpression>
     </textfilecontent54_state>
 
 YAML

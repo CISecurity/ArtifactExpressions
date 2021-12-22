@@ -4,7 +4,14 @@ VMware: Virtual Machine: Device State
 Description
 -----------
 
-The VMware: Virtual Machine: Device State test is used to verify no device is connected to a virtual machine if it is not required.
+The VMware: Virtual Machine: Device State test is used to verify no device is 
+connected to a virtual machine if it is not required.
+
+The vm_device_object element is used by a vm_device_test to define the vm 
+name, connection string, and the name of the device type to be evaluated.
+
+The vm_device_state element holds information regarding the connection state of 
+the specified device.
 
 Technical Details
 -----------------
@@ -75,7 +82,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
             </ae:parameters>
           </ae:test>
           <ae:profiles>
-            <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1" />
+            <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_2" />
           </ae:profiles>
         </ae:artifact_expression>
       </xccdf:check-content>
@@ -95,7 +102,7 @@ For ``vmware.virtual_machine.device_state`` artifacts, an XCCDF Value element is
   <Value 
     id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var"
     operator="equals"
-    type="[type.value]">
+    type="number">
     <title>[RECOMMENDATION-TITLE]</title>
     <description>
         This value is used in Rule: [RECOMMENDATION-TITLE]
@@ -113,11 +120,11 @@ For ``vmware.virtual_machine.device_state`` artifacts, the xccdf:check looks lik
         export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
         value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
       <check-export 
-        export-name="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]"
-        value-id="xccdf_org.cisecurity.benchmarks_value_[PLATFORM].connection" />
+        export-name="oval:org.cisecurity.benchmarks:var:100000"
+        value-id="xccdf_org.cisecurity.benchmarks_value_esxi.connection" />
       <check-content-ref 
-        href="[BENCHMARK-NAME]"
-        name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
+        href="[BENCHMARK-NAME]-oval.xml"
+        name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
     </check>
   </xccdf:complex-check>
 
@@ -129,14 +136,14 @@ Test
 ::
 
   <vm_device_test 
-      xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi" 
-      check="all" 
-      check_existence="any_exist" 
-      comment="[RECOMMENDATION-TITLE]"
-      id="oval:org.cisecurity.benchmarks[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
-      version="1">
-    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
-    <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi" 
+    id="oval:org.cisecurity.benchmarks[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
+    check_existence="any_exist" 
+    check="all" 
+    comment="[ARTIFACT-TITLE]"
+    version="1">
+      <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+      <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
   </vm_device_test>
 
 Object
@@ -144,17 +151,17 @@ Object
 ::
 
   <vm_device_object 
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
-    comment="[RECOMMENDATION-TITLE]"
-    id="oval:org.cisecurity.benchmarks[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi" 
+    id="oval:org.cisecurity.benchmarks[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <connection_string var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]" />
-    <vm_name operation="pattern match">
-        .*
-    </vm_name>
-    <device_type>
-        [device_type.value]
-    </device_type>
+      <connection_string var_ref="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
+      <vm_name operation="pattern match">
+          .*
+      </vm_name>
+      <device_type>
+          [device_type.value]
+      </device_type>
   </vm_device_object>  
 
 State
@@ -162,26 +169,25 @@ State
 ::
 
   <vm_device_state 
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
-    comment="[RECOMMENDATION-TITLE]"
-    id="oval:org.cisecurity.benchmarks[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi" 
+    id="oval:org.cisecurity.benchmarks[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <connected 
-      datatype="boolean"
-      operation="equals"
-      var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
+      <connected 
+        datatype="boolean"
+        operation="equals"
+        var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
   </vm_device_state>
 
-External Variable
+Variable
 
 ::
 
   <external_variable 
-    id="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]"
+    id="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
     datatype="boolean"
     version="1"
     comment="This value is used in Rule: [RECOMMENDATION-TITLE]" />
-       
 
 YAML
 ^^^^
@@ -194,21 +200,21 @@ YAML
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
-      - parameter: 
-          name: "device_type"
-          type: "string"
-          value: "[device_type.value]"
-      - parameter: 
-          name: "vm_name"
-          type: "string"
-          value: "[vm_name.value]"          
+        - parameter: 
+            name: "device_type"
+            dt: "string"
+            value: "[device_type.value]"
+        - parameter: 
+            name: "vm_name"
+            dt: "string"
+            value: "[vm_name.value]"          
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:
-      - parameter:
-          name: "connected"
-          type: "boolean"
-          value: "[connected.value]"  
+        - parameter:
+            name: "connected"
+            dt: "boolean"
+            value: "[connected.value]"  
 
 JSON
 ^^^^
@@ -225,14 +231,14 @@ JSON
           {
             "parameter": {
               "name": "device_type",
-              "type": "string",
+              "dt": "string",
               "value": "[device_type.value]"
             }
           },
           {
             "parameter": {
               "name": "vm_name",
-              "type": "string",
+              "dt": "string",
               "value": "[vm_name.value]"
             }
           }
@@ -244,7 +250,7 @@ JSON
           {
             "parameter": {
               "name": "connected",
-              "type": "boolean",
+              "dt": "boolean",
               "value": "[connected.value]"
             }
           }

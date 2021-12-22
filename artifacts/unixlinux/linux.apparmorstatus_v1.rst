@@ -8,7 +8,7 @@ The linux:apparmorstatus test is used to check properties representing
 the counts of profiles and processes as per the results of the
 "apparmor_status" or "aa-status" command.
 
-The apparmorstatus_object element is used to define the
+The apparmorstatus_object element is used by an apparmorstatus_test to define the
 different information about the current AppArmor policy. There is
 actually only one object relating to AppArmor Status and this is the
 system as a whole. Therefore, there are no child entities defined. Any
@@ -164,11 +164,11 @@ Test
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#Linux"
     check="[check.value]"
     check_existence="[check_existence.value]"
-    comment="[RECOMMENDATION-TITLE]"
+    comment="[ARTIFACT-TITLE]"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
     version="1">
-    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
-    <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
+      <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+      <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
   </apparmorstatus_test>
 
 Object
@@ -177,7 +177,7 @@ Object
 
   <apparmorstatus_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#Linux"
-    comment="[RECOMMENDATION-TITLE]"
+    comment="[ARTIFACT-TITLE]"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     version="1" />
 
@@ -187,13 +187,13 @@ State
 
   <apparmorstatus_state 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#Linux"
-    comment="[RECOMMENDATION-TITLE]"
+    comment="[ARTIFACT-TITLE]"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
     version="1">
-    <enforce_mode_profiles_count datatype="[datatype.value]"
-      operation="[operation.value]">
-        [enforce_mode_profiles_count.value]
-    </enforce_mode_profiles_count>
+      <enforce_mode_profiles_count datatype="[datatype.value]"
+        operation="[operation.value]">
+          [enforce_mode_profiles_count.value]
+      </enforce_mode_profiles_count>
   </apparmorstatus_state>
 
 YAML

@@ -4,7 +4,11 @@ VMware: VM Host: Advanced Setting
 Description
 -----------
 
-The VMware: VM Host: Advanced Setting test is used to check the value of a specified advanced system setting on an VMware ESXi Host Client
+The VMware: VM Host: Advanced Setting test is used to check the value of a specified advanced system setting on an VMware ESXi Host Client.
+
+The vm_advancedsetting_object element is used by a vm_advancedsetting_test to define the vmhost name, connection string, and the name of the advanced setting to be evaluated.
+
+The vm_advancedsetting_state element holds information regarding the value of the specified advanced setting in the vmhost configuration file. 
 
 Technical Details
 -----------------
@@ -85,18 +89,16 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
       <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
         <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
         <ae:title>[RECOMMENDATION-TITLE]</ae:title>
-        <ae:artifact type="[ARTIFACT-TYPE-NAME]">
+        <ae:artifact type="[ARTIFACT-TYPE-NAME]" />
           <ae:parameters>
-            <ae:parameter dt="string" name="gatekeeper">[gatekeeper.value]</ae:parameter>
+            <ae:parameter dt="string" name="vmhost_name">[vmhost_name.value]</ae:parameter>
+            <ae:parameter dt="string" name="advanced_setting_name">[advanced_setting_name.value]</ae:parameter>
           </ae:parameters>
         </ae:artifact>
         <ae:test type="[TEST-TYPE-NAME]">
           <ae:parameters>
-            <ae:parameter dt="string" name="check_existence">[check_existence.value]</ae:parameter>
-            <ae:parameter dt="string" name="check">[check.value]</ae:parameter>
-            <ae:parameter dt="string" name="operation">[operation.value]</ae:parameter>
-            <ae:parameter dt="string" name="datatype">[datatype.value]</ae:parameter>
-            <ae:parameter dt="boolean" name="enabled">[enabled.value]</ae:parameter>
+            <ae:parameter dt="string" name="value">[value.value]</ae:parameter>
+            <ae:parameter dt="string" name="data_type">[data_type.value]</ae:parameter>
           </ae:parameters>
         </ae:test>
         <ae:profiles>
@@ -104,7 +106,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
         </ae:profiles>
       </ae:artifact_expression>
     </xccdf:check-content>
-  </xccdf:check>
+  </xccdf:check>  
 
 SCAP
 ^^^^
@@ -112,18 +114,34 @@ SCAP
 XCCDF
 '''''
 
-For ``macos.gatekeeper_v1`` artifacts, the xccdf:check looks like this. There is no Value in the xccdf for this Artifact.
+For ``vmware.vmhost.advanced_setting`` artifacts, an XCCDF Value element is generated.
 
 ::
 
-  <xccdf:check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
-    <xccdf:check-content-ref 
-      xmlns:ae="http://benchmarks.cisecurity.org/ae/0.5"
-      xmlns:cpe="http://cpe.mitre.org/language/2.0"
-      xmlns:ecl="http://cisecurity.org/check"
-      href="[BENCHMARK-NAME]"
+  <Value 
+    id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var"  
+    operator="[operator.value]" 
+    type="[type.value]">
+    <title>[RECOMMENDATION-TITLE]</title>
+    <description>This value is used in Rule: [RECOMMENDATION-TITLE]</description>
+    <value>[value.value]</value>
+  </Value>
+
+For ``vmware.vmhost.advanced_setting`` artifacts, the xccdf:check looks like this.
+
+::
+
+  <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+    <check-export 
+      export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
+      value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
+    <check-export 
+      export-name="oval:org.cisecurity.benchmarks:var:100000"
+      value-id="xccdf_org.cisecurity.benchmarks_value_esxi.connection" />
+    <check-content-ref 
+      href="[BENCHMARK-NAME]-oval.xml"
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
-  </xccdf:check>
+  </check>
 
 OVAL
 ''''
@@ -132,40 +150,64 @@ Test
 
 ::
 
-  <macos:gatekeeper_test 
-    check="[check.value]"
-    check_existence="[check_existence.value]"
-    comment="[RECOMMENDATION-TITLE]"
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
+  <vmhost_advancedsetting_test 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
+    id="oval:org.cisecurity.benchmarks[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
+    check_existence="at_least_one_exists"
+    check="all"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <macos:object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
-    <macos:state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
-  </macos:gatekeeper_test>
+      <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+      <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
+  </vmhost_advancedsetting_test>
 
 Object
 
 ::
 
-  <macos:gatekeeper_object 
-    comment="[RECOMMENDATION-TITLE]"
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
-    version="1" />
-   
+  <vmhost_advancedsetting_object 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
+    id="oval:org.cisecurity.benchmarks[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"       
+    comment="[ARTIFACT-TITLE]"
+    version="1">
+      <connection_string var_ref="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
+      <vmhost_name operation="pattern match">
+          .*
+      </vmhost_name>
+      <advanced_setting_name>
+          [advanced_setting_name.value]
+      </advanced_setting_name>
+  </vmhost_advancedsetting_object>  
 
 State
 
 ::
 
-  <macos:gatekeeper_state 
-    comment="[RECOMMENDATION-TITLE]"
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
+  <vmhost_advancedsetting_state 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
+    id="oval:org.cisecurity.benchmarks[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <macos:enabled 
-      datatype="[datatype.value]"
-      operation="[operation.value]">
-        [enabled.value]
-    </macos:enabled>
-  </macos:gatekeeper_state>  
+      <advanced_setting_name 
+        datatype="string"
+        operation="equals">
+          [advanced_setting_name.value]
+      </advanced_setting_name>
+      <advanced_setting_value 
+        datatype="[datatype.value]"
+        operation="pattern match"
+        var_ref="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
+  </vmhost_advancedsetting_state>
+
+Variable
+
+::
+
+  <external_variable 
+    id="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
+    datatype="[datatype.value]"
+    version="1"
+    comment="This value is used in Rule: [RECOMMENDATION-TITLE]" />    
 
 YAML
 ^^^^
@@ -179,32 +221,24 @@ YAML
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
         - parameter: 
-            name: "gatekeeper"
-            type: "string"
-            value: "[gatekeeper.value]"
+            name: "vmhost_name"
+            dt: "string"
+            value: "[vmhost_name.value]"
+        - parameter: 
+            name: "advanced_setting_name"
+            dt: "string"
+            value: "[advanced_setting_name.value]"            
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:
         - parameter:
-            name: "check_existence"
-            type: "string"
-            value: "[check_existence.value]"
+            name: "value"
+            dt: "string"
+            value: "[value.value]"
         - parameter: 
-            name: "check"
-            type: "string"
-            value: "[check.value]"
-        - parameter:
-            name: "operation"
-            type: "string"
-            value: "[operation.value]"
-        - parameter: 
-            name: "datatype"
-            type: "string"
-            value: "[datatype.value]"
-        - parameter: 
-            name: "enabled"
-            type: "string"
-            value: "[enabled.value]"
+            name: "data_type"
+            dt: "string"
+            value: "[data_type.value]"
 
 JSON
 ^^^^
@@ -220,11 +254,18 @@ JSON
         "parameters": [
           {
             "parameter": {
-              "name": "gatekeeper",
-              "type": "string",
-              "value": "[gatekeeper.value]"
+              "name": "vmhost_name",
+              "dt": "string",
+              "value": "[vmhost_name.value]"
             }
-          }
+          },
+          {
+            "parameter": {
+              "name": "advanced_setting_name",
+              "dt": "string",
+              "value": "[advanced_setting_name.value]"
+            }
+          }          
         ]
       },
       "test": {
@@ -232,37 +273,16 @@ JSON
         "parameters": [
           {
             "parameter": {
-              "name": "check_existence",
-              "type": "string",
-              "value": "[check_existence.value]"
+              "name": "value",
+              "dt": "string",
+              "value": "[value.value]"
             }
           },
           {
             "parameter": {
-              "name": "check",
-              "type": "string",
-              "value": "[check.value]"
-            }
-          },
-          {
-            "parameter": {
-              "name": "operation",
-              "type": "string",
-              "value": "[operation.value]"
-            }
-          },
-          {
-            "parameter": {
-              "name": "datetype",
-              "type": "string",
-              "value": "[datatype.value]"
-            }
-          },
-          {
-            "parameter": {
-              "name": "enabled",
-              "type": "string",
-              "value": "[enabled.value]"
+              "name": "data_type",
+              "dt": "string",
+              "value": "[data_type.value]"
             }
           }
         ]

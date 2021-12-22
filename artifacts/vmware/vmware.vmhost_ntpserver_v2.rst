@@ -6,6 +6,10 @@ Description
 
 The vmware:vmhost_ntpserver test is used to verify NTP time synchronization is configured correctly and enabled on each VMware ESXi host.
 
+The vmhost_ntpserver_object element is used by a vmhost_ntpserver_test to define the vmhost name and connection string, and name of the ntp_server to be evaluated.
+
+The vmhost_ntpserver_state element holds information regarding the specified ntp_server. 
+
 Technical Details
 -----------------
 
@@ -23,39 +27,26 @@ Artifact Parameters
 | vmhost_name                         | string  | The name of the ESXi host  |
 |                                     |         | to limit collection to.    |
 |                                     |         | Set to NA if not           |
-|                                     |         | applicable.                |
+|                                     |         | applicable. Cannot be      |
+|                                     |         | blank.                     |
 +-------------------------------------+---------+----------------------------+
 | ntp_server_name                     | string  | Set to NA if not           |
-|                                     |         | applicable.                |
+|                                     |         | applicable. Cannot be      |
+|                                     |         | blank.                     |
 +-------------------------------------+---------+----------------------------+
 | vmhost_name_operation               | string  | Comparison operation.      |
 +-------------------------------------+---------+----------------------------+
 | ntp_server_name_operation           | string  | Comparison operation.      |
 +-------------------------------------+---------+----------------------------+
 
-NOTE: The ``check_existence``  parameter is governed by a constraint allowing only the following values:
+NOTE: The ``check_existence`` parameter is governed by a constraint allowing only the following values:
   - all_exist
   - any_exist
   - at_least_one_exists
   - none_exist
   - only_one_exists
 
-  NOTE: The ``vmhost_name_operation`` parameter is governed by a constraint allowing only the following values:
-  - equals
-  - not equal
-  - case insensitive equals
-  - case insensitive not equal
-  - greater than
-  - less than
-  - greater than or equal
-  - less than or equal
-  - bitwise and 
-  - bitwise or
-  - pattern match
-  - subset of
-  - superset of
-
-NOTE: The ``ntp_server_name_operation`` parameter is governed by a constraint allowing only the following values:
+ NOTE: The ``vmhost_name_operation`` and ``ntp_server_name_operation`` parameters are governed by a constraint allowing only the following values:
   - equals
   - not equal
   - case insensitive equals
@@ -143,18 +134,21 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
       <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
         <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
         <ae:title>[RECOMMENDATION-TITLE]</ae:title>
-        <ae:artifact type="[ARTIFACT-TYPE-NAME]">
+        <ae:artifact type="[ARTIFACT-TYPE-NAME]" />
           <ae:parameters>
-            <ae:parameter dt="string" name="gatekeeper">[gatekeeper.value]</ae:parameter>
+            <ae:parameter dt="string" name="check_existence">[check_existence.value]</ae:parameter>
+            <ae:parameter dt="string" name="vmhost_name">[vmhost_name.value]</ae:parameter>
+            <ae:parameter dt="string" name="vmhost_name_operation">[vmhost_name_operation.value]</ae:parameter>
+            <ae:parameter dt="string" name="ntp_server_name">[ntp_server_name.value]</ae:parameter>
+            <ae:parameter dt="string" name="ntp_server_name_operation">[ntp_server_name_operation.value]</ae:parameter>
           </ae:parameters>
         </ae:artifact>
         <ae:test type="[TEST-TYPE-NAME]">
           <ae:parameters>
-            <ae:parameter dt="string" name="check_existence">[check_existence.value]</ae:parameter>
             <ae:parameter dt="string" name="check">[check.value]</ae:parameter>
             <ae:parameter dt="string" name="operation">[operation.value]</ae:parameter>
             <ae:parameter dt="string" name="datatype">[datatype.value]</ae:parameter>
-            <ae:parameter dt="boolean" name="enabled">[enabled.value]</ae:parameter>
+            <ae:parameter dt="string" name="ntp_server_name">[ntp_server_name.value]</ae:parameter>
           </ae:parameters>
         </ae:test>
         <ae:profiles>
@@ -162,7 +156,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
         </ae:profiles>
       </ae:artifact_expression>
     </xccdf:check-content>
-  </xccdf:check>
+  </xccdf:check>  
 
 SCAP
 ^^^^
@@ -170,18 +164,18 @@ SCAP
 XCCDF
 '''''
 
-For ``macos.gatekeeper_v1`` artifacts, the xccdf:check looks like this. There is no Value in the xccdf for this Artifact.
+For ``vmware.vmhost_ntpserver_v2`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
 
 ::
 
-  <xccdf:check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
-    <xccdf:check-content-ref 
-      xmlns:ae="http://benchmarks.cisecurity.org/ae/0.5"
-      xmlns:cpe="http://cpe.mitre.org/language/2.0"
-      xmlns:ecl="http://cisecurity.org/check"
-      href="[BENCHMARK-NAME]"
+  <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+    <check-export 
+      export-name="oval:org.cisecurity.benchmarks:var:100000"
+      value-id="xccdf_org.cisecurity.benchmarks_value_esxi.connection" />
+    <check-content-ref 
+      href="[BENCHMARK-NAME]-oval.xml"
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
-  </xccdf:check>
+  </check>
 
 OVAL
 ''''
@@ -190,40 +184,59 @@ Test
 
 ::
 
-  <macos:gatekeeper_test 
-    check="[check.value]"
+  <vmhost_ntpserver_test
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
+    id="oval:org.cisecurity.benchmarks[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
     check_existence="[check_existence.value]"
-    comment="[RECOMMENDATION-TITLE]"
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
+    check="[check.value]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <macos:object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
-    <macos:state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
-  </macos:gatekeeper_test>
+      <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+      <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
+  </vmhost_ntpserver_test>
 
 Object
 
 ::
 
-  <macos:gatekeeper_object 
-    comment="[RECOMMENDATION-TITLE]"
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
-    version="1" />
-   
+  <vmhost_ntpserver_object 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
+    id="oval:org.cisecurity.benchmarks[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"       
+    comment="[ARTIFACT-TITLE]"
+    version="1">
+      <connection_string var_ref="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
+      <vmhost_name operation="[operation.value]">
+          [vmhost_name.value]
+      </vmhost_name>
+      <ntp_server_name operation="[operation.value]">
+          [ntp_server_name.value]
+      </ntp_server_name>    
+  </vmhost_ntpserver_object>      
 
 State
 
 ::
 
-  <macos:gatekeeper_state 
-    comment="[RECOMMENDATION-TITLE]"
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
+  <vmhost_ntpserver_state 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
+    id="oval:org.cisecurity.benchmarks[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <macos:enabled 
-      datatype="[datatype.value]"
-      operation="[operation.value]">
-        [enabled.value]
-    </macos:enabled>
-  </macos:gatekeeper_state>  
+      <ntp_server_name 
+        datatype="[datatype.value]"
+        operation="[operation.value]"
+        var_ref="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
+  </vmhost_ntpserver_state> 
+
+Variable
+
+::
+
+  <external_variable 
+    id="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
+    datatype="string"
+    version="1"
+    comment="This value is used in Rule: [RECOMMENDATION-TITLE]" />
 
 YAML
 ^^^^
@@ -237,32 +250,44 @@ YAML
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
         - parameter: 
-            name: "gatekeeper"
-            type: "string"
-            value: "[gatekeeper.value]"
+            name: "check_existence"
+            dt: "string"
+            value: "[check_existence.value]"
+        - parameter: 
+            name: "vmhost_name"
+            dt: "string"
+            value: "[vmhost_name.value]"
+        - parameter: 
+            name: "vmhost_name_operation"
+            dt: "string"
+            value: "[vmhost_name_operation.value]"
+        - parameter: 
+            name: "ntp_server_name"
+            dt: "string"
+            value: "[ntp_server_name.value]"
+        - parameter: 
+            name: "ntp_server_name_operation"
+            dt: "string"
+            value: "[ntp_server_name_operation.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:
-        - parameter:
-            name: "check_existence"
-            type: "string"
-            value: "[check_existence.value]"
         - parameter: 
             name: "check"
-            type: "string"
+            dt: "string"
             value: "[check.value]"
         - parameter:
             name: "operation"
-            type: "string"
+            dt: "string"
             value: "[operation.value]"
         - parameter: 
             name: "datatype"
-            type: "string"
+            dt: "string"
             value: "[datatype.value]"
         - parameter: 
-            name: "enabled"
-            type: "string"
-            value: "[enabled.value]"
+            name: "ntp_server_name"
+            dt: "string"
+            value: "[ntp_server_name.value]"
 
 JSON
 ^^^^
@@ -278,11 +303,38 @@ JSON
         "parameters": [
           {
             "parameter": {
-              "name": "gatekeeper",
-              "type": "string",
-              "value": "[gatekeeper.value]"
+              "name": "check_existence",
+              "dt": "string",
+              "value": "[check_existence.value]"
             }
-          }
+          },
+          {
+            "parameter": {
+              "name": "vmhost_name",
+              "dt": "string",
+              "value": "[vmhost_name.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "vmhost_name_operation",
+              "dt": "string",
+              "value": "[vmhost_name_operation.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "ntp_server_name",
+              "dt": "string",
+              "value": "[ntp_server_name.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "ntp_server_name_operation",
+              "dt": "string",
+              "value": "[ntp_server_name_operation.value]"
+            }
         ]
       },
       "test": {
@@ -290,37 +342,30 @@ JSON
         "parameters": [
           {
             "parameter": {
-              "name": "check_existence",
-              "type": "string",
-              "value": "[check_existence.value]"
-            }
-          },
-          {
-            "parameter": {
               "name": "check",
-              "type": "string",
+              "dt": "string",
               "value": "[check.value]"
             }
           },
           {
             "parameter": {
               "name": "operation",
-              "type": "string",
+              "dt": "string",
               "value": "[operation.value]"
             }
           },
           {
             "parameter": {
               "name": "datetype",
-              "type": "string",
+              "dt": "string",
               "value": "[datatype.value]"
             }
           },
           {
             "parameter": {
-              "name": "enabled",
-              "type": "string",
-              "value": "[enabled.value]"
+              "name": "ntp_server_name",
+              "dt": "string",
+              "value": "[ntp_server_name.value]"
             }
           }
         ]

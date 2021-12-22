@@ -4,7 +4,9 @@ Script Check Engine Check
 Description
 -----------
 
-The Script Check Engine Check test defines a check system by executing scripts in various scripting languages, then evaluating XCCDF rules compliance based on the results. 
+The Script Check Engine Check test defines a check system by executing 
+scripts in various scripting languages, then evaluating XCCDF rules 
+compliance based on the results. 
 
 There are no OVAL tests, objects or states generated.
 
@@ -100,9 +102,9 @@ For ``linux.sce_check_v1`` artifacts, an XCCDF Value element is generated.
     id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var"
     type="string"
     operator="equals">
-    <title override>[RECOMMENDATION-TITLE]</title>
-  <description>This value is used in Rule: [RECOMMENDATION-TITLE]</description>
-  <value>[value.value]</value>
+      <title override>[RECOMMENDATION-TITLE]</title>
+      <description>This value is used in Rule: [RECOMMENDATION-TITLE]</description>
+      <value>[value.value]</value>
   </Value>
 
 For ``linux.sce_check_v1`` artifacts, the xccdf:check looks like this.

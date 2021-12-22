@@ -7,7 +7,7 @@ Description
 The Linux: Partition Options test is used to check the information
 associated with partitions on the local system.
 
-The partition_object is used to define which partitions on the
+The partition_object is used by a partition_test to define which partitions on the
 local system should be collected.
 
 The partition_state element defines the different information
@@ -120,10 +120,10 @@ Test
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
     check_existence="at_least_one_exists"
     check="all"
-    comment="[RECOMMENDATION-TITLE]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
-    <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
+      <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+      <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
   </partition_test>
 
 Object
@@ -133,9 +133,9 @@ Object
   <partition_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
-    comment="[RECOMMENDATION-TITLE]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <mount_point>[mount_point.value]</mount_point>
+      <mount_point>[mount_point.value]</mount_point>
   </partition_object>
 
 State
@@ -145,14 +145,14 @@ State
   <partition_state 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
-    comment="[RECOMMENDATION-TITLE]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <mount_options 
-      entity_check="at least one"
-      operation="equals"
-      datatype="[datatype.value]">
-        [mount_options.value]
-    </mount_options>
+      <mount_options 
+        entity_check="at least one"
+        operation="equals"
+        datatype="[datatype.value]">
+          [mount_options.value]
+      </mount_options>
   </partition_state>
 
 YAML

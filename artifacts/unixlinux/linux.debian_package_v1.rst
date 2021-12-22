@@ -7,7 +7,7 @@ Description
 The Linux: Debian Package test is used to check information for a given
 DPKG package.
 
-The dpkginfo_object element is used to define the object being
+The dpkginfo_object element is used by a dpkginfo_test to define the object being
 evaluated. A dpkginfo object consists of a single name entity that
 identifies the package being checked.
 
@@ -129,9 +129,9 @@ Test
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
     check_existence="[check_existence.value]"
     check="all"
-    comment="[RECOMMENDATION-TITLE]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+      <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
   </dpkginfo_test>
 
 Object
@@ -141,9 +141,9 @@ Object
   <dpkginfo_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
-    comment="[RECOMMENDATION-TITLE]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <name>value</name>
+      <name>value</name>
   </dpkginfo_object>
 
 State

@@ -8,7 +8,7 @@ The Linux: Auditd Rule test is used to check the contents of audit
 configuration and audit log files by looking at individual blocks of
 text.
 
-The textfilecontent54_object element is used to define the
+The textfilecontent54_object element is used by an textfilecontent54_test to define the
 specific block(s) of text of a file(s) to be evaluated. The
 textfilecontent54_object will only collect regular files on UNIX
 systems.
@@ -137,9 +137,9 @@ Test
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
     check_existence="at_least_one_exists"
     check="all"
-    comment="[RECOMMENDATION-TITLE]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+      <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
   </textfilecontent54_test>
 
 Object
@@ -148,21 +148,21 @@ Object
 
   <textfilecontent54_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent"
-    comment="[RECOMMENDATION-TITLE]"
+    comment="[ARTIFACT-TITLE]"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     version="1">
-    <path>/etc/audit</path>
-    <filename>auditd.rules</filename>
-    <pattern 
-      datatype="[datatype.value]"
-      operation="pattern match">
-        [pattern.value]
-    </pattern>
-    <instance 
-      datatype="int"
-      operation="equals">
-        1
-    </instance>
+      <path>/etc/audit</path>
+      <filename>auditd.rules</filename>
+      <pattern 
+        datatype="[datatype.value]"
+        operation="pattern match">
+          [pattern.value]
+      </pattern>
+      <instance 
+        datatype="int"
+        operation="equals">
+          1
+      </instance>
   </textfilecontent54_object>
 
 State

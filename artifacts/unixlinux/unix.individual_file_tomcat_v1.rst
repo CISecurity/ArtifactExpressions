@@ -8,7 +8,7 @@ The Unix: Individual File Tomcat V1 test is used to check metadata
 associated with UNIX files, of the sort returned by either an ls
 command, stat command or stat() system call.
 
-The file_object element is used to define either the path and
+The file_object element is used by a file_test to define either the path and
 filename or complete filepath of the specific file(s) to be evaluated.
 The set of files to be evaluated may be identified with either a
 complete filepath or a path and filename. Only one of these options may
@@ -148,11 +148,20 @@ is generated.
 
   <Value 
     id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" 
-    operator="[operator.value]" 
-    type="[type.value]">
-    <title>[RECOMMENDATION-TITLE]</title>
-    <description>This value is used in Rule: [RECOMMENDATION-TITLE]</description>
-    <value>[value.value]</value>
+    type="string  ">
+      <title>"Apache Tomcat \$CATALINA_HOME"</title>
+      <description>"This value allows for user-supplied \$CATALINA_HOME"</description>
+      <value>[value.value]</value>
+  </Value>
+
+OR
+
+  <Value 
+    id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" 
+    type="string  ">
+      <title>"Apache Tomcat \$CATALINA_BASE"</title>
+      <description>"This value allows for user-supplied \$CATALINA_BASE"</description>
+      <value>[value.value]</value>
   </Value>
 
 For ``unix.individual_file_tomcat_v1`` artifacts, the xccdf:check looks
@@ -183,9 +192,9 @@ Test
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
     check_existence="[check_existence.value]" 
     check="[check.value]" 
-    comment="[RECOMMENDATION-TITLE]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+      <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
   </file_test>
 
 Object
@@ -199,21 +208,21 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]2"
     comment="\$CATALINA_HOME file object"
     version="1">
-    <behaviors 
-      max_depth="1"
-      recurse="directories"
-      recurse_direction="down" />
-    <path var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]1" />
-    <filename xsi:nil="true" />
+      <behaviors 
+        max_depth="1"
+        recurse="directories"
+        recurse_direction="down" />
+      <path var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]1" />
+      <filename xsi:nil="true" />
   </file_object>
 
   <file_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
-    comment="[RECOMMENDATION-TITLE]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <path var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]2" />
-    <filename>[filename.value]</filename>
+      <path var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]2" />
+      <filename>[filename.value]</filename>
   </file_object>
 
 **CATALINA_BASE**
@@ -225,21 +234,21 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]3"
     comment="\$CATALINA_BASE file object"
     version="1">
-    <behaviors 
-      max_depth="1"
-      recurse="directories"
-      recurse_direction="down" />
-    <path var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]" />
-    <filename xsi:nil="true" />
+      <behaviors 
+        max_depth="1"
+        recurse="directories"
+        recurse_direction="down" />
+      <path var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]" />
+      <filename xsi:nil="true" />
   </file_object>
 
   <file_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
-    comment="[RECOMMENDATION-TITLE]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <path var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]3" />
-    <filename>[filename.value]</filename>
+      <path var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]3" />
+      <filename>[filename.value]</filename>
   </file_object>
 
 State
@@ -257,14 +266,14 @@ Variable
     datatype="string"
     comment="\$CATALINA_BASE directory"
     version="1">
-    <concat>
-      <end character="/">
-        <variable_component var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]1" />
-      </end>
-      <literal_component>
-          [literal_component.value]
-      </literal_component>
-    </concat>
+      <concat>
+        <end character="/">
+          <variable_component var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]1" />
+        </end>
+        <literal_component>
+            [literal_component.value]
+        </literal_component>
+      </concat>
   </local_variable>
 
   <local_variable 
@@ -272,14 +281,14 @@ Variable
     datatype="string"
     comment="\$CATALINA_HOME directory"
     version="1">
-    <concat>
-      <end character="/">
-        <object_component 
-          object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]3"
-          item_field="path" />
-      </end>
-      <literal_component>[literal_component.value]</literal_component>
-    </concat>
+      <concat>
+        <end character="/">
+          <object_component 
+            object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]3"
+            item_field="path" />
+        </end>
+        <literal_component>[literal_component.value]</literal_component>
+      </concat>
   </local_variable>
 
 YAML

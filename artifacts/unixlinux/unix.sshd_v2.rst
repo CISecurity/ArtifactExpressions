@@ -7,7 +7,7 @@ Description
 The unix:sshd_v2 test is used to check the contents of an sshd
 configuration file, by looking at individual blocks of text.
 
-The sshd_object element is used to define the specific block(s)
+The sshd_object element is used by a sshd_test to define the specific block(s)
 of text of a file(s) to be evaluated. The sshd_object will only collect
 regular files on UNIX systems.
 
@@ -167,10 +167,10 @@ Test
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
     check_existence="[check_existence.value]"
     check="[check.value]"
-    comment="[RECOMMENDATION-TITLE]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
-    <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
+      <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+      <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
   </sshd_test>
 
 Object
@@ -180,9 +180,9 @@ Object
   <sshd_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
-    comment="[RECOMMENDATION-TITLE]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <name>[name.value]</name>
+      <name>[name.value]</name>
   </sshd_object>
 
 State
@@ -192,13 +192,13 @@ State
   <sshd_state 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
-    comment="[RECOMMENDATION-TITLE]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <value 
-      datatype="[datatype.value]"
-      operation="[operation.value]">
-        [value.value]
-    </value>
+      <value 
+        datatype="[datatype.value]"
+        operation="[operation.value]">
+          [value.value]
+      </value>
   </sshd_state>
 
 YAML

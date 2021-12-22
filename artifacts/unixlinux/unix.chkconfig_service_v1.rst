@@ -110,10 +110,10 @@ Test
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
     check_existence="[check_existence.value]"
     check="[check.value]"
-    comment="[RECOMMENDATION-TITLE]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
-    <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
+      <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+      <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
   </runlevel_test>
 
 Object
@@ -123,12 +123,12 @@ Object
   <runlevel_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
-    comment="[RECOMMENDATION-TITLE]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <service_name>[service_name.value]</service_name>
-    <runlevel operation="pattern match">
-        .*
-    </runlevel>
+      <service_name>[service_name.value]</service_name>
+      <runlevel operation="pattern match">
+          .*
+      </runlevel>
   </runlevel_object>
 
 State
@@ -138,13 +138,13 @@ State
   <runlevel_state 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
-    comment="[RECOMMENDATION-TITLE]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <start 
-      datatype="boolean"
-      operation="equals">
-        [start.value]
-    </start>
+      <start 
+        datatype="boolean"
+        operation="equals">
+          [start.value]
+      </start>
   </runlevel_state>
 
 YAML

@@ -7,7 +7,7 @@ Description
 The linux.software_package_v1 test is used to check the RPM header
 information for a given RPM package.
 
-The rpminfo_object element is used to define the object to be
+The rpminfo_object element is used by a rpminfo_test to define the object to be
 evaluated. An rpm info object consists of a single name entity that
 identifies the package being checked.
 
@@ -136,9 +136,9 @@ Test
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
     check_existence="[check_existence.value]"
     check="[check.value]"
-    comment="[RECOMMENDATION-TITLE]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+      <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
   </rpminfo_test>
 
 Object
@@ -148,11 +148,11 @@ Object
   <rpminfo_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
-    comment="[RECOMMENDATION-TITLE]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <name operation="[operation.value]">
-        [name.value]
-    </name>
+      <name operation="[operation.value]">
+          [name.value]
+      </name>
   </rpminfo_object>
 
 State
@@ -297,9 +297,9 @@ Test
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
     check_existence="[check_existence.value]"
     check="[check.value]"
-    comment="[RECOMMENDATION-TITLE]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+      <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
   </rpminfo_test>
 
 Object
@@ -309,11 +309,11 @@ Object
   <rpminfo_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
-    comment="[RECOMMENDATION-TITLE]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <name operation="[operation.value]">
-        [name.value]
-    </name>
+      <name operation="[operation.value]">
+          [name.value]
+      </name>
   </rpminfo_object>
 
 State

@@ -9,7 +9,7 @@ the hardware the machine is running on. This information is the parsed
 equivalent of uname -a. For example: "Linux quark 2.6.5-7.108-default #1
 Wed Aug 25 13:34:40 UTC 2004 i686 i686 i386 GNU/Linux".
 
-The uname_object element is used to define those objects to be
+The uname_object element is used by a uname_test to define those objects to be
 evaluated based on a specified state. There is actually only one object
 relating to uname and this is the system as a whole. Therefore, there
 are no child entities defined. Any test written to check uname will
@@ -134,9 +134,9 @@ For ``unix.uname_parameter_v1`` artifacts, an XCCDF Value element is generated.
     id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var"
     type="string"
     operator="[operator.value]">
-    <title>[RECOMMENDATION-TITLE]</title>
-    <description>This value is used in Rule: [RECOMMENDATION-TITLE]</description>
-    <value>[value.value]</value>
+      <title>[RECOMMENDATION-TITLE]</title>
+      <description>This value is used in Rule: [RECOMMENDATION-TITLE]</description>
+      <value>[value.value]</value>
   </Value>
 
 For ``unix.uname_parameter_v1`` artifacts, the xccdf:check looks like this.
@@ -164,10 +164,10 @@ Test
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
     check_existence="at_least_one_exists"
     check="all"
-    comment="[RECOMMENDATION-TITLE]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
-    <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
+      <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+      <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
   </uname_test>
 
 Object
@@ -177,7 +177,7 @@ Object
   <uname_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
-    comment="[RECOMMENDATION-TITLE]"
+    comment="[ARTIFACT-TITLE]"
     version="1" />
 
 State
@@ -187,12 +187,12 @@ State
   <uname_state 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
-    comment="[RECOMMENDATION-TITLE]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <parameter 
-      datatype="[datatype.value]"
-      operation="[operation.value]"
-      var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
+      <parameter 
+        datatype="[datatype.value]"
+        operation="[operation.value]"
+        var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
   </uname_state>
 
 Variable
