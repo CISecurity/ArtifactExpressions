@@ -247,9 +247,9 @@ Test
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
     check_existence="[check_existence.value]"
     check="[check.value]"
-    comment="[RECOMMENDATION-TITLE]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+      <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
   </textfilecontent54_test>
 
 Object
@@ -259,26 +259,26 @@ Object
   <textfilecontent54_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
-    comment="[RECOMMENDATION-TITLE]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <behaviors 
-      recurse_direction="down"
-      recurse_file_system="[recurse_file_system.value]"
-      max_depth="[max_depth.value]" />
-    <path>[path.value]</path>
-    <filename operation="pattern match">
-        [filename.value]
-    </filename>
-    <pattern 
-      operation="pattern match"
-      datatype="[datatype.value]">
-        [pattern.value]
-    </pattern>
-    <instance 
-      datatype="int"
-      operation="equals">
-        1
-    </instance>
+      <behaviors 
+        recurse_direction="down"
+        recurse_file_system="[recurse_file_system.value]"
+        max_depth="[max_depth.value]" />
+      <path>[path.value]</path>
+      <filename operation="pattern match">
+          [filename.value]
+      </filename>
+      <pattern 
+        operation="pattern match"
+        datatype="[datatype.value]">
+          [pattern.value]
+      </pattern>
+      <instance 
+        datatype="int"
+        operation="equals">
+          1
+      </instance>
   </textfilecontent54_object>
 
 State
@@ -481,9 +481,9 @@ Test
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
     check_existence="[check_existence.value]"
     check="[check.value]"
-    comment="[RECOMMENDATION-TITLE]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+      <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
   </file_test>
 
 Object
@@ -493,16 +493,16 @@ Object
   <file_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
-    comment="[RECOMMENDATION-TITLE]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <behaviors 
-      recurse_direction="down"
-      recurse_file_system="[recurse_file_system.value]"
-      max_depth="-1" />
-    <path>[path.value]</path>
-    <filename operation="pattern match">
-        [filename.value]
-    </filename>
+      <behaviors 
+        recurse_direction="down"
+        recurse_file_system="[recurse_file_system.value]"
+        max_depth="-1" />
+      <path>[path.value]</path>
+      <filename operation="pattern match">
+          [filename.value]
+      </filename>
   </file_object>
 
 State
@@ -696,9 +696,9 @@ Test
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
     check_existence="[check_existence.value]"
     check="[check.value]"
-    comment="[RECOMMENDATION-TITLE]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+      <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
   </file_test>
 
 Object
@@ -708,16 +708,16 @@ Object
   <file_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
-    comment="[RECOMMENDATION-TITLE]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <behaviors 
-      recurse_direction="down"
-      recurse_file_system="[recurse_file_system.value]"
-      max_depth="-1" />
-    <path>[path.value]</path>
-    <filename operation="pattern match">
-        [filename.value]
-    </filename>
+      <behaviors 
+        recurse_direction="down"
+        recurse_file_system="[recurse_file_system.value]"
+        max_depth="-1" />
+      <path>[path.value]</path>
+      <filename operation="pattern match">
+          [filename.value]
+      </filename>
   </file_object>
 
 State
@@ -727,50 +727,50 @@ State
    <file_state 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
-    comment="[RECOMMENDATION-TITLE]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <group_id datatype="int">
-        [group_id.value]
-    </group_id>
-    <user_id datatype="int">
-        [user_id.value]
-    </user_id>
-    <suid datatype="boolean">
-        [suid.value]
-    </suid>
-    <sgid datatype="boolean">
-        [sgid.value]
-    </sgid>
-    <sticky datatype="boolean">
-        [sticky.value]
-    </sticky>
-    <uread datatype="boolean">
-        [uread.value]
-    </uread>
-    <uwrite datatype="boolean">
-        [uwrite.value]
-    </uwrite>
-    <uexec datatype="boolean">
-        [uexec.value]
-    </uexec>
-    <gread datatype="boolean">
-        [gread.value]
-    </gread>
-    <gwrite datatype="boolean">
-        [gwrite.value]
-    </gwrite>
-    <gexec datatype="boolean">
-        [gexec.value]
-    </gexec>
-    <oread datatype="boolean">
-        [oread.value]
-    </oread>
-    <owrite datatype="boolean">
-        [owrite.value]
-    </owrite>
-    <oexec datatype="boolean">
-        [oexec.value]
-    </oexec>
+      <group_id datatype="int">
+          [group_id.value]
+      </group_id>
+      <user_id datatype="int">
+          [user_id.value]
+      </user_id>
+      <suid datatype="boolean">
+          [suid.value]
+      </suid>
+      <sgid datatype="boolean">
+          [sgid.value]
+      </sgid>
+      <sticky datatype="boolean">
+          [sticky.value]
+      </sticky>
+      <uread datatype="boolean">
+          [uread.value]
+      </uread>
+      <uwrite datatype="boolean">
+          [uwrite.value]
+      </uwrite>
+      <uexec datatype="boolean">
+          [uexec.value]
+      </uexec>
+      <gread datatype="boolean">
+          [gread.value]
+      </gread>
+      <gwrite datatype="boolean">
+          [gwrite.value]
+      </gwrite>
+      <gexec datatype="boolean">
+          [gexec.value]
+      </gexec>
+      <oread datatype="boolean">
+          [oread.value]
+      </oread>
+      <owrite datatype="boolean">
+          [owrite.value]
+      </owrite>
+      <oexec datatype="boolean">
+          [oexec.value]
+      </oexec>
   </file_state>
 
 YAML

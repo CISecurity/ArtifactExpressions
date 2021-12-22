@@ -202,19 +202,19 @@ Test Type Parameters
 
 :emphasis:`NOTE: The following _operation parameters:`
   +-------------------------------------+------------------------------------+
-  | ``cmd_operation``                   | ``exec_time_operation``            |
+  | ``cmd_operation``                  | ``exec_time_operation``           |
   +-------------------------------------+------------------------------------+
-  | ``pid_operation``                   | ``priority_operation``             |
+  | ``pid_operation``                  | ``priority_operation``            |
   +-------------------------------------+------------------------------------+       
-  | ``ruid_operation``                  | ``scheduling_class_operation``     |
+  | ``ruid_operation``                 | ``scheduling_class_operation``    |
   +-------------------------------------+------------------------------------+
-  | ``start_time_operation``            | ``tty_operation``                  |
+  | ``start_time_operation``           | ``tty_operation``                 |
   +-------------------------------------+------------------------------------+
-  | ``user_id_operation``               | ``exec_shield_operation``          |
+  | ``user_id_operation``              | ``exec_shield_operation``         |
   +-------------------------------------+------------------------------------+
-  | ``loginuid_operation``              | ``posix_capability_operation``     |
+  | ``loginuid_operation``             | ``posix_capability_operation``    |
   +-------------------------------------+------------------------------------+
-  | ``selinux_domain_label_operation``  | ``session_id_operation``           |
+  | ``selinux_domain_label_operation`` | ``session_id_operation``          |
   +-------------------------------------+------------------------------------+
   
   are governed by a constraint allowing only the following values: 
@@ -237,7 +237,7 @@ Test Type Parameters
 
 :emphasis:`NOTE: The following ID parameters:`
   +-------------+--------------+----------------+
-  | ``pid``     | ``ppid``     | ``ruid``       |
+  | ``pid``    | ``ppid``    | ``ruid``      |
   +-------------+--------------+----------------+
   | ``user_id`` | ``loginuid`` | ``session_id`` |
   +-------------+--------------+----------------+
@@ -380,10 +380,10 @@ Test
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
     check_existence="all_exist"
     check="all"
-    comment="[RECOMMENDATION-TITLE]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
-    <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
+      <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+      <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
   </process58_test>
 
 Object      
@@ -393,16 +393,16 @@ Object
   <process58_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
-    comment="[RECOMMENDATION-TITLE]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <command_line operation="[operation.value]">
-        [command_line.value]
-    </command_line>
-    <pid 
-      datatype="int"
-      operation="[operation.value]">
-        [pid.value]
-    </pid>
+      <command_line operation="[operation.value]">
+          [command_line.value]
+      </command_line>
+      <pid 
+        datatype="int"
+        operation="[operation.value]">
+          [pid.value]
+      </pid>
   </process58_object>
 
 State     
@@ -412,84 +412,84 @@ State
    <process58_state 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
-    comment="[RECOMMENDATION-TITLE]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <command_line 
-      datatype="string"
-      operation="[operation.value]">
-        [command_line.value]
-    </command_line>
-    <exec_time 
-      datatype="string"
-      operation="[operation.value]">
-        [exec_time.value]
-    </exec_time>
-    <pid 
-      datatype="int"
-      operation="[operation.value]">
-        [pid.value]
-    </pid>
-    <ppid 
-      datatype="int"
-      operation="[operation.value]">
-        [ppid.value]
-    </ppid>
-    <priority 
-      datatype="int"
-      operation="[operation.value]">
-        [priority.value]
-    </priority>
-    <ruid 
-      datatype="int"
-      operation="[operation.value]">
-        [ruid.value]
-    </ruid>
-    <scheduling_class 
-      datatype="string"
-      operation="[operation.value]">
-        [scheduling_class.value]
-    </scheduling_class>
-    <start_time 
-      datatype="string"
-      operation="[operation.value]">
-        [start_time.value]
-    </start_time>
-    <tty 
-      datatype="string"
-      operation="[operation.value]">
-        [tty.value]
-    </tty>
-    <user_id 
-      datatype="int"
-      operation="[operation.value]"
-      var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]">
-        [user_id.value]
-    </user_id>
-    <exec_shield 
-      datatype="boolean"
-      operation="[operation.value]">
-        [exec_shield.value]
-    </exec_shield>
-    <loginuid 
-      datatype="int"
-      operation="[operation.value]">
-        [loginuid.value]
-    </loginuid>
-    <posix_capability 
-      datatype="string"
-      operation="[operation.value]">
-        [posix_capability.value]
-    </posix_capability>
-    <selinux_domain_label 
-      datatype="string"
-      operation="[operation.value]">
-        [selinux_domain_label.value]
-    </selinux_domain_label>
-    <session_id 
-      datatype="int"
-      operation="[operation.value]">
-        [session_id.value]
-    </session_id>
+      <command_line 
+        datatype="string"
+        operation="[operation.value]">
+          [command_line.value]
+      </command_line>
+      <exec_time 
+        datatype="string"
+        operation="[operation.value]">
+          [exec_time.value]
+      </exec_time>
+      <pid 
+        datatype="int"
+        operation="[operation.value]">
+          [pid.value]
+      </pid>
+      <ppid 
+        datatype="int"
+        operation="[operation.value]">
+          [ppid.value]
+      </ppid>
+      <priority 
+        datatype="int"
+        operation="[operation.value]">
+          [priority.value]
+      </priority>
+      <ruid 
+        datatype="int"
+        operation="[operation.value]">
+          [ruid.value]
+      </ruid>
+      <scheduling_class 
+        datatype="string"
+        operation="[operation.value]">
+          [scheduling_class.value]
+      </scheduling_class>
+      <start_time 
+        datatype="string"
+        operation="[operation.value]">
+          [start_time.value]
+      </start_time>
+      <tty 
+        datatype="string"
+        operation="[operation.value]">
+          [tty.value]
+      </tty>
+      <user_id 
+        datatype="int"
+        operation="[operation.value]"
+        var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]">
+          [user_id.value]
+      </user_id>
+      <exec_shield 
+        datatype="boolean"
+        operation="[operation.value]">
+          [exec_shield.value]
+      </exec_shield>
+      <loginuid 
+        datatype="int"
+        operation="[operation.value]">
+          [loginuid.value]
+      </loginuid>
+      <posix_capability 
+        datatype="string"
+        operation="[operation.value]">
+          [posix_capability.value]
+      </posix_capability>
+      <selinux_domain_label 
+        datatype="string"
+        operation="[operation.value]">
+          [selinux_domain_label.value]
+      </selinux_domain_label>
+      <session_id 
+        datatype="int"
+        operation="[operation.value]">
+          [session_id.value]
+      </session_id>
   </process58_state>
 
 YAML

@@ -156,10 +156,10 @@ Test
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
     check_existence="any_exist"
     check="all"
-    comment="[RECOMMENDATION-TITLE]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
-    <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
+      <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+      <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
   </systemdunitdependency_test>
 
 Object
@@ -169,11 +169,11 @@ Object
   <systemdunitdependency_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
-    comment="[RECOMMENDATION-TITLE]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <unit operation="[operation.value]">
-        [unit.value]
-    </unit>
+      <unit operation="[operation.value]">
+          [unit.value]
+      </unit>
   </systemdunitdependency_object>
 
 State
@@ -183,18 +183,18 @@ State
   <systemdunitdependency_state 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
-    comment="[RECOMMENDATION-TITLE]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <unit 
-      datatype="string"
-      operation="[operation.value]">
-        [unit.value]
-    </unit>
-    <dependency 
-      entity_check="at least one"
-      operation="[operation.value]">
-        [dependency.value]
-    </dependency>
+      <unit 
+        datatype="string"
+        operation="[operation.value]">
+          [unit.value]
+      </unit>
+      <dependency 
+        entity_check="at least one"
+        operation="[operation.value]">
+          [dependency.value]
+      </dependency>
   </systemdunitdependency_state>
 
 YAML

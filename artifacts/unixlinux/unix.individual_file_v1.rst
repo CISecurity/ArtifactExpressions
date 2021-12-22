@@ -223,9 +223,9 @@ Test
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
     check_existence="[check_existence.value]"
     check="[check.value]"
-    comment="[RECOMMENDATION-TITLE]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+      <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
   </file_test>
 
 Object
@@ -235,19 +235,19 @@ Object
   <file_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#iindependent"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
-    comment="[RECOMMENDATION-TITLE]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <filepath>[filepath.value]</filepath>
-    <pattern 
-      operation="pattern match"
-      datatype="[datatype.value]">
-        [pattern.value] 
-    </pattern>
-    <instance 
-      datatype="int"
-      operation="equals">
-        1
-    </instance>
+      <filepath>[filepath.value]</filepath>
+      <pattern 
+        operation="pattern match"
+        datatype="[datatype.value]">
+          [pattern.value] 
+      </pattern>
+      <instance 
+        datatype="int"
+        operation="equals">
+          1
+      </instance>
   </file_object>
 
 State
@@ -414,9 +414,9 @@ Test
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
     check_existence="[check_existence.value]"
     check="[check.value]"
-    comment="[RECOMMENDATION-TITLE]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+      <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
   </file_test>
 
 Object
@@ -426,12 +426,12 @@ Object
   <file_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#iindependent"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
-    comment="[RECOMMENDATION-TITLE]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <path>[path.value]</path>
-    <filename xsi:nil="true">
-        [filename.value]
-    </filename>
+      <path>[path.value]</path>
+      <filename xsi:nil="true">
+          [filename.value]
+      </filename>
   </file_object>
 
 State
@@ -592,10 +592,10 @@ Test
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]" 
     check="[check.value]" 
     check_existence="[check_existence.value]" 
-    comment="[RECOMMENDATION-TITLE]" 
+    comment="[ARTIFACT-TITLE]" 
     version="1">
-    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
-    <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
+      <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+      <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
   </file_test> 
 
 Object
@@ -605,11 +605,11 @@ Object
   <file_object
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" 
-    comment="[RECOMMENDATION-TITLE]" 
+    comment="[ARTIFACT-TITLE]" 
     version="1">
-    <path>[path.value]</path>
-    <filename xsi:nil="true" />
-    <filepath>[filepath.value]</filepath>
+      <path>[path.value]</path>
+      <filename xsi:nil="true" />
+      <filepath>[filepath.value]</filepath>
   </file_object>
 
 State
@@ -619,35 +619,35 @@ State
   <file_state 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
-    comment="[RECOMMENDATION-TITLE]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <group_id datatype="int">
-        [group_id.value]
-    </group_id>
-    <user_id datatype="int">
-        [user_id.value]
-    </user_id>
-    <uread datatype="boolean">
-        [uread.value]
-    </uread>
-    <gread datatype="boolean">
-        [gread.value]
-    </gread>
-    <gwrite datatype="boolean">
-        [gwrite.value]
-    </gwrite>
-    <gexec datatype="boolean">
-        [gexec.value]
-    </gexec>
-    <oread datatype="boolean">
-        [oread.value]
-    </oread>
-    <owrite datatype="boolean">
-        [owrite.value]
-    </owrite>
-    <oexec datatype="boolean">
-        [oexec.value]
-    </oexec>
+      <group_id datatype="int">
+          [group_id.value]
+      </group_id>
+      <user_id datatype="int">
+          [user_id.value]
+      </user_id>
+      <uread datatype="boolean">
+          [uread.value]
+      </uread>
+      <gread datatype="boolean">
+          [gread.value]
+      </gread>
+      <gwrite datatype="boolean">
+          [gwrite.value]
+      </gwrite>
+      <gexec datatype="boolean">
+          [gexec.value]
+      </gexec>
+      <oread datatype="boolean">
+          [oread.value]
+      </oread>
+      <owrite datatype="boolean">
+          [owrite.value]
+      </owrite>
+      <oexec datatype="boolean">
+          [oexec.value]
+      </oexec>
   </file_state>
 
 YAML

@@ -110,10 +110,10 @@ Test
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
     check_existence="at_least_one_exists"
     check="all"
-    comment="[RECOMMENDATION-TITLE]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
-    <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
+      <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+      <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
   </shellcommand_test>
 
 Object
@@ -123,12 +123,12 @@ Object
   <shellcommand_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#cmd"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
-    comment="[RECOMMENDATION-TITLE]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <command>[command.value]</command>
-    <line_selection operation="pattern match">
-        "^\\s+start on
-    </line_selection>
+      <command>[command.value]</command>
+      <line_selection operation="pattern match">
+          "^\\s+start on
+      </line_selection>
   </shellcommand_object>
 
 State
@@ -138,13 +138,13 @@ State
   <shellcommand_state 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#cmd"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
-    comment="[RECOMMENDATION-TITLE]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <stdout_line 
-      entity_check="at least one"
-      operation="pattern match">
-        .+
-    </stdout_line>
+      <stdout_line 
+        entity_check="at least one"
+        operation="pattern match">
+          .+
+      </stdout_line>
   </shellcommand_state> 
 
 YAML

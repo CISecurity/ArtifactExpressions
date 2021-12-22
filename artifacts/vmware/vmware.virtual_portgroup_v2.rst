@@ -4,7 +4,11 @@ vmware:virtual_portgroup
 Description
 -----------
 
-The vmware:virtual_portgroup test is used to verify the ESXi Server virtual switch port groups configuration in relation to the VLAN ID in use. 
+The VMware: Virtual Port Group test is used to verify the ESXi Server virtual switch port groups configuration in relation to the VLAN ID in use. 
+
+The virtual_portgroup_object element is used by the virtual_portgroup_test to define the name and connection string of the specific virtual switch, and the portgroup to be evaluated.
+
+The virtual_portgroup_state element holds the ID of the VLAN in use.
 
 Technical Details
 -----------------
@@ -31,7 +35,7 @@ Artifact Parameters
 | virtual_switch_name_operation | string  | Comparison operation.            |
 +-------------------------------+---------+----------------------------------+
 
-NOTE: The ``check_existence``  parameter is governed by a constraint allowing only the following values:
+NOTE: The ``check_existence`` parameter is governed by a constraint allowing only the following values:
   - all_exist
   - any_exist
   - at_least_one_exists
@@ -139,17 +143,18 @@ SCAP
 XCCDF
 '''''
 
-For ``macos.gatekeeper_v1`` artifacts, the xccdf:check looks like this. There is no Value in the xccdf for this Artifact.
+For ``vmware:virtual_portgroup`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
 
 ::
 
   <xccdf:check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
-    <xccdf:check-content-ref 
-      xmlns:ae="http://benchmarks.cisecurity.org/ae/0.5"
-      xmlns:cpe="http://cpe.mitre.org/language/2.0"
-      xmlns:ecl="http://cisecurity.org/check"
-      href="[BENCHMARK-NAME]"
+    <check-export 
+      export-name="oval:org.cisecurity.benchmarks:var:100000"
+      value-id="xccdf_org.cisecurity.benchmarks_value_esxi.connection" />
+    <check-content-ref 
+      href="[BENCHMARK-NAME]-oval.xml" 
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
+    </check>
   </xccdf:check>
 
 OVAL
@@ -159,40 +164,53 @@ Test
 
 ::
 
-  <macos:gatekeeper_test 
-    check="[check.value]"
+  <virtual_portgroup_test 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
+    id="oval:org.cisecurity.benchmarks:tst:[ARTIFACT-OVAL-ID]"
     check_existence="[check_existence.value]"
-    comment="[RECOMMENDATION-TITLE]"
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
+    check="[check.value]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <macos:object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
-    <macos:state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
-  </macos:gatekeeper_test>
+      <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+      <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
+  </virtual_portgroup_test>
 
 Object
 
 ::
 
-  <macos:gatekeeper_object 
-    comment="[RECOMMENDATION-TITLE]"
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
-    version="1" />
-   
+  <virtual_portgroup_object 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
+    id="oval:org.cisecurity.benchmarks:tst:[ARTIFACT-OVAL-ID]"
+    check_existence="[check_existence.value]"
+    check="[check.value]"
+    comment="[ARTIFACT-TITLE]"
+    version="1">
+      <connection_string 
+        var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
+      <port_group_name operation="[operation.value]">
+          .*
+      </port_group_name>
+      <virtual_switch_name operation="[operation.value]">
+          .*
+      </virtual_switch_name>
+  </virtual_portgroup_object>   
 
 State
 
 ::
 
-  <macos:gatekeeper_state 
-    comment="[RECOMMENDATION-TITLE]"
+  <virtual_portgroup_state 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <macos:enabled 
-      datatype="[datatype.value]"
-      operation="[operation.value]">
-        [enabled.value]
-    </macos:enabled>
-  </macos:gatekeeper_state>  
+      <vlan_id 
+        datatype="[datatype.value]"
+        operation="[operation.value]">
+          [vlan_id.value]
+      </vlan_id>
+  </virtual_portgroup_state>  
 
 YAML
 ^^^^
@@ -206,32 +224,44 @@ YAML
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
         - parameter: 
-            name: "gatekeeper"
-            type: "string"
-            value: "[gatekeeper.value]"
+            name: "check_existence"
+            dt "string"
+            value: "[check_existence.value]"
+        - parameter: 
+            name: "port_group_name"
+            dt "string"
+            value: "[port_group_name.value]"
+        - parameter: 
+            name: "virtual_switch_name"
+            dt "string"
+            value: "[virtual_switch_name.value]"
+        - parameter: 
+            name: "portgroup_name_operation"
+            dt "string"
+            value: "[portgroup_name_operation.value]"
+        - parameter: 
+            name: "virtual_switch_name_operation"
+            dt "string"
+            value: "[virtual_switch_name_operation.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:
-        - parameter:
-            name: "check_existence"
-            type: "string"
-            value: "[check_existence.value]"
         - parameter: 
             name: "check"
-            type: "string"
+            dt "string"
             value: "[check.value]"
         - parameter:
             name: "operation"
-            type: "string"
+            dt "string"
             value: "[operation.value]"
         - parameter: 
             name: "datatype"
-            type: "string"
+            dt "string"
             value: "[datatype.value]"
         - parameter: 
-            name: "enabled"
-            type: "string"
-            value: "[enabled.value]"
+            name: "vlan_id"
+            dt "integer"
+            value: "[vlan_id.value]"
 
 JSON
 ^^^^
@@ -247,9 +277,37 @@ JSON
         "parameters": [
           {
             "parameter": {
-              "name": "gatekeeper",
-              "type": "string",
-              "value": "[gatekeeper.value]"
+              "name": "check_existence",
+              "dt": "string",
+              "value": "[check_existence.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "port_group_name",
+              "dt": "string",
+              "value": "[port_group_name.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "virtual_switch_name",
+              "dt": "string",
+              "value": "[virtual_switch_name.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "portgroup_name_operation",
+              "dt": "string",
+              "value": "[portgroup_name_operation.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "virtual_switch_name_operation",
+              "dt": "string",
+              "value": "[virtual_switch_name_operation.value]"
             }
           }
         ]
@@ -259,37 +317,30 @@ JSON
         "parameters": [
           {
             "parameter": {
-              "name": "check_existence",
-              "type": "string",
-              "value": "[check_existence.value]"
-            }
-          },
-          {
-            "parameter": {
               "name": "check",
-              "type": "string",
+              "dt": "string",
               "value": "[check.value]"
             }
           },
           {
             "parameter": {
               "name": "operation",
-              "type": "string",
+              "dt": "string",
               "value": "[operation.value]"
             }
           },
           {
             "parameter": {
               "name": "datetype",
-              "type": "string",
+              "dt": "string",
               "value": "[datatype.value]"
             }
           },
           {
             "parameter": {
-              "name": "enabled",
-              "type": "string",
-              "value": "[enabled.value]"
+              "name": "vlan_id",
+              "dt": "integer",
+              "value": "[vlan_id.value]"
             }
           }
         ]

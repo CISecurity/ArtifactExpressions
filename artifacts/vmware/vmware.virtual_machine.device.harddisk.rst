@@ -6,6 +6,10 @@ Description
 
 The VMware: Virtual Machine: Device: Hard Disk test is used to verify the configuration of virtual machine persistent memory settings.
 
+The vm_harddiskdevice_object element is used by the vm_harddiskdevice_test to define the name and connection string of the vm to be evaluated.
+
+the vm_harddiskdevice_state element holds information regarding the configuration of the virtual machine persistent memory settings.
+
 Technical Details
 -----------------
 
@@ -79,6 +83,15 @@ NOTE: The ``operator`` parameter is governed by a constraint allowing only the f
   - subset of
   - superset of
 
+NOTE: The ``persistence`` parameter is governed by a constraint allowing only the following values:
+  - NA
+  - Persistent
+  - NonPersistent
+  - Undoable
+  - IndependentPersistent
+  - IndependentNonPersistent
+  - Unknown
+
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
@@ -133,8 +146,8 @@ For ``vmware.virtual_machine.device_state`` artifacts, an XCCDF Value element is
 
   <Value 
     id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var"  
-    operator="equals" 
-    type="[type.value]">
+    operator="[operator.value]" 
+    type="string">
     <title>[RECOMMENDATION-TITLE]</title>
     <description>This value is used in Rule: [RECOMMENDATION-TITLE]</description>
     <value>[value.value]</value>
@@ -150,11 +163,11 @@ For ``vmware.virtual_machine.device_state`` artifacts, the xccdf:check looks lik
         export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
         value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
       <check-export 
-        export-name="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]"
-        value-id="xccdf_org.cisecurity.benchmarks_value_[PLATFORM].connection" />
+        export-name="oval:org.cisecurity.benchmarks:var:100000"
+        value-id="xccdf_org.cisecurity.benchmarks_value_esxi.connection" />
       <check-content-ref 
-        href="[BENCHMARK-NAME]"
-        name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
+        href="[BENCHMARK-NAME]-oval.xml"
+        name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
     </check>
   </xccdf:complex-check> 
 
@@ -165,57 +178,54 @@ Test
 
 ::
 
-  <vm_device_test 
+  <vm_harddiskdevice_test 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
-    check="all"
+    id="oval:org.cisecurity.benchmarks[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"    
     check_existence="any_exist"
-    comment="[RECOMMENDATION-TITLE]"
-    id="oval:org.cisecurity.benchmarks[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
+    check="all"    
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
-    <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
-  </vm_device_test>
+      <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+      <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
+  </vm_harddiskdevice_test>
 
 Object
 
 ::
 
-  <vm_device_object 
+  <vm_harddiskdevice_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
-    comment="[RECOMMENDATION-TITLE]"
-    id="oval:org.cisecurity.benchmarks[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
+    id="oval:org.cisecurity.benchmarks[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"       
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <connection_string var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]" />
-    <vm_name operation="pattern match">
-        .*
-    </vm_name>
-    <device_type>
-        [device_type.value]
-    </device_type>
-  </vm_device_object>  
+      <connection_string var_ref="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
+      <vm_name operation="pattern match">
+          .*
+      </vm_name>
+  </vm_harddiskdevice_object>  
 
 State
 
 ::
 
-  <vm_device_state 
+  <vm_harddiskdevice_state
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
-    comment="[RECOMMENDATION-TITLE]"
     id="oval:org.cisecurity.benchmarks[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <connected 
-      datatype="boolean"
-      operation="equals"
-      var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
-  </vm_device_state>
+      <persistence 
+        datatype="string"
+        operation="[operation.value]"
+        var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
+  </vm_harddiskdevice_state>
 
-External Variable
+Variable
 
 ::
 
   <external_variable 
-    id="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]"
-    datatype="boolean"
+    id="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
+    datatype="string"
     version="1"
     comment="This value is used in Rule: [RECOMMENDATION-TITLE]" />      
 
@@ -281,45 +291,45 @@ JSON
           {
             "parameter": {
               "name": "persistence",
-              "type": "string",
+              "dt": "string",
               "value": "[persistence.value]"
             }
           },
           {
             "parameter": {
               "name": "disktype",
-              "type": "string",
+              "dt": "string",
               "value": "[disktype.value]"
             }
           },
           {
             "parameter": {
               "name": "filename",
-              "type": "string",
+              "dt": "string",
               "value": "[filename.value]"
             }
           },
           {
             "parameter": {
               "name": "capacitykb",
-              "type": "string",
+              "dt": "string",
               "value": "[capacitykb.value]"
             }
           },
           {
             "parameter": {
               "name": "capacitygb",
-              "type": "string",
+              "dt": "string",
               "value": "[capacitygb.value]"
             }
           },
           {
             "parameter": {
               "name": "vm_name",
-              "type": "string",
+              "dt": "string",
               "value": "[vm_name.value]"
             }
-          }                    
+          }           
         ]
       },
       "test": {
@@ -328,14 +338,14 @@ JSON
           {
             "parameter": {
               "name": "operator",
-              "type": "string",
+              "dt": "string",
               "value": "[operator.value]"
             }
           },
           {
             "parameter": {
               "name": "persistence",
-              "type": "string",
+              "dt": "string",
               "value": "[persistence.value]"
             }
           }

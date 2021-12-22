@@ -6,6 +6,10 @@ Description
 
 The VMware: Virtual Port Group test is used to verify the ESXi Server virtual switch port groups configuration in relation to the VLAN ID in use. 
 
+The virtual_portgroup_object element is used by the virtual_portgroup_test to define the name and connection string of the specific virtual switch, and the portgroup to be evaluated.
+
+The virtual_portgroup_state element holds the ID of the VLAN in use.
+
 Technical Details
 -----------------
 
@@ -100,16 +104,18 @@ SCAP
 XCCDF
 '''''
 
-For ``vmware.virtual_port_group`` artifacts, the xccdf:check looks like this. There is no Value in the xccdf for this Artifact.
+For ``vmware.virtual_port_group`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
 
 ::
 
   <xccdf:complex-check operator="AND">
     <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
       <check-export 
-        export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
-        value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
-      <check-content-ref href="[BENCHMARK-NAME]" name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"></check-content-ref>
+        export-name="oval:org.cisecurity.benchmarks:var:100000"
+        value-id="xccdf_org.cisecurity.benchmarks_value_esxi.connection" />
+      <check-content-ref 
+        href="[BENCHMARK-NAME]-oval.xml" 
+        name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
     </check>
   </xccdf:complex-check>
 
@@ -121,14 +127,14 @@ Test
 ::
 
   <virtual_portgroup_test 
-      xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi" 
-      check="all" 
-      check_existence="any_exist" 
-      comment="[RECOMMENDATION-TITLE]"
-      id="oval:org.cisecurity.benchmarks[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
-      version="1">
-    <object object_ref="oval:org.cisecurity.benchmarks.vmware_esxi_6:obj:152623" />
-    <state state_ref="oval:org.cisecurity.benchmarks.vmware_esxi_6:ste:152623" />
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
+    id="oval:org.cisecurity.benchmarks[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
+    check_existence="any_exist" 
+    check="all"  
+    comment="[ARTIFACT-TITLE]"
+    version="1">
+      <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+      <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
   </virtual_portgroup_test>
 
 Object
@@ -137,16 +143,16 @@ Object
 
   <virtual_portgroup_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
-    comment="[RECOMMENDATION-TITLE]"
     id="oval:org.cisecurity.benchmarks[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <connection_string var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]" />
-    <port_group_name operation="pattern match">
-        .*
-    </port_group_name>
-    <virtual_switch_name operation="pattern match">
-        .*
-    </virtual_switch_name>
+      <connection_string var_ref="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
+      <port_group_name operation="pattern match">
+          .*
+      </port_group_name>
+      <virtual_switch_name operation="pattern match">
+          .*
+      </virtual_switch_name>
   </virtual_portgroup_object> 
 
 State
@@ -155,21 +161,21 @@ State
 
   <virtual_portgroup_state 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
-    comment="[RECOMMENDATION-TITLE]"
-    id="oval:org.cisecurity.benchmarks[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
+    id="oval:org.cisecurity.benchmarks[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <vlan_id datatype="int"
-      operation="[operation.value]">
-        [vlan_id.value]
-    </vlan_id>
+      <vlan_id datatype="int"
+        operation="[operation.value]">
+          [vlan_id.value]
+      </vlan_id>
   </virtual_portgroup_state>
 
-External Variable
+Variable
 
 ::
 
   <external_variable 
-  id="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]"
+    id="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
     datatype="boolean"
     version="1"
     comment="This value is used in Rule: [RECOMMENDATION-TITLE]" />  
@@ -220,17 +226,17 @@ JSON
           {
             "parameter": {
               "name": "port_group_name",
-              "type": "string",
+              "dt": "string",
               "value": "[port_group_name.value]"
             }
           },
           {
             "parameter": {
               "name": "virtual_switch_name",
-              "type": "string",
+              "dt": "string",
               "value": "[virtual_switch_name.value]"
             }
-          }               
+          }      
         ]
       },
       "test": {
@@ -239,17 +245,17 @@ JSON
           {
             "parameter": {
               "name": "operator",
-              "type": "string",
+              "dt": "string",
               "value": "[operator.value]"
             }
           },
           {
             "parameter": {
               "name": "vlan_id",
-              "type": "int",
+              "dt": "int",
               "value": "[vlan_id.value]"
             }
-          }          
+          } 
         ]
       }
     }

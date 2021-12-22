@@ -229,10 +229,10 @@ Test
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
     check_existence="[check_existence.value]"    
     check="all"    
-    comment="[RECOMMENDATION-TITLE]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
-    <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
+      <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+      <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
   </file_test>
 
 Object
@@ -242,16 +242,16 @@ Object
   <file_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
-    comment="[RECOMMENDATION-TITLE]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <path>[path.value]</path>
-    <filename xsi:nil="[xsi:nil.value]">
-        [filename.value]
-    </filename>
-    <behaviors 
-      recurse_direction="down"
-      recurse_file_system="[recurse_file_system.value]"
-      max_depth="[max_depth.value]" />
+      <path>[path.value]</path>
+      <filename xsi:nil="[xsi:nil.value]">
+          [filename.value]
+      </filename>
+      <behaviors 
+        recurse_direction="down"
+        recurse_file_system="[recurse_file_system.value]"
+        max_depth="[max_depth.value]" />
   </file_object>
 
 State
@@ -261,26 +261,26 @@ State
   <file_state 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
-    comment="[RECOMMENDATION-TITLE]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <gread datatype="boolean">
-        [gread.value]
-    </gread>
-    <gwrite datatype="boolean">
-        [gwrite.value]
-    </gwrite>
-    <gexec datatype="boolean">
-        [gexec.value]
-    </gexec>
-    <oread datatype="boolean">
-        [oread.value]
-    </oread>
-    <owrite datatype="boolean">
-        [owrite.value]
-    </owrite>
-    <oexec datatype="boolean">
-        [oexec.value]
-    </oexec>
+      <gread datatype="boolean">
+          [gread.value]
+      </gread>
+      <gwrite datatype="boolean">
+          [gwrite.value]
+      </gwrite>
+      <gexec datatype="boolean">
+          [gexec.value]
+      </gexec>
+      <oread datatype="boolean">
+          [oread.value]
+      </oread>
+      <owrite datatype="boolean">
+          [owrite.value]
+      </owrite>
+      <oexec datatype="boolean">
+          [oexec.value]
+      </oexec>
   </file_state>
 
 YAML
@@ -590,10 +590,10 @@ Test
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
     check_existence="[check_existence.value]"    
     check="all"    
-    comment="[RECOMMENDATION-TITLE]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
-    <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
+      <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+      <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
   </file_test>
 
 Object
@@ -603,16 +603,16 @@ Object
   <file_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
-    comment="[RECOMMENDATION-TITLE]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <path>[path.value]</path>
-    <filename xsi:nil="[xsi:nil.value]">
-        [filename.value]
-    </filename>
-    <behaviors 
-      recurse_direction="down"
-      recurse_file_system="[recurse_file_system.value]"
-      max_depth="[max_depth.value]" />
+      <path>[path.value]</path>
+      <filename xsi:nil="[xsi:nil.value]">
+          [filename.value]
+      </filename>
+      <behaviors 
+        recurse_direction="down"
+        recurse_file_system="[recurse_file_system.value]"
+        max_depth="[max_depth.value]" />
   </file_object>
 
 State
@@ -622,14 +622,14 @@ State
   <file_state 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
-    comment="[RECOMMENDATION-TITLE]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <group_id datatype="int">
-        [group_id.value]
-    </group_id>
-    <user_id datatype="int">
-        [user_id.value]
-    </user_id>
+      <group_id datatype="int">
+          [group_id.value]
+      </group_id>
+      <user_id datatype="int">
+          [user_id.value]
+      </user_id>
   </file_state>
 
 YAML
@@ -826,10 +826,10 @@ Test
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
     check_existence="[check_existence.value]"
     check="all"    
-    comment="[RECOMMENDATION-TITLE]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
-    <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
+      <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+      <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
   </file_test>
 
 Object
@@ -839,16 +839,16 @@ Object
   <file_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
-    comment="[RECOMMENDATION-TITLE]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <path>[path.value]</path>
-    <filename xsi:nil="[xsi:nil.value]">
-        [filename.value]
-    </filename>
-    <behaviors 
-      recurse_direction="down"
-      recurse_file_system="[recurse_file_system.value]"
-      max_depth="[max_depth.value]" />
+      <path>[path.value]</path>
+      <filename xsi:nil="[xsi:nil.value]">
+          [filename.value]
+      </filename>
+      <behaviors 
+        recurse_direction="down"
+        recurse_file_system="[recurse_file_system.value]"
+        max_depth="[max_depth.value]" />
   </file_object>
 
 State

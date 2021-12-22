@@ -102,9 +102,9 @@ For ``linux.sce_check_v1`` artifacts, an XCCDF Value element is generated.
     id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var"
     type="string"
     operator="equals">
-    <title override>[RECOMMENDATION-TITLE]</title>
-  <description>This value is used in Rule: [RECOMMENDATION-TITLE]</description>
-  <value>[value.value]</value>
+      <title override>[RECOMMENDATION-TITLE]</title>
+      <description>This value is used in Rule: [RECOMMENDATION-TITLE]</description>
+      <value>[value.value]</value>
   </Value>
 
 For ``linux.sce_check_v1`` artifacts, the xccdf:check looks like this.

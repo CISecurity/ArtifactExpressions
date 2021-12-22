@@ -164,11 +164,11 @@ Test
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#Linux"
     check="[check.value]"
     check_existence="[check_existence.value]"
-    comment="[RECOMMENDATION-TITLE]"
+    comment="[ARTIFACT-TITLE]"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
     version="1">
-    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
-    <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
+      <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+      <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
   </apparmorstatus_test>
 
 Object
@@ -177,7 +177,7 @@ Object
 
   <apparmorstatus_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#Linux"
-    comment="[RECOMMENDATION-TITLE]"
+    comment="[ARTIFACT-TITLE]"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     version="1" />
 
@@ -187,13 +187,13 @@ State
 
   <apparmorstatus_state 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#Linux"
-    comment="[RECOMMENDATION-TITLE]"
+    comment="[ARTIFACT-TITLE]"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
     version="1">
-    <enforce_mode_profiles_count datatype="[datatype.value]"
-      operation="[operation.value]">
-        [enforce_mode_profiles_count.value]
-    </enforce_mode_profiles_count>
+      <enforce_mode_profiles_count datatype="[datatype.value]"
+        operation="[operation.value]">
+          [enforce_mode_profiles_count.value]
+      </enforce_mode_profiles_count>
   </apparmorstatus_state>
 
 YAML

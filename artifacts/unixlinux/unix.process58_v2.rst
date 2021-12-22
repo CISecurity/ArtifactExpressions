@@ -204,10 +204,10 @@ Test
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
     check_existence="all_exist"
     check="all"
-    comment="[RECOMMENDATION-TITLE]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
-    <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
+      <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+      <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
   </process58_test>
 
 Object
@@ -217,16 +217,16 @@ Object
   <process58_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
-    comment="[RECOMMENDATION-TITLE]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <command_line operation="[operation.value]">
-        [command_line.value]
-    </command_line>
-    <pid 
-      datatype="int"
-      operation="[operation.value]">
-        [pid.value]
-    </pid>
+      <command_line operation="[operation.value]">
+          [command_line.value]
+      </command_line>
+      <pid 
+        datatype="int"
+        operation="[operation.value]">
+          [pid.value]
+      </pid>
   </process58_object>
 
 State
@@ -236,13 +236,13 @@ State
   <process58_state 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
-    comment="[RECOMMENDATION-TITLE]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <command_line 
-      operation="[operation.value]"
-      datatype="int">
-        [command_line.value]
-    </command_line>
+      <command_line 
+        operation="[operation.value]"
+        datatype="int">
+          [command_line.value]
+      </command_line>
   </process58_state>
 
 YAML

@@ -217,9 +217,9 @@ For ``unix.symlink_v1`` artifacts, an XCCDF Value element is generated.
     id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" 
     type="string"
     operator="pattern match">
-    <title>[RECOMMENDATION-TITLE]</title>
-    <description>This value is used in Rule: [RECOMMENDATION-TITLE]</description>
-    <value>[value.value]</value>
+      <title>[RECOMMENDATION-TITLE]</title>
+      <description>This value is used in Rule: [RECOMMENDATION-TITLE]</description>
+      <value>[value.value]</value>
   </Value>
 
 For ``unix.symlink_v1`` artifacts, the xccdf:check looks like this.
@@ -247,10 +247,10 @@ Test
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
     check_existence="all_exist"
     check="all"
-    comment="[RECOMMENDATION-TITLE]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
-    <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
+      <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+      <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
   </symlink_test>
 
 Object
@@ -260,12 +260,12 @@ Object
   <symlink_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
-    comment="[RECOMMENDATION-TITLE]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <filepath datatype="string"
-      operation="[operation.value]">
-        [filepath.value]
-    </filepath>
+      <filepath datatype="string"
+        operation="[operation.value]">
+          [filepath.value]
+      </filepath>
   </symlink_object>
 
 State
@@ -275,11 +275,11 @@ State
   <symlink_state 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
-    comment="[RECOMMENDATION-TITLE]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <canonical_path datatype="string"
-      operation="[operation.value]"
-      var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
+      <canonical_path datatype="string"
+        operation="[operation.value]"
+        var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
   </symlink_state>
 
 Variable
@@ -447,9 +447,9 @@ For ``unix.symlink_v1`` artifacts, an XCCDF Value element is generated.
     id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" 
     type="string"
     operator="pattern match">
-    <title>[RECOMMENDATION-TITLE]</title>
-    <description>This value is used in Rule: [RECOMMENDATION-TITLE]</description>
-    <value>[value.value]</value>
+      <title>[RECOMMENDATION-TITLE]</title>
+      <description>This value is used in Rule: [RECOMMENDATION-TITLE]</description>
+      <value>[value.value]</value>
   </Value>
 
 For ``unix.symlink_v1`` artifacts, the xccdf:check looks like this.
@@ -477,7 +477,7 @@ Test
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]" 
     check_existence="all_exist"
     check="all" 
-    comment="[RECOMMENDATION-TITLE]" 
+    comment="[ARTIFACT-TITLE]" 
     version="1"> 
     <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
     <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
@@ -490,7 +490,7 @@ Object
   <symlink_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
-    comment="[RECOMMENDATION-TITLE]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
     <filepath 
       datatype="string"
@@ -501,7 +501,7 @@ Object
   <password_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]1"
-    comment="[RECOMMENDATION-TITLE]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
     <username 
       datatype="string"
@@ -522,7 +522,7 @@ State
   <symlink_state 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
-    comment="[RECOMMENDATION-TITLE]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
     <canonical_path 
       datatype="string"
@@ -533,7 +533,7 @@ State
   <password_state 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]1"
-    comment="[RECOMMENDATION-TITLE]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
     <login_shell 
       datatype="string"

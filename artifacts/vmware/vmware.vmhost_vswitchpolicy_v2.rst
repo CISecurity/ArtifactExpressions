@@ -6,6 +6,10 @@ Description
 
 The vmware:vmhost_vswitchpolicy test is used to verify the vSwitch Forged Transmits policy is set to reject forged transmissions.
 
+The vmhost_vswitchpolicy_object element is used by a vmhost_vswitchpolicy_test to define the vmhost name and connection string, and name of the vSwitch to be evaluated.
+
+The vmhost_service_state element holds information regarding the vSwitch Forged Transmits policy of the specified vSwitch. 
+
 Technical Details
 -----------------
 
@@ -22,18 +26,20 @@ Artifact Parameters
 +-------------------------------------+---------+----------------------------+
 | vswitch_name                        | string  | The name of a target       |
 |                                     |         | vswitch. Set to NA if not  |
-|                                     |         | applicable.                |
+|                                     |         | applicable. Cannot be      |
+|                                     |         | blank.                     |
 +-------------------------------------+---------+----------------------------+
 | vmhost_name                         | string  | The ESXi host to scope     |
 |                                     |         | results to. Set it NA if   |
-|                                     |         | not applicable.            |
+|                                     |         | not applicable. Cannot be  |
+|                                     |         | blank.                     |
 +-------------------------------------+---------+----------------------------+
 | vswitch_name_operation              | string  | Comparison operation.      |
 +-------------------------------------+---------+----------------------------+
 | vmhost_name_operation               | string  | Comparison operation.      |
 +-------------------------------------+---------+----------------------------+
 
-NOTE: The ``check_existence``  parameter is governed by a constraint allowing only the following values:
+NOTE: The ``check_existence`` parameter is governed by a constraint allowing only the following values:
   - all_exist
   - any_exist
   - at_least_one_exists
@@ -55,7 +61,7 @@ NOTE: The ``vswitch_name_operation`` parameter is governed by a constraint allow
   - subset of
   - superset of  
 
-  NOTE: The ``vmhost_name_operation`` parameter is governed by a constraint allowing only the following values:- equals
+ NOTE: The ``vmhost_name_operation`` parameter is governed by a constraint allowing only the following values:- equals
   - not equal
   - case insensitive equals
   - case insensitive not equal
@@ -153,18 +159,22 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
       <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
         <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
         <ae:title>[RECOMMENDATION-TITLE]</ae:title>
-        <ae:artifact type="[ARTIFACT-TYPE-NAME]">
+        <ae:artifact type="[ARTIFACT-TYPE-NAME]" />
           <ae:parameters>
-            <ae:parameter dt="string" name="gatekeeper">[gatekeeper.value]</ae:parameter>
+            <ae:parameter dt="string" name="check_existence">[check_existence.value]</ae:parameter>
+            <ae:parameter dt="string" name="vmhost_name">[vmhost_name.value]</ae:parameter>
+            <ae:parameter dt="string" name="vmhost_name_operation">[vmhost_name_operation.value]</ae:parameter>
+            <ae:parameter dt="string" name="vswitch_name">[vswitch_name.value]</ae:parameter>
+            <ae:parameter dt="string" name="vswitch_name_operation">[vswitch_name_operation.value]</ae:parameter>
           </ae:parameters>
         </ae:artifact>
         <ae:test type="[TEST-TYPE-NAME]">
           <ae:parameters>
-            <ae:parameter dt="string" name="check_existence">[check_existence.value]</ae:parameter>
             <ae:parameter dt="string" name="check">[check.value]</ae:parameter>
             <ae:parameter dt="string" name="operation">[operation.value]</ae:parameter>
             <ae:parameter dt="string" name="datatype">[datatype.value]</ae:parameter>
-            <ae:parameter dt="boolean" name="enabled">[enabled.value]</ae:parameter>
+            <ae:parameter dt="set" name="policy_name">[policy_name.value]</ae:parameter>
+            <ae:parameter dt="string" name="policy_state">[policy_state.value]</ae:parameter>
           </ae:parameters>
         </ae:test>
         <ae:profiles>
@@ -180,18 +190,18 @@ SCAP
 XCCDF
 '''''
 
-For ``macos.gatekeeper_v1`` artifacts, the xccdf:check looks like this. There is no Value in the xccdf for this Artifact.
+For ``vmware.vmhost_vswitchpolicy_v2`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
 
 ::
 
-  <xccdf:check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
-    <xccdf:check-content-ref 
-      xmlns:ae="http://benchmarks.cisecurity.org/ae/0.5"
-      xmlns:cpe="http://cpe.mitre.org/language/2.0"
-      xmlns:ecl="http://cisecurity.org/check"
-      href="[BENCHMARK-NAME]"
+  <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+    <check-export 
+      export-name="oval:org.cisecurity.benchmarks:var:100000"
+      value-id="xccdf_org.cisecurity.benchmarks_value_esxi.connection" />
+    <check-content-ref 
+      href="[BENCHMARK-NAME]-oval.xml"
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
-  </xccdf:check>
+  </check>
 
 OVAL
 ''''
@@ -200,40 +210,60 @@ Test
 
 ::
 
-  <macos:gatekeeper_test 
-    check="[check.value]"
+  <vmhost_vswitchpolicy_test
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
+    id="oval:org.cisecurity.benchmarks[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
     check_existence="[check_existence.value]"
-    comment="[RECOMMENDATION-TITLE]"
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
+    check="[check.value]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <macos:object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
-    <macos:state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
-  </macos:gatekeeper_test>
+      <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+      <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
+  </vmhost_vswitchpolicy_test>
 
 Object
 
 ::
 
-  <macos:gatekeeper_object 
-    comment="[RECOMMENDATION-TITLE]"
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
-    version="1" />
-   
+  <vmhost_vswitchpolicy_object 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
+    id="oval:org.cisecurity.benchmarks[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"       
+    comment="[ARTIFACT-TITLE]"
+    version="1">
+      <connection_string var_ref="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
+      <vmhost_name operation="[operation.value]">
+          [vmhost_name.value]
+      </vmhost_name>
+      <vswitch_name operation="[operation.value]">
+          [vswitch_name.value]
+      </vswitch_name>    
+  </vmhost_vswitchpolicy_object>      
 
 State
 
 ::
 
-  <macos:gatekeeper_state 
-    comment="[RECOMMENDATION-TITLE]"
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
+  <vmhost_vswitchpolicy_state 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
+    id="oval:org.cisecurity.benchmarks[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <macos:enabled 
-      datatype="[datatype.value]"
-      operation="[operation.value]">
-        [enabled.value]
-    </macos:enabled>
-  </macos:gatekeeper_state>  
+      <[testPolicyName.value]
+        datatype="[datatype.value]"
+        operation="[operation.value]">
+          [testPolicyState.value]
+      </[testPolicyName.value]>
+  </vmhost_vswitchpolicy_state> 
+
+Variable
+
+::
+
+  <external_variable 
+    id="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
+    datatype="boolean"
+    version="1"
+    comment="This value is used in Rule: [RECOMMENDATION-TITLE]" />
 
 YAML
 ^^^^
@@ -247,32 +277,48 @@ YAML
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
         - parameter: 
-            name: "gatekeeper"
-            type: "string"
-            value: "[gatekeeper.value]"
+            name: "check_existence"
+            dt: "string"
+            value: "[check_existence.value]"
+        - parameter: 
+            name: "vmhost_name"
+            dt: "string"
+            value: "[vmhost_name.value]"
+        - parameter: 
+            name: "vmhost_name_operation"
+            dt: "string"
+            value: "[vmhost_name_operation.value]"
+        - parameter: 
+            name: "vswitch_name"
+            dt: "string"
+            value: "[vswitch_name.value]"
+        - parameter: 
+            name: "vswitch_name_operation"
+            dt: "string"
+            value: "[vswitch_name_operation.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:
-        - parameter:
-            name: "check_existence"
-            type: "string"
-            value: "[check_existence.value]"
         - parameter: 
             name: "check"
-            type: "string"
+            dt: "string"
             value: "[check.value]"
         - parameter:
             name: "operation"
-            type: "string"
+            dt: "string"
             value: "[operation.value]"
         - parameter: 
             name: "datatype"
-            type: "string"
+            dt: "string"
             value: "[datatype.value]"
         - parameter: 
-            name: "enabled"
-            type: "string"
-            value: "[enabled.value]"
+            name: "policy_name"
+            dt: "set"
+            value: "[policy_name.value]"
+        - parameter: 
+            name: "policy_state"
+            dt: "string"
+            value: "[policy_state.value]"
 
 JSON
 ^^^^
@@ -288,9 +334,37 @@ JSON
         "parameters": [
           {
             "parameter": {
-              "name": "gatekeeper",
-              "type": "string",
-              "value": "[gatekeeper.value]"
+              "name": "check_existence",
+              "dt": "string",
+              "value": "[check_existence.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "vmhost_name",
+              "dt": "string",
+              "value": "[vmhost_name.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "vmhost_name_operation",
+              "dt": "string",
+              "value": "[vmhost_name_operation.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "vswitch_name",
+              "dt": "string",
+              "value": "[vswitch_name.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "vswitch_name_operation",
+              "dt": "string",
+              "value": "[vswitch_name_operation.value]"
             }
           }
         ]
@@ -300,37 +374,37 @@ JSON
         "parameters": [
           {
             "parameter": {
-              "name": "check_existence",
-              "type": "string",
-              "value": "[check_existence.value]"
-            }
-          },
-          {
-            "parameter": {
               "name": "check",
-              "type": "string",
+              "dt": "string",
               "value": "[check.value]"
             }
           },
           {
             "parameter": {
               "name": "operation",
-              "type": "string",
+              "dt": "string",
               "value": "[operation.value]"
             }
           },
           {
             "parameter": {
               "name": "datetype",
-              "type": "string",
+              "dt": "string",
               "value": "[datatype.value]"
             }
           },
           {
             "parameter": {
-              "name": "enabled",
-              "type": "string",
-              "value": "[enabled.value]"
+              "name": "policy_name",
+              "dt": "string",
+              "value": "[policy_name.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "policy_state",
+              "dt": "string",
+              "value": "[policy_state.value]"
             }
           }
         ]

@@ -6,6 +6,10 @@ Description
 
 The VMware: VM Host: WebServerSSL test is used to verify default self-signed certificates for ESXi communication are not used.
 
+The vmhost_webserverssl_object element is used by a vmhost_webserverssl_test to define the name and connection string of the vmhost to be evaluated.
+
+The vmhost_webserverssl_state element holds information regarding the default self-signed communication certificates of the specified vmhost. 
+
 Technical Details
 -----------------
 
@@ -36,7 +40,7 @@ Test Type Parameters
 Name                 Type    Description
 ==================== ======= ======================
 certificate_is_valid boolean Certificate is Valid?
-operator             string Comparison operation..
+operator             string  Comparison operation.
 ==================== ======= ======================
 
 NOTE: The ``operator`` parameter is governed by a constraint allowing only the following values:
@@ -71,18 +75,15 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
       <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
         <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
         <ae:title>[RECOMMENDATION-TITLE]</ae:title>
-        <ae:artifact type="[ARTIFACT-TYPE-NAME]">
+        <ae:artifact type="[ARTIFACT-TYPE-NAME]" />
           <ae:parameters>
-            <ae:parameter dt="string" name="gatekeeper">[gatekeeper.value]</ae:parameter>
+            <ae:parameter dt="string" name="vmhost_name">[vmhost_name.value]</ae:parameter>
           </ae:parameters>
         </ae:artifact>
         <ae:test type="[TEST-TYPE-NAME]">
           <ae:parameters>
-            <ae:parameter dt="string" name="check_existence">[check_existence.value]</ae:parameter>
-            <ae:parameter dt="string" name="check">[check.value]</ae:parameter>
-            <ae:parameter dt="string" name="operation">[operation.value]</ae:parameter>
-            <ae:parameter dt="string" name="datatype">[datatype.value]</ae:parameter>
-            <ae:parameter dt="boolean" name="enabled">[enabled.value]</ae:parameter>
+            <ae:parameter dt="boolean" name="certificate_is_valid">[certificate_is_valid.value]</ae:parameter>
+            <ae:parameter dt="string" name="operator">[operator.value]</ae:parameter>
           </ae:parameters>
         </ae:test>
         <ae:profiles>
@@ -90,7 +91,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
         </ae:profiles>
       </ae:artifact_expression>
     </xccdf:check-content>
-  </xccdf:check>
+  </xccdf:check>  
 
 SCAP
 ^^^^
@@ -98,18 +99,18 @@ SCAP
 XCCDF
 '''''
 
-For ``macos.gatekeeper_v1`` artifacts, the xccdf:check looks like this. There is no Value in the xccdf for this Artifact.
+For ``vmware.vmhost.webserverssl`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
 
 ::
 
-  <xccdf:check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
-    <xccdf:check-content-ref 
-      xmlns:ae="http://benchmarks.cisecurity.org/ae/0.5"
-      xmlns:cpe="http://cpe.mitre.org/language/2.0"
-      xmlns:ecl="http://cisecurity.org/check"
-      href="[BENCHMARK-NAME]"
+  <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+    <check-export 
+      export-name="oval:org.cisecurity.benchmarks:var:100000"
+      value-id="xccdf_org.cisecurity.benchmarks_value_esxi.connection" />
+    <check-content-ref 
+      href="[BENCHMARK-NAME]-oval.xml"
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
-  </xccdf:check>
+  </check>
 
 OVAL
 ''''
@@ -118,40 +119,57 @@ Test
 
 ::
 
-  <macos:gatekeeper_test 
-    check="[check.value]"
-    check_existence="[check_existence.value]"
-    comment="[RECOMMENDATION-TITLE]"
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
+  <vmhost_webserverssl_test
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
+    id="oval:org.cisecurity.benchmarks[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
+    check_existence="at_least_one_exists"
+    check="all"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <macos:object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
-    <macos:state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
-  </macos:gatekeeper_test>
+      <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+      <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
+  </vmhost_webserverssl_test>
 
 Object
 
 ::
 
-  <macos:gatekeeper_object 
-    comment="[RECOMMENDATION-TITLE]"
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
-    version="1" />
-
+  <vmhost_webserverssl_object 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
+    id="oval:org.cisecurity.benchmarks[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"       
+    comment="[ARTIFACT-TITLE]"
+    version="1">
+      <connection_string var_ref="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
+      <vmhost_name operation="pattern match">
+          .*
+      </vmhost_name>
+  </vmhost_webserverssl_object>      
 
 State
 
 ::
 
-  <macos:gatekeeper_state 
-    comment="[RECOMMENDATION-TITLE]"
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
+  <vmhost_webserverssl_state 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
+    id="oval:org.cisecurity.benchmarks[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <macos:enabled 
-      datatype="[datatype.value]"
-      operation="[operation.value]">
-        [enabled.value]
-    </macos:enabled>
-  </macos:gatekeeper_state>     
+      <certificate_is_valid 
+        datatype="boolean"
+        operation="[operation.value]"
+        var_ref="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
+      </certificate_is_valid>
+  </vmhost_webserverssl_state> 
+
+Variable
+
+::
+
+  <external_variable 
+    id="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
+    datatype="boolean"
+    version="1"
+    comment="This value is used in Rule: [RECOMMENDATION-TITLE]" />
 
 YAML
 ^^^^
@@ -165,38 +183,25 @@ YAML
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
         - parameter: 
-            name: "gatekeeper"
-            type: "string"
-            value: "[gatekeeper.value]"
+            name: "vmhost_name"
+            dt: "string"
+            value: "[vmhost_name.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:
         - parameter:
-            name: "check_existence"
-            type: "string"
-            value: "[check_existence.value]"
+            name: "certificate_is_valid"
+            dt: "boolean"
+            value: "[certificate_is_valid.value]"
         - parameter: 
-            name: "check"
-            type: "string"
-            value: "[check.value]"
-        - parameter:
-            name: "operation"
-            type: "string"
-            value: "[operation.value]"
-        - parameter: 
-            name: "datatype"
-            type: "string"
-            value: "[datatype.value]"
-        - parameter: 
-            name: "enabled"
-            type: "string"
-            value: "[enabled.value]"
-
+            name: "operator"
+            dt: "string"
+            value: "[operator.value]"
+ 
 JSON
 ^^^^
 
 ::
-
 
   {
     "artifact-expression": {
@@ -207,9 +212,9 @@ JSON
         "parameters": [
           {
             "parameter": {
-              "name": "gatekeeper",
-              "type": "string",
-              "value": "[gatekeeper.value]"
+              "name": "vmhost_name",
+              "dt": "string",
+              "value": "[vmhost_name.value]"
             }
           }
         ]
@@ -219,37 +224,16 @@ JSON
         "parameters": [
           {
             "parameter": {
-              "name": "check_existence",
-              "type": "string",
-              "value": "[check_existence.value]"
+              "name": "certificate_is_valid",
+              "dt": "boolean",
+              "value": "[certificate_is_valid.value]"
             }
           },
           {
             "parameter": {
-              "name": "check",
-              "type": "string",
-              "value": "[check.value]"
-            }
-          },
-          {
-            "parameter": {
-              "name": "operation",
-              "type": "string",
-              "value": "[operation.value]"
-            }
-          },
-          {
-            "parameter": {
-              "name": "datetype",
-              "type": "string",
-              "value": "[datatype.value]"
-            }
-          },
-          {
-            "parameter": {
-              "name": "enabled",
-              "type": "string",
-              "value": "[enabled.value]"
+              "name": "operator",
+              "dt": "string",
+              "value": "[operator.value]"
             }
           }
         ]

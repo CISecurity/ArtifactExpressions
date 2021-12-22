@@ -145,16 +145,14 @@ For ``unix.sshd_parameter_v1`` artifacts, an XCCDF Value element is generated.
 
 ::
 
-  <Values>
-    <Value 
-      id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var"
-      type="string"
-      operator="equals">
+  <Value 
+    id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var"
+    type="string"
+    operator="equals">
       <title>[RECOMMENDATION-TITLE]</title>
       <description>This value is used in Rule: [RECOMMENDATION-TITLE]</description>
       <value>[value.value]</value>
-    </Value>
-  </Values>
+  </Value>
 
 For ``unix.sshd_parameter_v1`` artifacts, the xccdf:check looks like this.
 
@@ -183,10 +181,10 @@ Test
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
     check_existence="at_least_one_exists"
     check="all"
-    comment="[RECOMMENDATION-TITLE]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
-    <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
+      <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+      <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
   </textfilecontent54_test>
 
 Object
@@ -196,17 +194,17 @@ Object
   <textfilecontent54_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
-    comment="[RECOMMENDATION-TITLE]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <filepath>/etc/ssh/sshd_config</filepath>
-    <pattern operation="pattern match">
-        [pattern.value]
-    </pattern>
-    <instance 
-      datatype="int"
-      operation="equals">
-        1
-    </instance>
+      <filepath>/etc/ssh/sshd_config</filepath>
+      <pattern operation="pattern match">
+          [pattern.value]
+      </pattern>
+      <instance 
+        datatype="int"
+        operation="equals">
+          1
+      </instance>
   </textfilecontent54_object>
 
 State
@@ -216,12 +214,12 @@ State
   <textfilecontent54_state 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
-    comment="[RECOMMENDATION-TITLE]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <subexpression 
-      datatype="[datatype.value]"
-      operation="[operation.value]"
-      var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
+      <subexpression 
+        datatype="[datatype.value]"
+        operation="[operation.value]"
+        var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
   </textfilecontent54_state>
 
 Variable
@@ -351,16 +349,14 @@ For ``unix.sshd_parameter_v1`` artifacts, an XCCDF Value element is generated.
 
 ::
 
-  <Values>
-    <Value 
-      id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var"
-      type="string"
-      operator="equals">
+  <Value 
+    id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var"
+    type="string"
+    operator="equals">
       <title>[RECOMMENDATION-TITLE]</title>
       <description>This value is used in Rule: [RECOMMENDATION-TITLE]</description>
       <value>[value.value]</value>
-    </Value>
-  </Values>
+  </Value>
 
 For ``unix.sshd_parameter_v1`` artifacts, the xccdf:check looks like this.
 
@@ -389,9 +385,9 @@ Test
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
     check_existence="at_least_one_exists"
     check="all"
-    comment="[RECOMMENDATION-TITLE]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+      <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
   </textfilecontent54_test>
 
 Object
@@ -401,7 +397,7 @@ Object
   <textfilecontent54_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
-    comment="[RECOMMENDATION-TITLE]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
     <filepath>/etc/ssh/sshd_config</filepath>
     <pattern operation="pattern match">

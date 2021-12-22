@@ -6,6 +6,10 @@ Description
 
 The VMware: VM Host: Lockdown Mode test is used to verify Lockdown mode is enabled on an ESXi host.
 
+The vmhost_lockdown_object element is used by a vmhost_lockdown_test to define the name and connection string of the vmhost to be evaluated.
+
+The vmhost_lockdown_state element holds information regarding whether Lockdown mode is enabled on the specified ESXi host.
+
 Technical Details
 -----------------
 
@@ -56,18 +60,14 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
       <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
         <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
         <ae:title>[RECOMMENDATION-TITLE]</ae:title>
-        <ae:artifact type="[ARTIFACT-TYPE-NAME]">
+        <ae:artifact type="[ARTIFACT-TYPE-NAME]" />
           <ae:parameters>
-            <ae:parameter dt="string" name="gatekeeper">[gatekeeper.value]</ae:parameter>
+            <ae:parameter dt="string" name="vmhost_name">[vmhost_name.value]</ae:parameter>
           </ae:parameters>
         </ae:artifact>
         <ae:test type="[TEST-TYPE-NAME]">
           <ae:parameters>
-            <ae:parameter dt="string" name="check_existence">[check_existence.value]</ae:parameter>
-            <ae:parameter dt="string" name="check">[check.value]</ae:parameter>
-            <ae:parameter dt="string" name="operation">[operation.value]</ae:parameter>
-            <ae:parameter dt="string" name="datatype">[datatype.value]</ae:parameter>
-            <ae:parameter dt="boolean" name="enabled">[enabled.value]</ae:parameter>
+            <ae:parameter dt="boolean" name="lockdown">[lockdown.value]</ae:parameter>
           </ae:parameters>
         </ae:test>
         <ae:profiles>
@@ -75,7 +75,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
         </ae:profiles>
       </ae:artifact_expression>
     </xccdf:check-content>
-  </xccdf:check>
+  </xccdf:check>  
 
 SCAP
 ^^^^
@@ -83,18 +83,36 @@ SCAP
 XCCDF
 '''''
 
-For ``macos.gatekeeper_v1`` artifacts, the xccdf:check looks like this. There is no Value in the xccdf for this Artifact.
+For ``vmware.vhmost.lockdown_mode`` artifacts, an XCCDF Value element is generated.
 
 ::
 
-  <xccdf:check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
-    <xccdf:check-content-ref 
-      xmlns:ae="http://benchmarks.cisecurity.org/ae/0.5"
-      xmlns:cpe="http://cpe.mitre.org/language/2.0"
-      xmlns:ecl="http://cisecurity.org/check"
-      href="[BENCHMARK-NAME]"
-      name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
-  </xccdf:check>
+	<Value 
+		id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var"
+		operator="equals"
+		type="boolean">
+			<title>[RECOMMENDATION-TITLE]</title>
+			<description>
+				This value is used in Rule: [RECOMMENDATION-TITLE]
+			</description>
+			<value>[value.value]</value>
+	</Value>  
+
+For ``vmware.vhmost.lockdown_mode`` artifacts, the xccdf:check looks like this.
+
+::
+
+	<check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+		<check-export 
+			export-name="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
+			value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />    
+		<check-export 
+			export-name="oval:org.cisecurity.benchmarks:var:100000"
+			value-id="xccdf_org.cisecurity.benchmarks_value_esxi.connection" />
+		<check-content-ref 
+			href="[BENCHMARK-NAME]-oval.xml"
+			name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
+	</check>
 
 OVAL
 ''''
@@ -103,40 +121,56 @@ Test
 
 ::
 
-  <macos:gatekeeper_test 
-    check="[check.value]"
-    check_existence="[check_existence.value]"
-    comment="[RECOMMENDATION-TITLE]"
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
+  <vmhost_lockdown_test
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
+    id="oval:org.cisecurity.benchmarks[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
+    check_existence="at_least_one_exists"
+    check="all"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <macos:object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
-    <macos:state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
-  </macos:gatekeeper_test>
+      <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+      <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
+  </vmhost_lockdown_test>
 
 Object
 
 ::
 
-  <macos:gatekeeper_object 
-    comment="[RECOMMENDATION-TITLE]"
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
-    version="1" />
-   
+  <vmhost_lockdown_object 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
+    id="oval:org.cisecurity.benchmarks[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"       
+    comment="[ARTIFACT-TITLE]"
+    version="1">
+      <connection_string var_ref="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
+      <vmhost_name operation="pattern match">
+          .*
+      </vmhost_name>  
+  </vmhost_lockdown_object>      
 
 State
 
 ::
 
-  <macos:gatekeeper_state 
-    comment="[RECOMMENDATION-TITLE]"
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
+  <vmhost_lockdown_state 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
+    id="oval:org.cisecurity.benchmarks[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <macos:enabled 
-      datatype="[datatype.value]"
-      operation="[operation.value]">
-        [enabled.value]
-    </macos:enabled>
-  </macos:gatekeeper_state>  
+      <lockdown 
+        datatype="boolean"
+        operation="equals"
+        var_ref="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
+  </vmhost_lockdown_state> 
+
+Variable
+
+::
+
+  <external_variable 
+    id="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
+    datatype="boolean"
+    version="1"
+    comment="This value is used in Rule: [RECOMMENDATION-TITLE]" />    
 
 YAML
 ^^^^
@@ -150,32 +184,16 @@ YAML
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
         - parameter: 
-            name: "gatekeeper"
-            type: "string"
-            value: "[gatekeeper.value]"
+            name: "vmhost_name"
+            dt: "string"
+            value: "[vmhost_name.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:
         - parameter:
-            name: "check_existence"
-            type: "string"
-            value: "[check_existence.value]"
-        - parameter: 
-            name: "check"
-            type: "string"
-            value: "[check.value]"
-        - parameter:
-            name: "operation"
-            type: "string"
-            value: "[operation.value]"
-        - parameter: 
-            name: "datatype"
-            type: "string"
-            value: "[datatype.value]"
-        - parameter: 
-            name: "enabled"
-            type: "string"
-            value: "[enabled.value]"
+            name: "lockdown"
+            dt: "boolean"
+            value: "[lockdown.value]"
 
 JSON
 ^^^^
@@ -191,9 +209,9 @@ JSON
         "parameters": [
           {
             "parameter": {
-              "name": "gatekeeper",
-              "type": "string",
-              "value": "[gatekeeper.value]"
+              "name": "vmhost_name",
+              "dt": "string",
+              "value": "[vmhost_name.value]"
             }
           }
         ]
@@ -203,37 +221,9 @@ JSON
         "parameters": [
           {
             "parameter": {
-              "name": "check_existence",
-              "type": "string",
-              "value": "[check_existence.value]"
-            }
-          },
-          {
-            "parameter": {
-              "name": "check",
-              "type": "string",
-              "value": "[check.value]"
-            }
-          },
-          {
-            "parameter": {
-              "name": "operation",
-              "type": "string",
-              "value": "[operation.value]"
-            }
-          },
-          {
-            "parameter": {
-              "name": "datetype",
-              "type": "string",
-              "value": "[datatype.value]"
-            }
-          },
-          {
-            "parameter": {
-              "name": "enabled",
-              "type": "string",
-              "value": "[enabled.value]"
+              "name": "lockdown",
+              "dt": "boolean",
+              "value": "[lockdown.value]"
             }
           }
         ]
