@@ -4,8 +4,11 @@ Cisco ASA: Password Policy
 Description
 -----------
 
-The Cisco ASA: Password Policy is used to check the properties of the
-password policy.
+The Cisco ASA: Password Policy test is used to check the properties of the password policy.
+
+The variable_object element is used by a variable_test to define the variable to be evaluated.
+
+The variable_state element contains two entities that are used to check the var_ref of the specified varible and the value associated with it.
 
 Technical Details
 -----------------
@@ -70,12 +73,12 @@ NOTE: The ``operator`` parameter is governed by a constraint allowing only the f
   - set is empty
 
 NOTE: The ``expected_value_type`` parameter is governed by a constraint allowing only the following values:
-	- boolean
-	- float
-	- int
-	- string
-	- version
-	- set  
+  - boolean
+  - float
+  - int
+  - string
+  - version
+  - set  
 
 Generated Content
 ~~~~~~~~~~~~~~~~~
@@ -89,27 +92,29 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
 
 ::
 
-  <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
-    <xccdf:check-content>
-      <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
-        <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-        <ae:title>[RECOMMENDATION-TITLE]</ae:title>
-        <ae:artifact type="[ARTIFACT-TYPE-NAME]">
-          <ae:parameters>
-            <ae:parameter dt="string" name="password_policy_option">[password_policy_option.value]</ae:parameter>
-          </ae:parameters>
-        </ae:artifact>
-        <ae:test type="[TEST-TYPE-NAME]">
-          <ae:parameters>
-            <ae:parameter dt="string" name="operator">[operator.value]</ae:parameter>
-            <ae:parameter dt="string" name="expected_value">[expected_value.value]</ae:parameter>
-            <ae:parameter dt="string" name="regex_capture">[regex_capture.value]</ae:parameter>
-            <ae:parameter dt="string" name="expected_value_type">[expected_value_type.value]</ae:parameter>
-          </ae:parameters>
-        </ae:test>
-      </ae:artifact_expression>
-    </xccdf:check-content>
-  </xccdf:check>
+  <xccdf:complex-check operator="AND">
+    <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
+      <xccdf:check-content>
+        <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
+          <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
+          <ae:title>[ARTIFACT-TITLE]</ae:title>
+          <ae:artifact type="[ARTIFACT-TYPE-NAME]">
+            <ae:parameters>
+              <ae:parameter dt="string" name="password_policy_option">[password_policy_option.value]</ae:parameter>
+            </ae:parameters>
+          </ae:artifact>
+          <ae:test type="[TEST-TYPE-NAME]">
+            <ae:parameters>
+              <ae:parameter dt="string" name="operator">[operator.value]</ae:parameter>
+              <ae:parameter dt="string" name="expected_value">[expected_value.value]</ae:parameter>
+              <ae:parameter dt="string" name="regex_capture">[regex_capture.value]</ae:parameter>
+              <ae:parameter dt="string" name="expected_value_type">[expected_value_type.value]</ae:parameter>
+            </ae:parameters>
+          </ae:test>
+        </ae:artifact_expression>
+      </xccdf:check-content>
+    </xccdf:check>
+  </xccdf:complex-check>  
 
 SCAP
 ^^^^
@@ -117,18 +122,33 @@ SCAP
 XCCDF
 '''''
 
-For ``cisco_asa.password_policy`` artifacts, the xccdf:check looks like this.
+For ``cisco_asa.password_policy cisco_asa.expected_value_regex_capture`` artifacts, an XCCDF Value element is generated.
 
 ::
 
-  <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
-    <check-export 
-      export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" 
-      value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var"/>
-    <check-content-ref 
-      href="[BENCHMARK-NAME]" 
-      name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]"/>
-  </check>
+  <Value 
+    id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var"
+    type="string"
+    operator="[operator.value]">
+    <title>[RECOMMENDATION-TITLE]</title>
+    <description>This value is used in Rule: [RECOMMENDATION-TITLE]</description>
+    <value>[value.value]</value>
+  </Value>
+
+For ``cisco_asa.password_policy cisco_asa.expected_value_regex_capture`` artifacts, the xccdf:check looks like this.
+
+::
+
+  <xccdf:complex-check operator="AND">
+    <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+      <check-export 
+        export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" 
+        value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
+      <check-content-ref 
+        href="[BENCHMARK-NAME]" 
+        name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
+    </check>
+  </xccdf:complex-check>
 
 OVAL
 ''''
@@ -138,14 +158,14 @@ Test
 ::
 
   <variable_test 
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]" 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]" 
-    check_existence="[check_existence.value]" 
-    check="[check.value]" 
-    comment="[RECOMMENDATION-TITLE]" 
-    version="[version.value]">
-    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"/>
-    <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"/>
+    check_existence="at_least_one_exists" 
+    check="all" 
+    comment="[ARTIFACT-TITLE]" 
+    version="1">
+    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+    <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
   </variable_test>
 
 Object
@@ -153,29 +173,59 @@ Object
 ::
 
   <variable_object 
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]" 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" 
-    comment="[RECOMMENDATION-TITLE]" 
-    version="[version.value]">
+    comment="[ARTIFACT-TITLE]" 
+    version="1">
     <var_ref>
-      oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]
+      oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]2
     </var_ref>
   </variable_object>
+
+  <line_object
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#asa" 
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" 
+    comment="[ARTIFACT-TITLE]" 
+    version="1">
+    <show_subcommand>[show_subcommand.value]</show_subcommand>
+  </line_object>
 
 State
 
 ::
 
   <variable_state 
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]" 
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" 
-    comment="[RECOMMENDATION-TITLE]" 
-    version="[version.value]">
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent" 
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" 
+    comment="[ARTIFACT-TITLE]" 
+    version="1">
     <value 
       operation="[operation.value]" 
       datatype="[datatype.value]" 
-      var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"/>
+      var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
   </variable_state>
+
+Variable
+
+::
+
+  <external_variable 
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
+    datatype="string"
+    comment="This value is used in Rule: [RECOMMENDATION-TITLE]"
+    version="1" />
+
+  <local_variable 
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]2"
+    datatype="string"
+    comment="This value is used in Rule: [RECOMMENDATION-TITLE]"
+    version="1">
+    <regex_capture pattern:"[pattern.value]">
+      <object_component
+        object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]2"
+        item_field="config_line" />
+    </regex_capture>
+  </constant_variable>
 
 YAML
 ^^^^
@@ -184,7 +234,7 @@ YAML
 
   artifact-expression:
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
-    artifact-title: "[RECOMMENDATION-TITLE]"
+    artifact-title: "[ARTIFACT-TITLE]"
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
@@ -220,7 +270,7 @@ JSON
   {
     "artifact-expression": {
       "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
-      "artifact-title": "[RECOMMENDATION-TITLE]",
+      "artifact-title": "[ARTIFACT-TITLE]",
       "artifact": {
         "type": "[ARTIFACT-TYPE-NAME]",
         "parameters": [

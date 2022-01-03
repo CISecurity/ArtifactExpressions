@@ -4,11 +4,11 @@ Cisco ASA: Version Object
 Description
 -----------
 
-The Cisco ASA: Version Object test is used to check the version of the PIX
-operating system. It is based off of the SHOW VERSION command. It
-extends the standard TestType as defined in the oval-definitions-schema
-and one should refer to the TestType description for more information.
-The object element references a version_object and the state element specifies the data to check.
+The Cisco ASA: Version Object test is used to check the version of the ASA operating system. It is based off of the SHOW VERSION command. 
+
+The version_object element is used by a version test to define the different version information associated with a ASA system. There is actually only one object relating to version and this is the system as a whole. Therefore, there are no child entities defined. Any OVAL Test written to check version will reference the same version_object which is basically an empty object element.
+
+The version_state element defines the version information held within a Cisco ASA software release. The asa_release element specifies the whole ASA version information. The asa_major_release, asa_minor_release and asa_build elements specify seperated parts of ASA software version information. For instance, if the ASA version is 8.4(2.3)49, then asa_release is 8.4(2.3)49, asa_major_release is 8.4, asa_minor_release is 2.3 and asa_build is 49. See the SHOW VERSION command within ASA for more information.
 
 Technical Details
 -----------------
@@ -100,23 +100,28 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
 
 ::
 
-  <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
-    <xccdf:check-content>
-      <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
-        <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-        <ae:title>[RECOMMENDATION-TITLE]</ae:title>
-        <ae:artifact type="[ARTIFACT-TYPE-NAME]">
-          <ae:parameters/>
-        </ae:artifact>
-        <ae:test type="[TEST-TYPE-NAME]">
-          <ae:parameters>
-            <ae:parameter dt="string" name="operation">[operation.value]</ae:parameter>
-            <ae:parameter dt="string" name="major_version">[major_version.value]</ae:parameter>
-          </ae:parameters>
-        </ae:test>
-      </ae:artifact_expression>
-    </xccdf:check-content>
-  </xccdf:check>
+  <xccdf:complex-check operator="OR">
+    <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
+      <xccdf:check-content>
+        <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
+          <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
+          <ae:title>[ARTIFACT-TITLE]</ae:title>
+          <ae:artifact type="[ARTIFACT-TYPE-NAME]">
+            <ae:parameters/>
+          </ae:artifact>
+          <ae:test type="[TEST-TYPE-NAME]">
+            <ae:parameters>
+              <ae:parameter dt="string" name="operation">[operation.value]</ae:parameter>
+              <ae:parameter dt="string" name="major_version">[major_version.value]</ae:parameter>
+            </ae:parameters>
+          </ae:test>
+          <ae:profiles>
+            <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1" />
+          </ae:profiles>        
+        </ae:artifact_expression>
+      </xccdf:check-content>
+    </xccdf:check>
+  </xccdf:complex-check>
 
 SCAP
 ^^^^
@@ -124,18 +129,33 @@ SCAP
 XCCDF
 '''''
 
-For ``cisco_asa.version_object`` artifacts, the xccdf:check looks like this.
+For ``cisco_asa.version_object cisco_asa.major_version`` artifacts, an XCCDF Value element is generated.
 
 ::
 
-  <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
-    <check-export 
-      export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" 
-      value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var"/>
-    <check-content-ref 
-      href="[BENCHMARK NAME]" 
-      name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]"/>
-  </check>
+  <Value 
+    id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var2"
+    type="string"
+    operator="[operator.value]">
+    <title>[RECOMMENDATION-TITLE]</title>
+    <description>This value is used in Rule: [RECOMMENDATION-TITLE]</description>
+    <value>[value.value]</value>
+  </Value>
+
+For ``cisco_asa.version_object cisco_asa.major_version`` artifacts, the xccdf:check looks like this.
+
+::
+
+  <xccdf:complex-check operator="OR">
+    <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+      <check-export 
+        export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
+        value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
+      <check-content-ref 
+        href="[BENCHMARK-NAME]"
+        name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
+    </check>
+  </xccdf:complex-check>
 
 OVAL
 ''''
@@ -145,14 +165,14 @@ Test
 ::
 
   <version_test
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]"
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#asa"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
-    check_existence="[check_existence.value]"
-    check="[check.value]"
-    comment="[RECOMMENDATION-TITLE]"
-    version="[version.value]">
-    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"/>
-    <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"/>
+    check_existence="at_least_one_exists"
+    check="all"
+    comment="[ARTIFACT-TITLE]"
+    version="1">
+    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+    <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
   </version_test>
 
 Object
@@ -160,30 +180,35 @@ Object
 ::
 
   <version_object
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]"
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#asa"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
-    comment="[RECOMMENDATION-TITLE]"
-    version="[version.value]">
-  </version_object >
+    comment="[ARTIFACT-TITLE]"
+    version="1" />
 
 State
 
 ::
 
   <version_state
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]"
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#asa"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
-    comment="[RECOMMENDATION TITLE]"
-    version="[version.value]">
+    comment="[ARTIFACT-TITLE]"
+    version="1">
     <asa_major_release 
       datatype="[datatype.value]" 
       operation="[operation.value]"
-      var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"/>
-    <asa_minor_release 
-      datatype="[datatype.value]" 
-      operation="[operation.value]"
-      var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"/>
+      var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
   </version_state>
+
+Variable
+
+::
+
+  <external_variable
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
+    datatype="string"
+    comment="This value is used in Rule: [RECOMMENDATION-TITLE]"
+    version="1" />  
 
 YAML
 ^^^^
@@ -192,7 +217,7 @@ YAML
 
   artifact-expression:
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
-    artifact-title: "[RECOMMENDATION-TITLE]"
+    artifact-title: "[ARTIFACT-TITLE]"
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
@@ -216,7 +241,7 @@ JSON
   {
     "artifact-expression": {
       "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
-      "artifact-title": "[RECOMMENDATION-TITLE]",
+      "artifact-title": "[ARTIFACT-TITLE]",
       "artifact": {
         "type": "[ARTIFACT-TYPE-NAME]",
         "parameters": null
@@ -238,6 +263,234 @@ JSON
               "value": "[major_version.value]"
             }
           }
+        ]
+      }
+    }
+  }
+
+Generated Content
+~~~~~~~~~~~~~~~~~
+
+**cisco_asa.major_minor_version**
+
+XCCDF+AE
+^^^^^^^^
+
+This is what the AE check looks like, inside a Rule, in the XCCDF.
+
+::
+
+  <xccdf:complex-check operator="AND">
+    <xccdf:complex-check operator="OR">
+      <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
+        <xccdf:check-content>
+          <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
+            <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
+            <ae:title>[ARTIFACT-TITLE]</ae:title>
+            <ae:artifact type="[ARTIFACT-TYPE-NAME]">
+              <ae:parameters />
+            </ae:artifact>
+            <ae:test type="[TEST-TYPE-NAME]">
+              <ae:parameters>
+                <ae:parameter dt="string" name="asa_major_release">[asa_major_release.value]</ae:parameter>
+                <ae:parameter dt="string" name="major_release_operation">[major_release_operation.value]</ae:parameter>
+                <ae:parameter dt="string" name="asa_minor_release">[asa_minor_release.value]</ae:parameter>
+                <ae:parameter dt="string" name="minor_release_operation">[minor_release_operation.value]</ae:parameter>
+              </ae:parameters>
+            </ae:test>
+            <ae:profiles>
+              <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1" />
+            </ae:profiles>
+          </ae:artifact_expression>
+        </xccdf:check-content>
+      </xccdf:check>
+    </xccdf:complex-check>
+  </xccdf:complex-check>
+
+SCAP
+^^^^
+
+XCCDF
+'''''
+
+For ``cisco_asa.version_object cisco_asa.major_minor_version`` artifacts, an XCCDF Value element is generated.
+
+::
+
+  <Value 
+    id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var"
+    type="string"
+    operator="[operator.value]">
+    <title>[RECOMMENDATION-TITLE]</title>
+    <description>This value is used in Rule: [RECOMMENDATION-TITLE]</description>
+    <value>[value.value]</value>
+  </Value>
+
+  <Value 
+    id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var2"
+    type="string"
+    operator="[operator.value]">
+    <title>[RECOMMENDATION-TITLE]</title>
+    <description>This value is used in Rule: [RECOMMENDATION-TITLE]</description>
+    <value>[value.value]</value>
+  </Value>
+
+For ``cisco_asa.version_object cisco_asa.major_minor_version`` artifacts, the xccdf:check looks like this.
+
+::
+
+  <xccdf:complex-check operator="AND">
+    <xccdf:complex-check operator="OR">
+      <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+        <check-export 
+          export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
+          value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
+        <check-content-ref 
+          href="[BENCHMARK-NAME]"
+          name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
+      </check>
+    </xccdf:complex-check>
+  </xccdf:complex-check>
+
+OVAL
+''''
+
+Test
+
+::
+
+  <version_test
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#asa"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
+    check_existence="at_least_one_exists"
+    check="all"
+    comment="[ARTIFACT-TITLE]"
+    version="1">
+    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+    <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
+  </version_test>
+
+Object
+
+::
+
+  <version_object
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#asa"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
+    comment="[ARTIFACT-TITLE]"
+    version="1">
+  </version_object >
+
+State
+
+::
+
+  <version_state
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#asa"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
+    comment="[ARTIFACT-TITLE]"
+    version="1">
+    <asa_major_release 
+      datatype="version" 
+      operation="[operation.value]"
+      var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
+    <asa_minor_release 
+      datatype="version" 
+      operation="[operation.value]"
+      var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]2" />
+  </version_state>
+
+Variable
+
+::
+
+  <external_variable
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
+    datatype="string"
+    comment="This value is used in Rule: [RECOMMENDATION-TITLE]"
+    version="1" />
+
+  <external_variable
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]2"
+    datatype="string"
+    comment="This value is used in Rule: [RECOMMENDATION-TITLE]"
+    version="1" />    
+
+YAML
+^^^^
+
+::
+
+  artifact-expression:
+    artifact-unique-id: "[ARTIFACT-OVAL-ID]"
+    artifact-title: "[ARTIFACT-TITLE]"
+    artifact:
+      type: "[ARTIFACT-TYPE-NAME]"
+      parameters:
+    test:
+      type: "[TEST-TYPE-NAME]"
+      parameters:
+        - parameter:
+            name: "asa_major_release"
+            dt: "string"
+            value: "[asa_major_release.value]"
+        - parameter:
+            name: "major_release_operation"
+            dt: "string"
+            value: "[major_release_operation.value]"
+        - parameter:
+            name: "asa_minor_release"
+            dt: "string"
+            value: "[asa_minor_release.value]"
+        - parameter:
+            name: "minor_release_operation"
+            dt: "string"
+            value: "[minor_release_operation.value]"            
+
+JSON
+^^^^
+
+::
+
+  {
+    "artifact-expression": {
+      "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
+      "artifact-title": "[ARTIFACT-TITLE]",
+      "artifact": {
+        "type": "[ARTIFACT-TYPE-NAME]",
+        "parameters": null
+      },
+      "test": {
+        "type": "[TEST-TYPE-NAME]",
+        "parameters": [
+          {
+            "parameter": {
+              "name": "asa_major_release",
+              "type": "string",
+              "value": "[asa_major_release.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "major_release_operation",
+              "type": "string",
+              "value": "[major_release_operation.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "asa_minor_release",
+              "type": "string",
+              "value": "[asa_minor_release.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "minor_release_operation",
+              "type": "string",
+              "value": "[minor_release_operation.value]"
+            }
+          }          
         ]
       }
     }
