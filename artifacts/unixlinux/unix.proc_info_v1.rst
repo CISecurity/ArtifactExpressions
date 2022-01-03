@@ -301,7 +301,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
     <xccdf:check-content>
       <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
         <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-        <ae:title>[RECOMMENDATION-TITLE]</ae:title>
+        <ae:title>[ARTIFACT-TITLE]</ae:title>
         <ae:artifact type="[ARTIFACT-TYPE-NAME]">
           <ae:parameters>
             <ae:parameter dt="string" name="command_line">[command_line.value]</ae:parameter>
@@ -357,8 +357,7 @@ SCAP
 XCCDF
 '''''
 
-For ``unix.proc_info_v1`` artifacts, the xccdf:check looks like this. 
-There is no Value element in the XCCDF for this Artifact.
+For ``unix.proc_info_v1`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
 
 ::
 
@@ -382,8 +381,8 @@ Test
     check="all"
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
-      <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
+    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+    <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
   </process58_test>
 
 Object      
@@ -395,101 +394,101 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <command_line operation="[operation.value]">
-          [command_line.value]
-      </command_line>
-      <pid 
-        datatype="int"
-        operation="[operation.value]">
-          [pid.value]
-      </pid>
+    <command_line operation="[operation.value]">
+      [command_line.value]
+    </command_line>
+    <pid 
+      datatype="int"
+      operation="[operation.value]">
+        [pid.value]
+    </pid>
   </process58_object>
 
 State     
 
 ::
 
-   <process58_state 
+  <process58_state 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <command_line 
-        datatype="string"
-        operation="[operation.value]">
-          [command_line.value]
-      </command_line>
-      <exec_time 
-        datatype="string"
-        operation="[operation.value]">
-          [exec_time.value]
-      </exec_time>
-      <pid 
-        datatype="int"
-        operation="[operation.value]">
-          [pid.value]
-      </pid>
-      <ppid 
-        datatype="int"
-        operation="[operation.value]">
-          [ppid.value]
-      </ppid>
-      <priority 
-        datatype="int"
-        operation="[operation.value]">
-          [priority.value]
-      </priority>
-      <ruid 
-        datatype="int"
-        operation="[operation.value]">
-          [ruid.value]
-      </ruid>
-      <scheduling_class 
-        datatype="string"
-        operation="[operation.value]">
-          [scheduling_class.value]
-      </scheduling_class>
-      <start_time 
-        datatype="string"
-        operation="[operation.value]">
-          [start_time.value]
-      </start_time>
-      <tty 
-        datatype="string"
-        operation="[operation.value]">
-          [tty.value]
-      </tty>
-      <user_id 
-        datatype="int"
-        operation="[operation.value]"
-        var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]">
-          [user_id.value]
-      </user_id>
-      <exec_shield 
-        datatype="boolean"
-        operation="[operation.value]">
-          [exec_shield.value]
-      </exec_shield>
-      <loginuid 
-        datatype="int"
-        operation="[operation.value]">
-          [loginuid.value]
-      </loginuid>
-      <posix_capability 
-        datatype="string"
-        operation="[operation.value]">
-          [posix_capability.value]
-      </posix_capability>
-      <selinux_domain_label 
-        datatype="string"
-        operation="[operation.value]">
-          [selinux_domain_label.value]
-      </selinux_domain_label>
-      <session_id 
-        datatype="int"
-        operation="[operation.value]">
-          [session_id.value]
-      </session_id>
+    <command_line 
+      datatype="string"
+      operation="[operation.value]">
+        [command_line.value]
+    </command_line>
+    <exec_time 
+      datatype="string"
+      operation="[operation.value]">
+        [exec_time.value]
+    </exec_time>
+    <pid 
+      datatype="int"
+      operation="[operation.value]">
+        [pid.value]
+    </pid>
+    <ppid 
+      datatype="int"
+      operation="[operation.value]">
+        [ppid.value]
+    </ppid>
+    <priority 
+      datatype="int"
+      operation="[operation.value]">
+        [priority.value]
+    </priority>
+    <ruid 
+      datatype="int"
+      operation="[operation.value]">
+        [ruid.value]
+    </ruid>
+    <scheduling_class 
+      datatype="string"
+      operation="[operation.value]">
+        [scheduling_class.value]
+    </scheduling_class>
+    <start_time 
+      datatype="string"
+      operation="[operation.value]">
+        [start_time.value]
+    </start_time>
+    <tty 
+      datatype="string"
+      operation="[operation.value]">
+        [tty.value]
+    </tty>
+    <user_id 
+      datatype="int"
+      operation="[operation.value]"
+      var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]">
+        [user_id.value]
+    </user_id>
+    <exec_shield 
+      datatype="boolean"
+      operation="[operation.value]">
+        [exec_shield.value]
+    </exec_shield>
+    <loginuid 
+      datatype="int"
+      operation="[operation.value]">
+        [loginuid.value]
+    </loginuid>
+    <posix_capability 
+      datatype="string"
+      operation="[operation.value]">
+        [posix_capability.value]
+    </posix_capability>
+    <selinux_domain_label 
+      datatype="string"
+      operation="[operation.value]">
+        [selinux_domain_label.value]
+    </selinux_domain_label>
+    <session_id 
+      datatype="int"
+      operation="[operation.value]">
+        [session_id.value]
+    </session_id>
   </process58_state>
 
 YAML
@@ -499,7 +498,7 @@ YAML
 
   artifact-expression:
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
-    artifact-title: "[RECOMMENDATION-TITLE]"
+    artifact-title: "[ARTIFACT-TITLE]"
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
@@ -651,7 +650,7 @@ JSON
   {
     "artifact-expression": {
       "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
-      "artifact-title": "[RECOMMENDATION-TITLE]",
+      "artifact-title": "[ARTIFACT-TITLE]",
       "artifact": {
         "type": "[ARTIFACT-TYPE-NAME]",
         "parameters": [

@@ -61,7 +61,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
       <xccdf:check-content>
         <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
           <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-          <ae:title>[RECOMMENDATION-TITLE]</ae:title>
+          <ae:title>[ARTIFACT-TITLE]</ae:title>
           <ae:artifact type="[ARTIFACT-TYPE-NAME]">
             <ae:parameters>
               <ae:parameter dt="string" name="service_name">[service_name.value]</ae:parameter>
@@ -73,7 +73,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
             </ae:parameters>
           </ae:test>
           <ae:profiles>
-            <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1 "/>
+            <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1" />
         </ae:profiles>          
         </ae:artifact_expression>
       </xccdf:check-content>
@@ -112,8 +112,8 @@ Test
     check="[check.value]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
-      <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
+    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+    <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
   </runlevel_test>
 
 Object
@@ -125,10 +125,10 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <service_name>[service_name.value]</service_name>
-      <runlevel operation="pattern match">
-          .*
-      </runlevel>
+    <service_name>[service_name.value]</service_name>
+    <runlevel operation="pattern match">
+      .*
+    </runlevel>
   </runlevel_object>
 
 State
@@ -140,11 +140,11 @@ State
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <start 
-        datatype="boolean"
-        operation="equals">
-          [start.value]
-      </start>
+    <start 
+      datatype="boolean"
+      operation="equals">
+        [start.value]
+    </start>
   </runlevel_state>
 
 YAML
@@ -154,7 +154,7 @@ YAML
 
   artifact-expression:
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
-    artifact-title: "[RECOMMENDATION-TITLE]"
+    artifact-title: "[ARTIFACT-TITLE]"
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
@@ -178,7 +178,7 @@ JSON
   {
     "artifact-expression": {
       "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
-      "artifact-title": "[RECOMMENDATION-TITLE]",
+      "artifact-title": "[ARTIFACT-TITLE]",
       "artifact": {
         "type": "[ARTIFACT-TYPE-NAME]",
         "parameters": [

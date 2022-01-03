@@ -107,12 +107,12 @@ NOTE: The ``operation`` parameter is governed by a constraint allowing only the 
   - superset of
 
 NOTE: The ``datatype`` parameter is governed by a constraint allowing only the following values:
-	- boolean
-	- float
-	- int
-	- string
-	- version
-	- set
+  - boolean
+  - float
+  - int
+  - string
+  - version
+  - set
 
 Generated Content
 ~~~~~~~~~~~~~~~~~
@@ -130,7 +130,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
     <xccdf:check-content>
       <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
         <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-        <ae:title>[RECOMMENDATION-TITLE]</ae:title>
+        <ae:title>[ARTIFACT-TITLE]</ae:title>
         <ae:artifact type="[ARTIFACT-TYPE-NAME]" />
           <ae:parameters>
             <ae:parameter dt="string" name="check_existence">[check_existence.value]</ae:parameter>
@@ -187,8 +187,8 @@ Test
     check="[check.value]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
-      <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
+    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+    <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
   </vmhost_busadapter_test>
 
 Object
@@ -197,16 +197,16 @@ Object
 
   <vmhost_busadapter_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
-    id="oval:org.cisecurity.benchmarks[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"       
+    id="oval:org.cisecurity.benchmarks[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <connection_string var_ref="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
-      <vmhost_name operation="[operation.value]">
-          [vmhost.value]
-      </vmhost_name>
-      <busadapter_type>
-          [busadapter_type.value]
-      </busadapter_type>    
+    <connection_string var_ref="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
+    <vmhost_name operation="[operation.value]">
+      [vmhost.value]
+    </vmhost_name>
+    <busadapter_type>
+      [busadapter_type.value]
+    </busadapter_type>
   </vmhost_busadapter_object>
 
 State
@@ -218,10 +218,10 @@ State
     id="oval:org.cisecurity.benchmarks[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <mutual_chap_enabled 
-        datatype="[datatype.value]"
-        operation="[operation.value]" 
-        var_ref="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
+    <mutual_chap_enabled 
+      datatype="[datatype.value]"
+      operation="[operation.value]"
+      var_ref="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
   </vmhost_busadapter_state> 
 
 Variable
@@ -241,7 +241,7 @@ YAML
 
   artifact-expression:
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
-    artifact-title: "[RECOMMENDATION-TITLE]"
+    artifact-title: "[ARTIFACT-TITLE]"
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
@@ -289,7 +289,7 @@ JSON
   {
     "artifact-expression": {
       "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
-      "artifact-title": "[RECOMMENDATION-TITLE]",
+      "artifact-title": "[ARTIFACT-TITLE]",
       "artifact": {
         "type": "[ARTIFACT-TYPE-NAME]",
         "parameters": [

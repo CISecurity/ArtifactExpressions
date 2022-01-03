@@ -111,7 +111,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
       <xccdf:check-content>
         <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
           <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-          <ae:title>[RECOMMENDATION-TITLE]</ae:title>
+          <ae:title>[ARTIFACT-TITLE]</ae:title>
           <ae:artifact type="[ARTIFACT-TYPE-NAME]">
             <ae:parameters>
               <ae:parameter dt="string" name="base_path">[base_path.value]</ae:parameter>
@@ -128,7 +128,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
             </ae:parameters>
           </ae:test>
           <ae:profiles>
-            <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1"/>
+            <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1" />
           </ae:profiles>
         </ae:artifact_expression>
       </xccdf:check-content>
@@ -141,31 +141,29 @@ SCAP
 XCCDF
 '''''
 
-For ``unix.individual_file_tomcat_v1`` artifacts, an XCCDF Value element
-is generated.
+For ``unix.individual_file_tomcat_v1`` artifacts, an XCCDF Value element is generated.
 
 ::
 
   <Value 
-    id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" 
+    id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var"
     type="string  ">
-      <title>"Apache Tomcat \$CATALINA_HOME"</title>
-      <description>"This value allows for user-supplied \$CATALINA_HOME"</description>
-      <value>[value.value]</value>
+    <title>"Apache Tomcat \$CATALINA_HOME"</title>
+    <description>"This value allows for user-supplied \$CATALINA_HOME"</description>
+    <value>[value.value]</value>
   </Value>
 
 OR
 
   <Value 
-    id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" 
+    id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var"
     type="string  ">
-      <title>"Apache Tomcat \$CATALINA_BASE"</title>
-      <description>"This value allows for user-supplied \$CATALINA_BASE"</description>
-      <value>[value.value]</value>
+    <title>"Apache Tomcat \$CATALINA_BASE"</title>
+    <description>"This value allows for user-supplied \$CATALINA_BASE"</description>
+    <value>[value.value]</value>
   </Value>
 
-For ``unix.individual_file_tomcat_v1`` artifacts, the xccdf:check looks
-like this.
+For ``unix.individual_file_tomcat_v1`` artifacts, the xccdf:check looks like this.
 
 ::
 
@@ -188,13 +186,13 @@ Test
 ::
 
   <file_test
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]" 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
     check_existence="[check_existence.value]" 
-    check="[check.value]" 
+    check="all" 
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
   </file_test>
 
 Object
@@ -208,12 +206,12 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]2"
     comment="\$CATALINA_HOME file object"
     version="1">
-      <behaviors 
-        max_depth="1"
-        recurse="directories"
-        recurse_direction="down" />
-      <path var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]1" />
-      <filename xsi:nil="true" />
+    <behaviors 
+      max_depth="1"
+      recurse="directories"
+      recurse_direction="down" />
+    <path var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]1" />
+    <filename xsi:nil="true" />
   </file_object>
 
   <file_object 
@@ -221,8 +219,8 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <path var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]2" />
-      <filename>[filename.value]</filename>
+    <path var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]2" />
+    <filename>[filename.value]</filename>
   </file_object>
 
 **CATALINA_BASE**
@@ -234,12 +232,12 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]3"
     comment="\$CATALINA_BASE file object"
     version="1">
-      <behaviors 
-        max_depth="1"
-        recurse="directories"
-        recurse_direction="down" />
-      <path var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]" />
-      <filename xsi:nil="true" />
+    <behaviors 
+      max_depth="1"
+      recurse="directories"
+      recurse_direction="down" />
+    <path var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]" />
+    <filename xsi:nil="true" />
   </file_object>
 
   <file_object 
@@ -247,8 +245,8 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <path var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]3" />
-      <filename>[filename.value]</filename>
+    <path var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]3" />
+    <filename>[filename.value]</filename>
   </file_object>
 
 State
@@ -283,7 +281,7 @@ Variable
     version="1">
       <concat>
         <end character="/">
-          <object_component 
+        <object_component 
             object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]3"
             item_field="path" />
         </end>
@@ -298,12 +296,12 @@ YAML
 
   artifact-expression:
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
-    artifact-title: "[RECOMMENDATION-TITLE]"
+    artifact-title: "[ARTIFACT-TITLE]"
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
         - parameter:
-            name: "base_path
+            name: "base_path"
             dt: "string"
             value: "[base_path.value]"
         - parameter:
@@ -342,7 +340,7 @@ JSON
   {
     "artifact-expression": {
       "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
-      "artifact-title": "[RECOMMENDATION-TITLE]",
+      "artifact-title": "[ARTIFACT-TITLE]",
       "artifact": {
         "type": "[ARTIFACT-TYPE-NAME]",
         "parameters": [

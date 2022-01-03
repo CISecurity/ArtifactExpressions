@@ -165,7 +165,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
       <xccdf:check-content>
         <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
           <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-          <ae:title>[RECOMMENDATION-TITLE]</ae:title>
+          <ae:title>[ARTIFACT-TITLE]</ae:title>
           <ae:artifact type="[ARTIFACT-TYPE-NAME]">
             <ae:parameters>
               <ae:parameter dt="string" name="existence">[existence.value]</ae:parameter>
@@ -206,7 +206,7 @@ SCAP
 XCCDF
 '''''
 
-For ``unix.file_collection_v1`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
+For ``unix.file_collection_v1 unix.file_permissions_v1`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
 
 ::
 
@@ -231,8 +231,8 @@ Test
     check="all"    
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
-      <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
+    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+    <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
   </file_test>
 
 Object
@@ -244,43 +244,30 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <path>[path.value]</path>
-      <filename xsi:nil="[xsi:nil.value]">
-          [filename.value]
-      </filename>
-      <behaviors 
-        recurse_direction="down"
-        recurse_file_system="[recurse_file_system.value]"
-        max_depth="[max_depth.value]" />
+    <path>[path.value]</path>
+    <filename xsi:nil="[xsi:nil.value]">
+      [filename.value]
+    </filename>
+    <behaviors 
+      recurse_direction="down"
+      recurse_file_system="[recurse_file_system.value]"
+      max_depth="[max_depth.value]" />
   </file_object>
 
 State
 
 ::
 
-  <file_state 
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
+  <file_state xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <gread datatype="boolean">
-          [gread.value]
-      </gread>
-      <gwrite datatype="boolean">
-          [gwrite.value]
-      </gwrite>
-      <gexec datatype="boolean">
-          [gexec.value]
-      </gexec>
-      <oread datatype="boolean">
-          [oread.value]
-      </oread>
-      <owrite datatype="boolean">
-          [owrite.value]
-      </owrite>
-      <oexec datatype="boolean">
-          [oexec.value]
-      </oexec>
+    <gread datatype="boolean">[gread.value]</gread>
+    <gwrite datatype="boolean">[gwrite.value]</gwrite>
+    <gexec datatype="boolean">[gexec.value]</gexec>
+    <oread datatype="boolean">[oread.value]</oread>
+    <owrite datatype="boolean">[owrite.value]</owrite>
+    <oexec datatype="boolean">[oexec.value]</oexec>
   </file_state>
 
 YAML
@@ -290,7 +277,7 @@ YAML
 
   artifact-expression:
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
-    artifact-title: "[RECOMMENDATION-TITLE]"
+    artifact-title: "[ARTIFACT-TITLE]"
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
@@ -336,7 +323,7 @@ YAML
         - parameter:
             name: "gread"
             dt: "string"
-            value: "[gread.value]
+            value: "[gread.value]"
         - parameter: "
             name: "gwrite"
             dt: "string"
@@ -378,7 +365,7 @@ JSON
   {
     "artifact-expression": {
       "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
-      "artifact-title": "[RECOMMENDATION-TITLE]",
+      "artifact-title": "[ARTIFACT-TITLE]",
       "artifact": {
         "type": "[ARTIFACT-TYPE-NAME]",
         "parameters": [
@@ -535,7 +522,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
       <xccdf:check-content>
         <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
           <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-          <ae:title>[RECOMMENDATION-TITLE]</ae:title>
+          <ae:title>[ARTIFACT-TITLE]</ae:title>
           <ae:artifact type="[ARTIFACT-TYPE-NAME]">
             <ae:parameters>
               <ae:parameter dt="string" name="existence">[existence.value]</ae:parameter>
@@ -566,8 +553,7 @@ SCAP
 XCCDF
 '''''
 
-For ``unix.file_collection_v1`` artifacts, the xccdf:check looks like this. 
-There is no Value element in the XCCDF for this Artifact.
+For ``unix.file_collection_v1 unix_file_ownership_v1`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
 
 ::
 
@@ -592,8 +578,8 @@ Test
     check="all"    
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
-      <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
+    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+    <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
   </file_test>
 
 Object
@@ -605,14 +591,14 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <path>[path.value]</path>
-      <filename xsi:nil="[xsi:nil.value]">
-          [filename.value]
-      </filename>
-      <behaviors 
-        recurse_direction="down"
-        recurse_file_system="[recurse_file_system.value]"
-        max_depth="[max_depth.value]" />
+    <path>[path.value]</path>
+    <filename xsi:nil="[xsi:nil.value]">
+      [filename.value]
+    </filename>
+    <behaviors 
+      recurse_direction="down"
+      recurse_file_system="[recurse_file_system.value]"
+      max_depth="[max_depth.value]" />
   </file_object>
 
 State
@@ -624,12 +610,12 @@ State
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <group_id datatype="int">
-          [group_id.value]
-      </group_id>
-      <user_id datatype="int">
-          [user_id.value]
-      </user_id>
+    <group_id datatype="int">
+      [group_id.value]
+    </group_id>
+    <user_id datatype="int">
+      [user_id.value]
+    </user_id>
   </file_state>
 
 YAML
@@ -639,7 +625,7 @@ YAML
 
   artifact-expression:
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
-    artifact-title: "[RECOMMENDATION-TITLE]"
+    artifact-title: "[ARTIFACT-TITLE]"
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
@@ -687,7 +673,7 @@ JSON
   {
     "artifact-expression": {
       "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
-      "artifact-title": "[RECOMMENDATION-TITLE]",
+      "artifact-title": "[ARTIFACT-TITLE]",
       "artifact": {
         "type": "[ARTIFACT-TYPE-NAME]",
         "parameters": [
@@ -774,7 +760,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
       <xccdf:check-content>
         <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
           <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-          <ae:title>[RECOMMENDATION-TITLE]</ae:title>
+          <ae:title>[ARTIFACT-TITLE]</ae:title>
           <ae:artifact type="[ARTIFACT-TYPE-NAME]">
             <ae:parameters>
               <ae:parameter dt="string" name="existence">[existence.value]</ae:parameter>
@@ -802,8 +788,7 @@ SCAP
 XCCDF
 '''''
 
-For ``unix.file_collection_v1`` artifacts, the xccdf:check looks like this. 
-There is no Value element in the XCCDF for this Artifact.
+For ``unix.file_collection_v1 null_test_v1`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
 
 ::
 
@@ -828,8 +813,8 @@ Test
     check="all"    
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
-      <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
+    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+    <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
   </file_test>
 
 Object
@@ -841,14 +826,14 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <path>[path.value]</path>
-      <filename xsi:nil="[xsi:nil.value]">
-          [filename.value]
-      </filename>
-      <behaviors 
-        recurse_direction="down"
-        recurse_file_system="[recurse_file_system.value]"
-        max_depth="[max_depth.value]" />
+    <path>[path.value]</path>
+    <filename xsi:nil="[xsi:nil.value]">
+      [filename.value]
+    </filename>
+    <behaviors 
+      recurse_direction="down"
+      recurse_file_system="[recurse_file_system.value]"
+      max_depth="[max_depth.value]" />
   </file_object>
 
 State
@@ -864,7 +849,7 @@ YAML
 
   artifact-expression:
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
-    artifact-title: "[RECOMMENDATION-TITLE]"
+    artifact-title: "[ARTIFACT-TITLE]"
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
@@ -894,7 +879,7 @@ YAML
             value: "[file_system.value]"
     test:
       type: "[TEST-TYPE-NAME]"
-      parameters: []
+      parameters:
 
 JSON
 ^^^^
@@ -904,7 +889,7 @@ JSON
   {
     "artifact-expression": {
       "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
-      "artifact-title": "[RECOMMENDATION-TITLE]",
+      "artifact-title": "[ARTIFACT-TITLE]",
       "artifact": {
         "type": "[ARTIFACT-TYPE-NAME]",
         "parameters": [

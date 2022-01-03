@@ -75,7 +75,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
       <xccdf:check-content>
         <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
           <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-          <ae:title>[RECOMMENDATION-TITLE]</ae:title>
+          <ae:title>[ARTIFACT-TITLE]</ae:title>
           <ae:artifact type="[ARTIFACT-TYPE-NAME]">
             <ae:parameters>
               <ae:parameter dt="string" name="service">[service.value]</ae:parameter>
@@ -127,8 +127,8 @@ Test
     check="all"
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]1" />
-      <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]1" />
+    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]1" />
+    <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]1" />
   </xinetd_test>
 
   <textfilecontent54_test
@@ -138,7 +138,7 @@ Test
     check="all"
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]2" />
+    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]2" />
   </textfilecontent54_test>
 
   <textfilecontent54_test
@@ -148,7 +148,7 @@ Test
     check="all"
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]3" />
+    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]3" />
   </textfilecontent54_test>    
 
 Object
@@ -160,10 +160,10 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]1"
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <protocol operation="pattern match">
-          [protocol.value]
-      </protocol>
-      <service_name>[service_name.value]</service_name>
+    <protocol operation="pattern match">
+      [protocol.value]
+    </protocol>
+    <service_name>[service_name.value]</service_name>
   </xinetd_object>
 
   <textfilecontent54_object 
@@ -171,16 +171,17 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]2"
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <filepath>/etc/inetd.conf</filepath>
-      <pattern 
-        operation="pattern match"
-        datatype="string">
-          [pattern.value]  
-      </pattern>
-      <instance datatype="int"
-        operation="equals">
-          1
-      </instance>
+    <filepath>/etc/inetd.conf</filepath>
+    <pattern 
+      operation="pattern match"
+      datatype="string">
+        [pattern.value]  
+    </pattern>
+    <instance 
+      datatype="int"
+      operation="equals">
+        1
+    </instance>
   </textfilecontent54_object>
 
   <textfilecontent54_object 
@@ -188,20 +189,20 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]3"
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <path>/etc/inetd.d</path>
-      <filename operation="pattern match">
-          .+
-      </filename>
-      <pattern 
-        operation="pattern match"
-        datatype="string">
-          [pattern.value]  
-      </pattern>
-      <instance 
-        datatype="int"
-        operation="equals">
-          1
-      </instance>
+    <path>/etc/inetd.d</path>
+    <filename operation="pattern match">
+      .+
+    </filename>
+    <pattern 
+      operation="pattern match"
+      datatype="string">
+        [pattern.value]  
+    </pattern>
+    <instance 
+      datatype="int"
+      operation="equals">
+        1
+    </instance>
   </textfilecontent54_object>
 
 State
@@ -213,11 +214,11 @@ State
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]1"
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <disabled 
-        datatype="boolean"
-        operation="equals">
-          [disabled.value]
-      </disabled>
+    <disabled 
+      datatype="boolean"
+      operation="equals">
+        [disabled.value]
+    </disabled>
   </xinetd_state>
 
 YAML
@@ -227,7 +228,7 @@ YAML
 
   artifact-expression:
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
-    artifact-title: "[RECOMMENDATION-TITLE]"
+    artifact-title: "[ARTIFACT-TITLE]"
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
@@ -255,7 +256,7 @@ JSON
   {
     "artifact-expression": {
       "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
-      "artifact-title": "[RECOMMENDATION-TITLE]",
+      "artifact-title": "[ARTIFACT-TITLE]",
       "artifact": {
         "type": "[ARTIFACT-TYPE-NAME]",
         "parameters": [

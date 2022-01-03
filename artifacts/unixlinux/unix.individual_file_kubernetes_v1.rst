@@ -178,7 +178,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
     <xccdf:check-content>
       <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
         <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-        <ae:title>[RECOMMENDATION-TITLE]</ae:title>
+        <ae:title>[ARTIFACT-TITLE]</ae:title>
         <ae:artifact type="[ARTIFACT-TYPE-NAME]">
           <ae:parameters>
             <ae:parameter dt="string" name="path">[path.value]</ae:parameter>
@@ -191,7 +191,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
           <ae:parameters />
         </ae:test>
         <ae:profiles>
-          <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1"/>
+          <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1" />
         </ae:profiles>
       </ae:artifact_expression>
     </xccdf:check-content>
@@ -203,19 +203,19 @@ SCAP
 XCCDF
 '''''
 
-For ``unix.individual_file_kubernetes_v1`` artifacts, an XCCDF Value element is generated.
+For ``unix.individual_file_kubernetes_v1 null_test_v1`` artifacts, an XCCDF Value element is generated.
 
 ::
 
   <Value 
-    id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" 
+    id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var"
     type="string">
     <title>"Kubernetes Directory"</title>
     <description>"This value allows for user-supplied Kubernetes Directory"</description>
     <value>[value.value]</value>
   </Value>
 
-For ``unix.individual_file_kubernetes_v1`` artifacts, the xccdf:check looks like this.
+For ``unix.individual_file_kubernetes_v1 null_test_v1`` artifacts, the xccdf:check looks like this.
 
 ::
 
@@ -236,13 +236,13 @@ Test
 ::
 
   <file_test
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]" 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
     check_existence="[check_existence.value]" 
-    check="[check.value]" 
+    check="all" 
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
   </file_test>
 
 Object
@@ -254,8 +254,8 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]2"
     comment="\$CATALINA_HOME file object"
     version="1">
-      <path var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]1" />
-      <filename xsi:nil="true" />
+    <path var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]1" />
+    <filename xsi:nil="true" />
   </file_object>
 
 State
@@ -273,14 +273,14 @@ Variable
     datatype="string"
     comment="Kubernetes directory"
     version="1">
-      <concat>
-        <end character="/">
-          <variable_component var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]1" />
-        </end>
-        <literal_component>
-            [literal_component.value]
-        </literal_component>
-      </concat>
+    <concat>
+      <end character="/">
+        <variable_component var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]1" />
+      </end>
+      <literal_component>
+        [literal_component.value]
+      </literal_component>
+    </concat>
   </local_variable>
 
 YAML
@@ -290,7 +290,7 @@ YAML
 
   artifact-expression:
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
-    artifact-title: "[RECOMMENDATION-TITLE]"
+    artifact-title: "[ARTIFACT-TITLE]"
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
@@ -312,8 +312,7 @@ YAML
             value: "[check_existence.value]"
     test:
       type: "[TEST-TYPE-NAME]"
-      parameters: []
-
+      parameters:
 
 JSON
 ^^^^
@@ -323,7 +322,7 @@ JSON
   {
     "artifact-expression": {
       "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
-      "artifact-title": "[RECOMMENDATION-TITLE]",
+      "artifact-title": "[ARTIFACT-TITLE]",
       "artifact": {
         "type": "[ARTIFACT-TYPE-NAME]",
         "parameters": [
@@ -382,7 +381,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
     <xccdf:check-content>
       <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
         <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-        <ae:title>[RECOMMENDATION-TITLE]</ae:title>
+        <ae:title>[ARTIFACT-TITLE]</ae:title>
         <ae:artifact type="[ARTIFACT-TYPE-NAME]">
           <ae:parameters>
             <ae:parameter dt="string" name="path">[path.value]</ae:parameter>
@@ -398,7 +397,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
           </ae:parameters>
         </ae:test>
         <ae:profiles>
-          <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1"/>
+          <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1" />
         </ae:profiles>
       </ae:artifact_expression>
     </xccdf:check-content>
@@ -410,20 +409,20 @@ SCAP
 XCCDF
 '''''
 
-For ``unix.individual_file_kubernetes_v1`` artifacts, an XCCDF Value element is generated.
+For ``unix.individual_file_kubernetes_v1 pattern match and pattern not match`` artifacts, an XCCDF Value element is generated.
 
 ::
 
   <Value 
-    id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" 
-    operator="[operator.value]" 
+    id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var"
+    operator="[operator.value]"
     type="[type.value]">
     <title>[RECOMMENDATION-TITLE]</title>
     <description>This value is used in Rule: [RECOMMENDATION-TITLE]</description>
     <value>[value.value]</value>
   </Value>
 
-For ``unix.individual_file_kubernetes_v1`` artifacts, the xccdf:check looks like this.
+For ``unix.individual_file_kubernetes_v1 pattern match and pattern not match`` artifacts, the xccdf:check looks like this.
 
 ::
 
@@ -444,13 +443,13 @@ Test
 ::
 
   <textfilecontent54_test
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]" 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
     check_existence="[check_existence.value]" 
-    check="[check.value]" 
+    check="all" 
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
   </textfilecontent54_test>
 
 Object
@@ -462,18 +461,18 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]2"
     comment="\$CATALINA_HOME file object"
     version="1">
-      <path var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]1" />
-      <filename xsi:nil="true" />
-      <pattern 
-        operation="pattern match" />
-        datatype="[datatype.value]>
-          [pattern.value]
-      </pattern>
-      <instance 
-        datatype="int"
-        operation="equals">
-          1
-      </instance>
+    <path var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]1" />
+    <filename xsi:nil="true" />
+    <pattern 
+      operation="pattern match"
+      datatype="[datatype.value]">
+        [pattern.value]
+    </pattern>
+    <instance 
+      datatype="int"
+      operation="equals">
+        1
+    </instance>
   </textfilecontent54_object>
 
 State
@@ -491,14 +490,14 @@ Variable
     datatype="string"
     comment="Kubernetes directory"
     version="1">
-      <concat>
-        <end character="/">
-          <variable_component var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]1" />
-        </end>
-        <literal_component>
-            [literal_component.value]
-        </literal_component>
-      </concat>
+    <concat>
+      <end character="/">
+        <variable_component var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]1" />
+      </end>
+      <literal_component>
+        [literal_component.value]
+      </literal_component>
+    </concat>
   </local_variable>
 
 YAML
@@ -508,7 +507,7 @@ YAML
 
   artifact-expression:
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
-    artifact-title: "[RECOMMENDATION-TITLE]"
+    artifact-title: "[ARTIFACT-TITLE]"
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
@@ -540,7 +539,6 @@ YAML
             dt: "string"
             value: "[value.value]"      
 
-
 JSON
 ^^^^
 
@@ -549,7 +547,7 @@ JSON
   {
     "artifact-expression": {
       "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
-      "artifact-title": "[RECOMMENDATION-TITLE]",
+      "artifact-title": "[ARTIFACT-TITLE]",
       "artifact": {
         "type": "[ARTIFACT-TYPE-NAME]",
         "parameters": [
@@ -621,7 +619,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
     <xccdf:check-content>
       <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
         <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-        <ae:title>[RECOMMENDATION-TITLE]</ae:title>
+        <ae:title>[ARTIFACT-TITLE]</ae:title>
         <ae:artifact type="[ARTIFACT-TYPE-NAME]">
           <ae:parameters>
             <ae:parameter dt="string" name="path">[path.value]</ae:parameter>
@@ -649,7 +647,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
           </ae:parameters>          
         </ae:test>
         <ae:profiles>
-          <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1"/>
+          <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1" />
         </ae:profiles>
       </ae:artifact_expression>
     </xccdf:check-content>
@@ -661,20 +659,20 @@ SCAP
 XCCDF
 '''''
 
-For ``unix.individual_file_kubernetes_v1`` artifacts, an XCCDF Value element is generated.
+For ``unix.individual_file_kubernetes_v1 unix.file_attributes_v1`` artifacts, an XCCDF Value element is generated.
 
 ::
 
   <Value 
-    id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" 
-    operator="[operator.value]" 
+    id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var"
+    operator="[operator.value]"
     type="[type.value]">
     <title>[RECOMMENDATION-TITLE]</title>
     <description>This value is used in Rule: [RECOMMENDATION-TITLE]</description>
     <value>[value.value]</value>
   </Value>
 
-For ``unix.individual_file_kubernetes_v1`` artifacts, the xccdf:check looks like this.
+For ``unix.individual_file_kubernetes_v1 unix.file_attributes_v1`` artifacts, the xccdf:check looks like this.
 
 ::
 
@@ -695,14 +693,14 @@ Test
 ::
 
   <file_test
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]" 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
     check_existence="[check_existence.value]" 
-    check="[check.value]" 
+    check="all" 
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
-      <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
+    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+    <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
   </file_test>
 
 Object
@@ -714,33 +712,33 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]2"
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <path var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]1" />
-      <filename xsi:nil="true" />
+    <path var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]1" />
+    <filename xsi:nil="true" />
   </file_object>
 
 State
 
 ::
 
-  <file_state
+  <file_state 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]2"
     comment="[ARTIFACT-TITLE]"
-    version="1"> 
-      <uid datatype="int">[uid.value]</uid>
-      <gid datatype="int">[gid.value]</gid>
-      <uread datatype="boolean">[uread.value]</uread>
-      <uwrite datatype="boolean">[uwrite.value]</uwrite>
-      <uexec datatype="boolean">[uexec.value]</uexec>
-      <gread datatype="boolean">[gread.value]</gread>
-      <gwrite datatype="boolean">[gwrite.value]</gwrite>
-      <gexec datatype="boolean">[gexec.value]</gexec>
-      <oread datatype="boolean">[oread.value]</oread>
-      <owrite datatype="boolean">[owrite.value]</owrite>
-      <oexec datatype="boolean">[oexec.value]</oexec>
-      <suid datatype="boolean">[suid.value]</suid>
-      <sgid datatype="boolean">[sgid.value]</sgid>
-      <sticky datatype="boolean">[sticky.value]</sticky>
+    version="1">
+    <uid datatype="int">[uid.value]</uid>
+    <gid datatype="int">[gid.value]</gid>
+    <uread datatype="boolean">[uread.value]</uread>
+    <uwrite datatype="boolean">[uwrite.value]</uwrite>
+    <uexec datatype="boolean">[uexec.value]</uexec>
+    <gread datatype="boolean">[gread.value]</gread>
+    <gwrite datatype="boolean">[gwrite.value]</gwrite>
+    <gexec datatype="boolean">[gexec.value]</gexec>
+    <oread datatype="boolean">[oread.value]</oread>
+    <owrite datatype="boolean">[owrite.value]</owrite>
+    <oexec datatype="boolean">[oexec.value]</oexec>
+    <suid datatype="boolean">[suid.value]</suid>
+    <sgid datatype="boolean">[sgid.value]</sgid>
+    <sticky datatype="boolean">[sticky.value]</sticky>
   </file_state>
 
 Variable
@@ -752,14 +750,14 @@ Variable
     datatype="string"
     comment="Kubernetes directory"
     version="1">
-      <concat>
-        <end character="/">
-          <variable_component var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]1" />
-        </end>
-        <literal_component>
-            [literal_component.value]
-        </literal_component>
-      </concat>
+    <concat>
+      <end character="/">
+        <variable_component var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]1" />
+      </end>
+      <literal_component>
+        [literal_component.value]
+      </literal_component>
+    </concat>
   </local_variable>
 
 YAML
@@ -769,7 +767,7 @@ YAML
 
   artifact-expression:
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
-    artifact-title: "[RECOMMENDATION-TITLE]"
+    artifact-title: "[ARTIFACT-TITLE]"
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
@@ -857,7 +855,7 @@ JSON
   {
     "artifact-expression": {
       "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
-      "artifact-title": "[RECOMMENDATION-TITLE]",
+      "artifact-title": "[ARTIFACT-TITLE]",
       "artifact": {
         "type": "[ARTIFACT-TYPE-NAME]",
         "parameters": [

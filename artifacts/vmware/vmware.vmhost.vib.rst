@@ -43,7 +43,7 @@ Test Type Parameters
 Name             Type   Description
 ================ ====== =======================================
 operator         string Comparison operation.
-acceptance_level String Value from Acceptance Level Constraint.
+acceptance_level string Value from Acceptance Level Constraint.
 ================ ====== =======================================
 
 NOTE: The ``operator`` parameter is governed by a constraint allowing only the following values:
@@ -84,7 +84,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
     <xccdf:check-content>
       <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
         <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-        <ae:title>[RECOMMENDATION-TITLE]</ae:title>
+        <ae:title>[ARTIFACT-TITLE]</ae:title>
         <ae:artifact type="[ARTIFACT-TYPE-NAME]" />
           <ae:parameters>
             <ae:parameter dt="string" name="vmhost_name">[vmhost_name.value]</ae:parameter>
@@ -137,8 +137,8 @@ Test
     check="all"
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
-      <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
+    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+    <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
   </vmhost_vib_test>
 
 Object
@@ -147,16 +147,16 @@ Object
 
   <vmhost_vib_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
-    id="oval:org.cisecurity.benchmarks[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"       
+    id="oval:org.cisecurity.benchmarks[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <connection_string var_ref="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
-      <vmhost_name operation="pattern match">
-          .*
-      </vmhost_name>
-      <vib_name operation="pattern match">
-          .*
-      </vib_name>    
+    <connection_string var_ref="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
+    <vmhost_name operation="pattern match">
+      .*
+    </vmhost_name>
+    <vib_name operation="pattern match">
+      .*
+    </vib_name>
   </vmhost_vib_object>      
 
 State
@@ -168,11 +168,11 @@ State
     id="oval:org.cisecurity.benchmarks[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <acceptance_level 
-        datatype="string"
-        operation="[operation.value]">
-          [acceptance_level.value]
-      </acceptance_level>
+    <acceptance_level 
+      datatype="string"
+      operation="[operation.value]">
+        [acceptance_level.value]
+    </acceptance_level>
   </vmhost_vib_state> 
 
 Variable
@@ -192,7 +192,7 @@ YAML
 
   artifact-expression:
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
-    artifact-title: "[RECOMMENDATION-TITLE]"
+    artifact-title: "[ARTIFACT-TITLE]"
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
@@ -224,7 +224,7 @@ JSON
   {
     "artifact-expression": {
       "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
-      "artifact-title": "[RECOMMENDATION-TITLE]",
+      "artifact-title": "[ARTIFACT-TITLE]",
       "artifact": {
         "type": "[ARTIFACT-TYPE-NAME]",
         "parameters": [

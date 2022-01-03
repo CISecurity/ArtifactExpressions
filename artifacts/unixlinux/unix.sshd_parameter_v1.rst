@@ -141,7 +141,7 @@ SCAP
 XCCDF
 '''''
 
-For ``unix.sshd_parameter_v1`` artifacts, an XCCDF Value element is generated.
+For ``unix.sshd_parameter_v1 | equals, equal, not equal, less than, less than or equal, greater than, greater than or equal, pattern match, and pattern not match`` artifacts, an XCCDF Value element is generated.
 
 ::
 
@@ -149,12 +149,12 @@ For ``unix.sshd_parameter_v1`` artifacts, an XCCDF Value element is generated.
     id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var"
     type="string"
     operator="equals">
-      <title>[RECOMMENDATION-TITLE]</title>
-      <description>This value is used in Rule: [RECOMMENDATION-TITLE]</description>
-      <value>[value.value]</value>
+    <title>[RECOMMENDATION-TITLE]</title>
+    <description>This value is used in Rule: [RECOMMENDATION-TITLE]</description>
+    <value>[value.value]</value>
   </Value>
 
-For ``unix.sshd_parameter_v1`` artifacts, the xccdf:check looks like this.
+For ``unix.sshd_parameter_v1 | equals, equal, not equal, less than, less than or equal, greater than, greater than or equal, pattern match, and pattern not match`` artifacts, the xccdf:check looks like this.
 
 ::
 
@@ -183,8 +183,8 @@ Test
     check="all"
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
-      <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
+    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+    <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
   </textfilecontent54_test>
 
 Object
@@ -196,15 +196,15 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <filepath>/etc/ssh/sshd_config</filepath>
-      <pattern operation="pattern match">
-          [pattern.value]
-      </pattern>
-      <instance 
-        datatype="int"
-        operation="equals">
-          1
-      </instance>
+    <filepath>/etc/ssh/sshd_config</filepath>
+    <pattern operation="pattern match">
+      [pattern.value]
+    </pattern>
+    <instance 
+      datatype="int"
+      operation="equals">
+        1
+    </instance>
   </textfilecontent54_object>
 
 State
@@ -216,10 +216,10 @@ State
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <subexpression 
-        datatype="[datatype.value]"
-        operation="[operation.value]"
-        var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
+    <subexpression 
+      datatype="[datatype.value]"
+      operation="[operation.value]"
+      var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
   </textfilecontent54_state>
 
 Variable
@@ -239,7 +239,7 @@ YAML
 
   artifact-expression:
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
-    artifact-title: "[RECOMMENDATION-TITLE]"
+    artifact-title: "[ARTIFACT-TITLE]"
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
@@ -267,7 +267,7 @@ JSON
   {
     "artifact-expression": {
       "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
-      "artifact-title": "[RECOMMENDATION-TITLE]",
+      "artifact-title": "[ARTIFACT-TITLE]",
       "artifact": {
         "type": "[ARTIFACT-TYPE-NAME]",
         "parameters": [
@@ -345,7 +345,7 @@ SCAP
 XCCDF
 '''''
 
-For ``unix.sshd_parameter_v1`` artifacts, an XCCDF Value element is generated.
+For ``unix.sshd_parameter_v1 existence_test`` artifacts, an XCCDF Value element is generated.
 
 ::
 
@@ -353,12 +353,12 @@ For ``unix.sshd_parameter_v1`` artifacts, an XCCDF Value element is generated.
     id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var"
     type="string"
     operator="equals">
-      <title>[RECOMMENDATION-TITLE]</title>
-      <description>This value is used in Rule: [RECOMMENDATION-TITLE]</description>
-      <value>[value.value]</value>
+    <title>[RECOMMENDATION-TITLE]</title>
+    <description>This value is used in Rule: [RECOMMENDATION-TITLE]</description>
+    <value>[value.value]</value>
   </Value>
 
-For ``unix.sshd_parameter_v1`` artifacts, the xccdf:check looks like this.
+For ``unix.sshd_parameter_v1 existence_test`` artifacts, the xccdf:check looks like this.
 
 ::
 
@@ -387,7 +387,7 @@ Test
     check="all"
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
   </textfilecontent54_test>
 
 Object
@@ -401,7 +401,7 @@ Object
     version="1">
     <filepath>/etc/ssh/sshd_config</filepath>
     <pattern operation="pattern match">
-        [pattern.value]
+      [pattern.value]
     </pattern>
     <instance 
       datatype="int"
@@ -423,7 +423,7 @@ YAML
 
   artifact-expression:
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
-    artifact-title: "[RECOMMENDATION-TITLE]"
+    artifact-title: "[ARTIFACT-TITLE]"
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
@@ -447,7 +447,7 @@ JSON
   {
     "artifact-expression": {
       "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
-      "artifact-title": "[RECOMMENDATION-TITLE]",
+      "artifact-title": "[ARTIFACT-TITLE]",
       "artifact": {
         "type": "[ARTIFACT-TYPE-NAME]",
         "parameters": [
