@@ -1,15 +1,14 @@
-iis.site.systemweb
-==================
+IIS: Site: System Web
+=====================
 
 Description
 -----------
 
-The systemweb_test is used to determine certain aspects of an IIS Site’s
-configuration. It extends the standard TestType as defined in the
-oval-definitions-schema and one should refer to the TestType description
-for more information. The object element references a
-systemweb_object and the state element specifies the data to
-check.
+The IIS: Site: System Web test is used to determine certain aspects of an IIS Site’s configuration. 
+
+The systemweb_object element is used by a systemweb_test to define the names of the site, application, and virtual directory to be evaluated, as well as the filter by which they should be evaluated.
+
+The systemweb_state element defines the IIS site configuration information to be evaluated.
 
 Technical Details
 -----------------
@@ -17,61 +16,54 @@ Technical Details
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
-+-------------------------------------+-------------+------------------+
-| Name                                | Type        | Description      |
-+=====================================+=============+==================+
-| site_name                           | String      | Name of the site |
-|                                     |             | to collect. Can  |
-|                                     |             | be a regex.      |
-+-------------------------------------+-------------+------------------+
-| application_name                    | String      | Name of the      |
-|                                     |             | application to   |
-|                                     |             | collect. Can be  |
-|                                     |             | a regex. Set to  |
-|                                     |             | NULL to collect  |
-|                                     |             | only information |
-|                                     |             | for the          |
-|                                     |             | specified sites  |
-+-------------------------------------+-------------+------------------+
-| virtual_directory_name              | String      | The name of a    |
-|                                     |             | virtual          |
-|                                     |             | directory to     |
-|                                     |             | collect. Can be  |
-|                                     |             | a regex. Set to  |
-|                                     |             | NULL to collect  |
-|                                     |             | only information |
-|                                     |             | for the          |
-|                                     |             | specified        |
-|                                     |             | si               |
-|                                     |             | tes/applications |
-+-------------------------------------+-------------+------------------+
+**iis.site.systemweb**
+
++-----------------------------+---------+------------------------------------+
+| Name                        | Type    | Description                        |
++=============================+=========+====================================+
+| site_name                   | string  | Name of the site to collect. Can   |
+|                             |         | be a regex.                        |
++-----------------------------+---------+------------------------------------+
+| application_name            | string  | Name of the application to         |
+|                             |         | collect. Can be a regex. Set to    |
+|                             |         | NULL to collect only information   |
+|                             |         | for the specified sites.           |
++-----------------------------+---------+------------------------------------+
+| virtual_directory_name      | string  | The name of a virtual directory to |
+|                             |         | collect. Can bea regex. Set to     |
+|                             |         | NULL to collect only information   |
+|                             |         | for the specified                  |
+|                             |         | sites/applications.                |
++-----------------------------+---------+------------------------------------+
 
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
-  - iis.site.systemweb
+  - IIS: Site: System Web
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
-+-----------------------+--------+-----------------------------+
-| Name                  | Type   | Description                 |
-+=======================+========+=============================+
-| configuration_setting | String | The web.config setting to   |
-|                       |        | test                        |
-+-----------------------+--------+-----------------------------+
-| operator              | String | comparison operation        |
-+-----------------------+--------+-----------------------------+
-| data_type             | String | The data type of the        |
-|                       |        | web.config setting          |
-+-----------------------+--------+-----------------------------+
-| value                 | String | The value to compare to the |
-|                       |        | collected web.config        |
-|                       |        | setting                     |
-+-----------------------+--------+-----------------------------+
+**iis.site.systemweb**
+
++-----------------------------+---------+------------------------------------+
+| Name                        | Type    | Description                        |
++=============================+=========+====================================+
+| configuration_setting       | string  | The web.config setting to test.    |
++-----------------------------+---------+------------------------------------+
+| operator                    | string  | Comparison operation.              |
++-----------------------------+---------+------------------------------------+
+| data_type                   | string  | The data type of theweb.config     |
+|                             |         | setting.                           |
++-----------------------------+---------+------------------------------------+
+| value                       | string  | The value to compare to the        |
+|                             |         | collected web.config setting.      |
++-----------------------------+---------+------------------------------------+
 
 Generated Content
 ~~~~~~~~~~~~~~~~~
+
+**iis.site.systemweb**
 
 XCCDF+AE
 ^^^^^^^^
@@ -82,10 +74,10 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
 
    <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
      <xccdf:check-content>
-       <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION_NUMBER]">
+       <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
          <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-         <ae:title>[RECOMMENDATION TITLE]</ae:title>
-         <ae:artifact type="[ARTIFACTTYPE NAME]">
+         <ae:title>[ARTIFACT-TITLE]</ae:title>
+         <ae:artifact type="[ARTIFACT-TYPE-NAME]">
            <ae:parameters>
              <ae:parameter dt="string" name="site_name"
                >[site_name.value]</ae:parameter>
@@ -95,7 +87,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
                >[virtual_directory_name.value]</ae:parameter>  
            </ae:parameters>
          </ae:artifact>
-         <ae:test type="[TESTTYPE NAME]">
+         <ae:test type="[TEST-TYPE-NAME]">
            <ae:parameters>
              <ae:parameter dt="string" name="operator">[operator.value]</ae:parameter>
              <ae:parameter dt="string" name="configuration_setting"
@@ -124,9 +116,9 @@ XCCDF
    <xccdf:check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
      <xccdf:check-export
         export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
-        value-id="[VALUE ID NAME]"/>
+        value-id="[VALUE ID NAME]" />
      <xccdf:check-content-ref href="CIS_Microsoft_IIS_10_Benchmark_v1.1.1-oval.xml"
-        name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]"/>
+        name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
    </xccdf:check>
 
    <xccdf:Value id="xccdf_org.cisecurity.benchmarks_value_4.9.1_var" operator="[operator.value]"
@@ -143,154 +135,171 @@ Test
 
 ::
 
-   <iis:systemweb_test check="all" check_existence="any_exist"
-      comment="[RECOMMENDATION TITLE]"
-      id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]" version="[version.value]">
-      <iis:object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:"/>
-      <iis:state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"/>
-   </iis:systemweb_test>
+  <systemweb_test 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#iis"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
+    check_existence="any_exist"
+    check="all"
+    comment="[ARTIFACT-TITLE]"
+    version="1">
+    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+    <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
+  <systemweb_test>
 
 Object
 
 ::
 
-   <iis:systemweb_object id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
-      version="[version.value]">
-      <iis:site_name operation="[operation.value]">[site_name.value]</iis:site_name>
-      <iis:application_name operation="[operation.value]">[application_name.value]</iis:application_name>
-      <iis:virtual_directory_name operation="[operation.value]">[virtual_directory_name.value]</iis:virtual_directory_name>
-      <filter action="include">oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]</filter>
-   </iis:systemweb_object> 
-     
-
+  <systemweb_object 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#iis"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
+    comment="[ARTIFACT-TITLE]"
+    version="1">
+    <site_name operation="pattern match">[site_name.value]<site_name>
+    <application_name operation="pattern match">[application_name.value]<application_name>
+    <virtual_directory_name operation="pattern match">[virtual_directory_name.value]</virtual_directory_name>
+    <filter
+      xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#" 
+      action="include">
+        oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]
+    </filter>
+  <systemweb_object> 
+  
 State
 
 ::
 
-   <iis:systemweb_state
-      id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" version="[version.value]">
-      <forms_require_ssl xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#iis"
-         datatype="[data_type.value]" operation="[operator.value]"
-         var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"/>
-   </iis:systemweb_state> 
+  <systemweb_state    
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#iis"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
+    comment="[ARTIFACT-TITLE]"
+    version="1">
+    <[configuration_setting.value] 
+      datatype="[datatype.value]"
+      operation="[operation.value]"
+      var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
+  <systemweb_state> 
 
 Variable
-        
 
 ::
 
-   <external_variable
-     comment="This value is used in [RECOMMENDATION TITLE]"
-     datatype="[data_type.value]" id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" version="[version.value]"/>                   
+  <external_variable 
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
+    datatype="boolean"
+    comment="This value is used in [RECOMMENDATION-TITLE]"
+    version="1" />
 
 YAML
 ^^^^
 
 ::
 
-  - artifact-expression:
-       artifact-unique-id: [ARTIFACT-OVAL-ID]
-       artifact-title: [RECOMMENDATION TITLE]
-       artifact:
-         type: [ARTIFACTTYPE NAME]
-         parameters:
-         - parameter: 
-             name: site_name
-             type: string
-             value: [site_name.value]
-         - parameter: 
-             name: application_name
-             type: string
-             value: [application_name.value]
-         - parameter: 
-             name: virtual_directory_name
-             type: string
-             value: [virtual_directory_name.value]        
-       test:
-         type: [TESTTYPE NAME]
-         parameters:
-         - parameter:
-             name: operator
-             type: string
-             value: [operator.value]
-         - parameter: 
-             name: configuration_setting
-             type: string
-             value: [configuration_setting.value]
-         - parameter:
-             name: data_type
-             type: string
-             value: [data_type.value]
-         - parameter: 
-             name: value
-             type: string
-             value: [value.value]       
+  artifact-expression:
+    artifact-unique-id: "[ARTIFACT-OVAL-ID]"
+    artifact-title: "[ARTIFACT-TITLE]"
+    artifact:
+      type: "[ARTIFACT-TYPE-NAME]"
+      parameters:
+        - parameter: 
+            name: "site_name"
+            dt: "string"
+            value: "[site_name.value]"
+        - parameter: 
+            name: "application_name"
+            dt: "string"
+            value: "[application_name.value]"
+        - parameter: 
+            name: "virtual_directory_name"
+            dt: "string"
+            value: "[virtual_directory_name.value]"        
+    test:
+      type: "[TEST-TYPE-NAME]"
+      parameters:
+        - parameter:
+            name: "operator"
+            dt: "string"
+            value: "[operator.value]"
+        - parameter: 
+            name: "configuration_setting"
+            dt: "string"
+            value: "[configuration_setting.value]"
+        - parameter:
+            name: "data_type"
+            dt: "string"
+            value: "[data_type.value]"
+        - parameter: 
+            name: "value"
+            dt: "string"
+            value: "[value.value]"
 
 JSON
 ^^^^
 
 ::
 
-   "artifact-expression": {
-     "artifact-unique-id": [ARTIFACT-OVAL-ID],
-     "artifact-title": [RECOMMENDATION TITLE],
-     "artifact": {
-       "type": "[ARTIFACTTYPE NAME]",
-       "parameters": [
-         {
-           "parameter": {
-             "name": "site_name",
-             "type": "string",
-             "value": [site_name.value]
-           }
-         },
-         {
-           "parameter": {
-             "name": "application_name",
-             "type": "string",
-             "value": [application_name.value]
-           }
-         },
-         {
-           "parameter": {
-             "name": "virtual_directory_name",
-             "type": "string",
-             "value": [virtual_directory_name.value]
-           }
-         }
-       ]
-     },
-     "test": {
-       "type": [TESTTYPE NAME],
-       "parameters": [
-         {
-           "parameter": {
-             "name": "operator",
-             "type": "string",
-             "value": [operator.value]
-           }
-         },
-         {
-           "parameter": {
-             "name": "configuration_setting",
-             "type": "string",
-             "value": [configuration_setting.value]
-           }
-         },
-         {
-           "parameter": {
-             "name": "data_type",
-             "type": "string",
-             "value": [data_type.value]
-           }
-         },
-         {
-           "parameter": {
-             "name": "value",
-             "type": "string",
-             "value": [value.value]
-           }
-         }
-       ]
-     }
-   }
+  {
+    "artifact-expression": {
+      "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
+      "artifact-title": "[RECOMMENDATION-TITLE]",
+      "artifact": {
+        "type": "[ARTIFACT-TYPE-NAME]",
+        "parameters": [
+          {
+            "parameter": {
+              "name": "site_name",
+              "type": "string",
+              "value": "[site_name.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "application_name",
+              "type": "string",
+              "value": "[application_name.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "virtual_directory_name",
+              "type": "string",
+              "value": "[virtual_directory_name.value]"
+            }
+          }
+        ]
+      },
+      "test": {
+        "type": "[TEST-TYPE-NAME]",
+        "parameters": [
+          {
+            "parameter": {
+              "name": "operator",
+              "type": "string",
+              "value": "[operator.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "configuration_setting",
+              "type": "string",
+              "value": "[configuration_setting.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "data_type",
+              "type": "string",
+              "value": "[data_type.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "value",
+              "type": "string",
+              "value": "[value.value]"
+            }
+          }
+        ]
+      }
+    }
+  }

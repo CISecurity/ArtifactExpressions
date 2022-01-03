@@ -1,15 +1,14 @@
-iis.site.binding
-================
+IIS: Site: Binding
+==================
 
 Description
 -----------
 
-The bindings_test is used to determine the bindings for sites managed in
-IIS, including http and https bindings. It extends the standard TestType
-as defined in the oval-definitions-schema and one should refer to the
-TestType description for more information. The object element
-references a vmhost_modules_object and the state element
-specifies the data to check.
+The IIS: Site: Binding test is used to determine the bindings for sites managed in IIS, including http and https bindings. 
+
+The bindings_object element is used by a bindings_test to define the name of the site to be evaluated. 
+
+The bindings_state element displays various information about the designated site's host_header data.
 
 Technical Details
 -----------------
@@ -17,29 +16,48 @@ Technical Details
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
-========= ====== ===============================================
+========= ====== ================================================
 Name      Type   Description
-========= ====== ===============================================
-site_name String The name of the site to collect. Can be a regex
-========= ====== ===============================================
+========= ====== ================================================
+site_name string The name of the site to collect. Can be a regex.
+========= ====== ================================================
 
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
-  - iis.site.binding.host_header
+  - IIS: Site Binding: Host Header
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
-=========== ====== ====================
+**iis.site.binding.host_header**
+
+=========== ====== =====================
 Name        Type   Description
-=========== ====== ====================
-operator    String comparison operation
-host_header String 
-=========== ====== ====================
+=========== ====== =====================
+operator    string Comparison operation.
+host_header string 
+=========== ====== =====================
+
+NOTE: The ``operator`` parameter is governed by a constraint allowing only the following values:
+  - bitwise and
+  - bitwise or
+  - case insensitive equals
+  - case insensitive not equal
+  - equals
+  - greater than
+  - greater than or equal
+  - less than
+  - less than or equal
+  - pattern match
+  - not equal
+  - set white list
+  - set is empty  
 
 Generated Content
 ~~~~~~~~~~~~~~~~~
+
+**iis.site.binding.host_header**
 
 XCCDF+AE
 ^^^^^^^^
@@ -48,31 +66,28 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
 
 ::
 
-   <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
-     <xccdf:check-content>
-       <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION_NUMBER]">
-         <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-         <ae:title>[RECOMMENDATION TITLE]</ae:title>
-         <ae:artifact type="[ARTIFACTTYPE NAME]">
-           <ae:parameters>
-             <ae:parameter dt="string" name="site_name"
-               >[site_name.value]</ae:parameter>
-           </ae:parameters>
-         </ae:artifact>
-         <ae:test type="[TESTTYPE NAME]">
-           <ae:parameters>
-             <ae:parameter dt="string" name="operator">[operator.value]</ae:parameter>
-             <ae:parameter dt="string" name="host_header"
-               >[host_header.value]</ae:parameter>
-           </ae:parameters>
-         </ae:test>
-         <ae:profiles>
-           <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1"
-           />
-         </ae:profiles>
-       </ae:artifact_expression>
-     </xccdf:check-content>
-   </xccdf:check>
+  <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
+    <xccdf:check-content>
+      <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
+        <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
+        <ae:title>[ARTIFACT-TITLE]</ae:title>
+        <ae:artifact type="[ARTIFACT-TYPE-NAME]">
+          <ae:parameters>
+            <ae:parameter dt="string" name="site_name">[site_name.value]</ae:parameter>
+          </ae:parameters>
+        </ae:artifact>
+        <ae:test type="[TEST-TYPE-NAME]">
+          <ae:parameters>
+            <ae:parameter dt="string" name="operator">[operator.value]</ae:parameter>
+            <ae:parameter dt="string" name="host_header">[host_header.value]</ae:parameter>
+          </ae:parameters>
+        </ae:test>
+        <ae:profiles>
+          <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1" />
+        </ae:profiles>
+      </ae:artifact_expression>
+    </xccdf:check-content>
+  </xccdf:check>
 
 SCAP
 ^^^^
@@ -82,20 +97,31 @@ XCCDF
 
 ::
 
-   <xccdf:check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
-     <xccdf:check-export
-        export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
-        value-id="[VALUE ID NAME]"/>
-     <xccdf:check-content-ref href="CIS_Microsoft_IIS_10_Benchmark_v1.1.1-oval.xml"
-        name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]"/>
-   </xccdf:check>
+For ``iis.site.binding`` artifacts, an XCCDF Value element is generated.
 
-   <xccdf:Value id="xccdf_org.cisecurity.benchmarks_value_4.9.1_var" operator="[operator.value]"
-     type="string">
-     <xccdf:title>[RECOMMENDATION TITLE]</xccdf:title>
-     <xccdf:description>This variable is used in [RECOMMENDATION TITLE]</xccdf:description>
-     <xccdf:value>[host_header.value]</xccdf:value>
-   </xccdf:Value>
+::
+
+  <Value 
+    id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var"
+    type="string"
+    operator="[operator.value]">
+    <title>[RECOMMENDATION-TITLE]</title>
+    <description>This value is used in Rule: [RECOMMENDATION-TITLE]</description>
+    <value>[value.value]</value>
+  </Value>
+
+For ``iis.site.binding`` artifacts, the xccdf:check looks like this.
+
+::
+
+  <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+    <check-export 
+      export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
+      value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
+    <check-content-ref 
+      href="[BENCHMARK-NAME]"
+      name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
+  </check>
 
 OVAL
 ''''
@@ -104,107 +130,120 @@ Test
 
 ::
 
-   <iis:bindings_test check="all" check_existence="any_exist"
-      comment="[RECOMMENDATION TITLE]"
-      id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]" version="[version.value]">
-      <iis:object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:"/>
-      <iis:state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"/>
-   </iis:bindings_test>
+  <bindings_test 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#iis"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
+    check_existence="any_exist"
+    check="all"
+    comment="[ARTIFACT-TITLE]"
+    version="1">
+    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+    <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
+  </bindings_test>
 
 Object
 
 ::
 
-   <iis:bindings_object id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
-      version="[version.value]">
-      <iis:site_name operation="[operator.value]">[site_name.value]</iis:site_name>
-   </iis:bindings_object>   
+  <bindings_object     
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#iis"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
+    comment="[ARTIFACT-TITLE]"
+    version="1">
+    <site_name operation="pattern match">[site_name.value]</site_name>
+  </bindings_object>   
 
 State
 
 ::
 
-   <iis:bindings_state
-      id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" version="[version.value]">
-      <host_header xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#iis"
-         datatype="string" operation="[operator.value]"
-         var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"/>
-   </iis:bindings_state>   
+  <bindings_state 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#iis"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
+    comment="[ARTIFACT-TITLE]"
+    version="1">
+    <host_header xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#iis"
+      datatype="string"
+      operation="[operator.value]"
+      var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
+  </bindings_state>   
 
 Variable
         
-
 ::
 
-   <external_variable
-     comment="This value is used in [RECOMMENDATION TITLE]"
-     datatype="[data_type.value]" id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" version="[version.value]"/>                   
-
+  <external_variable    
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
+    datatype="string"
+    comment="This value is used in Rule: [RECOMMENDATION-TITLE]"
+    version="1" />
+   
 YAML
 ^^^^
 
 ::
 
-  - artifact-expression:
-       artifact-unique-id: [ARTIFACT-OVAL-ID]
-       artifact-title: [RECOMMENDATION TITLE]
-       artifact:
-         type: [ARTIFACTTYPE NAME]
-         parameters:
-         - parameter: 
-             name: site_name
-             type: string
-             value: [site_name.value]
-       test:
-         type: [TESTTYPE NAME]
-         parameters:
-         - parameter:
-             name: operator
-             type: string
-             value: [operator.value]
-         - parameter: 
-             name: host_header
-             type: string
-             value: [host_header.value]
-          
+  artifact-expression:
+    artifact-unique-id: "[ARTIFACT-OVAL-ID]"
+    artifact-title: "[ARTIFACT-TITLE]"
+    artifact:
+      type: "[ARTIFACT-TYPE-NAME]"
+      parameters:
+        - parameter: 
+            name: "site_name"
+            dt: "string"
+            value: "[site_name.value]"
+    test:
+      type: "[TEST-TYPE-NAME]"
+      parameters:
+        - parameter:
+            name: "operator"
+            dt: "string"
+            value: "[operator.value]"
+        - parameter: 
+            name: "host_header"
+            dt: "string"
+            value: "[host_header.value]"
 
 JSON
 ^^^^
 
 ::
 
-   "artifact-expression": {
-     "artifact-unique-id": [ARTIFACT-OVAL-ID],
-     "artifact-title": [RECOMMENDATION TITLE],
-     "artifact": {
-       "type": "[ARTIFACTTYPE NAME]",
-       "parameters": [
-         {
-           "parameter": {
-             "name": "site_name",
-             "type": "string",
-             "value": [site_name.value]
-           }
-         }
-       ]
-     },
-     "test": {
-       "type": [TESTTYPE NAME],
-       "parameters": [
-         {
-           "parameter": {
-             "name": "operator",
-             "type": "string",
-             "value": [operator.value]
-           }
-         },
-         {
-           "parameter": {
-             "name": "host_header",
-             "type": "string",
-             "value": [host_header.value]
-           }
-         }
-       ]
-     }
-   }
+  {
+    "artifact-expression": {
+      "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
+      "artifact-title": "[RECOMMENDATION-TITLE]",
+      "artifact": {
+        "type": "[ARTIFACT-TYPE-NAME]",
+        "parameters": [
+          {
+            "parameter": {
+              "name": "site_name",
+              "type": "string",
+              "value": "[site_name.value]"
+            }
+          }
+        ]
+      },
+      "test": {
+        "type": "[TEST-TYPE-NAME]",
+        "parameters": [
+          {
+            "parameter": {
+              "name": "operator",
+              "type": "string",
+              "value": "[operator.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "host_header",
+              "type": "string",
+              "value": "[host_header.value]"
+            }
+          }
+        ]
+      }
+    }
+  }
