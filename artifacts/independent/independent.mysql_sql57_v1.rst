@@ -888,7 +888,7 @@ independent.sql57_v1
 XCCDF+AE
 ^^^^^^^^
 
-This is what the AE check looks like, inside a Rule, in the XCCDF
+This is what the AE check looks like, inside a Rule, in the XCCDF.
 
 ::
 
@@ -1202,7 +1202,7 @@ existence_test
 XCCDF+AE
 ^^^^^^^^
 
-This is what the AE check looks like, inside a Rule, in the XCCDF
+This is what the AE check looks like, inside a Rule, in the XCCDF.
 
 ::
 
@@ -1421,7 +1421,7 @@ SQL-Unix_File_or_Directory_Permissions_v1
 XCCDF+AE
 ^^^^^^^^
 
-This is what the AE check looks like, inside a Rule, in the XCCDF
+This is what the AE check looks like, inside a Rule, in the XCCDF.
 
 ::
 
@@ -1813,7 +1813,7 @@ SQL-Unix_File_or_Directory_Permissions_v2
 XCCDF+AE
 ^^^^^^^^
 
-This is what the AE check looks like, inside a Rule, in the XCCDF
+This is what the AE check looks like, inside a Rule, in the XCCDF.
 
 ::
 
@@ -2209,7 +2209,7 @@ SQL-Unix_File_or_Directory_Permissions_sql57_object_v2
 XCCDF+AE
 ^^^^^^^^
 
-This is what the AE check looks like, inside a Rule, in the XCCDF
+This is what the AE check looks like, inside a Rule, in the XCCDF.
 
 ::
 

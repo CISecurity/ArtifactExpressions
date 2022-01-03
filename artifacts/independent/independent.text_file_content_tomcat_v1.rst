@@ -615,7 +615,7 @@ Generated Content
 XCCDF+AE
 ^^^^^^^^
 
-This is what the AE check looks like, inside a Rule, in the XCCDF
+This is what the AE check looks like, inside a Rule, in the XCCDF.
 
 ::
 
@@ -896,7 +896,7 @@ existence_test
 XCCDF+AE
 ^^^^^^^^
 
-This is what the AE check looks like, inside a Rule, in the XCCDF
+This is what the AE check looks like, inside a Rule, in the XCCDF.
 
 ::
 
@@ -1124,7 +1124,7 @@ unix.file_permissions_v1
 XCCDF+AE
 ^^^^^^^^
 
-This is what the AE check looks like, inside a Rule, in the XCCDF
+This is what the AE check looks like, inside a Rule, in the XCCDF.
 
 ::
 
@@ -1529,7 +1529,7 @@ Txt-Unix_File_or_Directory_Permissions_v1
 XCCDF+AE
 ^^^^^^^^
 
-This is what the AE check looks like, inside a Rule, in the XCCDF
+This is what the AE check looks like, inside a Rule, in the XCCDF.
 
 ::
 
@@ -1788,7 +1788,7 @@ Txt-Unix_File_or_Directory_Permissions_v2
 XCCDF+AE
 ^^^^^^^^
 
-This is what the AE check looks like, inside a Rule, in the XCCDF
+This is what the AE check looks like, inside a Rule, in the XCCDF.
 
 ::
 
@@ -2195,7 +2195,7 @@ independent.txt_file_content_v1
 XCCDF+AE
 ^^^^^^^^
 
-This is what the AE check looks like, inside a Rule, in the XCCDF
+This is what the AE check looks like, inside a Rule, in the XCCDF.
 
 ::
 
@@ -2575,7 +2575,7 @@ independent.txt_file_content_v2
 XCCDF+AE
 ^^^^^^^^
 
-This is what the AE check looks like, inside a Rule, in the XCCDF
+This is what the AE check looks like, inside a Rule, in the XCCDF.
 
 ::
 

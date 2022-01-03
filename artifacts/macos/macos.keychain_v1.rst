@@ -124,7 +124,7 @@ macos.keychain_timeout_v1
 XCCDF+AE
 ^^^^^^^^
 
-This is what the AE check looks like, inside a Rule, in the XCCDF
+This is what the AE check looks like, inside a Rule, in the XCCDF.
 
 ::
 
@@ -316,7 +316,7 @@ macos.keychain_lock_on_sleep_v1
 XCCDF+AE
 ^^^^^^^^
 
-This is what the AE check looks like, inside a Rule, in the XCCDF
+This is what the AE check looks like, inside a Rule, in the XCCDF.
 
 ::
 

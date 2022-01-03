@@ -206,7 +206,7 @@ equal, equals, not equal, less than, less than or equal, greater than, greater t
 XCCDF+AE
 ^^^^^^^^
 
-This is what the AE check looks like, inside a Rule, in the XCCDF
+This is what the AE check looks like, inside a Rule, in the XCCDF.
 
 ::
 
