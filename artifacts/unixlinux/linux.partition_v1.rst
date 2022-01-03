@@ -128,7 +128,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
       <xccdf:check-content>
         <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
           <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-          <ae:title>[RECOMMENDATION-TITLE]</ae:title>
+          <ae:title>[ARTIFACT-TITLE]</ae:title>
           <ae:artifact type="[ARTIFACT-TYPE-NAME]">
             <ae:parameters>
               <ae:parameter dt="string" name="existence">[existence_value]</ae:parameter>
@@ -140,7 +140,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
             <ae:parameters />
           </ae:test>
             <ae:profiles>
-              <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1 "/>
+              <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1" />
             </ae:profiles>
         </ae:artifact_expression>
       </xccdf:check-content>
@@ -153,7 +153,7 @@ SCAP
 XCCDF
 '''''
 
-For ``linux.partition_v1`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
+For ``linux.partition_v1 null_test_v1`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
 
 ::
 
@@ -179,8 +179,8 @@ Test
     check="[check.value]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
-      <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
+    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+    <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
   </partition_test>
 
 Object
@@ -208,7 +208,7 @@ YAML
 
   artifact-expression:
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
-    artifact-title: "[RECOMMENDATION-TITLE]"
+    artifact-title: "[ARTIFACT-TITLE]"
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
@@ -226,7 +226,7 @@ YAML
             value: "[mount_point.value]"
     test:
       type: "[TEST-TYPE-NAME]"
-      parameters: []
+      parameters:
 
 JSON
 ^^^^
@@ -236,7 +236,7 @@ JSON
   {
     "artifact-expression": {
       "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
-      "artifact-title": "[RECOMMENDATION-TITLE]",
+      "artifact-title": "[ARTIFACT-TITLE]",
       "artifact": {
         "type": "[ARTIFACT-TYPE-NAME]",
         "parameters": [
@@ -289,7 +289,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
       <xccdf:check-content>
         <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
           <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-          <ae:title>[RECOMMENDATION-TITLE]</ae:title>
+          <ae:title>[ARTIFACT-TITLE]</ae:title>
           <ae:artifact type="[ARTIFACT-TYPE-NAME]">
             <ae:parameters>
               <ae:parameter dt="string" name="existence">[existence_value]</ae:parameter>
@@ -306,7 +306,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
             </ae:parameters>
           </ae:test>
           <ae:profiles>
-            <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1 "/>
+            <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1" />
           </ae:profiles>
         </ae:artifact_expression>
       </xccdf:check-content>
@@ -319,7 +319,7 @@ SCAP
 XCCDF
 '''''
 
-For ``linux.partition_v1`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
+For ``linux.partition_v1 linux.partition_option_v1`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
 
 ::
 
@@ -345,8 +345,8 @@ Test
     check="[check.value]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
-      <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
+    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+    <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
   </partition_test>
 
 Object
@@ -358,7 +358,7 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <mount_point>[mount_point.value]</mount_point>
+    <mount_point>[mount_point.value]</mount_point>
   </partition_object>
 
 State
@@ -370,12 +370,12 @@ State
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <mount_options 
-        entity_check="[entity_check.value]"
-        operation="[operation.value]"
-        datatype="[datatype.value]">
-            [mount_options.value]
-      </mount_options>
+    <mount_options 
+      entity_check="[entity_check.value]"
+      operation="[operation.value]"
+      datatype="[datatype.value]">
+        [mount_options.value]
+    </mount_options>
   </partition_state>  
 
 YAML
@@ -385,7 +385,7 @@ YAML
 
   artifact-expression:
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
-    artifact-title: "[RECOMMENDATION-TITLE]"
+    artifact-title: "[ARTIFACT-TITLE]"
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
@@ -429,7 +429,7 @@ JSON
   {
     "artifact-expression": {
       "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
-      "artifact-title": "[RECOMMENDATION-TITLE]",
+      "artifact-title": "[ARTIFACT-TITLE]",
       "artifact": {
         "type": "[ARTIFACT-TYPE-NAME]",
         "parameters": [

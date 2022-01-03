@@ -82,7 +82,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
       <xccdf:check-content>
         <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
           <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-          <ae:title>[RECOMMENDATION-TITLE]</ae:title>
+          <ae:title>[ARTIFACT-TITLE]</ae:title>
           <ae:artifact type="[ARTIFACT-TYPE-NAME]">
             <ae:parameters>
               <ae:parameter dt="string" name="unit">[unit.value]</ae:parameter>
@@ -96,7 +96,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
             </ae:parameters>
           </ae:test>
           <ae:profiles>
-            <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1 "/>
+            <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1" />
           </ae:profiles>          
         </ae:artifact_expression>
       </xccdf:check-content>
@@ -109,8 +109,7 @@ SCAP
 XCCDF
 '''''
 
-For ``linux.systemd_unit_property_v1`` artifacts, an XCCDF Value element
-is generated.
+For ``linux.systemd_unit_property_v1`` artifacts, an XCCDF Value element is generated.
 
 ::
 
@@ -118,13 +117,12 @@ is generated.
     id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var"
     type="[type.value]"
     operator="[operator.value]">
-      <title>[RECOMMENDATION-TITLE]</title>
-      <description>This value is used in Rule: [RECOMMENDATION-TITLE]</description>
-      <value>[value.value]</value>
+    <title>[RECOMMENDATION-TITLE]</title>
+    <description>This value is used in Rule: [RECOMMENDATION-TITLE]</description>
+    <value>[value.value]</value>
   </Value>
 
-For ``linux.systemd_unit_property_v1`` artifacts, the xccdf:check looks
-like this.
+For ``linux.systemd_unit_property_v1`` artifacts, the xccdf:check looks like this.
 
 ::
 
@@ -153,8 +151,8 @@ Test
     check="all"
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
-      <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
+    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+    <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
   </systemdunitproperty_test>
 
 Object
@@ -166,8 +164,8 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <unit>[unit.value]</unit>
-      <property>[property.value]</property>
+    <unit>[unit.value]</unit>
+    <property>[property.value]</property>
   </systemdunitproperty_object>
 
 State
@@ -175,14 +173,14 @@ State
 ::
 
   <systemdunitproperty_state 
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux" 
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" 
-    comment="[ARTIFACT-TITLE]" 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-      <value 
-        datatype="[datatype.value]"
-        operation="[operation.value]"
-        var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
+    <value 
+      datatype="[datatype.value]"
+      operation="[operation.value]"
+      var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
   </systemdunitproperty_state>
 
 Variable
@@ -202,7 +200,7 @@ YAML
 
   artifact-expression:
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
-    artifact-title: "[RECOMMENDATION-TITLE]"
+    artifact-title: "[ARTIFACT-TITLE]"
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
@@ -242,7 +240,7 @@ JSON
   {
     "artifact-expression": {
       "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
-      "artifact-title": "[RECOMMENDATION-TITLE]",
+      "artifact-title": "[ARTIFACT-TITLE]",
       "artifact": {
         "type": "[ARTIFACT-TYPE-NAME]",
         "parameters": [

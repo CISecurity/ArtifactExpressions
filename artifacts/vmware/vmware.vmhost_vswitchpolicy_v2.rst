@@ -46,7 +46,7 @@ NOTE: The ``check_existence`` parameter is governed by a constraint allowing onl
   - none_exist
   - only_one_exists
 
-NOTE: The ``vswitch_name_operation`` parameter is governed by a constraint allowing only the following values:
+NOTE: The ``vswitch_name_operation`` and ``vmhost_name_operation`` parameters are governed by a constraint allowing only the following values:
   - equals
   - not equal
   - case insensitive equals
@@ -60,20 +60,6 @@ NOTE: The ``vswitch_name_operation`` parameter is governed by a constraint allow
   - pattern match
   - subset of
   - superset of  
-
- NOTE: The ``vmhost_name_operation`` parameter is governed by a constraint allowing only the following values:- equals
-  - not equal
-  - case insensitive equals
-  - case insensitive not equal
-  - greater than
-  - less than
-  - greater than or equal
-  - less than or equal
-  - bitwise and 
-  - bitwise or
-  - pattern match
-  - subset of
-  - superset of
 
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
@@ -125,17 +111,17 @@ NOTE: The ``operation`` parameter is governed by a constraint allowing only the 
   - superset of
 
 NOTE: The ``datatype`` parameter is governed by a constraint allowing only the following values:
-	- boolean
-	- float
-	- int
-	- string
-	- version
-	- set
+  - boolean
+  - float
+  - int
+  - string
+  - version
+  - set
 
 NOTE: The ``policy_name`` parameter is governed by a constraint allowing only the following values:
-	- mac_changes
-	- promiscuous_mode 
-	- forged_transmits
+  - mac_changes
+  - promiscuous_mode 
+  - forged_transmits
 
 NOTE: The ``policy_state`` parameter is governed by a constraint allowing only the following values:
   - NA
@@ -158,7 +144,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
     <xccdf:check-content>
       <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
         <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-        <ae:title>[RECOMMENDATION-TITLE]</ae:title>
+        <ae:title>[ARTIFACT-TITLE]</ae:title>
         <ae:artifact type="[ARTIFACT-TYPE-NAME]" />
           <ae:parameters>
             <ae:parameter dt="string" name="check_existence">[check_existence.value]</ae:parameter>
@@ -217,8 +203,8 @@ Test
     check="[check.value]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
-      <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
+    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+    <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
   </vmhost_vswitchpolicy_test>
 
 Object
@@ -227,16 +213,16 @@ Object
 
   <vmhost_vswitchpolicy_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
-    id="oval:org.cisecurity.benchmarks[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"       
+    id="oval:org.cisecurity.benchmarks[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <connection_string var_ref="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
-      <vmhost_name operation="[operation.value]">
-          [vmhost_name.value]
-      </vmhost_name>
-      <vswitch_name operation="[operation.value]">
-          [vswitch_name.value]
-      </vswitch_name>    
+    <connection_string var_ref="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
+    <vmhost_name operation="[operation.value]">
+      [vmhost_name.value]
+    </vmhost_name>
+    <vswitch_name operation="[operation.value]">
+      [vswitch_name.value]
+    </vswitch_name>
   </vmhost_vswitchpolicy_object>      
 
 State
@@ -248,11 +234,11 @@ State
     id="oval:org.cisecurity.benchmarks[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <[testPolicyName.value]
-        datatype="[datatype.value]"
-        operation="[operation.value]">
-          [testPolicyState.value]
-      </[testPolicyName.value]>
+    <[testPolicyName.value] 
+      datatype="[datatype.value]"
+      operation="[operation.value]">
+        [testPolicyState.value]
+    </[testPolicyName.value]>
   </vmhost_vswitchpolicy_state> 
 
 Variable
@@ -272,7 +258,7 @@ YAML
 
   artifact-expression:
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
-    artifact-title: "[RECOMMENDATION-TITLE]"
+    artifact-title: "[ARTIFACT-TITLE]"
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
@@ -328,7 +314,7 @@ JSON
   {
     "artifact-expression": {
       "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
-      "artifact-title": "[RECOMMENDATION-TITLE]",
+      "artifact-title": "[ARTIFACT-TITLE]",
       "artifact": {
         "type": "[ARTIFACT-TYPE-NAME]",
         "parameters": [

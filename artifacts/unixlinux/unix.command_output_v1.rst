@@ -106,12 +106,12 @@ SCAP
 XCCDF
 '''''
 
-For ``unix.command_output_v1`` artifacts, an XCCDF Value element is generated.
+For ``unix.command_output_v1 equals, pattern match, and pattern not match`` artifacts, an XCCDF Value element is generated.
 
 ::
 
   <Value 
-    id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" 
+    id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var"
     type="[type.value]"
     operator="[operator.value]">
     <title>[RECOMMENDATION-TITLE]</title>
@@ -119,17 +119,17 @@ For ``unix.command_output_v1`` artifacts, an XCCDF Value element is generated.
     <value>[value.value]</value>
   </Value>
 
-For ``unix.command_output_v1`` artifacts, the xccdf:check looks like this.
+For ``unix.command_output_v1 equals, pattern match, and pattern not match`` artifacts, the xccdf:check looks like this.
 
 ::
 
   <xccdf:complex-check operator="AND">
     <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
       <check-export 
-        export-name="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]" 
+        export-name="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]"
         value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
       <check-content-ref 
-        href="[BENCHMARK-TITLE]" 
+        href="[BENCHMARK-TITLE]"
         name="oval:org.cisecurity.benchmarks:def:[ARTIFACT-OVAL-ID]" />
     </check>
   </xccdf:complex-check>
@@ -148,8 +148,8 @@ Test
     check="[check.value]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <object object_ref="oval:org.cisecurity.benchmarks:obj:[ARTIFACT-OVAL-ID]" />
-      <state state_ref="oval:org.cisecurity.benchmarks:ste:[ARTIFACT-OVAL-ID]" />
+    <object object_ref="oval:org.cisecurity.benchmarks:obj:[ARTIFACT-OVAL-ID]" />
+    <state state_ref="oval:org.cisecurity.benchmarks:ste:[ARTIFACT-OVAL-ID]" />
   </shellcommand_test>
 
 Object
@@ -161,10 +161,10 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <command>[command.value]</command>
-      <line_selection operation="pattern match">
-          .+
-      </line_selection>
+    <command>[command.value]</command>
+    <line_selection operation="pattern match">
+      .+
+    </line_selection>
   </shellcommand_object>
 
 State
@@ -176,10 +176,10 @@ State
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
     comment='[RECOMMENDATION-TITLE]'
     version="1">
-      <stdout_line 
-        entity_check="at least one"
-        operation="[operation.value]"
-        var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
+    <stdout_line 
+      entity_check="at least one"
+      operation="[operation.value]"
+      var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
   </shellcommand_state> 
 
 Variable
@@ -199,7 +199,7 @@ YAML
 
   artifact-expression:
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
-    artifact-title: "[RECOMMENDATION-TITLE]"
+    artifact-title: "[ARTIFACT-TITLE]"
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
@@ -227,7 +227,7 @@ JSON
   {
     "artifact-expression": {
       "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
-      "artifact-title": "[RECOMMENDATION-TITLE]",
+      "artifact-title": "[ARTIFACT-TITLE]",
       "artifact": {
         "type": "[ARTIFACT-TYPE-NAME]",
         "parameters": [
@@ -279,7 +279,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
       <xccdf:check-content>
         <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
           <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-          <ae:title>[RECOMMENDATION-TITLE]</ae:title>
+          <ae:title>[ARTIFACT-TITLE]</ae:title>
           <ae:artifact type="[ARTIFACT-TYPE-NAME]">
             <ae:parameters>
               <ae:parameter dt="string" name="command">[command.value]</ae:parameter>
@@ -302,7 +302,7 @@ SCAP
 XCCDF
 '''''
 
-For ``unix.command_output_v1`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
+For ``unix.command_output_v1 null_test_v1`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
 
 ::
 
@@ -326,7 +326,7 @@ Test
     check="all"
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <object object_ref="oval:org.cisecurity.benchmarks:obj:[ARTIFACT-OVAL-ID]" />
+    <object object_ref="oval:org.cisecurity.benchmarks:obj:[ARTIFACT-OVAL-ID]" />
   </shellcommand_test>
 
 Object
@@ -338,10 +338,10 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <command>[command.value]</command>
-      <line_selection operation="pattern match">
-          .+
-      </line_selection>
+    <command>[command.value]</command>
+    <line_selection operation="pattern match">
+      .+
+    </line_selection>
   </shellcommand_object>
 
 State
@@ -357,7 +357,7 @@ YAML
 
   artifact-expression:
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
-    artifact-title: "[RECOMMENDATION-TITLE]"
+    artifact-title: "[ARTIFACT-TITLE]"
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
@@ -367,7 +367,7 @@ YAML
             value: "[command.value]"
     test:
       type: "[TEST-TYPE-NAME]"
-      parameters: []              
+      parameters:              
 
 JSON
 ^^^^
@@ -377,7 +377,7 @@ JSON
   {
     "artifact-expression": {
       "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
-      "artifact-title": "[RECOMMENDATION-TITLE]",
+      "artifact-title": "[ARTIFACT-TITLE]",
       "artifact": {
         "type": "[ARTIFACT-TYPE-NAME]",
         "parameters": [

@@ -87,12 +87,12 @@ NOTE: The ``operation`` parameter is governed by a constraint allowing only the 
   - superset of
 
 NOTE: The ``datatype`` parameter is governed by a constraint allowing only the following values:
-	- boolean
-	- float
-	- int
-	- string
-	- version
-	- set
+  - boolean
+  - float
+  - int
+  - string
+  - version
+  - set
 
 Generated Content
 ~~~~~~~~~~~~~~~~~
@@ -111,7 +111,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
       <xccdf:check-content>
         <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
           <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-          <ae:title>[RECOMMENDATION-TITLE]</ae:title>
+          <ae:title>[ARTIFACT-TITLE]</ae:title>
           <ae:artifact type="[ARTIFACT-TYPE-NAME]">
             <ae:parameters>
               <ae:parameter dt="string" name="check_existence">at_least_one_exists</ae:parameter>
@@ -152,9 +152,8 @@ For ``vmware:virtual_portgroup`` artifacts, the xccdf:check looks like this. The
       export-name="oval:org.cisecurity.benchmarks:var:100000"
       value-id="xccdf_org.cisecurity.benchmarks_value_esxi.connection" />
     <check-content-ref 
-      href="[BENCHMARK-NAME]-oval.xml" 
+      href="[BENCHMARK-NAME]-oval.xml"
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
-    </check>
   </xccdf:check>
 
 OVAL
@@ -171,8 +170,8 @@ Test
     check="[check.value]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
-      <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
+    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+    <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
   </virtual_portgroup_test>
 
 Object
@@ -186,14 +185,13 @@ Object
     check="[check.value]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <connection_string 
-        var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
-      <port_group_name operation="[operation.value]">
-          .*
-      </port_group_name>
-      <virtual_switch_name operation="[operation.value]">
-          .*
-      </virtual_switch_name>
+    <connection_string var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
+    <port_group_name operation="[operation.value]">
+      .*
+    </port_group_name>
+    <virtual_switch_name operation="[operation.value]">
+      .*
+    </virtual_switch_name>
   </virtual_portgroup_object>   
 
 State
@@ -205,11 +203,11 @@ State
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <vlan_id 
-        datatype="[datatype.value]"
-        operation="[operation.value]">
-          [vlan_id.value]
-      </vlan_id>
+    <vlan_id 
+      datatype="[datatype.value]"
+      operation="[operation.value]">
+        [vlan_id.value]
+    </vlan_id>
   </virtual_portgroup_state>  
 
 YAML
@@ -219,7 +217,7 @@ YAML
 
   artifact-expression:
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
-    artifact-title: "[RECOMMENDATION-TITLE]"
+    artifact-title: "[ARTIFACT-TITLE]"
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
@@ -271,7 +269,7 @@ JSON
   {
     "artifact-expression": {
       "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
-      "artifact-title": "[RECOMMENDATION-TITLE]",
+      "artifact-title": "[ARTIFACT-TITLE]",
       "artifact": {
         "type": "[ARTIFACT-TYPE-NAME]",
         "parameters": [

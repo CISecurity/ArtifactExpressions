@@ -99,7 +99,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
       <xccdf:check-content>
         <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
           <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-          <ae:title>[RECOMMENDATION-TITLE]</ae:title>
+          <ae:title>[ARTIFACT-TITLE]</ae:title>
           <ae:artifact type="[ARTIFACT-TYPE-NAME]">
             <ae:parameters>
               <ae:parameter dt="string" name="parameter">[parameter.value]</ae:parameter>
@@ -145,7 +145,7 @@ For ``unix.kernel_parameter_v1`` artifacts, the xccdf:check looks like this.
   <xccdf:complex-check operator="AND">
     <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
       <check-export 
-        export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" 
+        export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
         value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
       <check-content-ref 
         href="[BENCHMARK-TITLE]"
@@ -167,28 +167,28 @@ Test
     check="all"
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]1" />
-      <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]1" />
+    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]1" />
+    <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]1" />
   </sysctl_test>
 
-  <textfilecontent54_test
+  <textfilecontent54_test 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]2"
     check_existence="at_least_one_exists"
     check="all"
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]2" />
+    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]2" />
   </textfilecontent54_test>
 
-  <textfilecontent54_test
+  <textfilecontent54_test 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]3"
     check_existence="at_least_one_exists"
     check="all"
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]3" />
+    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]3" />
   </textfilecontent54_test>
 
 Object
@@ -200,7 +200,7 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]1"
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <name>[name.value]</name>
+    <name>[name.value]</name>
   </sysctl_object>
 
   <textfilecontent54_object 
@@ -208,17 +208,17 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]2"
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <filepath>/etc/sysctl.conf</filepath>
-      <pattern 
-        operation="pattern match"
-        datatype="string">
-          [pattern.value]
-      </pattern>
-      <instance 
-        datatype="int"
-        operation="equals">
-          1
-      </instance>
+    <filepath>/etc/sysctl.conf</filepath>
+    <pattern 
+      operation="pattern match"
+      datatype="string">
+        [pattern.value]
+    </pattern>
+    <instance 
+      datatype="int"
+      operation="equals">
+        1
+    </instance>
   </textfilecontent54_object>
 
   <textfilecontent54_object 
@@ -226,22 +226,22 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]3"
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <path>/etc/sysctl.d</path>
-      <filename 
-        operation="pattern match"
-        datatype="string">
-          .*
-      </filename>
-      <pattern 
-        operation="pattern match"
-        datatype="string">
-          [pattern.value]
-      </pattern>
-      <instance 
-        datatype="int"
-        operation="equals">
-          1
-      </instance>
+    <path>/etc/sysctl.d</path>
+    <filename 
+      operation="pattern match"
+      datatype="string">
+        .*
+    </filename>
+    <pattern 
+      operation="pattern match"
+      datatype="string">
+        [pattern.value]
+    </pattern>
+    <instance 
+      datatype="int"
+      operation="equals">
+        1
+    </instance>
   </textfilecontent54_object>
 
 State
@@ -253,15 +253,15 @@ State
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]1"
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <name 
-        datatype="string"
-        operation="equals">
-          [name.value]
-      </name>
-      <value 
-        datatype="[datatype.value]" 
-        operation="[operation.value]" 
-        var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
+    <name 
+      datatype="string"
+      operation="equals">
+        [name.value]
+    </name>
+    <value 
+      datatype="[datatype.value]"
+      operation="[operation.value]"
+      var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
   </sysctl_state>
 
 Variable
@@ -281,7 +281,7 @@ YAML
 
   artifact-expression:
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
-    artifact-title: "[RECOMMENDATION-TITLE]"
+    artifact-title: "[ARTIFACT-TITLE]"
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
@@ -309,7 +309,7 @@ JSON
   {
     "artifact-expression": {
       "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
-      "artifact-title": "[RECOMMENDATION-TITLE]",
+      "artifact-title": "[ARTIFACT-TITLE]",
       "artifact": {
         "type": "[ARTIFACT-TYPE-NAME]",
         "parameters": [

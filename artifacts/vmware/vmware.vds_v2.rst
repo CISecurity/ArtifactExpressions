@@ -39,19 +39,19 @@ NOTE: The ``check_existence`` parameter is governed by a constraint allowing onl
   - only_one_exists
 
 NOTE: The ``vds_name_operation`` parameter is governed by a constraint allowing only the following values:
-	- equals
-	- not equal
-	- case insensitive equals 
-	- case insensitive not equal
-	- greater than
-	- less than
-	- greater than or equal
-	- less than or equal
-	- bitwise and
-	- bitwise or
-	- pattern match 
-	- subset of
-	- superset of 
+  - equals
+  - not equal
+  - case insensitive equals 
+  - case insensitive not equal
+  - greater than
+  - less than
+  - greater than or equal
+  - less than or equal
+  - bitwise and
+  - bitwise or
+  - pattern match 
+  - subset of
+  - superset of 
 
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
@@ -102,12 +102,12 @@ NOTE: The ``operation`` parameter is governed by a constraint allowing only the 
   - superset of
 
 NOTE: The ``datatype`` parameter is governed by a constraint allowing only the following values:
-	- boolean
-	- float
-	- int
-	- string
-	- version
-	- set
+  - boolean
+  - float
+  - int
+  - string
+  - version
+  - set
 
 **vmware:vds_vlan_mtu**
 
@@ -149,12 +149,12 @@ NOTE: The ``operation`` parameter is governed by a constraint allowing only the 
   - superset of
 
 NOTE: The ``datatype`` parameter is governed by a constraint allowing only the following values:
-	- boolean
-	- float
-	- int
-	- string
-	- version
-	- set
+  - boolean
+  - float
+  - int
+  - string
+  - version
+  - set
 
 Generated Content
 ~~~~~~~~~~~~~~~~~
@@ -173,7 +173,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
       <xccdf:check-content>
         <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
           <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-          <ae:title>[RECOMMENDATION-TITLE]</ae:title>
+          <ae:title>[ARTIFACT-TITLE]</ae:title>
           <ae:artifact type="[ARTIFACT-TYPE-NAME]">
             <ae:parameters>
               <ae:parameter dt="string" name="vds_name">[vds_name.value]</ae:parameter>
@@ -186,8 +186,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
               <ae:parameter dt="string" name="check">[check.value]</ae:parameter>
               <ae:parameter dt="string" name="operation">[operation.value]</ae:parameter>
               <ae:parameter dt="string" name="datatype">[datatype.value]</ae:parameter>
-              <ae:parameter dt="string" name="teaming_failover_health_check_enabled"
-                >[teaming_failover_health_check_enabled.value]</ae:parameter>
+              <ae:parameter dt="string" name="teaming_failover_health_check_enabled">[teaming_failover_health_check_enabled.value]</ae:parameter>
             </ae:parameters>
           </ae:test>
           <ae:profiles>
@@ -204,7 +203,7 @@ SCAP
 XCCDF
 '''''
 
-For ``vmware.vds_v2`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
+For ``vmware.vds_v2 vmware:vds_teaming_failover`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
 
 ::
 
@@ -233,8 +232,8 @@ Test
     check="[check.value]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
-      <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
+    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+    <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
   </vds_test>
 
 Object
@@ -246,10 +245,10 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <connection_string var_ref="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
-      <vds_name operation="[operation.value]">
-          [vds_name.value]
-      </vds_name>
+    <connection_string var_ref="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
+    <vds_name operation="[operation.value]">
+      [vds_name.value]
+    </vds_name>
   </vds_object>    
 
 State
@@ -261,11 +260,11 @@ State
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <teaming_failover_health_check_enabled 
-        datatype="[datatype.value]"
-        operation="[operation.value]">
-          [teaming_failover_health_check_enabled.value]
-      </teaming_failover_health_check_enabled>
+    <teaming_failover_health_check_enabled 
+      datatype="[datatype.value]"
+      operation="[operation.value]">
+        [teaming_failover_health_check_enabled.value]
+    </teaming_failover_health_check_enabled>
   </vds_state>   
 
 Variable
@@ -285,7 +284,7 @@ YAML
 
   artifact-expression:
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
-    artifact-title: "[RECOMMENDATION-TITLE]"
+    artifact-title: "[ARTIFACT-TITLE]"
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
@@ -302,7 +301,7 @@ YAML
             dt: "string"
             value: "[vds_name_operation.value]"  
     test:
-      type: [TEST-TYPE-NAME]
+      type: "[TEST-TYPE-NAME]"
       parameters:
         - parameter: 
             name: "check"
@@ -409,7 +408,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
       <xccdf:check-content>
         <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
           <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-          <ae:title>[RECOMMENDATION-TITLE]</ae:title>
+          <ae:title>[ARTIFACT-TITLE]</ae:title>
           <ae:artifact type="[ARTIFACT-TYPE-NAME]">
             <ae:parameters>
               <ae:parameter dt="string" name="vds_name">[vds_name.value]</ae:parameter>
@@ -422,8 +421,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
               <ae:parameter dt="string" name="check">[check.value]</ae:parameter>
               <ae:parameter dt="string" name="operation">[operation.value]</ae:parameter>
               <ae:parameter dt="string" name="datatype">[datatype.value]</ae:parameter>
-              <ae:parameter dt="string" name="vlan_mtu_health_check_enabled"
-                >[vlan_mtu_health_check_enabled.value]</ae:parameter>
+              <ae:parameter dt="string" name="vlan_mtu_health_check_enabled">[vlan_mtu_health_check_enabled.value]</ae:parameter>
             </ae:parameters>
           </ae:test>
           <ae:profiles>
@@ -440,7 +438,7 @@ SCAP
 XCCDF
 '''''
 
-For ``vmware.vds_v2`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
+For ``vmware.vds_v2 vlan_mtu_health_check_enabled`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
 
 ::
 
@@ -467,8 +465,8 @@ Test
     check="[check.value]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
-      <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
+    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+    <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
   </vds_test>
 
 Object
@@ -480,10 +478,10 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <connection_string var_ref="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
-      <vds_name operation="[operation.value]">
-          [vds_name.value]
-      </vds_name>
+    <connection_string var_ref="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
+    <vds_name operation="[operation.value]">
+      [vds_name.value]
+    </vds_name>
   </vds_object>    
 
 State
@@ -495,11 +493,11 @@ State
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <vlan_mtu_health_check_enabled 
-        datatype="[datatype.value]"
-        operation="[operation.value]">
-          [vlan_mtu_health_check_enabled.value]
-      </vlan_mtu_health_check_enabled>
+    <vlan_mtu_health_check_enabled 
+      datatype="[datatype.value]"
+      operation="[operation.value]">
+        [vlan_mtu_health_check_enabled.value]
+    </vlan_mtu_health_check_enabled>
   </vds_state>   
 
 Variable
@@ -519,7 +517,7 @@ YAML
 
   artifact-expression:
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
-    artifact-title: "[RECOMMENDATION-TITLE]"
+    artifact-title: "[ARTIFACT-TITLE]"
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
@@ -536,7 +534,7 @@ YAML
             dt: "string"
             value: "[vds_name_operation.value]"  
     test:
-      type: [TEST-TYPE-NAME]
+      type: "[TEST-TYPE-NAME]"
       parameters:
         - parameter: 
             name: "check"

@@ -107,7 +107,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
       <xccdf:check-content>
         <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
           <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-          <ae:title>[RECOMMENDATION-TITLE]</ae:title>
+          <ae:title>[ARTIFACT-TITLE]</ae:title>
           <ae:artifact type="[ARTIFACT-TYPE-NAME]">
             <ae:parameters>
               <ae:parameter dt="string" name="parameter">[parameter.value]</ae:parameter>
@@ -132,8 +132,7 @@ SCAP
 XCCDF
 '''''
 
-For ``linux.pam_cracklib_parameter_v1`` artifacts, the xccdf:check looks
-like this. There is no Value element in the XCCDF for this Artifact.
+For ``linux.pam_cracklib_parameter_v1 existence_test`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
 
 ::
 
@@ -159,7 +158,7 @@ Test
     check="all"
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
   </textfilecontent54_test>
 
 Object
@@ -171,15 +170,15 @@ Object
     comment="[ARTIFACT-TITLE]"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     version="1">
-      <filepath>[filepath.value]<filepath>
-        <pattern operation="pattern match">
-          [pattern.value]
-        </pattern>
-        <instance 
-          datatype="int"
-          operation="equals">
+    <filepath>[filepath.value]<filepath>
+      <pattern operation="pattern match">
+        [pattern.value]
+      </pattern>
+      <instance 
+        datatype="int"
+        operation="equals">
           1
-        </instance>
+      </instance>
     </textfilecontent54_object>
 
 State
@@ -195,7 +194,7 @@ YAML
 
   artifact-expression:
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
-    artifact-title: "[RECOMMENDATION-TITLE]"
+    artifact-title: "[ARTIFACT-TITLE]"
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
@@ -219,7 +218,7 @@ JSON
   {
     "artifact-expression": {
       "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
-      "artifact-title": "[RECOMMENDATION-TITLE]",
+      "artifact-title": "[ARTIFACT-TITLE]",
       "artifact": {
         "type": "[ARTIFACT-TYPE-NAME]",
         "parameters": [
@@ -270,7 +269,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
       <xccdf:check-content>
         <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
           <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-          <ae:title>[RECOMMENDATION-TITLE]</ae:title>
+          <ae:title>[ARTIFACT-TITLE]</ae:title>
           <ae:artifact type="[ARTIFACT-TYPE-NAME]">
             <ae:parameters>
               <ae:parameter dt="string" name="parameter">[parameter.value]</ae:parameter>
@@ -296,7 +295,7 @@ SCAP
 XCCDF
 '''''
 
-For ``linux.pam_cracklib_parameter_v1`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
+For ``linux.pam_cracklib_parameter_v1 equals, not equal, less than, less than or equal, greater than, greater than or equal, pattern match, and pattern not match`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
 
 ::
 
@@ -322,7 +321,7 @@ Test
     check="all"
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
   </textfilecontent54_test>
 
 Object
@@ -334,32 +333,32 @@ Object
     comment="[ARTIFACT-TITLE]"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     version="1">
-      <filepath>[filepath.value]<filepath>
-        <pattern operation="pattern match">
-          [pattern.value]
-        </pattern>
-        <instance 
-          datatype="int"
-          operation="equals">
+    <filepath>[filepath.value]<filepath>
+      <pattern operation="pattern match">
+        [pattern.value]
+      </pattern>
+      <instance 
+        datatype="int"
+        operation="equals">
           1
-        </instance>
+      </instance>
     </textfilecontent54_object>
 
 State
 
 ::
 
-    <textfilecontent54_state 
-      xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent"
-      comment="[ARTIFACT-TITLE]"
-      id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
-      version="1">
-        <subexpression 
-          datatype="[datatype.value]"
-          operation="[operation.value]">
-          [subexpression.value]
-        </subexpression>
-    </textfilecontent54_state>
+  <textfilecontent54_state 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent"
+    comment="[ARTIFACT-TITLE]"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
+    version="1">
+    <subexpression 
+      datatype="[datatype.value]"
+      operation="[operation.value]">
+        [subexpression.value]
+    </subexpression>
+  </textfilecontent54_state>
 
 YAML
 ^^^^
@@ -368,7 +367,7 @@ YAML
 
   artifact-expression:
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
-    artifact-title: "[RECOMMENDATION-TITLE]"
+    artifact-title: "[ARTIFACT-TITLE]"
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
@@ -396,7 +395,7 @@ JSON
   {
     "artifact-expression": {
       "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
-      "artifact-title": "[RECOMMENDATION-TITLE]",
+      "artifact-title": "[ARTIFACT-TITLE]",
       "artifact": {
         "type": "[ARTIFACT-TYPE-NAME]",
         "parameters": [
