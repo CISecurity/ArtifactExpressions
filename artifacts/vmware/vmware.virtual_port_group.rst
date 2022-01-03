@@ -77,7 +77,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
       <xccdf:check-content>
         <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
           <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-          <ae:title>[RECOMMENDATION-TITLE]</ae:title>
+          <ae:title>[ARTIFACT-TITLE]</ae:title>
           <ae:artifact type="[ARTIFACT-TYPE-NAME]">
             <ae:parameters>
               <ae:parameter dt="string" name="port_group_name">NA</ae:parameter>
@@ -114,7 +114,7 @@ For ``vmware.virtual_port_group`` artifacts, the xccdf:check looks like this. Th
         export-name="oval:org.cisecurity.benchmarks:var:100000"
         value-id="xccdf_org.cisecurity.benchmarks_value_esxi.connection" />
       <check-content-ref 
-        href="[BENCHMARK-NAME]-oval.xml" 
+        href="[BENCHMARK-NAME]-oval.xml"
         name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
     </check>
   </xccdf:complex-check>
@@ -133,8 +133,8 @@ Test
     check="all"  
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
-      <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
+    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+    <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
   </virtual_portgroup_test>
 
 Object
@@ -146,13 +146,13 @@ Object
     id="oval:org.cisecurity.benchmarks[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <connection_string var_ref="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
-      <port_group_name operation="pattern match">
-          .*
-      </port_group_name>
-      <virtual_switch_name operation="pattern match">
-          .*
-      </virtual_switch_name>
+    <connection_string var_ref="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
+    <port_group_name operation="pattern match">
+      .*
+    </port_group_name>
+    <virtual_switch_name operation="pattern match">
+      .*
+    </virtual_switch_name>
   </virtual_portgroup_object> 
 
 State
@@ -164,10 +164,11 @@ State
     id="oval:org.cisecurity.benchmarks[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <vlan_id datatype="int"
-        operation="[operation.value]">
-          [vlan_id.value]
-      </vlan_id>
+    <vlan_id 
+      datatype="int"
+      operation="[operation.value]">
+        [vlan_id.value]
+    </vlan_id>
   </virtual_portgroup_state>
 
 Variable
@@ -187,29 +188,29 @@ YAML
 
   artifact-expression:
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
-    artifact-title: "[RECOMMENDATION-TITLE]"
+    artifact-title: "[ARTIFACT-TITLE]"
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
-      - parameter: 
-          name: "port_group_name"
-          type: "string"
-          value: "[port_group_name.value]"
-      - parameter: 
-          name: "virtual_switch_name"
-          type: "string"
-          value: "[virtual_switch_name.value]"                      
+        - parameter: 
+            name: "port_group_name"
+            dt: "string"
+            value: "[port_group_name.value]"
+        - parameter: 
+            name: "virtual_switch_name"
+            dt: "string"
+            value: "[virtual_switch_name.value]"                      
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:
-      - parameter:
-          name: "operator"
-          type: "string"
-          value: "[operator.value]"
-      - parameter:
-          name: "vlan_id"
-          type: "int"
-          value: "[vlan_id.value]"            
+        - parameter:
+            name: "operator"
+            dt: "string"
+            value: "[operator.value]"
+        - parameter:
+            name: "vlan_id"
+            dt: "int"
+            value: "[vlan_id.value]"            
 
 JSON
 ^^^^
@@ -219,7 +220,7 @@ JSON
   {
     "artifact-expression": {
       "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
-      "artifact-title": "[RECOMMENDATION-TITLE]",
+      "artifact-title": "[ARTIFACT-TITLE]",
       "artifact": {
         "type": "[ARTIFACT-TYPE-NAME]",
         "parameters": [

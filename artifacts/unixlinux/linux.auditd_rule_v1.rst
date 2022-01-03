@@ -87,7 +87,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
       <xccdf:check-content>
         <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
           <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-          <ae:title>[RECOMMENDATION-TITLE]</ae:title>
+          <ae:title>[ARTIFACT-TITLE]</ae:title>
           <ae:artifact type="[ARTIFACT-TYPE-NAME]">
             <ae:parameters>
               <ae:parameter dt="string" name="check_existence">[check_existence.value]</ae:parameter>
@@ -100,7 +100,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
             </ae:parameters>
           </ae:test>
           <ae:profiles>
-            <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_2"/>
+            <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_2" />
           </ae:profiles>
         </ae:artifact_expression>
       </xccdf:check-content>
@@ -139,7 +139,7 @@ Test
     check="all"
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
   </textfilecontent54_test>
 
 Object
@@ -151,18 +151,18 @@ Object
     comment="[ARTIFACT-TITLE]"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     version="1">
-      <path>/etc/audit</path>
-      <filename>auditd.rules</filename>
-      <pattern 
-        datatype="[datatype.value]"
-        operation="pattern match">
-          [pattern.value]
-      </pattern>
-      <instance 
-        datatype="int"
-        operation="equals">
-          1
-      </instance>
+    <path>/etc/audit</path>
+    <filename>auditd.rules</filename>
+    <pattern 
+      datatype="[datatype.value]"
+      operation="pattern match">
+        [pattern.value]
+    </pattern>
+    <instance 
+      datatype="int"
+      operation="equals">
+        1
+    </instance>
   </textfilecontent54_object>
 
 State
@@ -178,7 +178,7 @@ YAML
 
   artifact-expression:
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
-    artifact-title: "[RECOMMENDATION-TITLE]"
+    artifact-title: "[ARTIFACT-TITLE]"
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
@@ -206,7 +206,7 @@ JSON
   {
     "artifact-expression": {
       "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
-      "artifact-title": "[RECOMMENDATION-TITLE]",
+      "artifact-title": "[ARTIFACT-TITLE]",
       "artifact": {
         "type": "[ARTIFACT-TYPE-NAME]",
         "parameters": [

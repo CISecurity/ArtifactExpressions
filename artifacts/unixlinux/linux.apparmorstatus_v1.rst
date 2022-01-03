@@ -116,7 +116,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
       <xccdf:check-content>
         <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
           <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-          <ae:title>[RECOMMENDATION-TITLE]</ae:title>
+          <ae:title>[ARTIFACT-TITLE]</ae:title>
           <ae:artifact type="[ARTIFACT-TYPE-NAME]">
             <ae:parameters/>
           </ae:artifact>
@@ -141,7 +141,7 @@ SCAP
 XCCDF
 '''''
 
-For ``linux.apparmorstatus_v1`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
+For ``linux.apparmorstatus_v1 linux.apparmorstatus_enforce_mode_profiles_count_v1`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
 
 ::
 
@@ -167,8 +167,8 @@ Test
     comment="[ARTIFACT-TITLE]"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
     version="1">
-      <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
-      <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
+    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+    <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
   </apparmorstatus_test>
 
 Object
@@ -190,10 +190,11 @@ State
     comment="[ARTIFACT-TITLE]"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
     version="1">
-      <enforce_mode_profiles_count datatype="[datatype.value]"
-        operation="[operation.value]">
-          [enforce_mode_profiles_count.value]
-      </enforce_mode_profiles_count>
+    <enforce_mode_profiles_count 
+      datatype="[datatype.value]"
+      operation="[operation.value]">
+        [enforce_mode_profiles_count.value]
+    </enforce_mode_profiles_count>
   </apparmorstatus_state>
 
 YAML
@@ -203,7 +204,7 @@ YAML
 
   artifact-expression:
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
-    artifact-title: "[RECOMMENDATION-TITLE]"
+    artifact-title: "[ARTIFACT-TITLE]"
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
@@ -212,7 +213,7 @@ YAML
             dt: "string"
             value: "[right_name.value]"
         - parameter:
-            name: xpath
+            name: "xpath"
             dt: "string"
             value: "[xpath.value]"
     test:
@@ -247,7 +248,7 @@ JSON
   {
     "artifact-expression": {
       "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
-      "artifact-title": "[RECOMMENDATION-TITLE]",
+      "artifact-title": "[ARTIFACT-TITLE]",
       "artifact": {
         "type": "[ARTIFACT-TYPE-NAME]",
         "parameters": [

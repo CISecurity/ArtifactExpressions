@@ -68,7 +68,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
       <xccdf:check-content>
         <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
           <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-          <ae:title>[RECOMMENDATION-TITLE]</ae:title>
+          <ae:title>[ARTIFACT-TITLE]</ae:title>
           <ae:artifact type="[ARTIFACT-TYPE-NAME]">
             <ae:parameters>
               <ae:parameter dt="string" name="script">[script.value]</ae:parameter>
@@ -81,7 +81,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
             <ae:parameters />
           </ae:test>
           <ae:profiles>
-            <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1 "/>
+            <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1" />
           </ae:profiles>          
         </ae:artifact_expression>
       </xccdf:check-content>
@@ -98,13 +98,12 @@ For ``linux.sce_check_v1`` artifacts, an XCCDF Value element is generated.
 
 ::
 
-  <Value 
-    id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var"
+  <Value id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var"
     type="string"
     operator="equals">
-      <title override>[RECOMMENDATION-TITLE]</title>
-      <description>This value is used in Rule: [RECOMMENDATION-TITLE]</description>
-      <value>[value.value]</value>
+    <title>[RECOMMENDATION-TITLE]</title>
+    <description>This value is used in Rule: [RECOMMENDATION-TITLE]</description>
+    <value>[value.value]</value>
   </Value>
 
 For ``linux.sce_check_v1`` artifacts, the xccdf:check looks like this.
@@ -131,7 +130,7 @@ YAML
 
   artifact-expression:
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
-    artifact-title: "[RECOMMENDATION-TITLE]"
+    artifact-title: "[ARTIFACT-TITLE]"
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
@@ -153,7 +152,7 @@ YAML
             value: "[export_variable_name.value]"
     test:
       type: "[TEST-TYPE-NAME]"
-      parameters: []
+      parameters:
 
 JSON
 ^^^^
@@ -163,7 +162,7 @@ JSON
   {
     "artifact-expression": {
       "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
-      "artifact-title": "[RECOMMENDATION-TITLE]",
+      "artifact-title": "[ARTIFACT-TITLE]",
       "artifact": {
         "type": "[ARTIFACT-TYPE-NAME]",
         "parameters": [

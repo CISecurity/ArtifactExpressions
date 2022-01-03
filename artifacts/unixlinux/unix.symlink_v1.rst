@@ -181,7 +181,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
     <xccdf:check-content>
       <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
         <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-        <ae:title>[RECOMMENDATION-TITLE]</ae:title>
+        <ae:title>[ARTIFACT-TITLE]</ae:title>
         <ae:artifact type="[ARTIFACT-TYPE-NAME]">
           <ae:parameters>
             <ae:parameter dt="string" name="filepath">[filepath.value]</ae:parameter>
@@ -209,20 +209,20 @@ SCAP
 XCCDF
 '''''
 
-For ``unix.symlink_v1`` artifacts, an XCCDF Value element is generated.
+For ``unix.symlink_v1 unix.symlink_v1`` artifacts, an XCCDF Value element is generated.
 
 ::
 
   <Value 
-    id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" 
+    id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var"
     type="string"
     operator="pattern match">
-      <title>[RECOMMENDATION-TITLE]</title>
-      <description>This value is used in Rule: [RECOMMENDATION-TITLE]</description>
-      <value>[value.value]</value>
+    <title>[RECOMMENDATION-TITLE]</title>
+    <description>This value is used in Rule: [RECOMMENDATION-TITLE]</description>
+    <value>[value.value]</value>
   </Value>
 
-For ``unix.symlink_v1`` artifacts, the xccdf:check looks like this.
+For ``unix.symlink_v1 unix.symlink_v1`` artifacts, the xccdf:check looks like this.
 
 ::
 
@@ -249,8 +249,8 @@ Test
     check="all"
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
-      <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
+    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+    <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
   </symlink_test>
 
 Object
@@ -262,10 +262,11 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <filepath datatype="string"
-        operation="[operation.value]">
-          [filepath.value]
-      </filepath>
+    <filepath 
+      datatype="string"
+      operation="[operation.value]">
+        [filepath.value]
+    </filepath>
   </symlink_object>
 
 State
@@ -277,9 +278,10 @@ State
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <canonical_path datatype="string"
-        operation="[operation.value]"
-        var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
+    <canonical_path 
+      datatype="string"
+      operation="[operation.value]"
+      var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
   </symlink_state>
 
 Variable
@@ -299,7 +301,7 @@ YAML
 
   artifact-expression:
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
-    artifact-title: "[RECOMMENDATION-TITLE]"
+    artifact-title: "[ARTIFACT-TITLE]"
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
@@ -339,7 +341,7 @@ JSON
   {
     "artifact-expression": {
       "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
-      "artifact-title": "[RECOMMENDATION-TITLE]",
+      "artifact-title": "[ARTIFACT-TITLE]",
       "artifact": {
         "type": "[ARTIFACT-TYPE-NAME]",
         "parameters": [
@@ -411,7 +413,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
     <xccdf:check-content>
       <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
         <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-        <ae:title>[RECOMMENDATION-TITLE]</ae:title>
+        <ae:title>[ARTIFACT-TITLE]</ae:title>
         <ae:artifact type="[ARTIFACT-TYPE-NAME]">
           <ae:parameters>
             <ae:parameter dt="string" name="filepath">[filepath.value]</ae:parameter>
@@ -439,20 +441,20 @@ SCAP
 XCCDF
 '''''
 
-For ``unix.symlink_v1`` artifacts, an XCCDF Value element is generated.
+For ``unix.symlink_v1 unix.symlink_password_object_v1`` artifacts, an XCCDF Value element is generated.
 
 ::
 
   <Value 
-    id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" 
+    id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var"
     type="string"
     operator="pattern match">
-      <title>[RECOMMENDATION-TITLE]</title>
-      <description>This value is used in Rule: [RECOMMENDATION-TITLE]</description>
-      <value>[value.value]</value>
+    <title>[RECOMMENDATION-TITLE]</title>
+    <description>This value is used in Rule: [RECOMMENDATION-TITLE]</description>
+    <value>[value.value]</value>
   </Value>
 
-For ``unix.symlink_v1`` artifacts, the xccdf:check looks like this.
+For ``unix.symlink_v1 unix.symlink_password_object_v1`` artifacts, the xccdf:check looks like this.
 
 ::
 
@@ -539,8 +541,8 @@ State
       datatype="string"
       operation="[operation.value]">
         [login_shell.value]
-    </login_shell
-    </password_state>  
+    </login_shell>
+  </password_state>  
 
 Variable
 
@@ -574,7 +576,7 @@ YAML
 
   artifact-expression:
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
-    artifact-title: "[RECOMMENDATION-TITLE]"
+    artifact-title: "[ARTIFACT-TITLE]"
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
@@ -614,7 +616,7 @@ JSON
   {
     "artifact-expression": {
       "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
-      "artifact-title": "[RECOMMENDATION-TITLE]",
+      "artifact-title": "[ARTIFACT-TITLE]",
       "artifact": {
         "type": "[ARTIFACT-TYPE-NAME]",
         "parameters": [

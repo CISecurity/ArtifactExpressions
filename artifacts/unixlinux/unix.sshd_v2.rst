@@ -1,4 +1,4 @@
-unix.sshd_v2
+unix:sshd_v2
 ============
 
 Description
@@ -17,7 +17,10 @@ be selected.
 
 The sshd_state element contains entities that are used to check
 the file path and name, as well as the text block in question and the
-value of the subexpressions. Technical Details -----------------
+value of the subexpressions. 
+
+Technical Details 
+-----------------
 
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
@@ -144,8 +147,7 @@ SCAP
 XCCDF
 '''''
 
-For ``unix.sshd_v2`` artifacts, the xccdf:check looks like this. There
-is no Value element in the XCCDF for this Artifact.
+For ``unix.sshd_v2`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
 
 ::
 
@@ -169,8 +171,8 @@ Test
     check="[check.value]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
-      <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
+    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+    <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
   </sshd_test>
 
 Object
@@ -182,7 +184,7 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <name>[name.value]</name>
+    <name>[name.value]</name>
   </sshd_object>
 
 State
@@ -194,11 +196,11 @@ State
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <value 
-        datatype="[datatype.value]"
-        operation="[operation.value]">
-          [value.value]
-      </value>
+    <value 
+      datatype="[datatype.value]"
+      operation="[operation.value]">
+        [value.value]
+    </value>
   </sshd_state>
 
 YAML
@@ -208,7 +210,7 @@ YAML
 
   artifact-expression:
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
-    artifact-title: "[RECOMMENDATION-TITLE]"
+    artifact-title: "[ARTIFACT-TITLE]"
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
@@ -248,7 +250,7 @@ JSON
   {
     "artifact-expression": {
       "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
-      "artifact-title": "[RECOMMENDATION-TITLE]",
+      "artifact-title": "[ARTIFACT-TITLE]",
       "artifact": {
         "type": "[ARTIFACT-TYPE-NAME]",
         "parameters": [

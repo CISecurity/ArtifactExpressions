@@ -105,7 +105,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
     <xccdf:check-content>
       <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
         <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-        <ae:title>[RECOMMENDATION-TITLE]</ae:title>
+        <ae:title>[ARTIFACT-TITLE]</ae:title>
         <ae:artifact type="[ARTIFACT-TYPE-NAME]">
           <ae:parameters>
             <ae:parameter dt="string" name="unit">[unit.value]</ae:parameter>
@@ -121,7 +121,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
           </ae:parameters>
         </ae:test>
         <ae:profiles>
-          <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1 "/>
+          <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1" />
         </ae:profiles>          
       </ae:artifact_expression>
     </xccdf:check-content>
@@ -133,8 +133,7 @@ SCAP
 XCCDF
 '''''
 
-For ``linux.systemd_unit_property_v1`` artifacts, the xccdf:check looks
-like this. There is no Value element in the XCCDF for this Artifact.
+For ``linux.systemd_unit_property_v1`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
 
 ::
 
@@ -158,8 +157,8 @@ Test
     check="all"
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
-      <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
+    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+    <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
   </systemdunitdependency_test>
 
 Object
@@ -171,9 +170,9 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <unit operation="[operation.value]">
-          [unit.value]
-      </unit>
+    <unit operation="[operation.value]">
+      [unit.value]
+    </unit>
   </systemdunitdependency_object>
 
 State
@@ -185,16 +184,16 @@ State
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <unit 
-        datatype="string"
-        operation="[operation.value]">
-          [unit.value]
-      </unit>
-      <dependency 
-        entity_check="at least one"
-        operation="[operation.value]">
-          [dependency.value]
-      </dependency>
+    <unit 
+      datatype="string"
+      operation="[operation.value]">
+        [unit.value]
+    </unit>
+    <dependency 
+      entity_check="at least one"
+      operation="[operation.value]">
+        [dependency.value]
+    </dependency>
   </systemdunitdependency_state>
 
 YAML
@@ -204,7 +203,7 @@ YAML
 
   artifact-expression:
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
-    artifact-title: "[RECOMMENDATION-TITLE]"
+    artifact-title: "[ARTIFACT-TITLE]"
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
@@ -244,7 +243,7 @@ JSON
   {
     "artifact-expression": {
       "artifact-unique-id":"[ARTIFACT-OVAL-ID]",
-      "artifact-title": "[RECOMMENDATION-TITLE]",
+      "artifact-title": "[ARTIFACT-TITLE]",
       "artifact": {
         "type": "[ARTIFACT-TYPE-NAME]",
         "parameters": [

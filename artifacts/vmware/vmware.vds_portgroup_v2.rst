@@ -46,19 +46,19 @@ NOTE: The ``check_existence`` parameter is governed by a constraint allowing onl
   - only_one_exists
 
 NOTE: The ``vds_name_operation`` and ``portgroup_name_operation`` parameters are governed by a constraint allowing only the following values:
-	- equals
-	- not equal
-	- case insensitive equals 
-	- case insensitive not equal
-	- greater than
-	- less than
-	- greater than or equal
-	- less than or equal
-	- bitwise and
-	- bitwise or
-	- pattern match 
-	- subset of
-	- superset of   
+  - equals
+  - not equal
+  - case insensitive equals 
+  - case insensitive not equal
+  - greater than
+  - less than
+  - greater than or equal
+  - less than or equal
+  - bitwise and
+  - bitwise or
+  - pattern match 
+  - subset of
+  - superset of   
 
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
@@ -113,12 +113,12 @@ NOTE: The ``operation`` parameter is governed by a constraint allowing only the 
   - superset of
 
 NOTE: The ``datatype`` parameter is governed by a constraint allowing only the following values:
-	- boolean
-	- float
-	- int
-	- string
-	- version
-	- set
+  - boolean
+  - float
+  - int
+  - string
+  - version
+  - set
 
 **vmware.vds_portgroup_collector_port_v2**
 
@@ -163,12 +163,12 @@ NOTE: The ``operation`` parameter is governed by a constraint allowing only the 
   - superset of
 
 NOTE: The ``datatype`` parameter is governed by a constraint allowing only the following values:
-	- boolean
-	- float
-	- int
-	- string
-	- version
-	- set
+  - boolean
+  - float
+  - int
+  - string
+  - version
+  - set
 
 **vmware.vds_portgroup_override_port_policies_v2**
 
@@ -210,12 +210,12 @@ NOTE: The ``operation`` parameter is governed by a constraint allowing only the 
   - superset of
 
 NOTE: The ``datatype`` parameter is governed by a constraint allowing only the following values:
-	- boolean
-	- float
-	- int
-	- string
-	- version
-	- set
+  - boolean
+  - float
+  - int
+  - string
+  - version
+  - set
 
 Generated Content
 ~~~~~~~~~~~~~~~~~
@@ -233,7 +233,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
     <xccdf:check-content>
       <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
         <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-        <ae:title>[RECOMMENDATION-TITLE]</ae:title>
+        <ae:title>[ARTIFACT-TITLE]</ae:title>
         <ae:artifact type="[ARTIFACT-TYPE-NAME]" />
           <ae:parameters>
             <ae:parameter dt="string" name="check_existence">[check_existence.value]</ae:parameter>
@@ -264,7 +264,7 @@ SCAP
 XCCDF
 '''''
 
-For ``vmware.vds_portgroup_v2`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
+For ``vmware.vds_portgroup_v2 vmware.vds_portgroup_collector_ip_address_v2`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
 
 ::
 
@@ -291,8 +291,8 @@ Test
     check="[check.value]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
-      <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
+    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+    <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
   </vds_portgroup_test>
 
 Object
@@ -306,10 +306,10 @@ Object
     version="1">
     <connection_string var_ref="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
     <vds_name operation="[operation.value]">
-        [vds_name.value]
+      [vds_name.value]
     </vds_name>
     <portgroup_name operation="[operation.value]">
-        [portgroup_name.value]
+      [portgroup_name.value]
     </portgroup_name>
   </vds_portgroup_object>  
 
@@ -346,7 +346,7 @@ YAML
 
   artifact-expression:
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
-    artifact-title: "[RECOMMENDATION-TITLE]"
+    artifact-title: "[ARTIFACT-TITLE]"
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
@@ -369,7 +369,7 @@ YAML
         - parameter: 
             name: "portgroup_name_operation"
             dt: "string"
-          value: "[portgroup_name_operation.value]"
+            value: "[portgroup_name_operation.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:
@@ -491,7 +491,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
     <xccdf:check-content>
       <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
         <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-        <ae:title>[RECOMMENDATION-TITLE]</ae:title>
+        <ae:title>[ARTIFACT-TITLE]</ae:title>
         <ae:artifact type="[ARTIFACT-TYPE-NAME]" />
           <ae:parameters>
             <ae:parameter dt="string" name="check_existence">[check_existence.value]</ae:parameter>
@@ -522,7 +522,7 @@ SCAP
 XCCDF
 '''''
 
-For ``vmware.vds_portgroup_v2`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
+For ``vmware.vds_portgroup_v2 vmware.vds_portgroup_collector_port_v2`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
 
 ::
 
@@ -557,16 +557,17 @@ Object
 
 ::
 
-  <vds_portgroup_object xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
+  <vds_portgroup_object 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
     id="oval:org.cisecurity.benchmarks:obj:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
     <connection_string var_ref="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
     <vds_name operation="[operation.value]">
-        [vds_name.value]
+      [vds_name.value]
     </vds_name>
     <portgroup_name operation="[operation.value]">
-        [portgroup_name.value]
+      [portgroup_name.value]
     </portgroup_name>
   </vds_portgroup_object>  
 
@@ -579,7 +580,8 @@ State
     id="oval:org.cisecurity.benchmarks:obj:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-    <collector_port datatype="[datatype.value]"
+    <collector_port 
+      datatype="[datatype.value]"
       operation="[operation.value]">
         [collector_port.value]
     </collector_port>
@@ -602,7 +604,7 @@ YAML
 
   artifact-expression:
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
-    artifact-title: "[RECOMMENDATION-TITLE]"
+    artifact-title: "[ARTIFACT-TITLE]"
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
@@ -747,7 +749,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
     <xccdf:check-content>
       <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
         <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-        <ae:title>[RECOMMENDATION-TITLE]</ae:title>
+        <ae:title>[ARTIFACT-TITLE]</ae:title>
         <ae:artifact type="[ARTIFACT-TYPE-NAME]" />
           <ae:parameters>
             <ae:parameter dt="string" name="check_existence">[check_existence.value]</ae:parameter>
@@ -778,7 +780,7 @@ SCAP
 XCCDF
 '''''
 
-For ``vmware.vds_portgroup_v2`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
+For ``vmware.vds_portgroup_v2 vmware.vds_portgroup_override_port_policies_v2`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
 
 ::
 
@@ -820,10 +822,10 @@ Object
     version="1">
     <connection_string var_ref="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
     <vds_name operation="[operation.value]">
-        [vds_name.value]
+      [vds_name.value]
     </vds_name>
     <portgroup_name operation="[operation.value]">
-        [portgroup_name.value]
+      [portgroup_name.value]
     </portgroup_name>
   </vds_portgroup_object>  
 
@@ -836,7 +838,8 @@ State
     id="oval:org.cisecurity.benchmarks:obj:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-    <override_port_policies_enabled datatype="[datatype.value]"
+    <override_port_policies_enabled 
+      datatype="[datatype.value]"
       operation="[operation.value]">
         [override_port_policies_enabled.value]
     </override_port_policies_enabled>
@@ -859,7 +862,7 @@ YAML
 
   artifact-expression:
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
-    artifact-title: "[RECOMMENDATION-TITLE]"
+    artifact-title: "[ARTIFACT-TITLE]"
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:

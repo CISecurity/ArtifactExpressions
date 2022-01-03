@@ -109,7 +109,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
       <xccdf:check-content>
         <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
           <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-          <ae:title>[RECOMMENDATION-TITLE]</ae:title>
+          <ae:title>[ARTIFACT-TITLE]</ae:title>
           <ae:artifact type="[ARTIFACT-TYPE-NAME]">
             <ae:parameters>
               <ae:parameter dt="string" name="persistence">[persistence.value]</ae:parameter>
@@ -145,8 +145,8 @@ For ``vmware.virtual_machine.device_state`` artifacts, an XCCDF Value element is
 ::
 
   <Value 
-    id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var"  
-    operator="[operator.value]" 
+    id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var"
+    operator="[operator.value]"
     type="string">
     <title>[RECOMMENDATION-TITLE]</title>
     <description>This value is used in Rule: [RECOMMENDATION-TITLE]</description>
@@ -185,8 +185,8 @@ Test
     check="all"    
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
-      <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
+    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+    <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
   </vm_harddiskdevice_test>
 
 Object
@@ -195,28 +195,28 @@ Object
 
   <vm_harddiskdevice_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
-    id="oval:org.cisecurity.benchmarks[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"       
+    id="oval:org.cisecurity.benchmarks[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <connection_string var_ref="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
-      <vm_name operation="pattern match">
-          .*
-      </vm_name>
+    <connection_string var_ref="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
+    <vm_name operation="pattern match">
+      .*
+    </vm_name>
   </vm_harddiskdevice_object>  
 
 State
 
 ::
 
-  <vm_harddiskdevice_state
+  <vm_harddiskdevice_state 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
     id="oval:org.cisecurity.benchmarks[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-      <persistence 
-        datatype="string"
-        operation="[operation.value]"
-        var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
+    <persistence 
+      datatype="string"
+      operation="[operation.value]"
+      var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
   </vm_harddiskdevice_state>
 
 Variable
@@ -236,45 +236,45 @@ YAML
 
   artifact-expression:
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
-    artifact-title: "[RECOMMENDATION-TITLE]"
+    artifact-title: "[ARTIFACT-TITLE]"
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
-      - parameter: 
-          name: "persistence"
-          type: "string"
-          value: "[persistence.value]"
-      - parameter: 
-          name: "disktype"
-          type: "string"
-          value: "[disktype.value]"
-      - parameter: 
-          name: "filename"
-          type: "string"
-          value: "[filename.value]"
-      - parameter: 
-          name: "capacitykb"
-          type: "string"
-          value: "[capacitykb.value]"  
+        - parameter: 
+            name: "persistence"
+            dt: "string"
+            value: "[persistence.value]"
+        - parameter: 
+            name: "disktype"
+            dt: "string"
+            value: "[disktype.value]"
+        - parameter: 
+            name: "filename"
+            dt: "string"
+            value: "[filename.value]"
+        - parameter: 
+            name: "capacitykb"
+            dt: "string"
+            value: "[capacitykb.value]"  
       - parameter: 
           name: "capacitygb"
-          type: "string"
-          value: "[capacitygb.value]"
-      - parameter: 
-          name: "vm_name"
-          type: "string"
-          value: "[vm_name.value]"                                
+            dt: "string"
+            value: "[capacitygb.value]"
+        - parameter: 
+            name: "vm_name"
+            dt: "string"
+            value: "[vm_name.value]"                                
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:
-      - parameter:
-          name: "operator"
-          type: "string"
-          value: "[operator.value]"
-      - parameter:
-          name: "persistence"
-          type: "string"
-          value: "[persistence.value]"
+        - parameter:
+            name: "operator"
+            dt: "string"
+            value: "[operator.value]"
+        - parameter:
+            name: "persistence"
+            dt: "string"
+            value: "[persistence.value]"
 
 JSON
 ^^^^
@@ -284,7 +284,7 @@ JSON
   {
     "artifact-expression": {
       "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
-      "artifact-title": "[RECOMMENDATION-TITLE]",
+      "artifact-title": "[ARTIFACT-TITLE]",
       "artifact": {
         "type": "[ARTIFACT-TYPE-NAME]",
         "parameters": [
