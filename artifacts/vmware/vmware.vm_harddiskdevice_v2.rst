@@ -69,7 +69,7 @@ NOTE: The ``disktype`` parameter is governed by a constraint allowing only the f
   - Flat
   - Unknown
 
-NOTE: The ``vm_name_operation``parameter is governed by a constraint allowing only the following values:
+NOTE: The ``vm_name_operation`` parameter is governed by a constraint allowing only the following values:
   - equals
   - not equal
   - case insensitive equals

@@ -80,14 +80,14 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
           <ae:title>[ARTIFACT-TITLE]</ae:title>
           <ae:artifact type="[ARTIFACT-TYPE-NAME]">
             <ae:parameters>
-              <ae:parameter dt="string" name="port_group_name">NA</ae:parameter>
-              <ae:parameter dt="string" name="virtual_switch_name">NA</ae:parameter>
+              <ae:parameter dt="string" name="port_group_name">[port_group_name.value]</ae:parameter>
+              <ae:parameter dt="string" name="virtual_switch_name">[virtual_switch_name.value]</ae:parameter>
             </ae:parameters>
           </ae:artifact>
           <ae:test type="[TEST-TYPE-NAME]">
             <ae:parameters>
-              <ae:parameter dt="string" name="operator">not equal</ae:parameter>
-              <ae:parameter dt="int" name="vlan_id">4095</ae:parameter>
+              <ae:parameter dt="string" name="operator">[operator.value]</ae:parameter>
+              <ae:parameter dt="int" name="vlan_id">[vlan_id.value]</ae:parameter>
             </ae:parameters>
           </ae:test>
           <ae:profiles>

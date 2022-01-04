@@ -114,7 +114,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
           <ae:title>[ARTIFACT-TITLE]</ae:title>
           <ae:artifact type="[ARTIFACT-TYPE-NAME]">
             <ae:parameters>
-              <ae:parameter dt="string" name="check_existence">at_least_one_exists</ae:parameter>
+              <ae:parameter dt="string" name="check_existence">[check_existence.value]</ae:parameter>
               <ae:parameter dt="string" name="port_group_name">[port_group_name.value]</ae:parameter>
               <ae:parameter dt="string" name="virtual_switch_name">[virtual_switch_name.value]</ae:parameter>
               <ae:parameter dt="string" name="portgroup_name_operation">[portgroup_name_operation.value]</ae:parameter>

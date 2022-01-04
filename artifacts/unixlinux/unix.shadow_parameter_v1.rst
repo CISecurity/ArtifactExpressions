@@ -46,7 +46,7 @@ NOTE: The ``operation`` parameter is governed by a constraint allowing only the 
   - set is empty
   - set white list
 
-NOTE: The ``parameter`` parameter is governed by a constraint allowing only the following values:
+NOTE: The `` parameter`` parameter is governed by a constraint allowing only the following values:
   - username
   - password
   - chg_lst
