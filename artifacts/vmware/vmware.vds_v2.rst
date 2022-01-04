@@ -325,71 +325,71 @@ JSON
 
 :: 
 
-{
-  "artifact-expression": {
-    "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
-    "artifact-title": "[RECOMMENDATION-TITLE]",
-    "artifact": {
-      "type": "[ARTIFACT-TYPE-NAME]",
-      "parameters": [
-        {
-          "parameter": {
-            "name": "vds_name",
-            "dt": "string",
-            "value": "[vds_name.value]"
+  {
+    "artifact-expression": {
+      "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
+      "artifact-title": "[RECOMMENDATION-TITLE]",
+      "artifact": {
+        "type": "[ARTIFACT-TYPE-NAME]",
+        "parameters": [
+          {
+            "parameter": {
+              "name": "vds_name",
+              "dt": "string",
+              "value": "[vds_name.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "check_existence",
+              "dt": "string",
+              "value": "[check_existence.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "vds_name_operation",
+              "dt": "string",
+              "value": "[vds_name_operation.value]"
+            }
           }
-        },
-        {
-          "parameter": {
-            "name": "check_existence",
-            "dt": "string",
-            "value": "[check_existence.value]"
+        ]
+      },
+      "test": {
+        "type": "[TEST-TYPE-NAME]",
+        "parameters": [
+          {
+            "parameter": {
+              "name": "check",
+              "dt": "string",
+              "value": "[check.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "operation",
+              "dt": "string",
+              "value": "[operation.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "datetype",
+              "dt": "string",
+              "value": "[datatype.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "teaming_failover_health_check_enabled",
+              "dt": "string",
+              "value": "[teaming_failover_health_check_enabled.value]"
+            }
           }
-        },
-        {
-          "parameter": {
-            "name": "vds_name_operation",
-            "dt": "string",
-            "value": "[vds_name_operation.value]"
-          }
-        }
-      ]
-    },
-    "test": {
-      "type": "[TEST-TYPE-NAME]",
-      "parameters": [
-        {
-          "parameter": {
-            "name": "check",
-            "dt": "string",
-            "value": "[check.value]"
-          }
-        },
-        {
-          "parameter": {
-            "name": "operation",
-            "dt": "string",
-            "value": "[operation.value]"
-          }
-        },
-        {
-          "parameter": {
-            "name": "datetype",
-            "dt": "string",
-            "value": "[datatype.value]"
-          }
-        },
-        {
-          "parameter": {
-            "name": "teaming_failover_health_check_enabled",
-            "dt": "string",
-            "value": "[teaming_failover_health_check_enabled.value]"
-          }
-        }
-      ]
+        ]
+      }
     }
   }
-}
 
 Generated Content
 ~~~~~~~~~~~~~~~~~
@@ -558,68 +558,68 @@ JSON
 
 :: 
 
-{
-  "artifact-expression": {
-    "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
-    "artifact-title": "[RECOMMENDATION-TITLE]",
-    "artifact": {
-      "type": "[ARTIFACT-TYPE-NAME]",
-      "parameters": [
-        {
-          "parameter": {
-            "name": "vds_name",
-            "dt": "string",
-            "value": "[vds_name.value]"
+  {
+    "artifact-expression": {
+      "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
+      "artifact-title": "[RECOMMENDATION-TITLE]",
+      "artifact": {
+        "type": "[ARTIFACT-TYPE-NAME]",
+        "parameters": [
+          {
+            "parameter": {
+              "name": "vds_name",
+              "dt": "string",
+              "value": "[vds_name.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "check_existence",
+              "dt": "string",
+              "value": "[check_existence.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "vds_name_operation",
+              "dt": "string",
+              "value": "[vds_name_operation.value]"
+            }
           }
-        },
-        {
-          "parameter": {
-            "name": "check_existence",
-            "dt": "string",
-            "value": "[check_existence.value]"
+        ]
+      },
+      "test": {
+        "type": "[TEST-TYPE-NAME]",
+        "parameters": [
+          {
+            "parameter": {
+              "name": "check",
+              "dt": "string",
+              "value": "[check.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "operation",
+              "dt": "string",
+              "value": "[operation.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "datetype",
+              "dt": "string",
+              "value": "[datatype.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "vlan_mtu_health_check_enabled",
+              "dt": "string",
+              "value": "[vlan_mtu_health_check_enabled.value]"
+            }
           }
-        },
-        {
-          "parameter": {
-            "name": "vds_name_operation",
-            "dt": "string",
-            "value": "[vds_name_operation.value]"
-          }
-        }
-      ]
-    },
-    "test": {
-      "type": "[TEST-TYPE-NAME]",
-      "parameters": [
-        {
-          "parameter": {
-            "name": "check",
-            "dt": "string",
-            "value": "[check.value]"
-          }
-        },
-        {
-          "parameter": {
-            "name": "operation",
-            "dt": "string",
-            "value": "[operation.value]"
-          }
-        },
-        {
-          "parameter": {
-            "name": "datetype",
-            "dt": "string",
-            "value": "[datatype.value]"
-          }
-        },
-        {
-          "parameter": {
-            "name": "vlan_mtu_health_check_enabled",
-            "dt": "string",
-            "value": "[vlan_mtu_health_check_enabled.value]"
-          }
-        }
-      ]
+        ]
+      }
     }
   }
-}
