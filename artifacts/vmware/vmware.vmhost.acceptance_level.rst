@@ -8,7 +8,7 @@ The VMware: VM Host: Acceptance Level test is used to determine the ESXi Image P
 
 The vmhost_acceptancelevel_object element is used by the vmhost_acceptancelevel_test to define the name and connection string of the vmhost to be evaluated.
 
-The vmhost_acceptancelevel_state elemement holds information regarding the acceptance level supported by the vSphere Installation Bundle signature file of the specified vmhost.
+The vmhost_acceptancelevel_state element holds information regarding the acceptance level supported by the vSphere Installation Bundle signature file of the specified vmhost.
 
 Technical Details
 -----------------

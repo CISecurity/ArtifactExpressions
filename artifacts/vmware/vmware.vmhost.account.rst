@@ -8,7 +8,7 @@ The VMware: VM Host: Account test is used to verify one or more local ESXi user 
 
 The vmhost_account_object element is used by the vmhost_account_test to define the name and connection string of the vmhost, and the user account to be evaluated.
 
-The vmhost_account_state elemement holds information regarding the role and shell access settings of the specified user account.
+The vmhost_account_state element holds information regarding the role and shell access settings of the specified user account.
 
 Technical Details
 -----------------

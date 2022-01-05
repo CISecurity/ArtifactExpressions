@@ -35,9 +35,9 @@ Artifact Parameters
 |                                     |         | applicable. Cannot be      |
 |                                     |         | blank.                     |
 +-------------------------------------+---------+----------------------------+
-| vmhost_name_operation               | string  | CComparison operation.     |
+| vmhost_name_operation               | string  | Comparison operation.     |
 +-------------------------------------+---------+----------------------------+
-| module_name_operation               | string  | CComparison operation.     |
+| module_name_operation               | string  | Comparison operation.     |
 +-------------------------------------+---------+----------------------------+
 
 NOTE: The ``check_existence`` parameter is governed by a constraint allowing only the following values:
