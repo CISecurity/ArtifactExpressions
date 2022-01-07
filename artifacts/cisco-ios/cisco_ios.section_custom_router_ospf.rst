@@ -196,6 +196,7 @@ State
 Variable
 
 ::
+
   <local_variable 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
     datatype="string"

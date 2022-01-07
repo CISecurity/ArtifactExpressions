@@ -85,10 +85,10 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
         </ae:artifact>
         <ae:test type="[TEST-TYPE-NAME]">
           <ae:parameters>
-            <ae:parameter dt="string" name="operation">pattern match</ae:parameter>
-            <ae:parameter dt="string" name="config_line">^login authentication.*</ae:parameter>
-            <ae:parameter dt="string" name="filter" />
-            <ae:parameter dt="string" name="filter_action">include</ae:parameter>
+            <ae:parameter dt="string" name="operation">[operation.value]</ae:parameter>
+            <ae:parameter dt="string" name="config_line">[config_line.value]</ae:parameter>
+            <ae:parameter dt="string" name="filter">[filter.value]</ae:parameter>
+            <ae:parameter dt="string" name="filter_action">[filter_action.value]</ae:parameter>
           </ae:parameters>
         </ae:test>
         <ae:profiles>

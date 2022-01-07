@@ -181,6 +181,7 @@ OVAL
 Test
 
 ::
+
   <snmpcommunity_test 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#ios"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
@@ -343,6 +344,7 @@ OVAL
 Test
 
 ::
+
   <snmpcommunity_test 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#ios"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
@@ -533,6 +535,7 @@ OVAL
 Test
 
 ::
+
   <snmpcommunity_test 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#ios"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
@@ -724,6 +727,7 @@ OVAL
 Test
 
 ::
+
   <snmpcommunity_test 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#ios"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
