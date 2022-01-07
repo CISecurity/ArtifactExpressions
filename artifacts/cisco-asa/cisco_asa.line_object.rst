@@ -774,6 +774,8 @@ XCCDF
 
 For ``cisco_asa.line_object cisco_asa.untrusted_interfaces_state`` artifacts, an XCCDF Value element is generated.
 
+::
+
   <Value 
     id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var"
     type="string"
