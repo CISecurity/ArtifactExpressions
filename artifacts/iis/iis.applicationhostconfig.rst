@@ -234,6 +234,7 @@ JSON
 ^^^^
 
 ::
+
   {
     "artifact-expression": {
       "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
