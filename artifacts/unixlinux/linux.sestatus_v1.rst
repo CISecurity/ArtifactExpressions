@@ -3,7 +3,11 @@ linux:sestatus
 
 Description
 -----------
-The linux.sestatus test is used to check the sestatus config file for implementation details. The test references the required sestatus_object and the state element specifies the information to check. 
+The linux.sestatus test is used to check the sestatus config file for implementation details. 
+
+The sestatus_object element is used by an sestatus_test to define the sestatus config file to be evaluated.
+
+The sestatus_state element defines the implementation details to be checked in the sestatus config file.
 
 Technical Details
 -----------------
@@ -33,15 +37,25 @@ Test Type Parameters
 
 **linux.sestatus_current_mode_v1_parameters**
 
-=================================  ========  =================================
-Name                               Type      Description  
-=================================  ========  =================================
-check_existence                    string    Defines how many items should be collected. Typically set to 'at least one'.
-check                              string    Defines how many collected items must match the expected state.
-operation                          string    Comparison operation.
-datatype                           string    The data type of the value.
-current_mode                       string    Indicates if SELinux is currently enforcing or not utilizing the following values: enforcing, permissive, disabled.
-=================================  ========  =================================
++-----------------------------+---------+------------------------------------+
+| Name                        | Type    | Description                        |
++=============================+=========+====================================+
+| check_existence             | string  | Defines how many items should be   |
+|                             |         | collected. Typically set to 'at    |
+|                             |         | least one'.                        |
++-----------------------------+---------+------------------------------------+
+| check                       | string  | Defines how many collected items   |
+|                             |         | must match the expected state.     |
++-----------------------------+---------+------------------------------------+
+| operation                   | string  | Comparison operation.              |
++-----------------------------+---------+------------------------------------+
+| datatype                    | string  | The data type of the value.        |
++-----------------------------+---------+------------------------------------+
+| current_mode                | string  | Indicates if SELinux is currently  |
+|                             |         | enforcing or not utilizing the     |
+|                             |         | following values: enforcing,       |
+|                             |         | permissive, disabled.              |
++-----------------------------+---------+------------------------------------+
 
 NOTE: The ``check_existence`` parameter is governed by a constraint allowing only the following values:
   - all_exist
@@ -51,13 +65,11 @@ NOTE: The ``check_existence`` parameter is governed by a constraint allowing onl
   - none_exist 
   - only_one_exists
 
-
 NOTE: The ``check`` parameter is governed by a constraint allowing only the following values:
   - all
   - at least one
   - none satisfy
   - only one
-
 
 NOTE: The ``operation`` parameter is governed by a constraint allowing only the following values:
   - equals
@@ -74,7 +86,6 @@ NOTE: The ``operation`` parameter is governed by a constraint allowing only the 
   - subset of 
   - superset of
 
-
 NOTE: The ``datatype`` parameter is governed by a constraint allowing only the following values:
   - boolean
   - float
@@ -83,18 +94,26 @@ NOTE: The ``datatype`` parameter is governed by a constraint allowing only the f
   - version
   - set
 
+**linux.sestatus_loaded_policy_name_v1**
 
-**linux.sestatus_loaded_policy_name_v1_parameters**
-
-=================================  ========  =================================
-Name                               Type      Description  
-=================================  ========  =================================
-check_existence                    string    Defines how many items should be collected. Typically set to 'at least one'.
-check                              string    Defines how many collected items must match the expected state.
-operation                          string    Comparison operation.
-datatype                           string    The data type of the value.
-loaded_policy_name                 string    Displays what type of SELinux policy is currently loaded ('targeted', 'mimimum', or 'mls'). Typically set to 'targeted'.
-=================================  ========  =================================
++-----------------------------+---------+------------------------------------+
+| Name                        | Type    | Description                        |
++=============================+=========+====================================+
+| check_existence             | string  | Defines how many items should be   |
+|                             |         | collected. Typically set to 'at    |
+|                             |         | least one'.                        |
++-----------------------------+---------+------------------------------------+
+| check                       | string  | Defines how many collected items   |
+|                             |         | must match the expected state.     |
++-----------------------------+---------+------------------------------------+
+| operation                   | string  | Comparison operation.              |
++-----------------------------+---------+------------------------------------+
+| datatype                    | string  | The data type of the value.        |
++-----------------------------+---------+------------------------------------+
+| loaded_policy_name          | string  | Displays what type of SELinux      |
+|                             |         | policy is currently loaded         |
+|                             |         | ('targeted', 'mimimum', or 'mls'). |
++-----------------------------+---------+------------------------------------+
 
 NOTE: The ``check_existence`` parameter is governed by a constraint allowing only the following values:
   - all_exist
@@ -104,13 +123,11 @@ NOTE: The ``check_existence`` parameter is governed by a constraint allowing onl
   - none_exist 
   - only_one_exists
 
-
 NOTE: The ``check`` parameter is governed by a constraint allowing only the following values:
   - all
   - at least one
   - none satisfy
   - only one
-
 
 NOTE: The ``operation`` parameter is governed by a constraint allowing only the following values:
   - equals
@@ -127,7 +144,6 @@ NOTE: The ``operation`` parameter is governed by a constraint allowing only the 
   - subset of 
   - superset of
 
-
 NOTE: The ``datatype`` parameter is governed by a constraint allowing only the following values:
   - boolean
   - float
@@ -136,17 +152,26 @@ NOTE: The ``datatype`` parameter is governed by a constraint allowing only the f
   - version
   - set
 
+**linux.sestatus_mode_from_config_v1**
 
-**linux.sestatus_mode_from_config_v1_parameters**
-=================================  ========  =================================
-Name                               Type      Description  
-=================================  ========  =================================
-check_existence                    string    Defines how many items should be collected. Typically set to 'at least one'.
-check                              string    Defines how many collected items must match the expected state.
-operation                          string    Comparison operation.
-datatype                           string    The data type of the value.
-mode_from_config                   string    Displays the mode from config file. ('targeted', 'mimimum',or 'mls').
-=================================  ========  =================================
++-----------------------------+---------+------------------------------------+
+| Name                        | Type    | Description                        |
++=============================+=========+====================================+
+| check_existence             | string  | Defines how many items should be   |
+|                             |         | collected. Typically set to 'at    |
+|                             |         | least one'.                        |
++-----------------------------+---------+------------------------------------+
+| check                       | string  | Defines how many collected items   |
+|                             |         | must match the expected state.     |
++-----------------------------+---------+------------------------------------+
+| operation                   | string  | Comparison operation.              |
++-----------------------------+---------+------------------------------------+
+| datatype                    | string  | The data type of the value.        |
++-----------------------------+---------+------------------------------------+
+| mode_from_config            | string  | Displays the mode from the config  |
+|                             |         | file ('targeted', 'mimimum', or    |
+|                             |         | 'mls').                            |
++-----------------------------+---------+------------------------------------+
 
 NOTE: The ``check_existence`` parameter is governed by a constraint allowing only the following values:
   - all_exist
@@ -156,13 +181,11 @@ NOTE: The ``check_existence`` parameter is governed by a constraint allowing onl
   - none_exist 
   - only_one_exists
 
-
 NOTE: The ``check`` parameter is governed by a constraint allowing only the following values:
   - all
   - at least one
   - none satisfy
   - only one
-
 
 NOTE: The ``operation`` parameter is governed by a constraint allowing only the following values:
   - equals
@@ -179,7 +202,6 @@ NOTE: The ``operation`` parameter is governed by a constraint allowing only the 
   - subset of 
   - superset of
 
-
 NOTE: The ``datatype`` parameter is governed by a constraint allowing only the following values:
   - boolean
   - float
@@ -188,18 +210,25 @@ NOTE: The ``datatype`` parameter is governed by a constraint allowing only the f
   - version
   - set
 
+**linux.sestatus_selinux_status_v1**
 
-**linux.sestatus_selinux_status_v1_parameters**
-
-=================================  ========  =================================
-Name                               Type      Description  
-=================================  ========  =================================
-check_existence                    string    Defines how many items should be collected. Typically set to 'at least one'.
-check                              string    Defines how many collected items must match the expected state.
-operation                          string    Comparison operation.
-datatype                           string    The data type of the value.
-selinux_status                     string    Indicates whether SELinux module is enabled or disabled.
-=================================  ========  =================================
++-----------------------------+---------+------------------------------------+
+| Name                        | Type    | Description                        |
++=============================+=========+====================================+
+| check_existence             | string  | Defines how many items should be   |
+|                             |         | collected. Typically set to 'at    |
+|                             |         | least one'.                        |
++-----------------------------+---------+------------------------------------+
+| check                       | string  | Defines how many collected items   |
+|                             |         | must match the expected state.     |
++-----------------------------+---------+------------------------------------+
+| operation                   | string  | Comparison operation.              |
++-----------------------------+---------+------------------------------------+
+| datatype                    | string  | The data type of the value.        |
++-----------------------------+---------+------------------------------------+
+| selinux_status              | string  | Indicates whether SELinux module   |
+|                             |         | is enabled or disabled.            |
++-----------------------------+---------+------------------------------------+
 
 NOTE: The ``check_existence`` parameter is governed by a constraint allowing only the following values:
   - all_exist
@@ -209,13 +238,11 @@ NOTE: The ``check_existence`` parameter is governed by a constraint allowing onl
   - none_exist 
   - only_one_exists
 
-
 NOTE: The ``check`` parameter is governed by a constraint allowing only the following values:
   - all
   - at least one
   - none satisfy
   - only one
-
 
 NOTE: The ``operation`` parameter is governed by a constraint allowing only the following values:
   - equals
@@ -232,7 +259,6 @@ NOTE: The ``operation`` parameter is governed by a constraint allowing only the 
   - subset of 
   - superset of
 
-
 NOTE: The ``datatype`` parameter is governed by a constraint allowing only the following values:
   - boolean
   - float
@@ -240,12 +266,11 @@ NOTE: The ``datatype`` parameter is governed by a constraint allowing only the f
   - string
   - version
   - set
-
 
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
-linux.sestatus_current_mode_v1
+**linux.sestatus_current_mode_v1**
 
 XCCDF+AE
 ^^^^^^^^
@@ -261,8 +286,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
         <ae:title>[RECOMMENDATION-TITLE]</ae:title>
         <ae:artifact type="[ARTIFACT-TYPE-NAME]">
           <ae:parameters />
-        </ae:artifact type>
-          <ae:parameters />
+        </ae:artifact>
         <ae:test type="[TEST-TYPE-NAME]">
           <ae:parameters>
             <ae:parameter dt="string" name="check_existence">[check_existence.value]</ae:parameter>
@@ -279,15 +303,13 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
     </xccdf:check-content>
   </xccdf:check>
 
-
 SCAP
 ^^^^
 
 XCCDF
 '''''
 
-For ``linux.sestatus_v1`` artifacts, the xccdf:check looks like this.
-There is no Value element in the XCCDF for this Artifact.
+For ``linux.sestatus_v1 linux.sestatus_current_mode_v1`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
 
 ::
 
@@ -296,7 +318,6 @@ There is no Value element in the XCCDF for this Artifact.
       href="[BENCHMARK-TITLE]" 
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
-
 
 OVAL
 ''''
@@ -307,10 +328,10 @@ Test
 
   <sestatus_test 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux"
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]" 
-    check="[check.value]" 
-    check_existence="[check_existence.value]" 
-    comment="[RECOMMENDATION-TITLE]" 
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
+    check="[check.value]"
+    check_existence="[check_existence.value]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
     <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
     <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
@@ -323,61 +344,59 @@ Object
   <sestatus_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" 
-    comment="[RECOMMENDATION-TITLE]" 
+    comment="[ARTIFACT-TITLE]" 
     version="1" />
  
 State  
 
 ::
 
-  <sestatus_state
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux" 
-    comment="[RECOMMENDATION-TITLE]" 
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" 
+  <sestatus_state 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux"
+    comment="[ARTIFACT-TITLE]"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
     version="1">
     <current_mode 
-      datatype="[datatype.value]" 
+      datatype="[datatype.value]"
       operation="[operation.value]">
-      [current_mode.value]
+        [current_mode.value]
     </current_mode>
   </sestatus_state>
-
 
 YAML
 ^^^^
 
 ::
 
-  - artifact-expression:
+  artifact-expression:
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
-    artifact-title: "[RECOMMENDATION-TITLE]"
+    artifact-title: "[ARTIFACT-TITLE]"
       artifact:
         type: "[ARTIFACT-TYPE-NAME]"
         parameters: []
       test:
         type: "[TEST-TYPE-NAME]"
         parameters:
-        - parameter:
-            name: "check_existence"
-            dt: "string"
-            value: "[check_existence.value]"
-        - parameter:
-            name: "check"
-            dt: "string"
-            value: "[check.value]"
-        - parameter:
-            name: "operation"
-            dt: "string"
-            value: "[operation.value]"
-        - parameter:
-            name: "datatype"
-            dt: "string"
-            value: "[datatype.value]"
-        - parameter:
-            name: "current_mode"
-            dt: "string"
-            value: "[current_mode.value]"
-
+          - parameter:
+              name: "check_existence"
+              dt: "string"
+              value: "[check_existence.value]"
+          - parameter:
+              name: "check"
+              dt: "string"
+              value: "[check.value]"
+          - parameter:
+              name: "operation"
+              dt: "string"
+              value: "[operation.value]"
+          - parameter:
+              name: "datatype"
+              dt: "string"
+              value: "[datatype.value]"
+          - parameter:
+              name: "current_mode"
+              dt: "string"
+              value: "[current_mode.value]"
 
 JSON
 ^^^^
@@ -387,7 +406,7 @@ JSON
   {
     "artifact-expression": {
       "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
-      "artifact-title": "[RECOMMENDATION-TITLE]",
+      "artifact-title": "[ARTIFACT-TITLE]",
       "artifact": {
         "type": "[ARTIFACT-TYPE-NAME]",
         "parameters": []
@@ -436,12 +455,10 @@ JSON
   }
 
 
-.. _generated-content-1:
-
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
-linux.sestatus_loaded_policy_name_v1
+**linux.sestatus_loaded_policy_name_v1**
 
 XCCDF+AE
 ^^^^^^^^
@@ -457,7 +474,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
         <ae:title>[RECOMMENDATION-TITLE]</ae:title>
         <ae:artifact type="[ARTIFACT-TYPE-NAME]">
           <ae:parameters />
-        </ae:artifact type>
+        </ae:artifact>
         <ae:test type="[TEST-TYPE-NAME]">
           <ae:parameters>
             <ae:parameter dt="string" name="check_existence">[check_existence.value]</ae:parameter>
@@ -480,17 +497,15 @@ SCAP
 XCCDF
 '''''
 
-For ``linux.sestatus_v1`` artifacts, the xccdf:check looks like this.
-There is no Value element in the XCCDF for this Artifact.
+For ``linux.sestatus_v1 linux.sestatus_loaded_policy_name_v1`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
 
 ::
 
   <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
     <check-content-ref 
-      href="[BENCHMARK-TITLE]"      
+      href="[BENCHMARK-TITLE]" 
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
-
 
 OVAL
 ''''
@@ -500,11 +515,11 @@ Test
 ::
 
   <sestatus_test 
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux" 
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]" 
-    check="[check.value]" 
-    check_existence="[check_existence.value]" 
-    comment="[RECOMMENDATION-TITLE]" 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
+    check="[check.value]"
+    check_existence="[check_existence.value]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
     <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
     <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
@@ -516,62 +531,60 @@ Object
 
   <sestatus_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux" 
-    comment="[RECOMMENDATION-TITLE]" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" 
+    comment="[ARTIFACT-TITLE]" 
     version="1" />
  
 State  
 
 ::
 
-  <sestatus_state
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux" 
-    comment="[RECOMMENDATION-TITLE]" 
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" 
+  <sestatus_state 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux"
+    comment="[ARTIFACT-TITLE]"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
     version="1">
     <loaded_policy_name 
-      datatype="[datatype.value]" 
+      datatype="[datatype.value]"
       operation="[operation.value]">
-      [loaded_policy_name.value]
+        [loaded_policy_name.value]
     </loaded_policy_name>
   </sestatus_state>
-
 
 YAML
 ^^^^
 
 ::
 
-  - artifact-expression:
+  artifact-expression:
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
-    artifact-title: "[RECOMMENDATION-TITLE]"
+    artifact-title: "[ARTIFACT-TITLE]"
       artifact:
         type: "[ARTIFACT-TYPE-NAME]"
         parameters: []
       test:
         type: "[TEST-TYPE-NAME]"
         parameters:
-        - parameter:
-            name: "check_existence"
-            dt: "string"
-            value: "[check_existence.value]"
-        - parameter:
-            name: "check"
-            dt: "string"
-            value: "[check.value]"
-        - parameter:
-            name: "operation"
-            dt: "string"
-            value: "[operation.value]"
-        - parameter:
-            name: "datatype"
-            dt: "string"
-            value: "[datatype.value]"
-        - parameter:
-            name: "loaded_policy_name"
-            dt: "string"
-            value: "[loaded_policy_name.value]"
-
+          - parameter:
+              name: "check_existence"
+              dt: "string"
+              value: "[check_existence.value]"
+          - parameter:
+              name: "check"
+              dt: "string"
+              value: "[check.value]"
+          - parameter:
+              name: "operation"
+              dt: "string"
+              value: "[operation.value]"
+          - parameter:
+              name: "datatype"
+              dt: "string"
+              value: "[datatype.value]"
+          - parameter:
+              name: "loaded_policy_name"
+              dt: "string"
+              value: "[loaded_policy_name.value]"
 
 JSON
 ^^^^
@@ -581,7 +594,7 @@ JSON
   {
     "artifact-expression": {
       "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
-      "artifact-title": "[RECOMMENDATION-TITLE]",
+      "artifact-title": "[ARTIFACT-TITLE]",
       "artifact": {
         "type": "[ARTIFACT-TYPE-NAME]",
         "parameters": []
@@ -629,11 +642,10 @@ JSON
     }
   }
 
-
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
-linux.sestatus_mode_from_config_v1
+**linux.sestatus_mode_from_config_v1**
 
 XCCDF+AE
 ^^^^^^^^
@@ -649,7 +661,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
         <ae:title>[RECOMMENDATION-TITLE]</ae:title>
         <ae:artifact type="[ARTIFACT-TYPE-NAME]">
           <ae:parameters />
-        </ae:artifact type>
+        </ae:artifact>
         <ae:test type="[TEST-TYPE-NAME]">
           <ae:parameters>
             <ae:parameter dt="string" name="check_existence">[check_existence.value]</ae:parameter>
@@ -666,15 +678,13 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
     </xccdf:check-content>
   </xccdf:check>
 
-
 SCAP
 ^^^^
 
 XCCDF
 '''''
 
-For ``linux.sestatus_v1`` artifacts, the xccdf:check looks like this.
-There is no Value element in the XCCDF for this Artifact.
+For ``linux.sestatus_v1 linux.sestatus_mode_from_config_v1`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
 
 ::
 
@@ -684,7 +694,6 @@ There is no Value element in the XCCDF for this Artifact.
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 
-
 OVAL
 ''''
 
@@ -693,11 +702,11 @@ Test
 ::
 
   <sestatus_test 
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux" 
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]" 
-    check="[check.value]" 
-    check_existence="[check_existence.value]" 
-    comment="[RECOMMENDATION-TITLE]" 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
+    check="[check.value]"
+    check_existence="[check_existence.value]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
     <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
     <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
@@ -708,63 +717,61 @@ Object
 ::
 
   <sestatus_object 
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux"
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" 
-    comment="[RECOMMENDATION-TITLE]" 
+    comment="[ARTIFACT-TITLE]" 
     version="1" />
  
 State  
 
 ::
 
-  <sestatus_state
+  <sestatus_state 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux"
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" 
-    comment="[RECOMMENDATION-TITLE]" 
+    comment="[ARTIFACT-TITLE]"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
     version="1">
-    <mode_from_config_file 
-      datatype="[datatype.value]" 
+    <mode_from_config 
+      datatype="[datatype.value]"
       operation="[operation.value]">
-      [loaded_policy_name.value]
-    </mode_from_config_file>
+        [mode_from_config.value]
+    </mode_from_config>
   </sestatus_state>
-
 
 YAML
 ^^^^
 
 ::
 
-  - artifact-expression:
+  artifact-expression:
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
-    artifact-title: "[RECOMMENDATION-TITLE]"
+    artifact-title: "[ARTIFACT-TITLE]"
       artifact:
         type: "[ARTIFACT-TYPE-NAME]"
         parameters: []
       test:
         type: "[TEST-TYPE-NAME]"
         parameters:
-        - parameter:
-            name: "check_existence"
-            dt: "string"
-            value: "[check_existence.value]"
-        - parameter:
-            name: "check"
-            dt: "string"
-            value: "[check.value]"
-        - parameter:
-            name: "operation"
-            dt: "string"
-            value: "[operation.value]"
-        - parameter:
-            name: "datatype"
-            dt: "string"
-            value: "[datatype.value]"
-        - parameter:
-            name: "mode_from_config"
-            dt: "string"
-            value: "[mode_from_config.value]"
-
+          - parameter:
+              name: "check_existence"
+              dt: "string"
+              value: "[check_existence.value]"
+          - parameter:
+              name: "check"
+              dt: "string"
+              value: "[check.value]"
+          - parameter:
+              name: "operation"
+              dt: "string"
+              value: "[operation.value]"
+          - parameter:
+              name: "datatype"
+              dt: "string"
+              value: "[datatype.value]"
+          - parameter:
+              name: "mode_from_config"
+              dt: "string"
+              value: "[mode_from_config.value]"
 
 JSON
 ^^^^
@@ -774,7 +781,7 @@ JSON
   {
     "artifact-expression": {
       "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
-      "artifact-title": "[RECOMMENDATION-TITLE]",
+      "artifact-title": "[ARTIFACT-TITLE]",
       "artifact": {
         "type": "[ARTIFACT-TYPE-NAME]",
         "parameters": []
@@ -822,11 +829,10 @@ JSON
     }
   }
 
-
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
-linux.sestatus_selinux_status_v1
+**linux.sestatus_selinux_status_v1**
 
 XCCDF+AE
 ^^^^^^^^
@@ -842,14 +848,14 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
         <ae:title>[RECOMMENDATION-TITLE]</ae:title>
         <ae:artifact type="[ARTIFACT-TYPE-NAME]">
           <ae:parameters />
-        </ae:artifact type>
+        </ae:artifact>
         <ae:test type="[TEST-TYPE-NAME]">
           <ae:parameters>
             <ae:parameter dt="string" name="check_existence">[check_existence.value]</ae:parameter>
             <ae:parameter dt="string" name="check">[check.value]</ae:parameter>
             <ae:parameter dt="string" name="operation">[operation.value]</ae:parameter>
             <ae:parameter dt="string" name="datatype">[datatype.value]</ae:parameter>
-            <ae:parameter dt="string" name="selinux_status ">[selinux_status .value]</ae:parameter>
+            <ae:parameter dt="string" name="selinux_status">[selinux_status.value]</ae:parameter>
           </ae:parameters>
         </ae:test>
         <ae:profiles>
@@ -859,15 +865,13 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
     </xccdf:check-content>
   </xccdf:check>
 
-
 SCAP
 ^^^^
 
 XCCDF
 '''''
 
-For ``linux.sestatus_v1`` artifacts, the xccdf:check looks like this.
-There is no Value element in the XCCDF for this Artifact.
+For ``linux.sestatus_v1 linux.sestatus_selinux_status_v1`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
 
 ::
 
@@ -876,7 +880,6 @@ There is no Value element in the XCCDF for this Artifact.
       href="[BENCHMARK-TITLE]" 
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
-
 
 OVAL
 ''''
@@ -887,10 +890,10 @@ Test
 
   <sestatus_test 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux"
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]" 
-    check_existence="[check_existence.value]" 
-    check="[check.value]" 
-    comment="[RECOMMENDATION-TITLE]" 
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
+    check="[check.value]"
+    check_existence="[check_existence.value]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
     <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
     <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
@@ -903,61 +906,59 @@ Object
   <sestatus_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" 
-    comment="[RECOMMENDATION-TITLE]" 
+    comment="[ARTIFACT-TITLE]" 
     version="1" />
  
 State  
 
 ::
 
-  <sestatus_state
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux" 
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" 
-    comment="[RECOMMENDATION-TITLE]" 
+  <sestatus_state 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux"
+    comment="[ARTIFACT-TITLE]"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
     version="1">
     <selinux_status 
-      datatype="[datatype.value]" 
+      datatype="[datatype.value]"
       operation="[operation.value]">
-      [loaded_policy_name.value]
+        [selinux_status.value]
     </selinux_status>
   </sestatus_state>
-
 
 YAML
 ^^^^
 
 ::
 
-  - artifact-expression:
+  artifact-expression:
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
-    artifact-title: "[RECOMMENDATION-TITLE]"
+    artifact-title: "[ARTIFACT-TITLE]"
       artifact:
         type: "[ARTIFACT-TYPE-NAME]"
         parameters: []
       test:
         type: "[TEST-TYPE-NAME]"
         parameters:
-        - parameter:
-            name: "check_existence"
-            dt: "string"
-            value: "[check_existence.value]"
-        - parameter:
-            name: "check"
-            dt: "string"
-            value: "[check.value]"
-        - parameter:
-            name: "operation"
-            dt: "string"
-            value: "[operation.value]"
-        - parameter:
-            name: "datatype"
-            dt: "string"
-            value: "[datatype.value]"
-        - parameter:
-            name: "selinux_status"
-            dt: "string"
-            value: "[selinux_status.value]"
-
+          - parameter:
+              name: "check_existence"
+              dt: "string"
+              value: "[check_existence.value]"
+          - parameter:
+              name: "check"
+              dt: "string"
+              value: "[check.value]"
+          - parameter:
+              name: "operation"
+              dt: "string"
+              value: "[operation.value]"
+          - parameter:
+              name: "datatype"
+              dt: "string"
+              value: "[datatype.value]"
+          - parameter:
+              name: "selinux_status"
+              dt: "string"
+              value: "[selinux_status.value]"
 
 JSON
 ^^^^
@@ -967,7 +968,7 @@ JSON
   {
     "artifact-expression": {
       "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
-      "artifact-title": "[RECOMMENDATION-TITLE]",
+      "artifact-title": "[ARTIFACT-TITLE]",
       "artifact": {
         "type": "[ARTIFACT-TYPE-NAME]",
         "parameters": []
