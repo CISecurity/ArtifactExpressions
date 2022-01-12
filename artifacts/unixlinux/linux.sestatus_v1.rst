@@ -111,7 +111,7 @@ NOTE: The ``datatype`` parameter is governed by a constraint allowing only the f
 +-----------------------------+---------+------------------------------------+
 | loaded_policy_name          | string  | Displays what type of SELinux      |
 |                             |         | policy is currently loaded         |
-|                             |         | ('targeted', 'mimimum', or 'mls'). |
+|                             |         | ('targeted', 'minimum', or 'mls'). |
 +-----------------------------+---------+------------------------------------+
 
 NOTE: The ``check_existence`` parameter is governed by a constraint allowing only the following values:
@@ -168,7 +168,7 @@ NOTE: The ``datatype`` parameter is governed by a constraint allowing only the f
 | datatype                    | string  | The data type of the value.        |
 +-----------------------------+---------+------------------------------------+
 | mode_from_config            | string  | Displays the mode from the config  |
-|                             |         | file ('targeted', 'mimimum', or    |
+|                             |         | file ('targeted', 'minimum', or    |
 |                             |         | 'mls').                            |
 +-----------------------------+---------+------------------------------------+
 
