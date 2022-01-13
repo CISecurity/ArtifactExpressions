@@ -257,7 +257,7 @@ Test
                id="oval:org.cisecurity.benchmarks.windows_server_2012_r2:tst:[ARTIFACT-OVAL-ID]"
                check_existence="at_least_one_exists" check="all"
                comment="[RECOMMENDATION TITLE]"
-               version="[version.value]">
+               version="1">
                <object object_ref="oval:org.cisecurity.benchmarks.windows_server_2012_r2:obj:[ARTIFACT-OVAL-ID]"/>
                <state state_ref="oval:org.cisecurity.benchmarks.windows_server_2012_r2:ste:[ARTIFACT-OVAL-ID]"/>
        </lockoutpolicy_test>
@@ -279,7 +279,7 @@ State
        <lockoutpolicy_state xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#windows"
                id="oval:org.cisecurity.benchmarks.windows_server_2012_r2:ste:[ARTIFACT-OVAL-ID]"
                comment="[RECOMMENDATION TITLE]"
-               version="[version.value]">
+               version="1">
                <[lockoutsetting.value] operation="[test_type]" datatype="[data_type.value]"
                    var_ref="oval:org.cisecurity.benchmarks.windows_server_2012_r2:var:[ARTIFACT-OVAL-ID]"/>
        </lockoutpolicy_state>

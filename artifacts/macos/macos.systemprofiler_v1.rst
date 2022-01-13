@@ -221,7 +221,7 @@ Test
 
    <macos:systemprofiler_test check="[check.value]" check_existence="[check_existence.value]"
      comment="[RECOMMENDATION TITLE]"
-     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]" version="[version.value]">
+     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]" version="1">
      <macos:object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"/>
      <macos:state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"/>
    </macos:systemprofiler_test>
@@ -232,7 +232,7 @@ Object
 
    <macos:systemprofiler_object
      comment="[RECOMMENDATION TITLE]"
-     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" version="[version.value]">
+     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" version="1">
      <macos:data_type>[data_type.value]</macos:data_type>
      <macos:xpath>[xpath.value]</macos:xpath>
    </macos:systemprofiler_object>
@@ -243,7 +243,7 @@ State
 
    <macos:systemprofiler_state
      comment="[RECOMMENDATION TITLE]"
-     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" version="[version.value]">
+     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" version="1">
      <macos:value_of datatype="[datatype.value]" operation="[operation.value]">[value_of.value]</macos:value_of>
    </macos:systemprofiler_state>    
 

@@ -204,8 +204,8 @@ Test
     accountinfo_test xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#macos"
       id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
       check_existence="[check_existence.value] check="[check.value]"
-      comment="[comment.value]"
-      version="[version.value]">
+      comment="[ARTIFACT-TTILE]"
+      version="1">
       <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"/>
       <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"/>
     </accountinfo_test>
@@ -215,9 +215,9 @@ Object
 ::
 
     <accountinfo_object xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#macos"
-      id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" version="[version.value]"
-      comment="[comment.value]"
-      version="[version.value]">
+      id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
+      comment="[ARTIFACT-TTILE]"
+      version="1">
       <username>[username.value]</username>
     </accountinfo_object>
 
@@ -226,9 +226,9 @@ State
 ::
 
    <accountinfo_state xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#macos"
-      id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" version="[version.value]"
-      comment="[comment.value]"
-      version="[version.value]">
+      id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
+      comment="[ARTIFACT-TTILE]"
+      version="1">
       <username datatype="[DATATYPE.value]" operation="[OPERATION.value]">[VALUE]</username>
       <password datatype="[DATATYPE.value]" operation="[OPERATION.value]">[VALUE]</password>
       <uid datatype="[DATATYPE.value]">[VALUE]</uid>

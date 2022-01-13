@@ -179,7 +179,7 @@ Test
     check_existence="[check_existence.value]"
     check="[check.value]"
     comment="[RECOMMENDATION TITLE]"
-    version="[version.value]">
+    version="1">
     <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
     <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
   </authorizationdb_test>
@@ -192,7 +192,7 @@ Object
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM_ID]"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[RECOMMENDATION TITLE]"
-    version="[version.value]">
+    version="1">
     <right_name>[right_name.value]</right_name>
     <xpath>[xpath.value]</xpath>
   </authorizationdb_object>
@@ -205,7 +205,7 @@ State
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM_ID]"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
     comment="[RECOMMENDATION TITLE]"
-    version="[version.value]">
+    version="1">
     <value_of 
       datatype="[datatype.value]" 
       operation="[operation.value]">

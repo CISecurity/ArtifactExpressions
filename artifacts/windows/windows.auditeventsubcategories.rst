@@ -275,7 +275,7 @@ Test
                 id="oval:org.cisecurity.benchmarks.windows_10:tst:[ARTIFACT-OVAL-ID]"
                 check_existence="at_least_one_exists" check="all"
                 comment="[RECOMMENDATION TITLE]"
-                version="[version.value]">
+                version="1">
                 <object object_ref="oval:org.cisecurity.benchmarks.windows_10:obj:[ARTIFACT-OVAL-ID]"/>
                 <state state_ref="oval:org.cisecurity.benchmarks.windows_10:ste:[ARTIFACT-OVAL-ID]"/>
     </auditeventpolicysubcategories_test>
@@ -298,7 +298,7 @@ State
                xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#windows"
                id="oval:org.cisecurity.benchmarks.windows_10:ste:[ARTIFACT_OVAL_ID]"
                comment="[RECOMMENDATION TITLE]"
-               version="[version.value]">
+               version="1">
                <pnp_activity operation="[test_type]" datatype="[data_type.value]"
                    var_ref="oval:org.cisecurity.benchmarks.windows_10:var:[ARTIFACT-OVAL-ID]"/>
    </auditeventpolicysubcategories_state>

@@ -184,7 +184,7 @@ Test
                id="oval:org.cisecurity.benchmarks.windows_8.1:tst:[ARTIFACT_OVAL_ID]"
                check_existence="at_least_one_exists" check="all"
                comment="[RECOMMENDATION_TITLE]"
-               version="[version.value]">
+               version="1">
                <object object_ref="oval:org.cisecurity.benchmarks.windows_8.1:obj:[ARTIFACT_OVAL_ID]"/>
                <state state_ref="oval:org.cisecurity.benchmarks.windows_8.1:ste:[ARTIFACT_OVAL_ID]"/>
            </registry_test>
@@ -196,7 +196,7 @@ Object
    <registry_object xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#windows"
                id="oval:org.cisecurity.benchmarks.windows_8.1:obj:[ARTIFACT_OVAL_ID]"
                comment="[RECOMMENDATION_TITLE]"
-               version="[version.value]">
+               version="1">
                <hive>[hive.value]</hive>
                <key operation="[testType.name]">[key.value]</key>
                <name>[name.value]</name>
@@ -209,7 +209,7 @@ State
    <registry_state xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#windows"
                id="oval:org.cisecurity.benchmarks.windows_8.1:ste:[ARTIFACT_OVAL_ID]"
                comment="[RECOMMENDATION_TITLE]"
-               version="[version.value]">
+               version="1">
                <type>[testType.value.value]</type>
                <value datatype="string" operation="[testType.name]">O:BAG:BAD:(A;;RC;;;BA)</value>
            </registry_state>

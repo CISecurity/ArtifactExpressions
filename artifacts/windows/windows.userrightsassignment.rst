@@ -169,12 +169,12 @@ Test
                id="oval:org.cisecurity.benchmarks.windows_8.1:tst: <userright_object xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#windows"
                                                                               id="oval:org.cisecurity.benchmarks.windows_8.1:obj:73694"
                                                                               comment="Ensure &apos;sedenyinteractivelogonright&apos; is set to &apos;Guests&apos;"
-                                                                              version="[version.value]">
+                                                                              version="1">
                                                                               <userright operation="equals">SE_DENY_INTERACTIVE_LOGON_NAME</userright>
                                                                           </userright_object>"
                check_existence="at_least_one_exists" check="at least one"
                comment="[RECOMMENDATION_TITLE]"
-               version="[version.value]">
+               version="1">
                <object object_ref="oval:org.cisecurity.benchmarks.windows_8.1:obj:ARTIFACT-OVAL-ID"/>
                <state state_ref="oval:org.cisecurity.benchmarks.windows_8.1:ste:ARTIFACT-OVAL-ID"/>
    </userright_test>
@@ -186,7 +186,7 @@ Object
    <userright_object xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#windows"
                id="oval:org.cisecurity.benchmarks.windows_8.1:obj:ARTIFACT_OVAL_ID"
                comment="[RECOMMENDATION_TITLE]"
-               version="[version.value]">
+               version="1">
                <userright operation="[TestType Name]">[SETTING_CONSTRAINT_VALUE]</userright>
    </userright_object>
 
@@ -197,7 +197,7 @@ State
    <userright_state xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#windows"
                id="oval:org.cisecurity.benchmarks.windows_8.1:ste:ARTIFACT_OVAL_ID"
                comment="[RECOMMENDATION_TITLE]"
-               version="[version.value]">
+               version="1">
                <trustee_sid operation="[TestType Name]" datatype="[TestType.data_type]">[TestType.data_type.value]</trustee_sid>
    </userright_state>
 

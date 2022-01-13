@@ -172,7 +172,7 @@ Test
     check_existence="[check_existence.value]" 
     check="[check.value]" 
     comment="[RECOMMENDATION TITLE]"
-    version="[version.value]">
+    version="1">
     <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"/>
   </sql57_test>
 
@@ -184,7 +184,7 @@ Object
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM-ID]" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[RECOMMENDATION TITLE]"
-    version="[version.value]">
+    version="1">
     <engine>[engine.value]</engine>
     <version>[version.value]</version>
     <connection_string var_ref="oval:org.cisecurity.benchmarks:var:[ID]"/>
