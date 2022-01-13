@@ -181,7 +181,7 @@ Test
 
    <macos:keychain_test check="[check.value]" check_existence="[check_existence.value]"
      comment="[RECOMMENDATION TITLE]"
-     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]" version="[version.value]">
+     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]" version="1">
      <macos:object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"/>
      <macos:state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"/>
    </macos:keychain_test>
@@ -192,7 +192,7 @@ Object
 
    <macos:keychain_object
      comment="[RECOMMENDATION TITLE]"
-     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" version="[version.value]">
+     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" version="1">
      <macos:filepath>[filepath.value]</macos:filepath>
    </macos:keychain_object>
 
@@ -202,7 +202,7 @@ State
 
    <macos:keychain_state
      comment="[RECOMMENDATION TITLE]"
-     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" version="[version.value]">
+     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" version="1">
      <macos:timeout datatype="[datatype.value]" operation="[operation.value]">[timeout.value]</macos:timeout>
    </macos:keychain_state>
 
@@ -373,7 +373,7 @@ Test
 
    <macos:keychain_test check="[check.value]" check_existence="[check_existence.value]"
      comment="[RECOMMENDATION TITLE]"
-     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]" version="[version.value]">
+     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]" version="1">
      <macos:object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"/>
      <macos:state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"/>
    </macos:keychain_test>
@@ -384,7 +384,7 @@ Object
 
    <macos:keychain_object
      comment="[RECOMMENDATION TITLE]"
-     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" version="[version.value]">
+     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" version="1">
      <macos:filepath>[filepath.value]</macos:filepath>
    </macos:keychain_object>
 
@@ -394,7 +394,7 @@ State
 
    <macos:keychain_state
      comment="[RECOMMENDATION TITLE]"
-     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" version="[version.value]">
+     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" version="1">
      <macos:lock_on_sleep datatype="[datatype.value]" operation="[operation.value]">[lock_on_sleep.value]</macos:lock_on_sleep>
    </macos:keychain_state>
 

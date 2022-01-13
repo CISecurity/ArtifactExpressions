@@ -214,7 +214,7 @@ Test
            id="oval:org.cisecurity.benchmarks.windows_8.1:tst:[ARTIFACT_OVAL_ID]"
            check_existence="at_least_one_exists" check="all"
            comment="[RECOMMENDATION_TITLE]"
-           version="[version.value]">
+           version="1">
            <object object_ref="oval:org.cisecurity.benchmarks.windows_8.1:obj:[ARTIFACT_OVAL_ID]"/>
            <state state_ref="oval:org.cisecurity.benchmarks.windows_8.1:ste:[ARTIFACT_OVAL_ID]"/>
        </wmi57_test>
@@ -226,7 +226,7 @@ Object
    <wmi57_state xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#windows"
        id="oval:org.cisecurity.benchmarks.windows_8.1:ste:[ARTIFACT_OVAL_ID]"
        comment="[RECOMMENDATION_TITLE]"
-       version="[version.value]">
+       version="1">
        <result datatype="record" entity_check="all">
            <field xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5" name="setting"
                operation="equals" datatype="boolean"
@@ -241,7 +241,7 @@ State
    <wmi57_state xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#windows"
        id="oval:org.cisecurity.benchmarks.windows_8.1:ste:[ARTIFACT_OVAL_ID]"
        comment="[RECOMMENDATION_TITLE]"
-       version="[version.value]">
+       version="1">
        <result datatype="record" entity_check="all">
            <field xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5" name="setting"
                operation="[testType.name]" datatype="[testType.datatype.value]"

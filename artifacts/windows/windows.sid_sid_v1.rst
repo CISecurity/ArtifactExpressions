@@ -164,7 +164,7 @@ Test
                 id="oval:org.cisecurity.benchmarks.windows_8.1:tst:ARTIFACT_OVAL_ID"
                 check_existence="at_least_one_exists" check="all"
                 comment="[RECOMMENDATION_TITLE]"
-                version="[version.value]">
+                version="1">
                 <object object_ref="oval:org.cisecurity.benchmarks.windows_8.1:obj:ARTIFACT_OVAL_ID"/>
                 <state state_ref="oval:org.cisecurity.benchmarks.windows_8.1:ste:ARTIFACT_OVAL_ID"/>
             </sid_sid_v1_test>
@@ -176,7 +176,7 @@ Object
    <sid_sid_object xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#windows"
                id="oval:org.cisecurity.benchmarks.windows_8.1:obj:231103"
                comment="[RECOMMENDATION_TITLE]"
-               version="[version.value]">
+               version="1">
                <trustee_sid operation="[operation.value]">[trustee_sid.value]</trustee_sid>
    </sid_sid_object>
 
@@ -187,7 +187,7 @@ State
    <sid_sid_state xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#windows"
                id="oval:org.cisecurity.benchmarks.windows_8.1:ste:231103"
                comment="Ensure &apos;^S\-1\-5\-21\-\d+\-\d+\-\d+\-500$&apos; is &apos;case insensitive not equal&apos; &apos;Administrator&apos;"
-               version="[version.value]">
+               version="1">
                <[testParameter.name] operation="[testType.name]" datatype="[testType.datatype]">[testParameter.value]</[testParameter.name]>
    </sid_sid_state>
 

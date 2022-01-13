@@ -74,7 +74,7 @@ Test
                id="oval:org.cisecurity.benchmarks.windows_8.1:tst:ARTIFACT-OVAL-ID"
                check_existence="at_least_one_exists" check="all"
                comment="[RECOMMENDATION_TITLE]"
-               version="[version.value]">
+               version="1">
                <object object_ref="oval:org.cisecurity.benchmarks.windows_8.1:obj:ARTIFACT-OVAL-ID"/>
                <state state_ref="oval:org.cisecurity.benchmarks.windows_8.1:ste:ARTIFACT-OVAL-ID"/>
    </user_test>
@@ -86,7 +86,7 @@ Object
    <user_object xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#windows"
          id="oval:org.cisecurity.benchmarks.windows_8.1:obj:ARTIFACT-OVAL-ID"
                comment="[RECOMMENDATION_TITLE]"
-               version="[version.value]">
+               version="1">
            <user datatype="string" operation="[TEST_TYPE_NAME]">[TestType.data_type.value]</user>       
     </user_object>
 

@@ -275,7 +275,7 @@ Test
     check_existence="[check_existence.value]"
     comment="[RECOMMENDATION TITLE]"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
-    version="[version.value]">
+    version="1">
     <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
     <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
   </registry_test>
@@ -288,7 +288,7 @@ Object
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM-ID]"
     comment="[RECOMMENDATION TITLE]"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
-    version="[version.value]">
+    version="1">
     <hive>[hive.value]</hive>
     <key operation="[operation.value]" />
     <name>[name.value]</name>
@@ -302,7 +302,7 @@ State
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM-ID]" 
     comment="[RECOMMENDATION TITLE]"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
-    version="[version.value]">
+    version="1">
     <type operation="[operation.value]">[type.value]</type>
     <value 
       datatype="[datatype.value]" 
