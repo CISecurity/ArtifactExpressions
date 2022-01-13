@@ -181,7 +181,7 @@ Test
      check_existence="[check_existence.value]"
      comment="[RECOMMENDATION-TITLE]"
      id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
-     version="[version.value]">
+     version="1">
      <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
      <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
    </softwareupdate_test>
@@ -194,7 +194,7 @@ Object
      xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#macos"
      comment="[RECOMMENDATION-TITLE]"
      id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
-     version="[version.value]">
+     version="1">
    </softwareupdate_object>
 
 State
@@ -205,7 +205,7 @@ State
      xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#macos"
      comment="[RECOMMENDATION-TITLE]"
      id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
-     version="[version.value]">
+     version="1">
      <schedule
        datatype="[datatype.value]"
        operation="[operation.value]">

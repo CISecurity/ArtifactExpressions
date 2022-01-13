@@ -199,7 +199,7 @@ Test
                id="oval:org.cisecurity.benchmarks.windows_server_2012_r2:tst:[ARTIFACT_OVAL_ID]"
                check_existence="at_least_one_exists" check="all"
                comment="[RECOMMENDATION_TITLE"
-               version="[version.value]">
+               version="1">
                <object object_ref="oval:org.cisecurity.benchmarks.windows_server_2012_r2:obj:[ARTIFACT_OVAL_ID]"/>
                <state state_ref="oval:org.cisecurity.benchmarks.windows_server_2012_r2:ste:[ARTIFACT_OVAL_ID]"/>
    </accesstoken_test>
@@ -211,7 +211,7 @@ Object
     <accesstoken_object xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#windows"
                id="oval:org.cisecurity.benchmarks.windows_server_2012_r2:obj:[ARTIFACT_OVAL_ID]"
                comment="[RECOMMENDATION_TITLE]"
-               version="[version.value]">
+               version="1">
                <[parameter_constraint] operation="case insensitive equals">[parameter_constraint_value]</[parameter_constraint]>
            </accesstoken_object>
 
@@ -222,7 +222,7 @@ State
    <accesstoken_state xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#windows"
                id="oval:org.cisecurity.benchmarks.windows_server_2012_r2:ste:6484"
                comment="Ensure &apos;senetworklogonright&apos; is set to &apos;Set White List&apos; - DC"
-               version="[version.value]">
+               version="1">
                <[parameter_constraint] datatype="boolean" operation="[test_type_name]">false</parameter_constraint>
    </accesstoken_state>
 

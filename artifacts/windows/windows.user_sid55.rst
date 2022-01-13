@@ -224,7 +224,7 @@ Test
                 id="oval:org.cisecurity.benchmarks.windows_8.1:tst:ARTIFACT_OVAL_ID"
                 check_existence="at_least_one_exists" check="all"
                 comment="[RECOMMENDATION_TITLE]"
-                version="[version.value]">
+                version="1">
                 <object object_ref="oval:org.cisecurity.benchmarks.windows_8.1:obj:ARTIFACT_OVAL_ID"/>
                 <state state_ref="oval:org.cisecurity.benchmarks.windows_8.1:ste:ARTIFACT_OVAL_ID"/>
             </user_sid55_test>
@@ -236,7 +236,7 @@ Object
    <user_sid55_object xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#windows"
                id="oval:org.cisecurity.benchmarks.windows_8.1:obj:ARTIFACT_OVAL_ID"
                comment="[RECOMMENDATION_TITLE]"
-               version="[version.value]">
+               version="1">
               <user_sid operation="[operation.value]">^S\-1\-5\-21\-\d+\-\d+\-\d+\-500$</user_sid>
    </user_sid55_object>
 
@@ -247,7 +247,7 @@ State
    <user_sid55_state xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#windows"
                id="oval:org.cisecurity.benchmarks.windows_8.1:ste:ARTIFACT_OVAL_ID"
                comment="[RECOMMENDATION_TITLE]"
-               version="[version.value]">
+               version="1">
               <enabled operation="[testtype_name]" datatype="[testtype.datatype.value]"
                               var_ref="oval:org.cisecurity.benchmarks.windows_8.1:var:ARTIFACT_OVAL_ID"/>
    </user_sid55_state>

@@ -234,7 +234,7 @@ Test
               check_existence="at_least_one_exists" 
                       comment="[RECOMMENDATION TITLE]" 
                            id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]" 
-                      version="[version.value]">
+                      version="1">
       <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"/>
       <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"/>
    </passwordpolicy_test>
@@ -256,7 +256,7 @@ State
    <passwordpolicy_state 
       xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#windows" 
     comment="[RECOMMENDATION TITLE]" 
-         id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" version="[version.value]">
+         id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" version="1">
       <[passwordpolicysetting.value] datatype="[data_type.value]" 
          operation="[test_type]" 
            var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"/>

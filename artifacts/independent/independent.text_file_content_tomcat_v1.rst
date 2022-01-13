@@ -680,7 +680,7 @@ Test
     check_existence="[check_existence.value]" 
     comment="[RECOMMENDATION TITLE]" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]" 
-    version="[version.value]">
+    version="1">
     <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
   </textfilecontent54_test>
 
@@ -692,7 +692,7 @@ Object
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM-ID]" 
     comment="[RECOMMENDATION TITLE]" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" 
-    version="[version.value]">
+    version="1">
     <path var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
     <filename>[filename.value]</filename>
     <pattern 
@@ -960,7 +960,7 @@ Test
     check_existence="[check_existence.value]" 
     comment="[RECOMMENDATION-TITLE]" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]" 
-    version="[version.value]">
+    version="1">
     <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
   </textfilecontent54_test> 
 
@@ -972,7 +972,7 @@ Object
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM-ID]" 
     comment="[RECOMMENDATION-TITLE]" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" 
-    version="[version.value]">
+    version="1">
     <path var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]" />
     <filename>[filename.value]</filename>
     <pattern operation="[operation.value]">
@@ -1198,7 +1198,7 @@ Test
     check_existence="[check_existence.value]" 
     comment="[RECOMMENDATION-TITLE]" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]" 
-    version="[version.value]">
+    version="1">
     <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
     <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
   </file_test> 
@@ -1211,7 +1211,7 @@ Object
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM-ID]" 
     comment="[RECOMMENDATION-TITLE]" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" 
-    version="[version.value]">
+    version="1">
     <path>[path.value]</path>
     <filename>[filename.value]</filename>
   </file_object>
@@ -1224,7 +1224,7 @@ State
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM-ID]" 
     comment="[RECOMMENDATION-TITLE]" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" 
-    version="[version.value]">
+    version="1">
     <gread datatype="boolean">[gread.value]</gread>
     <gwrite datatype="boolean">[gwrite.value]</gwrite>
     <gexec datatype="boolean">[gexec.value]</gexec>
@@ -1604,7 +1604,7 @@ Test
     check_existence="[check_existence.value]" 
     comment="[RECOMMENDATION-TITLE]" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]" 
-    version="[version.value]">
+    version="1">
     <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
   </textfilecontent54_test> 
 
@@ -1616,7 +1616,7 @@ Object
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM-ID]" 
     comment="[RECOMMENDATION-TITLE]" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" 
-    version="[version.value]">
+    version="1">
     <path var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]" />
     <filename>[filename.value]</filename>
     <pattern operation="[operation.value]>[pattern.value]</pattern>
@@ -1866,7 +1866,7 @@ Test
     check_existence="[check_existence.value]" 
     comment="[RECOMMENDATION TITLE]" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]" 
-    version="[version.value]">
+    version="1">
     <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
     <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
   </file_test>
@@ -1879,7 +1879,7 @@ Object
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM-ID]" 
     comment="[RECOMMENDATION TITLE]"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" 
-    version="[version.value]">
+    version="1">
     <path var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
     <filepath xsi:nil="[xsi:nil.value]" />
   </file_object>
@@ -1892,7 +1892,7 @@ State
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM-ID]"
     comment="[RECOMMENDATION TITLE]" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" 
-    version="[version.value]">
+    version="1">
     <group_id 
       datatype="[datatype.value]" 
       var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
@@ -1913,7 +1913,7 @@ Variable
     comment="[RECOMMENDATION TITLE]" 
     datatype="[datatype.value]" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" 
-    version="[version.value]">
+    version="1">
     <end character="[character.value]">
       <variable_component var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
     </end>
@@ -2274,7 +2274,7 @@ Test
     check_existence="[check_existence.value]" 
     comment="[RECOMMENDATION TITLE]" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]" 
-    version="[version.value]">
+    version="1">
     <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
     <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
   </textfilecontent54_test>
@@ -2287,7 +2287,7 @@ Object
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM-ID]" 
     comment="[RECOMMENDATION TITLE]"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" 
-    version="[version.value]">
+    version="1">
     <path var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
     <filename>[filename.value]</filename>
     <pattern operation="[operation.value]">[pattern.value]</pattern>
@@ -2306,7 +2306,7 @@ State
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM-ID]"
     comment="[RECOMMENDATION TITLE]" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" 
-    version="[version.value]">
+    version="1">
     <subexpression 
       operation="[operation.value]" 
       var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
@@ -2652,7 +2652,7 @@ Test
     check_existence="[check_existence.value]" 
     comment="[RECOMMENDATION-TITLE]" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]" 
-    version="[version.value]">
+    version="1">
     <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
     <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
   </<textfilecontent54_test> 
@@ -2665,7 +2665,7 @@ Object
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM-ID]" 
     comment="[RECOMMENDATION TITLE]" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" 
-    version="[version.value]">
+    version="1">
     <path var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
     <filename var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
     <pattern 
@@ -2688,7 +2688,7 @@ State
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM-ID]" 
     comment="[RECOMMENDATION TITLE]" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" 
-    version="[version.value]">
+    version="1">
     <subexpression 
       entity_check="[entity_check.value]"
       operation="[operation.value]" 
