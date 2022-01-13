@@ -352,10 +352,10 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
 
   <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
     <xccdf:check-content>
-      <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION_NUMBER]">
+      <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
         <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-        <ae:title>[RECOMMENDATION TITLE]</ae:title>
-        <ae:artifact type="[ARTIFACTTYPE NAME]">
+        <ae:title>[ARTIFACT-TITLE]</ae:title>
+        <ae:artifact type="[ARTIFACT-TYPE-NAME]">
           <ae:parameters>
             <ae:parameter dt="string" name="base_path">[base_path.value]</ae:parameter>
             <ae:parameter dt="string" name="path">[path.value]</ae:parameter>
@@ -369,7 +369,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
             <ae:parameter dt="string" name="check">[check.value]</ae:parameter>
           </ae:parameters>
         </ae:artifact>
-        <ae:test type="[TESTTYPE NAME]">
+        <ae:test type="[TEST-TYPE-NAME]">
           <ae:parameters>
             <ae:parameter dt="string" name="value">[value.value]</ae:parameter>
           </ae:parameters>
@@ -410,7 +410,7 @@ Test
     id='oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]'
     check_existence='[check_existence.value]' 
     check='[check.value]' 
-    comment='[RECOMMENDATION TITLE]'
+    comment='[ARTIFACT-TITLE]'
     version='[version.value]'>
     <object object_ref='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'/>
   </xmlfilecontent_test>
@@ -422,7 +422,7 @@ Object
   <xmlfilecontent_object
     xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]' 
     id='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'
-    comment='[RECOMMENDATION TITLE]'
+    comment='[ARTIFACT-TITLE]'
     version='[version.value]'>
     <behaviors
       recurse_direction='[recurse_direction.value]'/>
@@ -445,58 +445,58 @@ YAML
 ::
 
   artifact-expression:
-    artifact-unique-id: [ARTIFACT-OVAL-ID]
-    artifact-title: [RECOMMENDATION TITLE]
+    artifact-unique-id: "[ARTIFACT-OVAL-ID]"
+    artifact-title: "[ARTIFACT-TITLE]"
     artifact:
-      type: [ARTIFACTTYPE NAME]
+      type: "[ARTIFACT-TYPE-NAME]"
       parameters:
       - parameter: 
           name: base_path
-          type: string
-          value: [base_path.value]
+          dt: "string"
+          value: "[base_path.value]"
       - parameter: 
           name: path
-          type: string
-          value: [path.value]
+          dt: "string"
+          value: "[path.value]"
       - parameter: 
           name: concat_path
-          type: string
-          value: concat_path.value]
+          dt: "string"
+          value: concat_path.value]"
       - parameter: 
           name: filename
-          type: string
-          value: [filename.value]
+          dt: "string"
+          value: "[filename.value]"
       - parameter: 
           name: recurse
-          type: string
-          value: [recurse.value]
+          dt: "string"
+          value: "[recurse.value]"
       - parameter: 
           name: max_depth
           type: binary
-          value: [max_depth.value]
+          value: "[max_depth.value]"
       - parameter: 
           name: file_system
-          type: string
-          value: file_system.value]
+          dt: "string"
+          value: file_system.value]"
       - parameter: 
           name: xpath
-          type: string
-          value: [xpath.value]
+          dt: "string"
+          value: "[xpath.value]"
       - parameter: 
           name: check_existence
-          type: string
-          value: [check_existence.value]
+          dt: "string"
+          value: "[check_existence.value]"
       - parameter: 
           name: check
-          type: string
-          value: [check.value]
+          dt: "string"
+          value: "[check.value]
     test:
-      type: [TESTTYPE NAME]
+      type: "[TEST-TYPE-NAME]"
       parameters:   
       - parameter: 
           name: value
-          type: string
-          value: [value.value]
+          dt: "string"
+          value: "[value.value]
 
 JSON
 ^^^^

@@ -278,51 +278,51 @@ YAML
 ::
 
   - artifact-expression:
-       artifact-unique-id: [ARTIFACT-OVAL-ID]
-       artifact-title: [RECOMMENDATION TITLE]
+       artifact-unique-id: "[ARTIFACT-OVAL-ID]"
+       artifact-title: "[ARTIFACT-TITLE]"
        artifact:
          type: windows.registry.value_v2
          parameters:
          - parameter: 
              name: hive
-             type: string
-             value: [ARTIFACT TYPE PARAMETER VALUE]
+             dt: "string"
+             value: "[ARTIFACT TYPE PARAMETER VALUE]
          - parameter: 
                name: key_operator
-               type: string
-               value: [ARTIFACT TYPE PARAMETER VALUE]
+               dt: "string"
+               value: "[ARTIFACT TYPE PARAMETER VALUE]
            - parameter: 
                 name: key
-                type: string
-                value: [ARTIFACT TYPE PARAMETER VALUE]
+                dt: "string"
+                value: "[ARTIFACT TYPE PARAMETER VALUE]
            - parameter: 
                   name: name
-                  type: string
-                  value: [ARTIFACT TYPE PARAMETER VALUE]
+                  dt: "string"
+                  value: "[ARTIFACT TYPE PARAMETER VALUE]
            - parameter: 
                 name: check_existence
-                type: string
-                value: [ARTIFACT TYPE PARAMETER VALUE]
+                dt: "string"
+                value: "[ARTIFACT TYPE PARAMETER VALUE]
             - parameter: 
                   name: windows_view
-                  type: string
-                  value: [ARTIFACT TYPE PARAMETER VALUE]
+                  dt: "string"
+                  value: "[ARTIFACT TYPE PARAMETER VALUE]
             - parameter: 
                    name: registry_data_type
-                   type: string
-                   value: [ARTIFACT TYPE PARAMETER VALUE]
+                   dt: "string"
+                   value: "[ARTIFACT TYPE PARAMETER VALUE]
            - parameter: 
                  name: name_operation
-                 type: string
-                 value: [ARTIFACT TYPE PARAMETER VALUE]
+                 dt: "string"
+                 value: "[ARTIFACT TYPE PARAMETER VALUE]
                   
    test:
-         type: [TestType Name]
+         type: "[TEST-TYPE-NAME]"
          parameters:
          - parameter:
              name: value
-             type: string
-             value: [TestType.value.value]
+             dt: "string"
+             value: "[value.value]"
 
 JSON
 ^^^^
@@ -330,8 +330,8 @@ JSON
 ::
 
    "artifact-expression": {
-     "artifact-unique-id": [ARTIFACT-OVAL-ID],
-     "artifact-title": [RECOMMENDATION TITLE],
+     "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
+     "artifact-title": "[ARTIFACT-TITLE]",
      "artifact": {
        "type": "windows.registry.value_v2",
        "parameters": [
@@ -339,68 +339,68 @@ JSON
            "parameter": {
              "name": "hive",
              "type": "string",
-             "value": [ARTIFACT TYPE PARAMETER VALUE]
+             "value": "[ARTIFACT TYPE PARAMETER VALUE]"
            }
          }, 
           {
              "parameter": {
                "name": "key_operator",
                "type": "string",
-               "value": [ARTIFACT TYPE PARAMETER VALUE]
+               "value": "[ARTIFACT TYPE PARAMETER VALUE]"
              }
            },
            {
                "parameter": {
                  "name": "key",
                  "type": "string",
-                 "value": [ARTIFACT TYPE PARAMETER VALUE]
+                 "value": "[ARTIFACT TYPE PARAMETER VALUE]"
                }
            }, 
            {
              "parameter": {
                "name": "name",
                "type": "string",
-               "value": [ARTIFACT TYPE PARAMETER VALUE]
+               "value": "[ARTIFACT TYPE PARAMETER VALUE]"
              }
            },
            {
                "parameter": {
                  "name": "check_existence",
                  "type": "string",
-                 "value": [ARTIFACT TYPE PARAMETER VALUE]
+                 "value": "[ARTIFACT TYPE PARAMETER VALUE]"
                }
              }, 
            {
              "parameter": {
                "name": "windows_view",
                "type": "string",
-               "value": [ARTIFACT TYPE PARAMETER VALUE]
+               "value": "[ARTIFACT TYPE PARAMETER VALUE]"
              }
             }, 
              {
               "parameter": {
                 "name": "registry_data_type",
                 "type": "string",
-                "value": [ARTIFACT TYPE PARAMETER VALUE]
+                "value": "[ARTIFACT TYPE PARAMETER VALUE]"
               }
              }, 
               {
                "parameter": {
                  "name": "operation",
                  "type": "string",
-                 "value": [ARTIFACT TYPE PARAMETER VALUE]
+                 "value": "[ARTIFACT TYPE PARAMETER VALUE]"
                }
               }, 
        ]
      },
      "test": {
-       "type": [TestType Name],
+       "type": "[TEST-TYPE-NAME]",
        "parameters": [
          {
            "parameter": {
              "name": "value",
              "type": "string",
-             "value": [TestType.value.value]
+             "value": "[value.value]"
            }
          }
        ]

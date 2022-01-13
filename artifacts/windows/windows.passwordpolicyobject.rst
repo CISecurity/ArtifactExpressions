@@ -175,15 +175,15 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
    <xccdf:complex-check operator="AND">
        <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
            <xccdf:check-content>
-               <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION_NUMBER]">
+               <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
                    <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-                   <ae:title>[RECOMMENDATION TITLE]</ae:title>
-                   <ae:artifact type="[ARTIFACTTYPE NAME]">
+                   <ae:title>[ARTIFACT-TITLE]</ae:title>
+                   <ae:artifact type="[ARTIFACT-TYPE-NAME]">
                        <ae:parameters>
                            <ae:parameter dt="string" name="passwordpolicysetting">[passwordpolicysetting.value]</ae:parameter>
                        </ae:parameters>
                    </ae:artifact>
-                   <ae:test type="[TESTTYPE NAME]">
+                   <ae:test type="[TEST-TYPE-NAME]">
                        <ae:parameters>
                            <ae:parameter dt="string" name="value">[value.value]</ae:parameter>
                            <ae:parameter dt="string" name="data_type">[data_type.value]</ae:parameter>
@@ -217,8 +217,8 @@ is generated:
 
    <Value id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" 
           operator="test_type" type="data_type.value">
-     <title>[RECOMMENDATION TITLE]</title>
-     <description>This value is used in Rule: [RECOMMENDATION TITLE]</description>
+     <title>[ARTIFACT-TITLE]</title>
+     <description>This value is used in Rule: [ARTIFACT-TITLE]</description>
      <value>[value.value]</value>
    </Value>
 
@@ -232,7 +232,7 @@ Test
    <passwordpolicy_test xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#windows" 
                         check="all" 
               check_existence="at_least_one_exists" 
-                      comment="[RECOMMENDATION TITLE]" 
+                      comment="[ARTIFACT-TITLE]" 
                            id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]" 
                       version="1">
       <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"/>
@@ -245,7 +245,7 @@ Object
 
    <passwordpolicy_object 
        xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#windows" 
-     comment="[RECOMMENDATION TITLE]" 
+     comment="[ARTIFACT-TITLE]" 
           id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" 
      version="[version.value]"/>
 
@@ -255,7 +255,7 @@ State
 
    <passwordpolicy_state 
       xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#windows" 
-    comment="[RECOMMENDATION TITLE]" 
+    comment="[ARTIFACT-TITLE]" 
          id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" version="1">
       <[passwordpolicysetting.value] datatype="[data_type.value]" 
          operation="[test_type]" 
@@ -267,7 +267,7 @@ Variable
 
 ::
 
-   <external_variable comment="This value is used in [RECOMMENDATION TITLE]" 
+   <external_variable comment="This value is used in [ARTIFACT-TITLE]" 
                      datatype="[data_type.value]" 
                            id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" 
                       version="[version.value]"/>
@@ -278,26 +278,26 @@ YAML
 ::
 
   - artifact-expression:
-       artifact-unique-id: [ARTIFACT-OVAL-ID]
-       artifact-title: [RECOMMENDATION TITLE]
+       artifact-unique-id: "[ARTIFACT-OVAL-ID]"
+       artifact-title: "[ARTIFACT-TITLE]"
        artifact:
-         type: [ARTIFACTTYPE NAME]
+         type: "[ARTIFACT-TYPE-NAME]"
          parameters:
          - parameter: 
              name: passwordpolicysetting
-             type: string
-             value: [passwordpolicysetting.value]
+             dt: "string"
+             value: "[passwordpolicysetting.value]
        test:
-         type: [TESTTYPE NAME]
+         type: "[TEST-TYPE-NAME]"
          parameters:
          - parameter:
              name: value
-             type: string
-             value: [value.value]
+             dt: "string"
+             value: "[value.value]
          - parameter: 
              name: data_type
-             type: string
-             value: [data_type.value]
+             dt: "string"
+             value: "[data_type.value]
 
 JSON
 ^^^^
@@ -305,10 +305,10 @@ JSON
 ::
 
    "artifact-expression": {
-     "artifact-unique-id": [ARTIFACT-OVAL-ID],
-     "artifact-title": [RECOMMENDATION TITLE],
+     "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
+     "artifact-title": "[ARTIFACT-TITLE]",
      "artifact": {
-       "type": "[ARTIFACTTYPE NAME]",
+       "type": "[ARTIFACT-TYPE-NAME]",
        "parameters": [
          {
            "parameter": {
@@ -320,13 +320,13 @@ JSON
        ]
      },
      "test": {
-       "type": "[TESTTYPE NAME]",
+       "type": "[TEST-TYPE-NAME]",
        "parameters": [
          {
            "parameter": {
              "name": "value",
              "type": "string",
-             "value": "[value.value]""
+             "value": "[value.value]"
            }
          },
          {

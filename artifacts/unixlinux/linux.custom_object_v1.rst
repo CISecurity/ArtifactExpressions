@@ -238,7 +238,7 @@ Variable Test:
   the var_ref of the specified varible and the value associated with it.
 
   **Applicable Constraints:**
-    - Root Path Does Not Include ""
+    - Root Path Does Not Include "
     - Root Path Does Not Include "."
     - Check For Duplicate UIDs
     - Check For Duplicate Group Names
@@ -289,7 +289,7 @@ NOTE: The ``object`` parameter is governed by a constraint allowing only the fol
   - All User Home Directories Exist
   - /etc/profile.d/\* contains "umask 077"
   - Check That Reserved UIDs Are Assigned to System Accounts
-  - Root Path Does Not Include ""
+  - Root Path Does Not Include "
   - Root Path Does Not Include "."
   - Root Path Directories Are Owned By UID 0 And Not Writable By Group Or Other
   - Check User Home Directory Ownership
@@ -2833,7 +2833,7 @@ Variable
 
 Test
 
-**Root Path Does Not Include ""**
+**Root Path Does Not Include "**
 
 ::
 

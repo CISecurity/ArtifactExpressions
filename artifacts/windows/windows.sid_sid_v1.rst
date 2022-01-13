@@ -113,9 +113,9 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
    <xccdf:complex-check operator="AND">
        <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
            <xccdf:check-content>
-               <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION_NUMBER]">
+               <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
                    <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-                   <ae:title>[RECOMMENDATION TITLE]</ae:title>
+                   <ae:title>[ARTIFACT-TITLE]</ae:title>
                    <ae:artifact type="windows.sid_sid_v1">
                    <ae:parameters>
                     <ae:parameter dt="string" name="trustee_sid"
@@ -124,7 +124,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
                        [trustee_sid_operator.value]</ae:parameter>
                    </ae:parameters>
                    </ae:artifact>
-                   <ae:test type="[TestType Name]">
+                   <ae:test type="[TEST-TYPE-NAME]">
                        <ae:parameters>
                            <ae:parameter dt="string" name="value">[TestType.value]</ae:parameter>
                            <ae:parameter dt="string" name="data_type">[TestType.data_type]</ae:parameter>
@@ -147,9 +147,9 @@ generated:
 ::
 
    <Value id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" 
-          operator="[TestType Name]" type="[number|boolean]">
-     <title>[RECOMMENDATION TITLE]</title>
-     <description>This value is used in Rule: [RECOMMENDATION TITLE]</description>
+          operator="[TEST-TYPE-NAME]" type="[number|boolean]">
+     <title>[ARTIFACT-TITLE]</title>
+     <description>This value is used in Rule: [ARTIFACT-TITLE]</description>
      <value>[TestType.value.value]</value>
    </Value>
 
@@ -196,7 +196,7 @@ Variable
 
 ::
 
-   <external_variable comment="This value is used in [RECOMMENDATION TITLE]" 
+   <external_variable comment="This value is used in [ARTIFACT-TITLE]" 
                      datatype="[int|boolean]" 
                            id="oval:org.cisecurity.benchmarks.PLATFORM:var:ARTIFACT-OVAL-ID" 
    version="[version.value]"/>
@@ -207,30 +207,30 @@ YAML
 ::
 
   - artifact-expression:
-       artifact-unique-id: [ARTIFACT-OVAL-ID]
-       artifact-title: [RECOMMENDATION TITLE]
+       artifact-unique-id: "[ARTIFACT-OVAL-ID]"
+       artifact-title: "[ARTIFACT-TITLE]"
        artifact:
          type: windows.sid_sid_v1
          parameters:
          - parameter: 
              name: trustee_sid
-             type: string
-             value: [ARTIFACT TYPE PARAMETER VALUE]
+             dt: "string"
+             value: "[ARTIFACT TYPE PARAMETER VALUE]
          - parameter: 
                name: trustee_sid_operator
-               type: string
-               value: [ARTIFACT TYPE PARAMETER VALUE]
+               dt: "string"
+               value: "[ARTIFACT TYPE PARAMETER VALUE]
    test:
-         type: [TestType Name]
+         type: "[TEST-TYPE-NAME]"
          parameters:
          - parameter:
              name: value
-             type: string
-             value: [TestType.value.value]
+             dt: "string"
+             value: "[value.value]"
          - parameter: 
              name: data_type
-             type: string
-             value: [TestType.data_type.value]
+             dt: "string"
+             value: "[TestType.data_type.value]
 
 JSON
 ^^^^
@@ -238,8 +238,8 @@ JSON
 ::
 
    "artifact-expression": {
-     "artifact-unique-id": [ARTIFACT-OVAL-ID],
-     "artifact-title": [RECOMMENDATION TITLE],
+     "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
+     "artifact-title": "[ARTIFACT-TITLE]",
      "artifact": {
        "type": "windows.sid_sid_v1",
        "parameters": [
@@ -247,33 +247,33 @@ JSON
            "parameter": {
              "name": "trustee_sid",
              "type": "string",
-             "value": [ARTIFACT TYPE PARAMETER VALUE]
+             "value": "[ARTIFACT TYPE PARAMETER VALUE]"
            }
          }, 
           {
              "parameter": {
                "name": "trustee_sid_operator",
                "type": "string",
-               "value": [ARTIFACT TYPE PARAMETER VALUE]
+               "value": "[ARTIFACT TYPE PARAMETER VALUE]"
              }
            }
        ]
      },
      "test": {
-       "type": [TestType Name],
+       "type": "[TEST-TYPE-NAME]",
        "parameters": [
          {
            "parameter": {
              "name": "value",
              "type": "string",
-             "value": [TestType.value.value]
+             "value": "[value.value]"
            }
          },
          {
            "parameter": {
              "name": "data_type",
              "type": "string",
-             "value": [TestType.data_type.value]
+             "value": "[data_type.value]"
            }
          }
        ]

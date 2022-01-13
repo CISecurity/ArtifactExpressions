@@ -137,7 +137,7 @@ For ``cisco_ios.snmp_host existence_test`` artifacts, the xccdf:check looks like
   </check>
 
 OVAL
-""""
+""
 
 Test
 
@@ -312,7 +312,7 @@ For ``cisco_ios.snmp_host cisco_ios.snmp_host_traps`` artifacts, the xccdf:check
   </check>
 
 OVAL
-""""
+""
 
 Test
 

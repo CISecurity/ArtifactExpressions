@@ -54,7 +54,7 @@ userright String The user right setting to be audited.
 | - SE_DENY_REMOTE_INTERACTIVE_LOGON_NAME - SE_DENY_SERVICE_LOGON_NAME
 | - SE_INTERACTIVE_LOGON_NAME - SE_NETWORK_LOGON_NAME -
   SE_REMOTE_INTERACTIVE_LOGON_NAME
-| - SE_SERVICE_LOGON_NAME - "" (empty string)
+| - SE_SERVICE_LOGON_NAME - " (empty string)
 
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
@@ -87,15 +87,15 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
    <xccdf:complex-check operator="AND">
        <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
            <xccdf:check-content>
-               <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION_NUMBER]">
+               <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
                    <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-                   <ae:title>[RECOMMENDATION TITLE]</ae:title>
+                   <ae:title>[ARTIFACT-TITLE]</ae:title>
                    <ae:artifact type="windows.userrightsassignmentdeny">
                        <ae:parameters>
                            <ae:parameter dt="string" name="userright">[SETTING CONSTRAINT VALUE]</ae:parameter>
                        </ae:parameters>
                    </ae:artifact>
-                   <ae:test type="[TestType Name]">
+                   <ae:test type="[TEST-TYPE-NAME]">
                        <ae:parameters>
                            <ae:parameter dt="string" name="value">[TestType.value]</ae:parameter>
                            <ae:parameter dt="string" name="data_type">[TestType.data_type]</ae:parameter>
@@ -118,9 +118,9 @@ element is generated:
 ::
 
    <Value id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" 
-          operator="[TestType Name]" type="[number|boolean]">
-     <title>[RECOMMENDATION TITLE]</title>
-     <description>This value is used in Rule: [RECOMMENDATION TITLE]</description>
+          operator="[TEST-TYPE-NAME]" type="[number|boolean]">
+     <title>[ARTIFACT-TITLE]</title>
+     <description>This value is used in Rule: [ARTIFACT-TITLE]</description>
      <value>[TestType.value.value]</value>
    </Value>
 
@@ -153,7 +153,7 @@ Object
                id="oval:org.cisecurity.benchmarks.windows_8.1:obj:ARTIFACT_OVAL_ID"
                comment="[RECOMMENDATION_TITLE]"
                version="1">
-               <userright operation="[TestType Name]">[SETTING_CONSTRAINT_VALUE]</userright>
+               <userright operation="[TEST-TYPE-NAME]">[SETTING_CONSTRAINT_VALUE]</userright>
            </userright_object>
 
 State
@@ -164,7 +164,7 @@ State
                id="oval:org.cisecurity.benchmarks.windows_8.1:ste:ARTIFACT_OVAL_ID"
                comment="[RECOMMENDATION_TITLE]"
                version="1">
-               <trustee_sid operation="[TestType Name]" datatype="[TestType.data_type]">[TestType.data_type.value]</trustee_sid>
+               <trustee_sid operation="[TEST-TYPE-NAME]" datatype="[TestType.data_type]">[TestType.data_type.value]</trustee_sid>
            </userright_state>
 
 YAML
@@ -173,26 +173,26 @@ YAML
 ::
 
   - artifact-expression:
-       artifact-unique-id: [ARTIFACT-OVAL-ID]
-       artifact-title: [RECOMMENDATION TITLE]
+       artifact-unique-id: "[ARTIFACT-OVAL-ID]"
+       artifact-title: "[ARTIFACT-TITLE]"
        artifact:
          type: windows.userrightsassignmentdeny
          parameters:
          - parameter: 
              name: userright
-             type: string
-             value: [ARTIFACT TYPE PARAMETER VALUE]
+             dt: "string"
+             value: "[ARTIFACT TYPE PARAMETER VALUE]
        test:
-         type: [TestType Name]
+         type: "[TEST-TYPE-NAME]"
          parameters:
          - parameter:
              name: value
-             type: string
-             value: [TestType.value.value]
+             dt: "string"
+             value: "[value.value]"
          - parameter: 
              name: data_type
-             type: string
-             value: [TestType.data_type.value]
+             dt: "string"
+             value: "[TestType.data_type.value]
 
 JSON
 ^^^^
@@ -200,8 +200,8 @@ JSON
 ::
 
    "artifact-expression": {
-     "artifact-unique-id": [ARTIFACT-OVAL-ID],
-     "artifact-title": [RECOMMENDATION TITLE],
+     "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
+     "artifact-title": "[ARTIFACT-TITLE]",
      "artifact": {
        "type": "windows.userrightsassignmentdeny",
        "parameters": [
@@ -209,26 +209,26 @@ JSON
            "parameter": {
              "name": "userright",
              "type": "string",
-             "value": [ARTIFACT TYPE PARAMETER VALUE]
+             "value": "[ARTIFACT TYPE PARAMETER VALUE]"
            }
          }
        ]
      },
      "test": {
-       "type": [TestType Name],
+       "type": "[TEST-TYPE-NAME]",
        "parameters": [
          {
            "parameter": {
              "name": "value",
              "type": "string",
-             "value": [TestType.value.value]
+             "value": "[value.value]"
            }
          },
          {
            "parameter": {
              "name": "data_type",
              "type": "string",
-             "value": [TestType.data_type.value]
+             "value": "[data_type.value]"
            }
          }
        ]

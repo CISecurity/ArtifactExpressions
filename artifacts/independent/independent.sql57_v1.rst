@@ -446,10 +446,10 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
 
   <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
     <xccdf:check-content>
-      <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION_NUMBER]">
+      <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
         <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-        <ae:title>[RECOMMENDATION TITLE]</ae:title>
-        <ae:artifact type="[ARTIFACTTYPE NAME]">
+        <ae:title>[ARTIFACT-TITLE]</ae:title>
+        <ae:artifact type="[ARTIFACT-TYPE-NAME]">
           <ae:parameters>
             <ae:parameter dt="string" name="engine">[engine.value]</ae:parameter>
             <ae:parameter dt="string" name="sql">[sql.value]</ae:parameter>
@@ -460,7 +460,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
             <ae:parameter dt="string" name="append_type">[append_type.value]</ae:parameter>
           </ae:parameters>
         </ae:artifact>
-        <ae:test type="[TESTTYPE NAME]">
+        <ae:test type="[TEST-TYPE-NAME]">
           <ae:parameters>
             <ae:parameter dt="string" name="check_existence">[check_existence.value]</ae:parameter>
             <ae:parameter dt="string" name="check">[check.value]</ae:parameter>
@@ -508,7 +508,7 @@ Test
     id='oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]'
     check_existence='[check_existence.value]' 
     check='[check.value]' 
-    comment='[RECOMMENDATION TITLE]'
+    comment='[ARTIFACT-TITLE]'
     version='[version.value]'>
     <object object_ref='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]' />
     <state state_ref='oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]' />
@@ -521,7 +521,7 @@ Object
   <sql57_object 
     xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]' 
     id='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'
-    comment='[RECOMMENDATION TITLE]'
+    comment='[ARTIFACT-TITLE]'
     version='[version.value]'>
     <engine>[engine.value]</engine>
     <version>[version.value]</version>
@@ -536,7 +536,7 @@ State
   <sql57_state 
     xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]' 
     id='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'
-    comment='[RECOMMENDATION TITLE]'
+    comment='[ARTIFACT-TITLE]'
     version='[version.value]'>
     <result 
       datatype='[result.value]' 
@@ -556,65 +556,65 @@ YAML
 ::
 
   artifact-expression:
-    artifact-unique-id: [ARTIFACT-OVAL-ID]
-    artifact-title: [RECOMMENDATION TITLE]
+    artifact-unique-id: "[ARTIFACT-OVAL-ID]"
+    artifact-title: "[ARTIFACT-TITLE]"
     artifact:
-      type: [ARTIFACTTYPE NAME]
+      type: "[ARTIFACT-TYPE-NAME]"
       parameters:
         - parameter: 
             name: engine
-            type: string
-            value: [engine.value]
+            dt: "string"
+            value: "[engine.value]
         - parameter: 
             name: sql
-            type: string
-            value: [sql.value]
+            dt: "string"
+            value: "[sql.value]
         - parameter: 
             name: version
-            type: string
-            value: [version.value]
+            dt: "string"
+            value: "[version.value]
         - parameter: 
             name: prepend_str
-            type: string
+            dt: "string"
             value: prepend_str.value]
         - parameter: 
             name: append_str
-            type: string
-            value: [append_str.value]
+            dt: "string"
+            value: "[append_str.value]
         - parameter: 
             name: prepend_type
-            type: string
-            value: [prepend_type.value]
+            dt: "string"
+            value: "[prepend_type.value]
         - parameter: 
             name: append_type
-            type: string
+            dt: "string"
             value: append_type.value]
     test:
-      type: [TESTTYPE NAME]
+      type: "[TEST-TYPE-NAME]"
       parameters:   
         - parameter: 
             name: check_existence
-            type: string
-            value: [check_existence.value]
+            dt: "string"
+            value: "[check_existence.value]
         - parameter: 
             name: check
-            type: string
-            value: [check.value]
+            dt: "string"
+            value: "[check.value]
         - parameter: 
             name: value
-            type: string
+            dt: "string"
             value: value.value]
         - parameter: 
             name: value_data_type
-            type: string
-            value: [value_data_type.value]
+            dt: "string"
+            value: "[value_data_type.value]
         - parameter: 
             name: field_name
-            type: string
-            value: [field_name.value]
+            dt: "string"
+            value: "[field_name.value]
         - parameter: 
             name: field_operation
-            type: string
+            dt: "string"
             value: field_operation.value]
 
 JSON
@@ -625,9 +625,9 @@ JSON
     {
     "artifact-expression": {
       "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
-      "artifact-title": "[RECOMMENDATION TITLE]",
+      "artifact-title": "[ARTIFACT-TITLE]",
       "artifact": {
-        "type": "[ARTIFACTTYPE NAME]",
+        "type": "[ARTIFACT-TYPE-NAME]",
         "parameters": [
           {
             "parameter": {
@@ -681,7 +681,7 @@ JSON
         ]
       },
       "test": {
-        "type": "[TESTTYPE NAME]",
+        "type": "[TEST-TYPE-NAME]",
         "parameters": [
           {
             "parameter": {

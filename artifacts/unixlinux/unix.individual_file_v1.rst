@@ -285,7 +285,7 @@ YAML
         - parameter:
             name: "value"
             dt: "string"
-            value: [value.value]
+            value: "[value.value]
         - parameter:
             name: "data_type"
             dt: "string"

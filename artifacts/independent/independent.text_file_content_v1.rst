@@ -553,10 +553,10 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
 
   <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
     <xccdf:check-content>
-      <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION_NUMBER]">
+      <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
         <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-        <ae:title>[RECOMMENDATION TITLE]</ae:title>
-        <ae:artifact type="[ARTIFACTTYPE NAME]">
+        <ae:title>[ARTIFACT-TITLE]</ae:title>
+        <ae:artifact type="[ARTIFACT-TYPE-NAME]">
           <ae:parameters>
             <ae:parameter dt="string" name="path">[path.value]</ae:parameter>
             <ae:parameter dt="string" name="filename">[filename.value]</ae:parameter>
@@ -566,7 +566,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
             <ae:parameter dt="string" name="pattern">[pattern.value]</ae:parameter>
           </ae:parameters>
         </ae:artifact>
-        <ae:test type="[TESTTYPE NAME]">
+        <ae:test type="[TEST-TYPE-NAME]">
           <ae:parameters>
             <ae:parameter dt="string" name="value">[value.value]</ae:parameter>
             <ae:parameter dt="string" name="data_type">[data_type.value]</ae:parameter>
@@ -611,7 +611,7 @@ Test
     id='oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]'
     check_existence='[check_existence.value]' 
     check='[check.value]' 
-    comment='[RECOMMENDATION TITLE]'
+    comment='[ARTIFACT-TITLE]'
     version='[version.value]'>
     <object object_ref='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'/>
     <state state_ref='oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]'/>
@@ -624,7 +624,7 @@ Object
   <textfilecontent54_object 
     xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]' 
     id='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'
-    comment='[RECOMMENDATION TITLE]'
+    comment='[ARTIFACT-TITLE]'
     version='[version.value]'>
     <engine>[engine.value]</engine>
     <version>[version.value]</version>
@@ -641,7 +641,7 @@ State
   <textfilecontent54_state 
     xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]' 
     id='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'
-    comment='[RECOMMENDATION TITLE]'
+    comment='[ARTIFACT-TITLE]'
     version='[version.value]'>
     <text operation='[text_operation.value]'
     var_ref='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'/>
@@ -653,46 +653,46 @@ YAML
 ::
 
   artifact-expression:
-    artifact-unique-id: [ARTIFACT-OVAL-ID]
-    artifact-title: [RECOMMENDATION TITLE]
+    artifact-unique-id: "[ARTIFACT-OVAL-ID]"
+    artifact-title: "[ARTIFACT-TITLE]"
     artifact:
-      type: [ARTIFACTTYPE NAME]
+      type: "[ARTIFACT-TYPE-NAME]"
       parameters:
         - parameter: 
             name: path
-            type: string
-            value: [path.value]
+            dt: "string"
+            value: "[path.value]
         - parameter: 
             name: filename
-            type: string
-            value: [filename.value]
+            dt: "string"
+            value: "[filename.value]
         - parameter: 
             name: recurse
-            type: string
-            value: [recurse.value]
+            dt: "string"
+            value: "[recurse.value]
         - parameter: 
             name: max_depth
             type: int
-            value: [max_depth.value]
+            value: "[max_depth.value]
         - parameter: 
             name: file_system
-            type: string
-            value: [file_system.value]
+            dt: "string"
+            value: "[file_system.value]
         - parameter: 
             name: pattern
-            type: string
-            value: [pattern.value]
+            dt: "string"
+            value: "[pattern.value]
     test:
-      type: [TESTTYPE NAME]
+      type: "[TEST-TYPE-NAME]"
       parameters:   
         - parameter: 
             name: value
-            type: string
+            dt: "string"
             value: value.value]
         - parameter: 
             name: data_type
-            type: string
-            value: [data_type.value]
+            dt: "string"
+            value: "[data_type.value]
 
 JSON
 ^^^^

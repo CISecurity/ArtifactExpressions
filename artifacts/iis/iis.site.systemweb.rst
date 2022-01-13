@@ -123,8 +123,8 @@ XCCDF
 
    <xccdf:Value id="xccdf_org.cisecurity.benchmarks_value_4.9.1_var" operator="[operator.value]"
      type="[data_type.value]">
-     <xccdf:title>[RECOMMENDATION TITLE]</xccdf:title>
-     <xccdf:description>This variable is used in [RECOMMENDATION TITLE]</xccdf:description>
+     <xccdf:title>[ARTIFACT-TITLE]</xccdf:title>
+     <xccdf:description>This variable is used in [ARTIFACT-TITLE]</xccdf:description>
      <xccdf:value>[value.value]</xccdf:value>
    </xccdf:Value>
 

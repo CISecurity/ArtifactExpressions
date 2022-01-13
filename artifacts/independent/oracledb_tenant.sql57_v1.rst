@@ -144,17 +144,17 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
 
    <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
        <xccdf:check-content>
-           <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION_NUMBER]">
+           <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
                <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-               <ae:title>[RECOMMENDATION TITLE]</ae:title>
-               <ae:artifact type="[ARTIFACTTYPE NAME]">
+               <ae:title>[ARTIFACT-TITLE]</ae:title>
+               <ae:artifact type="[ARTIFACT-TYPE-NAME]">
                    <ae:parameters>
                        <ae:parameter dt="string" name="non_multi_tenant_sql">[non_multi_tenant_sql.value]</ae:parameter>
                        <ae:parameter dt="string" name="multi_tenant_sql">[multi_tenant_sql.value]</ae:parameter>
                        <ae:parameter dt="string" name="version">[version.value]</ae:parameter>
                    </ae:parameters>
                </ae:artifact>
-               <ae:test type="[TESTTYPE NAME]">
+               <ae:test type="[TEST-TYPE-NAME]">
                    <ae:parameters>
                        <ae:parameter dt="string" name="check_existence">[check_existence.value]</ae:parameter>
                        <ae:parameter dt="string" name="check">[check.value]</ae:parameter>
@@ -203,7 +203,7 @@ Test
     id='oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]'
     check_existence='[check_existence.value]' 
     check='[check.value]' 
-    comment='[RECOMMENDATION TITLE]'
+    comment='[ARTIFACT-TITLE]'
     version='[version.value]'>
     <object object_ref='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'/>
     <state state_ref='oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]'/>
@@ -216,7 +216,7 @@ Object
   <sql57_object 
     xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]' 
     id='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'
-    comment='[RECOMMENDATION TITLE]'
+    comment='[ARTIFACT-TITLE]'
     version='[version.value]'>
     <engine>[engine.value]</engine>
     <version>[version.value]</version>
@@ -231,7 +231,7 @@ State
   <sql57_state 
     xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]' 
     id='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'
-    comment='[RECOMMENDATION TITLE]'
+    comment='[ARTIFACT-TITLE]'
     version='[version.value]'>
     <result datatype='[result.value]' entity_check='[entity_check.value]'>
     <field xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5' 
@@ -248,46 +248,46 @@ YAML
 ::
 
   artifact-expression:
-    artifact-unique-id: [ARTIFACT-OVAL-ID]
-    artifact-title: [RECOMMENDATION TITLE]
+    artifact-unique-id: "[ARTIFACT-OVAL-ID]"
+    artifact-title: "[ARTIFACT-TITLE]"
     artifact:
-      type: [ARTIFACTTYPE NAME]
+      type: "[ARTIFACT-TYPE-NAME]"
       parameters:
       - parameter: 
           name: non_multi_tenant_sql
           dt: string
-          value: [non_multi_tenant_sql.value]
+          value: "[non_multi_tenant_sql.value]"
       - parameter: 
           name: multi_tenant_sql
           dt: string
-          value: [multi_tenant_sql.value]
+          value: "[multi_tenant_sql.value]"
       - parameter: 
           name: version
           dt: string
-          value: [version.value]
+          value: "[version.value]
     test:
-      type: [TESTTYPE NAME]
+      type: "[TEST-TYPE-NAME]"
       parameters:   
       - parameter: 
           name: check_existence
           dt: string
-          value: [check_existence.value]
+          value: "[check_existence.value]"
       - parameter: 
           name: check
           dt: string
-          value: [check.value]
+          value: "[check.value]"
       - parameter: 
           name: value
           dt: string
-          value: value.value]
+          value: value.value]"
       - parameter: 
           name: value_data_type
           dt: string
-          value: [value_data_type.value]
+          value: "[value_data_type.value]"
       - parameter: 
           name: field_name
           dt: string
-          value: [field_name.value]
+          value: "[field_name.value]"
       - parameter: 
           name: field_operation
           dt: string

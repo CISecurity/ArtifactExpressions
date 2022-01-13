@@ -130,16 +130,16 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
 
    <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
      <xccdf:check-content>
-       <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION_NUMBER]">
+       <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
          <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-         <ae:title>[RECOMMENDATION TITLE]</ae:title>
-         <ae:artifact type="[ARTIFACTTYPE NAME]">
+         <ae:title>[ARTIFACT-TITLE]</ae:title>
+         <ae:artifact type="[ARTIFACT-TYPE-NAME]">
            <ae:parameters>
              <ae:parameter dt="string" name="filepath"
                >[filepath.value]</ae:parameter>
            </ae:parameters>
          </ae:artifact>
-         <ae:test type="[TESTTYPE NAME]">
+         <ae:test type="[TEST-TYPE-NAME]">
            <ae:parameters>
              <ae:parameter dt="string" name="check_existence">[check_existence.value]</ae:parameter>
              <ae:parameter dt="string" name="check">[check.value]</ae:parameter>
@@ -179,9 +179,13 @@ Test
 
 ::
 
-   <macos:keychain_test check="[check.value]" check_existence="[check_existence.value]"
-     comment="[RECOMMENDATION TITLE]"
-     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]" version="1">
+   <macos:keychain_test 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#macos"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
+    check_existence="[check_existence.value]"
+    check="[check.value]"
+    comment="[ARTIFACT-TTILE]"
+    version="1">
      <macos:object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"/>
      <macos:state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"/>
    </macos:keychain_test>
@@ -191,8 +195,10 @@ Object
 ::
 
    <macos:keychain_object
-     comment="[RECOMMENDATION TITLE]"
-     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" version="1">
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#macos"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
+    comment="[ARTIFACT-TTILE]"
+    version="1">
      <macos:filepath>[filepath.value]</macos:filepath>
    </macos:keychain_object>
 
@@ -201,8 +207,10 @@ State
 ::
 
    <macos:keychain_state
-     comment="[RECOMMENDATION TITLE]"
-     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" version="1">
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#macos"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
+    comment="[ARTIFACT-TTILE]"
+    version="1">
      <macos:timeout datatype="[datatype.value]" operation="[operation.value]">[timeout.value]</macos:timeout>
    </macos:keychain_state>
 
@@ -212,38 +220,38 @@ YAML
 ::
 
   - artifact-expression:
-       artifact-unique-id: [ARTIFACT-OVAL-ID]
-       artifact-title: [RECOMMENDATION TITLE]
+       artifact-unique-id: "[ARTIFACT-OVAL-ID]"
+       artifact-title: "[ARTIFACT-TITLE]"
        artifact:
-         type: [ARTIFACTTYPE NAME]
+         type: "[ARTIFACT-TYPE-NAME]"
          parameters:
          - parameter: 
              name: filepath
-             type: string
-             value: [filepath.value]
+             dt: "string"
+             value: "[filepath.value]
        test:
-         type: [TESTTYPE NAME]
+         type: "[TEST-TYPE-NAME]"
          parameters:
          - parameter:
              name: check_existence
-             type: string
-             value: [check_existence.value]
+             dt: "string"
+             value: "[check_existence.value]
          - parameter: 
              name: check
-             type: string
-             value: [check.value]
+             dt: "string"
+             value: "[check.value]
          - parameter:
              name: operation
-             type: string
-             value: [operation.value]
+             dt: "string"
+             value: "[operation.value]
          - parameter: 
              name: datatype
-             type: string
-             value: [datatype.value]  
+             dt: "string"
+             value: "[datatype.value]  
          - parameter: 
              name: timeout
-             type: string
-             value: [timeout.value]  
+             dt: "string"
+             value: "[timeout.value]  
 
 JSON
 ^^^^
@@ -252,9 +260,9 @@ JSON
 
    "artifact-expression": {
      "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
-     "artifact-title": "[RECOMMENDATION TITLE]",
+     "artifact-title": "[ARTIFACT-TITLE]",
      "artifact": {
-       "type": "[ARTIFACTTYPE NAME]",
+       "type": "[ARTIFACT-TYPE-NAME]",
        "parameters": [
          {
            "parameter": {
@@ -266,7 +274,7 @@ JSON
        ]
      },
      "test": {
-       "type": "[TESTTYPE NAME]",
+       "type": "[TEST-TYPE-NAME]",
        "parameters": [
          {
            "parameter": {
@@ -322,16 +330,16 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
 
    <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
      <xccdf:check-content>
-       <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION_NUMBER]">
+       <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
          <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-         <ae:title>[RECOMMENDATION TITLE]</ae:title>
-         <ae:artifact type="[ARTIFACTTYPE NAME]">
+         <ae:title>[ARTIFACT-TITLE]</ae:title>
+         <ae:artifact type="[ARTIFACT-TYPE-NAME]">
            <ae:parameters>
              <ae:parameter dt="string" name="filepath"
                >[filepath.value]</ae:parameter>
            </ae:parameters>
          </ae:artifact>
-         <ae:test type="[TESTTYPE NAME]">
+         <ae:test type="[TEST-TYPE-NAME]">
            <ae:parameters>
              <ae:parameter dt="string" name="check_existence">[check_existence.value]</ae:parameter>
              <ae:parameter dt="string" name="check">[check.value]</ae:parameter>
@@ -371,9 +379,13 @@ Test
 
 ::
 
-   <macos:keychain_test check="[check.value]" check_existence="[check_existence.value]"
-     comment="[RECOMMENDATION TITLE]"
-     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]" version="1">
+   <macos:keychain_test 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#macos"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
+    check_existence="[check_existence.value]"
+    check="[check.value]"
+    comment="[ARTIFACT-TTILE]"
+    version="1">
      <macos:object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"/>
      <macos:state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"/>
    </macos:keychain_test>
@@ -383,8 +395,10 @@ Object
 ::
 
    <macos:keychain_object
-     comment="[RECOMMENDATION TITLE]"
-     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" version="1">
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#macos"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
+    comment="[ARTIFACT-TTILE]"
+    version="1">
      <macos:filepath>[filepath.value]</macos:filepath>
    </macos:keychain_object>
 
@@ -393,8 +407,10 @@ State
 ::
 
    <macos:keychain_state
-     comment="[RECOMMENDATION TITLE]"
-     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" version="1">
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#macos"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
+    comment="[ARTIFACT-TTILE]"
+    version="1">
      <macos:lock_on_sleep datatype="[datatype.value]" operation="[operation.value]">[lock_on_sleep.value]</macos:lock_on_sleep>
    </macos:keychain_state>
 
@@ -404,38 +420,38 @@ YAML
 ::
 
   - artifact-expression:
-       artifact-unique-id: [ARTIFACT-OVAL-ID]
-       artifact-title: [RECOMMENDATION TITLE]
+       artifact-unique-id: "[ARTIFACT-OVAL-ID]"
+       artifact-title: "[ARTIFACT-TITLE]"
        artifact:
-         type: [ARTIFACTTYPE NAME]
+         type: "[ARTIFACT-TYPE-NAME]"
          parameters:
          - parameter: 
              name: filepath
-             type: string
-             value: [filepath.value]
+             dt: "string"
+             value: "[filepath.value]
        test:
-         type: [TESTTYPE NAME]
+         type: "[TEST-TYPE-NAME]"
          parameters:
          - parameter:
              name: check_existence
-             type: string
-             value: [check_existence.value]
+             dt: "string"
+             value: "[check_existence.value]
          - parameter: 
              name: check
-             type: string
-             value: [check.value]
+             dt: "string"
+             value: "[check.value]
          - parameter:
              name: operation
-             type: string
-             value: [operation.value]
+             dt: "string"
+             value: "[operation.value]
          - parameter: 
              name: datatype
-             type: string
-             value: [datatype.value]  
+             dt: "string"
+             value: "[datatype.value]  
          - parameter: 
              name: lock_on_sleep
-             type: string
-             value: [lock_on_sleep.value]  
+             dt: "string"
+             value: "[lock_on_sleep.value]  
 
 JSON
 ^^^^
@@ -444,9 +460,9 @@ JSON
 
    "artifact-expression": {
      "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
-     "artifact-title": "[RECOMMENDATION TITLE]",
+     "artifact-title": "[ARTIFACT-TITLE]",
      "artifact": {
-       "type": "[ARTIFACTTYPE NAME]",
+       "type": "[ARTIFACT-TYPE-NAME]",
        "parameters": [
          {
            "parameter": {
@@ -458,7 +474,7 @@ JSON
        ]
      },
      "test": {
-       "type": "[TESTTYPE NAME]",
+       "type": "[TEST-TYPE-NAME]",
        "parameters": [
          {
            "parameter": {

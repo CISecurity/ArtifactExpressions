@@ -789,7 +789,7 @@ For ``vmware.vds_portgroup_v2 vmware.vds_portgroup_override_port_policies_v2`` a
       export-name="oval:org.cisecurity.benchmarks:var:100000"  
       value-id="xccdf_org.cisecurity.benchmarks_value_esxi.connection" />
     <check-content-ref 
-      href="[BENCHMARK-TITLE]-oval.xml"" 
+      href="[BENCHMARK-TITLE]-oval.xml" 
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>  
 

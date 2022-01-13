@@ -621,10 +621,10 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
 
   <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
     <xccdf:check-content>
-      <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION_NUMBER]">
+      <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
         <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-        <ae:title>[RECOMMENDATION TITLE]</ae:title>
-        <ae:artifact type="[ARTIFACTTYPE NAME]">
+        <ae:title>[ARTIFACT-TITLE]</ae:title>
+        <ae:artifact type="[ARTIFACT-TYPE-NAME]">
           <ae:parameters>
             <ae:parameter dt="string" name="base_path">[base_path.value]</ae:parameter>
             <ae:parameter dt="string" name="path">[path.value]</ae:parameter>
@@ -637,7 +637,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
             <ae:parameter dt="string" name="pattern">[pattern.value]</ae:parameter>
           </ae:parameters>
         </ae:artifact>
-        <ae:test type="[TESTTYPE NAME]">
+        <ae:test type="[TEST-TYPE-NAME]">
           <ae:parameters>
             <ae:parameter dt="string" name="value">[value.value]</ae:parameter>
             <ae:parameter dt="string" name="datatype">[datatype.value]</ae:parameter>
@@ -678,7 +678,7 @@ Test
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM-ID]" 
     check="[check.value]" 
     check_existence="[check_existence.value]" 
-    comment="[RECOMMENDATION TITLE]" 
+    comment="[ARTIFACT-TITLE]" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]" 
     version="1">
     <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
@@ -690,7 +690,7 @@ Object
 
   <textfilecontent54_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM-ID]" 
-    comment="[RECOMMENDATION TITLE]" 
+    comment="[ARTIFACT-TITLE]" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" 
     version="1">
     <path var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
@@ -713,7 +713,7 @@ State
   <textfilecontent54_state 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM-ID]" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" 
-    comment="[RECOMMENDATION TITLE]" 
+    comment="[ARTIFACT-TITLE]" 
     version=|"[version.value]">
     <subexpression 
       operation="[operation.value]"
@@ -727,9 +727,9 @@ YAML
 
   artifact-expression:
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
-    artifact-title: "[RECOMMENDATION TITLE]"
+    artifact-title: "[ARTIFACT-TITLE]"
     artifact:
-      type: "[ARTIFACTTYPE NAME]"
+      type: "[ARTIFACT-TYPE-NAME]"
       parameters:
         - parameter:
             name: "base_path"
@@ -772,7 +772,7 @@ YAML
             dt: "string"
             value: "[check.value]"
     test:
-      type: "[TESTTYPE NAME]"
+      type: "[TEST-TYPE-NAME]"
       parameters:   
         - parameter:
             name: "value"
@@ -791,9 +791,9 @@ JSON
   {
     "artifact-expression": {
       "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
-      "artifact-title": "[RECOMMENDATION TITLE]",
+      "artifact-title": "[ARTIFACT-TITLE]",
       "artifact": {
-        "type": "[ARTIFACTTYPE NAME]",
+        "type": "[ARTIFACT-TYPE-NAME]",
         "parameters": [
           {
             "parameter": {
@@ -867,7 +867,7 @@ JSON
         ]
       },
       "test": {
-        "type": "[TESTTYPE NAME]",
+        "type": "[TEST-TYPE-NAME]",
         "parameters": [
           {
             "parameter": {
@@ -998,9 +998,9 @@ YAML
 
   artifact-expression:
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
-    artifact-title: "[RECOMMENDATION TITLE]"
+    artifact-title: "[ARTIFACT-TITLE]"
     artifact:
-      type: "[ARTIFACTTYPE NAME]"
+      type: "[ARTIFACT-TYPE-NAME]"
       parameters:
         - parameter:
             name: "base_path"
@@ -1046,9 +1046,9 @@ JSON
   {
     "artifact-expression": {
       "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
-      "artifact-title": "[RECOMMENDATION TITLE]",
+      "artifact-title": "[ARTIFACT-TITLE]",
       "artifact": {
-        "type": "[ARTIFACTTYPE NAME]",
+        "type": "[ARTIFACT-TYPE-NAME]",
         "parameters": [
           {
             "parameter": {
@@ -1250,9 +1250,9 @@ YAML
 
   artifact-expression:
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
-    artifact-title: "[RECOMMENDATION TITLE]"
+    artifact-title: "[ARTIFACT-TITLE]"
     artifact:
-      type: "[ARTIFACTTYPE NAME]"
+      type: "[ARTIFACT-TYPE-NAME]"
       parameters:
         - parameter:
             name: "base_path"
@@ -1354,9 +1354,9 @@ JSON
   {
     "artifact-expression": {
       "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
-      "artifact-title": "[RECOMMENDATION TITLE]",
+      "artifact-title": "[ARTIFACT-TITLE]",
       "artifact": {
-        "type": "[ARTIFACTTYPE NAME]",
+        "type": "[ARTIFACT-TYPE-NAME]",
         "parameters": [
           {
             "parameter": {
@@ -1640,9 +1640,9 @@ YAML
 
   artifact-expression:
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
-    artifact-title: "[RECOMMENDATION TITLE]"
+    artifact-title: "[ARTIFACT-TITLE]"
     artifact:
-      type: "[ARTIFACTTYPE NAME]"
+      type: "[ARTIFACT-TYPE-NAME]"
       parameters:
         - parameter:
             name: "base_path"
@@ -1696,9 +1696,9 @@ JSON
   {
     "artifact-expression": {
       "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
-      "artifact-title": "[RECOMMENDATION TITLE]",
+      "artifact-title": "[ARTIFACT-TITLE]",
       "artifact": {
-        "type": "[ARTIFACTTYPE NAME]",
+        "type": "[ARTIFACT-TYPE-NAME]",
         "parameters": [
           {
             "parameter": {
@@ -1794,10 +1794,10 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
 
   <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
     <xccdf:check-content>
-      <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION_NUMBER]">
+      <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
         <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-        <ae:title>[RECOMMENDATION TITLE]</ae:title>
-        <ae:artifact type="[ARTIFACTTYPE NAME]">
+        <ae:title>[ARTIFACT-TITLE]</ae:title>
+        <ae:artifact type="[ARTIFACT-TYPE-NAME]">
           <ae:parameters>
             <ae:parameter dt="string" name="base_path">[base_path.value]</ae:parameter>
             <ae:parameter dt="string" name="path">[path.value]</ae:parameter>
@@ -1864,7 +1864,7 @@ Test
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM-ID]" 
     check="[check.value]" 
     check_existence="[check_existence.value]" 
-    comment="[RECOMMENDATION TITLE]" 
+    comment="[ARTIFACT-TITLE]" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]" 
     version="1">
     <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
@@ -1877,7 +1877,7 @@ Object
 
   <file_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM-ID]" 
-    comment="[RECOMMENDATION TITLE]"
+    comment="[ARTIFACT-TITLE]"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" 
     version="1">
     <path var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
@@ -1890,7 +1890,7 @@ State
 
   <file_state 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM-ID]"
-    comment="[RECOMMENDATION TITLE]" 
+    comment="[ARTIFACT-TITLE]" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" 
     version="1">
     <group_id 
@@ -1910,7 +1910,7 @@ Variable
 ::
 
   <local_variable 
-    comment="[RECOMMENDATION TITLE]" 
+    comment="[ARTIFACT-TITLE]" 
     datatype="[datatype.value]" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" 
     version="1">
@@ -1926,9 +1926,9 @@ YAML
 
   artifact-expression:
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
-    artifact-title: "[RECOMMENDATION TITLE]"
+    artifact-title: "[ARTIFACT-TITLE]"
     artifact:
-      type: "[ARTIFACTTYPE NAME]"
+      type: "[ARTIFACT-TYPE-NAME]"
       parameters:
         - parameter:
             name: "base_path"
@@ -1967,7 +1967,7 @@ YAML
             dt: "string"
             value: "[pattern.value]"          
     test:
-      type: "[TESTTYPE NAME]"
+      type: "[TEST-TYPE-NAME]"
       parameters:   
         - parameter:
             name: "username"
@@ -2026,9 +2026,9 @@ JSON
   {
     "artifact-expression": {
       "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
-      "artifact-title": "[RECOMMENDATION TITLE]",
+      "artifact-title": "[ARTIFACT-TITLE]",
       "artifact": {
-        "type": "[ARTIFACTTYPE NAME]",
+        "type": "[ARTIFACT-TYPE-NAME]",
         "parameters": [
           {
             "parameter": {
@@ -2096,7 +2096,7 @@ JSON
         ]
       },
       "test": {
-        "type": "[TESTTYPE NAME]",
+        "type": "[TEST-TYPE-NAME]",
         "parameters": [
           {
             "parameter": {
@@ -2201,10 +2201,10 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
 
   <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
     <xccdf:check-content>
-      <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION_NUMBER]">
+      <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
         <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-        <ae:title>[RECOMMENDATION TITLE]</ae:title>
-        <ae:artifact type="[ARTIFACTTYPE NAME]">
+        <ae:title>[ARTIFACT-TITLE]</ae:title>
+        <ae:artifact type="[ARTIFACT-TYPE-NAME]">
           <ae:parameters>
             <ae:parameter dt="string" name="base_path">[base_path.value]</ae:parameter>
             <ae:parameter dt="string" name="path">[path.value]</ae:parameter>
@@ -2272,7 +2272,7 @@ Test
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM-ID]" 
     check="[check.value]" 
     check_existence="[check_existence.value]" 
-    comment="[RECOMMENDATION TITLE]" 
+    comment="[ARTIFACT-TITLE]" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]" 
     version="1">
     <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
@@ -2285,7 +2285,7 @@ Object
 
   <textfilecontent54_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM-ID]" 
-    comment="[RECOMMENDATION TITLE]"
+    comment="[ARTIFACT-TITLE]"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" 
     version="1">
     <path var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
@@ -2304,7 +2304,7 @@ State
 
   <textfilecontent54_state 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM-ID]"
-    comment="[RECOMMENDATION TITLE]" 
+    comment="[ARTIFACT-TITLE]" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" 
     version="1">
     <subexpression 
@@ -2317,7 +2317,7 @@ Variable
 ::
 
   <external_variable 
-    comment="[RECOMMENDATION TITLE]" 
+    comment="[ARTIFACT-TITLE]" 
     datatype="[datatype.value]" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" 
     version="[version.value]" />
@@ -2329,9 +2329,9 @@ YAML
 
   artifact-expression:
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
-    artifact-title: "[RECOMMENDATION TITLE]"
+    artifact-title: "[ARTIFACT-TITLE]"
     artifact:
-      type: "[ARTIFACTTYPE NAME]"
+      type: "[ARTIFACT-TYPE-NAME]"
       parameters:
         - parameter:
             name: "base_path"
@@ -2370,7 +2370,7 @@ YAML
             dt: "string"
             value: "[pattern.value]"          
     test:
-      type: "[TESTTYPE NAME]"
+      type: "[TEST-TYPE-NAME]"
       parameters:   
         - parameter:
             name: "subexpression"
@@ -2421,9 +2421,9 @@ JSON
   {
     "artifact-expression": {
       "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
-      "artifact-title": "[RECOMMENDATION TITLE]",
+      "artifact-title": "[ARTIFACT-TITLE]",
       "artifact": {
-        "type": "[ARTIFACTTYPE NAME]",
+        "type": "[ARTIFACT-TYPE-NAME]",
         "parameters": [
           {
             "parameter": {
@@ -2490,7 +2490,7 @@ JSON
           ]
         },
         "test": {
-          "type": "[TESTTYPE NAME]",
+          "type": "[TEST-TYPE-NAME]",
           "parameters": [
             {
               "parameter": {
@@ -2663,7 +2663,7 @@ Object
 
   <textfilecontent54_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM-ID]" 
-    comment="[RECOMMENDATION TITLE]" 
+    comment="[ARTIFACT-TITLE]" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" 
     version="1">
     <path var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
@@ -2686,7 +2686,7 @@ State
 
   <textfilecontent54_state 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM-ID]" 
-    comment="[RECOMMENDATION TITLE]" 
+    comment="[ARTIFACT-TITLE]" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" 
     version="1">
     <subexpression 
@@ -2700,7 +2700,7 @@ External Variable
 ::
 
 <external_variable 
-  comment="[RECOMMENDATION TITLE]" 
+  comment="[ARTIFACT-TITLE]" 
   datatype="[datatype.value]" 
   id="oval:org.cisecurity.benchmarks.oracle_mysql_8:var:1777180"
   version="[version.value]" />

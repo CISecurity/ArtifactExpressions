@@ -232,26 +232,26 @@ YAML
 ::
 
   - artifact-expression:
-       artifact-unique-id: [ARTIFACT-OVAL-ID]
-       artifact-title: [RECOMMENDATION TITLE]
+       artifact-unique-id: "[ARTIFACT-OVAL-ID]"
+       artifact-title: "[ARTIFACT-TITLE]"
        artifact:
          type: windows.privilegeassignment
          parameters:
          - parameter: 
              name: privilegeassignmentsettings
-             type: string
-             value: [ARTIFACT TYPE PARAMETER VALUE]
+             dt: "string"
+             value: "[ARTIFACT TYPE PARAMETER VALUE]
        test:
-         type: [TestType Name]
+         type: "[TEST-TYPE-NAME]"
          parameters:
          - parameter:
              name: value
-             type: string
-             value: [TestType.value.value]
+             dt: "string"
+             value: "[value.value]"
          - parameter: 
              name: data_type
-             type: string
-             value: [TestType.data_type.value]
+             dt: "string"
+             value: "[TestType.data_type.value]
 
 JSON
 ^^^^
@@ -259,8 +259,8 @@ JSON
 ::
 
    "artifact-expression": {
-     "artifact-unique-id": [ARTIFACT-OVAL-ID],
-     "artifact-title": [RECOMMENDATION TITLE],
+     "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
+     "artifact-title": "[ARTIFACT-TITLE]",
      "artifact": {
        "type": "windows.privilegeassignment",
        "parameters": [
@@ -268,26 +268,26 @@ JSON
            "parameter": {
              "name": "privilegeassignmentsettings",
              "type": "string",
-             "value": [ARTIFACT TYPE PARAMETER VALUE]
+             "value": "[ARTIFACT TYPE PARAMETER VALUE]"
            }
          }
        ]
      },
      "test": {
-       "type": [TestType Name],
+       "type": "[TEST-TYPE-NAME]",
        "parameters": [
          {
            "parameter": {
              "name": "value",
              "type": "string",
-             "value": [TestType.value.value]
+             "value": "[value.value]"
            }
          },
          {
            "parameter": {
              "name": "data_type",
              "type": "string",
-             "value": [TestType.data_type.value]
+             "value": "[data_type.value]"
            }
          }
        ]

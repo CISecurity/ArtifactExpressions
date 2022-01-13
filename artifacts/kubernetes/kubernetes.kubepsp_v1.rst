@@ -294,7 +294,7 @@ JSON
         ]
       },
       "test": {
-        "type": "[TESTTYPE NAME]",
+        "type": "[TEST-TYPE-NAME]",
         "parameters": [
           {
             "parameter": {

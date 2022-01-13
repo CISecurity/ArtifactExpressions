@@ -194,10 +194,10 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
 
   <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
     <xccdf:check-content>
-      <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION_NUMBER]">
+      <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
         <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-        <ae:title>[RECOMMENDATION TITLE]</ae:title>
-        <ae:artifact type="[ARTIFACTTYPE NAME]">
+        <ae:title>[ARTIFACT-TITLE]</ae:title>
+        <ae:artifact type="[ARTIFACT-TYPE-NAME]">
           <ae:parameters>
             <ae:parameter dt="string" name="path">[path.value]</ae:parameter>
             <ae:parameter dt="string" name="filename">[filename.value]</ae:parameter>
@@ -208,7 +208,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
             <ae:parameter dt="string" name="check_existence">[check_existence.value]</ae:parameter>
           </ae:parameters>
         </ae:artifact>
-        <ae:test type="[TESTTYPE NAME]">
+        <ae:test type="[TEST-TYPE-NAME]">
           <ae:parameters>
             <ae:parameter dt="string" name="value">[value.value]</ae:parameter>
             <ae:parameter dt="string" name="datatype">[datatype.value]</ae:parameter>
@@ -254,7 +254,7 @@ Test
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM-ID]" 
     check="[check.value]" 
     check_existence="[check_existence.value]" 
-    comment="[RECOMMENDATION TITLE]" 
+    comment="[ARTIFACT-TITLE]" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]" 
     version="1">
     <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
@@ -267,7 +267,7 @@ Object
 
   <xmlfilecontent_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM-ID]" 
-    comment="[RECOMMENDATION TITLE]" 
+    comment="[ARTIFACT-TITLE]" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" 
     version="1">
     <path var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
@@ -290,7 +290,7 @@ State
   <xmlfilecontent_state 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM-ID]" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" 
-    comment="[RECOMMENDATION TITLE]" 
+    comment="[ARTIFACT-TITLE]" 
     version=|"[version.value]">
     <subexpression 
       operation="[operation.value]"
@@ -304,9 +304,9 @@ YAML
 
   artifact-expression:
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
-    artifact-title: "[RECOMMENDATION TITLE]"
+    artifact-title: "[ARTIFACT-TITLE]"
     artifact:
-      type: "[ARTIFACTTYPE NAME]"
+      type: "[ARTIFACT-TYPE-NAME]"
       parameters:
         - parameter:
             name: "path"
@@ -337,7 +337,7 @@ YAML
             dt: "string"
             value: "[check_existence.value]"
     test:
-      type: "[TESTTYPE NAME]"
+      type: "[TEST-TYPE-NAME]"
       parameters:   
         - parameter:
             name: "value"
@@ -356,9 +356,9 @@ JSON
   {
     "artifact-expression": {
       "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
-      "artifact-title": "[RECOMMENDATION TITLE]",
+      "artifact-title": "[ARTIFACT-TITLE]",
       "artifact": {
-        "type": "[ARTIFACTTYPE NAME]",
+        "type": "[ARTIFACT-TYPE-NAME]",
         "parameters": [
           {
             "parameter": {
@@ -412,7 +412,7 @@ JSON
         ]
       },
       "test": {
-        "type": "[TESTTYPE NAME]",
+        "type": "[TEST-TYPE-NAME]",
         "parameters": [
           {
             "parameter": {
@@ -537,9 +537,9 @@ YAML
 
   artifact-expression:
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
-    artifact-title: "[RECOMMENDATION TITLE]"
+    artifact-title: "[ARTIFACT-TITLE]"
     artifact:
-      type: "[ARTIFACTTYPE NAME]"
+      type: "[ARTIFACT-TYPE-NAME]"
       parameters:
         - parameter:
             name: "path"
@@ -585,9 +585,9 @@ JSON
   {
     "artifact-expression": {
       "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
-      "artifact-title": "[RECOMMENDATION TITLE]",
+      "artifact-title": "[ARTIFACT-TITLE]",
       "artifact": {
-        "type": "[ARTIFACTTYPE NAME]",
+        "type": "[ARTIFACT-TYPE-NAME]",
         "parameters": [
            {
             "parameter": {
@@ -669,10 +669,10 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
 
   <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
     <xccdf:check-content>
-      <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION_NUMBER]">
+      <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
         <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-        <ae:title>[RECOMMENDATION TITLE]</ae:title>
-        <ae:artifact type="[ARTIFACTTYPE NAME]">
+        <ae:title>[ARTIFACT-TITLE]</ae:title>
+        <ae:artifact type="[ARTIFACT-TYPE-NAME]">
           <ae:parameters>
             <ae:parameter dt="string" name="path">[path.value]</ae:parameter>
             <ae:parameter dt="string" name="filename">[filename.value]</ae:parameter>
@@ -683,7 +683,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
             <ae:parameter dt="string" name="check_existence">[check_existence.value]</ae:parameter>
           </ae:parameters>
         </ae:artifact>
-        <ae:test type="[TESTTYPE NAME]">
+        <ae:test type="[TEST-TYPE-NAME]">
           <ae:parameters>
             <ae:parameter dt="string" name="xpath">[xpath.value]</ae:parameter>
             <ae:parameter dt="string" name="filepath">[filepath.value]</ae:parameter>
@@ -733,7 +733,7 @@ Test
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM-ID]" 
     check="[check.value]" 
     check_existence="[check_existence.value]" 
-    comment="[RECOMMENDATION TITLE]" 
+    comment="[ARTIFACT-TITLE]" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]" 
     version="1">
     <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
@@ -746,7 +746,7 @@ Object
 
   <xmlfilecontent_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM-ID]" 
-    comment="[RECOMMENDATION TITLE]"
+    comment="[ARTIFACT-TITLE]"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" 
     version="1">
     <path var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
@@ -760,7 +760,7 @@ State
 
   <xmlfilecontent_state 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM-ID]" 
-    comment="[RECOMMENDATION TITLE]" 
+    comment="[ARTIFACT-TITLE]" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" 
     version="1">
     <value_of 
@@ -773,7 +773,7 @@ Variable
 ::
 
   <external_variable 
-    comment="[RECOMMENDATION TITLE]" 
+    comment="[ARTIFACT-TITLE]" 
     datatype="[data_type.value]" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" 
     version="[version.value]" />  
@@ -785,9 +785,9 @@ YAML
 
   artifact-expression:
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
-    artifact-title: "[RECOMMENDATION TITLE]"
+    artifact-title: "[ARTIFACT-TITLE]"
     artifact:
-      type: "[ARTIFACTTYPE NAME]"
+      type: "[ARTIFACT-TYPE-NAME]"
       parameters:
         - parameter:
             name: "path"
@@ -818,7 +818,7 @@ YAML
             dt: "string"
             value: "[check_existence.value]"
     test:
-      type: "[TESTTYPE NAME]"
+      type: "[TEST-TYPE-NAME]"
       parameters:   
         - parameter:
             name: "xpath"
@@ -853,9 +853,9 @@ JSON
   {
     "artifact-expression": {
       "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
-      "artifact-title": "[RECOMMENDATION TITLE]",
+      "artifact-title": "[ARTIFACT-TITLE]",
       "artifact": {
-        "type": "[ARTIFACTTYPE NAME]",
+        "type": "[ARTIFACT-TYPE-NAME]",
         "parameters": [       
           {
             "parameter": {
@@ -909,7 +909,7 @@ JSON
         ]
       },
       "test": {
-        "type": "[TESTTYPE NAME]",
+        "type": "[TEST-TYPE-NAME]",
         "parameters": [
           {
             "parameter": {

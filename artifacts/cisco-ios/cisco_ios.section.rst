@@ -142,7 +142,7 @@ For ``cisco_ios.section cisco_ios.section_existence_test`` artifacts, the xccdf:
   </check>
 
 OVAL
-""""
+""
 
 Test
 
@@ -304,7 +304,7 @@ For ``cisco_ios.section cisco_ios.section_config_line`` artifacts, the xccdf:che
   </check>
 
 OVAL
-""""
+""
 
 Test
 

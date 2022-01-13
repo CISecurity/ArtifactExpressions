@@ -311,7 +311,7 @@ YAML
         - parameter:
             name: "uread"
             dt: "string"
-            value: [uread.value]
+            value: "[uread.value]
         - parameter:
             name: "uwrite"
             dt: "string"
@@ -659,7 +659,7 @@ YAML
         - parameter:
             name: "uid"
             dt: "int"
-            value: [uid.value]
+            value: "[uid.value]
         - parameter:
             name: "gid"
             dt: "int"

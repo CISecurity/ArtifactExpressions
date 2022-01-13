@@ -48,15 +48,15 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
 
   <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
     <xccdf:check-content>
-      <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION_NUMBER]">
+      <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
         <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-        <ae:title>[RECOMMENDATION TITLE]</ae:title>
-        <ae:artifact type="[ARTIFACTTYPE NAME]">
+        <ae:title>[ARTIFACT-TITLE]</ae:title>
+        <ae:artifact type="[ARTIFACT-TYPE-NAME]">
           <ae:parameters>
             <ae:parameter dt="string" name="unknown">[unknown.value]</ae:parameter>
           </ae:parameters>
         </ae:artifact>
-        <ae:test type="[TESTTYPE NAME]">
+        <ae:test type="[TEST-TYPE-NAME]">
           <ae:parameters>
             <ae:parameter dt="string" name="unknown">[unknown.value]</ae:parameter>
           </ae:parameters>
@@ -93,7 +93,7 @@ Test
     id='oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]'
     check_existence='[check_existence.value]' 
     check='[check.value]' 
-    comment='[RECOMMENDATION TITLE]'
+    comment='[ARTIFACT-TITLE]'
     version='[version.value]'/>
 
 Object
@@ -114,22 +114,22 @@ YAML
 ::
 
   artifact-expression:
-    artifact-unique-id: [ARTIFACT-OVAL-ID]
-    artifact-title: [RECOMMENDATION TITLE]
+    artifact-unique-id: "[ARTIFACT-OVAL-ID]"
+    artifact-title: "[ARTIFACT-TITLE]"
     artifact:
-      type: [ARTIFACTTYPE NAME]
+      type: "[ARTIFACT-TYPE-NAME]"
       parameters:
       - parameter: 
           name: unknown
-          type: string
-          value: [unknown.value]
+          dt: "string"
+          value: "[unknown.value]
     test:
-      type: [TESTTYPE NAME]
+      type: "[TEST-TYPE-NAME]"
       parameters:   
       - parameter: 
           name: unknown
-          type: string
-          value: [unknown.value]
+          dt: "string"
+          value: "[unknown.value]
 
 JSON
 ^^^^

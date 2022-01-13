@@ -199,15 +199,15 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
    <xccdf:complex-check operator="AND">
        <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
            <xccdf:check-content>
-               <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION_NUMBER]">
+               <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
                    <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-                   <ae:title>[RECOMMENDATION TITLE]</ae:title>
-                   <ae:artifact type="[ARTIFACTTYPE NAME]">
+                   <ae:title>[ARTIFACT-TITLE]</ae:title>
+                   <ae:artifact type="[ARTIFACT-TYPE-NAME]">
                        <ae:parameters>
                            <ae:parameter dt="string" name="lockoutsetting">[lockoutsetting.value]</ae:parameter>
                        </ae:parameters>
                    </ae:artifact>
-                   <ae:test type="[TESTTYPE NAME]">
+                   <ae:test type="[TEST-TYPE-NAME]">
                        <ae:parameters>
                            <ae:parameter dt="string" name="value">[value.value]</ae:parameter>
                            <ae:parameter dt="string" name="data_type">[data_type.data_type]</ae:parameter>
@@ -241,8 +241,8 @@ generated:
 
    <Value id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" 
           operator="test_type" type="data_type.value">
-     <title>[RECOMMENDATION TITLE]</title>
-     <description>This value is used in Rule: [RECOMMENDATION TITLE]</description>
+     <title>[ARTIFACT-TITLE]</title>
+     <description>This value is used in Rule: [ARTIFACT-TITLE]</description>
      <value>[value.value]</value>
    </Value>
 
@@ -256,7 +256,7 @@ Test
        <lockoutpolicy_test xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#windows"
                id="oval:org.cisecurity.benchmarks.windows_server_2012_r2:tst:[ARTIFACT-OVAL-ID]"
                check_existence="at_least_one_exists" check="all"
-               comment="[RECOMMENDATION TITLE]"
+               comment="[ARTIFACT-TITLE]"
                version="1">
                <object object_ref="oval:org.cisecurity.benchmarks.windows_server_2012_r2:obj:[ARTIFACT-OVAL-ID]"/>
                <state state_ref="oval:org.cisecurity.benchmarks.windows_server_2012_r2:ste:[ARTIFACT-OVAL-ID]"/>
@@ -268,7 +268,7 @@ Object
 
       <lockoutpolicy_object xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#windows"
                id="oval:org.cisecurity.benchmarks.windows_server_2012_r2:obj:[ARTIFACT-OVAL-ID]"
-               comment="[RECOMMENDATION TITLE]"
+               comment="[ARTIFACT-TITLE]"
        version="[version.value]"/>
        
 
@@ -278,7 +278,7 @@ State
 
        <lockoutpolicy_state xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#windows"
                id="oval:org.cisecurity.benchmarks.windows_server_2012_r2:ste:[ARTIFACT-OVAL-ID]"
-               comment="[RECOMMENDATION TITLE]"
+               comment="[ARTIFACT-TITLE]"
                version="1">
                <[lockoutsetting.value] operation="[test_type]" datatype="[data_type.value]"
                    var_ref="oval:org.cisecurity.benchmarks.windows_server_2012_r2:var:[ARTIFACT-OVAL-ID]"/>
@@ -289,7 +289,7 @@ Variable
 
 ::
 
-   <external_variable comment="This value is used in [RECOMMENDATION TITLE]" 
+   <external_variable comment="This value is used in [ARTIFACT-TITLE]" 
                      datatype="[data_type.value]" 
                            id="oval:org.cisecurity.benchmarks.PLATFORM:var:[ARTIFACT-OVAL-ID]" 
                       version="[version.value]"/>
@@ -300,26 +300,26 @@ YAML
 ::
 
   - artifact-expression:
-       artifact-unique-id: [ARTIFACT-OVAL-ID]
-       artifact-title: [RECOMMENDATION TITLE]
+       artifact-unique-id: "[ARTIFACT-OVAL-ID]"
+       artifact-title: "[ARTIFACT-TITLE]"
        artifact:
-         type: [ARTIFACTTYPE NAME]
+         type: "[ARTIFACT-TYPE-NAME]"
          parameters:
          - parameter: 
              name: lockoutsetting
-             type: string
-             value: [lockoutsetting.value]
+             dt: "string"
+             value: "[lockoutsetting.value]
        test:
-         type: [TESTTYPE NAME]
+         type: "[TEST-TYPE-NAME]"
          parameters:
          - parameter:
              name: value
-             type: string
-             value: [value.value]
+             dt: "string"
+             value: "[value.value]
          - parameter: 
              name: data_type
-             type: string
-             value: [data_type.value]
+             dt: "string"
+             value: "[data_type.value]
 
 JSON
 ^^^^
@@ -327,10 +327,10 @@ JSON
 ::
 
    "artifact-expression": {
-     "artifact-unique-id": [ARTIFACT-OVAL-ID],
-     "artifact-title": [RECOMMENDATION TITLE],
+     "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
+     "artifact-title": "[ARTIFACT-TITLE]",
      "artifact": {
-       "type": "[ARTIFACTTYPE NAME]",
+       "type": "[ARTIFACT-TYPE-NAME]",
        "parameters": [
          {
            "parameter": {
@@ -342,7 +342,7 @@ JSON
        ]
      },
      "test": {
-       "type": "[TESTTYPE NAME]",
+       "type": "[TEST-TYPE-NAME]",
        "parameters": [
          {
            "parameter": {

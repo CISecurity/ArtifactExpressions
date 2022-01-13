@@ -53,16 +53,16 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
 
    <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
        <xccdf:check-content>
-           <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION_NUMBER]">
+           <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
                <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-               <ae:title>[RECOMMENDATION TITLE]</ae:title>
-               <ae:artifact type="[ARTIFACTTYPE NAME]">
+               <ae:title>[ARTIFACT-TITLE]</ae:title>
+               <ae:artifact type="[ARTIFACT-TYPE-NAME]">
                    <ae:parameters>
                        <ae:parameter dt="string" name="sql">[sql.value]</ae:parameter>
                        <ae:parameter dt="string" name="sysdbs">[sysdbs.value]</ae:parameter>
                    </ae:parameters>
                </ae:artifact>
-               <ae:test type="[TESTTYPE NAME]">
+               <ae:test type="[TEST-TYPE-NAME]">
                    <ae:parameters/>
                </ae:test>
            </ae:artifact_expression>
@@ -123,21 +123,21 @@ YAML
 ::
 
   artifact-expression:
-    artifact-unique-id: [ARTIFACT-OVAL-ID]
-    artifact-title: [RECOMMENDATION TITLE]
+    artifact-unique-id: "[ARTIFACT-OVAL-ID]"
+    artifact-title: "[ARTIFACT-TITLE]"
     artifact:
-      type: [ARTIFACTTYPE NAME]
+      type: "[ARTIFACT-TYPE-NAME]"
       parameters:
       - parameter: 
           name: sql
           dt: string
-          value: [sql.value]
+          value: "[sql.value]"
       - parameter: 
           name: sysdbs
           dt: string
-          value: [sysdbs.value]
+          value: "[sysdbs.value]
     test:
-      type: [TESTTYPE NAME]
+      type: "[TEST-TYPE-NAME]"
       parameters: []   
 
 JSON

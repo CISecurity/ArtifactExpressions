@@ -64,7 +64,7 @@ Artifact Parameters
 | - SE_DENY_REMOTE_INTERACTIVE_LOGON_NAME - SE_DENY_SERVICE_LOGON_NAME
 | - SE_INTERACTIVE_LOGON_NAME - SE_NETWORK_LOGON_NAME -
   SE_REMOTE_INTERACTIVE_LOGON_NAME
-| - SE_SERVICE_LOGON_NAME - "" (empty string)
+| - SE_SERVICE_LOGON_NAME - " (empty string)
 
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
@@ -181,7 +181,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
                                >at_least_one_exists</ae:parameter>
                        </ae:parameters>
                    </ae:artifact>
-                   <ae:test type="[Testtype Name]">
+                   <ae:test type="[TEST-TYPE-NAME]">
                        <ae:parameters>
                            <ae:parameter dt="string" name="check">all</ae:parameter>
                            <ae:parameter dt="string" name="operation">[TestType.value]</ae:parameter>
@@ -231,7 +231,7 @@ State
 
    <userright_state xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#windows"
                id="oval:org.cisecurity.benchmarks.windows_8.1:ste:ARTIFACT-OVAL-ID"
-               comment="[RECOMMENDATION TITLE]"
+               comment="[ARTIFACT-TITLE]"
                version="1">
                <userright>[ARTIFACT_PARAMETER_NAME]</userright>
                <trustee_name operation="[TEST_TYPE_NAME]" datatype="string">[PARAMETER_VALUE]</trustee_name>
@@ -243,26 +243,26 @@ YAML
 ::
 
   - artifact-expression:
-       artifact-unique-id: [ARTIFACT-OVAL-ID]
-       artifact-title: [RECOMMENDATION TITLE]
+       artifact-unique-id: "[ARTIFACT-OVAL-ID]"
+       artifact-title: "[ARTIFACT-TITLE]"
        artifact:
          type: windows.userright_v2
          parameters:
          - parameter: 
              name: [PARAMETER_NAME]
-             type: string
-             value: [ARTIFACT TYPE PARAMETER VALUE]
+             dt: "string"
+             value: "[ARTIFACT TYPE PARAMETER VALUE]
        test:
-         type: [TestType Name]
+         type: "[TEST-TYPE-NAME]"
          parameters:
          - parameter:
              name: value
-             type: string
-             value: [TestType.value.value]
+             dt: "string"
+             value: "[value.value]"
          - parameter: 
              name: data_type
-             type: string
-             value: [TestType.data_type.value]
+             dt: "string"
+             value: "[TestType.data_type.value]
 
 JSON
 ^^^^
@@ -270,8 +270,8 @@ JSON
 ::
 
    "artifact-expression": {
-     "artifact-unique-id": [ARTIFACT-OVAL-ID],
-     "artifact-title": [RECOMMENDATION TITLE],
+     "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
+     "artifact-title": "[ARTIFACT-TITLE]",
      "artifact": {
        "type": "windows.userright_v2",
        "parameters": [
@@ -279,26 +279,26 @@ JSON
            "parameter": {
              "name": "[PARAMETER_NAME]",
              "type": "string",
-             "value": [ARTIFACT TYPE PARAMETER VALUE]
+             "value": "[ARTIFACT TYPE PARAMETER VALUE]"
            }
          }
        ]
      },
      "test": {
-       "type": [TestType Name],
+       "type": "[TEST-TYPE-NAME]",
        "parameters": [
          {
            "parameter": {
              "name": "value",
              "type": "string",
-             "value": [TestType.value.value]
+             "value": "[value.value]"
            }
          },
          {
            "parameter": {
              "name": "data_type",
              "type": "string",
-             "value": [TestType.data_type.value]
+             "value": "[data_type.value]"
            }
          }
        ]

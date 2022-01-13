@@ -233,74 +233,74 @@ YAML
 ::
 
   - artifact-expression:
-       artifact-unique-id: [ARTIFACT-OVAL-ID]
-       artifact-title: [RECOMMENDATION TITLE]
+       artifact-unique-id: "[ARTIFACT-OVAL-ID]"
+       artifact-title: "[ARTIFACT-TITLE]"
        artifact:
          type: windows.user_registry_value_v1
          parameters:
          - parameter: 
              name: hive
-             type: string
-             value: [ARTIFACT TYPE PARAMETER VALUE]
+             dt: "string"
+             value: "[ARTIFACT TYPE PARAMETER VALUE]
          - parameter: 
                name: key_operator
-               type: string
-               value: [ARTIFACT TYPE PARAMETER VALUE]
+               dt: "string"
+               value: "[ARTIFACT TYPE PARAMETER VALUE]
            - parameter: 
                 name: key
-                type: string
-                value: [ARTIFACT TYPE PARAMETER VALUE]
+                dt: "string"
+                value: "[ARTIFACT TYPE PARAMETER VALUE]
            - parameter: 
                   name: name
-                  type: string
-                  value: [ARTIFACT TYPE PARAMETER VALUE]
+                  dt: "string"
+                  value: "[ARTIFACT TYPE PARAMETER VALUE]
            - parameter: 
                 name: check_existence
-                type: string
-                value: [ARTIFACT TYPE PARAMETER VALUE]
+                dt: "string"
+                value: "[ARTIFACT TYPE PARAMETER VALUE]
             - parameter: 
                   name: registry_view
-                  type: string
-                  value: [ARTIFACT TYPE PARAMETER VALUE]
+                  dt: "string"
+                  value: "[ARTIFACT TYPE PARAMETER VALUE]
             - parameter: 
                    name: registry_data_type
-                   type: string
-                   value: [ARTIFACT TYPE PARAMETER VALUE]
+                   dt: "string"
+                   value: "[ARTIFACT TYPE PARAMETER VALUE]
            - parameter: 
                  name: name_operation
-                 type: string
-                 value: [ARTIFACT TYPE PARAMETER VALUE]
+                 dt: "string"
+                 value: "[ARTIFACT TYPE PARAMETER VALUE]
    test:
-     type: [TestType Name]
+     type: "[TEST-TYPE-NAME]"
      parameters:
        - parameter:
           name: existence_check
-          type: string
-          value: [existence_check.value]
+          dt: "string"
+          value: "[existence_check.value]
        - parameter:
           name: check
-          type: string
-          value: [TestType.check.value]
+          dt: "string"
+          value: "[TestType.check.value]
        - parameter:
            name: registry_type
-           type: string
-           value: [TestType.registry_type.value]
+           dt: "string"
+           value: "[TestType.registry_type.value]
        - parameter:
            name: registry_type_operator
-           type: string
-           value: [TestType.registry_type_operator.value]
+           dt: "string"
+           value: "[TestType.registry_type_operator.value]
        - parameter:
            name: registry_value
-           type: string
-           value: [TestType.registry_value.value]
+           dt: "string"
+           value: "[TestType.registry_value.value]
        - parameter:
            name: registry_value_datatype
-           type: string
-           value: [TestType.registry_value_datatype.value]
+           dt: "string"
+           value: "[TestType.registry_value_datatype.value]
        - parameter:
            name: registry_value_operator
-           type: string
-           value: [TestType.registry_value_operator.value]
+           dt: "string"
+           value: "[TestType.registry_value_operator.value]
                                                  
 
 JSON

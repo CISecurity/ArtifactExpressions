@@ -544,7 +544,7 @@ YAML
         - parameter: 
             name: "pid_operation"
             dt: "string"
-            value: ["pid_operation.value]"
+            value: "[pid_operation.value]"
         - parameter: 
             name: "ppid"
             dt: "string"
