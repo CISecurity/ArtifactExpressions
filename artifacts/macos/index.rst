@@ -17,3 +17,4 @@ MacOS
    macos.softwareupdate_v1 <macos.softwareupdate_v1>
    macos.systemprofiler_v1 <macos.systemprofiler_v1>
    macos.systemsetup_v1 <macos.systemsetup_v1>
+   macos.inetlisteningserver510_v1 <macos.inetlisteningserver510_v1>
