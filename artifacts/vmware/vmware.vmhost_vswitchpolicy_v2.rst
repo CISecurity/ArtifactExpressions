@@ -80,7 +80,7 @@ Test Type Parameters
 +-------------------------------------+---------+----------------------------+
 | operation                           | string  | Comparison operation.      |
 +-------------------------------------+---------+----------------------------+
-| datatype                            | string  | Datatype.                  |
+| datatype                            | string  | Data type.                 |
 +-------------------------------------+---------+----------------------------+
 | policy_name                         | string  | The vSwitch policy         |
 |                                     |         | attribute to test.         |

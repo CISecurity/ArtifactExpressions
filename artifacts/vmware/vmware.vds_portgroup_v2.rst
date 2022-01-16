@@ -82,7 +82,7 @@ Test Type Parameters
 +---------------------------------------+---------+--------------------------+
 | operation                             | string  | Comparison operation.    |
 +---------------------------------------+---------+--------------------------+
-| datatype                              | string  | Datatype.                |
+| datatype                              | string  | Data type.               |
 +---------------------------------------+---------+--------------------------+
 | collector_ip_address                  | string  | Authorized collector IP  |
 |                                       |         | Address to which Virtual |
@@ -132,7 +132,7 @@ NOTE: The ``datatype`` parameter is governed by a constraint allowing only the f
 +---------------------------------------+---------+--------------------------+
 | operation                             | string  | Comparison operation.    |
 +---------------------------------------+---------+--------------------------+
-| datatype                              | string  | Datatype.                |
+| datatype                              | string  | Data type.               |
 +---------------------------------------+---------+--------------------------+
 | collector_port                        | string  | Authorized collector     |
 |                                       |         | Port to which Virtual    |
@@ -182,7 +182,7 @@ NOTE: The ``datatype`` parameter is governed by a constraint allowing only the f
 +---------------------------------------+---------+--------------------------+
 | operation                             | string  | Comparison operation.    |
 +---------------------------------------+---------+--------------------------+
-| datatype                              | string  | Datatype.                |
+| datatype                              | string  | Data type.               |
 +---------------------------------------+---------+--------------------------+
 | override_port_policies_enabled        | boolean | Port-level configuration |
 |                                       |         | overrides enabled?       |

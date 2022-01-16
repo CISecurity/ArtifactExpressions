@@ -80,7 +80,7 @@ Test Type Parameters
 +-------------------------------------+---------+----------------------------+
 | operation                           | string  | Comparison operation.      |
 +-------------------------------------+---------+----------------------------+
-| datatype                            | string  | Datatype.                  |
+| datatype                            | string  | Data type.                 |
 +-------------------------------------+---------+----------------------------+
 | shell_access_enabled_operator       | string  | The test to perform on the |
 |                                     |         | Shell Access Enabled       |

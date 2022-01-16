@@ -74,7 +74,7 @@ Test Type Parameters
 +---------------------------------------+---------+--------------------------+
 | operation                             | string  | Comparison operation.    |
 +---------------------------------------+---------+--------------------------+
-| datatype                              | string  | Datatype.                |
+| datatype                              | string  | Data type.               |
 +---------------------------------------+---------+--------------------------+
 | teaming_failover_health_check_enabled | boolean | Teaming and Failover     |
 |                                       |         | Health Check enabled?    |
@@ -121,7 +121,7 @@ NOTE: The ``datatype`` parameter is governed by a constraint allowing only the f
 +---------------------------------------+---------+--------------------------+
 | operation                             | string  | Comparison operation.    |
 +---------------------------------------+---------+--------------------------+
-| datatype                              | string  | Datatype.                |
+| datatype                              | string  | Data type.               |
 +---------------------------------------+---------+--------------------------+
 | vlan_mtu_health_check_enabled         | boolean | VLAN and MTU Health      |
 |                                       |         | Check enabled?           |

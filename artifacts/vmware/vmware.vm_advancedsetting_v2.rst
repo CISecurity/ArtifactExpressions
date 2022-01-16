@@ -82,7 +82,7 @@ Test Type Parameters
 +-------------------------------------+---------+----------------------------+
 | operation                           | string  | Comparison operation.      |
 +-------------------------------------+---------+----------------------------+
-| datatype                            | string  | Datatype.                  |
+| datatype                            | string  | Data type.                 |
 +-------------------------------------+---------+----------------------------+
 | advanced_setting_value              | integer | The advanced_setting_value |
 |                                     |         | element details the value  |

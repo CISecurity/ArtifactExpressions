@@ -202,19 +202,19 @@ Test Type Parameters
 
 :emphasis:`NOTE: The following _operation parameters:`
   +-------------------------------------+------------------------------------+
-  | ``cmd_operation``                  | ``exec_time_operation``           |
+  | ``cmd_operation``                   | ``exec_time_operation``            |
   +-------------------------------------+------------------------------------+
-  | ``pid_operation``                  | ``priority_operation``            |
+  | ``pid_operation``                   | ``priority_operation``             |
   +-------------------------------------+------------------------------------+       
-  | ``ruid_operation``                 | ``scheduling_class_operation``    |
+  | ``ruid_operation``                  | ``scheduling_class_operation``     |
   +-------------------------------------+------------------------------------+
-  | ``start_time_operation``           | ``tty_operation``                 |
+  | ``start_time_operation``            | ``tty_operation``                  |
   +-------------------------------------+------------------------------------+
-  | ``user_id_operation``              | ``exec_shield_operation``         |
+  | ``user_id_operation``               | ``exec_shield_operation``          |
   +-------------------------------------+------------------------------------+
-  | ``loginuid_operation``             | ``posix_capability_operation``    |
+  | ``loginuid_operation``              | ``posix_capability_operation``     |
   +-------------------------------------+------------------------------------+
-  | ``selinux_domain_label_operation`` | ``session_id_operation``          |
+  | ``selinux_domain_label_operation``  | ``session_id_operation``           |
   +-------------------------------------+------------------------------------+
   
   are governed by a constraint allowing only the following values: 
@@ -237,7 +237,7 @@ Test Type Parameters
 
 :emphasis:`NOTE: The following ID parameters:`
   +-------------+--------------+----------------+
-  | ``pid``    | ``ppid``    | ``ruid``      |
+  | ``pid``     | ``ppid``     | ``ruid``       |
   +-------------+--------------+----------------+
   | ``user_id`` | ``loginuid`` | ``session_id`` |
   +-------------+--------------+----------------+

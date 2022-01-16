@@ -74,7 +74,7 @@ Test Type Parameters
 +-------------------------------------+---------+----------------------------+
 | operation                           | string  | Comparison operation.      |
 +-------------------------------------+---------+----------------------------+
-| datatype                            | string  | Datatype.                  |
+| datatype                            | string  | Data type.                 |
 +-------------------------------------+---------+----------------------------+
 | certificate_is_valid                | boolean | Whether or not the ESXi    |
 |                                     |         | host certificate is valid. |

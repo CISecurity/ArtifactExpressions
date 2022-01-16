@@ -44,7 +44,7 @@ Name            Type   Description
 existence_check string Number of sections expected to be collected.
 =============== ====== ============================================
 
-NOTE: The ``existence_check``  parameter is governed by a constraint allowing only the following values:
+NOTE: The ``existence_check`` parameter is governed by a constraint allowing only the following values:
   - all_exist
   - any_exist
   - at_least_one_exists
@@ -82,7 +82,7 @@ NOTE: The ``operation`` parameter is governed by a constraint allowing only the 
   - subset of
   - superset of
 
-NOTE: The ``entity_check``  parameter is governed by a constraint allowing only the following values:
+NOTE: The ``entity_check`` parameter is governed by a constraint allowing only the following values:
   - all_exist
   - any_exist
   - at_least_one_exists

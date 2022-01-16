@@ -80,15 +80,15 @@ Test Type Parameters
 +-------------------------------------+---------+----------------------------+
 | operation                           | string  | Comparison operation.      |
 +-------------------------------------+---------+----------------------------+
-| datatype                            | string  | Datatype.                  |
+| datatype                            | string  | Data type.                 |
 +-------------------------------------+---------+----------------------------+
 | allowed_hosts_all_ip                | boolean | Allowed Hosts All IP?      |
 +-------------------------------------+---------+----------------------------+
-| exception_enabled_datatype          | string  | Datatype.                  |
+| exception_enabled_datatype          | string  | Data type.                 |
 +-------------------------------------+---------+----------------------------+
 | exception_enabled                   | boolean | Exception Enabled?         |
 +-------------------------------------+---------+----------------------------+
-| service_running_datatype            | string  | Datatype.                  |
+| service_running_datatype            | string  | Data type.                 |
 +-------------------------------------+---------+----------------------------+
 | service_running                     | boolean | Service Running?           |
 +-------------------------------------+---------+----------------------------+

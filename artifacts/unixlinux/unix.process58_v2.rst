@@ -92,7 +92,7 @@ Test Type Parameters
 +-----------------------------+---------+------------------------------------+
 | operation                   | string  | Comparison operation.              |
 +-----------------------------+---------+------------------------------------+
-| datatype                    | string  | The data type of the value.        |
+| datatype                    | string  | Data type.                         |
 +-----------------------------+---------+------------------------------------+
 | command_line                | string  | The string used to start the       |
 |                             |         | process. This includes any         |

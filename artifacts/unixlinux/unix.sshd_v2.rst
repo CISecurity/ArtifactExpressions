@@ -61,7 +61,7 @@ Test Type Parameters
 | value                       | string  | The value(s) associated with the   |
 |                             |         | specified sshd parameter.          |
 +-----------------------------+---------+------------------------------------+
-| datatype                    | string  | The data type of the value.        |
+| datatype                    | string  | Data type.                         |
 +-----------------------------+---------+------------------------------------+
 
 NOTE: The ``check_existence`` parameter is governed by a constraint allowing only the following values:

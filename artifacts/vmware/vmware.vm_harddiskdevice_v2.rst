@@ -103,7 +103,7 @@ vmware.vm_harddiskdevice_v2
 +-------------------------------------+---------+----------------------------+
 | operation                           | string  | Comparison operation.      |
 +-------------------------------------+---------+----------------------------+
-| datatype                            | string  | Datatype.                  |
+| datatype                            | string  | Data type.                 |
 +-------------------------------------+---------+----------------------------+
 | persistence                         | string  | The persistence policy     |
 |                                     |         | (Persistent,               |

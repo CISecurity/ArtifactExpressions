@@ -47,7 +47,7 @@ Test Type Parameters
 |                             |         | configuration section.             |
 +-----------------------------+---------+------------------------------------+
 
-NOTE: The ``entity_check``  parameter is governed by a constraint allowing only the following values:
+NOTE: The ``entity_check`` parameter is governed by a constraint allowing only the following values:
   - all_exist
   - any_exist
   - at_least_one_exists

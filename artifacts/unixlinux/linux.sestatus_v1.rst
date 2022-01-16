@@ -48,7 +48,7 @@ Test Type Parameters
 +-----------------------------+---------+------------------------------------+
 | operation                   | string  | Comparison operation.              |
 +-----------------------------+---------+------------------------------------+
-| datatype                    | string  | The data type of the value.        |
+| datatype                    | string  | Data type.                         |
 +-----------------------------+---------+------------------------------------+
 | current_mode                | string  | Indicates if SELinux is currently  |
 |                             |         | enforcing or not utilizing the     |
