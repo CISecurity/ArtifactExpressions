@@ -572,7 +572,7 @@ YAML
     test:
       type: "[TESTYPE-NAME]"
       parameters:
-      - parameter:
+        - parameter:
           name: "value"
           dt: "string"
           value: "[value.value]"
@@ -769,14 +769,14 @@ State
   </xmlfilecontent_state>
 
 Variable
-        
+
 ::
 
   <external_variable 
     comment="[ARTIFACT-TITLE]" 
     datatype="[data_type.value]" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" 
-    version="[version.value]" />  
+    version="1" />  
 
 YAML
 ^^^^

@@ -615,7 +615,7 @@ YAML
         - parameter: 
             name: field_operation
             dt: "string"
-            value: field_operation.value]
+            value: field_operation.value]"
 
 JSON
 ^^^^

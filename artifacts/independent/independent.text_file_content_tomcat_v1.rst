@@ -1233,7 +1233,7 @@ State
     <oexec datatype="boolean">[oexec.value]</oexec>
   </file_state>
 
-External Variable
+Variable
 
 ::
 
@@ -1906,7 +1906,7 @@ State
   </file_state>
 
 Variable
-        
+
 ::
 
   <local_variable 
@@ -2313,14 +2313,14 @@ State
   </textfilecontent54_state>
 
 Variable
-        
+
 ::
 
   <external_variable 
     comment="[ARTIFACT-TITLE]" 
     datatype="[datatype.value]" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" 
-    version="[version.value]" />
+    version="1" />
 
 YAML
 ^^^^
@@ -2695,7 +2695,7 @@ State
       var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
   </textfilecontent54_state>
   
-External Variable
+Variable
 
 ::
 
@@ -2703,7 +2703,7 @@ External Variable
   comment="[ARTIFACT-TITLE]" 
   datatype="[datatype.value]" 
   id="oval:org.cisecurity.benchmarks.oracle_mysql_8:var:1777180"
-  version="[version.value]" />
+  version="1" />
 
 YAML
 ^^^^

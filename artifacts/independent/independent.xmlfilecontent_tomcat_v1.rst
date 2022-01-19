@@ -450,7 +450,7 @@ YAML
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
-      - parameter: 
+        - parameter: 
           name: base_path
           dt: "string"
           value: "[base_path.value]"
@@ -496,7 +496,7 @@ YAML
       - parameter: 
           name: value
           dt: "string"
-          value: "[value.value]
+          value: "[value.value]"
 
 JSON
 ^^^^

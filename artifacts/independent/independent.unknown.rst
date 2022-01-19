@@ -119,7 +119,7 @@ YAML
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
-      - parameter: 
+        - parameter: 
           name: unknown
           dt: "string"
           value: "[unknown.value]
@@ -129,7 +129,7 @@ YAML
       - parameter: 
           name: unknown
           dt: "string"
-          value: "[unknown.value]
+          value: "[unknown.value]"
 
 JSON
 ^^^^

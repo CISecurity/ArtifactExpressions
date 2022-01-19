@@ -102,23 +102,15 @@ the following values:
   - sqlserver
   - sybase
 
-prepend_type NOTE: This parameter is governed by a constraint allowing
-only the following values:
+NOTE: The ``prepend_type`` and ``append_type`` parameters are governed by a constraint allowing only the following values:
   - String
   - SQL
 
-append_type NOTE: This parameter is governed by a constraint allowing
-only the following values:
-  - String
-  - SQL
-
-recurse NOTE: This parameter is governed by a constraint allowing
-only the following values: 
+recurse NOTE: This parameter is governed by a constraint allowing only the following values: 
   - Yes
   - No
 
-file_system NOTE: This parameter is governed by a constraint allowing
-only the following values: 
+file_system NOTE: This parameter is governed by a constraint allowing only the following values: 
   - NA
   - local
   - all
@@ -2156,7 +2148,7 @@ State
       var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
   </textfilecontent54_state>
   
-External Variable
+Variable
 
 ::
 
@@ -2164,7 +2156,7 @@ External Variable
     comment="[ARTIFACT-TITLE]" 
     datatype="[datatype.value]" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
-    version="[version.value]" />
+    version="1" />
 
 YAML
 ^^^^
@@ -2588,7 +2580,7 @@ State
       var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
   </textfilecontent54_state>
   
-External Variable
+Variable
 
 ::
 
@@ -2596,7 +2588,7 @@ External Variable
   comment="[ARTIFACT-TITLE]" 
   datatype="[datatype.value]" 
   id="oval:org.cisecurity.benchmarks.oracle_mysql_8:var:1777180"
-  version="[version.value]" />
+  version="1" />
 
 YAML
 ^^^^

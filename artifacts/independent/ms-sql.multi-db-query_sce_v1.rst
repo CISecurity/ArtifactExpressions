@@ -128,14 +128,14 @@ YAML
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
-      - parameter: 
-          name: sql
-          dt: string
-          value: "[sql.value]"
-      - parameter: 
-          name: sysdbs
-          dt: string
-          value: "[sysdbs.value]
+        - parameter: 
+            name: sql
+            dt: string
+            value: "[sql.value]"
+        - parameter: 
+            name: sysdbs
+            dt: string
+            value: "[sysdbs.value]
     test:
       type: "[TEST-TYPE-NAME]"
       parameters: []   

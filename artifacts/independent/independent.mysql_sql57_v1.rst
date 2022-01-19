@@ -1004,7 +1004,7 @@ State
     </result>
   </sql57_state>
 
-External Variable
+Variable
 
 ::
 
@@ -1012,7 +1012,7 @@ External Variable
     comment="[RECOMMENDATION-TITLE]"
     datatype="[datatype.value]"  
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" 
-    version="[version.value]" />
+    version="1" />
 
 YAML
 ^^^^
@@ -1025,7 +1025,7 @@ YAML
     artifact:
       type: "[ARTIFACTTYPE-NAME]"
       parameters:
-      - parameter: 
+        - parameter: 
           name: "engine"
           dt: "string"
           value: "[engine.value]"
@@ -1299,7 +1299,7 @@ YAML
     artifact:
       type: "[ARTIFACTTYPE-NAME]"
       parameters:
-      - parameter:
+        - parameter:
           name: "engine"
           dt: "string"
           value: "[engine.value]"
@@ -1330,7 +1330,7 @@ YAML
     test:
       type: "[TESTTYPE-NAME]"
       parameters:
-      - parameter:
+        - parameter:
           name: "value"
           dt: "string"
           value: "[value.value]"
@@ -1570,7 +1570,7 @@ YAML
     artifact:
       type: "[ARTIFACTTYPE-NAME]"
       parameters:
-      - parameter:
+        - parameter:
           name: "engine"
           dt: "string"
           value: "[engine.value]"
@@ -1601,7 +1601,7 @@ YAML
     test:
       type: "[TESTTYPE-NAME]"
       parameters:
-      - parameter:
+        - parameter:
           name: "username"
           dt: "string"
           value: "[username.value]"
@@ -1965,7 +1965,7 @@ YAML
     artifact:
       type: "[ARTIFACTTYPE-NAME]"
       parameters:
-      - parameter:
+        - parameter:
           name: "engine"
           dt: "string"
           value: "[engine.value]"
@@ -1996,7 +1996,7 @@ YAML
     test:
       type: "[TESTTYPE-NAME]"
       parameters:
-      - parameter:
+        - parameter:
           name: "username"
           dt: "string"
           value: "[username.value]"
@@ -2362,7 +2362,7 @@ YAML
     artifact:
       type: "[ARTIFACTTYPE-NAME]"
       parameters:
-      - parameter:
+        - parameter:
           name: "engine"
           dt: "string"
           value: "[engine.value]"
@@ -2393,7 +2393,7 @@ YAML
     test:
       type: "[TESTTYPE-NAME]"
       parameters:
-      - parameter:
+        - parameter:
           name: "username"
           dt: "string"
           value: "[username.value]"

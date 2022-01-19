@@ -190,7 +190,7 @@ State
   </applicationhostconfig_state>   
 
 Variable
-        
+
 ::
 
   <external_variable 

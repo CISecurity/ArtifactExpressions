@@ -253,7 +253,7 @@ YAML
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
-      - parameter: 
+        - parameter: 
           name: non_multi_tenant_sql
           dt: string
           value: "[non_multi_tenant_sql.value]"
@@ -291,7 +291,7 @@ YAML
       - parameter: 
           name: field_operation
           dt: string
-          value: field_operation.value]
+          value: field_operation.value]"
 
 JSON
 ^^^^

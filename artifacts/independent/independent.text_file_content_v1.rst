@@ -692,7 +692,7 @@ YAML
         - parameter: 
             name: data_type
             dt: "string"
-            value: "[data_type.value]
+            value: "[data_type.value]"
 
 JSON
 ^^^^

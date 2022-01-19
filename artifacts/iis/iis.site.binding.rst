@@ -169,7 +169,7 @@ State
   </bindings_state>   
 
 Variable
-        
+
 ::
 
   <external_variable    
