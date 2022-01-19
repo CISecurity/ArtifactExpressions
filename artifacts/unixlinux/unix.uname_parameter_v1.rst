@@ -33,7 +33,7 @@ Name      Type   Description
 parameter string The uname parameter to be tested.
 ========= ====== =================================
 
-NOTE: The `` parameter`` parameter is governed by a constraint allowing only the following values: 
+NOTE: The``parameter`` parameter is governed by a constraint allowing only the following values: 
   - machine_class 
   - node_name 
   - os_name 
