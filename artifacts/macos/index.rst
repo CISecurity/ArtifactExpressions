@@ -16,7 +16,7 @@ MacOS
    macos.nvram_v1 <macos.nvram_v1>
    macos.plist511_v1 <macos.plist511_v1>
    macos.pwpolicy59_v1 <macos.pwpolicy59_v1>
-   macos.rlimit_v1 <macos.rlimit_v1>
+   macos.rlimit <macos.rlimit>
    macos.softwareupdate_v1 <macos.softwareupdate_v1>
    macos.systemprofiler_v1 <macos.systemprofiler_v1>
    macos.systemsetup_v1 <macos.systemsetup_v1>
