@@ -129,12 +129,12 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
           <ae:test type="[TEST-TYPE-NAME]">
             <ae:parameters>
               <ae:parameter dt="string" name="check">[check.value]</ae:parameter>
-              <ae:parameter dt="string" name="nvram_value_operation">equals</ae:parameter>
-              <ae:parameter dt="string" name="nvram_value_datatype">string</ae:parameter>
-              <ae:parameter dt="string" name="nvram_value">This is the value of the associated nvram variable.</ae:parameter>
-              <ae:parameter dt="string" name="nvram_var">This specifies the nvram variable to check.</ae:parameter>
-              <ae:parameter dt="string" name="nvram_var_operation">equals</ae:parameter>
-              <ae:parameter dt="string" name="nvram_var_datatype">string</ae:parameter>
+              <ae:parameter dt="string" name="nvram_value_operation">[nvram_value_operation.value]</ae:parameter>
+              <ae:parameter dt="string" name="nvram_value_datatype">[nvram_value_datatype.value]</ae:parameter>
+              <ae:parameter dt="string" name="nvram_value">[nvram_value.value]</ae:parameter>
+              <ae:parameter dt="string" name="nvram_var">[nvram_var.value]</ae:parameter>
+              <ae:parameter dt="string" name="nvram_var_operation">[nvram_var_operation.value]</ae:parameter>
+              <ae:parameter dt="string" name="nvram_var_datatype">[nvram_var_datatype.value]</ae:parameter>
             </ae:parameters>
           </ae:test>
           <ae:profiles>
