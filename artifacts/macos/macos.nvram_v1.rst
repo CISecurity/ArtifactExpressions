@@ -8,7 +8,7 @@ The macos:nvram test pulls data from the 'nvram -p' output.
 
 The nvram_object element is used by a nvram test to define the object to be evaluated. Each object extends the standard ObjectType as defined in the oval-definitions-schema and one should refer to the ObjectType description for more information. The common set element allows complex objects to be created using filters and set logic. Again, please refer to the description of the set element in the oval-definitions-schema.
 
-The nvram state element pulls data from the 'nvram -p' output.
+The nvram_state element pulls data from the 'nvram -p' output.
 
 Technical Details
 -----------------
