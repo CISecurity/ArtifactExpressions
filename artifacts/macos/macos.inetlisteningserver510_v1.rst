@@ -51,8 +51,6 @@ NOTE: The ``check_existence``  parameter is governed by a constraint allowing on
   - none_exist
   - only_one_exists
 
-
-
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 

@@ -4,11 +4,9 @@ macos:pwpolicy59
 Description
 -----------
 
-The macos:pwpolicy59 test retrieves password policy data from the 'pwpolicy
--getpolicy -u target_user [-a username] [-p userpass] [-n directory_node]'
-output where username, userpass, and directory_node are optional.
+The macos:pwpolicy59 test retrieves password policy data from the 'pwpolicy -getpolicy -u target_user [-a username] [-p userpass] [-n directory_node]' output where username, userpass, and directory_node are optional.
 
-The pwpolicy59 object element is used by a pwpolicy59_test to define the object to be evaluated.
+The pwpolicy59 object element is used by a pwpolicy59_test to define the target user, username, user password, and the directory node from which the password policy information is retrieved.
 
 The pwpolicy59 state element defines the different information that can be used to evaluate the
 password policy for the target user in the specified directory node.
@@ -21,133 +19,65 @@ Artifact Parameters
 
 **macos.pwpolicy59_v1**
 
-+-------------------------------------+-------------+------------------+
-| Name                                | Type        | Description      |
-+=====================================+=============+==================+
-| target_user                         | string      | The target_user  |
-|                                     |             | element          |
-|                                     |             | specifies the    |
-|                                     |             | user whose       |
-|                                     |             | password policy  |
-|                                     |             | information      |
-|                                     |             | should be        |
-|                                     |             | collected. If an |
-|                                     |             | operation other  |
-|                                     |             | than equals is   |
-|                                     |             | specified, the   |
-|                                     |             | users on the     |
-|                                     |             | system should be |
-|                                     |             | enumerated and   |
-|                                     |             | the 'pwpolicy'   |
-|                                     |             | command should   |
-|                                     |             | be issued for    |
-|                                     |             | each user that   |
-|                                     |             | matches the      |
-|                                     |             | target_user      |
-|                                     |             | element. If the  |
-|                                     |             | xsi:nil          |
-|                                     |             | attribute is     |
-|                                     |             | set to true,     |
-|                                     |             | the global       |
-|                                     |             | policy should be |
-|                                     |             | retrieved.       |
-+-------------------------------------+-------------+------------------+
-| username                            | string      | The username     |
-|                                     |             | element          |
-|                                     |             | specifies the    |
-|                                     |             | username of the  |
-|                                     |             | authenticator.   |
-|                                     |             | If the xsi:nil   |
-|                                     |             | attribute is set |
-|                                     |             | to true,         |
-|                                     |             | authentication   |
-|                                     |             | to the directory |
-|                                     |             | node will not be |
-|                                     |             | performed (i.e.  |
-|                                     |             | the '-a' and     |
-|                                     |             | '-p' command     |
-|                                     |             | line options     |
-|                                     |             | will not be      |
-|                                     |             | specified when   |
-|                                     |             | issuing the      |
-|                                     |             | 'pwpolicy'       |
-|                                     |             | command) and the |
-|                                     |             | xsi:nil          |
-|                                     |             | attribute of the |
-|                                     |             | userpass element |
-|                                     |             | should also be   |
-|                                     |             | set to true.     |
-|                                     |             |                  |
-+-------------------------------------+-------------+------------------+
-| userpass                            | string      | The userpass     |
-|                                     |             | element          |
-|                                     |             | specifies the    |
-|                                     |             | password of the  |
-|                                     |             | authenticator as |
-|                                     |             | specified by the |
-|                                     |             | username         |
-|                                     |             | element. If the  |
-|                                     |             | xsi:nil          |
-|                                     |             | attribute is set |
-|                                     |             | to true,         |
-|                                     |             | authentication   |
-|                                     |             | to the directory |
-|                                     |             | node will not be |
-|                                     |             | performed (i.e.  |
-|                                     |             | the '-a' and     |
-|                                     |             | '-p' command     |
-|                                     |             | line options     |
-|                                     |             | will not be      |
-|                                     |             | specified when   |
-|                                     |             | issuing the      |
-|                                     |             | 'pwpolicy'       |
-|                                     |             | command) and the |
-|                                     |             | xsi:nil          |
-|                                     |             | attribute of the |
-|                                     |             | username element |
-|                                     |             | should also be   |
-|                                     |             | set to true.     |
-+-------------------------------------+-------------+------------------+
-| directory_node                      | string      | The              |
-|                                     |             | directory_node   |
-|                                     |             | element          |
-|                                     |             | specifies the    |
-|                                     |             | directory node   |
-|                                     |             | that you would   |
-|                                     |             | like to retrieve |
-|                                     |             | the password     |
-|                                     |             | policy           |
-|                                     |             | information      |
-|                                     |             | from. If the     |
-|                                     |             | xsi:nil          |
-|                                     |             | attribute is set |
-|                                     |             | to true, the     |
-|                                     |             | default          |
-|                                     |             | directory node   |
-|                                     |             | is used (i.e the |
-|                                     |             | '-n' command     |
-|                                     |             | line option will |
-|                                     |             | will not be      |
-|                                     |             | specified when   |
-|                                     |             | issuing the      |
-|                                     |             | 'pwpolicy'       |
-|                                     |             | command).        |
-+-------------------------------------+-------------+------------------+
-| check_existence                     | string      | Defines how many |
-|                                     |             | items should be  |
-|                                     |             | collected.       |
-+-------------------------------------+-------------+------------------+
++-------------------------------+---------+----------------------------------+
+| Name                        | Type    | Description                        |
++=============================+=========+====================================+
+| target_user                   | string  | The target_user element specifies  |
+|                               |         | the user whose password policy     |
+|                               |         | information should be collected.   |
+|                               |         | If an operation other than equals  |
+|                               |         | is specified, the users on the     |
+|                               |         | system should be enumerated and    |
+|                               |         | the 'pwpolicy'command should be    |
+|                               |         | issued for each user that matches  |
+|                               |         | the target_user element. If the    |
+|                               |         | xsi:nil attribute is set to true,  |
+|                               |         | the global policy should be        |
+|                               |         | retrieved. Cannot be blank.        |
++-------------------------------+---------+----------------------------------+
+| username                      | string  | The username element specifies the |
+|                               |         | username of the authenticator. If  |
+|                               |         | the xsi:nil attribute is set to    |
+|                               |         | true, authentication to the        |
+|                               |         | directory node will not be         |
+|                               |         | performed (i.e. the '-a' and '-p'  |
+|                               |         | command line options will not be   |
+|                               |         | specified when issuing the         |
+|                               |         | 'pwpolicy' command) and the        | 
+|                               |         | xsi:nil attribute of the userpass  |
+|                               |         | element should also be set to      |
+|                               |         | true. Cannot be blank.             |
++-------------------------------+---------+----------------------------------+
+| userpass                      | string  | The userpass element specifies the |
+|                               |         | password of the authenticator as   |
+|                               |         | specified by the username element. |
+|                               |         | If the xsi:nil attribute is set to |
+|                               |         | true, authentication to the        |
+|                               |         | directory node will not be         |
+|                               |         | performed (i.e. the '-a' and '-p'  |
+|                               |         | command line options will not be   |
+|                               |         | specified when issuing the         |
+|                               |         | 'pwpolicy' command) and the        |
+|                               |         | xsi:nil attribute of the username  |
+|                               |         | element should also be set to      |
+|                               |         | true. Cannot be blank.             |
++-------------------------------+---------+----------------------------------+
+| directory_node                | string  | The directory_node element         |
+|                               |         | specifies the directory node that  |
+|                               |         | you would like to retrieve the     |
+|                               |         | password policy information from.  |
+|                               |         | If the xsi:nil attribute is set to |
+|                               |         | true, the default directory node   |
+|                               |         | is used (i.e the'-n' command line  |
+|                               |         | option will will not be specified  |
+|                               |         | when issuing the 'pwpolicy'        |
+|                               |         | command). Cannot be blank.         |
++-------------------------------+---------+----------------------------------+
+| check_existence               | string  | Defines how many items should be   |
+|                               |         | collected.                         |
++-------------------------------+---------+----------------------------------+
 
-NOTE: The ``target_user`` parameter is governed by a constraint allowing only the following values:
-   -  ^.+$
-
-NOTE: The ``username`` parameter is governed by a constraint allowing only the following values:
-   -  ^.+$
-
-NOTE: The ``userpass`` parameter is governed by a constraint allowing only the following values:
-   -  ^.+$
-
-NOTE: The ``directory_node`` parameter is governed by a constraint allowing only the following values:
+NOTE: The ``target_user``, ``username``, ``userpass``, and ``directory_node`` parameters are governed by a constraint allowing only the following values:
    -  ^.+$
 
 NOTE: The ``check_existence`` parameter is governed by a constraint allowing only the following values:
@@ -160,214 +90,144 @@ NOTE: The ``check_existence`` parameter is governed by a constraint allowing onl
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
--  macos.pwpolicy59_v1
+-  macos:pwpolicy59
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
 **macos.pwpolicy59_v1**
 
-+-------------------------------------+-------------+------------------+
-| Name                                | Type        | Description      |
-+=====================================+=============+==================+
-| check                               | string      | Defines how many |
-|                                     |             | collected items  |
-|                                     |             | must match the   |
-|                                     |             | expected state.  |
-+-------------------------------------+-------------+------------------+
-| operation                           | string      | Comparison       |
-|                                     |             | operation.       |
-+-------------------------------------+-------------+------------------+
-| datatype                            | string      | The data type of |
-|                                     |             | the value.       |
-+-------------------------------------+-------------+------------------+
-| target_user                         | string      | The target_user  |
-|                                     |             | element          |
-|                                     |             | specifies the    |
-|                                     |             | user whose       |
-|                                     |             | password policy  |
-|                                     |             | information      |
-|                                     |             | should be        |
-|                                     |             | collected.       |
-+-------------------------------------+-------------+------------------+
-| username                            | string      | The username     |
-|                                     |             | element          |
-|                                     |             | specifies the    |
-|                                     |             | username of the  |
-|                                     |             | authenticator.   |
-+-------------------------------------+-------------+------------------+
-| userpass                            | string      | The userpass     |
-|                                     |             | element          |
-|                                     |             | specifies the    |
-|                                     |             | password of the  |
-|                                     |             | authenticator as |
-|                                     |             | specified by the |
-|                                     |             | username         |
-|                                     |             | element.         |
-+-------------------------------------+-------------+------------------+
-| directory_node                      | string      | The              |
-|                                     |             | directory_node   |
-|                                     |             | element          |
-|                                     |             | specifies the    |
-|                                     |             | directory node   |
-|                                     |             | that you would   |
-|                                     |             | like to retrieve |
-|                                     |             | the password     |
-|                                     |             | policy           |
-|                                     |             | information      |
-|                                     |             | from.            |
-+-------------------------------------+-------------+------------------+
-| maxChars                            | integer     | Maximum number   |
-|                                     |             | of characters    |
-|                                     |             | allowed in a     |
-|                                     |             | password.        |
-+-------------------------------------+-------------+------------------+
-| maxFailedLoginAttempts              | integer     | Maximum number   |
-|                                     |             | of failed logins |
-|                                     |             | before the       |
-|                                     |             | account is       |
-|                                     |             | locked.          |
-+-------------------------------------+-------------+------------------+
-| passwordCannotBeName                | boolean     | Defines if the   |
-|                                     |             | password is      |
-|                                     |             | allowed to be    |
-|                                     |             | the same as the  |
-|                                     |             | username or not. |
-+-------------------------------------+-------------+------------------+
-| requiresAlpha                       | boolean     | Defines if the   |
-|                                     |             | password must    |
-|                                     |             | contain an       |
-|                                     |             | alphabetical     |
-|                                     |             | character or     |
-|                                     |             | not.             |
-+-------------------------------------+-------------+------------------+
-| requiresNumeric                     | boolean     | Defines if the   |
-|                                     |             | password must    |
-|                                     |             | contain an       |
-|                                     |             | numeric          |
-|                                     |             | character or     |
-|                                     |             | not.             |
-+-------------------------------------+-------------+------------------+
-| maxMinutesUntilChangePassword       | integer     | Maximum number   |
-|                                     |             | of minutes until |
-|                                     |             | the password     |
-|                                     |             | must be changed. |
-+-------------------------------------+-------------+------------------+
-| minMinutesUntilChangePassword       | integer     | Minimum number   |
-|                                     |             | of minutes       |
-|                                     |             | between password |
-|                                     |             | changes.         |
-+-------------------------------------+-------------+------------------+
-| requiresMixedCase                   | boolean     | Defines if the   |
-|                                     |             | password must    |
-|                                     |             | contain upper    |
-|                                     |             | and lower case   |
-|                                     |             | characters or    |
-|                                     |             | not.             |
-+-------------------------------------+-------------+------------------+
-| requiresSymbol                      | boolean     | Defines if the   |
-|                                     |             | password must    |
-|                                     |             | contain a symbol |
-|                                     |             | character or     |
-|                                     |             | not.             |
-+-------------------------------------+-------------+------------------+
-| minutesUntilFailedLoginReset        | integer     | Number of        |
-|                                     |             | minutes after    |
-|                                     |             | login has been   |
-|                                     |             | disabled due to  |
-|                                     |             | too many failed  |
-|                                     |             | login attempts   |
-|                                     |             | to wait before   |
-|                                     |             | reenabling       |
-|                                     |             | login.           |
-+-------------------------------------+-------------+------------------+
-| usingHistory                        | integer     | 0 = user can     |
-|                                     |             | reuse the        |
-|                                     |             | current          |
-|                                     |             | pass-word, 1 =   |
-|                                     |             | user cannot      |
-|                                     |             | reuse the        |
-|                                     |             | current          |
-|                                     |             | password,        |
-|                                     |             | 2-15 = user      |
-|                                     |             | cannot reuse the |
-|                                     |             | last n           |
-|                                     |             | passwords.       |
-+-------------------------------------+-------------+------------------+
-| canModifyPasswordforSelf            | boolean     | If true, the     |
-|                                     |             | user can change  |
-|                                     |             | the password.    |
-+-------------------------------------+-------------+------------------+
-| usingExpirationDate                 | boolean     | If true, user is |
-|                                     |             | required to      |
-|                                     |             | change password  |
-|                                     |             | on the date in   |
-|                                     |             | expirationDate   |
-|                                     |             | GMT.              |
-+-------------------------------------+-------------+------------------+
-| usingHardExpirationDate             | boolean     | If true, user's  |
-|                                     |             | account is       |
-|                                     |             | disabled on the  |
-|                                     |             | date in          |
-|                                     |             | hardExpireDate   |
-|                                     |             | GMT.             |
-+-------------------------------------+-------------+------------------+
-| expirationDateGMT                   | string      | Date for the     |
-|                                     |             | password to      |
-|                                     |             | expire, format   |
-|                                     |             | is: mm/dd/yyyy.  |
-|                                     |             | NOTE: The        |
-|                                     |             | pwpolicy command |
-|                                     |             | returns the year |
-|                                     |             | as a two digit   |
-|                                     |             | value, but OVAL  |
-|                                     |             | uses four digit  |
-|                                     |             | years; the       |
-|                                     |             | pwpolicy value   |
-|                                     |             | is converted to  |
-|                                     |             | an OVAL          |
-|                                     |             | compatible       |
-|                                     |             | value.           |
-+-------------------------------------+-------------+------------------+
-| hardExpireDateGMT                   | string      | Date for the     |
-|                                     |             | user's account   |
-|                                     |             | to be disabled,  |
-|                                     |             | format is: mm/dd |
-|                                     |             | /yyyy. NOTE: The |
-|                                     |             | pwpolicy command |
-|                                     |             | returns the year |
-|                                     |             | as a two digit   |
-|                                     |             | value, but OVAL  |
-|                                     |             | uses four digit  |
-|                                     |             | years; the       |
-|                                     |             | pwpolicy value   |
-|                                     |             | is converted to  |
-|                                     |             | an OVAL          |
-|                                     |             | compatible       |
-|                                     |             | value.           |
-+-------------------------------------+-------------+------------------+
-| maxMinutesUntilDisabled             | integer     | User's account   |
-|                                     |             | is disabled      |
-|                                     |             | after this       |
-|                                     |             | interval.        |
-+-------------------------------------+-------------+------------------+
-| maxMinutesOfNonUse                  | integer     | User's account   |
-|                                     |             | is disabled if   |
-|                                     |             | it is not        |
-|                                     |             | accessed by this |
-|                                     |             | interval.        |
-+-------------------------------------+-------------+------------------+
-| newPasswordRequired                 | boolean     | If true, the     |
-|                                     |             | user will be     |
-|                                     |             | prompted for a   |
-|                                     |             | new password at  |
-|                                     |             | the next         |
-|                                     |             | authentication.  |
-+-------------------------------------+-------------+------------------+
-| notGuessablePattern                 | boolean     | Defines if the   |
-|                                     |             | pattern is       |
-|                                     |             | guessable or not |
-+-------------------------------------+-------------+------------------+
++-------------------------------+---------+----------------------------------+
+| Name                          | Type    | Description                      |
++===============================+=========+==================================+
+| check                         | string  | Defines how many collected items |
+|                               |         | must match the  expected state.  |
++-------------------------------+---------+----------------------------------+
+| operation                     | string  | Comparison operation.            |
++-------------------------------+---------+----------------------------------+
+| datatype                      | string  | The data type of the value.      |
++-------------------------------+---------+----------------------------------+
+| target_user                   | string  | The target_user element          |
+|                               |         | specifies the user whose         |
+|                               |         | password policy information      |
+|                               |         | should be collected. Cannot be   |
+|                               |         | blank.                           |
++-------------------------------+---------+----------------------------------+
+| username                      | string  | The username element specifies   |
+|                               |         | the username of the              |
+|                               |         | authenticator. Cannot be blank.  |
++-------------------------------+---------+----------------------------------+
+| userpass                      | string  | The userpass element specifies   |
+|                               |         | the password of the              |
+|                               |         | authenticator as specified by    |
+|                               |         | the username element. Cannot be  |
+|                               |         | blank.                           |
++-------------------------------+---------+----------------------------------+
+| directory_node                | string  | The directory_node element       |
+|                               |         | specifies the directory node     |
+|                               |         | that you would like to retrieve  |
+|                               |         | the password policy information  |
+|                               |         | from. Cannot be blank.           |
++-------------------------------+---------+----------------------------------+
+| maxChars                      | integer | Maximum number of characters     |
+|                               |         | allowed in a password. Cannot be |
+|                               |         | blank.                           |
++-------------------------------+---------+----------------------------------+
+| maxFailedLoginAttempts        | integer | Maximum number of failed logins  |
+|                               |         | before the account is locked.    |
+|                               |         | Cannot be blank.                 |
++-------------------------------+---------+----------------------------------+
+| passwordCannotBeName          | boolean | Defines if the password is       |
+|                               |         | allowed to be the same as the    |
+|                               |         | username or not. Cannot be       |
+|                               |         | blank.                           |
++-------------------------------+---------+----------------------------------+
+| requiresAlpha                 | boolean | Defines if the password must     |
+|                               |         | contain an alphabetical          |
+|                               |         | character or not. Cannot be      |
+|                               |         | blank.                           |
++-------------------------------+---------+----------------------------------+
+| requiresNumeric               | boolean | Defines if the password must     |
+|                               |         | contain a numeric character or   |
+|                               |         | not. Cannot be blank.            |
++-------------------------------+---------+----------------------------------+
+| maxMinutesUntilChangePassword | integer | Maximum number of minutes until  |
+|                               |         | the password must be changed.    |
+|                               |         | Cannot be blank.                 |
++-------------------------------+---------+----------------------------------+
+| minMinutesUntilChangePassword | integer | Minimum number of minutes        |
+|                               |         | between password changes. Cannot |
+|                               |         | be blank.                        |
++-------------------------------+---------+----------------------------------+
+| requiresMixedCase             | boolean | Defines if the password must     |
+|                               |         | contain upper and lower case     |
+|                               |         | characters or not. Cannot be     |
+|                               |         | blank.                           |
++-------------------------------+---------+----------------------------------+
+| requiresSymbol                | boolean | Defines if the password must     |
+|                               |         | contain a symbol character or    |
+|                               |         | not. Cannot be blank.            |
++-------------------------------+---------+----------------------------------+
+| minutesUntilFailedLoginReset  | integer | Number of minutes after login    |
+|                               |         | has been disabled due to too     |
+|                               |         | many failed login attempts to    |
+|                               |         | wait before reenabling login.    |
+|                               |         | Cannot be blank.                 |
++-------------------------------+---------+----------------------------------+
+| usingHistory                  | integer | 0 = user can reuse the current   |
+|                               |         | password, 1 = user cannot reuse  |
+|                               |         | the current password, 2-15 =     |
+|                               |         | user cannot reuse the last n     |
+|                               |         | passwords. Cannot be blank.      |
++-------------------------------+---------+----------------------------------+
+| canModifyPasswordforSelf      | boolean | If true, the user can change     |
+|                               |         | the password. Cannot be blank.   |
++-------------------------------+---------+----------------------------------+
+| usingExpirationDate           | boolean | If true, user is required to     |
+|                               |         | change password on the date in   |
+|                               |         | expirationDate GMT. Cannot be    |
+|                               |         | blank.                           |
++-------------------------------+---------+----------------------------------+
+| usingHardExpirationDate       | boolean | If true, user's account is       |
+|                               |         | disabled on the date in          |
+|                               |         | hardExpireDate GMT. Cannot be    |
+|                               |         | blank.                           |
++-------------------------------+---------+----------------------------------+
+| expirationDateGMT             | string  | Date for the password to expire, |
+|                               |         | format is: mm/dd/yyyy. NOTE: The |
+|                               |         | pwpolicy command returns the     |
+|                               |         | year as a two digit value, but   |
+|                               |         | OVAL uses four digit years; the  |
+|                               |         | pwpolicy value is converted to   |
+|                               |         | an OVAL compatible value. Cannot |
+|                               |         | be blank.                        |
++-------------------------------+---------+----------------------------------+
+| hardExpireDateGMT             | string  | Date for the user's account to   |
+|                               |         | be disabled, format is:          |
+|                               |         | mm/dd/yyyy. NOTE: The pwpolicy   |
+|                               |         | command returns the yearas a two |
+|                               |         | digit value, but OVAL uses four  |
+|                               |         | digit years; the pwpolicy value  |
+|                               |         | is converted to an OVAL          |
+|                               |         | compatible value. Cannot be      |
+|                               |         | blank.                           |
++-------------------------------+---------+----------------------------------+
+| maxMinutesUntilDisabled       | integer | User's account is disabled after |
+|                               |         | this interval. Cannot be blank.  |
++-------------------------------+---------+----------------------------------+
+| maxMinutesOfNonUse            | integer | User's account is disabled if it |
+|                               |         | is not accessed by this          |
+|                               |         | interval. Cannot be blank.       |
++-------------------------------+---------+----------------------------------+
+| newPasswordRequired           | boolean | If true, the user will be        |
+|                               |         | prompted for a new password at   |
+|                               |         | the next authentication. Cannot  |
+|                               |         | be blank.                        |
++-------------------------------+---------+----------------------------------+
+| notGuessablePattern           | boolean | Defines if the pattern is        |
+|                               |         | guessable or not Cannot be       |
+|                               |         | blank.                           |
++-------------------------------+---------+----------------------------------+
 
 NOTE: The ``check`` parameter is governed by a constraint allowing only the following values:
    -  all
@@ -398,80 +258,37 @@ NOTE: The ``datatype`` parameter is governed by a constraint allowing only the f
    -  version
    -  set
 
-NOTE: The ``target_user`` parameter is governed by a constraint allowing only the following values:
-   -  ^.+$
-
-NOTE: The ``username`` parameter is governed by a constraint allowing only the following values:
-   -  ^.+$
-
-NOTE: The ``userpass`` parameter is governed by a constraint allowing only the following values:
-   -  ^.+$
-
-NOTE: The ``directory_node`` parameter is governed by a constraint allowing only the following values:
-   -  ^.+$
-
-NOTE: The ``maxChars`` parameter is governed by a constraint allowing only the following values:
-   -  ^.+$
-
-NOTE: The ``maxFailedLoginAttempts`` parameter is governed by a constraint allowing only the following values:
-   -  ^.+$
-
-NOTE: The ``minChars`` parameter is governed by a constraint allowing only the following values:
-   -  ^.+$
-
-NOTE: The ``passwordCannotBeName`` parameter is governed by a constraint allowing only the following values:
-   -  ^.+$
-
-NOTE: The ``requiresAlpha`` parameter is governed by a constraint allowing only the following values:
-   -  ^.+$
-
-NOTE: The ``requiresNumeric`` parameter is governed by a constraint allowing only the following values:
-   -  ^.+$
-
-NOTE: The ``maxMinutesUntilChangePassword`` parameter is governed by a constraint allowing only the following values:
-   -  ^.+$
-
-NOTE: The ``minMinutesUntilChangePassword`` parameter is governed by a constraint allowing only the following values:
-   -  ^.+$
-
-NOTE: The ``requiresMixedCase`` parameter is governed by a constraint allowing only the following values:
-   -  ^.+$
-
-NOTE: The ``requiresSymbol`` parameter is governed by a constraint allowing only the following values:
-   -  ^.+$
-
-NOTE: The ``minutesUntilFailedLoginReset`` parameter is governed by a constraint allowing only the following values:
-   -  ^.+$
-
-NOTE: The ``usingHistory`` parameter is governed by a constraint allowing only the following values:
-   -  ^.+$
-
-NOTE: The ``canModifyPasswordforSelf`` parameter is governed by a constraint allowing only the following values:
-   -  ^.+$
-
-NOTE: The ``usingExpirationDate`` parameter is governed by a constraint allowing only the following values:
-   -  ^.+$
-
-NOTE: The ``usingHardExpirationDate`` parameter is governed by a constraint allowing only the following values:
-   -  ^.+$
-
-NOTE: The ``expirationDateGMT`` parameter is governed by a constraint allowing only the following values:
-   -  ^.+$
-
-NOTE: The ``hardExpireDateGMT`` parameter is governed by a constraint allowing only the following values:
-   -  ^.+$
-
-NOTE: The ``maxMinutesUntilDisabled`` parameter is governed by a constraint allowing only the following values:
-   -  ^.+$
-
-NOTE: The ``maxMinutesOfNonUse`` parameter is governed by a constraint allowing only the following values:
-   -  ^.+$
-
-NOTE: The ``newPasswordRequired`` parameter is governed by a constraint allowing only the following values:
-   -  ^.+$
-
-NOTE: The ``notGuessablePattern`` parameter is governed by a constraint allowing only the following values:
-   -  ^.+$
+:emphasis:`NOTE: The following parameters:`
+  +----------------------------------+-----------------------------------+
+  | ``target_user``                  | ``username``                      |
+  +----------------------------------+-----------------------------------+
+  | ``userpass``                     | ``directory_node``                |
+  +----------------------------------+-----------------------------------+
+  | ``maxChars``                     | ``maxFailedLoginAttempts``        |
+  +----------------------------------+-----------------------------------+
+  | ``minChars``                     | ``passwordCannotBeName``          |
+  +----------------------------------+-----------------------------------+
+  | ``requiresAlpha``                | ``requiresNumeric``               |
+  +----------------------------------+-----------------------------------+
+  | ``maxMinutesUntilChangePassword  | ``minMinutesUntilChangePassword`` |
+  +----------------------------------+-----------------------------------+
+  | ``requiresMixedCase``            | ``requiresSymbol``                |
+  +----------------------------------+-----------------------------------+
+  | ``minutesUntilFailedLoginReset`` | ``usingHistory``                  |
+  +----------------------------------+-----------------------------------+
+  | ``canModifyPasswordforSelf``     | ``usingExpirationDate``           |
+  +----------------------------------+-----------------------------------+
+  | ``usingHardExpirationDate``      | ``expirationDateGMT``             |
+  +----------------------------------+-----------------------------------+
+  | ``hardExpireDateGMT``            | ``maxMinutesUntilDisabled``       |
+  +----------------------------------+-----------------------------------+
+  | ``maxMinutesOfNonUse``           | ``newPasswordRequired``           |
+  +----------------------------------+-----------------------------------+
+  | ``notGuessablePattern``          |                                   |
+  +----------------------------------+-----------------------------------+
+  
+:emphasis:`are governed by a constraint allowing only values conforming to the following regex pattern:`
+  ``^.+$``
 
 Generated Content
 ~~~~~~~~~~~~~~~~~
@@ -490,7 +307,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
       <xccdf:check-content>
         <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
           <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-          <ae:title>[RECOMMENDATION-TITLE]</ae:title>
+          <ae:title>[ARTIFACT-TITLE]</ae:title>
           <ae:artifact type="[ARTIFACT-TYPE-NAME]">
             <ae:parameters>
               <ae:parameter dt="string" name="target_user">[target_user.value]</ae:parameter>
@@ -546,14 +363,13 @@ SCAP
 XCCDF
 '''''
 
-For ``macos.pwpolicy59_v1`` artifacts, the xccdf:check looks like this.
-There is no Value in the xccdf for this Artifact.
+For ``macos.pwpolicy59_v1`` artifacts, the xccdf:check looks like this. There is no Value in the xccdf for this Artifact.
 
 ::
 
   <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
     <check-content-ref
-      href="[BENCHMARK-NAME]"
+      href="[BENCHMARK-TITLE]"
         name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]">
     </check-content-ref>
   </check>
@@ -580,60 +396,52 @@ Object
 
 ::
 
-  <pwpolicy59_object
+  <pwpolicy59_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#macos"
     comment="[ARTIFACT-TITLE]"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     version="1">
-    <target_user>
-        [target_user.value]
-    </target_user>
-    <username>
-        [username.value]
-    </username>
-    <userpass>
-        [password.value]
-    </userpass>
-    <directory_node>
-        [directory_node.value]
-    </directory_node>
+    <target_user>[target_user.value]</target_user>
+    <username>[username.value]</username>
+    <userpass>[password.value]</userpass>
+    <directory_node>[directory_node.value]</directory_node>
   </pwpolicy59_object>
 
 State
 
 ::
 
-  <pwpolicy59_state
+   <pwpolicy59_state 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#macos"
     comment="[ARTIFACT-TITLE]"
-    id="oval:org.cisecurity.benchmarks.apple_mac_os_x_10:ste:2142225"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     version="1">
-    <target_user
-      datatype="string"
-      operation="equals">
+    <target_user 
+      datatype="[datatype.value]"
+      operation="[operation.value]">
         [target_user.value]
     </target_user>
     <username
-      datatype="string"
-      operation="equals">
+      datatype="[datatype.value]"
+      operation="[operation.value]">
         [username.value]
     </username>
-    <userpass
-      datatype="string"
-      operation="equals">
+    <userpass 
+      datatype="[datatype.value]"
+      operation="[operation.value]">
         [userpass.value]
     </userpass>
-    <directory_node
-      datatype="string"
-      operation="equals">
+    <directory_node 
+      datatype="[datatype.value]"
+      operation="[operation.value]">
         [directory_node.value]
     </directory_node>
-    <maxChars
+    <maxChars 
       datatype="int"
       operation="equals">
         [maxChars.value]
     </maxChars>
-    <maxFailedLoginAttempts
+    <maxFailedLoginAttempts 
       datatype="int"
       operation="equals">
         [maxFailedLoginAttempts.value]
@@ -643,94 +451,94 @@ State
       operation="equals">
         [minChars.value]
     </minChars>
-    <passwordCannotBeName
+    <passwordCannotBeName 
       datatype="boolean"
-      operation="equals">
+      operation="[operation.value]">
         [passwordCannotBeName.value]
     </passwordCannotBeName>
-    <requiresAlpha
+    <requiresAlpha 
       datatype="boolean"
-      operation="equals">
+      operation="[operation.value]">
         [requiresAlpha.value]
     </requiresAlpha>
-    <requiresNumeric
+    <requiresNumeric 
       datatype="boolean"
-      operation="equals">
+      operation="[operation.value]">
         [requiresNumeric.value]
     </requiresNumeric>
-    <maxMinutesUntilChangePassword
+    <maxMinutesUntilChangePassword 
       datatype="int"
       operation="equals">
         [maxMinutesUntilChangePassword.value]
     </maxMinutesUntilChangePassword>
-    <minMinutesUntilChangePassword
+    <minMinutesUntilChangePassword 
       datatype="int"
       operation="equals">
         [minMinutesUntilChangePassword.value]
     </minMinutesUntilChangePassword>
-    <requiresMixedCase
+    <requiresMixedCase 
       datatype="boolean"
-      operation="equals">
+      operation="[operation.value]">
         [requiresMixedCase.value]
     </requiresMixedCase>
-    <requiresSymbol
+    <requiresSymbol 
       datatype="boolean"
-      operation="equals">
+      operation="[operation.value]">
         [requiresSymbol.value]
     </requiresSymbol>
-    <minutesUntilFailedLoginReset
+    <minutesUntilFailedLoginReset 
       datatype="int"
       operation="equals">
         [minutesUntilFailedLoginReset.value]
     </minutesUntilFailedLoginReset>
-    <usingHistory
+    <usingHistory 
       datatype="int"
       operation="equals">
         [usingHistory.value]
     </usingHistory>
-    <canModifyPasswordforSelf
+    <canModifyPasswordforSelf 
       datatype="boolean"
-      operation="equals">
+      operation="[operation.value]">
         [canModifyPasswordforSelf.value]
     </canModifyPasswordforSelf>
-    <usingExpirationDate
+    <usingExpirationDate 
       datatype="boolean"
-      operation="equals">
+      operation="[operation.value]">
         [usingExpirationDate.value]
     </usingExpirationDate>
-    <usingHardExpirationDate
+    <usingHardExpirationDate 
       datatype="boolean"
-      operation="equals">
+      operation="[operation.value]">
         [usingHardExpirationDate.value]
     </usingHardExpirationDate>
-    <expirationDateGMT
-      datatype="string"
-      operation="equals">
+    <expirationDateGMT 
+      datatype="[datatype.value]"
+      operation="[operation.value]">
         [expirationDateGMT.value]
     </expirationDateGMT>
-    <hardExpireDateGMT
-      datatype="string"
-      operation="equals">
+    <hardExpireDateGMT 
+      datatype="[datatype.value]"
+      operation="[operation.value]">
         [hardExpireDateGMT.value]
     </hardExpireDateGMT>
-    <maxMinutesUntilDisabled
+    <maxMinutesUntilDisabled 
       datatype="int"
       operation="equals">
         [maxMinutesUntilDisabled.value]
     </maxMinutesUntilDisabled>
-    <maxMinutesOfNonUse
+    <maxMinutesOfNonUse 
       datatype="int"
       operation="equals">
         [maxMinutesOfNonUse.value]
     </maxMinutesOfNonUse>
-    <newPasswordRequired
+    <newPasswordRequired 
       datatype="boolean"
-      operation="equals">
+      operation="[operation.value]">
         [newPasswordRequired.value]
     </newPasswordRequired>
-    <notGuessablePattern
+    <notGuessablePattern 
       datatype="boolean"
-      operation="equals">
+      operation="[operation.value]">
         [notGuessablePattern.value]
     </notGuessablePattern>
   </pwpolicy59_state>
@@ -744,7 +552,7 @@ YAML
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
     artifact_title: "[ARTIFACT-TITLE]"
     artifact:
-      type: "macos.pwpolicy59_v1"
+      type: "[ARTIFACT-TYPE-NAME]"
       parameters:
         - parameter:
             name: "target_user"
@@ -889,7 +697,7 @@ JSON
 
   {
     "artifact-expression": {
-      "artifact-unique-id": "[ARTIFACT_OVAL_ID]",
+      "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
       "artifact_title": "[ARTIFACT-TITLE]",
       "artifact": {
         "type": "[ARTIFACT-TYPE-NAME]",
