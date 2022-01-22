@@ -125,7 +125,7 @@ For ``vmware.vmhost.bus_adapter.iscsi.chap.mutual`` artifacts, the xccdf:check l
       export-name="oval:org.cisecurity.benchmarks:var:100000"
       value-id="xccdf_org.cisecurity.benchmarks_value_esxi.connection" />
     <check-content-ref 
-      href="[BENCHMARK-NAME]-oval.xml"
+      href="[BENCHMARK-TITLE]-oval.xml"
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 

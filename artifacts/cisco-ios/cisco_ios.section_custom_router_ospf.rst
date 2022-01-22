@@ -131,7 +131,7 @@ For ``cisco_ios.section_custom_router_ospf`` artifacts, the xccdf:check looks li
       export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
       value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
     <check-content-ref 
-      href="[BENCHMARK-NAME]"
+      href="[BENCHMARK-TITLE]"
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 

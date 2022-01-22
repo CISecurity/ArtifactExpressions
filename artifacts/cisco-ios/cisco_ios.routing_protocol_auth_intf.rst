@@ -166,7 +166,7 @@ For ``cisco_ios.routing_protocol_auth_intf cisco_ios.routing_protocol_auth_keych
       export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
       value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
     <check-content-ref 
-      href="[BENCHMARK-NAME]"
+      href="[BENCHMARK-TITLE]"
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 
@@ -395,7 +395,7 @@ For ``cisco_ios.routing_protocol_auth_intf cisco_ios.routing_protocol_auth_type`
       export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
       value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
     <check-content-ref 
-      href="[BENCHMARK-NAME]"
+      href="[BENCHMARK-TITLE]"
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 

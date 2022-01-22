@@ -1848,7 +1848,7 @@ For ``Txt-Unix_File_or_Directory_Permissions_v2`` artifacts, the xccdf:check loo
       export-name="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]" 
       value-id="xccdf_org.cisecurity_value_[ARTIFACT-OVAL-ID]_var " />
     <check-content-ref 
-      href="[BENCHMARK-NAME]" 
+      href="[BENCHMARK-TITLE]" 
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]">
     </check-content-ref>
   </check>
@@ -2256,7 +2256,7 @@ For ``independent.txt_file_content_v1`` artifacts, the xccdf:check looks like th
       export-name="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]" 
       value-id="xccdf_org.cisecurity_value_[ARTIFACT-OVAL-ID]_var " />      
     <check-content-ref 
-      href="[BENCHMARK-NAME]" 
+      href="[BENCHMARK-TITLE]" 
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]">
     </check-content-ref>
   </check>

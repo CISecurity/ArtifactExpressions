@@ -137,7 +137,7 @@ For ``cisco_ios.section cisco_ios.section_existence_test`` artifacts, the xccdf:
       export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
       value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
     <check-content-ref 
-      href="[BENCHMARK NAME]"
+      href="[BENCHMARK-TITLE]"
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 
@@ -299,7 +299,7 @@ For ``cisco_ios.section cisco_ios.section_config_line`` artifacts, the xccdf:che
       export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
       value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
     <check-content-ref 
-      href="[BENCHMARK-NAME]"
+      href="[BENCHMARK-TITLE]"
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 

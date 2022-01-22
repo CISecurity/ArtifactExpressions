@@ -54,7 +54,7 @@ Test Type Parameters
 | regex_capture          | string  | The regex_capture to use to isolate the |
 |                        |         | expected value.                         |
 +------------------------+---------+-----------------------------------------+
-| expected_value_type    | string  | Datatype of expected value.             |
+| expected_value_type    | string  | Data type of expected value.            |
 +------------------------+---------+-----------------------------------------+
 
 NOTE: The ``operator`` parameter is governed by a constraint allowing only the following values:
@@ -145,7 +145,7 @@ For ``cisco_asa.password_policy cisco_asa.expected_value_regex_capture`` artifac
         export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" 
         value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
       <check-content-ref 
-        href="[BENCHMARK-NAME]" 
+        href="[BENCHMARK-TITLE]" 
         name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
     </check>
   </xccdf:complex-check>

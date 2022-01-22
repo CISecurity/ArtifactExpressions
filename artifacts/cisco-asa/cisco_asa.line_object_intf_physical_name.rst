@@ -131,7 +131,7 @@ For ``cisco_asa.line_object_intf_physical_name`` artifacts, the xccdf:check look
       export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" 
       value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
     <check-content-ref 
-      href="[BENCHMARK-NAME]" 
+      href="[BENCHMARK-TITLE]" 
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 

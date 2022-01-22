@@ -152,7 +152,7 @@ For ``cisco_asa.version_object cisco_asa.major_version`` artifacts, the xccdf:ch
         export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
         value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
       <check-content-ref 
-        href="[BENCHMARK-NAME]"
+        href="[BENCHMARK-TITLE]"
         name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
     </check>
   </xccdf:complex-check>
@@ -346,7 +346,7 @@ For ``cisco_asa.version_object cisco_asa.major_minor_version`` artifacts, the xc
           export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
           value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
         <check-content-ref 
-          href="[BENCHMARK-NAME]"
+          href="[BENCHMARK-TITLE]"
           name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
       </check>
     </xccdf:complex-check>

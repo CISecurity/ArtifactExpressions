@@ -132,7 +132,7 @@ For ``cisco_ios.snmp_host existence_test`` artifacts, the xccdf:check looks like
 
   <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
     <check-content-ref 
-      href="[BENCHMARK NAME]"
+      href="[BENCHMARK-TITLE]"
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 
@@ -307,7 +307,7 @@ For ``cisco_ios.snmp_host cisco_ios.snmp_host_traps`` artifacts, the xccdf:check
       export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
       value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
     <check-content-ref 
-      href="[BENCHMARK-NAME]"
+      href="[BENCHMARK-TITLE]"
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 

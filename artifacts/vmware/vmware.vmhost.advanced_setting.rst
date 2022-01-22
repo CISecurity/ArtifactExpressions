@@ -139,7 +139,7 @@ For ``vmware.vmhost.advanced_setting`` artifacts, the xccdf:check looks like thi
       export-name="oval:org.cisecurity.benchmarks:var:100000"
       value-id="xccdf_org.cisecurity.benchmarks_value_esxi.connection" />
     <check-content-ref 
-      href="[BENCHMARK-NAME]-oval.xml"
+      href="[BENCHMARK-TITLE]-oval.xml"
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 
