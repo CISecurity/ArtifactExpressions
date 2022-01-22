@@ -896,7 +896,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
     <xccdf:check-content>
       <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
         <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-        <ae:title>[RECOMMENDATION-TITLE]</ae:title>
+        <ae:title>[ARTIFACT-TITLE]</ae:title>
         <ae:artifact type="[ARTIFACTTYPE-NAME]">
           <ae:parameters>
             <ae:parameter dt="string" name="engine">[engine.value]</ae:parameter>
@@ -961,7 +961,7 @@ Test
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM-ID]" 
     check="[check.value]" 
     check_existence="[check_existence.value]" 
-    comment="[RECOMMENDATION-TITLE]" 
+    comment="[ARTIFACT-TITLE]" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]" 
     version="1">
     <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
@@ -974,7 +974,7 @@ Object
 
   <sql57_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM-ID]" 
-    comment="[RECOMMENDATION-TITLE]"       
+    comment="[ARTIFACT-TITLE]"       
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" 
     version="1">
     <engine>[engine.value]</engine>
@@ -989,7 +989,7 @@ State
 
   <sql57_state 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM-ID]" 
-    comment="[RECOMMENDATION-TITLE]"
+    comment="[ARTIFACT-TITLE]"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" 
     version="1">
     <result 
@@ -1009,7 +1009,7 @@ Variable
 ::
 
   <external_variable 
-    comment="[RECOMMENDATION-TITLE]"
+    comment="[ARTIFACT-TITLE]"
     datatype="[datatype.value]"  
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" 
     version="1" />
@@ -1021,7 +1021,7 @@ YAML
 
   artifact-expression:
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
-    artifact-title: "[RECOMMENDATION-TITLE]"
+    artifact-title: "[ARTIFACT-TITLE]"
     artifact:
       type: "[ARTIFACTTYPE-NAME]"
       parameters:
@@ -1089,7 +1089,7 @@ JSON
   {
     "artifact-expression": {
       "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
-      "artifact-title": "[RECOMMENDATION-TITLE]",
+      "artifact-title": "[ARTIFACT-TITLE]",
       "artifact": {
         "type": "[ARTIFACTTYPE-NAME]",
         "parameters": [
@@ -1210,7 +1210,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
     <xccdf:check-content>
       <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
         <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-        <ae:title>[RECOMMENDATION-TITLE]</ae:title>
+        <ae:title>[ARTIFACT-TITLE]</ae:title>
         <ae:artifact type="[ARTIFACTTYPE-NAME]">
           <ae:parameters>
             <ae:parameter dt="string" name="engine">[engine.value]</ae:parameter>
@@ -1261,7 +1261,7 @@ Test
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM-ID]" 
     check="[check.value]" 
     check_existence="[check_existence.value]" 
-    comment="[RECOMMENDATION-TITLE]" 
+    comment="[ARTIFACT-TITLE]" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]" 
     version="1">
     <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"/>
@@ -1273,7 +1273,7 @@ Object
 
   <sql57_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM-ID]" 
-    comment="[RECOMMENDATION-TITLE]" 
+    comment="[ARTIFACT-TITLE]" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" 
     version="1">
     <engine>[engine.value]</engine>
@@ -1343,7 +1343,7 @@ JSON
   {
     "artifact-expression": {
       "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
-      "artifact-title": "[RECOMMENDATION-TITLE]",
+      "artifact-title": "[ARTIFACT-TITLE]",
       "artifact": {
         "type": "[ARTIFACTTYPE-NAME]",
         "parameters": [
@@ -1429,7 +1429,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
     <xccdf:check-content>
       <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
         <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-        <ae:title>[RECOMMENDATION-TITLE]</ae:title>
+        <ae:title>[ARTIFACT-TITLE]</ae:title>
         <ae:artifact type="[ARTIFACTTYPE-NAME]">
           <ae:parameters>
             <ae:parameter dt="string" name="engine">[engine.value]</ae:parameter>
@@ -1495,7 +1495,7 @@ Test
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM-ID]" 
     check="[check.value]" 
     check_existence="[check_existence.value]" 
-    comment="[RECOMMENDATION-TITLE]" 
+    comment="[ARTIFACT-TITLE]" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]" 
     version="1">
     <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
@@ -1508,7 +1508,7 @@ Test
 
   <file_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM-ID]" 
-    comment="[RECOMMENDATION-TITLE]" 
+    comment="[ARTIFACT-TITLE]" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
     version="1">
     <path 
@@ -1524,7 +1524,7 @@ State
 
   <file_state 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM-ID]" 
-    comment="[RECOMMENDATION-TITLE]" 
+    comment="[ARTIFACT-TITLE]" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" 
     version="1">
     <group_id 
@@ -1549,7 +1549,7 @@ Local Variable
 ::
 
   <local_variable 
-    comment="[RECOMMENDATION-TITLE]" 
+    comment="[ARTIFACT-TITLE]" 
     datatype="[datatype.value]" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" 
     version="1">
@@ -1658,7 +1658,7 @@ JSON
   {
     "artifact-expression": {
       "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
-      "artifact-title": "[RECOMMENDATION-TITLE]",
+      "artifact-title": "[ARTIFACT-TITLE]",
       "artifact": {
         "type": "[ARTIFACTTYPE-NAME]",
         "parameters": [
@@ -1821,7 +1821,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
     <xccdf:check-content>
       <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
         <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-        <ae:title>[RECOMMENDATION-TITLE]</ae:title>
+        <ae:title>[ARTIFACT-TITLE]</ae:title>
         <ae:artifact type="[ARTIFACTTYPE-NAME]">
           <ae:parameters>
             <ae:parameter dt="string" name="engine">[engine.value]</ae:parameter>
@@ -1887,7 +1887,7 @@ Test
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM-ID]" 
     check="[check.value]" 
     check_existence="[check_existence.value]" 
-    comment="[RECOMMENDATION-TITLE]" 
+    comment="[ARTIFACT-TITLE]" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]" 
     version="1">  
     <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
@@ -1900,7 +1900,7 @@ Object
 
   <file_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM-ID]" 
-    comment="[RECOMMENDATION-TITLE]" 
+    comment="[ARTIFACT-TITLE]" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]" 
     version="1">  
     <path 
@@ -1919,7 +1919,7 @@ State
 
   <file_state 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM-ID]" 
-    comment="[RECOMMENDATION-TITLE]" 
+    comment="[ARTIFACT-TITLE]" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]" 
     version="1">  
     <group_id 
@@ -1944,7 +1944,7 @@ Local Variable
 ::
 
   <local_variable 
-    comment="[RECOMMENDATION-TITLE]" 
+    comment="[ARTIFACT-TITLE]" 
     datatype="[datatype.value]" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]" 
     version="1"> 
@@ -2053,7 +2053,7 @@ JSON
   {
     "artifact-expression": {
       "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
-      "artifact-title": "[RECOMMENDATION-TITLE]",
+      "artifact-title": "[ARTIFACT-TITLE]",
       "artifact": {
         "type": "[ARTIFACTTYPE-NAME]",
         "parameters": [
@@ -2217,7 +2217,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
     <xccdf:check-content>
       <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
         <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-        <ae:title>[RECOMMENDATION-TITLE]</ae:title>
+        <ae:title>[ARTIFACT-TITLE]</ae:title>
         <ae:artifact type="[ARTIFACTTYPE-NAME]">
           <ae:parameters>
             <ae:parameter dt="string" name="engine">[engine.value]</ae:parameter>
@@ -2284,7 +2284,7 @@ Test
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM-ID]" 
     check="[check.value]" 
     check_existence="[check_existence.value]" 
-    comment="[RECOMMENDATION-TITLE]" 
+    comment="[ARTIFACT-TITLE]" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]" 
     version="1">  
     <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
@@ -2297,7 +2297,7 @@ Object
 
   <file_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM-ID]" 
-    comment="[RECOMMENDATION-TITLE]" 
+    comment="[ARTIFACT-TITLE]" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]" 
     version="1">  
     <path 
@@ -2316,7 +2316,7 @@ State
 
   <file_state 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM-ID]" 
-    comment="[RECOMMENDATION-TITLE]" 
+    comment="[ARTIFACT-TITLE]" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" 
     version="1">
     <group_id 
@@ -2341,7 +2341,7 @@ Local Variable
 ::
 
   <local_variable 
-    comment="[RECOMMENDATION-TITLE]" 
+    comment="[ARTIFACT-TITLE]" 
     datatype="[datatype.value]" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]" 
     version="1"> 
@@ -2458,7 +2458,7 @@ JSON
   {
     "artifact-expression": {
       "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
-      "artifact-title": "[RECOMMENDATION-TITLE]",
+      "artifact-title": "[ARTIFACT-TITLE]",
       "artifact": {
         "type": "[ARTIFACTTYPE-NAME]",
         "parameters": [

@@ -252,7 +252,7 @@ YAML
         - parameter: 
             name: "datatype"
             dt: "string"
-            value: "[datatype.value] " 
+            value: "[datatype.value]" 
         - parameter: 
             name: "result"
             dt: "string"
