@@ -37,7 +37,7 @@ Test Type Parameters
 +-----------------------------+---------+------------------------------------+
 | Name                        | Type    | Description                        |
 +=============================+=========+====================================+
-| existence_check             | string  | Define how many items should be    |
+| existence_check             | string  | Defines how many items should be   |
 |                             |         | collected.                         |
 +-----------------------------+---------+------------------------------------+
 | check                       | string  | Defines how many collected items   |
@@ -45,7 +45,7 @@ Test Type Parameters
 +-----------------------------+---------+------------------------------------+
 | operation                   | string  | Comparison Operation.              |
 +-----------------------------+---------+------------------------------------+
-| datatype                    | string  | Datatype.                          |
+| datatype                    | string  | Data type.                         |
 +-----------------------------+---------+------------------------------------+
 | username                    | integer | Specifies the user of the account  |
 |                             |         | to gather information from.        |
@@ -219,17 +219,17 @@ State
     <uid 
       datatype="int"
       operation="equals">
-      [uid.value]
+        [uid.value]
     </uid>
     <gid
       datatype="int"
       operation="equals">
-      [gid.value]
+        [gid.value]
     </gid>
     <realname 
       datatype="[datatype.value]"
       operation="[operation.value]">
-      [realname.value]
+        [realname.value]
     </realname>
     <home_dir
       datatype="[datatype.value]"

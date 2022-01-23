@@ -18,26 +18,26 @@ Artifact Parameters
 
 **macos.nvram_v1**
 
-+-------------------------------------+-------------+-------------------------------------+
-| Name                                | Type        | Description                         |
-+=====================================+=============+=====================================+
-| check_existence                     | string      | Defines how many items should be    |
-|                                     |             | collected. Typically set to 'at     |
-|                                     |             | least one_exists'.                  |
-+-------------------------------------+-------------+-------------------------------------+
-| nvram_var                           | string      | This specifies the nvram variable   |
-|                                     |             | to check. Cannot be blank.          |
-+-------------------------------------+-------------+-------------------------------------+
++-----------------------------+---------+------------------------------------+
+| Name                        | Type    | Description                        |
++=============================+=========+====================================+
+| check_existence             | string  | Defines how many items should be   |
+|                             |         | collected. Typically set to 'at    |
+|                             |         | least one_exists'.                 |
++-----------------------------+---------+------------------------------------+
+| nvram_var                   | string  | This specifies the nvram variable  |
+|                             |         | to check. Cannot be blank.         |
++-----------------------------+---------+------------------------------------+
 
 NOTE: The ``check_existence`` parameter is governed by a constraint allowing only the following values:
-   -  all_exist
-   -  any_exist
-   -  at_least_one_exists
-   -  none_exist
-   -  only_one_exists
+  -  all_exist
+  -  any_exist
+  -  at_least_one_exists
+  -  none_exist
+  -  only_one_exists
 
 NOTE: The ``nvram_var`` parameter is governed by a constraint allowing only the following values:
-   -  ^.+$
+  -  ^.+$
 
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
@@ -49,58 +49,58 @@ Test Type Parameters
 
 **macos.nvram_v1**
 
-+-------------------------------------+-------------+-----------------------------------+
-| Name                                | Type        | Description                       |
-+=====================================+=============+===================================+
-| check                               | string      | Defines how many collected items  |
-|                                     |             | must match the expected state.    |
-|                                     |             | Typically set to 'all'.           |
-+-------------------------------------+-------------+-----------------------------------+
-| nvram_value_operation               | string      | Comparison operation. Typically   |
-|                                     |             | set to 'equals'.                  |
-+-------------------------------------+-------------+-----------------------------------+
-| nvram_value_datatype                | string      | The data type of the value.       |
-|                                     |             | Typically set to 'string'.        |
-+-------------------------------------+-------------+-----------------------------------+
-| nvram_value                         | string      | This is the value of the          |
-|                                     |             | associated nvram variable.        |
-+-------------------------------------+-------------+-----------------------------------+
-| nvram_var                           | string      | This specifies the nvram variable |
-|                                     |             | to check.                         |
-+-------------------------------------+-------------+-----------------------------------+
-| nvram_var_operation                 | string      | Comparison operation.             |
-+-------------------------------------+-------------+-----------------------------------+
-| nvram_var_datatype                  | string      | Datatype.                         |
-+-------------------------------------+-------------+-----------------------------------+
++-----------------------------+---------+------------------------------------+
+| Name                        | Type    | Description                        |
++=============================+=========+====================================+
+| check                       | string  | Defines how many collected items   |
+|                             |         | must match the expected state.     |
+|                             |         | Typically set to 'all'.            |
++-----------------------------+---------+------------------------------------+
+| nvram_value_operation       | string  | Comparison operation. Typically    |
+|                             |         | set to 'equals'.                   |
++-----------------------------+---------+------------------------------------+
+| nvram_value_datatype        | string  | The data type of the value.        |
+|                             |         | Typically set to 'string'.         |
++-----------------------------+---------+------------------------------------+
+| nvram_value                 | string  | This is the value of the           |
+|                             |         | associated nvram variable.         |
++-----------------------------+---------+------------------------------------+
+| nvram_var                   | string  | This specifies the nvram variable  |
+|                             |         | to check.                          |
++-----------------------------+---------+------------------------------------+
+| nvram_var_operation         | string  | Comparison operation.              |
++-----------------------------+---------+------------------------------------+
+| nvram_var_datatype          | string  | Datatype.                          |
++-----------------------------+---------+------------------------------------+
 
 NOTE: The ``check`` parameter is governed by a constraint allowing only the following values:
-   -  all
-   -  at least one
-   -  none satisfy
-   -  only one
+  -  all
+  -  at least one
+  -  none satisfy
+  -  only one
 
 NOTE: The ``nvram_value_operation`` and ``nvram_var_operation`` parameters are governed by a constraint allowing only the following values:
-   -  equals
-   -  not equal
-   -  case insensitive equals
-   -  case insensitive not equal
-   -  greater than
-   -  less than
-   -  greater than or equal
-   -  less than or equal
-   -  bitwise and
-   -  bitwise or
-   -  pattern match
-   -  subset of
-   -  superset of
+  -  equals
+  -  not equal
+  -  case insensitive equals
+  -  case insensitive not equal
+  -  greater than
+  -  less than
+  -  greater than or equal
+  -  less than or equal
+  -  bitwise and
+  -  bitwise or
+  -  pattern match
+  -  subset of
+  -  superset of
 
 NOTE: The ``nvram_value_datatype`` and ``nvram_var_datatype`` parameters are governed by a constraint allowing only the following values:
-   -  boolean
-   -  float
-   -  int
-   -  string
-   -  version
-   -  set
+  -  boolean
+  -  float
+  -  int
+  -  string
+  -  version
+  -  set
 
 Generated Content
 ~~~~~~~~~~~~~~~~~
@@ -158,8 +158,8 @@ For ``macos.nvram_v1`` artifacts, the xccdf:check looks like this. There is no V
 
   <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
     <check-content-ref
-      href="[BENCHMARK-NAME]"
-        name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]">
+      href="[BENCHMARK-TITLE]"
+      name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]">
     </check-content-ref>
   </check>
 
@@ -185,14 +185,12 @@ Object
 
 ::
 
-  <nvram_object
+  <nvram_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#macos"
     comment="[ARTIFACT-TITLE]"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     version="1">
-    <nvram_var>
-        [nvram_var.value]
-    </nvram_var>
+    <nvram_var>[nvram_var.value]</nvram_var>
   </nvram_object>
 
 State
