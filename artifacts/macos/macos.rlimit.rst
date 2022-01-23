@@ -1,5 +1,5 @@
 macos:rlimit
-=================
+============
 
 Description
 -----------
@@ -275,17 +275,17 @@ State
     <filesize_current 
       datatype="int"
       operation="equals">
-      [filesize_current.value]
+        [filesize_current.value]
     </filesize_current>
     <filesize_max
       datatype="int"
       operation="equals">
-      [filesize_max.value]
+        [filesize_max.value]
     </filesize_max>
     <data_current 
       datatype="int"
       operation="[operation.value]">
-      [data_current.value]
+        [data_current.value]
     </data_current>
     <data_max
       datatype="int"
@@ -310,17 +310,17 @@ State
     <core_max 
       datatype="int"
       operation="equals">
-      [core_max.value]
+        [core_max.value]
     </core_max>
     <rss_current
       datatype="int"
       operation="equals">
-      [rss_current.value]
+        [rss_current.value]
     </rss_current>
     <rss_max 
       datatype="int"
       operation="[operation.value]">
-      [rss_max.value]
+        [rss_max.value]
     </rss_max>
     <memlock_current
       datatype="int"
@@ -345,12 +345,12 @@ State
     <maxfiles_current 
       datatype="int"
       operation="equals">
-      [maxfiles_current.value]
+        [maxfiles_current.value]
     </maxfiles_current>
     <maxfiles_max
       datatype="int"
       operation="equals">
-      [maxfiles_max.value]
+        [maxfiles_max.value]
     </maxfiles_max>
  
 YAML
