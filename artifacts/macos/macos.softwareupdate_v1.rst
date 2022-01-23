@@ -6,7 +6,7 @@ Description
 
 The macos:softwareupdate_test is used to check the status of automatic software updates on MacOSX.
 
-The softwareupdate_object is used to access automatic software update information.
+The softwareupdate_object element is used by a softwareupdate_test to access automatic software update information.
 
 The softwareupdate_state element makes it possible to make assertions about the state of automatic software updates.
 
