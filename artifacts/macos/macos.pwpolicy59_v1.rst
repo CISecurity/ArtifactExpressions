@@ -274,7 +274,7 @@ NOTE: The ``datatype`` parameter is governed by a constraint allowing only the f
   +----------------------------------+-----------------------------------+
   | ``requiresAlpha``                | ``requiresNumeric``               |
   +----------------------------------+-----------------------------------+
-  | ``maxMinutesUntilChangePassword  | ``minMinutesUntilChangePassword`` |
+  | ``maxMinutesUntilChangePassword``| ``minMinutesUntilChangePassword`` |
   +----------------------------------+-----------------------------------+
   | ``requiresMixedCase``            | ``requiresSymbol``                |
   +----------------------------------+-----------------------------------+
