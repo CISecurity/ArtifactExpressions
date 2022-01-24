@@ -109,7 +109,7 @@ Test Type Parameters
 +-----------------------------+---------+------------------------------------+
 | registry_type_operator      | string  | The registry type operator         |
 |                             |         | describes the comparison operation |
-|                             |         |  for the registry type field.      |
+|                             |         | for the registry type field.       |
 +-----------------------------+---------+------------------------------------+
 | registry_value              | string  | The registry value. Cannot be      |
 |                             |         | blank.                             |
@@ -278,9 +278,7 @@ Object
     comment="[ARTIFACT-TITLE]"
     version="1">
     <hive>[hive.value]</hive>
-    <key operation="[operation.value]">
-      [key.value]
-    </key>
+    <key operation="[operation.value]">[key.value]</key>
     <name>[name.value]</name>
   </registry_object>  
 
