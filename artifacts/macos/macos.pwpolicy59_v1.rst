@@ -77,8 +77,7 @@ Artifact Parameters
 |                               |         | collected.                         |
 +-------------------------------+---------+----------------------------------+
 
-NOTE: The ``target_user``, ``username``, ``userpass``, and ``directory_node`` parameters are governed by a constraint allowing only the following values:
-   -  ^.+$
+NOTE: The ``target_user``, ``username``, ``userpass``, and ``directory_node`` parameters are governed by a constraint allowing only values conforming to the following regex pattern: ``^.+$``
 
 NOTE: The ``check_existence`` parameter is governed by a constraint allowing only the following values:
    -  all_exist
@@ -287,8 +286,7 @@ NOTE: The ``datatype`` parameter is governed by a constraint allowing only the f
   | ``notGuessablePattern``          |                                   |
   +----------------------------------+-----------------------------------+
   
-:emphasis:`are governed by a constraint allowing only values conforming to the following regex pattern:`
-  ``^.+$``
+:emphasis:`are governed by a constraint allowing only values conforming to the following regex pattern:` ``^.+$``
 
 Generated Content
 ~~~~~~~~~~~~~~~~~
