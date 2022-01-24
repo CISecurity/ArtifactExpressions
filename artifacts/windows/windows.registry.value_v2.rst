@@ -366,19 +366,19 @@ YAML
       type: "[TEST-TYPE-NAME]"
       parameters:
         - parameter:
-            name: operator
+            name: "operator"
             dt: "string"
             value: "[operator.value]"
         - parameter:
-            name: value_data_type
+            name: "value_data_type"
             dt: "string"
             value: "[value_data_type.value]"
         - parameter:
-            name: value
+            name: "value"
             dt: "string"
             value: "[value.value]"
         - parameter:
-            name: check
+            name: "check"
             dt: "string"
             value: "[check.value]"       
 
