@@ -134,7 +134,7 @@ SCAP
 XCCDF
 '''''
 
-For ``macos.gatekeeper_v1`` artifacts, the xccdf:check looks like this. There is no Value in the xccdf for this Artifact.
+For ``macos.gatekeeper_v1`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
 
 ::
 
@@ -223,7 +223,7 @@ YAML
           dt: "string"
           value: "[datatype.value]"
       - parameter: 
-          name: en"abled
+          name: "enabled"
           dt: "string"
           value: "[enabled.value]"
 
