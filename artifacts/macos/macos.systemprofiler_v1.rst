@@ -41,7 +41,7 @@ Artifact Parameters
 |                             |         | given xpath would be impossible.   |
 +-----------------------------+---------+------------------------------------+
 
-NOTE: The ``data_type `` parameter is governed by a constraint allowing only the following values: 
+NOTE: The ``data_type`` parameter is governed by a constraint allowing only the following values: 
   - SPHardwareDataType
   - SPNetworkDataType 
   - SPSoftwareDataType
