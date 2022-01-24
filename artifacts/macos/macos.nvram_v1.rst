@@ -69,7 +69,7 @@ Test Type Parameters
 +-----------------------------+---------+------------------------------------+
 | nvram_var_operation         | string  | Comparison operation.              |
 +-----------------------------+---------+------------------------------------+
-| nvram_var_datatype          | string  | Datatype.                          |
+| nvram_var_datatype          | string  | Data type.                         |
 +-----------------------------+---------+------------------------------------+
 
 NOTE: The ``check`` parameter is governed by a constraint allowing only the following values:
