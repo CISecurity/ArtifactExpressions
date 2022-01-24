@@ -251,7 +251,7 @@ For ``windows.registry_value_v1 windows.registry.value`` artifacts, the xccdf:ch
       export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]2"
       value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var2" />      
     <check-content-ref 
-      href="[BENCHMARK-NAME]"
+      href="[BENCHMARK-TITLE]"
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 
@@ -546,7 +546,7 @@ For ``windows.registry_value_v1 existence_test`` artifacts, the xccdf:check look
 
   <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">    
     <check-content-ref 
-      href="[BENCHMARK-NAME]"
+      href="[BENCHMARK-TITLE]"
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 
@@ -778,7 +778,7 @@ For ``windows.registry_value_v1 equal`` or ``equals`` artifacts, the xccdf:check
 
   <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">    
     <check-content-ref 
-      href="[BENCHMARK-NAME]"
+      href="[BENCHMARK-TITLE]"
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 
