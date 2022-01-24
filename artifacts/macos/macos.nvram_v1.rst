@@ -36,8 +36,7 @@ NOTE: The ``check_existence`` parameter is governed by a constraint allowing onl
   -  none_exist
   -  only_one_exists
 
-NOTE: The ``nvram_var`` parameter is governed by a constraint allowing only the following values:
-  -  ^.+$
+NOTE: The ``nvram_var`` is governed by a constraint allowing only values conforming to the following regex pattern: ``^.+$``
 
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
@@ -70,7 +69,7 @@ Test Type Parameters
 +-----------------------------+---------+------------------------------------+
 | nvram_var_operation         | string  | Comparison operation.              |
 +-----------------------------+---------+------------------------------------+
-| nvram_var_datatype          | string  | Datatype.                          |
+| nvram_var_datatype          | string  | Data type.                         |
 +-----------------------------+---------+------------------------------------+
 
 NOTE: The ``check`` parameter is governed by a constraint allowing only the following values:
@@ -152,7 +151,7 @@ SCAP
 XCCDF
 '''''
 
-For ``macos.nvram_v1`` artifacts, the xccdf:check looks like this. There is no Value in the xccdf for this Artifact.
+For ``macos.nvram_v1`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
 
 ::
 

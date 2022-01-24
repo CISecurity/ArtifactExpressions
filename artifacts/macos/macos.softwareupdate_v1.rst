@@ -104,8 +104,7 @@ NOTE: The ``schedule`` parameter is governed by a constraint allowing only the f
   - true
   - false
 
-NOTE: The ``software_title`` parameter is governed by a constraint allowing only the following values:
-  - ^.+$
+NOTE: The ``software_title`` parameter is governed by a constraint allowing only values conforming to the following regex pattern: ``^.+$``
 
 Generated Content
 ~~~~~~~~~~~~~~~~~
@@ -155,7 +154,7 @@ SCAP
 XCCDF
 '''''
 
-For ``macos.softwareupdate_v1`` artifacts, the xccdf:check looks like this. There is no Value in the xccdf for this Artifact.
+For ``macos.softwareupdate_v1`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
 
 ::
 

@@ -41,7 +41,7 @@ Artifact Parameters
 |                             |         | given xpath would be impossible.   |
 +-----------------------------+---------+------------------------------------+
 
-NOTE: The ``data_type `` parameter is governed by a constraint allowing only the following values: 
+NOTE: The ``data_type`` parameter is governed by a constraint allowing only the following values: 
   - SPHardwareDataType
   - SPNetworkDataType 
   - SPSoftwareDataType
@@ -193,7 +193,7 @@ SCAP
 XCCDF
 '''''
 
-For ``macos.systemprofiler_v1`` artifacts, the xccdf:check looks like this. There is no Value in the xccdf for this Artifact.
+For ``macos.systemprofiler_v1`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
 
 ::
 

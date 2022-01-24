@@ -153,7 +153,7 @@ SCAP
 XCCDF
 '''''
 
-For ``macos.authorizationdb_v1`` artifacts, the xccdf:check looks like this. There is no Value in the xccdf for this Artifact.
+For ``macos.authorizationdb_v1`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
 
 ::
 
