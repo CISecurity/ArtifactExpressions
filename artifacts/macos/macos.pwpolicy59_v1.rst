@@ -22,59 +22,64 @@ Artifact Parameters
 +-------------------------------+---------+----------------------------------+
 | Name                        | Type    | Description                        |
 +=============================+=========+====================================+
-| target_user                   | string  | The target_user element specifies  |
-|                               |         | the user whose password policy     |
-|                               |         | information should be collected.   |
-|                               |         | If an operation other than equals  |
-|                               |         | is specified, the users on the     |
-|                               |         | system should be enumerated and    |
-|                               |         | the 'pwpolicy'command should be    |
-|                               |         | issued for each user that matches  |
-|                               |         | the target_user element. If the    |
-|                               |         | xsi:nil attribute is set to true,  |
-|                               |         | the global policy should be        |
-|                               |         | retrieved. Cannot be blank.        |
+| target_user                   | string  | The target_user element          |
+|                               |         | specifies the user whose         |
+|                               |         | password policy information      |
+|                               |         | should be collected. If an       |
+|                               |         | operation other than equals is   |
+|                               |         | specified, the users on the      |
+|                               |         | system should be enumerated and  |
+|                               |         | the 'pwpolicy'command should be  |
+|                               |         | issued for each user that        |
+|                               |         | matches the target_user element. |
+|                               |         | If the xsi:nil attribute is set  |
+|                               |         | to true, the global policy       |
+|                               |         | should be retrieved. Cannot be   |
+|                               |         | blank.                           |
 +-------------------------------+---------+----------------------------------+
-| username                      | string  | The username element specifies the |
-|                               |         | username of the authenticator. If  |
-|                               |         | the xsi:nil attribute is set to    |
-|                               |         | true, authentication to the        |
-|                               |         | directory node will not be         |
-|                               |         | performed (i.e. the '-a' and '-p'  |
-|                               |         | command line options will not be   |
-|                               |         | specified when issuing the         |
-|                               |         | 'pwpolicy' command) and the        | 
-|                               |         | xsi:nil attribute of the userpass  |
-|                               |         | element should also be set to      |
-|                               |         | true. Cannot be blank.             |
+| username                      | string  | The username element specifies   |
+|                               |         | the username of the              |
+|                               |         | authenticator. If the xsi:nil    |
+|                               |         | attribute is set to true,        |
+|                               |         | authentication to the directory  |
+|                               |         | node will not be performed (i.e. |
+|                               |         | the '-a' and '-p' command line   |
+|                               |         | options will not be specified    |
+|                               |         | when issuing the 'pwpolicy'      |
+|                               |         | command) and the xsi:nil         |
+|                               |         | attribute of the userpass        |
+|                               |         | element should also be set to    |
+|                               |         | true. Cannot be blank.           |
 +-------------------------------+---------+----------------------------------+
-| userpass                      | string  | The userpass element specifies the |
-|                               |         | password of the authenticator as   |
-|                               |         | specified by the username element. |
-|                               |         | If the xsi:nil attribute is set to |
-|                               |         | true, authentication to the        |
-|                               |         | directory node will not be         |
-|                               |         | performed (i.e. the '-a' and '-p'  |
-|                               |         | command line options will not be   |
-|                               |         | specified when issuing the         |
-|                               |         | 'pwpolicy' command) and the        |
-|                               |         | xsi:nil attribute of the username  |
-|                               |         | element should also be set to      |
-|                               |         | true. Cannot be blank.             |
+| userpass                      | string  | The userpass element specifies   |
+|                               |         | the password of the              |
+|                               |         | authenticator as specified by    |
+|                               |         | the username element. If the     |
+|                               |         | xsi:nil attribute is set to      |
+|                               |         | true, authentication to the      |
+|                               |         | directory node will not be       |
+|                               |         | performed (i.e. the '-a' and     |
+|                               |         | '-p' command line options will   |
+|                               |         | not be specified when issuing    |
+|                               |         | the 'pwpolicy' command) and the  |
+|                               |         | xsi:nil attribute of the         |
+|                               |         | username element should also be  |
+|                               |         | set to true. Cannot be blank.    |
 +-------------------------------+---------+----------------------------------+
-| directory_node                | string  | The directory_node element         |
-|                               |         | specifies the directory node that  |
-|                               |         | you would like to retrieve the     |
-|                               |         | password policy information from.  |
-|                               |         | If the xsi:nil attribute is set to |
-|                               |         | true, the default directory node   |
-|                               |         | is used (i.e the'-n' command line  |
-|                               |         | option will will not be specified  |
-|                               |         | when issuing the 'pwpolicy'        |
-|                               |         | command). Cannot be blank.         |
+| directory_node                | string  | The directory_node element       |
+|                               |         | specifies the directory node     |
+|                               |         | that you would like to retrieve  |
+|                               |         | the password policy information  |
+|                               |         | from. If the xsi:nil attribute   |
+|                               |         | is set to true, the default      |
+|                               |         | directory node is used (i.e the  |
+|                               |         | '-n' command line option will    |
+|                               |         | not be specified when issuing    |
+|                               |         | the 'pwpolicy' command). Cannot  |
+|                               |         | be blank.                        |
 +-------------------------------+---------+----------------------------------+
-| check_existence               | string  | Defines how many items should be   |
-|                               |         | collected.                         |
+| check_existence               | string  | Defines how many items should    |
+|                               |         | be collected.                    |
 +-------------------------------+---------+----------------------------------+
 
 NOTE: The ``target_user``, ``username``, ``userpass``, and ``directory_node`` parameters are governed by a constraint allowing only values conforming to the following regex pattern: ``^.+$``
