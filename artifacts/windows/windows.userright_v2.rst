@@ -77,6 +77,13 @@ NOTE: The ``userright`` parameter is governed by a constraint allowing only the 
   - SE_SERVICE_LOGON_NAME 
   - "" (empty string)
 
+NOTE: The ``check_existence`` parameter is governed by a constraint allowing only the following values:
+  - all_exist
+  - any_exist
+  - at_least_one_exists
+  - none_exist
+  - only_one_exists  
+
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
@@ -111,6 +118,35 @@ Test Type Parameters
 |                             |         | case-insensitive operations are    |
 |                             |         | used for this entity.              |
 +-----------------------------+---------+------------------------------------+
+
+NOTE: The ``datatype`` parameter is governed by a constraint allowing only the following values:
+	- boolean
+	- float
+	- int
+	- string
+	- version
+	- set
+
+NOTE: The ``check`` parameter is governed by a constraint allowing only the following values:
+  - all
+  - at least one
+  - none satisfy
+  - only one
+
+NOTE: The ``operation`` parameter is governed by a constraint allowing only the following values:
+  - equals
+  - not equal
+  - case insensitive equals
+  - case insensitive not equal
+  - greater than
+  - less than
+  - greater than or equal
+  - less than or equal
+  - bitwise and
+  - bitwise or
+  - pattern match
+  - subset of
+  - superset of
 
 **windows.userright_trustee_sid_v2**
 
