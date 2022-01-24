@@ -105,7 +105,7 @@ SCAP
 XCCDF
 '''''
 
-For ``cisco_ios.snmp existence_test`` artifacts, the xccdf:check looks like this. There is no Value element in the xccdf for this Artifact.
+For ``cisco_ios.snmp existence_test`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
 
 ::
 

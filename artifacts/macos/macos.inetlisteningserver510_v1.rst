@@ -216,7 +216,7 @@ SCAP
 XCCDF
 '''''
 
-For ``macos.inetlisteningserver510`` artifacts, the xccdf:check looks like this. There is no value in the xccdf for this Artifact.
+For ``macos.inetlisteningserver510`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
 
 ::
 
@@ -242,13 +242,13 @@ Test
     version="1">
     <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
     <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
-  </accountiinetlisteningserver510_testnfo_test>
+  </inetlisteningserver510_test>
 
 Object
 
 ::
 
-  <inetlisteningserver510_test 
+  <inetlisteningserver510_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#macos"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TTILE]"
@@ -256,7 +256,7 @@ Object
     <protocol>[protocol.value]</protocol>
     <local_address>[local_address.value]</local_address>
     <local_port>[local_port.value]</local_port>
-  </inetlisteningserver510_test>
+  </inetlisteningserver510_object>
 
 State
 

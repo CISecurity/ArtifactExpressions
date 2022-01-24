@@ -178,7 +178,7 @@ XCCDF
 '''''
 
 For ``windows.privilegeassignment`` artifacts, an XCCDF:check element
-looks like this. There is no value in the xccdf for this Artifact.
+looks like this. There is no Value element in the XCCDF for this Artifact.
 
 ::
 
