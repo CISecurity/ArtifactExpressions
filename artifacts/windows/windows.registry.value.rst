@@ -370,19 +370,19 @@ YAML
       type: "[TEST-TYPE-NAME]"
       parameters:
         - parameter:
-            name: operator
+            name: "operator"
             dt: "string"
             value: "[operator.value]"
         - parameter:
-            name: value_data_type
+            name: "value_data_type"
             dt: "string"
             value: "[value_data_type.value]"
         - parameter:
-            name: value
+            name: "value"
             dt: "string"
             value: "[value.value]"
         - parameter:
-            name: check
+            name: "check"
             dt: "string"
             value: "[check.value]"       
 
@@ -634,7 +634,7 @@ YAML
       type: "[TEST-TYPE-NAME]"
       parameters:
         - parameter:
-            name: value
+            name: "value"
             dt: "string"
             value: "[value.value]"
 
@@ -772,7 +772,7 @@ SCAP
 XCCDF
 '''''
 
-For ``windows.registry_value_v1 euqual`` or ``equals`` artifacts, the xccdf:check looks like this. There is no Value element in the xccdf for this Artifact.
+For ``windows.registry_value_v1 equal`` or ``equals`` artifacts, the xccdf:check looks like this. There is no Value element in the xccdf for this Artifact.
 
 ::
 
@@ -866,11 +866,11 @@ YAML
       type: "[TEST-TYPE-NAME]"
       parameters:
         - parameter:
-            name: data_type
+            name: "data_type"
             dt: "string"
             value: "[data_type.value]"
         - parameter:
-            name: value
+            name: "value"
             dt: "string"
             value: "[value.value]"            
 
