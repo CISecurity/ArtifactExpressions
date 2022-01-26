@@ -39,7 +39,7 @@ Test Type Parameters
 =========== ====== =================================
 Name        Type   Description
 =========== ====== =================================
-operation   string Comparison Operator.
+operation   string Comparison operator.
 config_line string The collected configuration line.
 =========== ====== =================================
 
@@ -101,7 +101,7 @@ SCAP
 XCCDF
 '''''
 
-For ``cisco_ios.line`` artifacts, an XCCDF Value element is generated.
+For ``cisco_ios.line`` ``cisco_ios.line_config_line`` artifacts, an XCCDF Value element is generated.
 
 ::
 
@@ -114,7 +114,7 @@ For ``cisco_ios.line`` artifacts, an XCCDF Value element is generated.
     <value>[value.value]</value>
   </Value>
 
-For ``cisco_ios.line`` artifacts, the xccdf:check looks like this.
+For ``cisco_ios.line`` ``cisco_ios.line_config_line`` artifacts, the XCCDF check looks like this.
 
 ::
 
@@ -123,7 +123,7 @@ For ``cisco_ios.line`` artifacts, the xccdf:check looks like this.
       export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
       value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
     <check-content-ref 
-      href="[BENCHMARK-TITLE]"
+      href="[BENCHMARK-TITLE]-oval.xml"
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
   
@@ -135,41 +135,42 @@ Test
 
 ::
 
-   <line_test 
-       xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#iso' 
-       id='oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]'
-       check_existence='[check_existence.value]' 
-       check='[check.value]' 
-       comment="[ARTIFACT-TITLE]"
-       version="1">
-     <object object_ref='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'/>
-     <state state_ref='oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]'/>
-   </line_test>
+  <line_test 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#ios"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
+    check_existence="at_least_one_exists"
+    check="all"
+    comment="[ARTIFACT-TITLE]"
+    version="1">
+    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+    <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
+  </line_test>
 
 Object
 
 ::
 
-   <line_object 
-       xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#iso' 
-       id='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'
-       comment="[ARTIFACT-TITLE]"
-       version="1">
-       <show_subcommand operation='[operation.value]'>[show_subcommand.value]</show_subcommand>
-   </line_object>
+  <line_object 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#ios"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
+    comment="[ARTIFACT-TITLE]"
+    version="1">
+    <show_subcommand operation="[operation.value]">[show_subcommand.value]</show_subcommand>
+  </line_object>
 
 State
 
 ::
 
-   <line_state 
-       xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#iso' 
-       id='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'
-       comment="[ARTIFACT-TITLE]"
-       version="1">
-       <config_line operation='[operation.value]' 
-           var_ref='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'/>
-   </line_state>
+  <line_state 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#ios"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
+    comment="[ARTIFACT-TITLE]"
+    version="1">
+    <config_line 
+      operation="[operation.value]"
+      var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
+  </line_state>
 
 YAML
 ^^^^
@@ -203,40 +204,40 @@ JSON
 
 ::
 
-   {
-       "artifact-expression": {
-         "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
-         "artifact-title": "[ARTIFACT-TITLE]",
-         "artifact": {
-            "type": "[ARTIFACT-TYPE-NAME]",
-           "parameters": [
-             {
-               "parameter": {
-                 "name": "cisco_ios.show_subcommand",
-                 "type": "string",
-                 "value": "[cisco_ios.show_subcommand.value]"
-               }
-             }
-           ]
-         },
-         "test": {
-           "type": "[TEST-TYPE-NAME]",
-           "parameters": [
-             {
-               "parameter": {
-                 "name": "operation",
-                 "type": "string",
-                 "value": "[operation.value]"
-               }
-             },
-             {
-               "parameter": {
-                 "name": "config_line",
-                 "type": "string",
-                 "value": "[config_line.value]"
-               }
-             }
-           ]
-         }
-       }
-     }
+  {
+    "artifact-expression": {
+      "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
+      "artifact-title": "[ARTIFACT-TITLE]",
+      "artifact": {
+        "type": "[ARTIFACT-TYPE-NAME]",
+        "parameters": [
+          {
+            "parameter": {
+              "name": "cisco_ios.show_subcommand",
+              "type": "string",
+              "value": "[cisco_ios.show_subcommand.value]"
+            }
+          }
+        ]
+      },
+      "test": {
+        "type": "[TEST-TYPE-NAME]",
+        "parameters": [
+          {
+            "parameter": {
+              "name": "operation",
+              "type": "string",
+              "value": "[operation.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "config_line",
+              "type": "string",
+              "value": "[config_line.value]"
+            }
+          }
+        ]
+      }
+    }
+  }

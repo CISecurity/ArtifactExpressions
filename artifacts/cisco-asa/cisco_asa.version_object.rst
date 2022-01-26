@@ -107,7 +107,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
           <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
           <ae:title>[ARTIFACT-TITLE]</ae:title>
           <ae:artifact type="[ARTIFACT-TYPE-NAME]">
-            <ae:parameters/>
+            <ae:parameters />
           </ae:artifact>
           <ae:test type="[TEST-TYPE-NAME]">
             <ae:parameters>
@@ -129,12 +129,12 @@ SCAP
 XCCDF
 '''''
 
-For ``cisco_asa.version_object cisco_asa.major_version`` artifacts, an XCCDF Value element is generated.
+For ``cisco_asa.version_object`` ``cisco_asa.major_version`` artifacts, an XCCDF Value element is generated.
 
 ::
 
   <Value 
-    id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var2"
+    id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var"
     type="string"
     operator="[operator.value]">
     <title>[RECOMMENDATION-TITLE]</title>
@@ -142,20 +142,18 @@ For ``cisco_asa.version_object cisco_asa.major_version`` artifacts, an XCCDF Val
     <value>[value.value]</value>
   </Value>
 
-For ``cisco_asa.version_object cisco_asa.major_version`` artifacts, the xccdf:check looks like this.
+For ``cisco_asa.version_object`` ``cisco_asa.major_version`` artifacts the xccdf:check looks like this.
 
 ::
 
-  <xccdf:complex-check operator="OR">
-    <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
-      <check-export 
-        export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
-        value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
-      <check-content-ref 
-        href="[BENCHMARK-TITLE]"
-        name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
-    </check>
-  </xccdf:complex-check>
+  <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+    <check-export 
+      export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
+      value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
+    <check-content-ref 
+      href="[BENCHMARK-TITLE]-oval.xml"
+      name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
+  </check>
 
 OVAL
 ''''
@@ -191,13 +189,13 @@ State
 
   <version_state
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#asa"
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
     <asa_major_release 
-      datatype="[datatype.value]" 
+      datatype="version" 
       operation="[operation.value]"
-      var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+      var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
   </version_state>
 
 Variable
@@ -205,7 +203,7 @@ Variable
 ::
 
   <external_variable
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
     datatype="string"
     comment="This value is used in Rule: [RECOMMENDATION-TITLE]"
     version="1" />  
@@ -244,7 +242,9 @@ JSON
       "artifact-title": "[ARTIFACT-TITLE]",
       "artifact": {
         "type": "[ARTIFACT-TYPE-NAME]",
-        "parameters": null
+        "parameters": [
+
+        ]
       },
       "test": {
         "type": "[TEST-TYPE-NAME]",
@@ -313,7 +313,7 @@ SCAP
 XCCDF
 '''''
 
-For ``cisco_asa.version_object cisco_asa.major_minor_version`` artifacts, an XCCDF Value element is generated.
+For ``cisco_asa.version_object`` ``cisco_asa.major_minor_version`` artifacts, an XCCDF Value element is generated.
 
 ::
 
@@ -335,22 +335,18 @@ For ``cisco_asa.version_object cisco_asa.major_minor_version`` artifacts, an XCC
     <value>[value.value]</value>
   </Value>
 
-For ``cisco_asa.version_object cisco_asa.major_minor_version`` artifacts, the xccdf:check looks like this.
+For ``cisco_asa.version_object`` ``cisco_asa.major_minor_version`` artifacts, the XCCDF check looks like this.
 
 ::
 
-  <xccdf:complex-check operator="AND">
-    <xccdf:complex-check operator="OR">
-      <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
-        <check-export 
-          export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
-          value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
-        <check-content-ref 
-          href="[BENCHMARK-TITLE]"
-          name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
-      </check>
-    </xccdf:complex-check>
-  </xccdf:complex-check>
+  <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+    <check-export 
+      export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
+      value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
+    <check-content-ref 
+      href="[BENCHMARK-TITLE]-oval.xml"
+      name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
+  </check>
 
 OVAL
 ''''
@@ -378,8 +374,7 @@ Object
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#asa"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
-    version="1">
-  </version_object >
+    version="1" />
 
 State
 
@@ -387,7 +382,7 @@ State
 
   <version_state
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#asa"
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
     <asa_major_release 
@@ -405,13 +400,13 @@ Variable
 ::
 
   <external_variable
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
     datatype="string"
     comment="This value is used in Rule: [RECOMMENDATION-TITLE]"
     version="1" />
 
   <external_variable
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]2"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]2"
     datatype="string"
     comment="This value is used in Rule: [RECOMMENDATION-TITLE]"
     version="1" />    
@@ -458,7 +453,7 @@ JSON
       "artifact-title": "[ARTIFACT-TITLE]",
       "artifact": {
         "type": "[ARTIFACT-TYPE-NAME]",
-        "parameters": null
+        "parameters": []
       },
       "test": {
         "type": "[TEST-TYPE-NAME]",

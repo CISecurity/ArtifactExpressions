@@ -16,7 +16,7 @@ Artifact Parameters
 +-------------------------------------+-------------+------------------+
 | Name                                | Type        | Description      |
 +=====================================+=============+==================+
-| non_multi_tenant_sql                | String      | This entity      |
+| non_multi_tenant_sql                | string  | This entity      |
 |                                     |             | defines a query  |
 |                                     |             | used to identify |
 |                                     |             | the object(s) to |
@@ -25,7 +25,7 @@ Artifact Parameters
 |                                     |             | non-multi-tenant |
 |                                     |             | Oracle DB.       |
 +-------------------------------------+-------------+------------------+
-| multi_tenant_sql                    | String      | This entity      |
+| multi_tenant_sql                    | string  | This entity      |
 |                                     |             | defines a query  |
 |                                     |             | used to identify |
 |                                     |             | the object(s) to |
@@ -33,7 +33,7 @@ Artifact Parameters
 |                                     |             | a multi-tenant   |
 |                                     |             | Oracle DB.       |
 +-------------------------------------+-------------+------------------+
-| version                             | String      | This entity      |
+| version                             | string  | This entity      |
 |                                     |             | defines the      |
 |                                     |             | specific version |
 |                                     |             | of the database  |
@@ -62,20 +62,20 @@ independent.sql57_v1
 +-------------------------------------+-------------+------------------+
 | Name                                | Type        | Description      |
 +=====================================+=============+==================+
-| check_existence                     | String      | Specifies how    |
+| check_existence                     | string  | Specifies how    |
 |                                     |             | many items in    |
 |                                     |             | the set must     |
 |                                     |             | exist for the    |
 |                                     |             | test to evaluate |
 |                                     |             | to true.         |
 +-------------------------------------+-------------+------------------+
-| check                               | String      | Defines how many |
+| check                               | string  | Defines how many |
 |                                     |             | items must       |
 |                                     |             | evaluate to true |
 |                                     |             | for the entity   |
 |                                     |             | to return true.  |
 +-------------------------------------+-------------+------------------+
-| value                               | String      | A simple         |
+| value                               | string  | A simple         |
 |                                     |             | (number, string, |
 |                                     |             | or boolean)      |
 |                                     |             | value to be used |
@@ -83,7 +83,7 @@ independent.sql57_v1
 |                                     |             | the result, i.e. |
 |                                     |             | pass/fail.       |
 +-------------------------------------+-------------+------------------+
-| value_data_type                     | String      | The optional     |
+| value_data_type                     | string  | The optional     |
 |                                     |             | datatype         |
 |                                     |             | attribute        |
 |                                     |             | specifies how    |
@@ -92,12 +92,12 @@ independent.sql57_v1
 |                                     |             | be applied to    |
 |                                     |             | the data.        |
 +-------------------------------------+-------------+------------------+
-| field_name                          | String      | A string         |
+| field_name                          | string  | A string         |
 |                                     |             | restricted to    |
 |                                     |             | disallow upper   |
 |                                     |             | case characters. |
 +-------------------------------------+-------------+------------------+
-| field_operation                     | String      | The optional     |
+| field_operation                     | string  | The optional     |
 |                                     |             | operation        |
 |                                     |             | attribute        |
 |                                     |             | determines how   |
@@ -174,7 +174,7 @@ SCAP
 XCCDF
 '''''
 
-For ``oracledb_tenant.sql57_v1`` artifacts, the xccdf:check looks like
+For ``oracledb_tenant.sql57_v1`` ``independent.sql57_v1`` artifacts, the xccdf:check looks like
 this.
 
 ::
@@ -182,13 +182,13 @@ this.
   <check system='http://oval.mitre.org/XMLSchema/oval-definitions-5'>
     <check-export 
       export-name='oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]' 
-      value-id='xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var'/>
+      value-id='xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var' />
     <check-export 
       export-name='oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]' 
-      value-id='xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var'/>
+      value-id='xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var' />
     <check-content-ref 
       href='[BENCHMARK NAME]' 
-      name='oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]'/>
+      name='oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]' />
   </check>
 
 OVAL
@@ -205,8 +205,8 @@ Test
     check='[check.value]' 
     comment='[ARTIFACT-TITLE]'
     version='[version.value]'>
-    <object object_ref='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'/>
-    <state state_ref='oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]'/>
+    <object object_ref='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]' />
+    <state state_ref='oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]' />
   </sql57_test>
 
 Object
@@ -220,7 +220,7 @@ Object
     version='[version.value]'>
     <engine>[engine.value]</engine>
     <version>[version.value]</version>
-    <connection_string var_ref='oval:org.cisecurity.benchmarks:var:[ID]'/>
+    <connection_string var_ref='oval:org.cisecurity.benchmarks:var:[ID]' />
     <sql>[sql.value]</sql>
   </sql57_object>
 
@@ -238,7 +238,7 @@ State
       name='[name.value]' 
       datatype='[datatype.value]'
       operation='[operation.value]'
-      var_ref='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'/>
+      var_ref='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]' />
     </result>
   </sql57_state>
 

@@ -16,7 +16,7 @@ Technical Details
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
-**vmware.vmware.vmhost_advancedsetting_v2**
+**vmware.vmhost_advancedsetting_v2**
 
 +---------------------------------+---------+--------------------------------+
 | Name                            | Type    | Description                    |
@@ -167,7 +167,7 @@ SCAP
 XCCDF
 '''''
 
-For ``vmware:vmhost_advancedsetting`` artifacts, an XCCDF Value element is generated.
+For ``vmware.vmhost_advancedsetting_v2`` ``vmware:vmhost_advancedsetting_value_v2`` artifacts, an XCCDF Value element is generated.
 
 ::
 
@@ -180,13 +180,13 @@ For ``vmware:vmhost_advancedsetting`` artifacts, an XCCDF Value element is gener
     <value>[value.value]</value>
   </Value>  
 
-For ``vmware:vmhost_advancedsetting`` artifacts, the xccdf:check looks like this.
+For ``vmware.vmhost_advancedsetting_v2`` ``vmware:vmhost_advancedsetting_value_v2`` artifacts, the XCCDF check looks like this.
 
 ::
 
   <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
     <check-export 
-      export-name="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
+      export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
       value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />    
     <check-export 
       export-name="oval:org.cisecurity.benchmarks:var:100000"
@@ -205,7 +205,7 @@ Test
 
   <vmhost_advancedsetting_test 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
-    id="oval:org.cisecurity.benchmarks[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
     check_existence="[check_existence.value]"
     check="[check.value]"
     comment="[ARTIFACT-TITLE]"
@@ -220,13 +220,11 @@ Object
 
   <vmhost_advancedsetting_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
-    id="oval:org.cisecurity.benchmarks[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-    <connection_string var_ref="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
-    <vmhost_name operation="[operation.value]">
-      [vmhost_name.value]
-    </vmhost_name>
+    <connection_string var_ref="oval:org.cisecurity.benchmarks:var:100000" />
+    <vmhost_name operation="[operation.value]">[vmhost_name.value]</vmhost_name>
     <advanced_setting_name operation="[operation.value]">
       [advanced_setting_name.value]
     </advanced_setting_name>
@@ -238,7 +236,7 @@ State
 
   <vmhost_advancedsetting_state 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
-    id="oval:org.cisecurity.benchmarks[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
     <advanced_setting_name 
@@ -249,7 +247,7 @@ State
     <advanced_setting_value 
       datatype="[datatype.value]"
       operation="[operation.value]"
-      var_ref="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
+      var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
   </vmhost_advancedsetting_state>
 
 Variable
@@ -257,7 +255,7 @@ Variable
 ::
 
   <external_variable 
-    id="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
     datatype="[datatype.value]"
     version="1"
     comment="This value is used in Rule: [RECOMMENDATION-TITLE]" />

@@ -119,20 +119,20 @@ SCAP
 XCCDF
 '''''
 
-For ``iis.applicationhostconfig`` artifacts, an XCCDF Value element is generated.
+For ``iis.applicationhostconfig`` ``iis.applicationhostconfig`` artifacts, an XCCDF Value element is generated.
 
 ::
 
   <Value 
     id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var"
-    type="string"
+    type="[type.value]"
     operator="[operator.value]">
     <title>[RECOMMENDATION-TITLE]</title>
     <description>This value is used in Rule: [RECOMMENDATION-TITLE]</description>
     <value>[value.value]</value>
   </Value>
 
-For ``iis.applicationhostconfig`` artifacts, the xccdf:check looks like this.
+For ``iis.applicationhostconfig`` ``iis.applicationhostconfig`` artifacts, the XCCDF check looks like this.
 
 ::
 
@@ -141,7 +141,7 @@ For ``iis.applicationhostconfig`` artifacts, the xccdf:check looks like this.
       export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
       value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
     <check-content-ref 
-      href="[BENCHMARK-TITLE]"
+      href="[BENCHMARK-TITLE]-oval.xml"
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 
@@ -179,11 +179,10 @@ State
 
   <applicationhostconfig_state    
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#iis"
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1"> 
     <[configuration_setting.value] 
-      xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#iis"
       datatype="[data_type.value]"
       operation="[operator.value]"
       var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
@@ -240,7 +239,8 @@ JSON
       "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
       "artifact-title": "[ARTIFACT-TITLE]",
       "artifact": {
-        "type": "[ARTIFACT-TYPE-NAME]"
+        "type": "[ARTIFACT-TYPE-NAME]",
+        "parameters": []
       },
       "test": {
         "type": "[TEST-TYPE-NAME]",

@@ -353,7 +353,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
             </ae:parameters>
           </ae:test>
           <ae:profiles>
-            <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1"/>
+            <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1" />
           </ae:profiles>
         </ae:artifact_expression>
       </xccdf:check-content>
@@ -366,14 +366,14 @@ SCAP
 XCCDF
 '''''
 
-For ``macos.pwpolicy59_v1`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
+For ``macos.pwpolicy59_v1`` ``macos.pwpolicy59_v1`` artifacts, the XCCDF check looks like this. There is no Value element in the XCCDF for this artifact.
 
 ::
 
   <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
     <check-content-ref
-      href="[BENCHMARK-TITLE]"
-        name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]">
+      href="[BENCHMARK-TITLE]-oval.xml"
+      name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]">
     </check-content-ref>
   </check>
 
@@ -386,10 +386,10 @@ Test
 
   <pwpolicy59_test
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#macos"
-    check="[check.value]"
-    check_existence="[check_existence.value]"
-    comment="[ARTIFACT-TITLE]"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
+    check_existence="[check_existence.value]"
+    check="[check.value]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
     <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
     <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
@@ -401,8 +401,8 @@ Object
 
   <pwpolicy59_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#macos"
-    comment="[ARTIFACT-TITLE]"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
     <target_user>[target_user.value]</target_user>
     <username>[username.value]</username>
@@ -416,8 +416,8 @@ State
 
    <pwpolicy59_state 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#macos"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     version="1">
     <target_user 
       datatype="[datatype.value]"

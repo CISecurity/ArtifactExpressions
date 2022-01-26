@@ -141,7 +141,7 @@ SCAP
 XCCDF
 '''''
 
-For ``unix.sshd_parameter_v1 | equals, equal, not equal, less than, less than or equal, greater than, greater than or equal, pattern match, and pattern not match`` artifacts, an XCCDF Value element is generated.
+For ``unix.sshd_parameter_v1`` ``equals``, ``equal``, ``not equal``, ``less than``, ``less than or equal``, ``greater than``, ``greater than or equal``, ``pattern match``, and ``pattern not match`` artifacts, an XCCDF Value element is generated.
 
 ::
 
@@ -154,20 +154,18 @@ For ``unix.sshd_parameter_v1 | equals, equal, not equal, less than, less than or
     <value>[value.value]</value>
   </Value>
 
-For ``unix.sshd_parameter_v1 | equals, equal, not equal, less than, less than or equal, greater than, greater than or equal, pattern match, and pattern not match`` artifacts, the xccdf:check looks like this.
+For ``unix.sshd_parameter_v1`` ``equals``, ``equal``, ``not equal``, ``less than``, ``less than or equal``, ``greater than``, ``greater than or equal``, ``pattern match``, and ``pattern not match`` artifacts, the XCCDF check looks like this.
 
 ::
 
-  <xccdf:complex-check operator="AND">
-    <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
-      <check-export 
-        export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
-        value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
-      <check-content-ref 
-        href="[BENCHMARK-TITLE]"
-        name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
-    </check>
-  </xccdf:complex-check>
+  <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+    <check-export 
+      export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
+      value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
+    <check-content-ref 
+      href="[BENCHMARK-TITLE]-oval.xml"
+      name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
+  </check>
 
 OVAL
 ''''
@@ -345,7 +343,7 @@ SCAP
 XCCDF
 '''''
 
-For ``unix.sshd_parameter_v1 existence_test`` artifacts, an XCCDF Value element is generated.
+For ``unix.sshd_parameter_v1`` ``existence_test`` artifacts, an XCCDF Value element is generated.
 
 ::
 
@@ -358,20 +356,18 @@ For ``unix.sshd_parameter_v1 existence_test`` artifacts, an XCCDF Value element 
     <value>[value.value]</value>
   </Value>
 
-For ``unix.sshd_parameter_v1 existence_test`` artifacts, the xccdf:check looks like this.
+For ``unix.sshd_parameter_v1`` ``existence_test`` artifacts, the XCCDF check looks like this.
 
 ::
 
-  <xccdf:complex-check operator="AND">
-    <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
-      <check-export 
-        export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
-        value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
-      <check-content-ref 
-        href="[BENCHMARK-TITLE]"
-        name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
-    </check>
-  </xccdf:complex-check>
+  <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+    <check-export 
+      export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
+      value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
+    <check-content-ref 
+      href="[BENCHMARK-TITLE]-oval.xml"
+      name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
+  </check>
 
 OVAL
 ''''

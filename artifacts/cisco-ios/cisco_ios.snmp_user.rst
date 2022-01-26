@@ -51,17 +51,14 @@ Test Type Parameters
 
 **cisco_ios.snmp_user_priv**
 
-+-------------------------------------+-------------+------------------+
-| Name                                | Type        | Description      |
-+=====================================+=============+==================+
-| operator                            | string      | Comparison       |
-|                                     |             | Operator.        |
-+-------------------------------------+-------------+------------------+
-| snmp_encryption_type                | string      | The SNMP         |
-|                                     |             | encryption type  |
-|                                     |             | for the user     |
-|                                     |             | (for SNMPv3).    |
-+-------------------------------------+-------------+------------------+
++-----------------------------+---------+------------------------------------+
+| Name                        | Type    | Description                        |
++=============================+=========+====================================+
+| operator                    | string  | Comparison operator.               |
++-----------------------------+---------+------------------------------------+
+| snmp_encryption_type        | string  | The SNMP encryption type for the   |
+|                             |         | user (for SNMPv3).                 |
++-----------------------------+---------+------------------------------------+
 
 NOTE: The ``operator`` parameter is governed by a constraint allowing only the following values:
   - bitwise and
@@ -128,7 +125,7 @@ SCAP
 XCCDF
 '''''
 
-For ``cisco_ios.snmp_user`` artifacts, an XCCDF Value element is generated.
+For ``cisco_ios.snmp_user`` ``cisco_ios.snmp_user_priv`` artifacts, an XCCDF Value element is generated.
 
 ::
 
@@ -141,7 +138,7 @@ For ``cisco_ios.snmp_user`` artifacts, an XCCDF Value element is generated.
     <value>[value.value]</value>
   </Value>
 
-For ``cisco_ios.snmp_user`` artifacts, the xccdf:check looks like this.
+For ``cisco_ios.snmp_user`` ``cisco_ios.snmp_user_priv`` artifacts, the XCCDF check looks like this.
 
 ::
 
@@ -150,7 +147,7 @@ For ``cisco_ios.snmp_user`` artifacts, the xccdf:check looks like this.
       export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
       value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
     <check-content-ref 
-      href="[BENCHMARK-TITLE]"
+      href="[BENCHMARK-TITLE]-oval.xml"
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 
@@ -184,7 +181,9 @@ Object
     <name operation="[operation.value]">[name.value]</name>
     <filter 
       xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5"
-      action="include">oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]2</filter>
+      action="include">
+        oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]2
+    </filter>
   </snmpuser_object>
 
 State
@@ -197,6 +196,16 @@ State
     comment="[ARTIFACT-TITLE]"
     version="1">
     <version>3</version>
+  </snmpuser_state>
+
+  <snmpuser_state 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#ios"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
+    comment="[ARTIFACT-TITLE]"
+    version="1">
+    <priv
+      operation="[operation.value]"
+      var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
   </snmpuser_state>
 
 Variable

@@ -69,13 +69,13 @@ NOTE: The ``data_type`` parameter is governed by a constraint allowing only the 
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
+| **equals**
+| **less than**
+| **less than or equal**
+| **greater than**
+| **greater than or equal**
 | **pattern match**
 | **pattern not match**
-| **less than or equal**
-| **less than**
-| **greater than or equal**
-| **greater than**
-| **equals**
 XCCDF+AE
 ^^^^^^^^
 
@@ -115,7 +115,7 @@ SCAP
 XCCDF
 '''''
 
-For ``vmware.virtual_machine.advanced_setting`` artifacts, an XCCDF Value element is generated.
+For ``vmware.virtual_machine.advanced_setting`` ``equals``, ``less than``, ``less than or equal``, ``greater than``, ``greater than or equal``, ``pattern match``, and ``pattern not match`` artifacts, an XCCDF Value element is generated.
 
 ::
 
@@ -128,23 +128,21 @@ For ``vmware.virtual_machine.advanced_setting`` artifacts, an XCCDF Value elemen
     <value>[value.value]</value>
   </Value>  
 
-For ``vmware.virtual_machine.advanced_setting`` artifacts, the xccdf:check looks like this.
+For ``vmware.virtual_machine.advanced_setting`` ``equals``, ``less than``, ``less than or equal``, ``greater than``, ``greater than or equal``, ``pattern match``, and ``pattern not match`` artifacts, the XCCDF check looks like this.
 
 ::
 
-  <xccdf:complex-check operator="AND">
-    <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
-      <check-export 
-        export-name="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
-        value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
-      <check-export 
-        export-name="oval:org.cisecurity.benchmarks:var:100000"
-        value-id="xccdf_org.cisecurity.benchmarks_value_esxi.connection" />
-      <check-content-ref 
-        href="[BENCHMARK-TITLE]-oval.xml"
-        name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
-    </check>
-  </xccdf:complex-check>
+  <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+    <check-export 
+      export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
+      value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
+    <check-export 
+      export-name="oval:org.cisecurity.benchmarks:var:100000"
+      value-id="xccdf_org.cisecurity.benchmarks_value_esxi.connection" />
+    <check-content-ref 
+      href="[BENCHMARK-TITLE]-oval.xml"
+      name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
+  </check>
 
 OVAL
 ''''
@@ -155,7 +153,7 @@ Test
 
   <vm_advancedsetting_test 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
-    id="oval:org.cisecurity.benchmarks[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
     check_existence="at_least_one_exists"
     check="all"
     comment="[ARTIFACT-TITLE]"
@@ -170,13 +168,11 @@ Object
 
   <vm_advancedsetting_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
-    id="oval:org.cisecurity.benchmarks[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-    <connection_string var_ref="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
-    <vm_name operation="pattern match">
-      .*
-    </vm_name>
+    <connection_string var_ref="oval:org.cisecurity.benchmarks:var:100000" />
+    <vm_name operation="pattern match">.*</vm_name>
     <advanced_setting_name>[vmsafe.enable.value]</advanced_setting_name>
   </vm_advancedsetting_object>  
 
@@ -186,7 +182,7 @@ State
 
   <vm_advancedsetting_state 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
-    id="oval:org.cisecurity.benchmarks[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
     <advanced_setting_name 
@@ -197,7 +193,7 @@ State
     <advanced_setting_value 
       datatype="[datatype.value]"
       operation="equals"
-      var_ref="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
+      var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
   </vm_advancedsetting_state>
 
 Variable
@@ -205,7 +201,7 @@ Variable
 ::
 
   <external_variable 
-    id="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
     datatype="boolean"
     version="1"
     comment="This value is used in Rule: [RECOMMENDATION-TITLE]" />       
@@ -228,7 +224,7 @@ YAML
         - parameter: 
             name: "vm_name"
             dt: "string"
-            value: "[vm_name.value]"          
+            value: "[vm_name.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:
@@ -266,7 +262,7 @@ JSON
               "dt": "string",
               "value": "[vm_name.value]"
             }
-          }        
+          }
         ]
       },
       "test": {

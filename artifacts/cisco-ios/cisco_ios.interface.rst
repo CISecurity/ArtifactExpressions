@@ -91,7 +91,7 @@ NOTE: The ``operator`` parameter is governed by a constraint allowing only the f
 +-----------------------------+---------+------------------------------------+
 | Name                        | Type    | Description                        |
 +=============================+=========+====================================+
-| operation                   | string  | Comparison Operator.               |
+| operation                   | string  | Comparison operator.               |
 +-----------------------------+---------+------------------------------------+
 | proxy_arp_enabled           | boolean | True if the proxy_arp command is   |
 |                             |         | enabled on the interface. The      |
@@ -182,13 +182,13 @@ SCAP
 XCCDF
 '''''
 
-For ``cisco_ios.interface cisco_ios.interface_existence_test`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
+For ``cisco_ios.interface`` ``cisco_ios.interface_existence_test`` artifacts, the XCCDF check looks like this. There is no Value element in the XCCDF for this artifact.
 
 ::
 
   <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
     <check-content-ref 
-      href="[BENCHMARK-TITLE]"
+      href="[BENCHMARK-TITLE]-oval.xml"
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 
@@ -200,7 +200,7 @@ Test
 ::
 
    <interface_test 
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#iso"
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#ios"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
     check_existence="[check_existence.value]"
     check="all"
@@ -214,7 +214,7 @@ Object
 ::
 
   <interface_object 
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#iso"
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#ios"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
@@ -363,7 +363,7 @@ SCAP
 XCCDF
 '''''
 
-For ``cisco_ios.interface cisco_ios.interface_proxy_arp`` artifacts, an XCCDF Value element is generated.
+For ``cisco_ios.interface`` ``cisco_ios.interface_proxy_arp`` artifacts, an XCCDF Value element is generated.
 
 ::
 
@@ -376,7 +376,7 @@ For ``cisco_ios.interface cisco_ios.interface_proxy_arp`` artifacts, an XCCDF Va
     <value>[value.value]</value>
   </Value>
 
-For ``cisco_ios.interface cisco_ios.interface_proxy_arp`` artifacts, the xccdf:check looks like this.
+For ``cisco_ios.interface`` ``cisco_ios.interface_proxy_arp`` artifacts, the XCCDF check looks like this.
 
 ::
 
@@ -385,7 +385,7 @@ For ``cisco_ios.interface cisco_ios.interface_proxy_arp`` artifacts, the xccdf:c
       export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
       value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
     <check-content-ref 
-      href="[BENCHMARK-TITLE]"
+      href="[BENCHMARK-TITLE]-oval.xml"
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 
@@ -397,7 +397,7 @@ Test
 ::
 
    <interface_test 
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#iso"
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#ios"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
     check_existence="at_least_one_exists"
     check="all"
@@ -412,7 +412,7 @@ Object
 ::
 
   <interface_object 
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#iso"
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#ios"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
@@ -424,7 +424,7 @@ State
 ::
 
   <interface_state
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#iso"
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#ios"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
@@ -573,7 +573,7 @@ SCAP
 XCCDF
 '''''
 
-For ``cisco_ios.interface cisco_ios.interface_urpf`` artifacts, an XCCDF Value element is generated.
+For ``cisco_ios.interface`` ``cisco_ios.interface_urpf`` artifacts, an XCCDF Value element is generated.
 
 ::
 
@@ -586,7 +586,7 @@ For ``cisco_ios.interface cisco_ios.interface_urpf`` artifacts, an XCCDF Value e
     <value>[value.value]</value>
   </Value>
 
-For ``cisco_ios.interface cisco_ios.interface_urpf`` artifacts, the xccdf:check looks like this.
+For ``cisco_ios.interface`` ``cisco_ios.interface_urpf`` artifacts, the XCCDF check looks like this.
 
 ::
 
@@ -595,7 +595,7 @@ For ``cisco_ios.interface cisco_ios.interface_urpf`` artifacts, the xccdf:check 
       export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
       value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
     <check-content-ref 
-      href="[BENCHMARK-TITLE]"
+      href="[BENCHMARK-TITLE]-oval.xml"
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 
@@ -607,7 +607,7 @@ Test
 ::
 
    <interface_test 
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#iso"
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#ios"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
     check_existence="at_least_one_exists"
     check="all"
@@ -622,7 +622,7 @@ Object
 ::
 
   <interface_object 
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#iso"
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#ios"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
@@ -634,7 +634,7 @@ State
 ::
 
   <interface_state 
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#iso"
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#ios"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">

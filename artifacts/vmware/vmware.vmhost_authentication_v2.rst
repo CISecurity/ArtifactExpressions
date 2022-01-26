@@ -174,7 +174,7 @@ SCAP
 XCCDF
 '''''
 
-For ``vmware.vmhost_authentication_v2`` artifacts, an XCCDF Value element is generated.
+For ``vmware.vmhost_authentication_v2`` ``vmware.vmhost_authentication_v2`` artifacts, an XCCDF Value element is generated.
 
 ::
 
@@ -187,13 +187,13 @@ For ``vmware.vmhost_authentication_v2`` artifacts, an XCCDF Value element is gen
     <value>[value.value]</value>
   </Value>  
 
-For ``vmware.vmhost_authentication_v2`` artifacts, the xccdf:check looks like this.
+For ``vmware.vmhost_authentication_v2`` ``vmware.vmhost_authentication_v2`` artifacts, the XCCDF check looks like this.
 
 ::
 
   <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
     <check-export 
-      export-name="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
+      export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
       value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />    
     <check-export 
       export-name="oval:org.cisecurity.benchmarks:var:100000"
@@ -212,7 +212,7 @@ Test
 
   <vmhost_authentication_test
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
-    id="oval:org.cisecurity.benchmarks[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
     check_existence="[check_existence.value]"
     check="[check.value]"
     comment="[ARTIFACT-TITLE]"
@@ -227,13 +227,11 @@ Object
 
   <vmhost_authentication_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
-    id="oval:org.cisecurity.benchmarks[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-    <connection_string var_ref="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
-    <vmhost_name operation="[operation.value]">
-      [vmhost.value]
-    </vmhost_name>
+    <connection_string var_ref="oval:org.cisecurity.benchmarks:var:100000" />
+    <vmhost_name operation="[operation.value]">[vmhost.value]</vmhost_name>
   </vmhost_authentication_object>
 
 State
@@ -242,13 +240,13 @@ State
 
   <vmhost_authentication_state 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
-    id="oval:org.cisecurity.benchmarks[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
     <domain_membership_status 
       datatype="[datatype.value]"
       operation="[operation.value]"
-      var_ref="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
+      var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
   </vmhost_authentication_state>  
 
 Variable
@@ -256,7 +254,7 @@ Variable
 ::
 
   <external_variable 
-    id="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
     datatype="[datatype.value]"
     version="1"
     comment="This value is used in Rule: [RECOMMENDATION-TITLE]" />     

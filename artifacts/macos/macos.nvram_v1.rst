@@ -137,8 +137,8 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
             </ae:parameters>
           </ae:test>
           <ae:profiles>
-            <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1"/>
-            <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_2"/>
+            <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1" />
+            <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_2" />
           </ae:profiles>
         </ae:artifact_expression>
       </xccdf:check-content>
@@ -151,13 +151,13 @@ SCAP
 XCCDF
 '''''
 
-For ``macos.nvram_v1`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
+For ``macos.nvram_v1`` ``macos.nvram_v1`` artifacts, the XCCDF check looks like this. There is no Value element in the XCCDF for this artifact.
 
 ::
 
   <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
     <check-content-ref
-      href="[BENCHMARK-TITLE]"
+      href="[BENCHMARK-TITLE]-oval.xml"
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]">
     </check-content-ref>
   </check>
@@ -171,10 +171,10 @@ Test
 
   <nvram_test
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#macos"
-    check="[check.value]"
-    check_existence="[check_existence.value]"
-    comment="[ARTIFACT-TITLE]"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
+    check_existence="[check_existence.value]"
+    check="[check.value]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
     <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
     <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
@@ -186,8 +186,8 @@ Object
 
   <nvram_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#macos"
-    comment="[ARTIFACT-TITLE]"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
     <nvram_var>[nvram_var.value]</nvram_var>
   </nvram_object>
@@ -198,8 +198,8 @@ State
 
   <nvram_state
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#macos"
-    comment="[ARTIFACT-TITLE]"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
     <nvram_var
       datatype="[datatype.value]"

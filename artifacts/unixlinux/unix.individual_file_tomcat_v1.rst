@@ -141,7 +141,9 @@ SCAP
 XCCDF
 '''''
 
-For ``unix.individual_file_tomcat_v1`` artifacts, an XCCDF Value element is generated.
+For ``unix.individual_file_tomcat_v1`` ``existence_test`` artifacts, an XCCDF Value element is generated.
+
+**CATALINA_HOME**
 
 ::
 
@@ -153,7 +155,9 @@ For ``unix.individual_file_tomcat_v1`` artifacts, an XCCDF Value element is gene
     <value>[value.value]</value>
   </Value>
 
-OR
+**CATALINA_BASE**
+
+::
 
   <Value 
     id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var"
@@ -163,20 +167,31 @@ OR
     <value>[value.value]</value>
   </Value>
 
-For ``unix.individual_file_tomcat_v1`` artifacts, the xccdf:check looks like this.
+For ``unix.individual_file_tomcat_v1`` ``existence_test`` artifacts, the XCCDF check looks like this.
+
+**CATALINA_HOME**
 
 ::
 
-  <xccdf:complex-check operator="OR">
-    <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
-      <check-export 
-        export-name="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]" 
-        value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
-      <check-content-ref 
-        href="[BENCHMARK-TITLE]"
-        name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
-    </check>
-  </xccdf:complex-check>
+  <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+    <check-export 
+      export-name="oval:org.cisecurity.benchmarks:var:4000000" 
+      value-id="xccdf_org.cisecurity_value_tomcat.home
+      href="[BENCHMARK-TITLE]-oval.xml"
+      name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
+  </check>
+
+**CATALINA_BASE**
+
+::
+
+  <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+    <check-export 
+      export-name="oval:org.cisecurity.benchmarks:var:4000001" 
+      value-id="xccdf_org.cisecurity_value_tomcat.base
+      href="[BENCHMARK-TITLE]-oval.xml"
+      name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
+  </check>
 
 OVAL
 ''''
@@ -189,7 +204,7 @@ Test
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
     check_existence="[check_existence.value]" 
-    check="all" 
+    check="[check.value]" 
     comment="[ARTIFACT-TITLE]"
     version="1">
     <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
@@ -210,7 +225,7 @@ Object
       max_depth="1"
       recurse="directories"
       recurse_direction="down" />
-    <path var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]1" />
+    <path var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]1" />
     <filename xsi:nil="true" />
   </file_object>
 
@@ -219,7 +234,7 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-    <path var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]2" />
+    <path var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]2" />
     <filename>[filename.value]</filename>
   </file_object>
 
@@ -236,7 +251,7 @@ Object
       max_depth="1"
       recurse="directories"
       recurse_direction="down" />
-    <path var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]" />
+    <path var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]1" />
     <filename xsi:nil="true" />
   </file_object>
 
@@ -245,7 +260,7 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-    <path var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]3" />
+    <path var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]3" />
     <filename>[filename.value]</filename>
   </file_object>
 
@@ -257,6 +272,40 @@ State
 
 Variable
 
+**CATALINA_HOME**
+
+::
+
+  <local_variable 
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]1"
+    datatype="string"
+    comment="\$CATALINA_HOME directory"
+    version="1">
+      <concat>
+        <end character="/">
+          <variable_component var_ref="oval:org.cisecurity.benchmarks:var:4000000" />
+        </end>
+        <literal_component>[literal_component.value]</literal_component>
+      </concat>
+  </local_variable>
+
+  <local_variable 
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]2"
+    datatype="string"
+    comment="\$CATALINA_HOME directory"
+    version="1">
+      <concat>
+        <end character="/">
+          <object_component 
+              object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]2"
+              item_field="path" />
+        </end>
+        <literal_component>[literal_component.value]</literal_component>
+      </concat>
+  </local_variable>
+
+**CATALINA_BASE**
+
 ::
 
   <local_variable 
@@ -266,11 +315,9 @@ Variable
     version="1">
       <concat>
         <end character="/">
-          <variable_component var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]1" />
+          <variable_component var_ref="oval:org.cisecurity.benchmarks:var:4000001" />
         </end>
-        <literal_component>
-            [literal_component.value]
-        </literal_component>
+        <literal_component>[literal_component.value]</literal_component>
       </concat>
   </local_variable>
 
@@ -281,9 +328,9 @@ Variable
     version="1">
       <concat>
         <end character="/">
-        <object_component 
-            object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]3"
-            item_field="path" />
+          <object_component 
+              object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]3"
+              item_field="path" />
         </end>
         <literal_component>[literal_component.value]</literal_component>
       </concat>

@@ -59,10 +59,10 @@ NOTE: The ``check_existence`` parameter is governed by a constraint allowing onl
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
-  - Unix: File Attributes  
+  - Null Test
   - Pattern Match
   - Pattern Not Match
-  - Null Test
+  - Unix: File Attributes  
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
@@ -203,7 +203,7 @@ SCAP
 XCCDF
 '''''
 
-For ``unix.individual_file_ MongoDB_v1 null_test_v1`` artifacts, an XCCDF Value element is generated.
+For ``unix.individual_file_mongodb_v1`` ``null_test_v1`` artifacts, an XCCDF Value element is generated.
 
 ::
 
@@ -215,16 +215,16 @@ For ``unix.individual_file_ MongoDB_v1 null_test_v1`` artifacts, an XCCDF Value 
     <value>[value.value]</value>
   </Value>
 
-For ``unix.individual_file_ MongoDB_v1 null_test_v1`` artifacts, the xccdf:check looks like this.
+For ``unix.individual_file_mongodb_v1`` ``null_test_v1`` artifacts, the XCCDF check looks like this.
 
 ::
 
   <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
     <check-export 
-      export-name="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]" 
-      value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
+      export-name="oval:org.cisecurity.benchmarks:var:8700000" 
+      value-id="xccdf_org.cisecurity_value_mongodb.home" />
     <check-content-ref 
-      href="[BENCHMARK-TITLE]"
+      href="[BENCHMARK-TITLE]-oval.xml"
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 
@@ -251,11 +251,11 @@ Object
 
   <file_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]2"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-    <path var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]1" />
-    <filename xsi:nil="true" />
+    <path var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
+    <filename>[filename.value]</filename>
   </file_object>
 
 State
@@ -269,17 +269,15 @@ Variable
 ::
 
   <local_variable 
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]1"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
     datatype="string"
     comment=" MongoDB directory"
     version="1">
     <concat>
       <end character="/">
-        <variable_component var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]1" />
+        <variable_component var_ref="oval:org.cisecurity.benchmarks:var:8700000" />
       </end>
-      <literal_component>
-        [literal_component.value]
-      </literal_component>
+      <literal_component>[literal_component.value]</literal_component>
     </concat>
   </local_variable>
 
@@ -409,7 +407,7 @@ SCAP
 XCCDF
 '''''
 
-For ``unix.individual_file_ MongoDB_v1 pattern match and pattern not match`` artifacts, an XCCDF Value element is generated.
+For ``unix.individual_file_mongodb_v1`` ``pattern match`` and ``pattern not match`` artifacts, an XCCDF Value element is generated.
 
 ::
 
@@ -422,16 +420,16 @@ For ``unix.individual_file_ MongoDB_v1 pattern match and pattern not match`` art
     <value>[value.value]</value>
   </Value>
 
-For ``unix.individual_file_ MongoDB_v1 pattern match and pattern not match`` artifacts, the xccdf:check looks like this.
+For ``unix.individual_file_mongodb_v1`` ``pattern match`` and ``pattern not match`` artifacts, the XCCDF check looks like this.
 
 ::
 
   <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
     <check-export 
-      export-name="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]" 
-      value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
+      export-name="oval:org.cisecurity.benchmarks:var:8700000" 
+      value-id="xccdf_org.cisecurity_value_mongodb.home" />
     <check-content-ref 
-      href="[BENCHMARK-TITLE]"
+      href="[BENCHMARK-TITLE]-oval.xml"
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 
@@ -443,7 +441,7 @@ Test
 ::
 
   <textfilecontent54_test
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix" 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
     check_existence="[check_existence.value]" 
     check="all" 
@@ -457,12 +455,12 @@ Object
 ::
 
   <textfilecontent54_object 
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]2"
-    comment="\$CATALINA_HOME file object"
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
+    comment="[ARTIFACT-TTILE]"
     version="1">
-    <path var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]1" />
-    <filename xsi:nil="true" />
+    <path var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
+    <filename>[filename.value]</filename>
     <pattern 
       operation="pattern match"
       datatype="[datatype.value]">
@@ -486,17 +484,15 @@ Variable
 ::
 
   <local_variable 
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]1"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
     datatype="string"
     comment=" MongoDB directory"
     version="1">
     <concat>
       <end character="/">
-        <variable_component var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]1" />
+        <variable_component var_ref="oval:org.cisecurity.benchmarks:var:8700000" />
       </end>
-      <literal_component>
-        [literal_component.value]
-      </literal_component>
+      <literal_component>[literal_component.value]</literal_component>
     </concat>
   </local_variable>
 
@@ -537,7 +533,7 @@ YAML
         - parameter:
             name: "value"
             dt: "string"
-            value: "[value.value]"      
+            value: "[value.value]"
 
 
 JSON
@@ -644,8 +640,8 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
             <ae:parameter dt="string" name="oexec">[oexec.value]</ae:parameter>
             <ae:parameter dt="string" name="suid">[suid.value]</ae:parameter>
             <ae:parameter dt="string" name="sgid">[sgid.value]</ae:parameter>
-            <ae:parameter dt="string" name="sticky">[sticky.value]</ae:parameter>   
-          </ae:parameters>          
+            <ae:parameter dt="string" name="sticky">[sticky.value]</ae:parameter>
+          </ae:parameters>
         </ae:test>
         <ae:profiles>
           <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1" />
@@ -660,7 +656,7 @@ SCAP
 XCCDF
 '''''
 
-For ``unix.individual_file_ MongoDB_v1 unix.file_attributes_v1`` artifacts, an XCCDF Value element is generated.
+For ``unix.individual_file_mongodb_v1`` ``unix.file_attributes_v1`` artifacts, an XCCDF Value element is generated.
 
 ::
 
@@ -673,16 +669,16 @@ For ``unix.individual_file_ MongoDB_v1 unix.file_attributes_v1`` artifacts, an X
     <value>[value.value]</value>
   </Value>
 
-For ``unix.individual_file_ MongoDB_v1 unix.file_attributes_v1`` artifacts, the xccdf:check looks like this.
+For ``unix.individual_file_mongodb_v1`` ``unix.file_attributes_v1`` artifacts, the XCCDF check looks like this.
 
 ::
 
   <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
     <check-export 
-      export-name="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]" 
-      value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
+      export-name="oval:org.cisecurity.benchmarks:var:8700000" 
+      value-id="xccdf_org.cisecurity_value_mongodb.home" />
     <check-content-ref 
-      href="[BENCHMARK-TITLE]"
+      href="[BENCHMARK-TITLE]-oval.xml"
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 
@@ -697,7 +693,7 @@ Test
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
     check_existence="[check_existence.value]" 
-    check="all" 
+    check="[check.value]" 
     comment="[ARTIFACT-TITLE]"
     version="1">
     <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
@@ -710,11 +706,11 @@ Object
 
   <file_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]2"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-    <path var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]1" />
-    <filename xsi:nil="true" />
+    <path var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
+    <filename>[filename.value]</filename>
   </file_object>
 
 State
@@ -723,10 +719,14 @@ State
 
   <file_state 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]2"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-    <uid datatype="int">[uid.value]</uid>
+    <group_id datatype="int">[group_id.value]</group_id>
+    <user_id datatype="int">[user_id.value]</user_id>
+    <suid datatype="boolean">[suid.value]</suid>
+    <sgid datatype="boolean">[sgid.value]</sgid>
+    <sticky datatype="boolean">[sticky.value]</sticky>
     <gid datatype="int">[gid.value]</gid>
     <uread datatype="boolean">[uread.value]</uread>
     <uwrite datatype="boolean">[uwrite.value]</uwrite>
@@ -737,9 +737,6 @@ State
     <oread datatype="boolean">[oread.value]</oread>
     <owrite datatype="boolean">[owrite.value]</owrite>
     <oexec datatype="boolean">[oexec.value]</oexec>
-    <suid datatype="boolean">[suid.value]</suid>
-    <sgid datatype="boolean">[sgid.value]</sgid>
-    <sticky datatype="boolean">[sticky.value]</sticky>
   </file_state>
 
 Variable
@@ -747,17 +744,15 @@ Variable
 ::
 
   <local_variable 
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]1"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
     datatype="string"
     comment="MongoDB directory"
     version="1">
     <concat>
       <end character="/">
-        <variable_component var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]1" />
+        <variable_component var_ref="oval:org.cisecurity.benchmarks:var:8700000" />
       </end>
-      <literal_component>
-        [literal_component.value]
-      </literal_component>
+      <literal_component>[literal_component.value]</literal_component>
     </concat>
   </local_variable>
 
@@ -792,13 +787,25 @@ YAML
       type: "[TEST-TYPE-NAME]"
       parameters: 
         - parameter:
-            name: "uid"
+            name: "group_id"
             dt: "int"
-            value: "[uid.value]"
+            value: "[group_id.value]"
         - parameter:
-            name: "gid"
+            name: "user_id"
             dt: "int"
-            value: "[gid.value]"
+            value: "[user_id.value]"
+        - parameter:
+            name: "suid"
+            dt: "boolean"
+            value: "[suid.value]"
+        - parameter:
+            name: "sgid"
+            dt: "boolean"
+            value: "[sgid.value]"
+        - parameter:
+            name: "sticky"
+            dt: "boolean"
+            value: "[sticky.value]"
         - parameter:
             name: "uread"
             dt: "boolean"
@@ -835,18 +842,6 @@ YAML
             name: "oexec"
             dt: "boolean"
             value: "[oexec.value]"
-        - parameter:
-            name: "suid"
-            dt: "boolean"
-            value: "[suid.value]"
-        - parameter:
-            name: "sgid"
-            dt: "boolean"
-            value: "[sgid.value]"
-        - parameter:
-            name: "sticky"
-            dt: "boolean"
-            value: "[sticky.value]"
 
 JSON
 ^^^^
@@ -895,16 +890,37 @@ JSON
         "parameters": [
           {
             "parameter": {
-              "name": "uid",
+              "name": "group_id",
               "dt": "int",
-              "value": "[uid.value]"
+              "value": "[group_id.value]"
             }
           },
           {
             "parameter": {
-              "name": "gid",
+              "name": "user_id",
               "dt": "int",
-              "value": "[gid.value]"
+              "value": "[user_id.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "suid",
+              "dt": "boolean",
+              "value": "[suid.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "sgid",
+              "dt": "boolean",
+              "value": "[sgid.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "sticky",
+              "dt": "boolean",
+              "value": "[sticky.value]"
             }
           },
           {
@@ -968,27 +984,6 @@ JSON
               "name": "oexec",
               "dt": "boolean",
               "value": "[oexec.value]"
-            }
-          },
-          {
-            "parameter": {
-              "name": "suid",
-              "dt": "boolean",
-              "value": "[suid.value]"
-            }
-          },
-          {
-            "parameter": {
-              "name": "sgid",
-              "dt": "boolean",
-              "value": "[sgid.value]"
-            }
-          },
-          {
-            "parameter": {
-              "name": "sticky",
-              "dt": "boolean",
-              "value": "[sticky.value]"
             }
           }
         ]

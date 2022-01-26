@@ -166,7 +166,7 @@ SCAP
 XCCDF
 '''''
 
-For ``windows.user_registry_value_v1`` artifacts, an XCCDF Value element is generated.
+For ``windows.user_registry_value_v1`` ``windows.user_registry_value_v1`` artifacts, an XCCDF Value element is generated.
 
 ::
 
@@ -179,7 +179,7 @@ For ``windows.user_registry_value_v1`` artifacts, an XCCDF Value element is gene
     <value>[value.value]</value>
   </Value>
 
-For ``windows.user_registry_value_v1`` artifacts, the xccdf:check looks like this.
+For ``windows.user_registry_value_v1`` ``windows.user_registry_value_v1`` artifacts, the XCCDF check looks like this.
 
 ::
 
@@ -188,7 +188,7 @@ For ``windows.user_registry_value_v1`` artifacts, the xccdf:check looks like thi
       export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]2"
       value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var2" />
     <check-content-ref 
-      href="[BENCHMARK-TITLE]"
+      href="[BENCHMARK-TITLE]-oval.xml"
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 
@@ -236,12 +236,10 @@ State
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-    <type operation="[operation.value]">
-      [type.value]
-    </type>
+    <type operation="[operation.value]">[type.value]</type>
     <value 
       datatype="[datatype.value]"
-      operation="[datatype.value]"
+      operation="[operation.value]"
       var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]2" />
   </registry_state>
 
@@ -252,13 +250,13 @@ Variable
   <local_variable 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]1"
     datatype="string"
-    version="1"
-    comment="[ARTIFACT-TITLE]" />
+    comment="[ARTIFACT-TITLE]"
+    version="1">
     <concat>
       <object_component
         item_field="key"
-        object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
-      <literal_component>[key.value]</literal_component>
+        object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:200000" />
+      <literal_component>[literal_component.value]</literal_component>
     </concat> 
   </local_variable>
 

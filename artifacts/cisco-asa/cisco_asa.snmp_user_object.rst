@@ -131,7 +131,7 @@ SCAP
 XCCDF
 '''''
 
-For ``cisco_asa.snmp_user_object`` artifacts, an XCCDF Value element is generated.
+For ``cisco_asa.snmp_user_object`` ``cisco_asa.snmp_user_auth_priv`` artifacts, an XCCDF Value element is generated.
 
 ::
 
@@ -153,20 +153,18 @@ For ``cisco_asa.snmp_user_object`` artifacts, an XCCDF Value element is generate
     <value>[value.value]</value>
   </Value>  
 
-For ``cisco_asa.snmp_user_object`` artifacts, the xccdf:check looks like this.
+For ``cisco_asa.snmp_user_object`` ``cisco_asa.snmp_user_auth_priv`` artifacts, the XCCDF check looks like this.
 
 ::
 
-  <xccdf:complex-check operator="AND">
-    <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
-      <check-export 
-        export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
-        value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
-      <check-content-ref 
-        href="[BENCHMARK-TITLE]"
-        name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
-    </check>
-  </xccdf:complex-check>
+  <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+    <check-export 
+      export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
+      value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
+    <check-content-ref 
+      href="[BENCHMARK-TITLE]-oval.xml"
+      name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
+  </check>
 
 OVAL
 ''''
@@ -195,10 +193,7 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" 
     comment="[ARTIFACT-TITLE]" 
     version="1">
-    <name 
-      operation="[operation.value]">
-      [name.value]
-    </name>
+    <name operation="[operation.value]">[name.value]</name>
   </snmp_user_object>
 
 State
@@ -207,15 +202,15 @@ State
 
   <snmp_user_state 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#asa" 
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" 
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" 
     comment="[ARTIFACT-TITLE]" 
     version="1">
     <priv 
       operation="[operation.value]" 
-      var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+      var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
     <auth 
       operation="[operation.value]" 
-      var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]2" />
+      var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]2" />
   </snmp_user_state>
 
 Variable
@@ -223,13 +218,13 @@ Variable
 ::
 
   <external_variable
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
     datatype="string"
     comment="This value is used in Rule: [RECOMMENDATION-TITLE]"
     version="1" />
 
   <external_variable
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]2"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]2"
     datatype="string"
     comment="This value is used in Rule: [RECOMMENDATION-TITLE]"
     version="1" />     

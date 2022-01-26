@@ -94,7 +94,7 @@ SCAP
 XCCDF
 '''''
 
-For ``linux.sce_check_v1`` artifacts, an XCCDF Value element is generated.
+For ``linux.sce_check_v1`` ``null_test_v1`` artifacts, an XCCDF Value element is generated.
 
 ::
 
@@ -106,7 +106,7 @@ For ``linux.sce_check_v1`` artifacts, an XCCDF Value element is generated.
     <value>[value.value]</value>
   </Value>
 
-For ``linux.sce_check_v1`` artifacts, the xccdf:check looks like this.
+For ``linux.sce_check_v1`` ``null_test_v1`` artifacts, the XCCDF check looks like this.
 
 ::
 
@@ -115,7 +115,7 @@ For ``linux.sce_check_v1`` artifacts, the xccdf:check looks like this.
     <check-export 
       export-name="[export-name.value]"
       value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
-    <check-content-ref href="[SCRIPT-PATH]" />
+    <check-content-ref href="[href.value]" />
   </check>
 
 OVAL

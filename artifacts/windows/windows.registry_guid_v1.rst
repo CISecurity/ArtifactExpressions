@@ -200,7 +200,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
           </ae:parameters>
         </ae:test>
         <ae:profiles>
-          <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1"/>
+          <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1" />
         </ae:profiles>
       </ae:artifact_expression>
     </xccdf:check-content>
@@ -212,7 +212,7 @@ SCAP
 XCCDF
 '''''
 
-For ``windows.registry_guid_v1`` artifacts, an XCCDF Value element is generated.
+For ``windows.registry_guid_v1`` ``windows.registry_guid_v1`` artifacts, an XCCDF Value element is generated.
 
 ::
 
@@ -225,7 +225,7 @@ For ``windows.registry_guid_v1`` artifacts, an XCCDF Value element is generated.
     <value>[value.value]</value>
   </Value>
 
-For ``windows.registry_guid_v1`` artifacts, the xccdf:check looks like this.
+For ``windows.registry_guid_v1`` ``windows.registry_guid_v1`` artifacts, the XCCDF check looks like this.
 
 ::
 
@@ -234,7 +234,7 @@ For ``windows.registry_guid_v1`` artifacts, the xccdf:check looks like this.
       export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]2"
       value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var2" />
     <check-content-ref 
-      href="[BENCHMARK-TITLE]"
+      href="[BENCHMARK-TITLE]-oval.xml"
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 
@@ -312,7 +312,7 @@ Variable
       <literal_component>[literal_component.value]</literal_component>
       <object_component
         item-field="value"
-        object-ref="oval:org.cisecurity.benchmarks[PLATFORM]:obj:[ARTIFACT-OVAL-ID]2" />
+        object-ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]2" />
       <literal_component>[literal_component.value]</literal_component>
     </concat>
   </local_variable>
@@ -321,7 +321,7 @@ Variable
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#windows" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]2"
     datatype="[datatype.value]"
-    comment=""This value is used in Rule: [RECOMMENDATION-TITLE] for the registry value"
+    comment="This value is used in Rule: [RECOMMENDATION-TITLE] for the registry value"
     version="1" />
 
 YAML

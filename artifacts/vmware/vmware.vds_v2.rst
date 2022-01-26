@@ -62,7 +62,7 @@ Supported Test Types
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
-**vmware:vds_teaming_failover**
+**vmware.vds_teaming_failover_v2**
 
 +---------------------------------------+---------+--------------------------+
 | Name                                  | Type    | Description              |
@@ -203,20 +203,18 @@ SCAP
 XCCDF
 '''''
 
-For ``vmware.vds_v2 vmware:vds_teaming_failover`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
+For ``vmware.vds_v2`` ``vmware.vds_teaming_failover_v2`` artifacts, the XCCDF check looks like this. There is no Value element in the XCCDF for this artifact.
 
 ::
 
-  <xccdf:complex-check operator="AND">
-    <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
-      <check-export 
-        export-name="oval:org.cisecurity.benchmarks:var:100000"
-        value-id="xccdf_org.cisecurity.benchmarks_value_esxi.connection" />
-      <check-content-ref 
-        href="[BENCHMARK-TITLE]-oval.xml"
-        name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
-    </check>
-  </xccdf:complex-check>  
+  <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+    <check-export 
+      export-name="oval:org.cisecurity.benchmarks:var:100000"
+      value-id="xccdf_org.cisecurity.benchmarks_value_esxi.connection" />
+    <check-content-ref 
+      href="[BENCHMARK-TITLE]-oval.xml"
+      name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
+  </check>
 
 OVAL
 ''''
@@ -245,10 +243,8 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-    <connection_string var_ref="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
-    <vds_name operation="[operation.value]">
-      [vds_name.value]
-    </vds_name>
+    <connection_string var_ref="oval:org.cisecurity.benchmarks:var:100000" />
+    <vds_name operation="[operation.value]">[vds_name.value]</vds_name>
   </vds_object>    
 
 State
@@ -272,7 +268,7 @@ Variable
 ::
 
   <external_variable 
-    id="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
     datatype="boolean"
     version="1"
     comment="This value is used in Rule: [RECOMMENDATION-TITLE]" />           
@@ -394,7 +390,7 @@ JSON
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
-**vlan_mtu_health_check_enabled**
+**vmware.vds_vlan_mtu_v2**
 
 XCCDF+AE
 ^^^^^^^^
@@ -438,18 +434,18 @@ SCAP
 XCCDF
 '''''
 
-For ``vmware.vds_v2 vlan_mtu_health_check_enabled`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
+For ``vmware.vds_v2`` ``vmware.vds_vlan_mtu_v2`` artifacts, the XCCDF check looks like this. There is no Value element in the XCCDF for this artifact.
 
 ::
 
   <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
     <check-export 
-      export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
-      value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
+      export-name="oval:org.cisecurity.benchmarks:var:100000"
+      value-id="xccdf_org.cisecurity.benchmarks_value_esxi.connection" />
     <check-content-ref 
-      href="[BENCHMARK-TITLE]"
+      href="[BENCHMARK-TITLE]-oval.xml"
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
-  </check> 
+  </check>
 
 OVAL
 ''''
@@ -478,10 +474,8 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-    <connection_string var_ref="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
-    <vds_name operation="[operation.value]">
-      [vds_name.value]
-    </vds_name>
+    <connection_string var_ref="oval:org.cisecurity.benchmarks:var:100000" />
+    <vds_name operation="[operation.value]">[vds_name.value]</vds_name>
   </vds_object>    
 
 State
@@ -505,7 +499,7 @@ Variable
 ::
 
   <external_variable 
-    id="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
     datatype="boolean"
     version="1"
     comment="This value is used in Rule: [RECOMMENDATION-TITLE]" />           

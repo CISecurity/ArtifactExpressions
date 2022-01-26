@@ -111,6 +111,9 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
               <ae:parameter dt="string" name="expected_value_type">[expected_value_type.value]</ae:parameter>
             </ae:parameters>
           </ae:test>
+          <ae:profiles>
+            <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_2" />
+          </ae:profiles>
         </ae:artifact_expression>
       </xccdf:check-content>
     </xccdf:check>
@@ -122,7 +125,7 @@ SCAP
 XCCDF
 '''''
 
-For ``cisco_asa.password_policy cisco_asa.expected_value_regex_capture`` artifacts, an XCCDF Value element is generated.
+For ``cisco_asa.password_policy`` ``cisco_asa.expected_value_regex_capture`` artifacts, an XCCDF Value element is generated.
 
 ::
 
@@ -135,20 +138,18 @@ For ``cisco_asa.password_policy cisco_asa.expected_value_regex_capture`` artifac
     <value>[value.value]</value>
   </Value>
 
-For ``cisco_asa.password_policy cisco_asa.expected_value_regex_capture`` artifacts, the xccdf:check looks like this.
+For ``cisco_asa.password_policy`` ``cisco_asa.expected_value_regex_capture`` artifacts, the XCCDF check looks like this.
 
 ::
 
-  <xccdf:complex-check operator="AND">
-    <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
-      <check-export 
-        export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" 
-        value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
-      <check-content-ref 
-        href="[BENCHMARK-TITLE]" 
-        name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
-    </check>
-  </xccdf:complex-check>
+  <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+    <check-export 
+      export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" 
+      value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
+    <check-content-ref 
+      href="[BENCHMARK-TITLE]-oval.xml" 
+      name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
+  </check>
 
 OVAL
 ''''
@@ -178,13 +179,13 @@ Object
     comment="[ARTIFACT-TITLE]" 
     version="1">
     <var_ref>
-      oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]2
+      oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]2
     </var_ref>
   </variable_object>
 
   <line_object
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#asa" 
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" 
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]2" 
     comment="[ARTIFACT-TITLE]" 
     version="1">
     <show_subcommand>[show_subcommand.value]</show_subcommand>

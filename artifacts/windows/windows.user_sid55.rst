@@ -114,7 +114,7 @@ SCAP
 XCCDF
 '''''
 
-For ``windows.user_sid55`` artifacts, an XCCDF Value element is generated.
+For ``windows.user_sid55`` ``equals``, ``equal``, ``not equal``, ``less than``, ``less than or equal``, ``greater than``, and ``greater than or equal`` artifacts, an XCCDF Value element is generated.
 
 ::
 
@@ -127,7 +127,7 @@ For ``windows.user_sid55`` artifacts, an XCCDF Value element is generated.
     <value>[value.value]</value>
   </Value>
 
-For ``windows.user_sid55`` artifacts, the xccdf:check looks like this.
+For ``windows.user_sid55`` ``equals``, ``equal``, ``not equal``, ``less than``, ``less than or equal``, ``greater than``, and ``greater than or equal`` artifacts, the XCCDF check looks like this.
 
 ::
 
@@ -136,7 +136,7 @@ For ``windows.user_sid55`` artifacts, the xccdf:check looks like this.
       export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
       value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
     <check-content-ref 
-      href="[BENCHMARK-TITLE]"
+      href="[BENCHMARK-TITLE]-oval.xml"
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 

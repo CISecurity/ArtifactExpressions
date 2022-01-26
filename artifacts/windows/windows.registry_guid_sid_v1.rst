@@ -1,4 +1,4 @@
-windows:registry_guid_sid_v1
+  windows:registry_guid_sid_v1
 ============================
 
 Description
@@ -217,12 +217,12 @@ SCAP
 XCCDF
 '''''
 
-For ``windows.registry_guid_sid_v1`` artifacts, an XCCDF Value element is generated.
+For ``windows.registry_guid_sid_v1`` ``windows.registry_guid_sid_v1`` artifacts, an XCCDF Value element is generated.
 
 ::
 
   <Value 
-    id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var"
+    id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var2"
     type="[type.value]"
     operator="[operator.value]">
     <title>[RECOMMENDATION-TITLE]</title>
@@ -230,7 +230,7 @@ For ``windows.registry_guid_sid_v1`` artifacts, an XCCDF Value element is genera
     <value>[value.value]</value>
   </Value>
 
-For ``windows.registry_guid_sid_v1`` artifacts, the xccdf:check looks like this.
+For ``windows.registry_guid_sid_v1`` ``windows.registry_guid_sid_v1`` artifacts, the XCCDF check looks like this.
 
 ::
 
@@ -239,7 +239,7 @@ For ``windows.registry_guid_sid_v1`` artifacts, the xccdf:check looks like this.
       export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]2"
       value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var2" />
     <check-content-ref 
-      href="[BENCHMARK-TITLE]"
+      href="[BENCHMARK-TITLE]-oval.xml"
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 
@@ -273,7 +273,7 @@ Object
     <hive>[hive.value]</hive>
     <key 
       operation="[operation.value]" 
-      var-ref="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]1" />
+      var-ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]1" />
     <name>[name.value]</name>
   </registry_object>
 
@@ -285,7 +285,7 @@ Object
     <hive>[hive.value]</hive>
     <key 
       operation="[operation.value]" 
-      var-ref="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]3" />
+      var-ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]3" />
     <name>[name.value]</name>
   </registry_object>
 
@@ -329,7 +329,7 @@ Variable
       <literal_component>[literal_component.value]</literal_component>
       <object_component
         item-field="key"
-        object-ref="oval:org.cisecurity.benchmarks[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+        object-ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:200000" />
       <literal_component>[literal_component.value]</literal_component>
     </concat>
   </local_variable>
@@ -344,11 +344,11 @@ Variable
       <literal_component>[literal_component.value]</literal_component>
       <object_component
         item-field="value"
-        object-ref="oval:org.cisecurity.benchmarks[PLATFORM]:obj:[ARTIFACT-OVAL-ID]2" />
+        object-ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]2" />
       <literal_component>[literal_component.value]</literal_component>
       <object_component
         item-field="key"
-        object-ref="oval:org.cisecurity.benchmarks[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+        object-ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:200000" />
       <literal_component>[literal_component.value]</literal_component>
     </concat>
   </local_variable>
@@ -357,7 +357,7 @@ Variable
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#windows" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]2"
     datatype="[datatype.value]"
-    comment=""This value is used in Rule: [RECOMMENDATION-TITLE] for the registry value"
+    comment="This value is used in Rule: [RECOMMENDATION-TITLE] for the registry value"
     version="1" />  
 
 YAML

@@ -111,22 +111,31 @@ SCAP
 XCCDF
 '''''
 
+For ``iis.site.systemweb`` ``iis.site.systemweb`` artifacts, an XCCDF Value element is generated.
+
 ::
 
-   <xccdf:check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
-     <xccdf:check-export
-        export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
-        value-id="[VALUE ID NAME]" />
-     <xccdf:check-content-ref href="CIS_Microsoft_IIS_10_Benchmark_v1.1.1-oval.xml"
-        name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
-   </xccdf:check>
+  <Value 
+    id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var"
+    type="[type.value]"
+    operator="[operator.value]">
+    <title>[RECOMMENDATION-TITLE]</title>
+    <description>This value is used in Rule: [RECOMMENDATION-TITLE]</description>
+    <value>[value.value]</value>
+  </Value>
 
-   <xccdf:Value id="xccdf_org.cisecurity.benchmarks_value_4.9.1_var" operator="[operator.value]"
-     type="[data_type.value]">
-     <xccdf:title>[ARTIFACT-TITLE]</xccdf:title>
-     <xccdf:description>This variable is used in [ARTIFACT-TITLE]</xccdf:description>
-     <xccdf:value>[value.value]</xccdf:value>
-   </xccdf:Value>
+For ``iis.site.systemweb`` ``iis.site.systemweb`` artifacts, the XCCDF check looks like this.  
+
+::
+
+  <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+    <check-export 
+      export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
+      value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
+    <check-content-ref 
+      href="[BENCHMARK-TITLE]-oval.xml"
+      name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
+  </check>
 
 OVAL
 ''''
@@ -159,7 +168,7 @@ Object
     <application_name operation="pattern match">[application_name.value]<application_name>
     <virtual_directory_name operation="pattern match">[virtual_directory_name.value]</virtual_directory_name>
     <filter
-      xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#" 
+      xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5" 
       action="include">
         oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]
     </filter>

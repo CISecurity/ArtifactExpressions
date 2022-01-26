@@ -116,13 +116,13 @@ SCAP
 XCCDF
 '''''
 
-For ``unix.chkconfig_service_v2`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
+For ``unix.chkconfig_service_v2`` ``unix.service_enabled_v1`` artifacts, the XCCDF check looks like this. There is no Value element in the XCCDF for this artifact.
 
 ::
 
   <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
     <check-content-ref 
-      href="[BENCHMARK-TITLE]"
+      href="[BENCHMARK-TITLE]-oval.xml"
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 
@@ -153,12 +153,8 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-    <service_name operation="[operation.value]">
-      [service_name.value]
-    </service_name>
-    <runlevel operation="[operation.value]">
-      [runlevel.value]
-    </runlevel>
+    <service_name operation="[operation.value]">[service_name.value]</service_name>
+    <runlevel operation="[operation.value]">[runlevel.value]</runlevel>
   </runlevel_object>
 
 State

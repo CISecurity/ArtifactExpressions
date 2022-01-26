@@ -206,16 +206,15 @@ SCAP
 XCCDF
 '''''
 
-For ``unix.file_collection_v1 unix.file_permissions_v1`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
+For ``unix.file_collection_v1`` ``unix.file_permissions_v1`` artifacts, the XCCDF check looks like this. There is no Value element in the XCCDF for this artifact.
 
 ::
 
-  <xccdf:complex-check operator="AND">
-    <check 
-      system="http://oval.mitre.org/XMLSchema/oval-definitions-5"
-      href="[BENCHMARK-TITLE]"
+  <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+    <check-content-ref
+      href="[BENCHMARK-TITLE]-oval.xml"
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
-  </xccdf:complex-check>
+  </check>
 
 OVAL
 ''''
@@ -245,9 +244,7 @@ Object
     comment="[ARTIFACT-TITLE]"
     version="1">
     <path>[path.value]</path>
-    <filename xsi:nil="[xsi:nil.value]">
-      [filename.value]
-    </filename>
+    <filename xsi:nil="true" />
     <behaviors 
       recurse_direction="down"
       recurse_file_system="[recurse_file_system.value]"
@@ -258,10 +255,17 @@ State
 
 ::
 
-  <file_state xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
+  <file_state 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
+    <suid datatype="boolean">[suid.value]</gread>
+    <sgid datatype="boolean">[sgid.value]</gwrite> 
+    <sticky datatype="boolean">[sticky.value]</gread>
+    <uread datatype="boolean">[uread.value]</gwrite>
+    <uwrite datatype="boolean">[uwrite.value]</gwrite>    
+    <uexec datatype="boolean">[uexec.value]</gread>
     <gread datatype="boolean">[gread.value]</gread>
     <gwrite datatype="boolean">[gwrite.value]</gwrite>
     <gexec datatype="boolean">[gexec.value]</gexec>
@@ -311,7 +315,7 @@ YAML
         - parameter:
             name: "uread"
             dt: "string"
-            value: "[uread.value]
+            value: "[uread.value]"
         - parameter:
             name: "uwrite"
             dt: "string"
@@ -553,16 +557,14 @@ SCAP
 XCCDF
 '''''
 
-For ``unix.file_collection_v1 unix_file_ownership_v1`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
+For ``unix.file_collection_v1`` ``unix_file_ownership_v1`` artifacts, the XCCDF check looks like this. There is no Value element in the XCCDF for this artifact.
 
 ::
 
-  <xccdf:complex-check operator="AND">
-    <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
-      href="[BENCHMARK-TITLE]"
-      name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
-    </check>
-  </xccdf:complex-check>
+  <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+    href="[BENCHMARK-TITLE]-oval.xml"
+    name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
+  </check>
 
 OVAL
 ''''
@@ -592,9 +594,7 @@ Object
     comment="[ARTIFACT-TITLE]"
     version="1">
     <path>[path.value]</path>
-    <filename xsi:nil="[xsi:nil.value]">
-      [filename.value]
-    </filename>
+    <filename xsi:nil="true" />
     <behaviors 
       recurse_direction="down"
       recurse_file_system="[recurse_file_system.value]"
@@ -659,7 +659,7 @@ YAML
         - parameter:
             name: "uid"
             dt: "int"
-            value: "[uid.value]
+            value: "[uid.value]"
         - parameter:
             name: "gid"
             dt: "int"
@@ -788,16 +788,14 @@ SCAP
 XCCDF
 '''''
 
-For ``unix.file_collection_v1 null_test_v1`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
+For ``unix.file_collection_v1`` ``null_test_v1`` artifacts, the XCCDF check looks like this. There is no Value element in the XCCDF for this artifact.
 
 ::
 
-  <xccdf:complex-check operator="AND">
-    <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
-      href="[BENCHMARK-TITLE]"
-      name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
-    </check>
-  </xccdf:complex-check>
+  <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+    href="[BENCHMARK-TITLE]-oval.xml"
+    name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
+  </check>
 
 OVAL
 ''''
@@ -814,7 +812,6 @@ Test
     comment="[ARTIFACT-TITLE]"
     version="1">
     <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
-    <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
   </file_test>
 
 Object
@@ -827,9 +824,7 @@ Object
     comment="[ARTIFACT-TITLE]"
     version="1">
     <path>[path.value]</path>
-    <filename xsi:nil="[xsi:nil.value]">
-      [filename.value]
-    </filename>
+    <filename xsi:nil="true" />
     <behaviors 
       recurse_direction="down"
       recurse_file_system="[recurse_file_system.value]"

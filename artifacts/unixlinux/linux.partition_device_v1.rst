@@ -83,7 +83,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
           <ae:profiles>
             <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1" />
           </ae:profiles>          
-          <ae:profiles/>
+          <ae:profiles />
         </ae:artifact_expression>
       </xccdf:check-content>
     </xccdf:check>
@@ -95,13 +95,13 @@ SCAP
 XCCDF
 '''''
 
-For ``linux.partition_options_v1`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
+For ``linux.partition_device_v1`` ``existence_test`` artifacts, the XCCDF check looks like this. There is no Value element in the XCCDF for this artifact.
 
 ::
 
   <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
     <check-content-ref 
-      href="[BENCHMARK-TITLE]"
+      href="[BENCHMARK-TITLE]-oval.xml"
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 
