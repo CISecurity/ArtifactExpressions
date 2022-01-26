@@ -41,7 +41,7 @@ Test Type Parameters
 |                             |         | configuration lines which must     |
 |                             |         | match the expected state.          |
 +-----------------------------+---------+------------------------------------+
-| operation                   | string  | Comparison Operator.               |
+| operation                   | string  | Comparison operator.               |
 +-----------------------------+---------+------------------------------------+
 | section_config_line         | string  | One config line of the collected   |
 |                             |         | configuration section.             |
@@ -109,7 +109,7 @@ SCAP
 XCCDF
 '''''
 
-For ``cisco_ios.section_custom_router_ospf`` artifacts, an XCCDF Value element is generated.
+For ``cisco_ios.section_custom_router_ospf`` ``cisco_ios.section_custom_router_ospf_line`` artifacts, an XCCDF Value element is generated.
 
 ::
 
@@ -122,7 +122,7 @@ For ``cisco_ios.section_custom_router_ospf`` artifacts, an XCCDF Value element i
     <value>[value.value]</value>
   </Value>
 
-For ``cisco_ios.section_custom_router_ospf`` artifacts, the xccdf:check looks like this.
+For ``cisco_ios.section_custom_router_ospf`` ``cisco_ios.section_custom_router_ospf_line`` artifacts, the XCCDF check looks like this.
 
 ::
 
@@ -131,7 +131,7 @@ For ``cisco_ios.section_custom_router_ospf`` artifacts, the xccdf:check looks li
       export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
       value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
     <check-content-ref 
-      href="[BENCHMARK-TITLE]"
+      href="[BENCHMARK-TITLE]-oval.xml"
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 
@@ -143,7 +143,7 @@ Test
 ::
 
    <section_test 
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#iso"
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#ios"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
     check_existence="at_least_one_exists"
     check="all"
@@ -158,16 +158,16 @@ Object
 ::
 
   <section_object 
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#iso"
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#ios"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
     <section_command
-      var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]">
+      var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
   </section_object>
 
   <router_object 
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#iso"
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#ios"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
@@ -184,13 +184,13 @@ State
 ::
 
   <section_state 
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#iso"
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#ios"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
     <config_line 
       operation="[operation.value]"
-      var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"/>
+      var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
   </section_state>
 
 Variable
@@ -254,7 +254,7 @@ JSON
       "artifact-title": "[ARTIFACT-TITLE]",
       "artifact": {
         "type": "[ARTIFACT-TYPE-NAME]",
-        "parameters": null
+        "parameters": []
       },
       "test": {
         "type": "[TEST-TYPE-NAME]",

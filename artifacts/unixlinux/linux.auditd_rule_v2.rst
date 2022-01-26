@@ -99,13 +99,13 @@ SCAP
 XCCDF
 '''''
 
-For ``linux.auditd_rule_v2`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
+For ``linux.auditd_rule_v2`` ``null_test_v1`` artifacts, the XCCDF check looks like this. There is no Value element in the XCCDF for this artifact.
 
 ::
 
   <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
     <check-content-ref 
-      href="[BENCHMARK-TITLE]"
+      href="[BENCHMARK-TITLE]-oval.xml"
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 
@@ -132,8 +132,8 @@ Object
 
   <textfilecontent54_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent"
-    comment="[ARTIFACT-TITLE]"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
     <path>/etc/audit/audit.rules</path>
     <filename>[filename.value]</filename>

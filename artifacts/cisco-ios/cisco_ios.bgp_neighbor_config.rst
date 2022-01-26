@@ -84,7 +84,7 @@ SCAP
 XCCDF
 '''''
 
-For ``cisco_ios.bgp_neighbor_config`` artifacts, an XCCDF Value element is generated.
+For ``cisco_ios.bgp_neighbor_config`` ``cisco_ios:all_bgp_neighbor_password`` artifacts, an XCCDF Value element is generated.
 
 ::
 
@@ -97,7 +97,7 @@ For ``cisco_ios.bgp_neighbor_config`` artifacts, an XCCDF Value element is gener
     <value>[value.value]</value>
   </Value>
 
-For ``cisco_ios.bgp_neighbor_config`` artifacts, the xccdf:check looks like this.
+For ``cisco_ios.bgp_neighbor_config`` ``cisco_ios:all_bgp_neighbor_password`` artifacts, the XCCDF check looks like this.
 
 ::
 
@@ -106,7 +106,7 @@ For ``cisco_ios.bgp_neighbor_config`` artifacts, the xccdf:check looks like this
       export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
       value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
     <check-content-ref 
-      href="[BENCHMARK-TITLE]"
+      href="[BENCHMARK-TITLE]-oval.xml"
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 
@@ -118,7 +118,7 @@ Test
 ::
 
   <bgpneighbor_test 
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#iso"
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#ios"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
     check_existence="any_exist"
     check="all"
@@ -132,9 +132,10 @@ Object
 ::
 
   <bgpneighbor_object 
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#iso"
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#ios"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
-    comment="[ARTIFACT-TITLE]">
+    comment="[ARTIFACT-TITLE]"
+    version="1">
     <neighbor operation="[operation.value]">[neighbor.value]</neighbor>
   </bgpneighbor_object>
 
@@ -143,9 +144,10 @@ State
 ::
 
   <bgpneighbor_state 
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#iso"
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#ios"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
-    comment="[ARTIFACT-TITLE]">
+    comment="[ARTIFACT-TITLE]"
+    version="1">
     <password 
       operation="pattern match"
       var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
@@ -214,7 +216,7 @@ JSON
       },
       "test": {
         "type": "[TEST-TYPE-NAME]",
-        "parameters": null
+        "parameters": []
       }
     }
   }

@@ -79,9 +79,9 @@ Test Type Parameters
 | entity_check           | string  | This enumeration represents the         |
 |                        |         | complement of collected configuration   |
 |                        |         | lines which must successfully match the |
-|                        |         | expected ``config_line``value in order  |
-|                        |         | for this test to reach a positive       |
-|                        |         | result.                                 |
+|                        |         | expected ``config_line`` value in       |
+|                        |         | order for this test to reach a          |
+|                        |         | positive result.                        |
 +------------------------+---------+-----------------------------------------+
 
 NOTE: The ``operation`` parameter is governed by a constraint allowing only the following values:
@@ -152,7 +152,7 @@ SCAP
 XCCDF
 '''''
 
-For ``cisco_asa.acl_object`` artifacts, an XCCDF Value element is generated.
+For ``cisco_asa.acl_object`` ``cisco_asa.acl_config_line_with_entity_check`` artifacts, an XCCDF Value element is generated.
 
 ::
 
@@ -165,7 +165,7 @@ For ``cisco_asa.acl_object`` artifacts, an XCCDF Value element is generated.
     <value>[value.value]</value>
   </Value>
 
-For ``cisco_asa.acl_object`` artifacts, the xccdf:check looks like this.
+For ``cisco_asa.acl_object`` ``cisco_asa.acl_config_line_with_entity_check`` artifacts, the XCCDF check looks like this.
 
 ::
 
@@ -174,7 +174,7 @@ For ``cisco_asa.acl_object`` artifacts, the xccdf:check looks like this.
       export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
       value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
     <check-content-ref 
-      href="[BENCHMARK-TITLE]"
+      href="[BENCHMARK-TITLE]-oval.xml"
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 
@@ -202,8 +202,8 @@ Object
 
   <acl_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#asa"
-    comment="[ARTIFACT-TITLE]"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
     <name operation="[operation.value]">[name.value]</name>
     <ip_version 

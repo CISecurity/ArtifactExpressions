@@ -141,13 +141,13 @@ SCAP
 XCCDF
 '''''
 
-For ``windows.userrightsassignmentdeny`` artifacts, the xccdf:check looks like this. There is no Value element in the xccdf for this Artifact. 
+For ``windows.userrightsassignmentdeny`` ``set.white_list_v1`` artifacts, the XCCDF check looks like this. There is no Value element in the XCCDF for this artifact. 
 
 ::
 
   <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
     <check-content-ref 
-      href="[BENCHMARK-TITLE]"
+      href="[BENCHMARK-TITLE]-oval.xml"
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 

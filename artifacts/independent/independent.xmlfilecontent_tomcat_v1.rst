@@ -451,52 +451,52 @@ YAML
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
         - parameter: 
-          name: base_path
-          dt: "string"
-          value: "[base_path.value]"
-      - parameter: 
-          name: path
-          dt: "string"
-          value: "[path.value]"
-      - parameter: 
-          name: concat_path
-          dt: "string"
-          value: concat_path.value]"
-      - parameter: 
-          name: filename
-          dt: "string"
-          value: "[filename.value]"
-      - parameter: 
-          name: recurse
-          dt: "string"
-          value: "[recurse.value]"
-      - parameter: 
-          name: max_depth
-          type: binary
-          value: "[max_depth.value]"
-      - parameter: 
-          name: file_system
-          dt: "string"
-          value: file_system.value]"
-      - parameter: 
-          name: xpath
-          dt: "string"
-          value: "[xpath.value]"
-      - parameter: 
-          name: check_existence
-          dt: "string"
-          value: "[check_existence.value]"
-      - parameter: 
-          name: check
-          dt: "string"
-          value: "[check.value]
+            name: "base_path"
+            dt: "string"
+            value: "[base_path.value]"
+        - parameter:
+            name: "path"
+            dt: "string"
+            value: "[path.value]"
+        - parameter:
+            name: "concat_path"
+            dt: "string"
+            value: "[concat_path.value]"
+        - parameter:
+            name: "filename"
+            dt: "string"
+            value: "[filename.value]"
+        - parameter:
+            name: "recurse"
+            dt: "string"
+            value: "[recurse.value]"
+        - parameter:
+            name: "max_depth"
+            dt: "binary"
+            value: "[max_depth.value]"
+        - parameter:
+            name: "file_system"
+            dt: "string"
+            value: "[file_system.value]"
+        - parameter:
+            name: "xpath"
+            dt: "string"
+            value: "[xpath.value]"
+        - parameter:
+            name: "check_existence"
+            dt: "string"
+            value: "[check_existence.value]"
+        - parameter:
+            name: "check"
+            dt: "string"
+            value: "[check.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:   
-      - parameter: 
-          name: value
-          dt: "string"
-          value: "[value.value]"
+        - parameter:
+            name: "value"
+            dt: "string"
+            value: "[value.value]"
 
 JSON
 ^^^^
@@ -505,33 +505,23 @@ JSON
 
   {
     "artifact-expression": {
-      "artifact-unique-id": [
-        "ARTIFACT-OVAL-ID"
-      ],
-      "artifact-title": [
-        "RECOMMENDATION TITLE"
-      ],
+      "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
+      "artifact-title": "[ARTIFACT-TITLE]",
       "artifact": {
-        "type": [
-          "ARTIFACTTYPE NAME"
-        ],
+        "type": "[ARTIFACT-TYPE-NAME]",
         "parameters": [
           {
             "parameter": {
               "name": "base_path",
               "type": "string",
-              "value": [
-                "base_path.value"
-              ]
+              "value": "[base_path.value]"
             }
           },
           {
             "parameter": {
               "name": "path",
               "type": "string",
-              "value": [
-                "path.value"
-              ]
+              "value": "[path.value]"
             }
           },
           {
@@ -545,27 +535,21 @@ JSON
             "parameter": {
               "name": "filename",
               "type": "string",
-              "value": [
-                "filename.value"
-              ]
+              "value": "[filename.value]"
             }
           },
           {
             "parameter": {
               "name": "recurse",
               "type": "string",
-              "value": [
-                "recurse.value"
-              ]
+              "value": "[recurse.value]"
             }
           },
           {
             "parameter": {
               "name": "max_depth",
               "type": "binary",
-              "value": [
-                "max_depth.value"
-              ]
+              "value": "[max_depth.value]"
             }
           },
           {
@@ -579,43 +563,33 @@ JSON
             "parameter": {
               "name": "xpath",
               "type": "string",
-              "value": [
-                "xpath.value"
-              ]
+              "value": "[xpath.value]"
             }
           },
           {
             "parameter": {
               "name": "check_existence",
               "type": "string",
-              "value": [
-                "check_existence.value"
-              ]
+              "value": "[check_existence.value]"
             }
           },
           {
             "parameter": {
               "name": "check",
               "type": "string",
-              "value": [
-                "check.value"
-              ]
+              "value": "[check.value]"
             }
           }
         ]
       },
       "test": {
-        "type": [
-          "TESTTYPE NAME"
-        ],
+        "type": "[TEST-TYPE-NAME]",
         "parameters": [
           {
             "parameter": {
               "name": "value",
               "type": "string",
-              "value": [
-                "value.value"
-              ]
+              "value": "[value.value]"
             }
           }
         ]

@@ -114,13 +114,13 @@ SCAP
 XCCDF
 '''''
 
-For ``linux.software_package_v1 null_test_v1`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
+For ``linux.software_package_v1`` ``null_test_v1`` artifacts, the XCCDF check looks like this. There is no Value element in the XCCDF for this artifact.
 
 ::
 
   <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
     <check-content-ref 
-      href="[BENCHMARK-TITLE]"
+      href="[BENCHMARK-TITLE]-oval.xml"
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 
@@ -150,10 +150,42 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-    <name operation="[operation.value]">
-      [name.value]
-    </name>
+    <name operation="[operation.value]">[name.value]</name>
   </rpminfo_object>
+
+State
+
+::
+
+  N/A
+
+**Debian or Ubuntu**  
+
+Test
+
+::
+
+  <dpkginfo_test 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
+    check_existence="[check_existence.value]"
+    check="[check.value]"
+    comment="[ARTIFACT-TITLE]"
+    version="1">
+    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+  </dpkginfo_test>
+
+Object
+
+::
+
+  <dpkginfo_object 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
+    comment="[ARTIFACT-TITLE]"
+    version="1">
+    <name operation="[operation.value]">[name.value]</name>
+  </dpkginfo_object>
 
 State
 
@@ -186,7 +218,7 @@ YAML
             value: "[operation.value]"
     test:
       type: "[TEST-TYPE-NAME]"
-      parameters:
+      parameters: []
 
 JSON
 ^^^^
@@ -259,7 +291,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
           <ae:test type="[TEST-TYPE-NAME]">
             <ae:parameters>
               <ae:parameter dt="string" name="value">[value.value]</ae:parameter>
-            <ae:parameters/>
+            <ae:parameters />
           </ae:test>
           <ae:profiles>
             <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1" />
@@ -275,13 +307,13 @@ SCAP
 XCCDF
 '''''
 
-For ``linux.software_package_v1 existence_test`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
+For ``linux.software_package_v1`` ``existence_test`` artifacts, the XCCDF check looks like this. There is no Value element in the XCCDF for this artifact.
 
 ::
 
   <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
     <check-content-ref 
-      href="[BENCHMARK-TITLE]"
+      href="[BENCHMARK-TITLE]-oval.xml"
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 
@@ -311,10 +343,42 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-    <name operation="[operation.value]">
-      [name.value]
-    </name>
+    <name operation="[operation.value]">[name.value]</name>
   </rpminfo_object>
+
+State
+
+::
+
+  N/A
+
+**Debian or Ubuntu**  
+
+Test
+
+::
+
+  <dpkginfo_test 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
+    check_existence="[check_existence.value]"
+    check="[check.value]"
+    comment="[ARTIFACT-TITLE]"
+    version="1">
+    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+  </dpkginfo_test>
+
+Object
+
+::
+
+  <dpkginfo_object 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
+    comment="[ARTIFACT-TITLE]"
+    version="1">
+    <name operation="[operation.value]">[name.value]</name>
+  </dpkginfo_object>
 
 State
 

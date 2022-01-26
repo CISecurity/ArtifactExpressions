@@ -39,7 +39,7 @@ Test Type Parameters
 ============= ====== =================================
 Name          Type   Description
 ============= ====== =================================
-operation     string Comparison Operator.
+operation     string Comparison operator.
 config_line   string The collected configuration line.
 filter        string Filter.
 filter_action string Filter action.
@@ -105,7 +105,7 @@ SCAP
 XCCDF
 '''''
 
-For ``cisco_ios.line_v2`` artifacts, an XCCDF Value element is generated.
+For ``cisco_ios.line_v2`` ``cisco_ios.line_config_line_v2`` artifacts, an XCCDF Value element is generated.
 
 ::
 
@@ -118,7 +118,7 @@ For ``cisco_ios.line_v2`` artifacts, an XCCDF Value element is generated.
     <value>[value.value]</value>
   </Value>
 
-For ``cisco_ios.line_v2`` artifacts, the xccdf:check looks like this.
+For ``cisco_ios.line_v2`` ``cisco_ios.line_config_line_v2`` artifacts, the XCCDF check looks like this.
 
 ::
 
@@ -127,7 +127,7 @@ For ``cisco_ios.line_v2`` artifacts, the xccdf:check looks like this.
       export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
       value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
     <check-content-ref 
-      href="[BENCHMARK-TITLE]"
+      href="[BENCHMARK-TITLE]-oval.xml"
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 
@@ -138,8 +138,8 @@ Test
 
 ::
 
-   <line_test 
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#iso"
+  <line_test 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#ios"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
     check_existence="at_least_one_exists"
     check="all"
@@ -153,7 +153,8 @@ Object
 
 ::
 
-  <line_object xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#iso"
+  <line_object 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#ios"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
@@ -170,12 +171,12 @@ State
 ::
 
   <line_state 
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#iso"
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#ios"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
     <config_line 
-      operation="[config_line.value]"
+      operation="[operation.value]"
       var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
   </line_state>
 

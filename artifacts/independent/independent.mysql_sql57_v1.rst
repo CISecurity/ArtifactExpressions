@@ -897,7 +897,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
       <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
         <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
         <ae:title>[ARTIFACT-TITLE]</ae:title>
-        <ae:artifact type="[ARTIFACTTYPE-NAME]">
+        <ae:artifact type="[ARTIFACT-TYPE-NAME]">
           <ae:parameters>
             <ae:parameter dt="string" name="engine">[engine.value]</ae:parameter>
             <ae:parameter dt="string" name="sql">[sql.value]</ae:parameter>
@@ -908,7 +908,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
             <ae:parameter dt="string" name="append_type"[append_type.value]</ae:parameter>
           </ae:parameters>
         </ae:artifact>
-        <ae:test type="[TESTTYPE-NAME]">
+        <ae:test type="[TEST-TYPE-NAME]">
           <ae:parameters>
             <ae:parameter dt="string" name="check_existence">[check_existence.value]</ae:parameter>
             <ae:parameter dt="string" name="check">[check.value]</ae:parameter>
@@ -1023,63 +1023,63 @@ YAML
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
     artifact-title: "[ARTIFACT-TITLE]"
     artifact:
-      type: "[ARTIFACTTYPE-NAME]"
+      type: "[ARTIFACT-TYPE-NAME]"
       parameters:
         - parameter: 
-          name: "engine"
-          dt: "string"
-          value: "[engine.value]"
-      - parameter: 
-          name: "sql"
-          dt: "string"
-          value: "[sql.value]"
-      - parameter: 
-          name: "version"
-          dt: "string"
-          value: "[version.value]"
-      - parameter: 
-          name: "prepend_str"
-          dt: "string"
-          value: "[prepend_str.value]"
-      - parameter: 
-          name: "append_str"
-          dt: "string"
-          value: "[append_str.value]"
-      - parameter: 
-          name: "prepend_type"
-          dt: "string"
-          value: "[prepend_type.value]"
-      - parameter: 
-          name: "append_type"
-          dt: "string"
-          value: "[append_type.value]"
+            name: "engine"
+            dt: "string"
+            value: "[engine.value]"
+        - parameter:
+            name: "sql"
+            dt: "string"
+            value: "[sql.value]"
+        - parameter:
+            name: "version"
+            dt: "string"
+            value: "[version.value]"
+        - parameter:
+            name: "prepend_str"
+            dt: "string"
+            value: "[prepend_str.value]"
+        - parameter:
+            name: "append_str"
+            dt: "string"
+            value: "[append_str.value]"
+        - parameter:
+            name: "prepend_type"
+            dt: "string"
+            value: "[prepend_type.value]"
+        - parameter:
+            name: "append_type"
+            dt: "string"
+            value: "[append_type.value]"
   test:
-      type: "[TESTTYPE-NAME]"
+      type: "[TEST-TYPE-NAME]"
       parameters:   
-      - parameter: 
-          name: "check_existence"
-          dt: "string"
-          value: "[check_existence.value]"
-      - parameter: 
-          name: "check"
-          dt: "string"
-          value: "[check.value]"
-      - parameter: 
-          name: "value"
-          dt: "string"
-          value: "[value.value]"
-      - parameter: 
-          name: "value_data_type"
-          dt: "string"
-          value: "[value_data_type.value]"
-      - parameter: 
-          name: "field_name"
-          dt: "string"
-          value: "[field_name.value]"
-      - parameter: 
-          name: "field_operation"
-          dt: "string"
-          value: "[field_operation.value]"
+        - parameter:
+            name: "check_existence"
+            dt: "string"
+            value: "[check_existence.value]"
+        - parameter:
+            name: "check"
+            dt: "string"
+            value: "[check.value]"
+        - parameter:
+            name: "value"
+            dt: "string"
+            value: "[value.value]"
+        - parameter:
+            name: "value_data_type"
+            dt: "string"
+            value: "[value_data_type.value]"
+        - parameter:
+            name: "field_name"
+            dt: "string"
+            value: "[field_name.value]"
+        - parameter:
+            name: "field_operation"
+            dt: "string"
+            value: "[field_operation.value]"
 
 JSON
 ^^^^
@@ -1091,7 +1091,7 @@ JSON
       "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
       "artifact-title": "[ARTIFACT-TITLE]",
       "artifact": {
-        "type": "[ARTIFACTTYPE-NAME]",
+        "type": "[ARTIFACT-TYPE-NAME]",
         "parameters": [
           {
             "parameter": {
@@ -1145,7 +1145,7 @@ JSON
         ]
       },
       "test": {
-        "type": "[TESTTYPE-NAME]",
+        "type": "[TEST-TYPE-NAME]",
         "parameters": [
           {
             "parameter": {
@@ -1211,7 +1211,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
       <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
         <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
         <ae:title>[ARTIFACT-TITLE]</ae:title>
-        <ae:artifact type="[ARTIFACTTYPE-NAME]">
+        <ae:artifact type="[ARTIFACT-TYPE-NAME]">
           <ae:parameters>
             <ae:parameter dt="string" name="engine">[engine.value]</ae:parameter>
             <ae:parameter dt="string" name="sql">[sql.value]</ae:parameter>
@@ -1222,7 +1222,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
             <ae:parameter dt="string" name="append_type"[append_type.value]</ae:parameter>
           </ae:parameters>
         </ae:artifact>
-        <ae:test type="[TESTTYPE-NAME]">
+        <ae:test type="[TEST-TYPE-NAME]">
           <ae:parameters>
             <ae:parameter dt="string" name="value">[value.value]</ae:parameter>
           </ae:parameters>
@@ -1297,43 +1297,43 @@ YAML
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
     artifact_title: "[RECOMMENDATION-TITLE]" 
     artifact:
-      type: "[ARTIFACTTYPE-NAME]"
+      type: "[ARTIFACT-TYPE-NAME]"
       parameters:
         - parameter:
-          name: "engine"
-          dt: "string"
-          value: "[engine.value]"
-      - parameter:
-          name: "sql"
-          dt: "string"
-          value: "[sql.value]"
-      - parameter:
-          name: "version"
-          dt: "string"
-          value: "[version.value]"
-      - parameter:
-          name: "prepend_str"
-          dt: "string"
-          value: "[prepend_str.value]"
-      - parameter:
-          name: "append_str"
-          dt: "string"
-          value: "[append_str.value]"
-      - parameter:
-          name: "prepend_type"
-          dt: "string"
-          value: "[prepend_type.value]"
-      - parameter:
-          name: "append_type"
-          dt: "string"
-          value: "[append_type.value]"
+            name: "engine"
+            dt: "string"
+            value: "[engine.value]"
+        - parameter:
+            name: "sql"
+            dt: "string"
+            value: "[sql.value]"
+        - parameter:
+            name: "version"
+            dt: "string"
+            value: "[version.value]"
+        - parameter:
+            name: "prepend_str"
+            dt: "string"
+            value: "[prepend_str.value]"
+        - parameter:
+            name: "append_str"
+            dt: "string"
+            value: "[append_str.value]"
+        - parameter:
+            name: "prepend_type"
+            dt: "string"
+            value: "[prepend_type.value]"
+        - parameter:
+            name: "append_type"
+            dt: "string"
+            value: "[append_type.value]"
     test:
-      type: "[TESTTYPE-NAME]"
+      type: "[TEST-TYPE-NAME]"
       parameters:
         - parameter:
-          name: "value"
-          dt: "string"
-          value: "[value.value]"
+            name: "value"
+            dt: "string"
+            value: "[value.value]"
 
 JSON
 ^^^^
@@ -1345,7 +1345,7 @@ JSON
       "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
       "artifact-title": "[ARTIFACT-TITLE]",
       "artifact": {
-        "type": "[ARTIFACTTYPE-NAME]",
+        "type": "[ARTIFACT-TYPE-NAME]",
         "parameters": [
           {
             "parameter": {
@@ -1399,7 +1399,7 @@ JSON
         ]
       },
       "test": {
-        "type": "[TESTTYPE-NAME]",
+        "type": "[TEST-TYPE-NAME]",
         "parameters": [
           {
             "parameter": {
@@ -1430,7 +1430,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
       <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
         <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
         <ae:title>[ARTIFACT-TITLE]</ae:title>
-        <ae:artifact type="[ARTIFACTTYPE-NAME]">
+        <ae:artifact type="[ARTIFACT-TYPE-NAME]">
           <ae:parameters>
             <ae:parameter dt="string" name="engine">[engine.value]</ae:parameter>
             <ae:parameter dt="string" name="sql">[sql.value]</ae:parameter>
@@ -1441,7 +1441,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
             <ae:parameter dt="string" name="append_type">[append_type.value]</ae:parameter>
           </ae:parameters>
         </ae:artifact>
-        <ae:test type="[TESTTYPE-NAME]">
+        <ae:test type="[TEST-TYPE-NAME]">
           <ae:parameters>
             <ae:parameter dt="string" name="username">[username.value]</ae:parameter>
             <ae:parameter dt="string" name="group">[group.value]</ae:parameter>
@@ -1568,87 +1568,87 @@ YAML
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
     artifact_title: "[RECOMMENDATION-TITLE]" 
     artifact:
-      type: "[ARTIFACTTYPE-NAME]"
+      type: "[ARTIFACT-TYPE-NAME]"
       parameters:
         - parameter:
-          name: "engine"
-          dt: "string"
-          value: "[engine.value]"
-      - parameter:
-          name: "sql"
-          dt: "string"
-          value: "[sql.value]"
-      - parameter:
-          name: "version"
-          dt: "string"
-          value: "[version.value]"
-      - parameter:
-          name: "prepend_str"
-          dt: "string"
-          value: "[prepend_str.value]"
-      - parameter:
-          name: "append_str"
-          dt: "string"
-          value: "[append_str.value]"
-      - parameter:
-          name: "prepend_type"
-          dt: "string"
-          value: "[prepend_type.value]"
-      - parameter:
-          name: "append_type"
-          dt: "string"
-          value: "[append_type.value]"
+            name: "engine"
+            dt: "string"
+            value: "[engine.value]"
+        - parameter:
+            name: "sql"
+            dt: "string"
+            value: "[sql.value]"
+        - parameter:
+            name: "version"
+            dt: "string"
+            value: "[version.value]"
+        - parameter:
+            name: "prepend_str"
+            dt: "string"
+            value: "[prepend_str.value]"
+        - parameter:
+            name: "append_str"
+            dt: "string"
+            value: "[append_str.value]"
+        - parameter:
+            name: "prepend_type"
+            dt: "string"
+            value: "[prepend_type.value]"
+        - parameter:
+            name: "append_type"
+            dt: "string"
+            value: "[append_type.value]"
     test:
-      type: "[TESTTYPE-NAME]"
+      type: "[TEST-TYPE-NAME]"
       parameters:
         - parameter:
-          name: "username"
-          dt: "string"
-          value: "[username.value]"
-      - parameter:
-          name: "group"
-          dt: "string"
-          value: "[group.value]"
-      - parameter:
-          name: "uread"
-          dt: "boolean"
-          value: "[uread.value]"
-      - parameter:
-          name: "uwrite"
-          dt: "boolean"
-          value: "[uwrite.value]"
-      - parameter:
-          name: "uexec"
-          dt: "boolean"
-          value: "[uexec.value]"
-      - parameter:
-          name: "gread"
-          dt: "boolean"
-          value: "[gread.value]"
-      - parameter:
-          name: "gwrite"
-          dt: "boolean"
-          value: "[gwrite.value]"
-      - parameter:
-          name: "gexec"
-          dt: "boolean"
-          value: "[gexec.value]"
-      - parameter:
-          name: "oread"
-          dt: "boolean"
-          value: "[oread.value]"
-      - parameter:
-          name: "owrite"
-          dt: "boolean"
-          value: "[owrite.value]"
-      - parameter:
-          name: "oexec"
-          dt: "boolean"
-          value: "[oexec.value]"
-      - parameter:
-          name: "dir_only"
-          dt: "boolean"
-          value: "[dir_only.value]"
+            name: "username"
+            dt: "string"
+            value: "[username.value]"
+        - parameter:
+            name: "group"
+            dt: "string"
+            value: "[group.value]"
+        - parameter:
+            name: "uread"
+            dt: "boolean"
+            value: "[uread.value]"
+        - parameter:
+            name: "uwrite"
+            dt: "boolean"
+            value: "[uwrite.value]"
+        - parameter:
+            name: "uexec"
+            dt: "boolean"
+            value: "[uexec.value]"
+        - parameter:
+            name: "gread"
+            dt: "boolean"
+            value: "[gread.value]"
+        - parameter:
+            name: "gwrite"
+            dt: "boolean"
+            value: "[gwrite.value]"
+        - parameter:
+            name: "gexec"
+            dt: "boolean"
+            value: "[gexec.value]"
+        - parameter:
+            name: "oread"
+            dt: "boolean"
+            value: "[oread.value]"
+        - parameter:
+            name: "owrite"
+            dt: "boolean"
+            value: "[owrite.value]"
+        - parameter:
+            name: "oexec"
+            dt: "boolean"
+            value: "[oexec.value]"
+        - parameter:
+            name: "dir_only"
+            dt: "boolean"
+            value: "[dir_only.value]"
 
 JSON
 ^^^^
@@ -1660,7 +1660,7 @@ JSON
       "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
       "artifact-title": "[ARTIFACT-TITLE]",
       "artifact": {
-        "type": "[ARTIFACTTYPE-NAME]",
+        "type": "[ARTIFACT-TYPE-NAME]",
         "parameters": [
           {
             "parameter": {
@@ -1714,7 +1714,7 @@ JSON
         ]
       },
       "test": {
-        "type": "[TESTTYPE-NAME]",
+        "type": "[TEST-TYPE-NAME]",
         "parameters": [
           {
             "parameter": {
@@ -1822,7 +1822,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
       <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
         <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
         <ae:title>[ARTIFACT-TITLE]</ae:title>
-        <ae:artifact type="[ARTIFACTTYPE-NAME]">
+        <ae:artifact type="[ARTIFACT-TYPE-NAME]">
           <ae:parameters>
             <ae:parameter dt="string" name="engine">[engine.value]</ae:parameter>
             <ae:parameter dt="string" name="sql">[sql.value]</ae:parameter>
@@ -1833,7 +1833,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
             <ae:parameter dt="string" name="append_type">[append_type.value]</ae:parameter>
           </ae:parameters>
         </ae:artifact>
-        <ae:test type="[TESTTYPE-NAME]">
+        <ae:test type="[TEST-TYPE-NAME]">
           <ae:parameters>
             <ae:parameter dt="string" name="username">[username.value]</ae:parameter>
             <ae:parameter dt="string" name="group">[group.value]</ae:parameter>
@@ -1963,87 +1963,87 @@ YAML
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
     artifact_title: "[RECOMMENDATION-TITLE]" 
     artifact:
-      type: "[ARTIFACTTYPE-NAME]"
+      type: "[ARTIFACT-TYPE-NAME]"
       parameters:
         - parameter:
-          name: "engine"
-          dt: "string"
-          value: "[engine.value]"
-      - parameter:
-          name: "sql"
-          dt: "string"
-          value: "[sql.value]"
-      - parameter:
-          name: "version"
-          dt: "string"
-          value: "[version.value]"
-      - parameter:
-          name: "prepend_str"
-          dt: "string"
-          value: "[prepend_str.value]"
-      - parameter:
-          name: "append_str"
-          dt: "string"
-          value: "[append_str.value]"
-      - parameter:
-          name: "prepend_type"
-          dt: "string"
-          value: "[prepend_type.value]"
-      - parameter:
-          name: "append_type"
-          dt: "string"
-          value: "[append_type.value]"
+            name: "engine"
+            dt: "string"
+            value: "[engine.value]"
+        - parameter:
+            name: "sql"
+            dt: "string"
+            value: "[sql.value]"
+        - parameter:
+            name: "version"
+            dt: "string"
+            value: "[version.value]"
+        - parameter:
+            name: "prepend_str"
+            dt: "string"
+            value: "[prepend_str.value]"
+        - parameter:
+            name: "append_str"
+            dt: "string"
+            value: "[append_str.value]"
+        - parameter:
+            name: "prepend_type"
+            dt: "string"
+            value: "[prepend_type.value]"
+        - parameter:
+            name: "append_type"
+            dt: "string"
+            value: "[append_type.value]"
     test:
-      type: "[TESTTYPE-NAME]"
+      type: "[TEST-TYPE-NAME]"
       parameters:
         - parameter:
-          name: "username"
-          dt: "string"
-          value: "[username.value]"
-      - parameter:
-          name: "group"
-          dt: "string"
-          value: "[group.value]"
-      - parameter:
-          name: "uread"
-          dt: "string"
-          value: "[uread.value]"
-      - parameter:
-          name: "uwrite"
-          dt: "string"
-          value: "[uwrite.value]"
-      - parameter:
-          name: "uexec"
-          dt: "string"
-          value: "[uexec.value]"
-      - parameter:
-          name: "gread"
-          dt: "string"
-          value: "[gread.value]"
-      - parameter:
-          name: "gwrite"
-          dt: "string"
-          value: "[gwrite.value]"
-      - parameter:
-          name: "gexec"
-          dt: "string"
-          value: "[gexec.value]"
-      - parameter:
-          name: "oread"
-          dt: "string"
-          value: "[oread.value]"
-      - parameter:
-          name: "owrite"
-          dt: "string"
-          value: "[owrite.value]"
-      - parameter:
-          name: "oexec"
-          dt: "string"
-          value: "[oexec.value]"
-      - parameter:
-          name: "dir_only"
-          dt: "boolean"
-          value: "[dir_only.value]"  
+            name: "username"
+            dt: "string"
+            value: "[username.value]"
+        - parameter:
+            name: "group"
+            dt: "string"
+            value: "[group.value]"
+        - parameter:
+            name: "uread"
+            dt: "string"
+            value: "[uread.value]"
+        - parameter:
+            name: "uwrite"
+            dt: "string"
+            value: "[uwrite.value]"
+        - parameter:
+            name: "uexec"
+            dt: "string"
+            value: "[uexec.value]"
+        - parameter:
+            name: "gread"
+            dt: "string"
+            value: "[gread.value]"
+        - parameter:
+            name: "gwrite"
+            dt: "string"
+            value: "[gwrite.value]"
+        - parameter:
+            name: "gexec"
+            dt: "string"
+            value: "[gexec.value]"
+        - parameter:
+            name: "oread"
+            dt: "string"
+            value: "[oread.value]"
+        - parameter:
+            name: "owrite"
+            dt: "string"
+            value: "[owrite.value]"
+        - parameter:
+            name: "oexec"
+            dt: "string"
+            value: "[oexec.value]"
+        - parameter:
+            name: "dir_only"
+            dt: "boolean"
+            value: "[dir_only.value]"
 
 JSON
 ^^^^
@@ -2055,7 +2055,7 @@ JSON
       "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
       "artifact-title": "[ARTIFACT-TITLE]",
       "artifact": {
-        "type": "[ARTIFACTTYPE-NAME]",
+        "type": "[ARTIFACT-TYPE-NAME]",
         "parameters": [
           {
             "parameter": {
@@ -2109,7 +2109,7 @@ JSON
         ]
       },
       "test": {
-        "type": "[TESTTYPE-NAME]",
+        "type": "[TEST-TYPE-NAME]",
         "parameters": [
           {
             "parameter": {
@@ -2218,7 +2218,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
       <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
         <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
         <ae:title>[ARTIFACT-TITLE]</ae:title>
-        <ae:artifact type="[ARTIFACTTYPE-NAME]">
+        <ae:artifact type="[ARTIFACT-TYPE-NAME]">
           <ae:parameters>
             <ae:parameter dt="string" name="engine">[engine.value]</ae:parameter>
             <ae:parameter dt="string" name="sql">[sql.value]</ae:parameter>
@@ -2229,7 +2229,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
             <ae:parameter dt="string" name="append_type">[append_type.value]</ae:parameter>
           </ae:parameters>
         </ae:artifact>
-        <ae:test type="[TESTTYPE-NAME]">
+        <ae:test type="[TEST-TYPE-NAME]">
           <ae:parameters>
             <ae:parameter dt="string" name="username">[username.value]</ae:parameter>
             <ae:parameter dt="string" name="group">[group.value]</ae:parameter>
@@ -2360,95 +2360,95 @@ YAML
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
     artifact_title: "[RECOMMENDATION-TITLE]" 
     artifact:
-      type: "[ARTIFACTTYPE-NAME]"
+      type: "[ARTIFACT-TYPE-NAME]"
       parameters:
         - parameter:
-          name: "engine"
-          dt: "string"
-          value: "[engine.value]"
-      - parameter:
-          name: "sql"
-          dt: "string"
-          value: "[sql.value]"
-      - parameter:
-          name: "version"
-          dt: "string"
-          value: "[version.value]"
-      - parameter:
-          name: "prepend_str"
-          dt: "string"
-          value: "[prepend_str.value]"
-      - parameter:
-          name: "append_str"
-          dt: "string"
-          value: "[append_str.value]"
-      - parameter:
-          name: "prepend_type"
-          dt: "string"
-          value: "[prepend_type.value]"
-      - parameter:
-          name: "append_type"
-          dt: "string"
-          value: "[append_type.value]"
+            name: "engine"
+            dt: "string"
+            value: "[engine.value]"
+        - parameter:
+            name: "sql"
+            dt: "string"
+            value: "[sql.value]"
+        - parameter:
+            name: "version"
+            dt: "string"
+            value: "[version.value]"
+        - parameter:
+            name: "prepend_str"
+            dt: "string"
+            value: "[prepend_str.value]"
+        - parameter:
+            name: "append_str"
+            dt: "string"
+            value: "[append_str.value]"
+        - parameter:
+            name: "prepend_type"
+            dt: "string"
+            value: "[prepend_type.value]"
+        - parameter:
+            name: "append_type"
+            dt: "string"
+            value: "[append_type.value]"
     test:
-      type: "[TESTTYPE-NAME]"
+      type: "[TEST-TYPE-NAME]"
       parameters:
         - parameter:
-          name: "username"
-          dt: "string"
-          value: "[username.value]"
-      - parameter:
-          name: "group"
-          dt: "string"
-          value: "[group.value]"
-      - parameter:
-          name: "uread"
-          dt: "string"
-          value: "[uread.value]"
-      - parameter:
-          name: "uwrite"
-          dt: "string"
-          value: "[uwrite.value]"
-      - parameter:
-          name: "uexec"
-          dt: "string"
-          value: "[uexec.value]"
-      - parameter:
-          name: "gread"
-          dt: "string"
-          value: "[gread.value]"
-      - parameter:
-          name: "gwrite"
-          dt: "string"
-          value: "[gwrite.value]"
-      - parameter:
-          name: "gexec"
-          dt: "string"
-          value: "[gexec.value]"
-      - parameter:
-          name: "oread"
-          dt: "string"
-          value: "[oread.value]"
-      - parameter:
-          name: "owrite"
-          dt: "string"
-          value: "[owrite.value]"
-      - parameter:
-          name: "oexec"
-          dt: "string"
-          value: "[oexec.value]"
-      - parameter:
-          name: "dir_only"
-          dt: "boolean"
-          value: "[dir_only.value]"
-      - parameter:
-          name: "check_existence"
-          dt: "string"
-          value: "[check_existence.value]"
-      - parameter:
-          name: "check"
-          dt: "string"
-          value: "[check.value]"     
+            name: "username"
+            dt: "string"
+            value: "[username.value]"
+        - parameter:
+            name: "group"
+            dt: "string"
+            value: "[group.value]"
+        - parameter:
+            name: "uread"
+            dt: "string"
+            value: "[uread.value]"
+        - parameter:
+            name: "uwrite"
+            dt: "string"
+            value: "[uwrite.value]"
+        - parameter:
+            name: "uexec"
+            dt: "string"
+            value: "[uexec.value]"
+        - parameter:
+            name: "gread"
+            dt: "string"
+            value: "[gread.value]"
+        - parameter:
+            name: "gwrite"
+            dt: "string"
+            value: "[gwrite.value]"
+        - parameter:
+            name: "gexec"
+            dt: "string"
+            value: "[gexec.value]"
+        - parameter:
+            name: "oread"
+            dt: "string"
+            value: "[oread.value]"
+        - parameter:
+            name: "owrite"
+            dt: "string"
+            value: "[owrite.value]"
+        - parameter:
+            name: "oexec"
+            dt: "string"
+            value: "[oexec.value]"
+        - parameter:
+            name: "dir_only"
+            dt: "boolean"
+            value: "[dir_only.value]"
+        - parameter:
+            name: "check_existence"
+            dt: "string"
+            value: "[check_existence.value]"
+        - parameter:
+            name: "check"
+            dt: "string"
+            value: "[check.value]"     
 
 JSON
 ^^^^
@@ -2460,7 +2460,7 @@ JSON
       "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
       "artifact-title": "[ARTIFACT-TITLE]",
       "artifact": {
-        "type": "[ARTIFACTTYPE-NAME]",
+        "type": "[ARTIFACT-TYPE-NAME]",
         "parameters": [
           {
             "parameter": {
@@ -2514,7 +2514,7 @@ JSON
         ]
       },
       "test": {
-        "type": "[TESTTYPE-NAME]",
+        "type": "[TEST-TYPE-NAME]",
         "parameters": [
           {
             "parameter": {

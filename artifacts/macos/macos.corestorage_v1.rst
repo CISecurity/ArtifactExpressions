@@ -155,15 +155,15 @@ SCAP
 XCCDF
 '''''
 
-For ``macos.corestorage_v1`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
+For ``macos.corestorage_v1`` ``macos.corestorage_v1`` artifacts, the XCCDF check looks like this. There is no Value element in the XCCDF for this artifact.
 
 ::
 
-  <xccdf:check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
-    <xccdf:check-content-ref 
-      href="[BENCHMARK-TITLE]"
+  <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+    <check-content-ref 
+      href="[BENCHMARK-TITLE]-oval.xml"
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
-  </xccdf:check>
+  </check>
 
 OVAL
 ''''
@@ -174,10 +174,10 @@ Test
 
   <corestorage_test 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#macos"
-    check="[check.value]"
-    check_existence="[check_existence.value]"
-    comment="[ARTIFACT-TITLE]"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
+    check_existence="[check_existence.value]"
+    check="[check.value]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
     <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
     <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
@@ -189,8 +189,8 @@ Object
 
   <corestorage_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#macos"
-    comment="[ARTIFACT-TITLE]"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
     <uuid>[uuid.value]</uuid>
     <xpath>[xpath.value]</xpath>
@@ -202,8 +202,8 @@ State
 
   <corestorage_state 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#macos"
-    comment="[ARTIFACT-TITLE]"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
     <value_of 
       datatype="[datatype.value]"
@@ -228,7 +228,7 @@ YAML
             dt: "string"
             value: "[uuid.value]"
         - parameter: 
-            name: xpath
+            name: "xpath"
             dt: "string"
             value: "[xpath.value]" 
         - parameter:

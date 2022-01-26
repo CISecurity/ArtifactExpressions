@@ -153,7 +153,7 @@ SCAP
 XCCDF
 '''''
 
-For ``vmware.vmhost_coredump_v2`` artifacts, an XCCDF Value element is generated.
+For ``vmware.vmhost_coredump_v2`` ``vmware.vmhost_coredump_network_server_ip_v2`` artifacts, an XCCDF Value element is generated.
 
 ::
 
@@ -166,13 +166,13 @@ For ``vmware.vmhost_coredump_v2`` artifacts, an XCCDF Value element is generated
     <value>[value.value]</value>
   </Value>  
 
-For ``vmware.vmhost_coredump_v2`` artifacts, the xccdf:check looks like this.
+For ``vmware.vmhost_coredump_v2`` ``vmware.vmhost_coredump_network_server_ip_v2`` artifacts, the XCCDF check looks like this.
 
 ::
 
   <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
     <check-export 
-      export-name="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
+      export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
       value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />    
     <check-export 
       export-name="oval:org.cisecurity.benchmarks:var:100000"
@@ -191,7 +191,7 @@ Test
 
   <vmhost_coredump_test
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
-    id="oval:org.cisecurity.benchmarks[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
     check_existence="[check_existence.value]"
     check="[check.value]"
     comment="[ARTIFACT-TITLE]"
@@ -206,17 +206,15 @@ Object
 
   <vmhost_coredump_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
-    id="oval:org.cisecurity.benchmarks[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-    <connection_string var_ref="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
-    <vmhost_name operation="[operation.value]">
-      [vmhost_name.value]
-    </vmhost_name>
+    <connection_string var_ref="oval:org.cisecurity.benchmarks:var:100000" />
+    <vmhost_name operation="[operation.value]">[vmhost_name.value]</vmhost_name>
     <filter 
       xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5"
       action="exclude">
-        oval:org.cisecurity.benchmarks[PLATFORM]:ste:[ARTIFACT-OVAL-ID]
+        oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]
     </filter>
   </vmhost_coredump_object>      
 
@@ -226,13 +224,13 @@ State
 
   <vmhost_coredump_state 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
-    id="oval:org.cisecurity.benchmarks[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
     <network_server_ip 
       datatype="[datatype.value]"
       operation="[operation.value]"
-      var_ref="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
+      var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
   </vmhost_coredump_state> 
 
 Variable
@@ -240,7 +238,7 @@ Variable
 ::
 
   <external_variable 
-    id="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
     datatype="string"
     version="1"
     comment="This value is used in Rule: [RECOMMENDATION-TITLE]" />

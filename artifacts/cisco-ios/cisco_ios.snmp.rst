@@ -46,7 +46,7 @@ value string Value.
 =========== ====== =============================
 Name        Type   Description
 =========== ====== =============================
-operator    string Comparison Operator.
+operator    string Comparison operator.
 access_list string The defined SNMP Access List.
 =========== ====== =============================
 
@@ -92,7 +92,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
             </ae:parameters>
           </ae:test>
           <ae:profiles>
-            <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1"/>
+            <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1" />
           </ae:profiles>            
         </ae:artifact_expression>
       </xccdf:check-content>
@@ -105,17 +105,14 @@ SCAP
 XCCDF
 '''''
 
-For ``cisco_ios.snmp existence_test`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
+For ``cisco_ios.snmp`` ``existence_test`` artifacts, the XCCDF check looks like this. There is no Value element in the XCCDF for this artifact.
 
 ::
 
-  <check system='http://oval.mitre.org/XMLSchema/oval-definitions-5'>
-    <check-export 
-      export-name='oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]'
-      value-id='xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var' />
+  <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
     <check-content-ref 
-      href='[BENCHMARK NAME]'
-      name='oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]' />
+      href="[BENCHMARK-TITLE]-oval.xml"
+      name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 
 OVAL
@@ -133,7 +130,6 @@ Test
     comment="[ARTIFACT-TITLE]"
     version="1">
     <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
-    <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
   </snmp_test>
 
 Object
@@ -167,13 +163,9 @@ YAML
       type: "[TEST-TYPE-NAME]"
       parameters:  
         - parameter: 
-            name: "operator"
+            name: "value"
             dt: "string"
-            value: "[operator.value]"
-        - parameter: 
-            name: "access_list"
-            dt: "string"
-            value: "[access_list.value]"
+            value: "[value.value]"
 
 JSON
 ^^^^
@@ -186,23 +178,16 @@ JSON
       "artifact-title": "[ARTIFACT-TITLE]",
       "artifact": {
         "type": "[ARTIFACT-TYPE-NAME]",
-        "parameters": null
+        "parameters": []
       },
       "test": {
         "type": "[TEST-TYPE-NAME]",
         "parameters": [
           {
             "parameter": {
-              "name": "operator",
+              "name": "value",
               "type": "string",
-              "value": "[operator.value]"
-            }
-          },
-          {
-            "parameter": {
-              "name": "access_list",
-              "type": "string",
-              "value": "[access_list.value]"
+              "value": "[value.value]"
             }
           }
         ]
@@ -238,7 +223,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
             </ae:parameters>
           </ae:test>
           <ae:profiles>
-            <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1"/>
+            <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1" />
           </ae:profiles>          
         </ae:artifact_expression>
       </xccdf:check-content>
@@ -251,7 +236,7 @@ SCAP
 XCCDF
 '''''
 
-For ``cisco_ios.snmp`` artifacts, an XCCDF Value element is generated.
+For ``cisco_ios.snmp`` ``cisco_ios.snmp`` artifacts, an XCCDF Value element is generated.
 
 ::
 
@@ -264,7 +249,7 @@ For ``cisco_ios.snmp`` artifacts, an XCCDF Value element is generated.
     <value>[value.value]</value>
   </Value>
 
-For ``cisco_ios.snmp`` artifacts, the xccdf:check looks like this.
+For ``cisco_ios.snmp`` ``cisco_ios.snmp`` artifacts, the XCCDF check looks like this.
 
 ::
 
@@ -273,7 +258,7 @@ For ``cisco_ios.snmp`` artifacts, the xccdf:check looks like this.
       export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
       value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
     <check-content-ref 
-      href="[BENCHMARK-TITLE]"
+      href="[BENCHMARK-TITLE]-oval.xml"
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 
@@ -363,7 +348,7 @@ JSON
       "artifact-title": "[ARTIFACT-TITLE]",
       "artifact": {
         "type": "[ARTIFACT-TYPE-NAME]",
-        "parameters": null
+        "parameters": []
       },
       "test": {
         "type": "[TEST-TYPE-NAME]",

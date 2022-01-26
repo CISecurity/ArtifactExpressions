@@ -164,7 +164,7 @@ SCAP
 XCCDF
 '''''
 
-For ``vmware.vmhost_acceptancelevel_v2`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
+For ``vmware.vmhost_acceptancelevel_v2`` ``vmware.vmhost_acceptancelevel_v2`` artifacts, the XCCDF check looks like this. There is no Value element in the XCCDF for this artifact.
 
 ::
 
@@ -186,7 +186,7 @@ Test
 
   <vmhost_acceptancelevel_test
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi" 
-    id="oval:org.cisecurity.benchmarks[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
     check_existence="[check_existence.value]"
     check="[check.value]"
     comment="[ARTIFACT-TITLE]"
@@ -204,10 +204,8 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-    <connection_string var_ref="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
-    <vmhost_name operation="[operation.value]">
-      [vmhost_name.value]
-    </vmhost_name>
+    <connection_string var_ref="oval:org.cisecurity.benchmarks:var:100000" />
+    <vmhost_name operation="[operation.value]">[vmhost_name.value]</vmhost_name>
   </vmhost_acceptancelevel_object>   
 
 State
@@ -231,7 +229,7 @@ Variable
 ::
 
   <external_variable 
-    id="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
     datatype="[datatype.value]"
     version="1"
     comment="This value is used in Rule: [RECOMMENDATION-TITLE]" />    
@@ -266,7 +264,7 @@ YAML
         - parameter: 
             name: "vib_name_operation"
             dt: "string"
-            value: "[vib_name_operation.value]"                                                
+            value: "[vib_name_operation.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:

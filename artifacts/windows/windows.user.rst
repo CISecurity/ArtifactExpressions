@@ -82,7 +82,7 @@ SCAP
 XCCDF
 '''''
 
-For ``windows.user`` artifacts, the xccdf:check looks like this. There is no Value element in the xccdf for this Artifact.
+For ``windows.user`` ``null_test_v1`` artifacts, the XCCDF check looks like this. There is no Value element in the XCCDF for this artifact.
 
 ::
 
@@ -91,7 +91,7 @@ For ``windows.user`` artifacts, the xccdf:check looks like this. There is no Val
       export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
       value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
     <check-content-ref 
-      href="[BENCHMARK-TITLE]"
+      href="[BENCHMARK-TITLE]-oval.xml"
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>  
 

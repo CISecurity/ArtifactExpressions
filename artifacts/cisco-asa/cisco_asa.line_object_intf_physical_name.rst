@@ -109,7 +109,7 @@ SCAP
 XCCDF
 '''''
 
-For ``cisco_asa.line_object_intf_physical_name`` artifacts, an XCCDF Value element is generated.
+For ``cisco_asa.line_object_intf_physical_name`` ``cisco_asa.line_config_line`` artifacts, an XCCDF Value element is generated.
 
 ::
 
@@ -122,7 +122,7 @@ For ``cisco_asa.line_object_intf_physical_name`` artifacts, an XCCDF Value eleme
     <value>[value.value]</value>
   </Value>
 
-For ``cisco_asa.line_object_intf_physical_name`` artifacts, the xccdf:check looks like this.
+For ``cisco_asa.line_object_intf_physical_name`` ``cisco_asa.line_config_line`` artifacts, the XCCDF check looks like this.
 
 ::
 
@@ -131,7 +131,7 @@ For ``cisco_asa.line_object_intf_physical_name`` artifacts, the xccdf:check look
       export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" 
       value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
     <check-content-ref 
-      href="[BENCHMARK-TITLE]" 
+      href="[BENCHMARK-TITLE]-oval.xml" 
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 
@@ -162,8 +162,7 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-    <show_subcommand 
-      var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]2" />
+    <show_subcommand var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]2" />
   </line_object>
 
 State
@@ -198,8 +197,7 @@ Variable
     version="1" />
     <concat>
       <literal_component>[literal_component.value]</literal_component>
-      <variable_component
-        var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
+      <variable_component var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
       <literal_component>[literal_component.value]</literal_component>
     </concat>
   </constant_variable>

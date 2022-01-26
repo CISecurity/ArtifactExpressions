@@ -107,6 +107,9 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
               <ae:parameter dt="string" name="snmp_version">[snmp_version.value]</ae:parameter>
             </ae:parameters>
           </ae:test>
+          <ae:profiles>
+            <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1" />
+          </ae:profiles>
         </ae:artifact_expression>
       </xccdf:check-content>
     </xccdf:check>
@@ -118,7 +121,7 @@ SCAP
 XCCDF
 '''''
 
-For ``cisco_asa.snmp_host_object`` artifacts, an XCCDF Value element is generated.
+For ``cisco_asa.snmp_host_object`` ``cisco_asa.snmp_host_version`` artifacts, an XCCDF Value element is generated.
 
 ::
 
@@ -131,7 +134,7 @@ For ``cisco_asa.snmp_host_object`` artifacts, an XCCDF Value element is generate
     <value>[value.value]</value>
   </Value>
 
-For ``cisco_asa.snmp_host_object`` artifacts, the xccdf:check looks like this.
+For ``cisco_asa.snmp_host_object`` ``cisco_asa.snmp_host_version`` artifacts, the XCCDF check looks like this.
 
 ::
 
@@ -140,7 +143,7 @@ For ``cisco_asa.snmp_host_object`` artifacts, the xccdf:check looks like this.
       export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" 
       value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
     <check-content-ref 
-      href="[BENCHMARK-TITLE]" 
+      href="[BENCHMARK-TITLE]-oval.xml" 
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 
@@ -173,10 +176,7 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" 
     comment="[ARTIFACT-TITLE]" 
     version="1">
-    <host
-      operation="[operation.value]">
-      [host.value]
-    </host>
+    <host operation="[operation.value]">[host.value]</host>
   </snmp_host_object>
 
 State
@@ -201,7 +201,7 @@ Variable
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
     datatype="string"
     comment="This value is used in Rule: [RECOMMENDATION-TITLE]"
-   version="1" />
+    version="1" />
 
 YAML
 ^^^^

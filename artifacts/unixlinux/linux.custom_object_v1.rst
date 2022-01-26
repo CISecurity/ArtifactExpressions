@@ -364,17 +364,15 @@ SCAP
 XCCDF
 '''''
 
-For ``linux.custom_object_v1`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
+For ``linux.custom_object_v1`` ``null_test_v1`` artifacts, the XCCDF check looks like this. There is no Value element in the XCCDF for this artifact.
 
 ::
 
-  <xccdf:complex-check operator="OR">
-    <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
-      <check-content-ref 
-        href="[BENCHMARK-TITLE]"
-        name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
-    </check>
-  </xccdf:complex-check>
+  <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+    <check-content-ref 
+      href="[BENCHMARK-TITLE]-oval.xml"
+      name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
+  </check>
 
 OVAL
 ''''
@@ -533,9 +531,7 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-    <name operation="pattern match">
-      xserver-xorg-core.*
-    </name>
+    <name operation="pattern match">xserver-xorg-core.*</name>
   </dpkginfo_object> 
 
 State
@@ -591,15 +587,9 @@ State
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-    <user_id datatype="int">
-      0
-    </user_id>
-    <gwrite datatype="boolean">
-      false
-    </gwrite>
-    <owrite datatype="boolean">
-      false
-    </owrite>
+    <user_id datatype="int">0</user_id>
+    <gwrite datatype="boolean">false</gwrite>
+    <owrite datatype="boolean">false</owrite>
   </file_state>
 
 Variable
@@ -653,9 +643,7 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]2"
     comment="[ARTIFACT-TITLE]"
     version="1">
-    <username operation="pattern match">
-      ^(?!root|halt|sync|shutdown).*
-    </username>
+    <username operation="pattern match">^(?!root|halt|sync|shutdown).*</username>
     <filter 
       xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5"
       action="exclude">
@@ -672,18 +660,10 @@ State
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-    <gwrite datatype="boolean">
-      false
-    </gwrite>
-    <oread datatype="boolean">
-      false
-    </oread>
-    <owrite datatype="boolean">
-      false
-    </owrite>
-    <oexec datatype="boolean">
-      false
-    </oexec>
+    <gwrite datatype="boolean">false</gwrite>
+    <oread datatype="boolean">false</oread>
+    <owrite datatype="boolean">false</owrite>
+    <oexec datatype="boolean">false</oexec>
   </file_state>
 
   <password_state 
@@ -739,9 +719,7 @@ Object
     comment="[ARTIFACT-TITLE]"
     version="1">
     <path var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
-    <filename operation="pattern match">
-      ^\\..+
-    </filename>
+    <filename operation="pattern match">^\\..+</filename>
   </file_object>
 
   <password_object 
@@ -749,9 +727,7 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]2"
     comment="[ARTIFACT-TITLE]"
     version="1">
-    <username operation="pattern match">
-      ^(?!root|halt|sync|shutdown).*
-    </username>
+    <username operation="pattern match">^(?!root|halt|sync|shutdown).*</username>
     <filter 
       xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5"
       action="exclude">
@@ -768,12 +744,8 @@ State
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-    <gwrite datatype="boolean">
-      false
-    </gwrite>
-    <owrite datatype="boolean">
-      false
-    </owrite>
+    <gwrite datatype="boolean">false</gwrite>
+    <owrite datatype="boolean">false</owrite>
   </file_state>
 
   <password_state 
@@ -941,7 +913,8 @@ State
 
 ::
 
-  <file_state xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
+  <file_state 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
@@ -1017,7 +990,8 @@ State
 
 ::
 
-  <file_state xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
+  <file_state 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
@@ -1032,7 +1006,8 @@ Variable
 
 ::
 
-  <local_variable id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
+  <local_variable 
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
     datatype="string"
     comment="[ARTIFACT-TITLE]"
     version="1">
@@ -1069,9 +1044,7 @@ Object
     comment="[ARTIFACT-TITLE]"
     version="1">
     <path var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
-    <filename operation="pattern match">
-      .rhost
-    </filename>
+    <filename operation="pattern match">.rhost</filename>
   </file_object>
 
   <password_object 
@@ -1145,9 +1118,7 @@ Object
     comment="[ARTIFACT-TITLE]"
     version="1">
     <path var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
-    <filename operation="pattern match">
-      .netrc
-    </filename>
+    <filename operation="pattern match">.netrc</filename>
   </file_object>
 
   <password_object 
@@ -1221,9 +1192,7 @@ Object
     comment="[ARTIFACT-TITLE]"
     version="1">
     <path var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
-    <filename operation="pattern match">
-      .forward
-    </filename>
+    <filename operation="pattern match">.forward</filename>
   </file_object>
 
   <password_object 
@@ -1392,12 +1361,8 @@ State
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-    <sticky datatype="boolean">
-      false
-    </sticky>
-    <owrite datatype="boolean">
-      true
-    </owrite>
+    <sticky datatype="boolean">false</sticky>
+    <owrite datatype="boolean">true</owrite>
   </file_state>
 
 Test
@@ -1447,12 +1412,8 @@ State
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-    <type datatype="string">
-      regular
-    </type>
-    <owrite datatype="boolean">
-      true
-    </owrite>
+    <type datatype="string">regular</type>
+    <owrite datatype="boolean">true</owrite>
   </file_state>
 
 Test
@@ -1496,9 +1457,7 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]2"
     comment="[ARTIFACT-TITLE]"
     version="1">
-    <username operation="pattern match">
-      .*
-    </username>
+    <username operation="pattern match">.*</username>
   </password_object>
 
 State
@@ -1637,9 +1596,7 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-    <protocol operation="pattern match">
-      .*
-    </protocol>
+    <protocol operation="pattern match">.*</protocol>
     <local_address operation="pattern match">
       ^(?!127\\.0\\.0\\.1|::1).*\$  
     </local_address>
@@ -1726,9 +1683,7 @@ State
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-    <group_id datatype="int">
-      0
-    </group_id>
+    <group_id datatype="int">0</group_id>
   </password_state>
 
 Test
@@ -1752,7 +1707,8 @@ Object
 
 ::
 
-  <password_object xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
+  <password_object 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
@@ -1853,9 +1809,7 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-    <username operation="pattern match">
-      .+
-    </username>
+    <username operation="pattern match">.+</username>
   </password_object>
 
   <textfilecontent54_object 
@@ -1984,9 +1938,7 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-    <command_line operation="pattern match">
-      ^chronyd
-    </command_line>
+    <command_line operation="pattern match">^chronyd</command_line>
     <pid 
       datatype="int"
       operation="greater than">
@@ -2061,9 +2013,7 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-    <username operation="pattern match">
-      .+
-    </username>
+    <username operation="pattern match">.+</username>
   </shadow_object>
 
 State
@@ -2077,9 +2027,7 @@ State
     version="1">
     <password 
       datatype="string"
-      operation="pattern match">
-        ^[^!*]
-    </password>
+      operation="pattern match">^[^!*]</password>
     <chg_req 
       datatype="int"
       operation="greater than">
@@ -2113,9 +2061,7 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-    <username operation="pattern match">
-      .+
-    </username>
+    <username operation="pattern match">.+</username>
   </shadow_object>
 
 State
@@ -2165,9 +2111,7 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-    <username operation="pattern match">
-      .+
-    </username>
+    <username operation="pattern match">.+</username>
   </shadow_object>
 
 State
@@ -2217,9 +2161,7 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-    <username operation="pattern match">
-        .+
-    </username>
+    <username operation="pattern match">.+</username>
   </shadow_object>
 
 State
@@ -2269,9 +2211,7 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-    <username operation="pattern match">
-        .+
-    </username>
+    <username operation="pattern match">.+</username>
   </shadow_object>
 
 State
@@ -2331,9 +2271,7 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]2"
     comment="[ARTIFACT-TITLE]"
     version="1">
-    <username operation="pattern match">
-        username
-    </username>
+    <username operation="pattern match">username</username>
     <filter 
       xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5"
       action="include">
@@ -2350,9 +2288,7 @@ State
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-    <password operation="pattern match">
-        ^!
-    </password>
+    <password operation="pattern match">^!</password>
   </shadow_state>
 
   <password_state 
@@ -2428,9 +2364,7 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]2"
     comment="[ARTIFACT-TITLE]"
     version="1">
-    <protocol operation="pattern match">
-        .*
-    </protocol>
+    <protocol operation="pattern match">.*</protocol>
     <local_address operation="pattern match">
         ^(?!127\\.0\\.0\\.1|::1).*$
     </local_address>
@@ -2467,9 +2401,7 @@ Variable
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
     version="1">
     <concat>
-      <literal_component datatype="string">
-        \s+dpt:
-      </literal_component>
+      <literal_component datatype="string">\s+dpt:</literal_component>
       <object_component 
         item_field="local_port"
         object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]2" />
@@ -2782,9 +2714,7 @@ Object
       recurse_file_system="local"
       recurse="directories" />
     <path>/</path>
-    <filename operation="pattern match">
-        .+
-    </filename>
+    <filename operation="pattern match">.+</filename>
     <filter 
       xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5"
       action="exclude">
@@ -2801,12 +2731,8 @@ State
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-    <suid datatype="boolean"> 
-      false
-    </suid>
-    <sgid datatype="boolean">
-      false
-    </sgid>
+    <suid datatype="boolean">false</suid>
+    <sgid datatype="boolean">false</sgid>
   </file_state>
 
 Variable

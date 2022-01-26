@@ -562,60 +562,60 @@ YAML
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
         - parameter: 
-            name: engine
+            name: "engine"
             dt: "string"
-            value: "[engine.value]
+            value: "[engine.value]"
         - parameter: 
-            name: sql
+            name: "sql"
             dt: "string"
-            value: "[sql.value]
+            value: "[sql.value]"
         - parameter: 
-            name: version
+            name: "version"
             dt: "string"
-            value: "[version.value]
+            value: "[version.value]"
         - parameter: 
-            name: prepend_str
+            name: "prepend_str"
             dt: "string"
-            value: prepend_str.value]
+            value: "[prepend_str.value]"
         - parameter: 
-            name: append_str
+            name: "append_str"
             dt: "string"
-            value: "[append_str.value]
+            value: "[append_str.value]"
         - parameter: 
-            name: prepend_type
+            name: "prepend_type"
             dt: "string"
-            value: "[prepend_type.value]
+            value: "[prepend_type.value]"
         - parameter: 
-            name: append_type
+            name: "append_type"
             dt: "string"
-            value: append_type.value]
+            value: "[append_type.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:   
         - parameter: 
-            name: check_existence
+            name: "check_existence"
             dt: "string"
-            value: "[check_existence.value]
+            value: "[check_existence.value]"
         - parameter: 
-            name: check
+            name: "check"
             dt: "string"
-            value: "[check.value]
+            value: "[check.value]"
         - parameter: 
-            name: value
+            name: "value"
             dt: "string"
-            value: value.value]
+            value: "[value.value]"
         - parameter: 
-            name: value_data_type
+            name: "value_data_type"
             dt: "string"
-            value: "[value_data_type.value]
+            value: "[value_data_type.value]"
         - parameter: 
-            name: field_name
+            name: "field_name"
             dt: "string"
-            value: "[field_name.value]
+            value: "[field_name.value]"
         - parameter: 
-            name: field_operation
+            name: "field_operation"
             dt: "string"
-            value: field_operation.value]"
+            value: "[field_operation.value]"
 
 JSON
 ^^^^

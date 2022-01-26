@@ -64,7 +64,7 @@ value string Value.
 ======== ====== ==========================
 Name     Type   Description
 ======== ====== ==========================
-operator string Comparison Operator.
+operator string Comparison operator.
 traps    string The SNMP Traps configured.
 ======== ====== ==========================
 
@@ -126,13 +126,13 @@ SCAP
 XCCDF
 '''''
 
-For ``cisco_ios.snmp_host existence_test`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
+For ``cisco_ios.snmp_host`` ``existence_test`` artifacts, the XCCDF check looks like this. There is no Value element in the XCCDF for this artifact.
 
 ::
 
   <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
     <check-content-ref 
-      href="[BENCHMARK-TITLE]"
+      href="[BENCHMARK-TITLE]-oval.xml"
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 
@@ -285,7 +285,7 @@ SCAP
 XCCDF
 '''''
 
-For ``cisco_ios.snmp_host cisco_ios.snmp_host_traps`` artifacts, an XCCDF Value element is generated.
+For ``cisco_ios.snmp_host`` ``cisco_ios.snmp_host_traps`` artifacts, an XCCDF Value element is generated.
 
 ::
 
@@ -298,7 +298,7 @@ For ``cisco_ios.snmp_host cisco_ios.snmp_host_traps`` artifacts, an XCCDF Value 
     <value>[value.value]</value>
   </Value>
 
-For ``cisco_ios.snmp_host cisco_ios.snmp_host_traps`` artifacts, the xccdf:check looks like this.
+For ``cisco_ios.snmp_host`` ``cisco_ios.snmp_host_traps`` artifacts, the XCCDF check looks like this.
 
 ::
 
@@ -307,7 +307,7 @@ For ``cisco_ios.snmp_host cisco_ios.snmp_host_traps`` artifacts, the xccdf:check
       export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
       value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
     <check-content-ref 
-      href="[BENCHMARK-TITLE]"
+      href="[BENCHMARK-TITLE]-oval.xml"
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 

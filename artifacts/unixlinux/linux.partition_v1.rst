@@ -153,17 +153,15 @@ SCAP
 XCCDF
 '''''
 
-For ``linux.partition_v1 null_test_v1`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
+For ``linux.partition_v1`` ``null_test_v1`` artifacts, the XCCDF check looks like this. There is no Value element in the XCCDF for this artifact.
 
 ::
 
-  <xccdf:complex-check operator="AND">
-    <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
-      <check-content-ref 
-        href="[BENCHMARK-TITLE]"
-        name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
-    </check>
-  </xccdf:complex-check>
+  <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+    <check-content-ref 
+      href="[BENCHMARK-TITLE]-oval.xml"
+      name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
+  </check>
 
 OVAL
 ''''
@@ -319,17 +317,15 @@ SCAP
 XCCDF
 '''''
 
-For ``linux.partition_v1 linux.partition_option_v1`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
+For ``linux.partition_v1`` ``linux.partition_option_v1`` artifacts, the XCCDF check looks like this. There is no Value element in the XCCDF for this artifact.
 
 ::
 
-  <xccdf:complex-check operator="AND">
-    <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
-      <check-content-ref 
-        href="[BENCHMARK-TITLE]"
-        name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
-    </check>
-  </xccdf:complex-check>
+  <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+    <check-content-ref 
+      href="[BENCHMARK-TITLE]-oval.xml"
+      name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
+  </check>
 
 OVAL
 ''''

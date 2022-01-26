@@ -120,7 +120,7 @@ SCAP
 XCCDF
 '''''
 
-For ``iis.applicationpool`` artifacts, an XCCDF Value element is generated.
+For ``iis.applicationpool`` ``iis.applicationpool`` artifacts, an XCCDF Value element is generated.
 
 ::
 
@@ -133,7 +133,7 @@ For ``iis.applicationpool`` artifacts, an XCCDF Value element is generated.
     <value>[value.value]</value>
   </Value>
 
-For ``iis.applicationpool`` artifacts, the xccdf:check looks like this.
+For ``iis.applicationpool`` ``iis.applicationpool`` artifacts, the XCCDF check looks like this.
 
 ::
 
@@ -142,7 +142,7 @@ For ``iis.applicationpool`` artifacts, the xccdf:check looks like this.
       export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
       value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
     <check-content-ref 
-      href="[BENCHMARK-TITLE]"
+      href="[BENCHMARK-TITLE]-oval.xml"
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 
@@ -186,7 +186,6 @@ State
     comment="[ARTIFACT-TITLE]"
     version="1">
     <[configuration_setting.value] 
-      xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#iis"
       datatype="[data_type.value]"
       operation="[operator.value]"
       var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />

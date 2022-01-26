@@ -50,7 +50,7 @@ Test Type Parameters
 ================ ====== =============================================
 Name             Type   Description
 ================ ====== =============================================
-operator         string Comparison Operator.
+operator         string Comparison operator.
 snmpv3_sec_level string The SNMPv3 security configured for the group.
 ================ ====== =============================================
 
@@ -117,7 +117,7 @@ SCAP
 XCCDF
 '''''
 
-For ``cisco_ios.snmp_group`` artifacts, an XCCDF Value element is generated.
+For ``cisco_ios.snmp_group`` ``cisco_ios.snmp_groups_priv`` artifacts, an XCCDF Value element is generated.
 
 ::
 
@@ -130,7 +130,7 @@ For ``cisco_ios.snmp_group`` artifacts, an XCCDF Value element is generated.
     <value>[value.value]</value>
   </Value>
 
-For ``cisco_ios.snmp_group`` artifacts, the xccdf:check looks like this.
+For ``cisco_ios.snmp_group`` ``cisco_ios.snmp_groups_priv`` artifacts, the XCCDF check looks like this.
 
 ::
 
@@ -139,7 +139,7 @@ For ``cisco_ios.snmp_group`` artifacts, the xccdf:check looks like this.
       export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
       value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
     <check-content-ref 
-      href="[BENCHMARK-TITLE]"
+      href="[BENCHMARK-TITLE]-oval.xml"
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 
@@ -170,13 +170,9 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-    <name 
-      operation="[operation.value]"
-      action=".+">
-        oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]
-    </name>
+    <name operation="[operation.value]">[name.vlue]</name>
     <filter 
-      xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#"
+      xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5"
       action="include">
         oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]
     </filter>    
@@ -217,11 +213,12 @@ Variable
     version="1" />
 
   <constant_variable
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]2"
     datatype="string"
     comment="This value is used in Rule: [RECOMMENDATION-TITLE]"
     version="1">
     <value>.+</value>
+  </constant_variable>
 
 YAML
 ^^^^

@@ -203,30 +203,30 @@ YAML
       parameters:
         - parameter: 
             name: "name"
-            type: "string"
+            dt: "string"
             value: "[name.value]"
         - parameter: 
             name: "check_existence"
-            type: "string"
+            dt: "string"
             value: "[check_existence.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:   
         - parameter: 
             name: "check"
-            type: "string"
+            dt: "string"
             value: "[check.value]"
         - parameter: 
             name: "operation"
-            type: "string"
+            dt: "string"
             value: "operation.value]"
         - parameter: 
             name: "datatype"
-            type: "string"
+            dt: "string"
             value: "[datatype.value]"
         - parameter: 
             name: "value"
-            type: "string"
+            dt: "string"
             value: "value.value]"
 
 JSON

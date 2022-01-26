@@ -160,7 +160,7 @@ SCAP
 XCCDF
 '''''
 
-For ``vmware.vmhost_busadapter_v2`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
+For ``vmware.vmhost_busadapter_v2`` ``vmware.vmhost_busadapter_mutual_chap_enabled_v2`` artifacts, the XCCDF check looks like this. There is no Value element in the XCCDF for this artifact.
 
 ::
 
@@ -182,7 +182,7 @@ Test
 
   <vmhost_busadapter_test
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
-    id="oval:org.cisecurity.benchmarks[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
     check_existence="[check_existence.value]"
     check="[check.value]"
     comment="[ARTIFACT-TITLE]"
@@ -197,16 +197,12 @@ Object
 
   <vmhost_busadapter_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
-    id="oval:org.cisecurity.benchmarks[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-    <connection_string var_ref="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
-    <vmhost_name operation="[operation.value]">
-      [vmhost.value]
-    </vmhost_name>
-    <busadapter_type>
-      [busadapter_type.value]
-    </busadapter_type>
+    <connection_string var_ref="oval:org.cisecurity.benchmarks:var:100000" />
+    <vmhost_name operation="[operation.value]">[vmhost.value]</vmhost_name>
+    <busadapter_type>[busadapter_type.value]</busadapter_type>
   </vmhost_busadapter_object>
 
 State
@@ -215,13 +211,13 @@ State
 
   <vmhost_busadapter_state 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
-    id="oval:org.cisecurity.benchmarks[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
     <mutual_chap_enabled 
       datatype="[datatype.value]"
       operation="[operation.value]"
-      var_ref="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
+      var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
   </vmhost_busadapter_state> 
 
 Variable
@@ -229,7 +225,7 @@ Variable
 ::
 
   <external_variable 
-    id="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
     datatype="boolean"
     version="1"
     comment="This value is used in Rule: [RECOMMENDATION-TITLE]" />

@@ -133,13 +133,13 @@ SCAP
 XCCDF
 '''''
 
-For ``linux.systemd_unit_property_v1`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
+For ``linux.systemd_unit_dependency_v1`` ``linux.systemd_unit_dependency_v1`` artifacts, the XCCDF check looks like this. There is no Value element in the XCCDF for this artifact.
 
 ::
 
   <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
     <check-content-ref 
-      href="[BENCHMARK-TITLE]"
+      href="[BENCHMARK-TITLE]-oval.xml"
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 
@@ -170,9 +170,7 @@ Object
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-    <unit operation="[operation.value]">
-      [unit.value]
-    </unit>
+    <unit operation="[operation.value]">[unit.value]</unit>
   </systemdunitdependency_object>
 
 State

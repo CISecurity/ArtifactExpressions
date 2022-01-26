@@ -149,7 +149,7 @@ SCAP
 XCCDF
 '''''
 
-For ``kubernetes.kubepsp_v1`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
+For ``kubernetes.kubepsp_v1`` ``kubernetes.kubepsp_v1`` artifacts, the XCCDF check looks like this. There is no Value element in the XCCDF for this artifact.
 
 ::
 
@@ -170,7 +170,7 @@ Test
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#kubernetes"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]" 
     check_existence="[check-existence.value]" 
-    check="all" 
+    check="[check.value]" 
     comment="[ARTIFACT-TITLE]"
     version="1">
     <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
@@ -196,7 +196,7 @@ State
 
   <kubepsp_state 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#kubernetes"
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
     <result datatype="record">

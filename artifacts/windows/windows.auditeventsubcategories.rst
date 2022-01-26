@@ -149,7 +149,7 @@ SCAP
 XCCDF
 '''''
 
-For ``windows.auditeventsubcategories`` artifacts, an XCCDF Value element is generated.
+For ``windows.auditeventsubcategories`` ``equals``, ``equal``, ``not equal``, ``less than``, ``less than or equal``, ``greater than``, and ``greater than or equal`` artifacts, an XCCDF Value element is generated.
 
 ::
 
@@ -162,20 +162,18 @@ For ``windows.auditeventsubcategories`` artifacts, an XCCDF Value element is gen
     <value>[value.value]</value>
   </Value>
 
-For ``windows.auditeventsubcategories`` artifacts, the xccdf:check looks like this.
+For ``windows.auditeventsubcategories`` ``equals``, ``equal``, ``not equal``, ``less than``, ``less than or equal``, ``greater than``, and ``greater than or equal`` artifacts, the XCCDF check looks like this.
 
 ::
 
-  <xccdf:complex-check operator="AND">
-    <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
-      <check-export 
-        export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
-        value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
-      <check-content-ref 
-        href="[BENCHMARK-TITLE]"
-        name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
-    </check>
-  </xccdf:complex-check>
+  <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+    <check-export 
+      export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
+      value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
+    <check-content-ref 
+      href="[BENCHMARK-TITLE]-oval.xml"
+      name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
+  </check>
 
 OVAL
 ''''

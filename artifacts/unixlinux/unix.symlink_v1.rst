@@ -209,7 +209,7 @@ SCAP
 XCCDF
 '''''
 
-For ``unix.symlink_v1 unix.symlink_v1`` artifacts, an XCCDF Value element is generated.
+For ``unix.symlink_v1`` ``unix.symlink_v1`` artifacts, an XCCDF Value element is generated.
 
 ::
 
@@ -222,7 +222,7 @@ For ``unix.symlink_v1 unix.symlink_v1`` artifacts, an XCCDF Value element is gen
     <value>[value.value]</value>
   </Value>
 
-For ``unix.symlink_v1 unix.symlink_v1`` artifacts, the xccdf:check looks like this.
+For ``unix.symlink_v1`` ``unix.symlink_v1`` artifacts, the XCCDF check looks like this.
 
 ::
 
@@ -231,7 +231,7 @@ For ``unix.symlink_v1 unix.symlink_v1`` artifacts, the xccdf:check looks like th
       export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" 
       value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
     <check-content-ref 
-      href="[BENCHMARK-TITLE]" 
+      href="[BENCHMARK-TITLE]-oval.xml" 
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 
@@ -314,7 +314,7 @@ YAML
             dt: "string"
             value: "[filepath_operation.value]"
     test:
-      type: "[TESTTYPE-NAME]"
+      type: "[TEST-TYPE-NAME]"
       parameters:   
         - parameter:
             name: "filepath"
@@ -441,7 +441,7 @@ SCAP
 XCCDF
 '''''
 
-For ``unix.symlink_v1 unix.symlink_password_object_v1`` artifacts, an XCCDF Value element is generated.
+For ``unix.symlink_v1`` ``unix.symlink_password_object_v1`` artifacts, an XCCDF Value element is generated.
 
 ::
 
@@ -454,7 +454,7 @@ For ``unix.symlink_v1 unix.symlink_password_object_v1`` artifacts, an XCCDF Valu
     <value>[value.value]</value>
   </Value>
 
-For ``unix.symlink_v1 unix.symlink_password_object_v1`` artifacts, the xccdf:check looks like this.
+For ``unix.symlink_v1`` ``unix.symlink_password_object_v1`` artifacts, the XCCDF check looks like this.
 
 ::
 
@@ -463,7 +463,7 @@ For ``unix.symlink_v1 unix.symlink_password_object_v1`` artifacts, the xccdf:che
       export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" 
       value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
     <check-content-ref 
-      href="[BENCHMARK-TITLE]" 
+      href="[BENCHMARK-TITLE]-oval.xml" 
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 
@@ -589,7 +589,7 @@ YAML
             dt: "string"
             value: "[filepath_operation.value]"
     test:
-      type: "[TESTTYPE-NAME]"
+      type: "[TEST-TYPE-NAME]"
       parameters:   
         - parameter:
             name: "filepath"

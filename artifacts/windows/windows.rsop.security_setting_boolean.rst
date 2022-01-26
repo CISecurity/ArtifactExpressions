@@ -110,7 +110,7 @@ SCAP
 XCCDF
 '''''
 
-For ``windows.rsop.security_setting_boolean`` artifacts, an XCCDF Value element is generated:
+For ``windows.rsop.security_setting_boolean`` ``equals``, ``equal``, ``not equal``, ``less than``, ``less than or equal``, ``greater than``, and ``greater than or equal`` artifacts, an XCCDF Value element is generated:
 
 ::
 
@@ -123,7 +123,7 @@ For ``windows.rsop.security_setting_boolean`` artifacts, an XCCDF Value element 
     <value>[value.value]</value>
   </Value>
 
-For ``windows.rsop.security_setting_boolean`` artifacts, the xccdf:check looks like this.
+For ``windows.rsop.security_setting_boolean`` ``equals``, ``equal``, ``not equal``, ``less than``, ``less than or equal``, ``greater than``, and ``greater than or equal`` artifacts, the XCCDF check looks like this.
 
 ::
 
@@ -132,7 +132,7 @@ For ``windows.rsop.security_setting_boolean`` artifacts, the xccdf:check looks l
       export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
       value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
     <check-content-ref 
-      href="[BENCHMARK-TITLE]"
+      href="[BENCHMARK-TITLE]-oval.xml"
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
   
@@ -171,7 +171,8 @@ State
 
 ::
 
-  <wmi57_state xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#windows"
+  <wmi57_state 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#windows"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
@@ -207,10 +208,10 @@ YAML
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
-      - parameter: 
-          name: "keyname"
-          dt: "string"
-          value: "[keyname.value]"
+        - parameter:
+            name: "keyname"
+            dt: "string"
+            value: "[keyname.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:

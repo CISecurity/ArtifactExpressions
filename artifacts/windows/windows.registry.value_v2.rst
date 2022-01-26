@@ -213,7 +213,7 @@ SCAP
 XCCDF
 '''''
 
-For ``windows.registry_value_v2 windows.registry.value`` artifacts, an XCCDF Value element is generated.
+For ``windows.registry_value_v2`` ``windows.registry.value`` artifacts, an XCCDF Value element is generated.
 
 ::
 
@@ -235,7 +235,7 @@ For ``windows.registry_value_v2 windows.registry.value`` artifacts, an XCCDF Val
     <value>[value.value]</value>
   </Value>
 
-For ``windows.registry_value_v2 windows.registry.value`` artifacts, the xccdf:check looks like this.
+For ``windows.registry_value_v2`` ``windows.registry.value`` artifacts, the XCCDF check looks like this.
 
 ::
 
@@ -247,7 +247,7 @@ For ``windows.registry_value_v2 windows.registry.value`` artifacts, the xccdf:ch
       export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]2"
       value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var2" />      
     <check-content-ref 
-      href="[BENCHMARK-TITLE]"
+      href="[BENCHMARK-TITLE]-oval.xml"
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 
@@ -309,14 +309,14 @@ Variable
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#windows" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]1"
     datatype="string"
-    comment=""This value is used in Rule: [RECOMMENDATION-TITLE] for the registry data type"
+    comment="This value is used in Rule: [RECOMMENDATION-TITLE] for the registry data type"
     version="1" /> 
 
   <external_variable>
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#windows" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]2"
     datatype="[datatype.value]"
-    comment=""This value is used in Rule: [RECOMMENDATION-TITLE] for the registry value"
+    comment="This value is used in Rule: [RECOMMENDATION-TITLE] for the registry value"
     version="1" />          
 
 YAML
@@ -536,13 +536,13 @@ SCAP
 XCCDF
 '''''
 
-For ``windows.registry_value_v2 existence_test`` artifacts, the xccdf:check looks like this. There is no Value element in the xccdf for this Artifact.
+For ``windows.registry_value_v2`` ``existence_test`` artifacts, the XCCDF check looks like this. There is no Value element in the XCCDF for this artifact.
 
 ::
 
   <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">    
     <check-content-ref 
-      href="[BENCHMARK-TITLE]"
+      href="[BENCHMARK-TITLE]-oval.xml"
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 
@@ -631,7 +631,7 @@ YAML
       type: "[TEST-TYPE-NAME]"
       parameters:
         - parameter:
-            name: value
+            name: "value"
             dt: "string"
             value: "[value.value]"
 

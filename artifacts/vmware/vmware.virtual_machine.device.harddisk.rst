@@ -140,7 +140,7 @@ SCAP
 XCCDF
 '''''
 
-For ``vmware.virtual_machine.device_state`` artifacts, an XCCDF Value element is generated.
+For ``vmware.virtual_machine.device.harddisk`` ``vmware.virtual_machine.hard_disk.persistence`` artifacts, an XCCDF Value element is generated.
 
 ::
 
@@ -153,23 +153,21 @@ For ``vmware.virtual_machine.device_state`` artifacts, an XCCDF Value element is
     <value>[value.value]</value>
   </Value>
 
-For ``vmware.virtual_machine.device_state`` artifacts, the xccdf:check looks like this.
+For ``vmware.virtual_machine.device.harddisk`` ``vmware.virtual_machine.hard_disk.persistence`` artifacts, the XCCDF check looks like this.
 
 ::
 
-  <xccdf:complex-check operator="AND">
-    <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
-      <check-export 
-        export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
-        value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
-      <check-export 
-        export-name="oval:org.cisecurity.benchmarks:var:100000"
-        value-id="xccdf_org.cisecurity.benchmarks_value_esxi.connection" />
-      <check-content-ref 
-        href="[BENCHMARK-TITLE]-oval.xml"
-        name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
-    </check>
-  </xccdf:complex-check> 
+  <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+    <check-export 
+      export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
+      value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
+    <check-export 
+      export-name="oval:org.cisecurity.benchmarks:var:100000"
+      value-id="xccdf_org.cisecurity.benchmarks_value_esxi.connection" />
+    <check-content-ref 
+      href="[BENCHMARK-TITLE]-oval.xml"
+      name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
+  </check>
 
 OVAL
 ''''
@@ -180,7 +178,7 @@ Test
 
   <vm_harddiskdevice_test 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
-    id="oval:org.cisecurity.benchmarks[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"    
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"    
     check_existence="any_exist"
     check="all"    
     comment="[ARTIFACT-TITLE]"
@@ -195,13 +193,11 @@ Object
 
   <vm_harddiskdevice_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
-    id="oval:org.cisecurity.benchmarks[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-    <connection_string var_ref="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
-    <vm_name operation="pattern match">
-      .*
-    </vm_name>
+    <connection_string var_ref="oval:org.cisecurity.benchmarks:var:100000" />
+    <vm_name operation="pattern match">.*</vm_name>
   </vm_harddiskdevice_object>  
 
 State
@@ -210,7 +206,7 @@ State
 
   <vm_harddiskdevice_state 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
-    id="oval:org.cisecurity.benchmarks[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
     <persistence 
@@ -224,7 +220,7 @@ Variable
 ::
 
   <external_variable 
-    id="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
     datatype="string"
     version="1"
     comment="This value is used in Rule: [RECOMMENDATION-TITLE]" />      
