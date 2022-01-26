@@ -97,7 +97,7 @@ XCCDF
 
 ::
 
-For ``iis.site.binding`` artifacts, an XCCDF Value element is generated.
+For ``iis.site.binding`` ``iis.site.binding.host_header`` artifacts, an XCCDF Value element is generated.
 
 ::
 
@@ -110,7 +110,7 @@ For ``iis.site.binding`` artifacts, an XCCDF Value element is generated.
     <value>[value.value]</value>
   </Value>
 
-For ``iis.site.binding`` artifacts, the xccdf:check looks like this.
+For ``iis.site.binding`` ``iis.site.binding.host_header`` artifacts, the XCCDF check looks like this.
 
 ::
 
@@ -119,7 +119,7 @@ For ``iis.site.binding`` artifacts, the xccdf:check looks like this.
       export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
       value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
     <check-content-ref 
-      href="[BENCHMARK-TITLE]"
+      href="[BENCHMARK-TITLE]-oval.xml"
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 
@@ -162,7 +162,7 @@ State
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-    <host_header xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#iis"
+    <host_header x
       datatype="string"
       operation="[operator.value]"
       var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
@@ -173,7 +173,7 @@ Variable
 ::
 
   <external_variable    
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
     datatype="string"
     comment="This value is used in Rule: [RECOMMENDATION-TITLE]"
     version="1" />

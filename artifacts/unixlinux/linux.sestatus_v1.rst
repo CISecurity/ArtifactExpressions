@@ -17,11 +17,11 @@ Artifact Parameters
 
 **linux.sestatus_v1_parameters**
 
-=================================  ========  =================================
-Name                               Type      Description  
-=================================  ========  =================================
+==== ==== ===========
+Name Type Description
+==== ==== ===========
 N/A
-=================================  ========  =================================
+==== ==== ===========
 
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
@@ -308,13 +308,13 @@ SCAP
 XCCDF
 '''''
 
-For ``linux.sestatus_v1 linux.sestatus_current_mode_v1`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
+For ``linux.sestatus_v1`` ``linux.sestatus_current_mode_v1`` artifacts, the XCCDF check looks like this. There is no Value element in the XCCDF for this artifact.
 
 ::
 
   <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
     <check-content-ref 
-      href="[BENCHMARK-TITLE]" 
+      href="[BENCHMARK-TITLE]-oval.xml" 
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 
@@ -328,8 +328,8 @@ Test
   <sestatus_test 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
-    check="[check.value]"
     check_existence="[check_existence.value]"
+    check="[check.value]"
     comment="[ARTIFACT-TITLE]"
     version="1">
     <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
@@ -352,8 +352,8 @@ State
 
   <sestatus_state 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux"
-    comment="[ARTIFACT-TITLE]"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
+    comment="[ARTIFACT-TITLE]"  
     version="1">
     <current_mode 
       datatype="[datatype.value]"
@@ -370,32 +370,32 @@ YAML
   artifact-expression:
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
     artifact-title: "[ARTIFACT-TITLE]"
-      artifact:
-        type: "[ARTIFACT-TYPE-NAME]"
-        parameters: []
-      test:
-        type: "[TEST-TYPE-NAME]"
-        parameters:
-          - parameter:
-              name: "check_existence"
-              dt: "string"
-              value: "[check_existence.value]"
-          - parameter:
-              name: "check"
-              dt: "string"
-              value: "[check.value]"
-          - parameter:
-              name: "operation"
-              dt: "string"
-              value: "[operation.value]"
-          - parameter:
-              name: "datatype"
-              dt: "string"
-              value: "[datatype.value]"
-          - parameter:
-              name: "current_mode"
-              dt: "string"
-              value: "[current_mode.value]"
+    artifact:
+      type: "[ARTIFACT-TYPE-NAME]"
+      parameters: []
+    test:
+      type: "[TEST-TYPE-NAME]"
+      parameters:
+        - parameter:
+            name: "check_existence"
+            dt: "string"
+            value: "[check_existence.value]"
+        - parameter:
+            name: "check"
+            dt: "string"
+            value: "[check.value]"
+        - parameter:
+            name: "operation"
+            dt: "string"
+            value: "[operation.value]"
+        - parameter:
+            name: "datatype"
+            dt: "string"
+            value: "[datatype.value]"
+        - parameter:
+            name: "current_mode"
+            dt: "string"
+            value: "[current_mode.value]"
 
 JSON
 ^^^^
@@ -495,13 +495,13 @@ SCAP
 XCCDF
 '''''
 
-For ``linux.sestatus_v1 linux.sestatus_loaded_policy_name_v1`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
+For ``linux.sestatus_v1`` ``linux.sestatus_loaded_policy_name_v1`` artifacts, the XCCDF check looks like this. There is no Value element in the XCCDF for this artifact.
 
 ::
 
   <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
     <check-content-ref 
-      href="[BENCHMARK-TITLE]" 
+      href="[BENCHMARK-TITLE]-oval.xml" 
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 
@@ -515,8 +515,8 @@ Test
   <sestatus_test 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
-    check="[check.value]"
     check_existence="[check_existence.value]"
+    check="[check.value]"
     comment="[ARTIFACT-TITLE]"
     version="1">
     <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
@@ -539,8 +539,8 @@ State
 
   <sestatus_state 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux"
-    comment="[ARTIFACT-TITLE]"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
+    comment="[ARTIFACT-TITLE]"  
     version="1">
     <loaded_policy_name 
       datatype="[datatype.value]"
@@ -557,32 +557,32 @@ YAML
   artifact-expression:
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
     artifact-title: "[ARTIFACT-TITLE]"
-      artifact:
-        type: "[ARTIFACT-TYPE-NAME]"
-        parameters: []
-      test:
-        type: "[TEST-TYPE-NAME]"
-        parameters:
-          - parameter:
-              name: "check_existence"
-              dt: "string"
-              value: "[check_existence.value]"
-          - parameter:
-              name: "check"
-              dt: "string"
-              value: "[check.value]"
-          - parameter:
-              name: "operation"
-              dt: "string"
-              value: "[operation.value]"
-          - parameter:
-              name: "datatype"
-              dt: "string"
-              value: "[datatype.value]"
-          - parameter:
-              name: "loaded_policy_name"
-              dt: "string"
-              value: "[loaded_policy_name.value]"
+    artifact:
+      type: "[ARTIFACT-TYPE-NAME]"
+      parameters: []
+    test:
+      type: "[TEST-TYPE-NAME]"
+      parameters:
+        - parameter:
+            name: "check_existence"
+            dt: "string"
+            value: "[check_existence.value]"
+        - parameter:
+            name: "check"
+            dt: "string"
+            value: "[check.value]"
+        - parameter:
+            name: "operation"
+            dt: "string"
+            value: "[operation.value]"
+        - parameter:
+            name: "datatype"
+            dt: "string"
+            value: "[datatype.value]"
+        - parameter:
+            name: "loaded_policy_name"
+            dt: "string"
+            value: "[loaded_policy_name.value]"
 
 JSON
 ^^^^
@@ -682,13 +682,13 @@ SCAP
 XCCDF
 '''''
 
-For ``linux.sestatus_v1 linux.sestatus_mode_from_config_v1`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
+For ``linux.sestatus_v1`` ``linux.sestatus_mode_from_config_v1`` artifacts, the XCCDF check looks like this. There is no Value element in the XCCDF for this artifact.
 
 ::
 
   <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
     <check-content-ref 
-      href="[BENCHMARK-TITLE]" 
+      href="[BENCHMARK-TITLE]-oval.xml" 
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 
@@ -702,8 +702,8 @@ Test
   <sestatus_test 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
-    check="[check.value]"
     check_existence="[check_existence.value]"
+    check="[check.value]"
     comment="[ARTIFACT-TITLE]"
     version="1">
     <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
@@ -726,8 +726,8 @@ State
 
   <sestatus_state 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux"
-    comment="[ARTIFACT-TITLE]"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
+    comment="[ARTIFACT-TITLE]"  
     version="1">
     <mode_from_config 
       datatype="[datatype.value]"
@@ -744,32 +744,32 @@ YAML
   artifact-expression:
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
     artifact-title: "[ARTIFACT-TITLE]"
-      artifact:
-        type: "[ARTIFACT-TYPE-NAME]"
-        parameters: []
-      test:
-        type: "[TEST-TYPE-NAME]"
-        parameters:
-          - parameter:
-              name: "check_existence"
-              dt: "string"
-              value: "[check_existence.value]"
-          - parameter:
-              name: "check"
-              dt: "string"
-              value: "[check.value]"
-          - parameter:
-              name: "operation"
-              dt: "string"
-              value: "[operation.value]"
-          - parameter:
-              name: "datatype"
-              dt: "string"
-              value: "[datatype.value]"
-          - parameter:
-              name: "mode_from_config"
-              dt: "string"
-              value: "[mode_from_config.value]"
+    artifact:
+      type: "[ARTIFACT-TYPE-NAME]"
+      parameters: []
+    test:
+      type: "[TEST-TYPE-NAME]"
+      parameters:
+        - parameter:
+            name: "check_existence"
+            dt: "string"
+            value: "[check_existence.value]"
+        - parameter:
+            name: "check"
+            dt: "string"
+            value: "[check.value]"
+        - parameter:
+            name: "operation"
+            dt: "string"
+            value: "[operation.value]"
+        - parameter:
+            name: "datatype"
+            dt: "string"
+            value: "[datatype.value]"
+        - parameter:
+            name: "mode_from_config"
+            dt: "string"
+            value: "[mode_from_config.value]"
 
 JSON
 ^^^^
@@ -869,13 +869,13 @@ SCAP
 XCCDF
 '''''
 
-For ``linux.sestatus_v1 linux.sestatus_selinux_status_v1`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
+For ``linux.sestatus_v1`` ``linux.sestatus_selinux_status_v1`` artifacts, the XCCDF check looks like this. There is no Value element in the XCCDF for this artifact.
 
 ::
 
   <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
     <check-content-ref 
-      href="[BENCHMARK-TITLE]" 
+      href="[BENCHMARK-TITLE]-oval.xml" 
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 
@@ -889,8 +889,8 @@ Test
   <sestatus_test 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
-    check="[check.value]"
     check_existence="[check_existence.value]"
+    check="[check.value]"
     comment="[ARTIFACT-TITLE]"
     version="1">
     <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
@@ -913,8 +913,8 @@ State
 
   <sestatus_state 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux"
-    comment="[ARTIFACT-TITLE]"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
+    comment="[ARTIFACT-TITLE]"  
     version="1">
     <selinux_status 
       datatype="[datatype.value]"
@@ -931,32 +931,32 @@ YAML
   artifact-expression:
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
     artifact-title: "[ARTIFACT-TITLE]"
-      artifact:
-        type: "[ARTIFACT-TYPE-NAME]"
-        parameters: []
-      test:
-        type: "[TEST-TYPE-NAME]"
-        parameters:
-          - parameter:
-              name: "check_existence"
-              dt: "string"
-              value: "[check_existence.value]"
-          - parameter:
-              name: "check"
-              dt: "string"
-              value: "[check.value]"
-          - parameter:
-              name: "operation"
-              dt: "string"
-              value: "[operation.value]"
-          - parameter:
-              name: "datatype"
-              dt: "string"
-              value: "[datatype.value]"
-          - parameter:
-              name: "selinux_status"
-              dt: "string"
-              value: "[selinux_status.value]"
+    artifact:
+      type: "[ARTIFACT-TYPE-NAME]"
+      parameters: []
+    test:
+      type: "[TEST-TYPE-NAME]"
+      parameters:
+        - parameter:
+            name: "check_existence"
+            dt: "string"
+            value: "[check_existence.value]"
+        - parameter:
+            name: "check"
+            dt: "string"
+            value: "[check.value]"
+        - parameter:
+            name: "operation"
+            dt: "string"
+            value: "[operation.value]"
+        - parameter:
+            name: "datatype"
+            dt: "string"
+            value: "[datatype.value]"
+        - parameter:
+            name: "selinux_status"
+            dt: "string"
+            value: "[selinux_status.value]"
 
 JSON
 ^^^^

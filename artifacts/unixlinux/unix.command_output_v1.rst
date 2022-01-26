@@ -106,7 +106,7 @@ SCAP
 XCCDF
 '''''
 
-For ``unix.command_output_v1 equals, pattern match, and pattern not match`` artifacts, an XCCDF Value element is generated.
+For ``unix.command_output_v1`` ``equals``, ``pattern match``, and ``pattern not match`` artifacts, an XCCDF Value element is generated.
 
 ::
 
@@ -119,20 +119,18 @@ For ``unix.command_output_v1 equals, pattern match, and pattern not match`` arti
     <value>[value.value]</value>
   </Value>
 
-For ``unix.command_output_v1 equals, pattern match, and pattern not match`` artifacts, the xccdf:check looks like this.
+For ``unix.command_output_v1`` ``equals``, ``pattern match``, and ``pattern not match`` artifacts, the XCCDF check looks like this.
 
 ::
 
-  <xccdf:complex-check operator="AND">
-    <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
-      <check-export 
-        export-name="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]"
-        value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
-      <check-content-ref 
-        href="[BENCHMARK-TITLE]"
-        name="oval:org.cisecurity.benchmarks:def:[ARTIFACT-OVAL-ID]" />
-    </check>
-  </xccdf:complex-check>
+  <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+    <check-export 
+      export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
+      value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
+    <check-content-ref 
+      href="[BENCHMARK-TITLE]-oval.xml"
+      name="oval:org.cisecurity.benchmarks:def:[ARTIFACT-OVAL-ID]" />
+  </check>
 
 OVAL
 ''''
@@ -144,12 +142,12 @@ Test
   <shellcommand_test 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#cmd"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
-    check_existence="[check_existence.value]"
-    check="[check.value]"
+    check_existence="at_least_one_exists"
+    check="all"
     comment="[ARTIFACT-TITLE]"
     version="1">
-    <object object_ref="oval:org.cisecurity.benchmarks:obj:[ARTIFACT-OVAL-ID]" />
-    <state state_ref="oval:org.cisecurity.benchmarks:ste:[ARTIFACT-OVAL-ID]" />
+    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+    <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
   </shellcommand_test>
 
 Object
@@ -162,9 +160,7 @@ Object
     comment="[ARTIFACT-TITLE]"
     version="1">
     <command>[command.value]</command>
-    <line_selection operation="pattern match">
-      .+
-    </line_selection>
+    <line_selection operation="pattern match">.+</line_selection>
   </shellcommand_object>
 
 State
@@ -174,7 +170,7 @@ State
   <shellcommand_state 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#cmd"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
-    comment='[RECOMMENDATION-TITLE]'
+    comment="[ARTIFACT-TITLE]"
     version="1">
     <stdout_line 
       entity_check="at least one"
@@ -302,13 +298,13 @@ SCAP
 XCCDF
 '''''
 
-For ``unix.command_output_v1 null_test_v1`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
+For ``unix.command_output_v1`` ``null_test_v1`` artifacts, the XCCDF check looks like this. There is no Value element in the XCCDF for this artifact.
 
 ::
 
   <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
     <check-content-ref 
-      href="[BENCHMARK-TITLE]" 
+      href="[BENCHMARK-TITLE]-oval.xml" 
       name="oval:org.cisecurity.benchmarks:def:[ARTIFACT-OVAL-ID]" />
   </check>
 
@@ -326,7 +322,7 @@ Test
     check="all"
     comment="[ARTIFACT-TITLE]"
     version="1">
-    <object object_ref="oval:org.cisecurity.benchmarks:obj:[ARTIFACT-OVAL-ID]" />
+    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
   </shellcommand_test>
 
 Object
@@ -339,9 +335,7 @@ Object
     comment="[ARTIFACT-TITLE]"
     version="1">
     <command>[command.value]</command>
-    <line_selection operation="pattern match">
-      .+
-    </line_selection>
+    <line_selection operation="pattern match">.+</line_selection>
   </shellcommand_object>
 
 State
@@ -367,7 +361,7 @@ YAML
             value: "[command.value]"
     test:
       type: "[TEST-TYPE-NAME]"
-      parameters:              
+      parameters: []             
 
 JSON
 ^^^^
@@ -392,9 +386,7 @@ JSON
       },
       "test": {
         "type": "[TEST-TYPE-NAME]",
-        "parameters": [
-
-        ]
+        "parameters": []
       }
     }
   }  

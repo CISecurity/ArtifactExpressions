@@ -100,7 +100,7 @@ SCAP
 XCCDF
 '''''
 
-For ``vmware.vmhost.bus_adapter.iscsi.chap.mutual`` artifacts, an XCCDF Value element is generated.
+For ``vmware.vmhost.bus_adapter.iscsi.chap.mutual`` ``vmware.vmhost.bus_adapter.iscsi.chap.mutual`` artifacts, an XCCDF Value element is generated.
 
 ::
 
@@ -113,13 +113,13 @@ For ``vmware.vmhost.bus_adapter.iscsi.chap.mutual`` artifacts, an XCCDF Value el
     <value>[value.value]</value>
   </Value>  
 
-For ``vmware.vmhost.bus_adapter.iscsi.chap.mutual`` artifacts, the xccdf:check looks like this.
+For ``vmware.vmhost.bus_adapter.iscsi.chap.mutual`` ``vmware.vmhost.bus_adapter.iscsi.chap.mutual`` artifacts, the XCCDF check looks like this.
 
 ::
 
   <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
     <check-export 
-      export-name="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
+      export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
       value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />    
     <check-export 
       export-name="oval:org.cisecurity.benchmarks:var:100000"
@@ -138,7 +138,7 @@ Test
 
   <vmhost_busadapter_test
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
-    id="oval:org.cisecurity.benchmarks[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
     check_existence="at_least_one_exists"
     check="all"
     comment="[ARTIFACT-TITLE]"
@@ -153,16 +153,12 @@ Object
 
   <vmhost_busadapter_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
-    id="oval:org.cisecurity.benchmarks[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-    <connection_string var_ref="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
-    <vmhost_name operation="pattern match">
-      .*
-    </vmhost_name>
-    <busadapter_type>
-      IScsi
-    </busadapter_type>
+    <connection_string var_ref="oval:org.cisecurity.benchmarks:var:100000" />
+    <vmhost_name operation="pattern match">.*</vmhost_name>
+    <busadapter_type>IScsi</busadapter_type>
   </vmhost_busadapter_object>   
 
 State
@@ -171,13 +167,13 @@ State
 
   <vmhost_busadapter_state 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
-    id="oval:org.cisecurity.benchmarks[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
     <mutual_chap_enabled 
       datatype="boolean"
       operation="[operation.value]"
-      var_ref="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
+      var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
   </vmhost_busadapter_state> 
 
 Variable
@@ -185,7 +181,7 @@ Variable
 ::
 
   <external_variable 
-    id="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
     datatype="boolean"
     version="1"
     comment="This value is used in Rule: [RECOMMENDATION-TITLE]" />

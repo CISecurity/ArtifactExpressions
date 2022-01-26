@@ -172,6 +172,9 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
               <ae:parameter dt="string" name="command_line">[command_line.value]</ae:parameter>
             </ae:parameters>
           </ae:test>
+          <ae:profiles>
+            <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1" />
+          </ae:profiles>  
         </ae:artifact_expression>
       </xccdf:check-content>
     </xccdf:check>
@@ -183,13 +186,13 @@ SCAP
 XCCDF
 '''''
 
-For ``unix.process58_v2`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
+For ``unix.process58_v2`` ``unix.process58_command_line_v1`` artifacts, the XCCDF check looks like this. There is no Value element in the XCCDF for this artifact.
 
 ::
 
   <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
     <check-content-ref 
-      href="[BENCHMARK-TITLE]"
+      href="[BENCHMARK-TITLE]-oval.xml"
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 
@@ -200,7 +203,8 @@ Test
 
 ::
 
-  <process58_test xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
+  <process58_test 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
     check_existence="all_exist"
     check="all"

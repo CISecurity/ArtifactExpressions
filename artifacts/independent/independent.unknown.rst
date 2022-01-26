@@ -120,16 +120,16 @@ YAML
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
         - parameter: 
-          name: unknown
-          dt: "string"
-          value: "[unknown.value]
+            name: "unknown"
+            dt: "string"
+            value: "[unknown.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:   
-      - parameter: 
-          name: unknown
-          dt: "string"
-          value: "[unknown.value]"
+        - parameter:
+            name: "unknown"
+            dt: "string"
+            value: "[unknown.value]"
 
 JSON
 ^^^^
@@ -138,40 +138,28 @@ JSON
 
   {
     "artifact-expression": {
-      "artifact-unique-id": [
-        "ARTIFACT-OVAL-ID"
-      ],
-      "artifact-title": [
-        "RECOMMENDATION TITLE"
-      ],
+      "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
+      "artifact-title": "[ARTIFACT-TITLE]",
       "artifact": {
-        "type": [
-          "ARTIFACTTYPE NAME"
-        ],
+        "type": "[ARTIFACT-TYPE-NAME]",
         "parameters": [
           {
             "parameter": {
               "name": "unknown",
               "type": "string",
-              "value": [
-                "unknown.value"
-              ]
+              "value": "[unknown.value]"
             }
           }
         ]
       },
       "test": {
-        "type": [
-          "TESTTYPE NAME"
-        ],
+        "type": "[TEST-TYPE-NAME]",
         "parameters": [
           {
             "parameter": {
               "name": "unknown",
               "type": "string",
-              "value": [
-                "unknown.value"
-              ]
+              "value": "[unknown.value]"
             }
           }
         ]

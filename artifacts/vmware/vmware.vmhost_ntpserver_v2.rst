@@ -164,11 +164,27 @@ SCAP
 XCCDF
 '''''
 
-For ``vmware.vmhost_ntpserver_v2`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
+For ``vmware.vmhost_ntpserver_v2`` ``vmware.vmhost_ntpserver_v2`` artifacts, the XCCDF check looks like this. There is no Value element in the XCCDF for this artifact.
+
+::
+
+  <Value 
+    id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var"
+    operator="[operator.value]"
+    type="[type.value]">
+    <title>[RECOMMENDATION-TITLE]</title>
+    <description>This value is used in Rule: [RECOMMENDATION-TITLE]</description>
+    <value>[value.value]</value>
+  </Value>  
+
+For ``vmware.vmhost_ntpserver_v2`` ``vmware.vmhost_ntpserver_v2`` artifacts, the XCCDF check looks like this.
 
 ::
 
   <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+    <check-export 
+      export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
+      value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />    
     <check-export 
       export-name="oval:org.cisecurity.benchmarks:var:100000"
       value-id="xccdf_org.cisecurity.benchmarks_value_esxi.connection" />
@@ -186,7 +202,7 @@ Test
 
   <vmhost_ntpserver_test
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
-    id="oval:org.cisecurity.benchmarks[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
     check_existence="[check_existence.value]"
     check="[check.value]"
     comment="[ARTIFACT-TITLE]"
@@ -201,13 +217,11 @@ Object
 
   <vmhost_ntpserver_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
-    id="oval:org.cisecurity.benchmarks[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-    <connection_string var_ref="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
-    <vmhost_name operation="[operation.value]">
-      [vmhost_name.value]
-    </vmhost_name>
+    <connection_string var_ref="oval:org.cisecurity.benchmarks:var:100000" />
+    <vmhost_name operation="[operation.value]">[vmhost_name.value]</vmhost_name>
     <ntp_server_name operation="[operation.value]">
       [ntp_server_name.value]
     </ntp_server_name>
@@ -219,13 +233,13 @@ State
 
   <vmhost_ntpserver_state 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
-    id="oval:org.cisecurity.benchmarks[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
     <ntp_server_name 
       datatype="[datatype.value]"
       operation="[operation.value]"
-      var_ref="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
+      var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
   </vmhost_ntpserver_state> 
 
 Variable
@@ -233,7 +247,7 @@ Variable
 ::
 
   <external_variable 
-    id="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
     datatype="string"
     version="1"
     comment="This value is used in Rule: [RECOMMENDATION-TITLE]" />

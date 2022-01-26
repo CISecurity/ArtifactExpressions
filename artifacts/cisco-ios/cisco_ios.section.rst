@@ -60,7 +60,7 @@ NOTE: The ``existence_check`` parameter is governed by a constraint allowing onl
 | section_config_line         | string  | One config line of the collected   |
 |                             |         | configuration section.             |
 +-----------------------------+---------+------------------------------------+
-| operation                   | string  | Comparison Operator.               |
+| operation                   | string  | Comparison operator.               |
 +-----------------------------+---------+------------------------------------+
 | entity_check                | string  | The number of section              |
 |                             |         | configuration lines which must     |
@@ -117,6 +117,9 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
               <ae:parameter dt="string" name="existence_check">[existence_check.value]</ae:parameter>
             </ae:parameters>
           </ae:test>
+          <ae:profiles>
+            <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_2" />
+          </ae:profiles>
         </ae:artifact_expression>
       </xccdf:check-content>
     </xccdf:check>
@@ -128,16 +131,13 @@ SCAP
 XCCDF
 '''''
 
-For ``cisco_ios.section cisco_ios.section_existence_test`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact. 
+For ``cisco_ios.section`` ``cisco_ios.section_existence_test`` artifacts, the XCCDF check looks like this. There is no Value element in the XCCDF for this artifact. 
 
 ::
 
   <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
-    <check-export 
-      export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
-      value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
     <check-content-ref 
-      href="[BENCHMARK-TITLE]"
+      href="[BENCHMARK-TITLE]-oval.xml"
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 
@@ -156,7 +156,6 @@ Test
     comment="[ARTIFACT-TITLE]"
     version="1">
     <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
-    <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
   </section_test>
 
 Object
@@ -266,6 +265,9 @@ This is what the AE check looks like, inside a Rule, in the XCCDF
               <ae:parameter dt="string" name="entity_check">[entity_check.value]</ae:parameter>
             </ae:parameters>
           </ae:test>
+          <ae:profiles>
+            <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1" />
+          </ae:profiles>  
         </ae:artifact_expression>
       </xccdf:check-content>
     </xccdf:check>
@@ -277,7 +279,7 @@ SCAP
 XCCDF
 '''''
 
-For ``cisco_ios.section cisco_ios.section_config_line`` artifacts, an XCCDF Value element is generated.
+For ``cisco_ios.section`` ``cisco_ios.section_config_line`` artifacts, an XCCDF Value element is generated.
 
 ::
 
@@ -290,7 +292,7 @@ For ``cisco_ios.section cisco_ios.section_config_line`` artifacts, an XCCDF Valu
     <value>[value.value]</value>
   </Value>
 
-For ``cisco_ios.section cisco_ios.section_config_line`` artifacts, the xccdf:check looks like this.
+For ``cisco_ios.section`` ``cisco_ios.section_config_line`` artifacts, the XCCDF check looks like this.
 
 ::
 
@@ -299,7 +301,7 @@ For ``cisco_ios.section cisco_ios.section_config_line`` artifacts, the xccdf:che
       export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
       value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
     <check-content-ref 
-      href="[BENCHMARK-TITLE]"
+      href="[BENCHMARK-TITLE]-oval.xml"
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 

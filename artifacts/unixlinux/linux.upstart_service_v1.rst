@@ -86,17 +86,15 @@ SCAP
 XCCDF
 '''''
 
-For ``linux.upstart_service_v1`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
+For ``linux.upstart_service_v1`` ``unix.service_enabled_v1`` artifacts, the XCCDF check looks like this. There is no Value element in the XCCDF for this artifact.
 
 ::
 
-  <xccdf:complex-check operator="AND">
-    <check system="http://open-SCAP.org/page/SCE">
-      <check-content-ref 
-        href="[BENCHMARK-TITLE]"
-        name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
-    </check>
-  </xccdf:complex-check>
+  <check system="http://open-SCAP.org/page/SCE">
+    <check-content-ref 
+      href="[BENCHMARK-TITLE]-oval.xml"
+      name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
+  </check>
 
 OVAL
 ''''
@@ -126,9 +124,7 @@ Object
     comment="[ARTIFACT-TITLE]"
     version="1">
     <command>[command.value]</command>
-    <line_selection operation="pattern match">
-      "^\\s+start on
-    </line_selection>
+    <line_selection operation="pattern match">"^\\s+start on</line_selection>
   </shellcommand_object>
 
 State

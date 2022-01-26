@@ -133,7 +133,20 @@ SCAP
 XCCDF
 '''''
 
-For ``cisco_asa.snmp_group_object`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
+For ``cisco_asa.snmp_group_object`` ``cisco_asa.snmp_groups_priv`` artifacts, an XCCDF Value element is generated.
+
+::
+
+  <Value 
+    id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var"
+    type="string"
+    operator="[operator.value]">
+    <title>[RECOMMENDATION-TITLE]</title>
+    <description>This value is used in Rule: [RECOMMENDATION-TITLE]</description>
+    <value>[value.value]</value>
+  </Value>
+
+For ``cisco_asa.snmp_group_object`` ``cisco_asa.snmp_groups_priv`` artifacts, the XCCDF check looks like this. 
 
 ::
 
@@ -142,7 +155,7 @@ For ``cisco_asa.snmp_group_object`` artifacts, the xccdf:check looks like this. 
       export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" 
       value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
     <check-content-ref 
-      href="[BENCHMARK-TITLE]" 
+      href="[BENCHMARK-TITLE]-oval.xml" 
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 
@@ -156,8 +169,8 @@ Test
   <snmp_group_test
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#asa"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
-    check_existence="[check_existence.value]"
-    check="[check.value]"
+    check_existence="at_least_one_exists"
+    check="all"
     comment="[ARTIFACT-TITLE]"
     version="1">
     <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
@@ -182,12 +195,23 @@ State
 
   <snmp_group_state
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#asa"
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-    <snmpv3_sec_level operation="[operation.value]"
-    var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+    <snmpv3_sec_level 
+      operation="[operation.value]"
+      var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
   </snmp_group_state>
+
+Variable
+
+::
+
+  <external_variable
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#asa"
+    datatype="string"
+    comment="This value is used in Rule: [RECOMMENDATION-TITLE]"
+    version="1" />
 
 YAML
 ^^^^
@@ -263,10 +287,165 @@ JSON
               "name": "snmpv3_sec_level",
               "type": "string",
               "value": "[snmpv3_sec_level.value]"
-              ]
             }
           }
         ]
       }
     }
   }
+
+Generated Content
+~~~~~~~~~~~~~~~~~
+
+**cisco_asa.existence_check**
+
+XCCDF+AE
+^^^^^^^^
+
+This is what the AE check looks like, inside a Rule, in the XCCDF.
+
+::
+
+  <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
+    <xccdf:check-content>
+      <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
+        <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
+        <ae:title>[ARTIFACT-TITLE]</ae:title>
+        <ae:artifact type="[ARTIFACT-TYPE-NAME]">
+          <ae:parameters>
+            <ae:parameter dt="string" name="name">[name.value]</ae:parameter>
+            <ae:parameter dt="string" name="operator">[operator.value]</ae:parameter>
+          </ae:parameters>
+        </ae:artifact>
+        <ae:test type="[TEST-TYPE-NAME]">
+          <ae:parameters>
+            <ae:parameter dt="string" name="existence_check">[existence_check.value]</ae:parameter>
+          </ae:parameters>
+        </ae:test>
+        <ae:profiles>
+          <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1" />
+        </ae:profiles>
+      </ae:artifact_expression>
+    </xccdf:check-content>
+  </xccdf:check>
+
+SCAP
+^^^^
+
+XCCDF
+'''''
+
+For ``cisco_asa.snmp_group_object`` ``cisco_asa.existence_check`` artifacts, the XCCDF check looks like this. There is no Value element in the XCCDF for this artifact.
+
+::
+
+  <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+    <check-content-ref 
+      href="[BENCHMARK-TITLE]-oval.xml" 
+      name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
+  </check>
+
+OVAL
+''''
+
+Test
+
+::
+
+  <snmp_group_test
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#asa"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
+    check_existence="[check_existence.value]"
+    check="all"
+    comment="[ARTIFACT-TITLE]"
+    version="1">
+    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+  </snmp_group_test>
+
+Object
+
+::
+
+  <snmp_group_object
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#asa"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
+    comment="[ARTIFACT-TITLE]"
+    version="1">
+    <name operation="[operation.value]">[name.value]</name>
+  </snmp_group_object>
+
+State
+
+::
+
+  N/A
+
+YAML
+^^^^
+
+::
+
+  artifact-expression:
+    artifact-unique-id: "[ARTIFACT-OVAL-ID]"
+    artifact-title: "[ARTIFACT-TITLE]"
+    artifact:
+      type: "[ARTIFACT-TYPE-NAME]"
+      parameters:
+        - parameter:
+            name: "name"
+            dt: "string"
+            value: "[name.value]"
+        - parameter:
+            name: "operator"
+            dt: "string"
+            value: "[operator.value]"
+    test:
+      type: "[TEST-TYPE-NAME]"
+      parameters:
+        - parameter:
+            name: "existence_check"
+            dt: "string"
+            value: "[existence_check.value]"
+
+JSON
+^^^^
+
+::
+
+  {
+    "artifact-expression": {
+      "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
+      "artifact-title": "[ARTIFACT-TITLE]",
+      "artifact": {
+        "type": "[ARTIFACT-TYPE-NAME]",
+        "parameters": [
+          {
+            "parameter": {
+              "name": "name",
+              "type": "string",
+              "value": "[name.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "operator",
+              "type": "string",
+              "value": "[operator.value]"
+            }
+          }
+        ]
+      },
+      "test": {
+        "type": "[TEST-TYPE-NAME]",
+        "parameters": [
+          {
+            "parameter": {
+              "name": "existence_check",
+              "type": "string",
+              "value": "[existence_check.value]"
+            }
+          }
+        ]
+      }
+    }
+  }  

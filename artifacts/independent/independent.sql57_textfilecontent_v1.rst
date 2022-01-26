@@ -399,55 +399,55 @@ YAML
       parameters:
         - parameter: 
             name: "engine"
-            type: "string"
+            dt: "string"
             value: "[engine.value]"
         - parameter: 
             name: "sql"
-            type: "string"
+            dt: "string"
             value: "[sql.value]"
         - parameter: 
             name: "version"
-            type: "string"
+            dt: "string"
             value: "[version.value]"
         - parameter: 
             name: "path"
-            type: "string"
+            dt: "string"
             value: "[path.value]"
         - parameter: 
             name: "filename"
-            type: "string"
+            dt: "string"
             value: "[filename.value]"
         - parameter: 
             name: "recurse"
-            type: "string"
+            dt: "string"
             value: "[recurse.value]"
         - parameter: 
             name: "max_depth"
-            type: "binary"
+            dt: "binary"
             value: "[max_depth.value]"
         - parameter: 
             name: "file_system"
-            type: "string"
+            dt: "string"
             value: "[file_system.value]"
         - parameter: 
             name: "prepend_str"
-            type: "string"
+            dt: "string"
             value: "[prepend_str.value]"
         - parameter: 
             name: "append_str"
-            type: "string"
+            dt: "string"
             value: "[append_str.value]"
         - parameter: 
             name: "prepend_type"
-            type: "string"
+            dt: "string"
             value: "[prepend_type.value]"
         - parameter: 
             name: "append_type"
-            type: "string"
+            dt: "string"
             value: "[append_type.value]"
         - parameter: 
             name: "pattern"
-            type: "string"
+            dt: "string"
             value: "[pattern.value]"
     test:
       type: "[TEST-TYPE-NAME]"

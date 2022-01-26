@@ -18,17 +18,19 @@ Artifact Parameters
 
 **cisco_ios.routing_protocol_auth_intf**
 
-+--------------------+--------+-------------------------------------------------+
-| Name               | Type   | Description                                     |
-+====================+========+=================================================+
-| interface_operator | string | Interface Operator.                             |
-+--------------------+--------+-------------------------------------------------+
-| interface          | string | The name of the interface(s) to collect.        |
-+--------------------+--------+-------------------------------------------------+
-| protocol_operator  | string | Protocol Operator.                              |
-+--------------------+--------+-------------------------------------------------+
-| routing_protocol   | string | The name of the routing protocol(s) to collect. |
-+--------------------+--------+-------------------------------------------------+
++-----------------------------+---------+------------------------------------+
+| Name                        | Type    | Description                        |
++=============================+=========+====================================+
+| interface_operator          | string  | Interface Operator.                |
++-----------------------------+---------+------------------------------------+
+| interface                   | string  | The name of the interface(s) to    |
+|                             |         | collect.                           |
++-----------------------------+---------+------------------------------------+
+| protocol_operator           | string  | Protocol Operator.                 |
++-----------------------------+---------+------------------------------------+
+| routing_protocol            | string  | The name of the routing            |
+|                             |         | protocol(s) to collect.            |
++-----------------------------+---------+------------------------------------+
 
 NOTE: The ``interface_operator`` and ``protocol_operator`` parameters are governed by a constraint allowing only the following values:
   - bitwise and
@@ -67,7 +69,7 @@ Test Type Parameters
 ======== ====== =========================
 Name     Type   Description
 ======== ====== =========================
-operator string Comparison Operator.
+operator string Comparison operator.
 keychain string Authentication Key Chain.
 ======== ====== =========================
 
@@ -144,7 +146,7 @@ SCAP
 XCCDF
 '''''
 
-For ``cisco_ios.routing_protocol_auth_intf cisco_ios.routing_protocol_auth_keychain`` artifacts, an XCCDF Value element is generated.
+For ``cisco_ios.routing_protocol_auth_intf `` ``cisco_ios.routing_protocol_auth_keychain`` artifacts, an XCCDF Value element is generated.
 
 ::
 
@@ -157,7 +159,7 @@ For ``cisco_ios.routing_protocol_auth_intf cisco_ios.routing_protocol_auth_keych
     <value>[value.value]</value>
   </Value>
 
-For ``cisco_ios.routing_protocol_auth_intf cisco_ios.routing_protocol_auth_keychain`` artifacts, the xccdf:check looks like this.
+For ``cisco_ios.routing_protocol_auth_intf`` ``cisco_ios.routing_protocol_auth_keychain`` artifacts, the XCCDF check looks like this.
 
 ::
 
@@ -166,7 +168,7 @@ For ``cisco_ios.routing_protocol_auth_intf cisco_ios.routing_protocol_auth_keych
       export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
       value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
     <check-content-ref 
-      href="[BENCHMARK-TITLE]"
+      href="[BENCHMARK-TITLE]-oval.xml"
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 
@@ -178,7 +180,7 @@ Test
 ::
 
   <routingprotocolauthintf_test 
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#iso"
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#ios"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
     check_existence="at_least_one_exists"
     check="all"
@@ -193,7 +195,7 @@ Object
 ::
 
   <routingprotocolauthintf_object 
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#iso"
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#ios"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
@@ -206,7 +208,7 @@ State
 ::
 
   <routingprotocolauthintf_state 
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#iso"
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#ios"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
@@ -373,7 +375,7 @@ SCAP
 XCCDF
 '''''
 
-For ``cisco_ios.routing_protocol_auth_intf cisco_ios.routing_protocol_auth_type`` artifacts, an XCCDF Value element is generated.
+For ``cisco_ios.routing_protocol_auth_intf`` ``cisco_ios.routing_protocol_auth_type`` artifacts, an XCCDF Value element is generated.
 
 ::
 
@@ -386,7 +388,7 @@ For ``cisco_ios.routing_protocol_auth_intf cisco_ios.routing_protocol_auth_type`
     <value>[value.value]</value>
   </Value>
 
-For ``cisco_ios.routing_protocol_auth_intf cisco_ios.routing_protocol_auth_type`` artifacts, the xccdf:check looks like this.
+For ``cisco_ios.routing_protocol_auth_intf`` ``cisco_ios.routing_protocol_auth_type`` artifacts, the XCCDF check looks like this.
 
 ::
 
@@ -395,7 +397,7 @@ For ``cisco_ios.routing_protocol_auth_intf cisco_ios.routing_protocol_auth_type`
       export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
       value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
     <check-content-ref 
-      href="[BENCHMARK-TITLE]"
+      href="[BENCHMARK-TITLE]-oval.xml"
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 
@@ -407,7 +409,7 @@ Test
 ::
 
   <routingprotocolauthintf_test 
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#iso"
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#ios"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
     check_existence="at_least_one_exists"
     check="all"
@@ -422,7 +424,7 @@ Object
 ::
 
   <routingprotocolauthintf_object 
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#iso"
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#ios"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
@@ -435,11 +437,11 @@ State
 ::
 
   <routingprotocolauthintf_state 
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#iso"
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#ios"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-    <key_chain 
+    <auth_type 
       operation="equals"
       var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
   </routingprotocolauthintf_state>

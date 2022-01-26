@@ -118,7 +118,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
           <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
           <ae:title>[ARTIFACT-TITLE]</ae:title>
           <ae:artifact type="[ARTIFACT-TYPE-NAME]">
-            <ae:parameters/>
+            <ae:parameters />
           </ae:artifact>
           <ae:test type="[TEST-TYPE-NAME]">
             <ae:parameters>
@@ -141,17 +141,15 @@ SCAP
 XCCDF
 '''''
 
-For ``linux.apparmorstatus_v1 linux.apparmorstatus_enforce_mode_profiles_count_v1`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
+For ``linux.apparmorstatus_v1`` ``linux.apparmorstatus_enforce_mode_profiles_count_v1`` artifacts, the XCCDF check looks like this. There is no Value element in the XCCDF for this artifact.
 
 ::
 
-  <xccdf:complex-check operator="AND">
-    <xccdf:check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
-      <xccdf:check-content-ref
-        href="[BENCHMARK-TITLE]"
-        name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
-    </xccdf:check>
-  </xccdf:complex-check>
+  <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+    <check-content-ref
+      href="[BENCHMARK-TITLE]-oval.xml"
+      name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
+  </check>
 
 OVAL
 ''''
@@ -161,11 +159,11 @@ Test
 ::
 
   <apparmorstatus_test 
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#Linux"
-    check="[check.value]"
-    check_existence="[check_existence.value]"
-    comment="[ARTIFACT-TITLE]"
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
+    check_existence="[check_existence.value]"
+    check="[check.value]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
     <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
     <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
@@ -176,9 +174,9 @@ Object
 ::
 
   <apparmorstatus_object 
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#Linux"
-    comment="[ARTIFACT-TITLE]"
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
+    comment="[ARTIFACT-TITLE]"
     version="1" />
 
 State
@@ -186,9 +184,9 @@ State
 ::
 
   <apparmorstatus_state 
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#Linux"
-    comment="[ARTIFACT-TITLE]"
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
+    comment="[ARTIFACT-TITLE]"  
     version="1">
     <enforce_mode_profiles_count 
       datatype="[datatype.value]"

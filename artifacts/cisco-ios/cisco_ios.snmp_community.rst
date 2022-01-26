@@ -49,7 +49,7 @@ value string Value.
 ========= ====== ===========================================
 Name      Type   Description
 ========= ====== ===========================================
-operation string Comparison Operator.
+operation string Comparison operator.
 mode      string The read-write privileges of the community.
 ========= ====== ===========================================
 
@@ -77,7 +77,7 @@ NOTE: The ``mode`` parameter is governed by a constraint allowing only the follo
 ======== ====== ===========================================
 Name     Type   Description
 ======== ====== ===========================================
-operator string Comparison Operator.
+operator string Comparison operator.
 ipv4_acl string The IPv4 ACL name applied to the community.
 ======== ====== ===========================================
 
@@ -101,7 +101,7 @@ NOTE: The ``operation`` parameter is governed by a constraint allowing only the 
 ======== ====== ===========================================
 Name     Type   Description
 ======== ====== ===========================================
-operator string Comparison Operator.
+operator string Comparison operator.
 ipv6_acl string The IPv6 ACL name applied to the community.
 ======== ====== ===========================================
 
@@ -162,16 +162,13 @@ SCAP
 XCCDF
 '''''
 
-For ``cisco_ios.snmp_community existence_test`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
+For ``cisco_ios.snmp_community`` ``existence_test`` artifacts, the XCCDF check looks like this. There is no Value element in the XCCDF for this artifact.
 
 ::
 
   <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
-    <check-export 
-      export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
-      value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
     <check-content-ref 
-      href="[BENCHMARK-TITLE]"
+      href="[BENCHMARK-TITLE]-oval.xml"
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 
@@ -312,7 +309,7 @@ SCAP
 XCCDF
 '''''
 
-For ``cisco_ios.snmp_community cisco_ios.snmp_community_mode`` artifacts, an XCCDF Value element is generated.
+For ``cisco_ios.snmp_community`` ``cisco_ios.snmp_community_mode`` artifacts, an XCCDF Value element is generated.
 
 ::
 
@@ -325,7 +322,7 @@ For ``cisco_ios.snmp_community cisco_ios.snmp_community_mode`` artifacts, an XCC
     <value>[value.value]</value>
   </Value>
 
-For ``cisco_ios.snmp_community cisco_ios.snmp_community_mode`` artifacts, the xccdf:check looks like this.
+For ``cisco_ios.snmp_community`` ``cisco_ios.snmp_community_mode`` artifacts, the XCCDF check looks like this.
 
 ::
 
@@ -334,7 +331,7 @@ For ``cisco_ios.snmp_community cisco_ios.snmp_community_mode`` artifacts, the xc
       export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
       value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
     <check-content-ref 
-      href="[BENCHMARK-TITLE]"
+      href="[BENCHMARK-TITLE]-oval.xml"
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 
@@ -353,6 +350,7 @@ Test
     comment="[ARTIFACT-TITLE]"
     version="1">
     <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+    <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
   </snmpcommunity_test>
 
 Object
@@ -503,7 +501,7 @@ SCAP
 XCCDF
 '''''
 
-For ``cisco_ios.snmp_community cisco_ios.snmp_community_ipv4_acl`` artifacts, an XCCDF Value element is generated.
+For ``cisco_ios.snmp_community`` ``cisco_ios.snmp_community_ipv4_acl`` artifacts, an XCCDF Value element is generated.
 
 ::
 
@@ -516,7 +514,7 @@ For ``cisco_ios.snmp_community cisco_ios.snmp_community_ipv4_acl`` artifacts, an
     <value>[value.value]</value>
   </Value>
 
-For ``cisco_ios.snmp_community cisco_ios.snmp_community_ipv4_acl`` artifacts, the xccdf:check looks like this.
+For ``cisco_ios.snmp_community`` ``cisco_ios.snmp_community_ipv4_acl`` artifacts, the XCCDF check looks like this.
 
 ::
 
@@ -525,7 +523,7 @@ For ``cisco_ios.snmp_community cisco_ios.snmp_community_ipv4_acl`` artifacts, th
       export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
       value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
     <check-content-ref 
-      href="[BENCHMARK-TITLE]"
+      href="[BENCHMARK-TITLE]-oval.xml"
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 
@@ -695,7 +693,7 @@ SCAP
 XCCDF
 '''''
 
-For ``cisco_ios.snmp_community cisco_ios.snmp_community_ipv4_acl`` artifacts, an XCCDF Value element is generated.
+For ``cisco_ios.snmp_community`` ``cisco_ios.snmp_community_ipv6_acl`` artifacts, an XCCDF Value element is generated.
 
 ::
 
@@ -708,7 +706,7 @@ For ``cisco_ios.snmp_community cisco_ios.snmp_community_ipv4_acl`` artifacts, an
     <value>[value.value]</value>
   </Value>
 
-For ``cisco_ios.snmp_community cisco_ios.snmp_community_ipv4_acl`` artifacts, the xccdf:check looks like this.
+For ``cisco_ios.snmp_community`` ``cisco_ios.snmp_community_ipv6_acl`` artifacts, the XCCDF check looks like this.
 
 ::
 
@@ -717,7 +715,7 @@ For ``cisco_ios.snmp_community cisco_ios.snmp_community_ipv4_acl`` artifacts, th
       export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
       value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
     <check-content-ref 
-      href="[BENCHMARK-TITLE]"
+      href="[BENCHMARK-TITLE]-oval.xml"
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 
@@ -760,7 +758,7 @@ State
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1"> 
-    <ipv4_acl 
+    <ipv6_acl 
       operation="[operation.value]"
       var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
 

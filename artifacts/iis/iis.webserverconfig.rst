@@ -140,7 +140,7 @@ SCAP
 XCCDF
 '''''
 
-For ``iis.webserverconfig`` artifacts, an XCCDF Value element is generated.
+For ``iis.webserverconfig`` ``iis.webserverconfig`` artifacts, an XCCDF Value element is generated.
 
 ::
 
@@ -153,7 +153,7 @@ For ``iis.webserverconfig`` artifacts, an XCCDF Value element is generated.
     <value>[value.value]</value>
   </Value>
 
-For ``iis.webserverconfig`` artifacts, the xccdf:check looks like this.
+For ``iis.webserverconfig`` ``iis.webserverconfig`` artifacts, the XCCDF check looks like this.
 
 ::
 
@@ -162,7 +162,7 @@ For ``iis.webserverconfig`` artifacts, the xccdf:check looks like this.
       export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
       value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
     <check-content-ref 
-      href="[BENCHMARK-TITLE]"
+      href="[BENCHMARK-TITLE]-oval.xml"
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 
@@ -190,7 +190,7 @@ Object
 
   <webconfig_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#iis"
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
     <site_name operation="pattern match">[site_name.value]</site_name>
@@ -204,7 +204,7 @@ State
 
   <webconfig_state    
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#iis"
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
     <[configuration_setting.value] 

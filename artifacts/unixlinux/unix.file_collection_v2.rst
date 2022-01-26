@@ -223,17 +223,15 @@ SCAP
 XCCDF
 '''''
 
-For ``unix.file_collection_v2 pattern match and pattern not match`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
+For ``unix.file_collection_v2`` ``pattern match`` and ``pattern not match`` artifacts, the XCCDF check looks like this. There is no Value element in the XCCDF for this artifact.
 
 ::
 
-  <xccdf:complex-check operator="AND">
-    <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
-      <check-content-ref 
-        href="[BENCHMARK-TITLE]"
-        name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
-    </check>
-  </xccdf:complex-check>  
+  <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+    <check-content-ref 
+      href="[BENCHMARK-TITLE]-oval.xml"
+      name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
+  </check>  
 
 OVAL
 ''''
@@ -264,11 +262,9 @@ Object
     <behaviors 
       recurse_direction="down"
       recurse_file_system="[recurse_file_system.value]"
-      max_depth="[max_depth.value]" />
+      max_depth="-1" />
     <path>[path.value]</path>
-    <filename operation="pattern match">
-      [filename.value]
-    </filename>
+    <filename operation="pattern match">[filename.value]</filename>
     <pattern 
       operation="pattern match"
       datatype="[datatype.value]">
@@ -457,17 +453,15 @@ SCAP
 XCCDF
 '''''
 
-For ``unix.file_collection_v2 null_test_v1`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
+For ``unix.file_collection_v2`` ``null_test_v1`` artifacts, the XCCDF check looks like this. There is no Value element in the XCCDF for this artifact.
 
 ::
 
-  <xccdf:complex-check operator="AND">
-    <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
-      <check-content-ref 
-        href="[BENCHMARK-TITLE]"
-        name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
-    </check>
-  </xccdf:complex-check>  
+  <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+    <check-content-ref 
+      href="[BENCHMARK-TITLE]-oval.xml"
+      name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
+  </check>  
 
 OVAL
 ''''
@@ -672,17 +666,15 @@ SCAP
 XCCDF
 '''''
 
-For ``unix.file_collection_v2 unix.file_attributes_v1`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
+For ``unix.file_collection_v2`` ``unix.file_attributes_v1`` artifacts, the XCCDF check looks like this. There is no Value element in the XCCDF for this artifact.
 
 ::
 
-  <xccdf:complex-check operator="AND">
-    <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
-      <check-content-ref 
-        href="[BENCHMARK-TITLE]"
-        name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
-    </check>
-  </xccdf:complex-check>  
+  <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+    <check-content-ref 
+      href="[BENCHMARK-TITLE]-oval.xml"
+      name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
+  </check>  
 
 OVAL
 ''''
@@ -724,7 +716,8 @@ State
 
 ::
 
-  <file_state xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
+  <file_state 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">

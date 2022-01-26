@@ -357,13 +357,13 @@ SCAP
 XCCDF
 '''''
 
-For ``unix.proc_info_v1`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
+For ``unix.proc_info_v1`` ``unix.proc_info_v1`` artifacts, the XCCDF check looks like this. There is no Value element in the XCCDF for this artifact.
 
 ::
 
   <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
     <check-content-ref
-      href="[BENCHMARK-TITLE]"
+      href="[BENCHMARK-TITLE]-oval.xml"
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 
@@ -461,7 +461,6 @@ State
     <user_id 
       datatype="int"
       operation="[operation.value]"
-      var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]">
         [user_id.value]
     </user_id>
     <exec_shield 

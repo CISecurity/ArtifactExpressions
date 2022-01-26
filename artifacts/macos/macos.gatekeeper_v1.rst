@@ -134,15 +134,15 @@ SCAP
 XCCDF
 '''''
 
-For ``macos.gatekeeper_v1`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
+For ``macos.gatekeeper_v1`` ``macos.gatekeeper_enabled_v1`` artifacts, the XCCDF check looks like this. There is no Value element in the XCCDF for this artifact.
 
 ::
 
-  <xccdf:check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
-    <xccdf:check-content-ref 
-      href="[BENCHMARK-TITLE]"
+  <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+    <check-content-ref 
+      href="[BENCHMARK-TITLE]-oval.xml"
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
-  </xccdf:check>
+  </check>
 
 OVAL
 ''''
@@ -199,33 +199,33 @@ YAML
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
-      - parameter: 
-          name: "gatekeeper"
-          dt: "string"
-          value: "[gatekeeper.value]"
+        - parameter:
+            name: "gatekeeper"
+            dt: "string"
+            value: "[gatekeeper.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:
-      - parameter:
-          name: "check_existence"
-          dt: "string"
-          value: "[check_existence.value]"
-      - parameter: 
-          name: "check"
-          dt: "string"
-          value: "[check.value]"
-      - parameter:
-          name: "operation"
-          dt: "string"
-          value: "[operation.value]"
-      - parameter: 
-          name: "datatype"
-          dt: "string"
-          value: "[datatype.value]"
-      - parameter: 
-          name: "enabled"
-          dt: "string"
-          value: "[enabled.value]"
+        - parameter:
+            name: "check_existence"
+            dt: "string"
+            value: "[check_existence.value]"
+        - parameter:
+            name: "check"
+            dt: "string"
+            value: "[check.value]"
+        - parameter:
+            name: "operation"
+            dt: "string"
+            value: "[operation.value]"
+        - parameter:
+            name: "datatype"
+            dt: "string"
+            value: "[datatype.value]"
+        - parameter:
+            name: "enabled"
+            dt: "string"
+            value: "[enabled.value]"
 
 JSON
 ^^^^

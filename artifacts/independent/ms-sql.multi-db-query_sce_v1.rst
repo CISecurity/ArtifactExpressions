@@ -18,13 +18,13 @@ Artifact Parameters
 +-------------------------------------+-------------+------------------+
 | Name                                | Type        | Description      |
 +=====================================+=============+==================+
-| sql                                 | String      | The sql entity   |
+| sql                                 | string  | The sql entity   |
 |                                     |             | defines a query  |
 |                                     |             | used to identify |
 |                                     |             | the object(s) to |
 |                                     |             | test against.    |
 +-------------------------------------+-------------+------------------+
-| sysdbs                              | String      | This determines  |
+| sysdbs                              | string  | This determines  |
 |                                     |             | whether the      |
 |                                     |             | system databases |
 |                                     |             | will be assessed |
@@ -63,7 +63,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
                    </ae:parameters>
                </ae:artifact>
                <ae:test type="[TEST-TYPE-NAME]">
-                   <ae:parameters/>
+                   <ae:parameters />
                </ae:test>
            </ae:artifact_expression>
        </xccdf:check-content>
@@ -75,25 +75,25 @@ SCAP
 XCCDF
 '''''
 
-For ``ms-sql.multi-db-query_sce_v1`` artifacts, the xccdf:check looks
+For ``ms-sql.multi-db-query_sce_v1`` ``null_test_v1`` artifacts, the xccdf:check looks
 like this.
 
 ::
 
   <check system='http://open-scap.org/page/SCE'>
     <check-import 
-      import-name='[import-name.value]'/>
+      import-name='[import-name.value]' />
     <check-export 
       export-name='oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]' 
-      value-id='xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var'/>
+      value-id='xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var' />
     <check-export 
       export-name='oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]' 
-      value-id='xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var'/>
+      value-id='xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var' />
     <check-export 
       export-name='oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]' 
-      value-id='xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var'/>
+      value-id='xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var' />
     <check-content-ref 
-      href='[BENCHMARK NAME]'/>
+      href='[BENCHMARK NAME]' />
   </check>
 
 OVAL
@@ -129,13 +129,13 @@ YAML
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
         - parameter: 
-            name: sql
-            dt: string
+            name: "sql"
+            dt: "string"
             value: "[sql.value]"
         - parameter: 
-            name: sysdbs
-            dt: string
-            value: "[sysdbs.value]
+            name: "sysdbs"
+            dt: "string"
+            value: "[sysdbs.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters: []   
@@ -147,42 +147,30 @@ JSON
 
   {
     "artifact-expression": {
-      "artifact-unique-id": [
-        "ARTIFACT-OVAL-ID"
-      ],
-      "artifact-title": [
-        "RECOMMENDATION TITLE"
-      ],
+      "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
+      "artifact-title": "[ARTIFACT-TITLE]",
       "artifact": {
-        "type": [
-          "ARTIFACTTYPE NAME"
-        ],
+        "type": "[ARTIFACT-TYPE-NAME]",
         "parameters": [
           {
             "parameter": {
               "name": "sql",
               "type": "string",
-              "value": [
-                "sql.value"
-              ]
+              "value": "[sql.value]"
             }
           },
           {
             "parameter": {
               "name": "sysdbs",
               "type": "string",
-              "value": [
-                "sysdbs.value"
-              ]
+              "value": "[sysdbs.value]"
             }
           }
         ]
       },
       "test": {
-        "type": [
-          "TESTTYPE NAME"
-        ],
-        "parameters": null
+        "type": "[TEST-TYPE-NAME]",
+        "parameters": []
       }
     }
   }

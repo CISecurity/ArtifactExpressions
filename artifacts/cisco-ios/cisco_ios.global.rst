@@ -118,7 +118,7 @@ SCAP
 XCCDF
 '''''
 
-For ``cisco_ios.global`` artifacts, an XCCDF Value element is generated.
+For ``cisco_ios.global`` ``cisco_ios.global_command`` artifacts, an XCCDF Value element is generated.
 
 ::
 
@@ -131,7 +131,7 @@ For ``cisco_ios.global`` artifacts, an XCCDF Value element is generated.
     <value>[value.value]</value>
   </Value>
 
-For ``cisco_ios.global`` artifacts, the xccdf:check looks like this.
+For ``cisco_ios.global`` ``cisco_ios.global_command`` artifacts, the XCCDF check looks like this.
 
 ::
 
@@ -140,7 +140,7 @@ For ``cisco_ios.global`` artifacts, the xccdf:check looks like this.
       export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
       value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
     <check-content-ref 
-      href="[BENCHMARK-TITLE]"
+      href="[BENCHMARK-TITLE]-oval.xml"
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 
@@ -152,7 +152,7 @@ Test
 ::
 
   <global_test 
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#iso"
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#ios"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
     check_existence="[check_existence.value]"
     check="all"
@@ -167,7 +167,7 @@ Object
 ::
 
   <global_object 
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#iso"
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#ios"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
@@ -179,7 +179,7 @@ State
 ::
 
   <global_state 
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#iso"
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#ios"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">

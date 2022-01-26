@@ -110,7 +110,7 @@ SCAP
 XCCDF
 '''''
 
-For ``vmware.vmhost.authentication_setting`` artifacts, an XCCDF Value element is generated.
+For ``vmware.vmhost.module.signature_status`` ``vmware.vmhost.module.signature_status`` artifacts, an XCCDF Value element is generated.
 
 ::
 
@@ -123,13 +123,13 @@ For ``vmware.vmhost.authentication_setting`` artifacts, an XCCDF Value element i
     <value>[value.value]</value>
   </Value>  
 
-For ``vmware.virtual_machine.advanced_setting`` artifacts, the xccdf:check looks like this.
+For ``vmware.vmhost.module.signature_status`` ``vmware.vmhost.module.signature_status`` artifacts, the XCCDF check looks like this.
 
 ::
 
   <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
     <check-export 
-      export-name="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
+      export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
       value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
     <check-export 
       export-name="oval:org.cisecurity.benchmarks:var:100000"
@@ -148,7 +148,7 @@ Test
 
   <vmhost_module_test
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
-    id="oval:org.cisecurity.benchmarks[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
     check_existence="any_exist"
     check="all"
     comment="[ARTIFACT-TITLE]"
@@ -163,13 +163,11 @@ Object
 
   <vmhost_module_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
-    id="oval:org.cisecurity.benchmarks[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-    <connection_string var_ref="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
-    <vmhost_name operation="pattern match">
-      .*
-    </vmhost_name>
+    <connection_string var_ref="oval:org.cisecurity.benchmarks:var:100000" />
+    <vmhost_name operation="pattern match">.*</vmhost_name>
     <module_name operation="pattern match">
       .*
     </module_name>
@@ -179,14 +177,15 @@ State
 
 ::
 
-  <vmhost_module_state xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
-    id="oval:org.cisecurity.benchmarks[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
+  <vmhost_module_state 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
     <signed_status 
       datatype="string"
       operation="[operation.value]"
-      var_ref="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
+      var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
   </vmhost_module_state> 
 
 Variable
@@ -194,7 +193,7 @@ Variable
 ::
 
   <external_variable 
-    id="oval:org.cisecurity.benchmarks[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
     datatype="string"
     version="1"
     comment="This value is used in Rule: [RECOMMENDATION-TITLE]" />

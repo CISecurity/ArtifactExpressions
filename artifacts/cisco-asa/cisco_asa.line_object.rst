@@ -18,11 +18,11 @@ Artifact Parameters
 
 **cisco_asa.line_object**
 
-=============== ====== =======================================================
+=============== ====== ================================================
 Name            Type   Description
-=============== ====== =======================================================
+=============== ====== ================================================
 show_subcommand string The name of a SHOW sub-command. Cannot be blank.
-=============== ====== =======================================================
+=============== ====== ================================================
 
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
@@ -181,7 +181,7 @@ SCAP
 XCCDF
 '''''
 
-For ``cisco_asa.line_object cisco_asa.line_config_line`` artifacts, an XCCDF Value element is generated.
+For ``cisco_asa.line_object`` ``cisco_asa.line_config_line`` artifacts, an XCCDF Value element is generated.
 
 ::
 
@@ -194,7 +194,7 @@ For ``cisco_asa.line_object cisco_asa.line_config_line`` artifacts, an XCCDF Val
     <value>[value.value]</value>
   </Value>
 
-For ``cisco_asa.line_object cisco_asa.line_config_line`` artifacts, the xccdf:check looks like this.
+For ``cisco_asa.line_object`` ``cisco_asa.line_config_line`` artifacts, the XCCDF check looks like this.
 
 ::
 
@@ -203,7 +203,7 @@ For ``cisco_asa.line_object cisco_asa.line_config_line`` artifacts, the xccdf:ch
       export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" 
       value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
     <check-content-ref 
-      href="[BENCHMARK-TITLE]" 
+      href="[BENCHMARK-TITLE]-oval.xml" 
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 
@@ -384,15 +384,15 @@ SCAP
 XCCDF
 '''''
 
-For ``cisco_asa.line_object cisco_asa.existence_check`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
+For ``cisco_asa.line_object`` ``cisco_asa.existence_check`` artifacts, the XCCDF check looks like this. There is no Value element in the XCCDF for this artifact.
 
 ::
 
-  <xccdf:check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
-    <xccdf:check-content-ref
-      href="[BENCHMARK-TITLE]"
+  <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+    <check-content-ref
+      href="[BENCHMARK-TITLE]-oval.xml"
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
-  </xccdf:check>
+  </check>
 
 OVAL
 ''''
@@ -533,7 +533,7 @@ SCAP
 XCCDF
 '''''
 
-For ``cisco_asa.line_object cisco_asa.expected_value_regex_capture`` artifacts, an XCCDF Value element is generated.
+For ``cisco_asa.line_object`` ``cisco_asa.expected_value_regex_capture`` artifacts, an XCCDF Value element is generated.
 
 ::
 
@@ -546,20 +546,18 @@ For ``cisco_asa.line_object cisco_asa.expected_value_regex_capture`` artifacts, 
     <value>[value.value]</value>
   </Value>
 
-For ``cisco_asa.line_object cisco_asa.expected_value_regex_capture`` artifacts, the xccdf:check looks like this.
+For ``cisco_asa.line_object`` ``cisco_asa.expected_value_regex_capture`` artifacts, the XCCDF check looks like this.
 
 ::
 
-  <xccdf:complex-check operator="AND">
-    <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
-      <check-export 
-        export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" 
-        value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
-      <check-content-ref 
-        href="[BENCHMARK-TITLE]" 
-        name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
-    </check>
-  </xccdf:complex-check>
+  <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+    <check-export 
+      export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" 
+      value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
+    <check-content-ref 
+      href="[BENCHMARK-TITLE]-oval.xml" 
+      name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
+  </check>
 
 OVAL
 ''''
@@ -631,7 +629,7 @@ Variable
     version="1">
     <regex_capture pattern="[pattern.value]"> 
       <object_component
-        object_ref="[oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]2]"
+        object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]2"
         item_field="config_line" />
     </regex_capture>
   </local_variable>
@@ -772,7 +770,7 @@ SCAP
 XCCDF
 '''''
 
-For ``cisco_asa.line_object cisco_asa.untrusted_interfaces_state`` artifacts, an XCCDF Value element is generated.
+For ``cisco_asa.line_object`` ``cisco_asa.untrusted_interfaces_state`` artifacts, an XCCDF Value element is generated.
 
 ::
 
@@ -785,20 +783,18 @@ For ``cisco_asa.line_object cisco_asa.untrusted_interfaces_state`` artifacts, an
     <value>[value.value]</value>
   </Value>
 
-For ``cisco_asa.line_object cisco_asa.expected_value_regex_capture`` artifacts, the xccdf:check looks like this.
+For ``cisco_asa.line_object`` ``cisco_asa.untrusted_interfaces_state`` artifacts, the XCCDF check looks like this.
 
 ::
 
-  <xccdf:complex-check operator="AND">
-    <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
-      <check-export 
-        export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" 
-        value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
-      <check-content-ref 
-        href="[BENCHMARK-TITLE]" 
-        name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
-    </check>
-  </xccdf:complex-check>  
+  <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+    <check-export 
+      export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" 
+      value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
+    <check-content-ref 
+      href="[BENCHMARK-TITLE]-oval.xml" 
+      name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
+  </check>
 
 OVAL
 ''''
@@ -840,7 +836,7 @@ State
     comment="[ARTIFACT-TITLE]"
     version="1">
     <config_line
-      operation="pattern match
+      operation="pattern match"
       var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" /> 
   </line_state>
 

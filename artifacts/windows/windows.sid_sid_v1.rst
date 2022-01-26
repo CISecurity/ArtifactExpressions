@@ -143,7 +143,7 @@ SCAP
 XCCDF
 '''''
 
-For ``windows.sid_sid_v1`` artifacts, an XCCDF Value element is generated:
+For ``windows.sid_sid_v1`` ``windows.sid_sid_trustee_name_v1`` artifacts, an XCCDF Value element is generated:
 
 ::
 
@@ -156,7 +156,7 @@ For ``windows.sid_sid_v1`` artifacts, an XCCDF Value element is generated:
     <value>string</value>
   </Value>
 
-For ``windows.sid_sid_v1`` artifacts, the xccdf:check looks like this.
+For ``windows.sid_sid_v1`` ``windows.sid_sid_trustee_name_v1`` artifacts, the XCCDF check looks like this.
 
 ::
 
@@ -165,7 +165,7 @@ For ``windows.sid_sid_v1`` artifacts, the xccdf:check looks like this.
       export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
       value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
     <check-content-ref 
-      href="[BENCHMARK-TITLE]"
+      href="[BENCHMARK-TITLE]-oval.xml"
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 
@@ -241,9 +241,9 @@ YAML
             dt: "string"
             value: "[trustee_sid.value]"
         - parameter: 
-              name: "trustee_sid_operator"
-              dt: "string"
-              value: "[trustee_sid_operator.value]"
+            name: "trustee_sid_operator"
+            dt: "string"
+            value: "[trustee_sid_operator.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:

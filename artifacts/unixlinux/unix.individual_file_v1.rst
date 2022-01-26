@@ -30,13 +30,13 @@ Artifact Parameters
 +-----------------------------+---------+------------------------------------+
 | Name                        | Type    | Description                        |
 +=============================+=========+====================================+
-| existence | string | Existence requirement.                        |
-+-----------+--------+-----------------------------------------------+
-| check     | string | Defines how many collected items must match   |
-|           |        | the expected state.                           |
-+-----------+--------+-----------------------------------------------+
-| filepath  | string | Path the the file. Cannot be blank.           |
-+-----------+--------+-----------------------------------------------+
+| existence                   | string  | Existence requirement.             |
++-----------------------------+---------+------------------------------------+
+| check                       | string  | Defines how many collected items   |
+|                             |         | must match the expected state.     |
++-----------------------------+---------+------------------------------------+
+| filepath                    | string  | Path the the file. Cannot be blank.|
++-----------------------------+---------+------------------------------------+
 
 NOTE: The ``existence`` parameter is governed by a constraint allowing only the following values:
   - at_least_one_exists
@@ -199,17 +199,15 @@ SCAP
 XCCDF
 '''''
 
-For ``unix.file_collection_v2 pattern match and pattern not match`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
+For ``unix.individual_file_v1`` ``pattern match`` and ``pattern not match`` artifacts, the XCCDF check looks like this. There is no Value element in the XCCDF for this artifact.
 
 ::
 
-  <xccdf:complex-check operator="AND">
-    <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
-      <check-content-ref 
-        href="[BENCHMARK-TITLE]"
-        name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
-    </check>
-  </xccdf:complex-check>  
+  <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+    <check-content-ref 
+      href="[BENCHMARK-TITLE]-oval.xml"
+      name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
+  </check>  
 
 OVAL
 ''''
@@ -285,7 +283,7 @@ YAML
         - parameter:
             name: "value"
             dt: "string"
-            value: "[value.value]
+            value: "[value.value]"
         - parameter:
             name: "data_type"
             dt: "string"
@@ -390,17 +388,15 @@ SCAP
 XCCDF
 '''''
 
-For ``unix.file_collection_v2 null_test_v1`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
+For ``unix.individual_file_v1`` ``null_test_v1`` artifacts, the XCCDF check looks like this. There is no Value element in the XCCDF for this artifact.
 
 ::
 
-  <xccdf:complex-check operator="AND">
-    <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
-      <check-content-ref 
-        href="[BENCHMARK-TITLE]"
-        name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
-    </check>
-  </xccdf:complex-check>  
+  <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+    <check-content-ref 
+      href="[BENCHMARK-TITLE]-oval.xml"
+      name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
+  </check>  
 
 OVAL
 ''''
@@ -568,17 +564,15 @@ SCAP
 XCCDF
 '''''
 
-For ``unix.file_collection_v2 unix_file_attributes_v1`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
+For ``unix.individual_file_v1`` ``unix_file_attributes_v1`` artifacts, the XCCDF check looks like this. There is no Value element in the XCCDF for this artifact.
 
 ::
 
-  <xccdf:complex-check operator="AND">  
-    <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
-      <check-content-ref 
-        href="[BENCHMARK-TITLE]"
-        name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
-    </check> 
-  </xccdf:complex-check>
+  <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+    <check-content-ref 
+      href="[BENCHMARK-TITLE]-oval.xml"
+      name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
+  </check> 
 
 OVAL
 ''''

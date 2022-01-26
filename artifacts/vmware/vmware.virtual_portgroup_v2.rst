@@ -143,18 +143,18 @@ SCAP
 XCCDF
 '''''
 
-For ``vmware:virtual_portgroup`` artifacts, the xccdf:check looks like this. There is no Value element in the XCCDF for this Artifact.
+For ``vmware.virtual_portgroup_v2`` ``vmware.virtual_portgroup_vlan_v2`` artifacts, the XCCDF check looks like this. There is no Value element in the XCCDF for this artifact.
 
 ::
 
-  <xccdf:check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+  <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
     <check-export 
       export-name="oval:org.cisecurity.benchmarks:var:100000"
       value-id="xccdf_org.cisecurity.benchmarks_value_esxi.connection" />
     <check-content-ref 
       href="[BENCHMARK-TITLE]-oval.xml"
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
-  </xccdf:check>
+  </check>
 
 OVAL
 ''''
@@ -165,7 +165,7 @@ Test
 
   <virtual_portgroup_test 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
-    id="oval:org.cisecurity.benchmarks:tst:[ARTIFACT-OVAL-ID]"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
     check_existence="[check_existence.value]"
     check="[check.value]"
     comment="[ARTIFACT-TITLE]"
@@ -180,18 +180,14 @@ Object
 
   <virtual_portgroup_object 
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#esxi"
-    id="oval:org.cisecurity.benchmarks:tst:[ARTIFACT-OVAL-ID]"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     check_existence="[check_existence.value]"
     check="[check.value]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-    <connection_string var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
-    <port_group_name operation="[operation.value]">
-      .*
-    </port_group_name>
-    <virtual_switch_name operation="[operation.value]">
-      .*
-    </virtual_switch_name>
+    <connection_string var_ref="oval:org.cisecurity.benchmarks:var:100000" />
+    <port_group_name operation="[operation.value]">.*</port_group_name>
+    <virtual_switch_name operation="[operation.value]">.*</virtual_switch_name>
   </virtual_portgroup_object>   
 
 State
