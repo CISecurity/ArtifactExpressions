@@ -20,8 +20,8 @@ Artifact Parameters
 **macos.pwpolicy59_v1**
 
 +-------------------------------+---------+----------------------------------+
-| Name                        | Type    | Description                        |
-+=============================+=========+====================================+
+| Name                          | Type    | Description                      |
++===============================+=========+==================================+
 | target_user                   | string  | The target_user element          |
 |                               |         | specifies the user whose         |
 |                               |         | password policy information      |
