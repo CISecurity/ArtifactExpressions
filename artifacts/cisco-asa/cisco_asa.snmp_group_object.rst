@@ -287,7 +287,6 @@ JSON
               "name": "snmpv3_sec_level",
               "type": "string",
               "value": "[snmpv3_sec_level.value]"
-              ]
             }
           }
         ]

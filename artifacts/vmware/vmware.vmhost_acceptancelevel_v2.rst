@@ -264,7 +264,7 @@ YAML
         - parameter: 
             name: "vib_name_operation"
             dt: "string"
-            value: "[vib_name_operation.value]"                                                
+            value: "[vib_name_operation.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:

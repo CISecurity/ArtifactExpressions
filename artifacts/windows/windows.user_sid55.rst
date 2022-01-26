@@ -266,9 +266,7 @@ JSON
         ]
       },
       "test": {
-        "type": [
-          "TestType Name"
-        ],
+        "type": "[TEST-TYPE-NAME]",
         "parameters": [
           {
             "parameter": {

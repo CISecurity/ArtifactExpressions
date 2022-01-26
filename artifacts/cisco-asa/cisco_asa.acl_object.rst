@@ -79,9 +79,9 @@ Test Type Parameters
 | entity_check           | string  | This enumeration represents the         |
 |                        |         | complement of collected configuration   |
 |                        |         | lines which must successfully match the |
-|                        |         | expected ``config_line``value in order  |
-|                        |         | for this test to reach a positive       |
-|                        |         | result.                                 |
+|                        |         | expected ``config_line`` value in       |
+|                        |         | order for this test to reach a          |
+|                        |         | positive result.                        |
 +------------------------+---------+-----------------------------------------+
 
 NOTE: The ``operation`` parameter is governed by a constraint allowing only the following values:

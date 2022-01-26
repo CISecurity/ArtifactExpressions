@@ -375,33 +375,33 @@ YAML
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
-      - parameter: 
-          name: "systemsetup"
-          dt: "string"
-          value: "[systemsetup.value]"
+        - parameter:
+            name: "systemsetup"
+            dt: "string"
+            value: "[systemsetup.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:
-      - parameter:
-          name: "check_existence"
-          dt: "string"
-          value: "[check_existence.value]"
-      - parameter: 
-          name: "check"
-          dt: "string"
-          value: "[check.value]"
-      - parameter:
-          name: "operation"
-          dt: "string"
-          value: "[operation.value]"
-      - parameter: 
-          name: "datatype"
-          dt: "string"
-          value: "[datatype.value]"
-      - parameter: 
-          name: "remoteappleevents"
-          dt: "string"
-          value: "[remoteappleevents.value]"
+        - parameter:
+            name: "check_existence"
+            dt: "string"
+            value: "[check_existence.value]"
+        - parameter:
+            name: "check"
+            dt: "string"
+            value: "[check.value]"
+        - parameter:
+            name: "operation"
+            dt: "string"
+            value: "[operation.value]"
+        - parameter:
+            name: "datatype"
+            dt: "string"
+            value: "[datatype.value]"
+        - parameter:
+            name: "remoteappleevents"
+            dt: "string"
+            value: "[remoteappleevents.value]"
 
 JSON
 ^^^^
@@ -577,33 +577,33 @@ YAML
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
-      - parameter: 
-          name: "systemsetup"
-          dt: "string"
-          value: "[systemsetup.value]"
+        - parameter:
+            name: "systemsetup"
+            dt: "string"
+            value: "[systemsetup.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:
-      - parameter:
-          name: "check_existence"
-          dt: "string"
-          value: "[check_existence.value]"
-      - parameter: 
-          name: "check"
-          dt: "string"
-          value: "[check.value]"
-      - parameter:
-          name: "operation"
-          dt: "string"
-          value: "[operation.value]"
-      - parameter: 
-          name: "datatype"
-          dt: "string"
-          value: "[datatype.value]"
-      - parameter: 
-          name: "remotelogin"
-          dt: "string"
-          value: "[remotelogin.value]"
+        - parameter:
+            name: "check_existence"
+            dt: "string"
+            value: "[check_existence.value]"
+        - parameter:
+            name: "check"
+            dt: "string"
+            value: "[check.value]"
+        - parameter:
+            name: "operation"
+            dt: "string"
+            value: "[operation.value]"
+        - parameter:
+            name: "datatype"
+            dt: "string"
+            value: "[datatype.value]"
+        - parameter:
+            name: "remotelogin"
+            dt: "string"
+            value: "[remotelogin.value]"
 
 JSON
 ^^^^
@@ -779,33 +779,33 @@ YAML
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
-      - parameter: 
-          name: "systemsetup"
-          dt: "string"
-          value: "[systemsetup.value]"
+        - parameter:
+            name: "systemsetup"
+            dt: "string"
+            value: "[systemsetup.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:
-      - parameter:
-          name: "check_existence"
-          dt: "string"
-          value: "[check_existence.value]"
-      - parameter: 
-          name: "check"
-          dt: "string"
-          value: "[check.value]"
-      - parameter:
-          name: "operation"
-          dt: "string"
-          value: "[operation.value]"
-      - parameter: 
-          name: "datatype"
-          dt: "string"
-          value: "[datatype.value]"
-      - parameter: 
-          name: "usingnetworktime"
-          dt: "string"
-          value: "[usingnetworktime.value]"
+        - parameter:
+            name: "check_existence"
+            dt: "string"
+            value: "[check_existence.value]"
+        - parameter:
+            name: "check"
+            dt: "string"
+            value: "[check.value]"
+        - parameter:
+            name: "operation"
+            dt: "string"
+            value: "[operation.value]"
+        - parameter:
+            name: "datatype"
+            dt: "string"
+            value: "[datatype.value]"
+        - parameter:
+            name: "usingnetworktime"
+            dt: "string"
+            value: "[usingnetworktime.value]"
 
 JSON
 ^^^^
@@ -981,33 +981,33 @@ YAML
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
-      - parameter: 
-          name: "systemsetup"
-          dt: "string"
-          value: "[systemsetup.value]"
+        - parameter:
+            name: "systemsetup"
+            dt: "string"
+            value: "[systemsetup.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:
-      - parameter:
-          name: "check_existence"
-          dt: "string"
-          value: "[check_existence.value]"
-      - parameter: 
-          name: "check"
-          dt: "string"
-          value: "[check.value]"
-      - parameter:
-          name: "operation"
-          dt: "string"
-          value: "[operation.value]"
-      - parameter: 
-          name: "datatype"
-          dt: "string"
-          value: "[datatype.value]"
-      - parameter: 
-          name: "wakeonnetworkaccess"
-          dt: "string"
-          value: "[wakeonnetworkaccess.value]"
+        - parameter:
+            name: "check_existence"
+            dt: "string"
+            value: "[check_existence.value]"
+        - parameter:
+            name: "check"
+            dt: "string"
+            value: "[check.value]"
+        - parameter:
+            name: "operation"
+            dt: "string"
+            value: "[operation.value]"
+        - parameter:
+            name: "datatype"
+            dt: "string"
+            value: "[datatype.value]"
+        - parameter:
+            name: "wakeonnetworkaccess"
+            dt: "string"
+            value: "[wakeonnetworkaccess.value]"
 
 JSON
 ^^^^

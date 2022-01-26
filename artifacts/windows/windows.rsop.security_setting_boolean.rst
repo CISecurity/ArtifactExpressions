@@ -208,10 +208,10 @@ YAML
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
-      - parameter: 
-          name: "keyname"
-          dt: "string"
-          value: "[keyname.value]"
+        - parameter:
+            name: "keyname"
+            dt: "string"
+            value: "[keyname.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:

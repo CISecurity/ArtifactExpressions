@@ -253,11 +253,11 @@ YAML
     artifact-title: "[ARTIFACT-TITLE]"
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
-        parameters:
-          - parameter:
-              name: "username"
-              dt: "string"
-              value: "[username.value]"
+      parameters:
+        - parameter:
+            name: "username"
+            dt: "string"
+            value: "[username.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:

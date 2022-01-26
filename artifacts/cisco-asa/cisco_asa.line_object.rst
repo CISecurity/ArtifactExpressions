@@ -836,7 +836,7 @@ State
     comment="[ARTIFACT-TITLE]"
     version="1">
     <config_line
-      operation="pattern match
+      operation="pattern match"
       var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" /> 
   </line_state>
 

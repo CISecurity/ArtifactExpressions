@@ -129,13 +129,13 @@ YAML
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
         - parameter: 
-            name: sql
-            dt: string
+            name: "sql"
+            dt: "string"
             value: "[sql.value]"
         - parameter: 
-            name: sysdbs
-            dt: string
-            value: "[sysdbs.value]
+            name: "sysdbs"
+            dt: "string"
+            value: "[sysdbs.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters: []   
@@ -147,41 +147,29 @@ JSON
 
   {
     "artifact-expression": {
-      "artifact-unique-id": [
-        "ARTIFACT-OVAL-ID"
-      ],
-      "artifact-title": [
-        "RECOMMENDATION TITLE"
-      ],
+      "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
+      "artifact-title": "[ARTIFACT-TITLE]",
       "artifact": {
-        "type": [
-          "ARTIFACTTYPE NAME"
-        ],
+        "type": "[ARTIFACT-TYPE-NAME]",
         "parameters": [
           {
             "parameter": {
               "name": "sql",
               "type": "string",
-              "value": [
-                "sql.value"
-              ]
+              "value": "[sql.value]"
             }
           },
           {
             "parameter": {
               "name": "sysdbs",
               "type": "string",
-              "value": [
-                "sysdbs.value"
-              ]
+              "value": "[sysdbs.value]"
             }
           }
         ]
       },
       "test": {
-        "type": [
-          "TESTTYPE NAME"
-        ],
+        "type": "[TEST-TYPE-NAME]",
         "parameters": []
       }
     }

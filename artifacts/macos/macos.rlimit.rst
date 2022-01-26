@@ -363,11 +363,11 @@ YAML
     artifact-title: "[ARTIFACT-TITLE]"
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
-        parameters:
-          - parameter:
-              name: "check_existence"
-              dt: "string"
-              value: "[check_existence.value]"
+      parameters:
+        - parameter:
+            name: "check_existence"
+            dt: "string"
+            value: "[check_existence.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:

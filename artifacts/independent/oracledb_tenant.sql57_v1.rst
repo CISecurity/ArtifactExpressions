@@ -253,45 +253,45 @@ YAML
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
-        - parameter: 
-          name: non_multi_tenant_sql
-          dt: string
-          value: "[non_multi_tenant_sql.value]"
-      - parameter: 
-          name: multi_tenant_sql
-          dt: string
-          value: "[multi_tenant_sql.value]"
-      - parameter: 
-          name: version
-          dt: string
-          value: "[version.value]
+        - parameter:
+            name: "non_multi_tenant_sql"
+            dt: "string"
+            value: "[non_multi_tenant_sql.value]"
+        - parameter:
+            name: "multi_tenant_sql"
+            dt: "string"
+            value: "[multi_tenant_sql.value]"
+        - parameter:
+            name: "version"
+            dt: "string"
+            value: "[version.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:   
-      - parameter: 
-          name: check_existence
-          dt: string
-          value: "[check_existence.value]"
-      - parameter: 
-          name: check
-          dt: string
-          value: "[check.value]"
-      - parameter: 
-          name: value
-          dt: string
-          value: value.value]"
-      - parameter: 
-          name: value_data_type
-          dt: string
-          value: "[value_data_type.value]"
-      - parameter: 
-          name: field_name
-          dt: string
-          value: "[field_name.value]"
-      - parameter: 
-          name: field_operation
-          dt: string
-          value: field_operation.value]"
+        - parameter:
+            name: "check_existence"
+            dt: "string"
+            value: "[check_existence.value]"
+        - parameter:
+            name: "check"
+            dt: "string"
+            value: "[check.value]"
+        - parameter:
+            name: "value"
+            dt: "string"
+            value: "[value.value]"
+        - parameter:
+            name: "value_data_type"
+            dt: "string"
+            value: "[value_data_type.value]"
+        - parameter:
+            name: "field_name"
+            dt: "string"
+            value: "[field_name.value]"
+        - parameter:
+            name: "field_operation"
+            dt: "string"
+            value: "[field_operation.value]"
 
 JSON
 ^^^^

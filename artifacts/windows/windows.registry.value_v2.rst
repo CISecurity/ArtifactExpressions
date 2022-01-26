@@ -631,7 +631,7 @@ YAML
       type: "[TEST-TYPE-NAME]"
       parameters:
         - parameter:
-            name: value
+            name: "value"
             dt: "string"
             value: "[value.value]"
 

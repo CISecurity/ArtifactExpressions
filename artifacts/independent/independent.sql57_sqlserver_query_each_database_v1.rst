@@ -209,42 +209,42 @@ YAML
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
         - parameter: 
-            name: sql
+            name: "sql"
             dt: "string"
             value: "[sql.value]"
         - parameter: 
-            name: version
+            name: "version"
             dt: "string"
             value: "[version.value]"
         - parameter: 
-            name: exclude_system_db
-            type: boolean
+            name: "exclude_system_db"
+            dt: "boolean"
             value: "[exclude_system_db.value]"
         - parameter: 
-            name: check_existence
+            name: "check_existence"
             dt: "string"
             value: "[check_existence.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:   
         - parameter: 
-            name: check
+            name: "check"
             dt: "string"
-            value:" [check.value]"
+            value: "[check.value]"
         - parameter: 
-            name: field_value
+            name: "field_value"
             dt: "string"
             value: "[field_value.value]"
         - parameter: 
-            name: field_value_datatype
+            name: "field_value_datatype"
             dt: "string"
             value: "[field_value_datatype.value]"
         - parameter: 
-            name: field_name
+            name: "field_name"
             dt: "string"
             value: "[field_name.value]"
         - parameter: 
-            name: field_operation
+            name: "field_operation"
             dt: "string"
             value: "[field_operation.value]"
 
@@ -291,9 +291,7 @@ JSON
         ]
       },
       "test": {
-        "type": [
-          "TESTTYPE NAME"
-        ],
+        "type": "[TEST-TYPE-NAME]",
         "parameters": [
           {
             "parameter": {

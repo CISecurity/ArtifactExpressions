@@ -358,7 +358,7 @@ YAML
         - parameter:
             name: "concat_path"
             dt: "string"
-            value: "concat_path.value]"
+            value: "[concat_path.value]"
         - parameter:
             name: "filename"
             dt: "string"

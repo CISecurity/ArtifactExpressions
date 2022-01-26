@@ -905,7 +905,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
       <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
         <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
         <ae:title>[ARTIFACT-TITLE]</ae:title>
-        <ae:artifact type="[ARTIFACTTYPE-NAME]">
+        <ae:artifact type="[ARTIFACT-TYPE-NAME]">
           <ae:parameters>
             <ae:parameter dt="string" name="base_path">[base_path.value]</ae:parameter>
             <ae:parameter dt="string" name="path">[path.value]</ae:parameter>
@@ -916,7 +916,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
             <ae:parameter dt="string" name="check_existence">[check_existence.value]</ae:parameter>
           </ae:parameters>
         </ae:artifact>
-        <ae:test type="[TESTTYPE-NAME]">
+        <ae:test type="[TEST-TYPE-NAME]">
           <ae:parameters>
             <ae:parameter dt="string" name="value">[value.value]</ae:parameter>
           </ae:parameters>
@@ -1031,7 +1031,7 @@ YAML
             dt: "string"
             value: "[check_existence.value]"          
     test:
-      type: "[TESTTYPE-NAME]"
+      type: "[TEST-TYPE-NAME]"
       parameters:
         - parameter:
             name: "value"
@@ -1102,7 +1102,7 @@ JSON
         ]
       },
       "test": {
-        "type": "[TESTTYPE-NAME]",
+        "type": "[TEST-TYPE-NAME]",
         "parameters": [
           {
             "parameter": {
@@ -1133,7 +1133,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
       <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
         <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
         <ae:title>[ARTIFACT-TITLE]</ae:title>
-        <ae:artifact type="[ARTIFACTTYPE-NAME]">
+        <ae:artifact type="[ARTIFACT-TYPE-NAME]">
           <ae:parameters>
             <ae:parameter dt="string" name="base_path">[base_path.value]</ae:parameter>
             <ae:parameter dt="string" name="path">[path.value]</ae:parameter>
@@ -1146,7 +1146,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
             <ae:parameter dt="string" name="pattern">[pattern.value]</ae:parameter>
           </ae:parameters>
         </ae:artifact>
-        <ae:test type="[TESTTYPE-NAME]">
+        <ae:test type="[TEST-TYPE-NAME]">
           <ae:parameters>
             <ae:parameter dt="string" name="uread">[uread.value]</ae:parameter>
             <ae:parameter dt="string" name="uwrite">[uwrite.value]</ae:parameter>
@@ -1295,7 +1295,7 @@ YAML
             dt: "string"
             value: "[check.value]"                
     test:
-      type: "[TESTTYPE-NAME]"
+      type: "[TEST-TYPE-NAME]"
       parameters:
         - parameter:
             name: "uread"
@@ -1430,7 +1430,7 @@ JSON
         ]
       },
       "test": {
-        "type": "[TESTTYPE-NAME]",
+        "type": "[TEST-TYPE-NAME]",
         "parameters": [
           {
             "parameter": {
@@ -1538,7 +1538,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
       <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
         <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
         <ae:title>[ARTIFACT-TITLE]</ae:title>
-        <ae:artifact type="[ARTIFACTTYPE-NAME]">
+        <ae:artifact type="[ARTIFACT-TYPE-NAME]">
           <ae:parameters>
             <ae:parameter dt="string" name="path">[path.value]</ae:parameter>
             <ae:parameter dt="string" name="filename">[filename.value]</ae:parameter>
@@ -2584,7 +2584,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
       <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
         <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
         <ae:title>[ARTIFACT-TITLE]</ae:title>
-        <ae:artifact type="[ARTIFACTTYPE-NAME]">
+        <ae:artifact type="[ARTIFACT-TYPE-NAME]">
           <ae:parameters>
             <ae:parameter dt="string" name="base_path">[base_path.value]</ae:parameter>
             <ae:parameter dt="string" name="path">[path.value]</ae:parameter>
@@ -2714,7 +2714,7 @@ YAML
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
     artifact_title: "[RECOMMENDATION-TITLE]" 
     artifact:
-      type: "[ARTIFACTTYPE-NAME]"
+      type: "[ARTIFACT-TYPE-NAME]"
       parameters:
         - parameter:
             name: "base_path"
@@ -2753,7 +2753,7 @@ YAML
             dt: "string"
             value: "[pattern.value]"
     test:
-      type: "[TESTTYPE-NAME]"
+      type: "[TEST-TYPE-NAME]"
       parameters:
         - parameter:
             name: "subexpression"
@@ -2810,7 +2810,7 @@ JSON
       "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
       "artifact-title": "[ARTIFACT-TITLE]",
       "artifact": {
-        "type": "[ARTIFACTTYPE-NAME]",
+        "type": "[ARTIFACT-TYPE-NAME]",
         "parameters": [
             {
           "parameter": {
@@ -2877,7 +2877,7 @@ JSON
         ]
       },
       "test": {
-        "type": "[TESTTYPE-NAME]",
+        "type": "[TEST-TYPE-NAME]",
         "parameters": [
           {
             "parameter": {

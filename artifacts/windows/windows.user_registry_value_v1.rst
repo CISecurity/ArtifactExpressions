@@ -339,7 +339,7 @@ YAML
         - parameter:
             name: "registry_value_operator"
             dt: "string"
-            value: "[registry_value_operator.value]"                                                 
+            value: "[registry_value_operator.value]"
 
 JSON
 ^^^^

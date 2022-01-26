@@ -659,38 +659,38 @@ YAML
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
         - parameter: 
-            name: path
+            name: "path"
             dt: "string"
-            value: "[path.value]
+            value: "[path.value]"
         - parameter: 
-            name: filename
+            name: "filename"
             dt: "string"
-            value: "[filename.value]
+            value: "[filename.value]"
         - parameter: 
-            name: recurse
+            name: "recurse"
             dt: "string"
-            value: "[recurse.value]
+            value: "[recurse.value]"
         - parameter: 
-            name: max_depth
-            type: int
-            value: "[max_depth.value]
+            name: "max_depth"
+            dt: "int"
+            value: "[max_depth.value]"
         - parameter: 
-            name: file_system
+            name: "file_system"
             dt: "string"
-            value: "[file_system.value]
+            value: "[file_system.value]"
         - parameter: 
-            name: pattern
+            name: "pattern"
             dt: "string"
-            value: "[pattern.value]
+            value: "[pattern.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:   
         - parameter: 
-            name: value
+            name: "value"
             dt: "string"
-            value: value.value]
+            value: "[value.value]"
         - parameter: 
-            name: data_type
+            name: "data_type"
             dt: "string"
             value: "[data_type.value]"
 
@@ -701,92 +701,70 @@ JSON
 
   {
     "artifact-expression": {
-      "artifact-unique-id": [
-        "ARTIFACT-OVAL-ID"
-      ],
-      "artifact-title": [
-        "RECOMMENDATION TITLE"
-      ],
+      "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
+      "artifact-title": "[ARTIFACT-TITLE]",
       "artifact": {
-        "type": [
-          "ARTIFACTTYPE NAME"
-        ],
+        "type": "[ARTIFACT-TYPE-NAME]",
         "parameters": [
           {
             "parameter": {
               "name": "path",
               "type": "string",
-              "value": [
-                "path.value"
-              ]
+              "value": "[path.value]"
             }
           },
           {
             "parameter": {
               "name": "filename",
               "type": "string",
-              "value": [
-                "filename.value"
-              ]
+              "value": "[filename.value]"
             }
           },
           {
             "parameter": {
               "name": "recurse",
               "type": "string",
-              "value": [
-                "recurse.value"
-              ]
+              "value": "[recurse.value]"
             }
           },
           {
             "parameter": {
               "name": "max_depth",
               "type": "int",
-              "value": [
-                "max_depth.value"
-              ]
+              "value": "[max_depth.value]"
             }
           },
           {
             "parameter": {
               "name": "file_system",
               "type": "string",
-              "value": [
-                "file_system.value"
-              ]
+              "value": "[file_system.value]"
             }
           },
           {
             "parameter": {
               "name": "pattern",
               "type": "string",
-              "value": [
-                "pattern.value"
-              ]
+              "value": "[pattern.value]"
             }
           }
         ]
       },
       "test": {
-        "type": [
-          "TESTTYPE NAME"
-        ],
+        "type": "[TEST-TYPE-NAME]",
         "parameters": [
           {
             "parameter": {
               "name": "value",
               "type": "string",
-              "value": "value.value]"
+              "value": "[value.value]"
             }
           },
           {
             "parameter": {
               "name": "data_type",
               "type": "string",
-              "value": [
-                "data_type.value"
-              ]
+              "value": "[data_type.value]"
             }
           }
         ]

@@ -199,33 +199,33 @@ YAML
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
-      - parameter: 
-          name: "gatekeeper"
-          dt: "string"
-          value: "[gatekeeper.value]"
+        - parameter:
+            name: "gatekeeper"
+            dt: "string"
+            value: "[gatekeeper.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:
-      - parameter:
-          name: "check_existence"
-          dt: "string"
-          value: "[check_existence.value]"
-      - parameter: 
-          name: "check"
-          dt: "string"
-          value: "[check.value]"
-      - parameter:
-          name: "operation"
-          dt: "string"
-          value: "[operation.value]"
-      - parameter: 
-          name: "datatype"
-          dt: "string"
-          value: "[datatype.value]"
-      - parameter: 
-          name: "enabled"
-          dt: "string"
-          value: "[enabled.value]"
+        - parameter:
+            name: "check_existence"
+            dt: "string"
+            value: "[check_existence.value]"
+        - parameter:
+            name: "check"
+            dt: "string"
+            value: "[check.value]"
+        - parameter:
+            name: "operation"
+            dt: "string"
+            value: "[operation.value]"
+        - parameter:
+            name: "datatype"
+            dt: "string"
+            value: "[datatype.value]"
+        - parameter:
+            name: "enabled"
+            dt: "string"
+            value: "[enabled.value]"
 
 JSON
 ^^^^

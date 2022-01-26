@@ -228,7 +228,7 @@ YAML
             dt: "string"
             value: "[uuid.value]"
         - parameter: 
-            name: xpath
+            name: "xpath"
             dt: "string"
             value: "[xpath.value]" 
         - parameter:

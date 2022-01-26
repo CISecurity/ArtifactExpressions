@@ -262,33 +262,33 @@ YAML
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
-      - parameter: 
-          name: "filepath"
-          dt: "string"
-          value: "[filepath.value]"
+        - parameter:
+            name: "filepath"
+            dt: "string"
+            value: "[filepath.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:
-      - parameter:
-          name: "check_existence"
-          dt: "string"
-          value: "[check_existence.value]"
-      - parameter: 
-          name: "check"
-          dt: "string"
-          value: "[check.value]"
-      - parameter:
-          name: "operation"
-          dt: "string"
-          value: "[operation.value]"
-      - parameter: 
-          name: "datatype"
-          dt: "string"
-          value: "[datatype.value]"
-      - parameter: 
-          name: "timeout"
-          dt: "string"
-          value: "[timeout.value]"
+        - parameter:
+            name: "check_existence"
+            dt: "string"
+            value: "[check_existence.value]"
+        - parameter:
+            name: "check"
+            dt: "string"
+            value: "[check.value]"
+        - parameter:
+            name: "operation"
+            dt: "string"
+            value: "[operation.value]"
+        - parameter:
+            name: "datatype"
+            dt: "string"
+            value: "[datatype.value]"
+        - parameter:
+            name: "timeout"
+            dt: "string"
+            value: "[timeout.value]"
 
 JSON
 ^^^^
@@ -465,33 +465,33 @@ YAML
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
-      - parameter: 
-          name: "filepath"
-          dt: "string"
-          value: "[filepath.value]"
+        - parameter:
+            name: "filepath"
+            dt: "string"
+            value: "[filepath.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:
-      - parameter:
-          name: "check_existence"
-          dt: "string"
-          value: "[check_existence.value]"
-      - parameter: 
-          name: "check"
-          dt: "string"
-          value: "[check.value]"
-      - parameter:
-          name: "operation"
-          dt: "string"
-          value: "[operation.value]"
-      - parameter: 
-          name: "datatype"
-          dt: "string"
-          value: "[datatype.value]"
-      - parameter: 
-          name: "lock_on_sleep"
-          dt: "string"
-          value: "[lock_on_sleep.value]"
+        - parameter:
+            name: "check_existence"
+            dt: "string"
+            value: "[check_existence.value]"
+        - parameter:
+            name: "check"
+            dt: "string"
+            value: "[check.value]"
+        - parameter:
+            name: "operation"
+            dt: "string"
+            value: "[operation.value]"
+        - parameter:
+            name: "datatype"
+            dt: "string"
+            value: "[datatype.value]"
+        - parameter:
+            name: "lock_on_sleep"
+            dt: "string"
+            value: "[lock_on_sleep.value]"
 
 JSON
 ^^^^

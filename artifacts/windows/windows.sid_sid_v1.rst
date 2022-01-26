@@ -241,9 +241,9 @@ YAML
             dt: "string"
             value: "[trustee_sid.value]"
         - parameter: 
-              name: "trustee_sid_operator"
-              dt: "string"
-              value: "[trustee_sid_operator.value]"
+            name: "trustee_sid_operator"
+            dt: "string"
+            value: "[trustee_sid_operator.value]"
     test:
       type: "[TEST-TYPE-NAME]"
       parameters:

@@ -328,7 +328,7 @@ YAML
             name: "gread"
             dt: "string"
             value: "[gread.value]"
-        - parameter: "
+        - parameter:
             name: "gwrite"
             dt: "string"
             value: "[gwrite.value]"

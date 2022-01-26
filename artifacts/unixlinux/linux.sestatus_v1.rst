@@ -370,32 +370,32 @@ YAML
   artifact-expression:
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
     artifact-title: "[ARTIFACT-TITLE]"
-      artifact:
-        type: "[ARTIFACT-TYPE-NAME]"
-        parameters: []
-      test:
-        type: "[TEST-TYPE-NAME]"
-        parameters:
-          - parameter:
-              name: "check_existence"
-              dt: "string"
-              value: "[check_existence.value]"
-          - parameter:
-              name: "check"
-              dt: "string"
-              value: "[check.value]"
-          - parameter:
-              name: "operation"
-              dt: "string"
-              value: "[operation.value]"
-          - parameter:
-              name: "datatype"
-              dt: "string"
-              value: "[datatype.value]"
-          - parameter:
-              name: "current_mode"
-              dt: "string"
-              value: "[current_mode.value]"
+    artifact:
+      type: "[ARTIFACT-TYPE-NAME]"
+      parameters: []
+    test:
+      type: "[TEST-TYPE-NAME]"
+      parameters:
+        - parameter:
+            name: "check_existence"
+            dt: "string"
+            value: "[check_existence.value]"
+        - parameter:
+            name: "check"
+            dt: "string"
+            value: "[check.value]"
+        - parameter:
+            name: "operation"
+            dt: "string"
+            value: "[operation.value]"
+        - parameter:
+            name: "datatype"
+            dt: "string"
+            value: "[datatype.value]"
+        - parameter:
+            name: "current_mode"
+            dt: "string"
+            value: "[current_mode.value]"
 
 JSON
 ^^^^
@@ -557,32 +557,32 @@ YAML
   artifact-expression:
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
     artifact-title: "[ARTIFACT-TITLE]"
-      artifact:
-        type: "[ARTIFACT-TYPE-NAME]"
-        parameters: []
-      test:
-        type: "[TEST-TYPE-NAME]"
-        parameters:
-          - parameter:
-              name: "check_existence"
-              dt: "string"
-              value: "[check_existence.value]"
-          - parameter:
-              name: "check"
-              dt: "string"
-              value: "[check.value]"
-          - parameter:
-              name: "operation"
-              dt: "string"
-              value: "[operation.value]"
-          - parameter:
-              name: "datatype"
-              dt: "string"
-              value: "[datatype.value]"
-          - parameter:
-              name: "loaded_policy_name"
-              dt: "string"
-              value: "[loaded_policy_name.value]"
+    artifact:
+      type: "[ARTIFACT-TYPE-NAME]"
+      parameters: []
+    test:
+      type: "[TEST-TYPE-NAME]"
+      parameters:
+        - parameter:
+            name: "check_existence"
+            dt: "string"
+            value: "[check_existence.value]"
+        - parameter:
+            name: "check"
+            dt: "string"
+            value: "[check.value]"
+        - parameter:
+            name: "operation"
+            dt: "string"
+            value: "[operation.value]"
+        - parameter:
+            name: "datatype"
+            dt: "string"
+            value: "[datatype.value]"
+        - parameter:
+            name: "loaded_policy_name"
+            dt: "string"
+            value: "[loaded_policy_name.value]"
 
 JSON
 ^^^^
@@ -744,32 +744,32 @@ YAML
   artifact-expression:
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
     artifact-title: "[ARTIFACT-TITLE]"
-      artifact:
-        type: "[ARTIFACT-TYPE-NAME]"
-        parameters: []
-      test:
-        type: "[TEST-TYPE-NAME]"
-        parameters:
-          - parameter:
-              name: "check_existence"
-              dt: "string"
-              value: "[check_existence.value]"
-          - parameter:
-              name: "check"
-              dt: "string"
-              value: "[check.value]"
-          - parameter:
-              name: "operation"
-              dt: "string"
-              value: "[operation.value]"
-          - parameter:
-              name: "datatype"
-              dt: "string"
-              value: "[datatype.value]"
-          - parameter:
-              name: "mode_from_config"
-              dt: "string"
-              value: "[mode_from_config.value]"
+    artifact:
+      type: "[ARTIFACT-TYPE-NAME]"
+      parameters: []
+    test:
+      type: "[TEST-TYPE-NAME]"
+      parameters:
+        - parameter:
+            name: "check_existence"
+            dt: "string"
+            value: "[check_existence.value]"
+        - parameter:
+            name: "check"
+            dt: "string"
+            value: "[check.value]"
+        - parameter:
+            name: "operation"
+            dt: "string"
+            value: "[operation.value]"
+        - parameter:
+            name: "datatype"
+            dt: "string"
+            value: "[datatype.value]"
+        - parameter:
+            name: "mode_from_config"
+            dt: "string"
+            value: "[mode_from_config.value]"
 
 JSON
 ^^^^
@@ -931,32 +931,32 @@ YAML
   artifact-expression:
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
     artifact-title: "[ARTIFACT-TITLE]"
-      artifact:
-        type: "[ARTIFACT-TYPE-NAME]"
-        parameters: []
-      test:
-        type: "[TEST-TYPE-NAME]"
-        parameters:
-          - parameter:
-              name: "check_existence"
-              dt: "string"
-              value: "[check_existence.value]"
-          - parameter:
-              name: "check"
-              dt: "string"
-              value: "[check.value]"
-          - parameter:
-              name: "operation"
-              dt: "string"
-              value: "[operation.value]"
-          - parameter:
-              name: "datatype"
-              dt: "string"
-              value: "[datatype.value]"
-          - parameter:
-              name: "selinux_status"
-              dt: "string"
-              value: "[selinux_status.value]"
+    artifact:
+      type: "[ARTIFACT-TYPE-NAME]"
+      parameters: []
+    test:
+      type: "[TEST-TYPE-NAME]"
+      parameters:
+        - parameter:
+            name: "check_existence"
+            dt: "string"
+            value: "[check_existence.value]"
+        - parameter:
+            name: "check"
+            dt: "string"
+            value: "[check.value]"
+        - parameter:
+            name: "operation"
+            dt: "string"
+            value: "[operation.value]"
+        - parameter:
+            name: "datatype"
+            dt: "string"
+            value: "[datatype.value]"
+        - parameter:
+            name: "selinux_status"
+            dt: "string"
+            value: "[selinux_status.value]"
 
 JSON
 ^^^^
