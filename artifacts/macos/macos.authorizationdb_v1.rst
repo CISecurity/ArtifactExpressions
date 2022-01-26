@@ -6,7 +6,7 @@ Description
 
 The macos:authorizationdb test is used to check the properties of the plist-style XML output from the “security authorizationdb read >right-name<” command, for reading information about rights authorizations on MacOSX.
 
-The authorizationdb_object element is used by an authorizationdb_test to define the object to be evaluated, which contains the name of the right to be read from the authorization database. The resulting plist data can be queried using the xpath entity.
+The authorizationdb_object element is used by an authorizationdb_test to define the object to be evaluated, which contains the name of the right to be read from the authorization dabatase. The resulting plist data can be queried using the xpath entity.
 
 The authorizationdb_state element defines a value used to evaluate the result of a specific authorizationdb_object item.
 
