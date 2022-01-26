@@ -6,9 +6,9 @@ Description
 
 The macos:systemprofiler test is used to check the properties of the plist-style XML output from the “system_profiler -xml ” command, for reading information about system inventory data on MacOSX. 
 
-The systemprofiler_object element is used by an systemprofiler_test to define the object to be evaluated, which contains the name of the datatype that was probed by the system_profiler utility. The resulting plist data can be queried using the xpath entity.
+The systemprofiler_object element is used by a systemprofiler_test to define the object to be evaluated, which contains the name of the datatype that was probed by the system_profiler utility. The resulting plist data can be queried using the xpath entity.
 
-The systemprofiler_state element defines an data type and Xpath expression describing the text node(s) or attribute(s) to look at, and the value(s) of the text node(s) or attribute(s) found.
+The systemprofiler_state element defines a data type and Xpath expression describing the text node(s) or attribute(s) to look at, and the value(s) of the text node(s) or attribute(s) found.
 
 Technical Details
 -----------------
