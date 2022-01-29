@@ -1,4 +1,4 @@
-  windows:registry_guid_sid_v1
+windows:registry_guid_sid_v1
 ============================
 
 Description
