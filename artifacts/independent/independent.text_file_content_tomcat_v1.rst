@@ -128,7 +128,7 @@ NOTE: The ``data_type`` parameter is governed by a constraint allowing only the 
 +------------------------+---------+-----------------------------------------+
 | path                   | string  | This specifies the directory component  |
 |                        |         | of the absolute path to a file on the   |
-|                        |         |  machine.                               |
+|                        |         | machine.                                |
 +------------------------+---------+-----------------------------------------+
 | filename               | string  | This represents the name of a file.     |
 +------------------------+---------+-----------------------------------------+
@@ -180,7 +180,7 @@ NOTE: The ``subexp_op``, ``inst_op``, and ``text_op`` parameters are governed by
 +------------------------+---------+-----------------------------------------+
 | uread                  | boolean | Determines whether the user that owns   |
 |                        |         | the file/directory is permitted to read |
-|                        |         |  the contents of it.                    |
+|                        |         | the contents of it.                     |
 +------------------------+---------+-----------------------------------------+
 | uwrite                 | boolean | Determines whether the user that owns   |
 |                        |         | the file/directory is permitted to      |
@@ -236,7 +236,7 @@ NOTE: The ``subexp_op``, ``inst_op``, and ``text_op`` parameters are governed by
 +------------------------+---------+-----------------------------------------+
 | uread                  | string  | Determines whether the user that owns   |
 |                        |         | the file/directory is permitted to read |
-|                        |         |  the contents of it.                    |
+|                        |         | the contents of it.                     |
 +------------------------+---------+-----------------------------------------+
 | uwrite                 | string  | Determines whether the user that owns   |
 |                        |         | the file/directory is permitted to      |
@@ -262,7 +262,7 @@ NOTE: The ``subexp_op``, ``inst_op``, and ``text_op`` parameters are governed by
 +------------------------+---------+-----------------------------------------+
 | oread                  | string  | Determines whether other users/groups   |
 |                        |         | that do not own the file/directory are  |
-|                        |         |  permitted to read the contents of it.  |
+|                        |         | permitted to read the contents of it.   |
 +------------------------+---------+-----------------------------------------+
 | owrite                 | string  | Determines whether other users/groups   |
 |                        |         | that do not own the file/directory are  |
@@ -348,21 +348,23 @@ For ``independent.text_file_content_tomcat_v1`` ``pattern match`` and ``pattern 
 
 For ``independent.text_file_content_tomcat_v1`` ``pattern match`` and ``pattern not match`` artifacts, the XCCDF check looks like this. 
 
-**CATALINA_HOME**
+  CATALINA_HOME
 
 ::
 
-  <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
-    <check-export 
-      export-name="oval:org.cisecurity.benchmarks:var:4000000"
-      value-id="xccdf_org.cisecurity_value_tomcat.home" />
-    <check-export 
-      export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]4"
-      value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]4_var" />      
-    <check-content-ref
-      href="[BENCHMARK-TITLE]-oval.xml"
-      name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
-  </check>
+  +--------------------------------------------------------------------------------------+
+  |  <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">                 |
+  |    <check-export                                                                     |
+  |      export-name="oval:org.cisecurity.benchmarks:var:4000000"                        |
+  |      value-id="xccdf_org.cisecurity_value_tomcat.home" />                            |
+  |    <check-export                                                                     |
+  |      export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]4" |
+  |      value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]4_var" />     |
+  |    <check-content-ref                                                                |
+  |      href="[BENCHMARK-TITLE]-oval.xml"                                               |
+  |      name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />      |
+  |  </check>                                                                            |
+  +--------------------------------------------------------------------------------------+
 
 **CATALINA_BASE**
 
@@ -399,6 +401,8 @@ Test
   </textfilecontent54_test>
 
 Object
+
+::
 
   <textfilecontent54_object
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent" 
