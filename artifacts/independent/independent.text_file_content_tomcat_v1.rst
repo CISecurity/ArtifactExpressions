@@ -797,6 +797,8 @@ Test
 
 Object
 
+::
+
   <textfilecontent54_object
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"    
