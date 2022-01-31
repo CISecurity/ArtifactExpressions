@@ -350,8 +350,6 @@ For ``independent.text_file_content_tomcat_v1`` ``pattern match`` and ``pattern 
 
   CATALINA_HOME
 
-::
-
   +--------------------------------------------------------------------------------------+
   |  <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">                 |
   |    <check-export                                                                     |
