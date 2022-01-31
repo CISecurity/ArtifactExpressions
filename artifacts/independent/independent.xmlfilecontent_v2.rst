@@ -1,12 +1,18 @@
-independent.xmlfilecontent_v2
-==============================
+Independent: XML File Content_v2
+================================
 
 Description
 -----------
 
-The independent.xmlfilecontent_v2 is used to explore the contents of an xml 
-file. This test allows specific pieces of an xml document specified using 
-xpath to be tested. 
+The Independent: XML File Content_v2 test element is used to explore the contents of an xml file. This test allows specific pieces of an xml document specified using xpath to be tested.
+
+The xmlfilecontent_object element is used by a xml file content test to define the specific piece of an xml file(s) to be evaluated. The xmlfilecontent_object will only collect regular files on UNIX systems and FILE_TYPE_DISK files on Windows systems. 
+
+The set of files to be evaluated may be identified with either a complete filepath or a path and filename. Only one of these options may be selected.
+
+It is important to note that the 'max_depth' and 'recurse_direction' attributes of the 'behaviors' element do not apply to the 'filepath' element, only to the 'path' and 'filename' elements. This is because the 'filepath' element represents an absolute path to a particular file and it is not possible to recurse over a file.
+
+The xmlfilecontent_state element contains entities that are used to check the file path and name, as well as the xpath used and the value of the this xpath.
 
 Technical Details
 -----------------
@@ -14,62 +20,57 @@ Technical Details
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
-+-------------------+---------+----------------------------------------+
-| Name              | Type    | Description                            |
-+===================+=========+========================================+
-| path              | string  | Directory component of the absolute    |
-|                   |         | path to the file. Cannot be blank.     |
-+-------------------+---------+----------------------------------------+
-| filename          | string  | Filename component of the absolute     |
-|                   |         | path to the file.                      |
-+-------------------+---------+----------------------------------------+
-| recurse           | string  | Should subdirectories be recursed      |
-|                   |         | through.                               |
-+-------------------+---------+----------------------------------------+
-| max_depth         | int     | Max depth for recursion. -1 for        |
-|                   |         | unlimited recursion.                   |
-+-------------------+---------+----------------------------------------+
-| file_system       | string  | Filesystem limitation for recursion.   |
-|                   |         | All filesystems, restrict to local     |
-|                   |         | only, or restrict to filesystem        |
-|                   |         | defined by Path.                       |
-+-------------------+---------+----------------------------------------+
-| xpath             | string  | Specifies an XPath 1.0 expression to   |
-|                   |         | evaluate against the XML file          |
-|                   |         | specified by the filename entity. This |
-|                   |         | XPath 1.0 expression must evaluate to  |
-|                   |         | a list of zero or more text values     |
-|                   |         | which will be accessible in OVAL via   |
-|                   |         | instances of the value_of entity. Any  |
-|                   |         | results from evaluating the XPath 1.0  |
-|                   |         | expression other than a list of text   |
-|                   |         | strings (e.g., a nodes set) is         |
-|                   |         | considered an error. The intention is  |
-|                   |         | that the text values be drawn from     |
-|                   |         | instances of a single, uniquely named  |
-|                   |         | element or attribute. However, an OVAL |
-|                   |         | interpreter is not required to verify  |
-|                   |         | this, so the author should define the  |
-|                   |         | XPath expression carefully.            |
-+-------------------+---------+----------------------------------------+
-| check_existence   | string  | Defines how many items should be       |
-|                   |         | collected.                             |
-+-------------------+---------+----------------------------------------+
+**independent.xmlfilecontent_v2**
 
-recurse NOTE: This parameter is governed by a constraint allowing
-only the following values:
-  - Yes
-  - No
++------------------------+---------+-----------------------------------------+
+| Name                   | Type    | Description                             |
++========================+=========+=========================================+
+| path                   | string  | Directory component of the absolute     |
+|                        |         | path to the file. Cannot be blank.      |
++------------------------+---------+-----------------------------------------+
+| filename               | string  | Filename component of the absolute path |
+|                        |         | to the file.                            |
++------------------------+---------+-----------------------------------------+
+| recurse                | string  | Should subdirectories be recursed       |
+|                        |         | through. (Yes/No)                       |
++------------------------+---------+-----------------------------------------+
+| max_depth              | binary  | Max depth for recursion. -1 for         |
+|                        |         | unlimited recursion.                    |
++------------------------+---------+-----------------------------------------+
+| file_system            | string  | Filesystem limitation for recursion.    |
+|                        |         | All filesystems, restrict to local      |
+|                        |         | only, or restrict to filesystem defined |
+|                        |         | by Path.                                |
++------------------------+---------+-----------------------------------------+
+| xpath                  | string  | Specifies an XPath 1.0 expression to    |
+|                        |         | evaluate against the XML file specified |
+|                        |         | by the filename entity. This XPath 1.0  |
+|                        |         | expression must evaluate to a list of   |
+|                        |         | zero or more text values which will be  |
+|                        |         | accessible in OVAL via instances of     |
+|                        |         | the value_of entity. Any results from   |
+|                        |         | evaluating the XPath 1.0 expression     |
+|                        |         | other than a list of text strings       |
+|                        |         | (e.g., a nodes set) is considered an    |
+|                        |         | error. The intention is that the text   |
+|                        |         | values be drawn from instances of a     |
+|                        |         | single, uniquely named element or       |
+|                        |         | attribute. However, an OVAL             |
+|                        |         | interpreter is not required to verify   |
+|                        |         | this, so  the author should define the  |
+|                        |         | XPath expression carefully.             |
++------------------------+---------+-----------------------------------------+
+| check_existence        | string  | Defines how many items should be        |
+|                        |         | collected.                              |
++------------------------+---------+-----------------------------------------+
 
-file_system NOTE: This parameter is governed by a constraint allowing
-only the following values: 
+NOTE: The ``file_system`` parameter is governed by a constraint allowing only the following values:
   - NA
   - local
   - all
   - defined
 
-check_existence NOTE: This parameter is governed by a constraint allowing
-only the following values: 
+NOTE: The ``check_existence`` parameter is governed by a constraint allowing only the following values: 
   - all_exist 
   - any_exist 
   - at_least_one_exists 
@@ -80,27 +81,25 @@ only the following values:
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
-  - pattern match
-  - pattern not match
-  - existence_test
-  - independent.xmlfilecontent_v2
+  - Pattern Match
+  - Pattern Not Match
+  - Existence Test
+  - Independent: XML File Content_v2
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
-pattern match 
-~~~~~~~~~~~~~
+| **pattern match** 
+| **pattern not match**
++------------------------+---------+-----------------------------------------+
+| Name                   | Type    | Description                             |
++========================+=========+=========================================+
+| value                  | string  | Regular expression to be matched.       |
++------------------------+---------+-----------------------------------------+
+| data_type              | string  | Data type.                              |
++------------------------+---------+-----------------------------------------+
 
-+-------------------+---------+----------------------------------------+
-| Name              | Type    | Description                            |
-+===================+=========+========================================+
-| value             | string  | Regular expression to be matched.      |
-+-------------------+---------+----------------------------------------+
-| data_type         | string  | Data type.                             |
-+-------------------+---------+----------------------------------------+
-
-data_type NOTE: This parameter is governed by a constraint allowing only the 
-following values:
+NOTE: The ``data_type`` parameter is governed by a constraint allowing only the following values:
   - boolean
   - float
   - int
@@ -108,83 +107,75 @@ following values:
   - version
   - set 
 
-pattern not match
-~~~~~~~~~~~~~~~~~
+**existence_test**
 
-+-------------------+---------+----------------------------------------+
-| Name              | Type    | Description                            |
-+===================+=========+========================================+
-| value             | string  | Regular expression not to be matched.  |
-+-------------------+---------+----------------------------------------+
-| data_type         | string  | Data type.                             |
-+-------------------+---------+----------------------------------------+
+===== ====== ==============
+Name  Type   Description
+===== ====== ==============
+value string Value to test.
+===== ====== ==============
 
-data_type NOTE: This parameter is governed by a constraint allowing only the 
-following values:
-  - boolean
-  - float
-  - int
-  - string
-  - version
-  - set 
+**independent.xmlfilecontent_v2**
 
-existence_test
-~~~~~~~~~~~~~~
++------------------------+---------+-----------------------------------------+
+| Name                   | Type    | Description                             |
++========================+=========+=========================================+
+| xpath                  | string  | Specifies an XPath 1.0 expression to    |
+|                        |         | evaluate against the XML file specified |
+|                        |         | by the filename entity. This XPath 1.0  |
+|                        |         | expression must evaluate to a list of   |
+|                        |         | zero or more text values which will be  |
+|                        |         | accessible in OVAL via instances of the |
+|                        |         | value_of entity. Any results from       |
+|                        |         | evaluating the XPath 1.0 expression     |
+|                        |         | other than a list of text strings       |
+|                        |         | (e.g., a nodes set) is considered an    |
+|                        |         | error. The intention is that the text   |
+|                        |         | values be drawn from instances of a     |
+|                        |         | single, uniquely named element or       |
+|                        |         | attribute. However, an OVAL interpreter |
+|                        |         | is not required to verify this, so the  |
+|                        |         | author should define the XPath          |
+|                        |         | expression carefully.                   |
++------------------------+---------+-----------------------------------------+
+| filepath               | string  | This specifies the absolute path for a  |
+|                        |         | file on the machine. A directory cannot |
+|                        |         | be specified as a filepath.             |
++------------------------+---------+-----------------------------------------+
+| path                   | string  | This specifies the directory component  |
+|                        |         | of the absolute path to a file on the   |
+|                        |         | machine.                                |
++------------------------+---------+-----------------------------------------+
+| filename               | string  | This represents the name of a file.     |
++------------------------+---------+-----------------------------------------+
+| value_of               | string  | The value_of element checks the         |
+|                        |         | value(s) of the text node(s) or         |
+|                        |         | attribute(s) found.                     |
++------------------------+---------+-----------------------------------------+
+| valueof_op             | string  | This specifies what operation to        |
+|                        |         | perform on value of.                    |
++------------------------+---------+-----------------------------------------+
 
-+-------------------+---------+----------------------------------------+
-| Name              | Type    | Description                            |
-+===================+=========+========================================+
-| value             | string  | Value to test.                         |
-+-------------------+---------+----------------------------------------+
-
-independent.xmlfilecontent_v2
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-+-------------------+---------+----------------------------------------+
-| Name              | Type    | Description                            |
-+===================+=========+========================================+
-| xpath             | string  | Specifies an XPath 1.0 expression to   |
-|                   |         | evaluate against the XML file          |
-|                   |         | specified by the filename entity. This |
-|                   |         | XPath 1.0 expression must evaluate to  |
-|                   |         | a list of zero or more text values     |
-|                   |         | which will be accessible in OVAL via   |
-|                   |         | instances of the value_of entity. Any  |
-|                   |         | results from evaluating the XPath 1.0  |
-|                   |         | expression other than a list of text   |
-|                   |         | strings (e.g., a nodes set) is         |
-|                   |         | considered an error. The intention is  |
-|                   |         | that the text values be drawn from     |
-|                   |         | instances of a single, uniquely named  |
-|                   |         | element or attribute. However, an OVAL |
-|                   |         | interpreter is not required to verify  |
-|                   |         | this, so the author should define the  |
-|                   |         | XPath expression carefully.            |
-+-------------------+---------+----------------------------------------+
-| filepath          | string  | This specifies the absolute path for a |
-|                   |         | file on the machine. A directory       |
-|                   |         | cannot be specified as a filepath.     |
-+-------------------+---------+----------------------------------------+
-| path              | string  | This specifies the directory component |
-|                   |         | of the absolute path to a file on the  |
-|                   |         | machine.                               |
-+-------------------+---------+----------------------------------------+
-| filename          | string  | This represents the name of a file.    |
-+-------------------+---------+----------------------------------------+
-| value_of          | string  | The value_of element checks the        |
-|                   |         | value(s) of the text node(s) or        |
-|                   |         | attribute(s) found..                   |
-+-------------------+---------+----------------------------------------+
-| valueof_op        | string  | This specifies what operation to       |
-|                   |         | perform on value of.                   |
-+-------------------+---------+----------------------------------------+
+NOTE: The ``valueof_op`` parameter is governed by a constraint allowing only the following values:
+  - equals
+  - not equal
+  - case insensitive equals
+  - case insensitive not equal
+  - greater than
+  - less than
+  - greater than or equal
+  - less than or equal
+  - bitwise and
+  - bitwise or
+  - pattern match
+  - subset of
+  - superset of
 
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
-pattern match
-pattern not match
-
+| **pattern match**
+| **pattern not match**
 XCCDF+AE
 ^^^^^^^^
 
@@ -203,7 +194,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
             <ae:parameter dt="string" name="filename">[filename.value]</ae:parameter>
             <ae:parameter dt="string" name="recurse">[recurse.value]</ae:parameter>
             <ae:parameter dt="binary" name="max_depth">[max_depth.value]</ae:parameter>
-            <ae:parameter dt="string" name="file_system">[pfile_systemath.value]</ae:parameter>
+            <ae:parameter dt="string" name="file_system">[file_system.value]</ae:parameter>
             <ae:parameter dt="string" name="xpath">[xpath.value]</ae:parameter>
             <ae:parameter dt="string" name="check_existence">[check_existence.value]</ae:parameter>
           </ae:parameters>
@@ -227,19 +218,29 @@ SCAP
 XCCDF
 '''''
 
-For ``pattern match`` artifacts, the xccdf:check looks like this.
+For ``independent.xmlfilecontent_v2`` ``pattern match`` and ``pattern not match`` artifacts, an XCCDF Value element is generated.
+
+::
+
+  <Value 
+    id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]1_var"
+    type="[type.value]"
+    operator="[operator.value]">
+    <title>[RECOMMENDATION-TITLE]</title>
+    <description>This value is used in Rule: [RECOMMENDATION-TITLE]</description>
+    <value>[value.value]</value>
+  </Value>
+
+For ``independent.xmlfilecontent_v2`` ``pattern match`` and ``pattern not match`` artifacts, the XCCDF check looks like this. 
 
 ::
 
   <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
     <check-export 
-      export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" 
-      value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
-    <check-export 
-      export-name="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]" 
-      value-id="xccdf_org.cisecurity_value_[ARTIFACT-OVAL-ID]_var " />
-    <check-content-ref 
-      href="[BENCHMARK_TITLE]" 
+      export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
+      value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]1_var" />      
+    <check-content-ref
+      href="[BENCHMARK-TITLE]-oval.xml"
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 
@@ -250,12 +251,12 @@ Test
 
 ::
 
-  <xmlfilecontent_test 
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM-ID]" 
-    check="[check.value]" 
-    check_existence="[check_existence.value]" 
+  <xmlfilecontent_test
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent" 
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"     
+    check_existence="[check_existence.value]"    
+    check="all" 
     comment="[ARTIFACT-TITLE]" 
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]" 
     version="1">
     <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
     <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
@@ -263,39 +264,44 @@ Test
 
 Object
 
-::
 
-  <xmlfilecontent_object 
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM-ID]" 
-    comment="[ARTIFACT-TITLE]" 
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" 
+  <xmlfilecontent_object
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent" 
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"    
+    comment="[ARTIFACT-TITLE]"  
     version="1">
-    <path var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
-    <filename var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
-    <pattern 
-      operation="[operation.value]">
-      [pattern.value]
-    </pattern>
-    <instance 
-      datatype="[datatype.value]" 
-      operation="[operation.value]">
-      [instance.value]
-    </instance>
+    <behaviors
+      recurse_direction="down"
+      recurse_file_system="[recurse_file_system.value]"
+      max_depth="[max_depth.value]" />
+    <path>[path.value]</path>
+    <filename>[filename.value]</filename>
+    <xpath>[xpath.value]</xpath>
   </xmlfilecontent_object>
 
-State
+State  
 
 ::
 
-  <xmlfilecontent_state 
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM-ID]" 
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" 
+  <xmlfilecontent_state
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent" 
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" 
     comment="[ARTIFACT-TITLE]" 
-    version=|"[version.value]">
-    <subexpression 
-      operation="[operation.value]"
+    version="1">
+    <value_of
+      operation="pattern match"
       var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
   </xmlfilecontent_state>
+
+Variable
+
+::
+
+  <external_variable
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]1" 
+    comment="[ARTIFACT-TITLE]" 
+    datatype="[datatype.value]"
+    version="1" />
 
 YAML
 ^^^^
@@ -311,7 +317,7 @@ YAML
         - parameter:
             name: "path"
             dt: "string"
-            value: "[path.value]"        
+            value: "[path.value]"
         - parameter:
             name: "filename"
             dt: "string"
@@ -338,12 +344,11 @@ YAML
             value: "[check_existence.value]"
     test:
       type: "[TEST-TYPE-NAME]"
-      parameters:   
-        - parameter:
+        - parameter: 
             name: "value"
             dt: "string"
             value: "[value.value]"
-        - parameter:
+        - parameter: 
             name: "datatype"
             dt: "string"
             value: "[datatype.value]"
@@ -366,7 +371,7 @@ JSON
               "type": "string",
               "value": "[path.value]"
             }
-          },        
+          },
           {
             "parameter": {
               "name": "filename",
@@ -391,24 +396,24 @@ JSON
           {
             "parameter": {
               "name": "file_system",
-              "dt": "string",
-              "value": "[file_system.value]"
+              "type": "string",
+              "value": "file_system.value]"
             }
           },
           {
             "parameter": {
               "name": "xpath",
-              "dt": "string",
+              "type": "string",
               "value": "[xpath.value]"
             }
           },
           {
             "parameter": {
               "name": "check_existence",
-              "dt": "string",
+              "type": "string",
               "value": "[check_existence.value]"
             }
-          }  
+          }
         ]
       },
       "test": {
@@ -436,7 +441,7 @@ JSON
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
-existence_test
+**existence_test**
 
 XCCDF+AE
 ^^^^^^^^
@@ -456,7 +461,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
             <ae:parameter dt="string" name="filename">[filename.value]</ae:parameter>
             <ae:parameter dt="string" name="recurse">[recurse.value]</ae:parameter>
             <ae:parameter dt="binary" name="max_depth">[max_depth.value]</ae:parameter>
-            <ae:parameter dt="string" name="file_system">[pfile_systemath.value]</ae:parameter>
+            <ae:parameter dt="string" name="file_system">[file_system.value]</ae:parameter>
             <ae:parameter dt="string" name="xpath">[xpath.value]</ae:parameter>
             <ae:parameter dt="string" name="check_existence">[check_existence.value]</ae:parameter>
           </ae:parameters>
@@ -479,16 +484,13 @@ SCAP
 XCCDF
 '''''
 
-For ``existence_test`` artifacts, the xccdf:check looks like this.
+For ``independent.xmlfilecontent_v2`` ``existence_test`` artifacts, the XCCDF check looks like this. There is no Value element in the XCCDF for this artifact.
 
 ::
 
   <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
-    <check-export 
-      export-name="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]" 
-      value-id="xccdf_org.cisecurity_value_[ARTIFACT-OVAL-ID]_var " />
-    <check-content-ref 
-      href="[BENCHMARK_TITLE]" 
+    <check-content-ref
+      href="[BENCHMARK-TITLE]-oval.xml" 
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 
@@ -499,258 +501,31 @@ Test
 
 ::
 
-  <xmlfilecontent_test 
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM-ID]" 
-    check="[check.value]" 
-    check_existence="[check_existence.value]" 
-    comment="[ARTIFACT-TITLE]" 
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]" 
+  <xmlfilecontent_test
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent" 
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
+    check_existence="[check_existence.value]"
+    check="all"
+    comment="[ARTIFACT-TITLE]"
     version="1">
     <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
-  </xmlfilecontent_test> 
-
-Object
-
-::
-
-  <xmlfilecontent_object 
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM-ID]" 
-    comment="[ARTIFACT-TITLE]" 
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" 
-    version="1">
-    <path var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]" />
-    <filename xsi:nil="[xsi:nil.value]" />
-    <connection_string var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]" />
-    <xpath>[xpath.value]</<xpath>
-  </xmlfilecontent_object>
-
-State
-
-::
-
-  N/A 
-
-YAML
-^^^^
-
-::
-
-  artifact-expression:
-    artifact-unique-id: "[ARTIFACT-OVAL-ID]"
-    artifact-title: "[ARTIFACT-TITLE]"
-    artifact:
-      type: "[ARTIFACT-TYPE-NAME]"
-      parameters:
-        - parameter:
-            name: "path"
-            dt: "string"
-            value: "[path.value]"        
-        - parameter:
-            name: "filename"
-            dt: "string"
-            value: "[filename.value]"
-        - parameter:
-            name: "recurse"
-            dt: "string"
-            value: "[recurse.value]"
-        - parameter:
-            name: "max_depth"
-            dt: "binary"
-            value: "[max_depth.value]"
-        - parameter:
-            name: "file_system"
-            dt: "string"
-            value: "[file_system.value]"
-        - parameter:
-            name: "xpath"
-            dt: "string"
-            value: "[xpath.value]"
-        - parameter:
-            name: "check_existence"
-            dt: "string"
-            value: "[check_existence.value]"
-    test:
-      type: "[TESTYPE-NAME]"
-      parameters:
-        - parameter:
-            name: "value"
-            dt: "string"
-            value: "[value.value]"
-
-JSON
-^^^^
-
-::
-
-  {
-    "artifact-expression": {
-      "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
-      "artifact-title": "[ARTIFACT-TITLE]",
-      "artifact": {
-        "type": "[ARTIFACT-TYPE-NAME]",
-        "parameters": [
-           {
-            "parameter": {
-              "name": "path",
-              "type": "string",
-              "value": "[path.value]"
-            }
-          },        
-          {
-            "parameter": {
-              "name": "filename",
-              "type": "string",
-              "value": "[filename.value]"
-            }
-          },
-          {
-            "parameter": {
-              "name": "recurse",
-              "type": "string",
-              "value": "[recurse.value]"
-            }
-          },
-          {
-            "parameter": {
-              "name": "max_depth",
-              "type": "binary",
-              "value": "[max_depth.value]"
-            }
-          },
-          {
-            "parameter": {
-              "name": "file_system",
-              "dt": "string",
-              "value": "[file_system.value]"
-            }
-          },
-          {
-            "parameter": {
-              "name": "xpath",
-              "dt": "string",
-              "value": "[xpath.value]"
-            }
-          },
-          {
-            "parameter": {
-              "name": "check_existence",
-              "dt": "string",
-              "value": "[check_existence.value]"
-            }
-          }  
-        ]
-      },
-      "test": {
-        "type": "[TESTYPE-NAME]",
-        "parameters": [
-          {
-            "parameter": {
-              "name": "value",
-              "dt": "string",
-              "value": "[value.value]"
-            }
-          }
-        ]
-      }
-    }
-  }
-
-Generated Content
-~~~~~~~~~~~~~~~~~
-
-independent.xmlfilecontent_v2
-
-XCCDF+AE
-^^^^^^^^
-
-This is what the AE check looks like, inside a Rule, in the XCCDF.
-
-::
-
-  <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
-    <xccdf:check-content>
-      <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
-        <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-        <ae:title>[ARTIFACT-TITLE]</ae:title>
-        <ae:artifact type="[ARTIFACT-TYPE-NAME]">
-          <ae:parameters>
-            <ae:parameter dt="string" name="path">[path.value]</ae:parameter>
-            <ae:parameter dt="string" name="filename">[filename.value]</ae:parameter>
-            <ae:parameter dt="string" name="recurse">[recurse.value]</ae:parameter>
-            <ae:parameter dt="binary" name="max_depth">[max_depth.value]</ae:parameter>
-            <ae:parameter dt="string" name="file_system">[pfile_systemath.value]</ae:parameter>
-            <ae:parameter dt="string" name="xpath">[xpath.value]</ae:parameter>
-            <ae:parameter dt="string" name="check_existence">[check_existence.value]</ae:parameter>
-          </ae:parameters>
-        </ae:artifact>
-        <ae:test type="[TEST-TYPE-NAME]">
-          <ae:parameters>
-            <ae:parameter dt="string" name="xpath">[xpath.value]</ae:parameter>
-            <ae:parameter dt="string" name="filepath">[filepath.value]</ae:parameter>
-            <ae:parameter dt="string" name="path">[path.value]</ae:parameter>
-            <ae:parameter dt="string" name="filename">[filename.value]</ae:parameter>
-            <ae:parameter dt="binary" name="value_of">[value_of.value]</ae:parameter>
-            <ae:parameter dt="binary" name="valueof_op">[valueof_op.value]</ae:parameter>
-          </ae:parameters>
-        </ae:test>
-        <ae:profiles>
-          <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1" />
-        </ae:profiles>
-      </ae:artifact_expression>
-    </xccdf:check-content>
-  </xccdf:check>
-
-SCAP
-^^^^
-
-XCCDF
-'''''
-
-For ``independent.xmlfilecontent_v2`` artifacts, the xccdf:check looks like this.
-
-::
-
-  <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
-    <check-export 
-      export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" 
-      value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
-    <check-export 
-      export-name="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]" 
-      value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
-    <check-content-ref 
-      href="[BENCHMARK_TITLE]" 
-      name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
-  </check>
-
-OVAL
-''''
-
-Test
-
-::
-
-  <xmlfilecontent_test 
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM-ID]" 
-    check="[check.value]" 
-    check_existence="[check_existence.value]" 
-    comment="[ARTIFACT-TITLE]" 
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]" 
-    version="1">
-    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
-    <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
   </xmlfilecontent_test>
 
 Object
 
 ::
 
-  <xmlfilecontent_object 
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM-ID]" 
+  <xmlfilecontent_object
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent" 
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" 
     version="1">
-    <path var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
-    <filename var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
+    <behaviors
+      recurse_direction="down" />
+      recurse_file_system="[recurse_file_system.value]"
+      max_depth="[max_depth.value]"
+    <path>[path.value]</path>
+    <filename>[filename.value]</<filename>
     <xpath>[xpath.value]</xpath>
   </xmlfilecontent_object>
 
@@ -758,25 +533,7 @@ State
 
 ::
 
-  <xmlfilecontent_state 
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM-ID]" 
-    comment="[ARTIFACT-TITLE]" 
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" 
-    version="1">
-    <value_of 
-      operation="[operation.value]" 
-      var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
-  </xmlfilecontent_state>
-
-Variable
-
-::
-
-  <external_variable 
-    comment="[ARTIFACT-TITLE]" 
-    datatype="[data_type.value]" 
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" 
-    version="1" />  
+  N/A
 
 YAML
 ^^^^
@@ -792,7 +549,7 @@ YAML
         - parameter:
             name: "path"
             dt: "string"
-            value: "[path.value]"        
+            value: "[path.value]"
         - parameter:
             name: "filename"
             dt: "string"
@@ -819,31 +576,10 @@ YAML
             value: "[check_existence.value]"
     test:
       type: "[TEST-TYPE-NAME]"
-      parameters:   
         - parameter:
-            name: "xpath"
+            name: "value"
             dt: "string"
-            value: "[xpath.value]"
-        - parameter:
-            name: "filepath"
-            dt: "string"
-            value: "[filepath.value]"
-        - parameter:
-            name: "path"
-            dt: "string"
-            value: "[path.value]"
-        - parameter:
-            name: "filename"
-            dt: "string"
-            value: "[filename.value]"
-        - parameter:
-            name: "value_of"
-            dt: "binary"
-            value: "[value_of.value]"
-        - parameter:
-            name: "valueof_op"
-            dt: "binary"
-            value: "[valueof_op.value]"
+            value: "[value.value]"
 
 JSON
 ^^^^
@@ -856,14 +592,14 @@ JSON
       "artifact-title": "[ARTIFACT-TITLE]",
       "artifact": {
         "type": "[ARTIFACT-TYPE-NAME]",
-        "parameters": [       
+        "parameters": [
           {
             "parameter": {
               "name": "path",
               "type": "string",
               "value": "[path.value]"
             }
-          },        
+          },
           {
             "parameter": {
               "name": "filename",
@@ -888,24 +624,303 @@ JSON
           {
             "parameter": {
               "name": "file_system",
-              "dt": "string",
-              "value": "[file_system.value]"
+              "type": "string",
+              "value": "file_system.value]"
             }
           },
           {
             "parameter": {
               "name": "xpath",
-              "dt": "string",
+              "type": "string",
               "value": "[xpath.value]"
             }
           },
           {
             "parameter": {
               "name": "check_existence",
-              "dt": "string",
+              "type": "string",
               "value": "[check_existence.value]"
             }
-          }         
+          }
+        ]
+      },
+      "test": {
+        "type": "[TEST-TYPE-NAME]",
+        "parameters": [
+          {
+            "parameter": {
+              "name": "value",
+              "type": "string",
+              "value": "[value.value]"
+            }
+          }
+        ]
+      }
+    }
+  }
+
+Generated Content
+~~~~~~~~~~~~~~~~~
+
+**independent.xmlfilecontent_v2**
+
+XCCDF+AE
+^^^^^^^^
+
+This is what the AE check looks like, inside a Rule, in the XCCDF.
+
+::
+
+  <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
+    <xccdf:check-content>
+      <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
+        <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
+        <ae:title>[ARTIFACT-TITLE]</ae:title>
+        <ae:artifact type="[ARTIFACT-TYPE-NAME]">
+          <ae:parameters>
+            <ae:parameter dt="string" name="path">[path.value]</ae:parameter>
+            <ae:parameter dt="string" name="filename">[filename.value]</ae:parameter>
+            <ae:parameter dt="string" name="recurse">[recurse.value]</ae:parameter>
+            <ae:parameter dt="binary" name="max_depth">[max_depth.value]</ae:parameter>
+            <ae:parameter dt="string" name="file_system">[file_system.value]</ae:parameter>
+            <ae:parameter dt="string" name="xpath">[xpath.value]</ae:parameter>
+            <ae:parameter dt="string" name="check_existence">[check_existence.value]</ae:parameter>
+          </ae:parameters>
+        </ae:artifact>
+        <ae:test type="[TEST-TYPE-NAME]">
+          <ae:parameters>
+            <ae:parameter dt="string" name="xpath">[xpath.value]</ae:parameter>
+            <ae:parameter dt="string" name="filepath">[filepath.value]</ae:parameter>
+            <ae:parameter dt="string" name="path">[path.value]</ae:parameter>
+            <ae:parameter dt="string" name="filename">[filename.value]</ae:parameter>
+            <ae:parameter dt="string" name="value_of">[value_of.value]</ae:parameter>
+            <ae:parameter dt="string" name="valueof_op">[valueof_op.value]</ae:parameter>
+          </ae:parameters>
+        </ae:test>
+        <ae:profiles>
+          <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_2" />
+        </ae:profiles>
+      </ae:artifact_expression>
+    </xccdf:check-content>
+  </xccdf:check>
+
+SCAP
+^^^^
+
+XCCDF
+'''''
+
+For ``independent.text_file_content_v1`` ``independent.xmlfilecontent_v2`` artifacts, an XCCDF Value element is generated.
+
+::
+
+  <Value
+    id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]1_var"
+    type="string"
+    operator="equals">
+    <title>[RECOMMENDATION-TITLE]</title>
+    <description>This value is used in Rule: [RECOMMENDATION-TITLE]</description>
+    <value>[value.value]</value>
+  </Value>
+
+
+For ``independent.text_file_content_v1`` ``independent.xmlfilecontent_v2`` artifacts, the XCCDF check looks like this.
+
+::
+
+  <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+    <check-export 
+      export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" 
+      value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]1_var" />
+    <check-content-ref
+      href="[BENCHMARK-TITLE]-oval.xml" 
+      name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
+  </check>
+
+OVAL
+''''
+
+Test
+
+::
+
+  <xmlfilecontent_test
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent" 
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
+    check_existence="[check_existence.value]"
+    check="all"
+    comment="[ARTIFACT-TITLE]"
+    version="1">
+    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+    <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
+  </xmlfilecontent_test>
+
+Object
+
+::
+
+  <xmlfilecontent_object
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent" 
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
+    comment="[ARTIFACT-TITLE]"
+    version="1">
+    <behaviors
+      recurse_direction="down" />
+      recurse_file_system="[recurse_file_system.value]"
+      max_depth="[max_depth.value]"
+    <path>[path.value]</path>
+    <filename>[filename.value]</<filename>
+    <xpath>[xpath.value]</xpath>
+  </xmlfilecontent_object>
+
+State
+
+::
+
+  <xmlfilecontent_state
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
+    comment="[ARTIFACT-TITLE]"
+    version="1">
+    <value_of
+      operation="[operation.value]"
+      var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
+
+Variable
+
+  <external_variable
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
+    comment="[ARTIFACT-TITLE]"
+    datatype="string"
+    version="1" />
+
+YAML
+^^^^
+
+::
+
+  artifact-expression:
+    artifact-unique-id: "[ARTIFACT-OVAL-ID]"
+    artifact-title: "[ARTIFACT-TITLE]"
+    artifact:
+      type: "[ARTIFACT-TYPE-NAME]"
+      parameters:
+        - parameter:
+            name: "path"
+            dt: "string"
+            value: "[path.value]"
+        - parameter:
+            name: "filename"
+            dt: "string"
+            value: "[filename.value]"
+        - parameter:
+            name: "recurse"
+            dt: "string"
+            value: "[recurse.value]"
+        - parameter:
+            name: "max_depth"
+            dt: "binary"
+            value: "[max_depth.value]"
+        - parameter:
+            name: "file_system"
+            dt: "string"
+            value: "[file_system.value]"
+        - parameter:
+            name: "xpath"
+            dt: "string"
+            value: "[xpath.value]"
+        - parameter:
+            name: "check_existence"
+            dt: "string"
+            value: "[check_existence.value]"
+    test:
+      type: "[TEST-TYPE-NAME]"
+        - parameter:
+            name: "xpath"
+            dt: "string"
+            value: "[xpath.value]"
+        - parameter:
+            name: "filepath"
+            dt: "string"
+            value: "[filepath.value]"
+        - parameter:
+            name: "path"
+            dt: "string"
+            value: "[path.value]"
+        - parameter:
+            name: "filename"
+            dt: "string"
+            value: "[filename.value]"
+        - parameter:
+            name: "value_of"
+            dt: "string"
+            value: "[value_of.value]"
+        - parameter:
+            name: "valueof_op"
+            dt: "string"
+            value: "[valueof_op.value]"
+
+JSON
+^^^^
+
+::
+
+  {
+    "artifact-expression": {
+      "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
+      "artifact-title": "[ARTIFACT-TITLE]",
+      "artifact": {
+        "type": "[ARTIFACT-TYPE-NAME]",
+         "parameters": [
+          {
+            "parameter": {
+              "name": "path",
+              "type": "string",
+              "value": "[path.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "filename",
+              "type": "string",
+              "value": "[filename.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "recurse",
+              "type": "string",
+              "value": "[recurse.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "max_depth",
+              "type": "binary",
+              "value": "[max_depth.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "file_system",
+              "type": "string",
+              "value": "file_system.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "xpath",
+              "type": "string",
+              "value": "[xpath.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "check_existence",
+              "type": "string",
+              "value": "[check_existence.value]"
+            }
+          }
         ]
       },
       "test": {
@@ -914,42 +929,42 @@ JSON
           {
             "parameter": {
               "name": "xpath",
-              "dt": "string",
+              "type": "string",
               "value": "[xpath.value]"
             }
           },
           {
             "parameter": {
               "name": "filepath",
-              "dt": "string",
+              "type": "string",
               "value": "[filepath.value]"
             }
           },
           {
             "parameter": {
               "name": "path",
-              "dt": "string",
+              "type": "string",
               "value": "[path.value]"
             }
           },
           {
             "parameter": {
               "name": "filename",
-              "dt": "string",
+              "type": "string",
               "value": "[filename.value]"
             }
           },
           {
             "parameter": {
               "name": "value_of",
-              "dt": "binary",
+              "type": "string",
               "value": "[value_of.value]"
             }
           },
           {
             "parameter": {
               "name": "valueof_op",
-              "dt": "binary",
+              "type": "string",
               "value": "[valueof_op.value]"
             }
           }

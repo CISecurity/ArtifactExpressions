@@ -51,7 +51,7 @@ Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
   - independent.sql57_v1
-  - existence_test
+  - Existence Test
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
@@ -174,7 +174,7 @@ SCAP
 XCCDF
 '''''
 
-For ``oracledb_tenant.sql57_v1`` ``independent.sql57_v1`` artifacts, the xccdf:check looks like
+For ``oracledb_tenant.sql57_v1`` ``independent.sql57_v1`` artifacts, the XCCDF check looks like
 this.
 
 ::
@@ -186,7 +186,7 @@ this.
     <check-export 
       export-name='oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]' 
       value-id='xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var' />
-    <check-content-ref 
+    <check-content-ref
       href='[BENCHMARK NAME]' 
       name='oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]' />
   </check>
@@ -213,7 +213,7 @@ Object
 
 ::
 
-  <sql57_object 
+  <sql57_object
     xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]' 
     id='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'
     comment='[ARTIFACT-TITLE]'
@@ -228,7 +228,7 @@ State
 
 ::
 
-  <sql57_state 
+  <sql57_state
     xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]' 
     id='oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]'
     comment='[ARTIFACT-TITLE]'
@@ -267,7 +267,6 @@ YAML
             value: "[version.value]"
     test:
       type: "[TEST-TYPE-NAME]"
-      parameters:   
         - parameter:
             name: "check_existence"
             dt: "string"

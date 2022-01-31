@@ -142,7 +142,7 @@ For ``cisco_asa.version_object`` ``cisco_asa.major_version`` artifacts, an XCCDF
     <value>[value.value]</value>
   </Value>
 
-For ``cisco_asa.version_object`` ``cisco_asa.major_version`` artifacts the xccdf:check looks like this.
+For ``cisco_asa.version_object`` ``cisco_asa.major_version`` artifacts the XCCDF check looks like this.
 
 ::
 
