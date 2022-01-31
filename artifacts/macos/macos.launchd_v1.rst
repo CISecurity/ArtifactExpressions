@@ -4,7 +4,7 @@ macos:launchd
 Description
 -----------
 
-The macos:launchd_test is used to check the status of daemons/agents loaded via the launchd service.
+The macos:launchd test is used to check the status of daemons/agents loaded via the launchd service.
 
 The launchd_object element is used by a launchd_test to define the daemon/agent to be evaluated.
 
@@ -192,13 +192,13 @@ Test
 
   <launchd_test
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#macos"
-    check="[check.value]"
-    check_existence="[check_existence.value]"
-    comment="[ARTIFACT-TITLE]"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
+    check_existence="[check_existence.value]"
+    check="[check.value]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
-    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"></object>
-    <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"></state>
+    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+    <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
   </launchd_test>
 
 Object
@@ -207,8 +207,8 @@ Object
 
   <launchd_object
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#macos"
-    comment="[ARTIFACT-TITLE]"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
     <label>[label.value]</label>
   </launchd_object>
@@ -219,8 +219,8 @@ State
 
   <launchd_state
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#macos"
-    comment="[ARTIFACT-TITLE]"
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
     <label
       datatype="[datatype.value]"
