@@ -348,23 +348,23 @@ For ``independent.text_file_content_tomcat_v1`` ``pattern match`` and ``pattern 
 
 For ``independent.text_file_content_tomcat_v1`` ``pattern match`` and ``pattern not match`` artifacts, the XCCDF check looks like this. 
 
-  CATALINA_HOME
+- CATALINA_HOME
 
-  +--------------------------------------------------------------------------------------+
-  |  <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">                 |
-  |    <check-export                                                                     |
-  |      export-name="oval:org.cisecurity.benchmarks:var:4000000"                        |
-  |      value-id="xccdf_org.cisecurity_value_tomcat.home" />                            |
-  |    <check-export                                                                     |
-  |      export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]4" |
-  |      value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]4_var" />     |
-  |    <check-content-ref                                                                |
-  |      href="[BENCHMARK-TITLE]-oval.xml"                                               |
-  |      name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />      |
-  |  </check>                                                                            |
-  +--------------------------------------------------------------------------------------+
+::
 
-**CATALINA_BASE**
+  <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+    <check-export
+    export-name="oval:org.cisecurity.benchmarks:var:4000000"
+    value-id="xccdf_org.cisecurity_value_tomcat.home" />
+    <check-export
+    export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]4"
+    value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]4_var" />
+    <check-content-ref
+    href="[BENCHMARK-TITLE]-oval.xml"
+    name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
+  </check>
+
+- CATALINA_BASE
 
 ::
 
@@ -423,7 +423,7 @@ Object
     </instance>
   </textfilecontent54_object>
 
-**CATALINA_HOME**
+- CATALINA_HOME
 
 ::
 
@@ -440,7 +440,7 @@ Object
     <filename xsi:nil="true" />
   </file_object>
 
-**CATALINA_BASE**
+- CATALINA_BASE
 
 ::
 
@@ -481,7 +481,7 @@ Variable
     datatype="[datatype.value]"
     version="1" />
 
-**CATALINA_HOME**
+- CATALINA_HOME
 
 ::
 
@@ -513,7 +513,7 @@ Variable
     </concat>
   </local_variable>
 
-**CATALINA_BASE**
+- CATALINA_BASE
 
 ::
 
@@ -752,7 +752,7 @@ XCCDF
 
 For ``independent.text_file_content_tomcat_v1`` ``existence_test`` artifacts, the XCCDF check looks like this. There is no Value element in the XCCDF for this artifact.
 
-**CATALINA_HOME**
+- CATALINA_HOME
 
 ::
 
@@ -765,7 +765,7 @@ For ``independent.text_file_content_tomcat_v1`` ``existence_test`` artifacts, th
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 
-**CATALINA_BASE**
+- CATALINA_BASE
 
 ::
 
@@ -820,7 +820,7 @@ Object
     </instance>
   </textfilecontent54_object>
 
-**CATALINA_HOME**
+- CATALINA_HOME
 
 ::
 
@@ -837,7 +837,7 @@ Object
     <filename xsi:nil="true" />
   </file_object>
 
-**CATALINA_BASE**
+- CATALINA_BASE
 
 ::
 
@@ -870,7 +870,7 @@ Variable
     datatype="[datatype.value]"
     version="1" />
 
-**CATALINA_HOME**
+- CATALINA_HOME
 
 ::
 
@@ -902,7 +902,7 @@ Variable
     </concat>
   </local_variable>
 
-**CATALINA_BASE**
+- CATALINA_BASE
 
 ::
 
@@ -1152,7 +1152,7 @@ For ``independent.text_file_content_tomcat_v1`` ``independent.txt_file_content_v
 
 For ``independent.text_file_content_tomcat_v1`` ``independent.txt_file_content_v1`` artifacts, the XCCDF check looks like this. 
 
-**CATALINA_HOME**
+- CATALINA_HOME
 
 ::
 
@@ -1168,7 +1168,7 @@ For ``independent.text_file_content_tomcat_v1`` ``independent.txt_file_content_v
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 
-**CATALINA_BASE**
+- CATALINA_BASE
 
 ::
 
@@ -1229,7 +1229,7 @@ Object
     </instance>
   </textfilecontent54_object>
 
-**CATALINA_HOME**
+- CATALINA_HOME
 
 ::
 
@@ -1246,7 +1246,7 @@ Object
     <filename xsi:nil="true" />
   </file_object>
 
-**CATALINA_BASE**
+- CATALINA_BASE
 
 ::
 
@@ -1287,7 +1287,7 @@ Variable
     datatype="string"
     version="1" />
 
-**CATALINA_HOME**
+- CATALINA_HOME
 
 ::
 
@@ -1319,7 +1319,7 @@ Variable
     </concat>
   </local_variable>
 
-**CATALINA_BASE**
+- CATALINA_BASE
 
 ::
 
@@ -1657,7 +1657,7 @@ For ``independent.text_file_content_tomcat_v1`` ``Txt-Unix_File_or_Directory_Per
 
 ::
 
-**CATALINA_HOME**
+- CATALINA_HOME
 
 ::
 
@@ -1673,7 +1673,7 @@ For ``independent.text_file_content_tomcat_v1`` ``Txt-Unix_File_or_Directory_Per
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 
-**CATALINA_BASE**
+- CATALINA_BASE
 
 ::
 
@@ -1758,7 +1758,7 @@ Object
     </instance>
   </textfilecontent54_object>
 
-**CATALINA_HOME**
+- CATALINA_HOME
 
 ::
 
@@ -1775,7 +1775,7 @@ Object
     <filename xsi:nil="true" />
   </file_object>
 
-**CATALINA_BASE**
+- CATALINA_BASE
 
 ::
 
@@ -1844,7 +1844,7 @@ Variable
       record_field="variable_value" />
   </local_variable>
 
-**CATALINA_HOME**
+- CATALINA_HOME
 
 ::
 
@@ -1876,7 +1876,7 @@ Variable
     </concat>
   </local_variable>
 
-**CATALINA_BASE**
+- CATALINA_BASE
 
 ::
 
@@ -2235,7 +2235,7 @@ For ``independent.text_file_content_tomcat_v1`` ``Txt-Unix_File_or_Directory_Per
 
 ::
 
-**CATALINA_HOME**
+- CATALINA_HOME
 
 ::
 
@@ -2251,7 +2251,7 @@ For ``independent.text_file_content_tomcat_v1`` ``Txt-Unix_File_or_Directory_Per
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 
-**CATALINA_BASE**
+- CATALINA_BASE
 
 ::
 
@@ -2335,7 +2335,7 @@ Object
     </instance>
   </textfilecontent54_object>
 
-**CATALINA_HOME**
+- CATALINA_HOME
 
 ::
 
@@ -2348,7 +2348,7 @@ Object
     <filename>[filename.value]</filename>
   </file_object>
 
-**CATALINA_BASE**
+- CATALINA_BASE
 
 ::
 
@@ -2413,7 +2413,7 @@ Variable
       record_field="variable_value" />
   </local_variable>
 
-**CATALINA_HOME**
+- CATALINA_HOME
 
 ::
 
@@ -2461,7 +2461,7 @@ Variable
     </concat>
   </local_variable>
 
-**CATALINA_BASE**
+- CATALINA_BASE
 
 ::
 

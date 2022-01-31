@@ -146,8 +146,12 @@ the XCCDF check looks like this.
 ::
 
   <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
-    <check-export export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
-    <check-content-refhref="[BENCHMARK-TITLE]-oval.xml" name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
+    <check-export 
+      export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" 
+      value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
+    <check-content-ref
+      href="[BENCHMARK-TITLE]-oval.xml" 
+      name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 
 OVAL

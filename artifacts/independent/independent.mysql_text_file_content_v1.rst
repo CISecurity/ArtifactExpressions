@@ -346,15 +346,15 @@ NOTE: The ``read``, ``write``, and ``exec`` parameters are governed by a constra
 |                        |         | the subexpression in the specified      |
 |                        |         | pattern. If multiple subexpressions are |
 |                        |         | specified in the pattern, this value is |
-|                        |         | tested against all of them.	           |
+|                        |         | tested against all of them.             |
 +------------------------+---------+-----------------------------------------+
 | filepath               | string  | This specifies the absolute path for a  |
 |                        |         | file on the machine. A directory cannot |
-|                        |         | be specified as a filepath.	           |
+|                        |         | be specified as a filepath.             |
 +------------------------+---------+-----------------------------------------+
 | path                   | string  | This specifies the directory component  |
 |                        |         | of the absolute path to a file on the   |
-|                        |         | machine.	                               |
+|                        |         | machine.                                |
 +------------------------+---------+-----------------------------------------+
 | filename               | string  | This represents a regular expression    |
 |                        |         | that is used to define a block of text. |
@@ -366,17 +366,17 @@ NOTE: The ``read``, ``write``, and ``exec`` parameters are governed by a constra
 |                        |         | pattern. This can only be a positive    |
 |                        |         | integer or blank.                       |
 +------------------------+---------+-----------------------------------------+
-| subexp_op	             | string  | This specifies what operation to        |
-|                        |         | perform on the subexpression.	         |
+| subexp_op              | string  | This specifies what operation to        |
+|                        |         | perform on the subexpression.           |
 +------------------------+---------+-----------------------------------------+
 | inst_op                | string  | This specifies what operation to        |
-|                        |         | perform on the instance.	               |
+|                        |         | perform on the instance.                |
 +------------------------+---------+-----------------------------------------+
 | text                   | string  | Should subdirectories be recursed       |
 |                        |         | through.                                |
 +------------------------+---------+-----------------------------------------+
-| text_op	               | int     | This specifies what operation to        |
-|                        |         | perform on the text.	                   |
+| text_op                | int     | This specifies what operation to        |
+|                        |         | perform on the text.                    |
 +------------------------+---------+-----------------------------------------+
 
 NOTE: The ``subexp_op``, ``inst_op``, and ``text_op`` parameters are governed by a constraint allowing only the following values:
@@ -3367,11 +3367,11 @@ Variable
 
 ::
 
-<external_variable
-  comment="[ARTIFACT-TITLE]" 
-  datatype="string" 
-  id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
-  version="1" />
+  <external_variable
+    comment="[ARTIFACT-TITLE]" 
+    datatype="string" 
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
+    version="1" />
 
   <local_variable
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]1" 

@@ -719,8 +719,7 @@ YAML
             dt: "string"
             value: "[append_type.value]"
     test:
-        type: "[TEST-TYPE-NAME]"
-            
+        type: "[TEST-TYPE-NAME]"            
           - parameter: 
               name: "check_existence"
               dt: "string"
