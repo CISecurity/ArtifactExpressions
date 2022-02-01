@@ -19,3 +19,8 @@ Key terms:
 
 **Generated content**
 - the various formats that can be generated from the defined benchmark content including recommendation prose and Artifacts
+
+**Benchmark Customization Community**
+- Join the Benchmark Customization Community below if you want to provide feedback or ask questions about tailoring or Artifact Expressions
+
+https://workbench.cisecurity.org/communities/148
