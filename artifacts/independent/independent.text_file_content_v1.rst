@@ -6,13 +6,13 @@ Description
 
 The Independent: Text File Content test is used to check the contents of a text file (aka a configuration file) by looking at individual blocks of text.
 
-The textfilecontent54_objectelement is used by a textfilecontent_test to define the specific block(s) of text of a file(s) to be evaluated. The textfilecontent54_objectwill only collect regular files on UNIX systems and FILE_TYPE_DISK files on Windows systems.
+The textfilecontent54_object element is used by a textfilecontent_test to define the specific block(s) of text of a file(s) to be evaluated. The textfilecontent54_object will only collect regular files on UNIX systems and FILE_TYPE_DISK files on Windows systems.
 
 The set of files to be evaluated may be identified with either a complete filepath or a path and filename. Only one of these options may be selected.
 
 It is important to note that the 'max_depth' and 'recurse_direction' attributes of the 'behaviors' element do not apply to the 'filepath' element, only to the 'path' and 'filename' elements. This is because the 'filepath' element represents an absolute path to a particular file and it is not possible to recurse over a file.
 
-The textfilecontent54_stateelement contains entities that are used to check the file path and name, as well as the text block in question and the value of the subexpressions.
+The textfilecontent54_state element contains entities that are used to check the file path and name, as well as the text block in question and the value of the subexpressions.
 
 Technical Details
 -----------------

@@ -6,9 +6,9 @@ Description
 
 The Independent: Environment Variable 58 test is used to check an environment variable for the specified process, which is identified by its process ID, on the system.
 
-The environmentvariable58_objectelement is used by an environmentvariable58_testto define the specific environment variable(s) and process IDs to be evaluated. If a tool is unable to collect the environment variables of another process, an error must be reported. 
+The environmentvariable58_object element is used by an environmentvariable58_test to define the specific environment variable(s) and process IDs to be evaluated. If a tool is unable to collect the environment variables of another process, an error must be reported. 
 
-The environmentvariable58_stateelement contains three entities that are used to check the name of the specified environment variable, the process ID of the process from which the environment variable was retrieved, and the value associated with the environment variable.
+The environmentvariable58_state element contains three entities that are used to check the name of the specified environment variable, the process ID of the process from which the environment variable was retrieved, and the value associated with the environment variable.
 
 Technical Details
 -----------------
