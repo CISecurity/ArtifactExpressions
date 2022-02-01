@@ -6,7 +6,7 @@ Description
 
 The Independent: SQL Server Query Each Database test is used to check information stored in a database. It is often the case that applications store configuration settings in a database as opposed to a file. This test has been designed to enable those settings to be tested.
 
-The sql57_objectelement is used by a sql57_testto define the specific database and query to be evaluated. Connection information is supplied allowing the tool to connect to the desired database and a query is supplied to call out the desired setting.
+The sql57_object element is used by a sql57_test to define the specific database and query to be evaluated. Connection information is supplied allowing the tool to connect to the desired database and a query is supplied to call out the desired setting.
 
 The sql57_state element contains two entities that are used to check the name of the specified field and the value associated with it.
 

@@ -6,7 +6,7 @@ Description
 
 The independent.sql57_textfilecontent_v1 test is used to check the contents of a text file (aka a configuration file) by looking at individual blocks of text.
 
-The file_objectelement is used by a file test to define the specific file(s) to be evaluated. The file_objectwill collect directories and all file types.
+The file_object element is used by a file test to define the specific file(s) to be evaluated. The file_object will collect directories and all file types.
 
 A file object defines the path and filename of the file(s). In addition, a number of behaviors may be provided that help guide the collection of objects. 
 
@@ -14,7 +14,7 @@ The set of files to be evaluated may be identified with either a complete filepa
 
 It is important to note that the 'max_depth' and 'recurse_direction' attributes of the 'behaviors' element do not apply to the 'filepath' element, only to the 'path' and 'filename' elements. This is because the 'filepath' element represents an absolute path to a particular file and it is not possible to recurse over a file.
 
-The file_stateelement defines the different metadata associate with a UNIX file. This includes the path, filename, type, group id, user id, size, etc. In addition, the permission associated with the file are also included.
+The file_state element defines the different metadata associate with a UNIX file. This includes the path, filename, type, group id, user id, size, etc. In addition, the permission associated with the file are also included.
 
 Technical Details
 -----------------
