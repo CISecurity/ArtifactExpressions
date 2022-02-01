@@ -187,7 +187,7 @@ SCAP
 XCCDF
 '''''
 
-For ``vmware.vmhost_firewallexception_v2`` ``vmware.vmhost_firewallexception``artifacts, an XCCDF Value element is generated.
+For ``vmware.vmhost_firewallexception_v2`` ``vmware.vmhost_firewallexception`` artifacts, an XCCDF Value element is generated.
 
 ::
 

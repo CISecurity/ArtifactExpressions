@@ -294,7 +294,7 @@ SCAP
 XCCDF
 '''''
 
-For ``windows.privilegeassignment equal``, ``equals``, ``set.includes_v1``, and ``set.white_list_v1`` artifacts, the xccdf:check looks like this. There is no Value element in the xccdf for this Artifact.
+For ``windows.privilegeassignment equal``, ``equals``, ``set.includes_v1``, and ``set.white_list_v1`` artifacts, the XCCDF check looks like this. There is no Value element in the XCCDF for this artifact.
 
 ::
 

@@ -1,11 +1,14 @@
-independent.sql57_sqlserver_query_each_database_v1
-==================================================
+Independent: SQL Server Query Each Database
+============================================
 
 Description
 -----------
 
-The independent.sql57_sqlserver_query_each_database_v1 is used by a sql
-test to define specific databases and queries to be evaluated.
+The Independent: SQL Server Query Each Database test is used to check information stored in a database. It is often the case that applications store configuration settings in a database as opposed to a file. This test has been designed to enable those settings to be tested.
+
+The sql57_objectelement is used by a sql57_testto define the specific database and query to be evaluated. Connection information is supplied allowing the tool to connect to the desired database and a query is supplied to call out the desired setting.
+
+The sql57_state element contains two entities that are used to check the name of the specified field and the value associated with it.
 
 Technical Details
 -----------------
@@ -13,95 +16,80 @@ Technical Details
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
-+-------------------------------------+-------------+------------------+
-| Name                                | Type        | Description      |
-+=====================================+=============+==================+
-| sql                                 | String      | The sql entity   |
-|                                     |             | defines a query  |
-|                                     |             | used to identify |
-|                                     |             | the object(s) to |
-|                                     |             | test against.    |
-+-------------------------------------+-------------+------------------+
-| version                             | String      | The version      |
-|                                     |             | entity defines   |
-|                                     |             | the specific     |
-|                                     |             | version of the   |
-|                                     |             | database engine  |
-|                                     |             | to use. This is  |
-|                                     |             | also important   |
-|                                     |             | in determining   |
-|                                     |             | the correct      |
-|                                     |             | driver to use    |
-|                                     |             | for establishing |
-|                                     |             | a connection.    |
-+-------------------------------------+-------------+------------------+
-| exclude_system_db                   | Boolean     | N/A              |
-+-------------------------------------+-------------+------------------+
-| check_existence                     | String      | N/A              |
-+-------------------------------------+-------------+------------------+
+**independent.sql57_sqlserver_query_each_database_v1**
 
-check_existence NOTE: This parameter is governed by a constraint
-allowing only the following values:
-  - all_exist
-  - any_exist
-  - at_least_one_exists
-  - none_satisfy
-  - none_exist
++---------------------------------------+---------+--------------------------+
+| Name                                  | Type    | Description              |
++=======================================+=========+==========================+
+| sql                                   | string  | The sql entity defines a |
+|                                       |         | query used to identify   |
+|                                       |         | the object(s) to test    |
+|                                       |         | against.                 |
++---------------------------------------+---------+--------------------------+
+| version                               | string  | The version entity       |
+|                                       |         | defines the specific     |
+|                                       |         | version of the database  |
+|                                       |         | engine to use. This is   |
+|                                       |         | also important in        |
+|                                       |         | determining the correct  |
+|                                       |         | driver to use for        |
+|                                       |         | establishing a           |
+|                                       |         | connection.              |
++---------------------------------------+---------+--------------------------+
+| exclude_system_db                     | boolean |                          |
++---------------------------------------+---------+--------------------------+
+| check_existence                       | string  |                          |
++---------------------------------------+---------+--------------------------+
+
+NOTE: The ``check_existence`` parameter is governed by a constraint allowing only the following values: 
+  - all_exist 
+  - any_exist 
+  - at_least_one_exists 
+  - none_exist 
   - only_one_exists
 
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
-  - independent.sql57_v2
+  - Independent: SQL57 V2
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
-+-------------------------------------+-------------+------------------+
-| Name                                | Type        | Description      |
-+=====================================+=============+==================+
-| check                               | String      | Defines how many |
-|                                     |             | items must       |
-|                                     |             | evaluate to true |
-|                                     |             | for the entity   |
-|                                     |             | to return true.  |
-+-------------------------------------+-------------+------------------+
-| field_value                         | String      | A simple         |
-|                                     |             | (number, string, |
-|                                     |             | or boolean)      |
-|                                     |             | value to be used |
-|                                     |             | in determining   |
-|                                     |             | the result,      |
-|                                     |             | i.e. pass/fail.  |
-+-------------------------------------+-------------+------------------+
-| field_value_datatype                | String      | The datatype of  |
-|                                     |             | the              |
-|                                     |             | e                |
-|                                     |             | xpected/required |
-|                                     |             | value.           |
-+-------------------------------------+-------------+------------------+
-| field_name                          | String      | The name of the  |
-|                                     |             | field to which   |
-|                                     |             | collected items  |
-|                                     |             | are compared,    |
-|                                     |             | restricted to    |
-|                                     |             | only lowercase   |
-|                                     |             | letters.         |
-+-------------------------------------+-------------+------------------+
-| field_operation                     | String      | The optional     |
-|                                     |             | operation        |
-|                                     |             | attribute        |
-|                                     |             | determines how   |
-|                                     |             | the individual   |
-|                                     |             | entities should  |
-|                                     |             | be evaluated     |
-|                                     |             | (the default     |
-|                                     |             | operation is     |
-|                                     |             | ‘equals’).       |
-+-------------------------------------+-------------+------------------+
+**independent.sql57_v2**
 
-check NOTE: This parameter is governed by a constraint allowing only the
-following values:
++---------------------------------------+---------+--------------------------+
+| Name                                  | Type    | Description              |
++=======================================+=========+==========================+
+| check                                 | string  | Defines how many items   |
+|                                       |         | must evaluate to true    |
+|                                       |         | for the entity to return |
+|                                       |         | true.                    |
++---------------------------------------+---------+--------------------------+
+| field_value                           | string  | A simple (number,        |
+|                                       |         | string, or boolean)      |
+|                                       |         | value to be used in      |
+|                                       |         | determining the result,  |
+|                                       |         | i.e. pass/fail.          |
++---------------------------------------+---------+--------------------------+
+| field_value_datatype                  | string  | The datatype of the      |
+|                                       |         | expected/required value. |
++---------------------------------------+---------+--------------------------+
+| field_name                            | string  | The name of the field to |
+|                                       |         | which collected items    |
+|                                       |         | are compared, restricted |
+|                                       |         | to only lowercase        |
+|                                       |         | letters.                 |
++---------------------------------------+---------+--------------------------+
+| field_operation                       | string  | The optional operation   |
+|                                       |         | attribute determines how |
+|                                       |         | the individual entities  |
+|                                       |         | should be evaluated (the |
+|                                       |         | default operation is     |
+|                                       |         | ‘equals’).               |
++---------------------------------------+---------+--------------------------+
+
+NOTE: The ``check`` parameter is governed by a constraint allowing only the following values:
   - all
   - at least one
   - none satisfy
@@ -109,6 +97,8 @@ following values:
 
 Generated Content
 ~~~~~~~~~~~~~~~~~
+
+**independent.sql57_v2**
 
 XCCDF+AE
 ^^^^^^^^
@@ -150,13 +140,17 @@ XCCDF
 '''''
 
 For ``independent.sql57_sqlserver_query_each_database_v1`` artifacts,
-the xccdf:check looks like this.
+the XCCDF check looks like this.
 
 ::
 
-  <check system='http://oval.mitre.org/XMLSchema/oval-definitions-5'>
-    <check-export export-name='oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]' value-id='xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var'/>
-    <check-content-ref href='[BENCHMARK NAME]' name='oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]'/>
+  <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+    <check-export 
+      export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" 
+      value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]_var" />
+    <check-content-ref
+      href="[BENCHMARK-TITLE]-oval.xml" 
+      name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 
 OVAL
@@ -167,27 +161,27 @@ Test
 ::
 
   <sql57_test
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM-ID]" 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
-    check_existence="[check_existence.value]" 
-    check="[check.value]" 
+    check_existence="[check_existence.value]"
+    check="[check.value]"
     comment="[ARTIFACT-TITLE]"
     version="1">
-    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"/>
+    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
   </sql57_test>
 
 Object
 
 ::
 
-  <sql57_object 
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM-ID]" 
+  <sql57_object
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
     version="1">
     <engine>[engine.value]</engine>
     <version>[version.value]</version>
-    <connection_string var_ref="oval:org.cisecurity.benchmarks:var:[ID]"/>
+    <connection_string var_ref="oval:org.cisecurity.benchmarks:var:[ID]" />
     <sql>[sql.value]</sql>
   </sql57_object>
 
@@ -226,7 +220,7 @@ YAML
             value: "[check_existence.value]"
     test:
       type: "[TEST-TYPE-NAME]"
-      parameters:   
+      parameters:
         - parameter: 
             name: "check"
             dt: "string"

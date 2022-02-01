@@ -63,8 +63,8 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
           <ae:title>[ARTIFACT-TITLE]</ae:title>
           <ae:artifact type="[ARTIFACT-TYPE-NAME]">
             <ae:parameters>
-              <ae:parameter dt="string" name="service">chargen</ae:parameter>
-              <ae:parameter dt="string" name="protocol" />
+              <ae:parameter dt="string" name="service">[service.value]</ae:parameter>
+              <ae:parameter dt="string" name="protocol"[protocol.value]</ae:parameter>
             </ae:parameters>
           </ae:artifact>
           <ae:test type="[TEST-TYPE-NAME]">

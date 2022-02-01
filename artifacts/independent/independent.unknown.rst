@@ -1,18 +1,14 @@
-independent.unknown
-===================
+Independent: Unknown
+====================
 
 Description
 -----------
 
-The independent.unknown test acts as a placeholder for tests whose
-implementation is unknown. This test always evaluates to a result of
-‘unknown’. Any information that is known about the test should be held
-in the notes child element that is available through the extension of
-the abstract test element. It extends the standard TestType as defined
-in the oval-definitions-schema and one should refer to the TestType
-description for more information. Note that for an unknown_test, the
-required check attribute that is part of the extended TestType should be
-ignored during evaluation and hence can be set to any valid value.
+An Independent: Unknown test acts as a placeholder for tests whose implementation is unknown. This test always evaluates to a result of 'unknown'. Any information that is known about the test should be held in the notes child element that is available through the extension of the abstract test element.
+
+Note that for an unknown_test, the required check attribute that is part of the extended TestType should be ignored during evaluation and hence can be set to any valid value.
+
+The unknown_test has no object or state elements.
 
 Technical Details
 -----------------
@@ -20,24 +16,34 @@ Technical Details
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
+**independent.unknown**
+
 ======= ====== ===========
 Name    Type   Description
 ======= ====== ===========
-unknown String 
+unknown string 
 ======= ====== ===========
 
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
-  - independent.unknown
+  - Independent: Unknown
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
-There are no Test Type Parameters.
+**independent.unknown**
+
+=======  ======  ===========
+Name     Type    Description
+=======  ======  ===========
+unknown  string  Enter NA
+=======  ======  ===========
 
 Generated Content
 ~~~~~~~~~~~~~~~~~
+
+**independent.unknown**
 
 XCCDF+AE
 ^^^^^^^^
@@ -61,6 +67,9 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
             <ae:parameter dt="string" name="unknown">[unknown.value]</ae:parameter>
           </ae:parameters>
         </ae:test>
+        <ae:profiles>
+          <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1" />
+        </ae:profiles>
       </ae:artifact_expression>
     </xccdf:check-content>
   </xccdf:check>
@@ -71,14 +80,14 @@ SCAP
 XCCDF
 '''''
 
-For ``independent.unknown`` artifacts, the xccdf:check looks like this.
+For ``independent.unknown`` ``independent.unknown`` artifacts, the XCCDF check looks like this. There is no Value element in the XCCDF for this artifact.
 
 ::
 
-  <check system='http://oval.mitre.org/XMLSchema/oval-definitions-5'>
-    <check-content-ref 
-      href='[BENCHMARK NAME]' 
-      name='oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]'/>
+  <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+    <check-content-ref
+      href="[BENCHMARK-TITLE]-oval.xml"
+      name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 
 OVAL
@@ -89,24 +98,23 @@ Test
 ::
 
   <unknown_test
-    xmlns='http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM]' 
-    id='oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]'
-    check_existence='[check_existence.value]' 
-    check='[check.value]' 
-    comment='[ARTIFACT-TITLE]'
-    version='[version.value]'/>
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
+    check="all"
+    comment="[ARTIFACT-TITLE]"
+    version="1" />
 
 Object
 
 ::
 
-   N/A
+  N/A
 
 State
 
 ::
 
-   N/A
+  N/A
 
 YAML
 ^^^^
@@ -125,7 +133,6 @@ YAML
             value: "[unknown.value]"
     test:
       type: "[TEST-TYPE-NAME]"
-      parameters:   
         - parameter:
             name: "unknown"
             dt: "string"

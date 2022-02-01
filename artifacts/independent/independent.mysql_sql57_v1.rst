@@ -1,17 +1,14 @@
-independent.mysql_sql57_v1
-==========================
+Independent: MySQL57
+====================
 
 Description
 -----------
 
-The independent.mysql_sql57_v1 is used to check information stored in a
-database. It is often the case that applications store configuration
-settings in a database as opposed to a file. This test has been designed
-to enable those settings to be tested. It extends the standard TestType
-as defined in the oval-definitions-schema and one should refer to the
-TestType description for more information. The object element
-references a wmi_object and the state element specifies the
-metadata to check.
+The Independent: MySQL57 test is used to check information stored in a database. It is often the case that applications store configuration settings in a database as opposed to a file. This test has been designed to enable those settings to be tested.
+
+The sql57_objectelement is used by a sql57_testto define the specific database and query to be evaluated. Connection information is supplied allowing the tool to connect to the desired database and a query is supplied to call out the desired setting.
+
+The sql57_state element contains two entities that are used to check the name of the specified field and the value associated with it.
 
 Technical Details
 -----------------
@@ -19,85 +16,52 @@ Technical Details
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
-+-------------------------------------+-------------+------------------+
-| Name                                | Type        | Description      |
-+=====================================+=============+==================+
-| engine                              | string      | The engine       |
-|                                     |             | entity defines a |
-|                                     |             | specific         |
-|                                     |             | database engine. |
-+-------------------------------------+-------------+------------------+
-| sql                                 | string      | The sql entity   |
-|                                     |             | defines a query  |
-|                                     |             | used to identify |
-|                                     |             | the object(s) to |
-|                                     |             | test against.    |
-+-------------------------------------+-------------+------------------+
-| version                             | string      | The version      |
-|                                     |             | entity defines   |
-|                                     |             | the specific     |
-|                                     |             | version of the   |
-|                                     |             | database engine  |
-|                                     |             | to use. This is  |
-|                                     |             | also important   |
-|                                     |             | in determining   |
-|                                     |             | the correct      |
-|                                     |             | driver to use    |
-|                                     |             | for establishing |
-|                                     |             | a connection.    |
-+-------------------------------------+-------------+------------------+
-| prepend_str                         | string      | String to be     |
-|                                     |             | prepended to     |
-|                                     |             | either the SQL   |
-|                                     |             | query or the     |
-|                                     |             | result of the    |
-|                                     |             | SQL query. Leave |
-|                                     |             | empty if no      |
-|                                     |             | string is to be  |
-|                                     |             | appended.        |
-+-------------------------------------+-------------+------------------+
-| append_str                          | string      | String to be     |
-|                                     |             | appended to the  |
-|                                     |             | result of the    |
-|                                     |             | SQL query. Leave |
-|                                     |             | empty if no      |
-|                                     |             | string is to be  |
-|                                     |             | appended.        |
-+-------------------------------------+-------------+------------------+
-| prepend_type                        | string      | Select ‘string’  |
-|                                     |             | if the prepend   |
-|                                     |             | string is        |
-|                                     |             | straight text to |
-|                                     |             | be prepended to  |
-|                                     |             | the result.      |
-|                                     |             | Select ‘SQL’ if  |
-|                                     |             | it is a query    |
-|                                     |             | from which the   |
-|                                     |             | result should be |
-|                                     |             | prepended.       |
-|                                     |             | Otherwise leave  |
-|                                     |             | empty.           |
-+-------------------------------------+-------------+------------------+
-| append_type                         | string      | Select ‘string’  |
-|                                     |             | if the append    |
-|                                     |             | string is        |
-|                                     |             | straight text to |
-|                                     |             | be appended to   |
-|                                     |             | the result of    |
-|                                     |             | the SQL query.   |
-|                                     |             | Select ‘SQL’ if  |
-|                                     |             | it is a query    |
-|                                     |             | from which the   |
-|                                     |             | result should be |
-|                                     |             | appended to the  |
-|                                     |             | result of the    |
-|                                     |             | SQL query.       |
-|                                     |             | Otherwise leave  |
-|                                     |             | empty.           |
-+-------------------------------------+-------------+------------------+
+**independent.mysql_sql57_v1**
 
-engine NOTE: This parameter is governed by a constraint allowing only
-the following values: 
++-----------------------------+---------+------------------------------------+
+| Name                        | Type    | Description                        |
++=============================+=========+====================================+
+| engine                      | string  | The engine entity defines a        |
+|                             |         | specific database engine.          |
++-----------------------------+---------+------------------------------------+
+| sql                         | string  | The sql entity defines a query     |
+|                             |         | used to identify the object(s) to  |
+|                             |         | test against.                      |
++-----------------------------+---------+------------------------------------+
+| version                     | string  | The version entity defines the     |
+|                             |         | specific version of the database   |
+|                             |         | engine to use. This is also        |
+|                             |         | important in determining the       |
+|                             |         | correct driver to use for          |
+|                             |         | establishing a connection.         |
++-----------------------------+---------+------------------------------------+
+| prepend_str                 | string  | String to be prepended to either   |
+|                             |         | the SQL query or the result of     |
+|                             |         | the SQL query. Leave empty if no   |
+|                             |         | string is to be appended.          |
++-----------------------------+---------+------------------------------------+
+| append_str                  | string  | String to be appended to the       |
+|                             |         | result of the SQL query. Leave     |
+|                             |         | empty if no string is to be        |
+|                             |         | appended.                          |
++-----------------------------+---------+------------------------------------+
+| prepend_type                | string  | Select ‘string’ if the prepend     |
+|                             |         | string is straight text to be      |
+|                             |         | prepended to the result. Select    |
+|                             |         | ‘SQL’ if it is a query from which  |
+|                             |         | the result should be prepended.    |
+|                             |         | Otherwise leave empty.             |
++-----------------------------+---------+------------------------------------+
+| append_type                 | string  | Select ‘string’ if the apppend     |
+|                             |         | string is straight text to be      |
+|                             |         | appended to the result of the SQL  |
+|                             |         | query. Select ‘SQL’ if it is a     |
+|                             |         | query from which the result should |
+|                             |         | be appended to the resultof the    |
+|                             |         | SQL query. Otherwise leave empty.  |
++-----------------------------+---------+------------------------------------+
+
+NOTE: The ``engine`` parameter is governed by a constraint allowing only the following values: 
   - access 
   - db2 
   - cache 
@@ -121,100 +85,89 @@ the following values:
   - sqlserver 
   - sybase
 
-prepend_type NOTE: This parameter is governed by a constraint allowing
-only the following values:
-  - String
-  - SQL
-
-append_type NOTE: This parameter is governed by a constraint allowing
-only the following values:
+NOTE: The ``prepend_type`` and ``append_type`` parameters are governed by a constraint allowing only the following values:
   - String
   - SQL
 
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
-  - independent.sql57_v1
-  - existence_test
-  - SQL-Unix_File_or_Directory_Permissions_v1
-  - SQL-Unix_File_or_Directory_Permissions_v2
-  - SQL-Unix_File_or_Directory_Basename_Permissions_v2
-  - SQL-Unix_File_or_Directory_Permissions_sql57_object_v2
+  - Independent: SQL57
+  - Existence Test
+  - SQL-Unix: File Or Directory Permissions
+  - SQL-Unix: File Or Directory Permissions v2
+  - SQL-Unix: File Or Directory Basename Permissions v2
+  - SQL-Unix: File Or Directory Permissions SQL57 Object v2
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
-independent.sql57_v1
-^^^^^^^^^^^^^^^^^^^^
+**independent.sql57_v1**
 
-+-------------------------------------+-------------+------------------+
-| Name                                | Type        | Description      |
-+=====================================+=============+==================+
-| check_existence                     | string      | Specifies how    |
-|                                     |             | many items in    |
-|                                     |             | the set must     |
-|                                     |             | exist for the    |
-|                                     |             | test to evaluate |
-|                                     |             | to true.         |
-+-------------------------------------+-------------+------------------+
-| check                               | string      | Defines how many |
-|                                     |             | items must       |
-|                                     |             | evaluate to true |
-|                                     |             | for the entity   |
-|                                     |             | to return true.  |
-+-------------------------------------+-------------+------------------+
-| value                               | string      | A simple         |
-|                                     |             | (number, string, |
-|                                     |             | or boolean)      |
-|                                     |             | value to be used |
-|                                     |             | in determining   |
-|                                     |             | the result, i.e. |
-|                                     |             | pass/fail.       |
-+-------------------------------------+-------------+------------------+
-| value_data_type                     | string      | The optional     |
-|                                     |             | datatype         |
-|                                     |             | attribute        |
-|                                     |             | specifies how    |
-|                                     |             | the given        |
-|                                     |             | operation should |
-|                                     |             | be applied to    |
-|                                     |             | the data.        |
-+-------------------------------------+-------------+------------------+
-| field_name                          | string      | A string         |
-|                                     |             | restricted to    |
-|                                     |             | disallow upper   |
-|                                     |             | case characters. |
-+-------------------------------------+-------------+------------------+
-| field_operation                     | string      | The optional     |
-|                                     |             | operation        |
-|                                     |             | attribute        |
-|                                     |             | determines how   |
-|                                     |             | the individual   |
-|                                     |             | entities should  |
-|                                     |             | be evaluated     |
-|                                     |             | (the default     |
-|                                     |             | operation is     |
-|                                     |             | 'equals').       |
-+-------------------------------------+-------------+------------------+
++------------------------+---------+-----------------------------------------+
+| Name                   | Type    | Description                             |
++========================+=========+=========================================+
+| check_existence        | string  | Specifies how many items in the set     |
+|                        |         | must exist for the test to evaluate to  |
+|                        |         | true.                                   |
++------------------------+---------+-----------------------------------------+
+| check                  | string  | Defines how many items must evaluate to |
+|                        |         | true for the entity to return true.     |
++------------------------+---------+-----------------------------------------+
+| value                  | string  | A simple (number, string, or boolean)   |
+|                        |         | value to be used in determining the     |
+|                        |         | result, i.e. pass/fail.                 |
++------------------------+---------+-----------------------------------------+
+| value_data_type        | string  | The optional datatype attribute         |
+|                        |         | specifies how the given operation       |
+|                        |         | should be applied to the data.          |
++------------------------+---------+-----------------------------------------+
+| field_name             | string  | A string restricted to disallow upper   |
+|                        |         | case characters.                        |
++------------------------+---------+-----------------------------------------+
+| field_operation        | string  | The optional operation attribute        |
+|                        |         | determines how the individual entities  |
+|                        |         | should be evaluated (the default        |
+|                        |         | operation is 'equals').                 |
++------------------------+---------+-----------------------------------------+
 
-check_existence NOTE: This parameter is governed by a constraint
-allowing only the following values: 
+NOTE: The ``check_existence`` parameter is governed by a constraint allowing only the following values: 
   - all_exist 
   - any_exist 
   - at_least_one_exists 
-  - none_satisfy 
   - none_exist 
   - only_one_exists
 
-check NOTE: This parameter is governed by a constraint allowing only the
-following values: 
+NOTE: The ``check`` parameter is governed by a constraint allowing only the following values:
   - all 
   - at least one 
   - none satisfy 
   - only one
 
-existence_test
-^^^^^^^^^^^^^^
+NOTE: The ``value_data_type`` parameter is governed by a constraint allowing only the following values:
+	- boolean
+	- float
+	- int
+	- string
+	- version
+	- set
+
+NOTE: The ``field_operation`` parameter is governed by a constraint allowing only the following values:
+  - equals
+  - not equal
+  - case insensitive equals
+  - case insensitive not equal
+  - greater than
+  - less than
+  - greater than or equal
+  - less than or equal
+  - bitwise and
+  - bitwise or
+  - pattern match
+  - subset of
+  - superset of
+
+**existence_test**
 
 ===== ====== ==============
 Name  Type   Description
@@ -222,668 +175,287 @@ Name  Type   Description
 value string Value to test.
 ===== ====== ==============
 
-SQL-Unix_File_or_Directory_Permissions_v1
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**SQL-Unix_File_or_Directory_Permissions_v1**
 
-+-------------------------------------+-------------+------------------+
-| Name                                | Type        | Description      |
-+=====================================+=============+==================+
-| username                            | string      | The name of the  |
-|                                     |             | user that owns   |
-|                                     |             | the file or      |
-|                                     |             | directory.       |
-+-------------------------------------+-------------+------------------+
-| group                               | string      | The name of the  |
-|                                     |             | group that owns  |
-|                                     |             | the file or      |
-|                                     |             | directory.       |
-+-------------------------------------+-------------+------------------+
-| uread                               | boolean     | Determines       |
-|                                     |             | whether the user |
-|                                     |             | that owns the    |
-|                                     |             | file/directory   |
-|                                     |             | is permitted to  |
-|                                     |             | read the         |
-|                                     |             | contents of it.  |
-+-------------------------------------+-------------+------------------+
-| uwrite                              | boolean     | Determines       |
-|                                     |             | whether the user |
-|                                     |             | that owns the    |
-|                                     |             | file/directory   |
-|                                     |             | is permitted to  |
-|                                     |             | write to it.     |
-+-------------------------------------+-------------+------------------+
-| uexec                               | boolean     | Determines       |
-|                                     |             | whether the user |
-|                                     |             | that owns the    |
-|                                     |             | file/directory   |
-|                                     |             | is permitted to  |
-|                                     |             | execute the file |
-|                                     |             | or change into   |
-|                                     |             | the directory.   |
-+-------------------------------------+-------------+------------------+
-| gread                               | boolean     | Determines       |
-|                                     |             | whether the      |
-|                                     |             | group that owns  |
-|                                     |             | the              |
-|                                     |             | file/directory   |
-|                                     |             | is permitted to  |
-|                                     |             | read the content |
-|                                     |             | of it.           |
-+-------------------------------------+-------------+------------------+
-| gwrite                              | boolean     | Determines       |
-|                                     |             | whether the      |
-|                                     |             | group that owns  |
-|                                     |             | the              |
-|                                     |             | file/directory   |
-|                                     |             | is permitted to  |
-|                                     |             | write to it.     |
-+-------------------------------------+-------------+------------------+
-| gexec                               | boolean     | Determines       |
-|                                     |             | whether the      |
-|                                     |             | group that owns  |
-|                                     |             | the              |
-|                                     |             | file/directory   |
-|                                     |             | is permitted to  |
-|                                     |             | execute the file |
-|                                     |             | or change into   |
-|                                     |             | the directory.   |
-+-------------------------------------+-------------+------------------+
-| oread                               | boolean     | Determines       |
-|                                     |             | whether other    |
-|                                     |             | users/groups     |
-|                                     |             | that do not own  |
-|                                     |             | the              |
-|                                     |             | file/directory   |
-|                                     |             | are permitted to |
-|                                     |             | read the         |
-|                                     |             | contents of it.  |
-+-------------------------------------+-------------+------------------+
-| owrite                              | boolean     | Determines       |
-|                                     |             | whether other    |
-|                                     |             | users/groups     |
-|                                     |             | that do not own  |
-|                                     |             | the              |
-|                                     |             | file/directory   |
-|                                     |             | are permitted to |
-|                                     |             | write to it.     |
-+-------------------------------------+-------------+------------------+
-| oexec                               | boolean     | Determines       |
-|                                     |             | whether other    |
-|                                     |             | users/groups     |
-|                                     |             | that do not own  |
-|                                     |             | the              |
-|                                     |             | file/directory   |
-|                                     |             | are permitted to |
-|                                     |             | execute the file |
-|                                     |             | or change into   |
-|                                     |             | the directory.   |
-+-------------------------------------+-------------+------------------+
-| dir_only                            | boolean     | If this is       |
-|                                     |             | checking a       |
-|                                     |             | directory        |
-|                                     |             | permissions and  |
-|                                     |             | no file within a |
-|                                     |             | directory then   |
-|                                     |             | this should be   |
-|                                     |             | set to true.     |
-+-------------------------------------+-------------+------------------+
++------------------------+---------+-----------------------------------------+
+| Name                   | Type    | Description                             |
++========================+=========+=========================================+
+| username               | string  | The name of the user that owns the file |
+|                        |         | or directory.                           |
++------------------------+---------+-----------------------------------------+
+| group                  | string  | The name of the group that owns the     |
+|                        |         | file or directory.                      |
++------------------------+---------+-----------------------------------------+
+| uread                  | boolean | Determines whether the user that owns   |
+|                        |         | the file/directory is permitted to read |
+|                        |         | the contents of it.                     |
++------------------------+---------+-----------------------------------------+
+| uwrite                 | boolean | Determines whether the user that owns   |
+|                        |         | the file/directory is permitted to      |
+|                        |         | write to it.                            |
++------------------------+---------+-----------------------------------------+
+| uexec                  | boolean | Determines whether the user that owns   |
+|                        |         | the file/directory is permitted to      |
+|                        |         | execute the file or change into the     |
+|                        |         | directory.                              |
++------------------------+---------+-----------------------------------------+
+| gread                  | boolean | Determines whether the group that owns  |
+|                        |         | the file/directory is permitted to read |
+|                        |         | the content of it.                      |
++------------------------+---------+-----------------------------------------+
+| gwrite                 | boolean | Determines whether the group that owns  |
+|                        |         | the file/directory is permitted to      |
+|                        |         | write to it.                            |
++------------------------+---------+-----------------------------------------+
+| gexec                  | boolean | Determines whether the group that owns  |
+|                        |         | the file/directory is permitted to      |
+|                        |         | execute the file or change into the     |
+|                        |         | directory.                              |
++------------------------+---------+-----------------------------------------+
+| oread                  | boolean | Determines whether other users/groups   |
+|                        |         | that do not own the file/directory are  |
+|                        |         | permitted to read the contents of it.   |
++------------------------+---------+-----------------------------------------+
+| owrite                 | boolean | Determines whether other users/groups   |
+|                        |         | that do not own the file/directory are  |
+|                        |         | permitted to write to it.               |
++------------------------+---------+-----------------------------------------+
+| oexec                  | boolean | Determines whether other users/groups   |
+|                        |         | that do not own the file/directory are  |
+|                        |         | permitted to execute the file or change |
+|                        |         | into the directory.                     |
++------------------------+---------+-----------------------------------------+
+| dir_only               | boolean | If this is checking a directory         |
+|                        |         | permissions and no file within a        |
+|                        |         | directory then this should be set to    |
+|                        |         | true.                                   |
++------------------------+---------+-----------------------------------------+
 
-SQL-Unix_File_or_Directory_Permissions_v2
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**SQL-Unix_File_or_Directory_Permissions_v2**
 
-+-------------------------------------+-------------+------------------+
-| Name                                | Type        | Description      |
-+=====================================+=============+==================+
-| username                            | string      | The name of the  |
-|                                     |             | user that owns   |
-|                                     |             | the file or      |
-|                                     |             | directory.       |
-+-------------------------------------+-------------+------------------+
-| group                               | string      | The name of the  |
-|                                     |             | group that owns  |
-|                                     |             | the file or      |
-|                                     |             | directory.       |
-+-------------------------------------+-------------+------------------+
-| uread                               | string      | Determines       |
-|                                     |             | whether the user |
-|                                     |             | that owns the    |
-|                                     |             | file/directory   |
-|                                     |             | is permitted to  |
-|                                     |             | read the         |
-|                                     |             | contents of it.  |
-+-------------------------------------+-------------+------------------+
-| uwrite                              | string      | Determines       |
-|                                     |             | whether the user |
-|                                     |             | that owns the    |
-|                                     |             | file/directory   |
-|                                     |             | is permitted to  |
-|                                     |             | write to it.     |
-+-------------------------------------+-------------+------------------+
-| uexec                               | string      | Determines       |
-|                                     |             | whether the user |
-|                                     |             | that owns the    |
-|                                     |             | file/directory   |
-|                                     |             | is permitted to  |
-|                                     |             | execute the file |
-|                                     |             | or change into   |
-|                                     |             | the directory.   |
-+-------------------------------------+-------------+------------------+
-| gread                               | string      | Determines       |
-|                                     |             | whether the      |
-|                                     |             | group that owns  |
-|                                     |             | the              |
-|                                     |             | file/directory   |
-|                                     |             | is permitted to  |
-|                                     |             | read the content |
-|                                     |             | of it.           |
-+-------------------------------------+-------------+------------------+
-| gwrite                              | string      | Determines       |
-|                                     |             | whether the      |
-|                                     |             | group that owns  |
-|                                     |             | the              |
-|                                     |             | file/directory   |
-|                                     |             | is permitted to  |
-|                                     |             | write to it.     |
-+-------------------------------------+-------------+------------------+
-| gexec                               | string      | Determines       |
-|                                     |             | whether the      |
-|                                     |             | group that owns  |
-|                                     |             | the              |
-|                                     |             | file/directory   |
-|                                     |             | is permitted to  |
-|                                     |             | execute the file |
-|                                     |             | or change into   |
-|                                     |             | the directory.   |
-+-------------------------------------+-------------+------------------+
-| oread                               | string      | Determines       |
-|                                     |             | whether other    |
-|                                     |             | users/groups     |
-|                                     |             | that do not own  |
-|                                     |             | the              |
-|                                     |             | file/directory   |
-|                                     |             | are permitted to |
-|                                     |             | read the         |
-|                                     |             | contents of it.  |
-+-------------------------------------+-------------+------------------+
-| owrite                              | string      | Determines       |
-|                                     |             | whether other    |
-|                                     |             | users/groups     |
-|                                     |             | that do not own  |
-|                                     |             | the              |
-|                                     |             | file/directory   |
-|                                     |             | are permitted to |
-|                                     |             | write to it.     |
-+-------------------------------------+-------------+------------------+
-| oexec                               | string      | Determines       |
-|                                     |             | whether other    |
-|                                     |             | users/groups     |
-|                                     |             | that do not own  |
-|                                     |             | the              |
-|                                     |             | file/directory   |
-|                                     |             | are permitted to |
-|                                     |             | execute the file |
-|                                     |             | or change into   |
-|                                     |             | the directory.   |
-+-------------------------------------+-------------+------------------+
-| dir_only                            | boolean     | If this is       |
-|                                     |             | checking a       |
-|                                     |             | directory        |
-|                                     |             | permissions and  |
-|                                     |             | no file within a |
-|                                     |             | directory then   |
-|                                     |             | this should be   |
-|                                     |             | set to true.     |
-+-------------------------------------+-------------+------------------+
++------------------------+---------+-----------------------------------------+
+| Name                   | Type    | Description                             |
++========================+=========+=========================================+
+| username               | string  | The name of the user that owns the file |
+|                        |         | or directory.                           |
++------------------------+---------+-----------------------------------------+
+| group                  | string  | The name of the group that owns the     |
+|                        |         | file or directory.                      |
++------------------------+---------+-----------------------------------------+
+| uread                  | string  | Determines whether the user that owns   |
+|                        |         | the file/directory is permitted to read |
+|                        |         | the contents of it.                     |
++------------------------+---------+-----------------------------------------+
+| uwrite                 | string  | Determines whether the user that owns   |
+|                        |         | the file/directory is permitted to      |
+|                        |         | write to it.                            |
++------------------------+---------+-----------------------------------------+
+| uexec                  | string  | Determines whether the user that owns   |
+|                        |         | the file/directory is permitted to      |
+|                        |         | execute the file or change into the     |
+|                        |         | directory.                              |
++------------------------+---------+-----------------------------------------+
+| gread                  | string  | Determines whether the group that owns  |
+|                        |         | the file/directory is permitted to      |
+|                        |         | read the content of it.                 |
++------------------------+---------+-----------------------------------------+
+| gwrite                 | string  | Determines whether the group that owns  |
+|                        |         | the file/directory is permitted to      |
+|                        |         | write to it.                            |
++------------------------+---------+-----------------------------------------+
+| gexec                  | string  | Determines whether the group that owns  |
+|                        |         | the file/directory is permitted to      |
+|                        |         | execute the file or change into the     |
+|                        |         | directory.                              |
++------------------------+---------+-----------------------------------------+
+| oread                  | string  | Determines whether other users/groups   |
+|                        |         | that do not own the file/directory are  |
+|                        |         | permitted to read the contents of it.   |
++------------------------+---------+-----------------------------------------+
+| owrite                 | string  | Determines whether other users/groups   |
+|                        |         | that do not own the file/directory are  |
+|                        |         | permitted to write to it.               |
++------------------------+---------+-----------------------------------------+
+| oexec                  | string  | Determines whether other users/groups   |
+|                        |         | that do not own the file/directory are  |
+|                        |         | permitted to execute the file or change |
+|                        |         | into the directory.                     |
++------------------------+---------+-----------------------------------------+
+| dir_only               | boolean | If this is checking a directory         |
+|                        |         | permissions and no file within a        |
+|                        |         | directory then this should be set to    |
+|                        |         | true.                                   |
++------------------------+---------+-----------------------------------------+
 
-uread NOTE: This parameter is governed by a constraint
-allowing only the following values:
+NOTE: The ``read``, ``write``, and ``exec`` parameters are governed by a constraint allowing only the following values:
   - NA
   - set
   - unset
 
-uwrite NOTE: This parameter is governed by a constraint
-allowing only the following values:
+**SQL-Unix_File_or_Directory_Basename_Permissions_v2**
+
++------------------------+---------+-----------------------------------------+
+| Name                   | Type    | Description                             |
++========================+=========+=========================================+
+| username               | string  | The name of the user that owns the file |
+|                        |         | for directory.                          |
++------------------------+---------+-----------------------------------------+
+| group                  | string  | The name of the group that owns the     |
+|                        |         | file or directory.                      |
++------------------------+---------+-----------------------------------------+
+| uread                  | string  | Determines whether the user that owns   |
+|                        |         | the file/directory is permitted to read |
+|                        |         | the contents of it.                     |
++------------------------+---------+-----------------------------------------+
+| uwrite                 | string  | Determines whether the user that owns   |
+|                        |         | the file/directory is permitted to      |
+|                        |         | write to it.                            |
++------------------------+---------+-----------------------------------------+
+| uexec                  | string  | Determines whether the user that owns   |
+|                        |         | the file/directory is permitted to      |
+|                        |         | execute the file or change into the     |
+|                        |         | directory.                              |
++------------------------+---------+-----------------------------------------+
+| gread                  | string  | Determines whether the group that owns  |
+|                        |         | the file/directory is permitted to read |
+|                        |         | the content of it.                      |
++------------------------+---------+-----------------------------------------+
+| gwrite                 | string  | Determines whether the group that owns  |
+|                        |         | the file/directory is permitted to      |
+|                        |         | write to it.                            |
++------------------------+---------+-----------------------------------------+
+| gexec                  | string  | Determines whether the group that owns  |
+|                        |         | the file/directory is permitted to      |
+|                        |         | execute the file or change into the     |
+|                        |         | directory.                              |
++------------------------+---------+-----------------------------------------+
+| oread                  | string  | Determines whether other users/groups   |
+|                        |         | that do not own the file/directory are  |
+|                        |         | permitted to read the contents of it.   |
++------------------------+---------+-----------------------------------------+
+| owrite                 | string  | Determines whether other users/groups   |
+|                        |         | that do not own the file/directory are  |
+|                        |         | permitted to write to it.               |
++------------------------+---------+-----------------------------------------+
+| oexec                  | string  | Determines whether other users/groups   |
+|                        |         | that do not own the file/directory are  |
+|                        |         | permitted to execute the file or change |
+|                        |         | into the directory.                     |
++------------------------+---------+-----------------------------------------+
+| dir_only               | boolean | If this is checking a directory         |
+|                        |         | permissions and no file within a        |
+|                        |         | directory then this should be set to    |
+|                        |         | true.                                   |
++------------------------+---------+-----------------------------------------+
+| check_existence        | string  | Defines how many items should be        |
+|                        |         | collected.                              |
++------------------------+---------+-----------------------------------------+
+| check                  | string  | Defines how many collected items must   |
+|                        |         | match the expected state.               |
++------------------------+---------+-----------------------------------------+
+
+NOTE: The ``read``, ``write``, and ``exec`` parameters are governed by a constraint allowing only the following values:
   - NA
   - set
   - unset
 
-uexec NOTE: This parameter is governed by a constraint
-allowing only the following values:
-  - NA
-  - set
-  - unset
-
-gread NOTE: This parameter is governed by a constraint
-allowing only the following values:
-  - NA
-  - set
-  - unset
-
-gwrite NOTE: This parameter is governed by a constraint
-allowing only the following values:
-  - NA
-  - set
-  - unset
-
-gexec NOTE: This parameter is governed by a constraint
-allowing only the following values:
-  - NA
-  - set
-  - unset
-
-oread NOTE: This parameter is governed by a constraint
-allowing only the following values:
-  - NA
-  - set
-  - unset
-
-owrite NOTE: This parameter is governed by a constraint
-allowing only the following values:
-  - NA
-  - set
-  - unset
-
-oexec NOTE: This parameter is governed by a constraint
-allowing only the following values:
-  - NA
-  - set
-  - unset
-
-oexec NOTE: This parameter is governed by a constraint
-allowing only the following values:
-  - NA
-  - set
-  - unset
-
-SQL-Unix_File_or_Directory_Basename_Permissions_v2
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-+-------------------------------------+-------------+------------------+
-| Name                                | Type        | Description      |
-+=====================================+=============+==================+
-| username                            | string      | The name of the  |
-|                                     |             | user that owns   |
-|                                     |             | the file or      |
-|                                     |             | directory.       |
-+-------------------------------------+-------------+------------------+
-| group                               | string      | The name of the  |
-|                                     |             | group that owns  |
-|                                     |             | the file or      |
-|                                     |             | directory.       |
-+-------------------------------------+-------------+------------------+
-| uread                               | string      | Determines       |
-|                                     |             | whether the user |
-|                                     |             | that owns the    |
-|                                     |             | file/directory   |
-|                                     |             | is permitted to  |
-|                                     |             | read the         |
-|                                     |             | contents of it.  |
-+-------------------------------------+-------------+------------------+
-| uwrite                              | string      | Determines       |
-|                                     |             | whether the user |
-|                                     |             | that owns the    |
-|                                     |             | file/directory   |
-|                                     |             | is permitted to  |
-|                                     |             | write to it.     |
-+-------------------------------------+-------------+------------------+
-| uexec                               | string      | Determines       |
-|                                     |             | whether the user |
-|                                     |             | that owns the    |
-|                                     |             | file/directory   |
-|                                     |             | is permitted to  |
-|                                     |             | execute the file |
-|                                     |             | or change into   |
-|                                     |             | the directory.   |
-+-------------------------------------+-------------+------------------+
-| gread                               | string      | Determines       |
-|                                     |             | whether the      |
-|                                     |             | group that owns  |
-|                                     |             | the              |
-|                                     |             | file/directory   |
-|                                     |             | is permitted to  |
-|                                     |             | read the content |
-|                                     |             | of it.           |
-+-------------------------------------+-------------+------------------+
-| gwrite                              | string      | Determines       |
-|                                     |             | whether the      |
-|                                     |             | group that owns  |
-|                                     |             | the              |
-|                                     |             | file/directory   |
-|                                     |             | is permitted to  |
-|                                     |             | write to it.     |
-+-------------------------------------+-------------+------------------+
-| gexec                               | string      | Determines       |
-|                                     |             | whether the      |
-|                                     |             | group that owns  |
-|                                     |             | the              |
-|                                     |             | file/directory   |
-|                                     |             | is permitted to  |
-|                                     |             | execute the file |
-|                                     |             | or change into   |
-|                                     |             | the directory.   |
-+-------------------------------------+-------------+------------------+
-| oread                               | string      | Determines       |
-|                                     |             | whether other    |
-|                                     |             | users/groups     |
-|                                     |             | that do not own  |
-|                                     |             | the              |
-|                                     |             | file/directory   |
-|                                     |             | are permitted to |
-|                                     |             | read the         |
-|                                     |             | contents of it.  |
-+-------------------------------------+-------------+------------------+
-| owrite                              | string      | Determines       |
-|                                     |             | whether other    |
-|                                     |             | users/groups     |
-|                                     |             | that do not own  |
-|                                     |             | the              |
-|                                     |             | file/directory   |
-|                                     |             | are permitted to |
-|                                     |             | write to it.     |
-+-------------------------------------+-------------+------------------+
-| oexec                               | string      | Determines       |
-|                                     |             | whether other    |
-|                                     |             | users/groups     |
-|                                     |             | that do not own  |
-|                                     |             | the              |
-|                                     |             | file/directory   |
-|                                     |             | are permitted to |
-|                                     |             | execute the file |
-|                                     |             | or change into   |
-|                                     |             | the directory.   |
-+-------------------------------------+-------------+------------------+
-| dir_only                            | boolean     | If this is       |
-|                                     |             | checking a       |
-|                                     |             | directory        |
-|                                     |             | permissions and  |
-|                                     |             | no file within a |
-|                                     |             | directory then   |
-|                                     |             | this should be   |
-|                                     |             | set to true.     |
-+-------------------------------------+-------------+------------------+
-| check_existence                     | string      | Defines how many |
-|                                     |             | items should be  |
-|                                     |             | collected        |
-+-------------------------------------+-------------+------------------+
-| check                               | string      | Defines how many |
-|                                     |             | collected items  |
-|                                     |             | must match the   |
-|                                     |             | expected state   |
-+-------------------------------------+-------------+------------------+
-
-uread NOTE: This parameter is governed by a constraint
-allowing only the following values:
-  - NA
-  - set
-  - unset
-
-uwrite NOTE: This parameter is governed by a constraint
-allowing only the following values:
-  - NA
-  - set
-  - unset
-
-uexec NOTE: This parameter is governed by a constraint
-allowing only the following values:
-  - NA
-  - set
-  - unset
-
-gread NOTE: This parameter is governed by a constraint
-allowing only the following values:
-  - NA
-  - set
-  - unset
-
-gwrite NOTE: This parameter is governed by a constraint
-allowing only the following values:
-  - NA
-  - set
-  - unset
-
-gexec NOTE: This parameter is governed by a constraint
-allowing only the following values:
-  - NA
-  - set
-  - unset
-
-oread NOTE: This parameter is governed by a constraint
-allowing only the following values:
-  - NA
-  - set
-  - unset
-
-owrite NOTE: This parameter is governed by a constraint
-allowing only the following values:
-  - NA
-  - set
-  - unset
-
-oexec NOTE: This parameter is governed by a constraint
-allowing only the following values:
-  - NA
-  - set
-  - unset
-
-oexec NOTE: This parameter is governed by a constraint
-allowing only the following values:
-  - NA
-  - set
-  - unset
-
-check_existence NOTE: This parameter is governed by a constraint allowing only 
-the following values: 
+NOTE: The ``check_existence`` parameter is governed by a constraint allowing only the following values: 
   - all_exist 
   - any_exist 
   - at_least_one_exists 
-  - none_satisfy 
   - none_exist 
   - only_one_exists
 
-check NOTE: This parameter is governed by a constraint allowing only the
-following values: 
-  - all 
-  - at least one 
-  - none satisfy 
+NOTE: The ``check`` parameter is governed by a constraint allowing only the following values:
+  - all
+  - at least one
+  - none satisfy
   - only one
 
-SQL-Unix_File_or_Directory_Permissions_sql57_object_v2
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**SQL-Unix_File_or_Directory_Permissions_sql57_object_v2**
 
-+-------------------------------------+-------------+------------------+
-| Name                                | Type        | Description      |
-+=====================================+=============+==================+
-| username                            | string      | The name of the  |
-|                                     |             | user that owns   |
-|                                     |             | the file or      |
-|                                     |             | directory.       |
-+-------------------------------------+-------------+------------------+
-| group                               | string      | The name of the  |
-|                                     |             | group that owns  |
-|                                     |             | the file or      |
-|                                     |             | directory.       |
-+-------------------------------------+-------------+------------------+
-| uread                               | string      | Determines       |
-|                                     |             | whether the user |
-|                                     |             | that owns the    |
-|                                     |             | file/directory   |
-|                                     |             | is permitted to  |
-|                                     |             | read the         |
-|                                     |             | contents of it.  |
-+-------------------------------------+-------------+------------------+
-| uwrite                              | string      | Determines       |
-|                                     |             | whether the user |
-|                                     |             | that owns the    |
-|                                     |             | file/directory   |
-|                                     |             | is permitted to  |
-|                                     |             | write to it.     |
-+-------------------------------------+-------------+------------------+
-| uexec                               | string      | Determines       |
-|                                     |             | whether the user |
-|                                     |             | that owns the    |
-|                                     |             | file/directory   |
-|                                     |             | is permitted to  |
-|                                     |             | execute the file |
-|                                     |             | or change into   |
-|                                     |             | the directory.   |
-+-------------------------------------+-------------+------------------+
-| gread                               | string      | Determines       |
-|                                     |             | whether the      |
-|                                     |             | group that owns  |
-|                                     |             | the              |
-|                                     |             | file/directory   |
-|                                     |             | is permitted to  |
-|                                     |             | read the content |
-|                                     |             | of it.           |
-+-------------------------------------+-------------+------------------+
-| gwrite                              | string      | Determines       |
-|                                     |             | whether the      |
-|                                     |             | group that owns  |
-|                                     |             | the              |
-|                                     |             | file/directory   |
-|                                     |             | is permitted to  |
-|                                     |             | write to it.     |
-+-------------------------------------+-------------+------------------+
-| gexec                               | string      | Determines       |
-|                                     |             | whether the      |
-|                                     |             | group that owns  |
-|                                     |             | the              |
-|                                     |             | file/directory   |
-|                                     |             | is permitted to  |
-|                                     |             | execute the file |
-|                                     |             | or change into   |
-|                                     |             | the directory.   |
-+-------------------------------------+-------------+------------------+
-| oread                               | string      | Determines       |
-|                                     |             | whether other    |
-|                                     |             | users/groups     |
-|                                     |             | that do not own  |
-|                                     |             | the              |
-|                                     |             | file/directory   |
-|                                     |             | are permitted to |
-|                                     |             | read the         |
-|                                     |             | contents of it.  |
-+-------------------------------------+-------------+------------------+
-| owrite                              | string      | Determines       |
-|                                     |             | whether other    |
-|                                     |             | users/groups     |
-|                                     |             | that do not own  |
-|                                     |             | the              |
-|                                     |             | file/directory   |
-|                                     |             | are permitted to |
-|                                     |             | write to it.     |
-+-------------------------------------+-------------+------------------+
-| oexec                               | string      | Determines       |
-|                                     |             | whether other    |
-|                                     |             | users/groups     |
-|                                     |             | that do not own  |
-|                                     |             | the              |
-|                                     |             | file/directory   |
-|                                     |             | are permitted to |
-|                                     |             | execute the file |
-|                                     |             | or change into   |
-|                                     |             | the directory.   |
-+-------------------------------------+-------------+------------------+
-| dir_only                            | boolean     | If this is       |
-|                                     |             | checking a       |
-|                                     |             | directory        |
-|                                     |             | permissions and  |
-|                                     |             | no file within a |
-|                                     |             | directory then   |
-|                                     |             | this should be   |
-|                                     |             | set to true.     |
-+-------------------------------------+-------------+------------------+
-| check_existence                     | string      | Defines how many |
-|                                     |             | items should be  |
-|                                     |             | collected        |
-+-------------------------------------+-------------+------------------+
-| check                               | string      | Defines how many |
-|                                     |             | collected items  |
-|                                     |             | must match the   |
-|                                     |             | expected state   |
-+-------------------------------------+-------------+------------------+
++------------------------+---------+-----------------------------------------+
+| Name                   | Type    | Description                             |
++========================+=========+=========================================+
+| username               | string  | The name of the user that owns the file |
+|                        |         | or directory.                           |
++------------------------+---------+-----------------------------------------+
+| group                  | string  | The name of the group that owns the     |
+|                        |         | file or directory.                      |
++------------------------+---------+-----------------------------------------+
+| uread                  | string  | Determines whether the user that owns   |
+|                        |         | the file/directory is permitted to read |
+|                        |         | the contents of it.                     |
++------------------------+---------+-----------------------------------------+
+| uwrite                 | string  | Determines whether the user that owns   |
+|                        |         | the file/directory is permitted to      |
+|                        |         | write to it.                            |
++------------------------+---------+-----------------------------------------+
+| uexec                  | string  | Determines whether the user that owns   |
+|                        |         | the file/directory is permitted to      |
+|                        |         | execute the file or change into the     |
+|                        |         | directory.                              |
++------------------------+---------+-----------------------------------------+
+| gread                  | string  | Determines whether the group that owns  |
+|                        |         | the file/directory is permitted to      |
+|                        |         | read the content of it.                 |
++------------------------+---------+-----------------------------------------+
+| gwrite                 | string  | Determines whether the group that owns  |
+|                        |         | the file/directory is permitted to      |
+|                        |         | write to it.                            |
++------------------------+---------+-----------------------------------------+
+| gexec                  | string  | Determines whether the group that owns  |
+|                        |         | the file/directory is permitted to      |
+|                        |         | execute the file or change into the     |
+|                        |         | directory.                              |
++------------------------+---------+-----------------------------------------+
+| oread                  | string  | Determines whether other users/groups   |
+|                        |         | that do not own the file/directory are  |
+|                        |         | permitted to read the contents of it.   |
++------------------------+---------+-----------------------------------------+
+| owrite                 | string  | Determines whether other users/groups   |
+|                        |         | that do not own the file/directory are  |
+|                        |         | permitted to write to it.               |
++------------------------+---------+-----------------------------------------+
+| oexec                  | string  | Determines whether other users/groups   |
+|                        |         | that do not own the file/directory are  |
+|                        |         | permitted to execute the file or change |
+|                        |         | into the directory.                     |
++------------------------+---------+-----------------------------------------+
+| dir_only               | boolean | If this is checking a directory         |
+|                        |         | permissions and no file within a        |
+|                        |         | directory then this should be set to    |
+|                        |         | true.                                   |
++------------------------+---------+-----------------------------------------+
+| check_existence        | string  | Defines how many items should be        |
+|                        |         | collected.                              |
++------------------------+---------+-----------------------------------------+
+| check                  | string  | Defines how many collected items must   |
+|                        |         | match the expected state.               |
++------------------------+---------+-----------------------------------------+
 
-uread NOTE: This parameter is governed by a constraint
-allowing only the following values: 
+NOTE: The ``read``, ``write``, and ``exec`` parameters are governed by a constraint allowing only the following values:
   - NA
   - set
   - unset
-
-uwrite NOTE: This parameter is governed by a constraint
-allowing only the following values:
-  - NA
-  - set
-  - unset
-
-uexec NOTE: This parameter is governed by a constraint
-allowing only the following values:
-  - NA
-  - set
-  - unset
-
-gread NOTE: This parameter is governed by a constraint
-allowing only the following values:
-  - NA
-  - set
-  - unset
-
-gwrite NOTE: This parameter is governed by a constraint
-allowing only the following values:
-  - NA
-  - set
-  - unset
-
-gexec NOTE: This parameter is governed by a constraint
-allowing only the following values:
-  - NA
-  - set
-  - unset
-
-oread NOTE: This parameter is governed by a constraint
-allowing only the following values:
-  - NA
-  - set
-  - unset
-
-owrite NOTE: This parameter is governed by a constraint
-allowing only the following values:
-  - NA
-  - set
-  - unset
-
-oexec NOTE: This parameter is governed by a constraint
-allowing only the following values:
-  - NA
-  - set
-  - unset
-
-oexec NOTE: This parameter is governed by a constraint
-allowing only the following values:
-  - NA
-  - set
-  - unset
-
-check_existence NOTE: This parameter is governed by a constraint allowing only 
-the following values: 
+  
+NOTE: The ``check_existence`` parameter is governed by a constraint allowing only the following values: 
   - all_exist 
   - any_exist 
   - at_least_one_exists 
-  - none_satisfy 
   - none_exist 
   - only_one_exists
 
-check NOTE: This parameter is governed by a constraint allowing only the
-following values: 
-  - all 
-  - at least one 
-  - none satisfy 
+NOTE: The ``check`` parameter is governed by a constraint allowing only the following values:
+  - all
+  - at least one
+  - none satisfy
   - only one
 
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
-independent.sql57_v1
+**independent.sql57_v1**
 
 XCCDF+AE
 ^^^^^^^^
@@ -931,22 +503,35 @@ SCAP
 XCCDF
 '''''
 
-For ``independent.sql57_v1`` artifacts, the xccdf:check looks like this.
+For ``independent.mysql_sql57_v1`` ``independent.sql57_v1`` artifacts, an XCCDF Value element is generated.
+
+::
+
+  <Value 
+    id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]1_var"
+    type="[type.value]"
+    operator="[operator.value]">
+    <title>[RECOMMENDATION-TITLE]</title>
+    <description>This value is used in Rule: [RECOMMENDATION-TITLE]</description>
+    <value>[value.value]</value>
+  </Value>
+
+For ``independent.mysql_sql57_v1`` ``independent.sql57_v1`` artifacts, the XCCDF check looks like this.  
 
 ::
 
   <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
     <check-export 
-      export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" 
-      value-id="xccdf_org.cisecurity_value_[ARTIFACT-OVAL-ID]_var" />
+      export-name="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
+      value-id="xccdf_org.cisecurity.benchmarks_value_[ARTIFACT-OVAL-ID]1_var" />
     <check-export 
-      export-name="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]" 
-      value-id="xccdf_org.cisecurity_value_[ARTIFACT-OVAL-ID]_var " />
+      export-name="oval:org.cisecurity.benchmarks:var:2000000"
+      value-id="xccdf_org.cisecurity_value_jdbc.url" />
     <check-export 
-      export-name="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]" 
-      value-id="xccdf_org.cisecurity_value_[ARTIFACT-OVAL-ID]_var " />
-    <check-content-ref 
-      href="[BENCHMARK-TITLE]" 
+      export-name="oval:org.cisecurity.benchmarks:var:3000000"
+      value-id="xccdf_org.cisecurity_value_repl.user" />            
+    <check-content-ref
+      href="[BENCHMARK-TITLE]-oval.xml"
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 
@@ -957,12 +542,12 @@ Test
 
 ::
 
-  <sql57_test 
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM-ID]" 
-    check="[check.value]" 
-    check_existence="[check_existence.value]" 
+  <sql57_test
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent" 
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"     
+    check_existence="[check_existence.value]"
+    check="[check.value]"
     comment="[ARTIFACT-TITLE]" 
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]" 
     version="1">
     <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
     <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
@@ -972,14 +557,14 @@ Object
 
 ::
 
-  <sql57_object 
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM-ID]" 
-    comment="[ARTIFACT-TITLE]"       
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" 
+  <sql57_object
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
+    comment="[ARTIFACT-TITLE]"
     version="1">
     <engine>[engine.value]</engine>
     <version>[version.value]</version>
-    <connection_string var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]" />
+    <connection_string var_ref="oval:org.cisecurity.benchmarks:var:2000000" />
     <sql>[sql.value]</sql>
   </sql57_object>
 
@@ -987,19 +572,19 @@ State
 
 ::
 
-  <sql57_state 
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM-ID]" 
-    comment="[ARTIFACT-TITLE]"
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" 
+  <sql57_state
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent" 
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
+    comment="[ARTIFACT-TITLE]"   
     version="1">
     <result 
-      datatype="[datatype.value]" 
-      entity_check="[entity_check.value]">
+      datatype="record" 
+      entity_check="all">
       <field 
         xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5" 
-        datatype="[datatype.value]" 
-        name="[name.value]" 
-        operation="[operation.value]" 
+        name="[name.value]"
+        operation="[operation.value]"
+        datatype="[datatype.value]"
         var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
     </result>
   </sql57_state>
@@ -1008,11 +593,23 @@ Variable
 
 ::
 
-  <external_variable 
+  <external_variable
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"  
     comment="[ARTIFACT-TITLE]"
-    datatype="[datatype.value]"  
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" 
+    datatype="[datatype.value]"
     version="1" />
+
+  <local_variable
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]1"  
+    comment="[ARTIFACT-TITLE]"
+    datatype="string"
+    version="1">
+    <concat>
+      <literal_component datatype="string">[literal_component.value]</literal_component>
+      <variable_component var_ref="oval:org.cisecurity.benchmarks:var:3000000">
+      <literal_component datatype="string">[literal_component.value]</literal_component> 
+    </concat>
+  </local_variable>
 
 YAML
 ^^^^
@@ -1029,54 +626,54 @@ YAML
             name: "engine"
             dt: "string"
             value: "[engine.value]"
-        - parameter:
+        - parameter: 
             name: "sql"
             dt: "string"
             value: "[sql.value]"
-        - parameter:
+        - parameter: 
             name: "version"
             dt: "string"
             value: "[version.value]"
-        - parameter:
+        - parameter: 
             name: "prepend_str"
             dt: "string"
             value: "[prepend_str.value]"
-        - parameter:
+        - parameter: 
             name: "append_str"
             dt: "string"
             value: "[append_str.value]"
-        - parameter:
+        - parameter: 
             name: "prepend_type"
             dt: "string"
             value: "[prepend_type.value]"
-        - parameter:
+        - parameter: 
             name: "append_type"
             dt: "string"
             value: "[append_type.value]"
-  test:
+    test:
       type: "[TEST-TYPE-NAME]"
-      parameters:   
-        - parameter:
+      parameters:
+        - parameter: 
             name: "check_existence"
             dt: "string"
             value: "[check_existence.value]"
-        - parameter:
+        - parameter: 
             name: "check"
             dt: "string"
             value: "[check.value]"
-        - parameter:
+        - parameter: 
             name: "value"
             dt: "string"
             value: "[value.value]"
-        - parameter:
+        - parameter: 
             name: "value_data_type"
             dt: "string"
             value: "[value_data_type.value]"
-        - parameter:
+        - parameter: 
             name: "field_name"
             dt: "string"
             value: "[field_name.value]"
-        - parameter:
+        - parameter: 
             name: "field_operation"
             dt: "string"
             value: "[field_operation.value]"
@@ -1197,7 +794,7 @@ JSON
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
-existence_test
+**existence_test**
 
 XCCDF+AE
 ^^^^^^^^
@@ -1206,33 +803,35 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
 
 ::
 
-  <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
-    <xccdf:check-content>
-      <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
-        <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
-        <ae:title>[ARTIFACT-TITLE]</ae:title>
-        <ae:artifact type="[ARTIFACT-TYPE-NAME]">
-          <ae:parameters>
-            <ae:parameter dt="string" name="engine">[engine.value]</ae:parameter>
-            <ae:parameter dt="string" name="sql">[sql.value]</ae:parameter>
-            <ae:parameter dt="string" name="version">[version.value]</ae:parameter>
-            <ae:parameter dt="string" name="prepend_str"[prepend_str.value]</ae:parameter>
-            <ae:parameter dt="string" name="append_str"[append_str.value]</ae:parameter>
-            <ae:parameter dt="string" name="prepend_type"[prepend_type.value]</ae:parameter>
-            <ae:parameter dt="string" name="append_type"[append_type.value]</ae:parameter>
-          </ae:parameters>
-        </ae:artifact>
-        <ae:test type="[TEST-TYPE-NAME]">
-          <ae:parameters>
-            <ae:parameter dt="string" name="value">[value.value]</ae:parameter>
-          </ae:parameters>
-        </ae:test>
-        <ae:profiles>
-          <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1" />
-        </ae:profiles>
-      </ae:artifact_expression>
-    </xccdf:check-content>
-  </xccdf:check>
+  <xccdf:complex-check operator="AND">
+    <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
+      <xccdf:check-content>
+        <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
+          <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
+          <ae:title>[ARTIFACT-TITLE]</ae:title>
+          <ae:artifact type="[ARTIFACT-TYPE-NAME]">
+            <ae:parameters>
+              <ae:parameter dt="string" name="engine">[engine.value]</ae:parameter>
+              <ae:parameter dt="string" name="sql">[sql.value]</ae:parameter>
+              <ae:parameter dt="string" name="version">[version.value]</ae:parameter>
+              <ae:parameter dt="string" name="prepend_str"[prepend_str.value]</ae:parameter>
+              <ae:parameter dt="string" name="append_str"[append_str.value]</ae:parameter>
+              <ae:parameter dt="string" name="prepend_type"[prepend_type.value]</ae:parameter>
+              <ae:parameter dt="string" name="append_type"[append_type.value]</ae:parameter>
+            </ae:parameters>
+          </ae:artifact>
+          <ae:test type="[TEST-TYPE-NAME]">
+            <ae:parameters>
+              <ae:parameter dt="string" name="value">[value.value]</ae:parameter>
+            </ae:parameters>
+          </ae:test>
+          <ae:profiles>
+            <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1" />
+          </ae:profiles>
+        </ae:artifact_expression>
+      </xccdf:check-content>
+    </xccdf:check>
+  </xccdf:complex-check>
 
 SCAP
 ^^^^
@@ -1240,13 +839,19 @@ SCAP
 XCCDF
 '''''
 
-For ``existence_test`` artifacts, the xccdf:check looks like this.
+For ``independent.mysql_sql57_v1`` ``existence_test`` artifacts, the XCCDF check looks like this. There is no Value element in the XCCDF for this artifact.
 
 ::
 
   <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
-    <check-content-ref 
-      href="[BENCHMARK-TITLE]" 
+    <check-export 
+      export-name="oval:org.cisecurity.benchmarks:var:2000000"
+      value-id="xccdf_org.cisecurity_value_jdbc.url" />
+    <check-export 
+      export-name="oval:org.cisecurity.benchmarks:var:3000000"
+      value-id="xccdf_org.cisecurity_value_repl.user" />
+    <check-content-ref
+      href="[BENCHMARK-TITLE]-oval.xml" 
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 
@@ -1257,28 +862,28 @@ Test
 
 ::
 
-  <sql57_test 
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM-ID]" 
-    check="[check.value]" 
-    check_existence="[check_existence.value]" 
+  <sql57_test
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent" 
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"     
+    check_existence="[check_existence.value]"
+    check="all" 
     comment="[ARTIFACT-TITLE]" 
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]" 
     version="1">
-    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"/>
+    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
   </sql57_test> 
 
 Object
 
 ::
 
-  <sql57_object 
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM-ID]" 
-    comment="[ARTIFACT-TITLE]" 
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" 
+  <sql57_object
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent" 
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"    
+    comment="[ARTIFACT-TITLE]"  
     version="1">
     <engine>[engine.value]</engine>
     <version>[version.value]</version>
-    <connection_string var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]" />
+    <connection_string var_ref="oval:org.cisecurity.benchmarks:var:2000000" />
     <sql>[sql.value]</sql>
   </sql57_object>
 
@@ -1288,6 +893,22 @@ State
 
   N/A 
 
+Variable
+
+::
+
+  <local_variable
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"  
+    comment="[ARTIFACT-TITLE]"
+    datatype="string"
+    version="1">
+    <concat>
+      <literal_component datatype="string">[literal_component.value]</literal_component>
+      <variable_component var_ref="oval:org.cisecurity.benchmarks:var:3000000">
+      <literal_component datatype="string">[literal_component.value]</literal_component> 
+    </concat>
+  </local_variable>
+
 YAML
 ^^^^
 
@@ -1295,7 +916,7 @@ YAML
 
   artifact-expression:
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
-    artifact_title: "[RECOMMENDATION-TITLE]" 
+    artifact_title: "[ARTIFACT-TITLE]" 
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
@@ -1416,7 +1037,7 @@ JSON
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
-SQL-Unix_File_or_Directory_Permissions_v1
+**SQL-Unix_File_or_Directory_Permissions_v1**
 
 XCCDF+AE
 ^^^^^^^^
@@ -1458,8 +1079,8 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
           </ae:parameters>
         </ae:test>
         <ae:profiles>
-          <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1"/>
-          <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_2"/>
+          <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1" />
+          <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_2" />
         </ae:profiles>
       </ae:artifact_expression>
     </xccdf:check-content>
@@ -1471,16 +1092,16 @@ SCAP
 XCCDF
 '''''
 
-For ``SQL-Unix_File_or_Directory_Permissions_v1`` artifacts, the xccdf:check looks like this.
+For ``independent.mysql_sql57_v1`` ``SQL-Unix_File_or_Directory_Permissions_v1`` artifacts, the XCCDF check looks like this. There is no Value element in the XCCDF for this artifact.
 
 ::
 
   <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
     <check-export 
-      export-name="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]" 
-      value-id="xccdf_org.cisecurity_value_[ARTIFACT-OVAL-ID]_var " />
-    <check-content-ref 
-      href="[BENCHMARK-TITLE]" 
+      export-name="oval:org.cisecurity.benchmarks:var:2000000"
+      value-id="xccdf_org.cisecurity_value_jdbc.url" />
+    <check-content-ref
+      href="[BENCHMARK-TITLE]-oval.xml" 
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 
@@ -1491,12 +1112,12 @@ Test
 
 ::
 
-  <file_test 
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM-ID]" 
-    check="[check.value]" 
-    check_existence="[check_existence.value]" 
+  <file_test
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix" 
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"     
+    check_existence="all_exist"    
+    check="all" 
     comment="[ARTIFACT-TITLE]" 
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]" 
     version="1">
     <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
     <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"> />
@@ -1506,33 +1127,49 @@ Test
 
 ::
 
-  <file_object 
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM-ID]" 
+  <file_object
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]" 
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"
     version="1">
-    <path 
-      datatype="[datatype.value]" 
-      operation="[operation.value]" 
+    <behaviors
+      max_depth="0"
+      recurse="symlinks and directories"
+      recurse_direction="none"
+      recurse_file_system="defined" />
+    <filepath 
+      datatype="string" 
+      operation="equals" 
       var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
-    <filename xsi:nil="[xsi:nil.value]" />
   </file_object>
+
+  <sql57_object
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]1"
+    comment="[ARTIFACT-TITLE]" 
+    version="1">
+    <engine>[engine.value]</engine>
+    <version>[version.value]</version>
+    <connection_string
+      var_ref="oval:org.cisecurity.benchmarks:var:2000000" />
+    <sql>[sql.value]</sql>
+  </sql57_object>
 
 State
 
 ::
 
-  <file_state 
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM-ID]" 
-    comment="[ARTIFACT-TITLE]" 
+  <file_state
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" 
+    comment="[ARTIFACT-TITLE]" 
     version="1">
     <group_id 
-      datatype="[datatype.value]" 
-      var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]" />
+      datatype="int"
+      var_ref="oval:org.cisecurity.benchmarks:var:1000003" /> 
     <user_id 
-      datatype="[datatype.value]" 
-      var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]" />
+      datatype="int" 
+      var_ref="oval:org.cisecurity.benchmarks:var:1000002" />
     <uread datatype="boolean">[uread.value]</uread>
     <uwrite datatype="boolean">[uwrite.value]</uwrite>
     <uexec datatype="boolean">[uexec.value]</uexec>
@@ -1544,19 +1181,47 @@ State
     <oexec datatype="boolean">[oexec.value]</oexec>
   </file_state>
   
-Local Variable
+Variable
 
 ::
 
-  <local_variable 
-    comment="[ARTIFACT-TITLE]" 
-    datatype="[datatype.value]" 
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" 
+  <local_variable
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
+    datatype="string"
+    comment="[ARTIFACT-TITLE]"   
     version="1">
-    <object_component 
-      item_field="[item_field.value]" 
-      object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" 
-      record_field="[record_field.value]" />
+      <object_component
+        item_field="result"
+        object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
+        record_field="value" />
+  </local_variable>
+
+  <local_variable
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
+    datatype="string"
+    comment="Capture the directory path for the PostgreSQL config file."   
+    version="1">
+    <regex_capture 
+      pattern="^([\/a-zA-Z0-9_\.\-]+\/)[a-zA-Z0-9_\.\-]+\$"> 
+        <object_component
+          item_field="result"
+          object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]1"
+          record_field="variable_path" />
+     </regex_capture>
+  </local_variable>
+
+  <local_variable
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
+    datatype="string"
+    comment="Capture the directory path for the PostgreSQL config file."   
+    version="1">
+    <regex_capture 
+      pattern="^([\/a-zA-Z0-9_\.\-]+\/)[a-zA-Z0-9_\.\-]+\$"> 
+        <object_component
+          item_field="result"
+          object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]1"
+          record_field="variable_path" />
+     </regex_capture>
   </local_variable>
 
 YAML
@@ -1566,7 +1231,7 @@ YAML
 
   artifact-expression:
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
-    artifact_title: "[RECOMMENDATION-TITLE]" 
+    artifact_title: "[ARTIFACT-TITLE]" 
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
@@ -1808,7 +1473,7 @@ JSON
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
-SQL-Unix_File_or_Directory_Permissions_v2
+**SQL-Unix_File_or_Directory_Permissions_v2**
 
 XCCDF+AE
 ^^^^^^^^
@@ -1850,8 +1515,8 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
           </ae:parameters>
         </ae:test>
         <ae:profiles>
-          <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1"/>
-          <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_2"/>
+          <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1" />
+          <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_2" />
         </ae:profiles>
       </ae:artifact_expression>
     </xccdf:check-content>
@@ -1863,16 +1528,15 @@ SCAP
 XCCDF
 '''''
 
-For ``SQL-Unix_File_or_Directory_Permissions_v2`` artifacts, the xccdf:check looks like this.
+For ``independent.mysql_sql57_v1`` ``SQL-Unix_File_or_Directory_Permissions_v2`` artifacts, the XCCDF check looks like this. There is no Value element in the XCCDF for this artifact.
 
 ::
 
-  <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
-    <check-export 
-      export-name="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]" 
-      value-id="xccdf_org.cisecurity_value_[ARTIFACT-OVAL-ID]_var " />
-    <check-content-ref 
-      href="[BENCHMARK-TITLE]" 
+  <check-export 
+      export-name="oval:org.cisecurity.benchmarks:var:2000000"
+      value-id="xccdf_org.cisecurity_value_jdbc.url" />
+    <check-content-ref
+      href="[BENCHMARK-TITLE]-oval.xml" 
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 
@@ -1884,11 +1548,11 @@ Test
 ::
 
   <file_test
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM-ID]" 
-    check="[check.value]" 
-    check_existence="[check_existence.value]" 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix" 
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"     
+    check_existence="all_exist"    
+    check="all" 
     comment="[ARTIFACT-TITLE]" 
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]" 
     version="1">  
     <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
     <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
@@ -1898,36 +1562,60 @@ Object
 
 ::
 
-  <file_object 
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM-ID]" 
-    comment="[ARTIFACT-TITLE]" 
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]" 
+  <file_object
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix" 
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
+    comment="[ARTIFACT-TITLE]"  
     version="1">  
     <path 
-      datatype="[datatype.value]" 
-      operation="[operation.value]" 
-      var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"  />
+      datatype="string" 
+      operation="equals" 
+      var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]1" />
     <filename 
-      datatype="[datatype.value]" 
-      operation="[operation.value]" 
+      datatype="string" 
+      operation="equals" 
       var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
   </file_object>
+
+  <sql57_object
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent" 
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]2"
+    comment="[ARTIFACT-TITLE]"  
+    version="1"> 
+    <engine>[engine.value]</engine> 
+    <version>[version.value]</version>
+    <connection_string
+      var_ref="oval:org.cisecurity.benchmarks:var:2000000" />
+    <sql>[sql.value]</sql>
+  </sql57_object>
+
+  <sql57_object
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent" 
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]1"
+    comment="[ARTIFACT-TITLE]"  
+    version="1"> 
+    <engine>[engine.value]</engine> 
+    <version>[version.value]</version>
+    <connection_string
+      var_ref="oval:org.cisecurity.benchmarks:var:2000000" />
+    <sql>[sql.value]</sql>
+  </sql57_object>
 
 State
 
 ::
 
-  <file_state 
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM-ID]" 
-    comment="[ARTIFACT-TITLE]" 
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]" 
+  <file_state
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix" 
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]"
+    comment="[ARTIFACT-TITLE]"  
     version="1">  
     <group_id 
-      datatype="[datatype.value]" 
-      var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]" />
+      datatype="int" 
+      var_ref="oval:org.cisecurity.benchmarks:var:1000003" />
     <user_id 
-      datatype="[datatype.value]" 
-      var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]" />
+      datatype="int" 
+      var_ref="oval:org.cisecurity.benchmarks:var:1000002" />
     <uread datatype="boolean">[uread.value]</uread>
     <uwrite datatype="boolean">[uread.value]</uwrite>
     <uexec datatype="boolean">[uread.value]</uexec>
@@ -1939,20 +1627,31 @@ State
     <oexec datatype="boolean">[uread.value]</oexec>
   </file_state>
 
-Local Variable
+Variable
 
 ::
 
-  <local_variable 
-    comment="[ARTIFACT-TITLE]" 
-    datatype="[datatype.value]" 
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]" 
+  <local_variable
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"  
+    comment="Capture the directory path for the PostgreSQL config file."
+    datatype="string"  
     version="1"> 
     <object_component 
-      item_field="[item_field.value]" 
-      object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
-      record_field="[record_field.value]" />
+      item_field="result" 
+      object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]1"
+      record_field="variable_value" />
   </local_variable>
+
+  <local_variable
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]1"  
+    comment="Capture the directory path for the PostgreSQL config file."
+    datatype="string"  
+    version="1"> 
+    <object_component 
+      item_field="result" 
+      object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]2"
+      record_field="variable_value" />
+  </local_variable>  
 
 YAML
 ^^^^
@@ -1961,7 +1660,7 @@ YAML
 
   artifact-expression:
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
-    artifact_title: "[RECOMMENDATION-TITLE]" 
+    artifact_title: "[ARTIFACT-TITLE]" 
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
@@ -2203,8 +1902,7 @@ JSON
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
-SQL-Unix_File_or_Directory_Basename_Permissions_v2
-SQL-Unix_File_or_Directory_Permissions_sql57_object_v2
+**SQL-Unix_File_or_Directory_Basename_Permissions_v2**
 
 XCCDF+AE
 ^^^^^^^^
@@ -2260,16 +1958,15 @@ SCAP
 XCCDF
 '''''
 
-For ``SQL-Unix_File_or_Directory_Basename_Permissions_v2`` or ``SQL-Unix_File_or_Directory_Permissions_sql57_object_v2`` artifacts, the xccdf:check looks like this.
+For ``independent.mysql_sql57_v1`` ``SQL-Unix_File_or_Directory_Basename_Permissions_v2`` artifacts, the XCCDF check looks like this. There is no Value element in the XCCDF for this artifact.
 
 ::
 
-  <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
-    <check-export 
-      export-name="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]" 
-      value-id="xccdf_org.cisecurity_value_[ARTIFACT-OVAL-ID]_var " />
-    <check-content-ref 
-      href="[BENCHMARK-TITLE]" 
+  <check-export 
+      export-name="oval:org.cisecurity.benchmarks:var:2000000"
+      value-id="xccdf_org.cisecurity_value_jdbc.url" />
+    <check-content-ref
+      href="[BENCHMARK-TITLE]-oval.xml" 
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 
@@ -2281,11 +1978,11 @@ Test
 ::
 
   <file_test
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM-ID]" 
-    check="[check.value]" 
-    check_existence="[check_existence.value]" 
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix" 
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"     
+    check_existence="any_exist"    
+    check="all" 
     comment="[ARTIFACT-TITLE]" 
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]" 
     version="1">  
     <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
     <state state_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" />
@@ -2295,36 +1992,48 @@ Object
 
 ::
 
-  <file_object 
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM-ID]" 
-    comment="[ARTIFACT-TITLE]" 
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]" 
+  <file_object
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix" 
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
+    comment="[ARTIFACT-TITLE]"  
     version="1">  
     <path 
-      datatype="[datatype.value]" 
-      operation="[operation.value]" 
-      var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"  />
-    <filename 
-      datatype="[datatype.value]" 
-      operation="[operation.value]" 
+      datatype="string" 
+      operation="equals" 
       var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
+    <filename 
+      datatype="string" 
+      operation="pattern match" 
+      var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]1" />
   </file_object>
+
+  <sql57_object
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent"
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]1"
+    comment="[ARTIFACT-TITLE]" 
+    version="1">
+    <engine>[engine.value]</engine>
+    <version>[version.value]</version>
+    <connection_string
+      var_ref="oval:org.cisecurity.benchmarks:var:2000000" />
+    <sql>[sql.value]</sql>
+  </sql57_object>  
 
 State
 
 ::
 
-  <file_state 
-    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#[PLATFORM-ID]" 
-    comment="[ARTIFACT-TITLE]" 
+  <file_state
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:ste:[ARTIFACT-OVAL-ID]" 
+    comment="[ARTIFACT-TITLE]" 
     version="1">
     <group_id 
-      datatype="[datatype.value]" 
-      var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]" />
+      datatype="int"
+      var_ref="oval:org.cisecurity.benchmarks:var:1000003" /> 
     <user_id 
-      datatype="[datatype.value]" 
-      var_ref="oval:org.cisecurity.benchmarks:var:[ARTIFACT-OVAL-ID]" />
+      datatype="int" 
+      var_ref="oval:org.cisecurity.benchmarks:var:1000002" />
     <uread datatype="boolean">[uread.value]</uread>
     <uwrite datatype="boolean">[uwrite.value]</uwrite>
     <uexec datatype="boolean">[uexec.value]</uexec>
@@ -2336,20 +2045,43 @@ State
     <oexec datatype="boolean">[oexec.value]</oexec>
   </file_state>
 
-Local Variable
+Variable
 
 ::
 
-  <local_variable 
-    comment="[ARTIFACT-TITLE]" 
-    datatype="[datatype.value]" 
-    id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]" 
+  <local_variable
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
+    comment="This value is used in Rule: [RECOMMENDATION-TTILE]" 
+    datatype="string" 
     version="1"> 
-    <object_component 
-      item_field="[item_field.value]" 
-      object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
-      record_field="[record_field.value]" />
+    <regex_capture 
+      pattern="^([\/a-zA-Z0-9_\.\-]+\/)[a-zA-Z0-9_\.\-]+\$" >
+        <object_component 
+          item_field="result"
+          object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]1"
+          record_field="value" />
+    </regex_capture>
   </local_variable>
+
+  <local_variable
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]1"
+    comment="This value is used in Rule: [RECOMMENDATION-TTILE]" 
+    datatype="string" 
+    version="1">
+    <concat> 
+      <regex_capture 
+        pattern="^[\/a-zA-Z0-9_\.\-]+\/([a-zA-Z0-9_\.\-]+)\$">
+          <object_component 
+            item_field="result"
+            object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]1"
+            record_field="value" />
+          <literal_component 
+            datatype="string">
+              [literal_component.value]
+            </literal_component>
+      </regex_capture>
+    </concat>
+  </local_variable>  
 
 YAML
 ^^^^
@@ -2358,7 +2090,7 @@ YAML
 
   - artifact-expression:
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
-    artifact_title: "[RECOMMENDATION-TITLE]" 
+    artifact_title: "[ARTIFACT-TITLE]" 
     artifact:
       type: "[ARTIFACT-TYPE-NAME]"
       parameters:
@@ -2448,7 +2180,7 @@ YAML
         - parameter:
             name: "check"
             dt: "string"
-            value: "[check.value]"     
+            value: "[check.value]"
 
 JSON
 ^^^^
@@ -2601,21 +2333,425 @@ JSON
             }
           },
           {
-              "parameter": {
-                  "name": "check_existence",
-                  "dt": "string",
-                  "value": "[check_existence.value]"
-              }
+            "parameter": {
+              "name": "check_existence",
+              "dt": "string",
+              "value": "[check_existence.value]"
+            }
           },
           {
-              "parameter": {
-                  "name": "check",
-                  "dt": "string",
-                  "value": "[check.value]"
-              }
+            "parameter": {
+              "name": "check",
+              "dt": "string",
+              "value": "[check.value]"
+            }
           }
         ]
       }
     }
-  }           
-    
+  }
+
+Generated Content
+~~~~~~~~~~~~~~~~~
+
+**SQL-Unix_File_or_Directory_Permissions_sql57_object_v2**
+
+XCCDF+AE
+^^^^^^^^
+
+This is what the AE check looks like, inside a Rule, in the XCCDF.
+
+::
+
+  <xccdf:check system="https://benchmarks.cisecurity.org/ae/0.5">
+    <xccdf:check-content>
+      <ae:artifact_expression id="xccdf_org.cisecurity.benchmarks_ae_[SECTION-NUMBER]">
+        <ae:artifact_oval_id>[ARTIFACT-OVAL-ID]</ae:artifact_oval_id>
+        <ae:title>[ARTIFACT-TITLE]</ae:title>
+        <ae:artifact type="[ARTIFACT-TYPE-NAME]">
+          <ae:parameters>
+            <ae:parameter dt="string" name="engine">[engine.value]</ae:parameter>
+            <ae:parameter dt="string" name="sql">[sql.value]</ae:parameter>
+            <ae:parameter dt="string" name="version">[version.value]</ae:parameter>
+            <ae:parameter dt="string" name="prepend_str">[prepend_str.value]</ae:parameter>
+            <ae:parameter dt="string" name="append_str">[append_str.value]</ae:parameter>
+            <ae:parameter dt="string" name="prepend_type">[prepend_type.value]</ae:parameter>
+            <ae:parameter dt="string" name="append_type">[append_type.value]</ae:parameter>
+          </ae:parameters>
+        </ae:artifact>
+        <ae:test type="[TEST-TYPE-NAME]">
+          <ae:parameters>
+            <ae:parameter dt="string" name="username">[username.value]</ae:parameter>
+            <ae:parameter dt="string" name="group">[group.value]</ae:parameter>
+            <ae:parameter dt="string" name="uread">[uread.value]</ae:parameter>
+            <ae:parameter dt="string" name="uwrite">[uwrite.value]</ae:parameter>
+            <ae:parameter dt="string" name="uexec">[uexec.value]</ae:parameter>
+            <ae:parameter dt="string" name="gread">[gread.value]</ae:parameter>
+            <ae:parameter dt="string" name="gwrite">[gwrite.value]</ae:parameter>
+            <ae:parameter dt="string" name="gexec">[gexec.value]</ae:parameter>
+            <ae:parameter dt="string" name="oread">[oread.value]</ae:parameter>
+            <ae:parameter dt="string" name="owrite">[owrite.value]</ae:parameter>
+            <ae:parameter dt="string" name="oexec">[oexec.value]</ae:parameter>
+            <ae:parameter dt="boolean" name="dir_only">[dir_only.value]</ae:parameter>
+            <ae:parameter dt="string" name="check_existence">[check_existence.value]</ae:parameter>
+            <ae:parameter dt="string" name="check">[check.value]</ae:parameter>
+          </ae:parameters>
+        </ae:test>
+        <ae:profiles>
+          <ae:profile idref="xccdf_org.cisecurity.benchmarks_profile_Level_1" />
+        </ae:profiles>
+      </ae:artifact_expression>
+    </xccdf:check-content>
+  </xccdf:check> 
+
+SCAP
+^^^^
+
+XCCDF
+'''''
+
+For ``independent.mysql_sql57_v1`` ``SQL-Unix_File_or_Directory_Permissions_sql57_object_v2`` artifacts, the XCCDF check looks like this. There is no Value element in the XCCDF for this artifact.
+
+::
+
+  <check-export 
+      export-name="oval:org.cisecurity.benchmarks:var:2000000"
+      value-id="xccdf_org.cisecurity_value_jdbc.url" />
+    <check-content-ref
+      href="[BENCHMARK-TITLE]-oval.xml" 
+      name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
+  </check>
+
+OVAL
+''''
+
+Test
+
+::
+
+  <file_test
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix" 
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:tst:[ARTIFACT-OVAL-ID]"     
+    check_existence="none_exist"    
+    check="all" 
+    comment="[ARTIFACT-TITLE]" 
+    version="1">  
+    <object object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]" />
+  </file_test>  
+
+Object
+
+::
+
+  <file_object
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix" 
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"
+    comment="[ARTIFACT-TITLE]"
+    version="1">  
+    <path 
+      datatype="string" 
+      operation="equals" 
+      var_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" />
+    <filename xsi:nil="true" />
+  </file_object>
+
+  <sql57_object
+    xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent" 
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]1"
+    comment="[ARTIFACT-TITLE]"
+    version="1">
+    <engine>[engine.value]</engine>
+    <version>[version.value]</version> 
+    <connection_string
+      var_ref="oval:org.cisecurity.benchmarks:var:2000000" />
+    <sql>[sql.value]</sql>
+  </sql57_object>  
+
+State
+
+::
+
+  N/A
+
+Variable
+
+::
+
+  <local_variable
+    id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]" 
+    comment="[ARTIFACT-TITLE]" 
+    datatype="string" 
+    version="1"> 
+    <object_component 
+      item_field="result" 
+      object_ref="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]1"
+      record_field="value" />
+  </local_variable>
+
+YAML
+^^^^
+
+::
+
+  - artifact-expression:
+    artifact-unique-id: "[ARTIFACT-OVAL-ID]"
+    artifact_title: "[ARTIFACT-TITLE]" 
+    artifact:
+      type: "[ARTIFACT-TYPE-NAME]"
+      parameters:
+        - parameter:
+            name: "engine"
+            dt: "string"
+            value: "[engine.value]"
+        - parameter:
+            name: "sql"
+            dt: "string"
+            value: "[sql.value]"
+        - parameter:
+            name: "version"
+            dt: "string"
+            value: "[version.value]"
+        - parameter:
+            name: "prepend_str"
+            dt: "string"
+            value: "[prepend_str.value]"
+        - parameter:
+            name: "append_str"
+            dt: "string"
+            value: "[append_str.value]"
+        - parameter:
+            name: "prepend_type"
+            dt: "string"
+            value: "[prepend_type.value]"
+        - parameter:
+            name: "append_type"
+            dt: "string"
+            value: "[append_type.value]"
+    test:
+      type: "[TEST-TYPE-NAME]"
+      parameters:
+        - parameter:
+            name: "username"
+            dt: "string"
+            value: "[username.value]"
+        - parameter:
+            name: "group"
+            dt: "string"
+            value: "[group.value]"
+        - parameter:
+            name: "uread"
+            dt: "string"
+            value: "[uread.value]"
+        - parameter:
+            name: "uwrite"
+            dt: "string"
+            value: "[uwrite.value]"
+        - parameter:
+            name: "uexec"
+            dt: "string"
+            value: "[uexec.value]"
+        - parameter:
+            name: "gread"
+            dt: "string"
+            value: "[gread.value]"
+        - parameter:
+            name: "gwrite"
+            dt: "string"
+            value: "[gwrite.value]"
+        - parameter:
+            name: "gexec"
+            dt: "string"
+            value: "[gexec.value]"
+        - parameter:
+            name: "oread"
+            dt: "string"
+            value: "[oread.value]"
+        - parameter:
+            name: "owrite"
+            dt: "string"
+            value: "[owrite.value]"
+        - parameter:
+            name: "oexec"
+            dt: "string"
+            value: "[oexec.value]"
+        - parameter:
+            name: "dir_only"
+            dt: "boolean"
+            value: "[dir_only.value]"
+        - parameter:
+            name: "check_existence"
+            dt: "string"
+            value: "[check_existence.value]"
+        - parameter:
+            name: "check"
+            dt: "string"
+            value: "[check.value]"
+
+JSON
+^^^^
+
+::
+
+  {
+    "artifact-expression": {
+      "artifact-unique-id": "[ARTIFACT-OVAL-ID]",
+      "artifact-title": "[ARTIFACT-TITLE]",
+      "artifact": {
+        "type": "[ARTIFACT-TYPE-NAME]",
+        "parameters": [
+          {
+            "parameter": {
+              "name": "engine",
+              "dt": "string",
+              "value": "[engine.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "sql",
+              "dt": "string",
+              "value": "[sql.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "version",
+              "dt": "string",
+              "value": "[version.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "prepend_str",
+              "dt": "string",
+              "value": "[prepend_str.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "append_str",
+              "dt": "string",
+              "value": "[append_str.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "prepend_type",
+              "dt": "string",
+              "value": "[prepend_type.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "append_type",
+              "dt": "string",
+              "value": "[append_type.value]"
+            }
+          }
+        ]
+      },
+      "test": {
+        "type": "[TEST-TYPE-NAME]",
+        "parameters": [
+          {
+            "parameter": {
+              "name": "username",
+              "dt": "string",
+              "value": "[username.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "group",
+              "dt": "string",
+              "value": "[group.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "uread",
+              "dt": "string",
+              "value": "[uread.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "uwrite",
+              "dt": "string",
+              "value": "[uwrite.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "uexec",
+              "dt": "string",
+              "value": "[uexec.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "gread",
+              "dt": "string",
+              "value": "[gread.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "gwrite",
+              "dt": "string",
+              "value": "[gwrite.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "gexec",
+              "dt": "string",
+              "value": "[gexec.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "oread",
+              "dt": "string",
+              "value": "[oread.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "owrite",
+              "dt": "string",
+              "value": "[owrite.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "oexec",
+              "dt": "string",
+              "value": "[oexec.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "dir_only",
+              "dt": "boolean",
+              "value": "[dir_only.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "check_existence",
+              "dt": "string",
+              "value": "[check_existence.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "check",
+              "dt": "string",
+              "value": "[check.value]"
+            }
+          }
+        ]
+      }
+    }
+  }  

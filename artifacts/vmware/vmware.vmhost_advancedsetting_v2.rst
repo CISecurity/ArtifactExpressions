@@ -142,7 +142,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
             <ae:parameter dt="string" name="vmhost_name">[vmhost_name.value]</ae:parameter>
             <ae:parameter dt="string" name="advanced_setting_name">[advanced_setting_name.value]</ae:parameter>
             <ae:parameter dt="string" name="vmhost_name_operation">[vmhost_name_operation.value]</ae:parameter>
-            <ae:parameter dt="string" name="advanced_setting_name_operation">[advanced_setting_name_operation.value]</ae:parameter>                                                
+            <ae:parameter dt="string" name="advanced_setting_name_operation">[advanced_setting_name_operation.value]</ae:parameter>
           </ae:parameters>
         </ae:artifact>
         <ae:test type="[TEST-TYPE-NAME]">

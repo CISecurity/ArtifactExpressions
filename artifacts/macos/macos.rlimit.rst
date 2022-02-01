@@ -25,12 +25,11 @@ Artifact Parameters
 |                             |         | collected.                         |
 +-----------------------------+---------+------------------------------------+
 
-NOTE: The ``check_existence`` parameter is governed by a constraint allowing only the following values:
-  - all_exist
-  - any_exist
-  - at_least_one_exists
-  - none_satisfy
-  - none_exist
+NOTE: The ``check_existence`` parameter is governed by a constraint allowing only the following values: 
+  - all_exist 
+  - any_exist 
+  - at_least_one_exists 
+  - none_exist 
   - only_one_exists
 
 Supported Test Types
