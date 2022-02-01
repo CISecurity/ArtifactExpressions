@@ -117,7 +117,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
               <ae:parameter dt="string" name="filename">[filename.value]</ae:parameter>
               <ae:parameter dt="string" name="capacitykb">[capacitykb.value]</ae:parameter>
               <ae:parameter dt="string" name="capacitygb">[capacitygb.value]</ae:parameter>
-              <ae:parameter dt="string" name="vm_name">[vm_name.value]</ae:parameter>                            
+              <ae:parameter dt="string" name="vm_name">[vm_name.value]</ae:parameter>
             </ae:parameters>
           </ae:artifact>
           <ae:test type="[TEST-TYPE-NAME]">

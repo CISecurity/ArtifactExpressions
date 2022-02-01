@@ -79,8 +79,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
         <ae:title>[ARTIFACT-TITLE]</ae:title>
         <ae:artifact type="[ARTIFACT-TYPE-NAME]">
           <ae:parameters>
-            <ae:parameter dt="string"
-              name="cisco_ios.show_subcommand">[cisco_ios.show_subcommand.value]</ae:parameter>
+            <ae:parameter dt="string" name="cisco_ios.show_subcommand">[cisco_ios.show_subcommand.value]</ae:parameter>
           </ae:parameters>
         </ae:artifact>
         <ae:test type="[TEST-TYPE-NAME]">

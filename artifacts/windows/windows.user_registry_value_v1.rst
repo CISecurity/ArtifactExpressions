@@ -86,7 +86,7 @@ NOTE: The ``check`` parameter is governed by a constraint allowing only the foll
   - none satisfy
   - only one
 
-NOTE: The ``check_existence`` parameter is governed by a constraint allowing only the following values:
+NOTE: The ``existence_check `` parameter is governed by a constraint allowing only the following values:
   - all_exist
   - any_exist
   - at_least_one_exists
@@ -419,49 +419,49 @@ JSON
           "parameter": {
             "name": "existence_check",
             "type": "string",
-            "value": "[hive.value]"
+            "value": "[existence_check.value]"
           }
         },
         {
           "parameter": {
             "name": "check",
             "type": "string",
-            "value": "[hive.value]"
+            "value": "[check.value]"
           }
         },
         {
           "parameter": {
             "name": "registry_type",
             "type": "string",
-            "value": "[hive.value]"
+            "value": "[registry_type.value]"
           }
         },
         {
           "parameter": {
             "name": "registry_type_operator",
             "type": "string",
-            "value": "[hive.value]"
+            "value": "[registry_type_operator.value]"
           }
         },
         {
           "parameter": {
             "name": "registry_value",
             "type": "string",
-            "value": "[hive.value]"
+            "value": "[registry_value.value]"
           }
         },
         {
           "parameter": {
             "name": "registry_value_datatype",
             "type": "string",
-            "value": "[hive.value]"
+            "value": "[registry_value_datatype.value]"
           }
         },
         {
           "parameter": {
             "name": "registry_value_operator",
             "type": "string",
-            "value": "[hive.value]"
+            "value": "[registry_value_operator.value]"
           }
         }
       ]

@@ -79,21 +79,16 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
          <ae:title>[ARTIFACT-TITLE]</ae:title>
          <ae:artifact type="[ARTIFACT-TYPE-NAME]">
            <ae:parameters>
-             <ae:parameter dt="string" name="site_name"
-               >[site_name.value]</ae:parameter>
-             <ae:parameter dt="string" name="application_name"
-               >[application_name.value]</ae:parameter>  
-             <ae:parameter dt="string" name="virtual_directory_name"
-               >[virtual_directory_name.value]</ae:parameter>  
+             <ae:parameter dt="string" name="site_name">[site_name.value]</ae:parameter>
+             <ae:parameter dt="string" name="application_name">[application_name.value]</ae:parameter>  
+             <ae:parameter dt="string" name="virtual_directory_name">[virtual_directory_name.value]</ae:parameter>
            </ae:parameters>
          </ae:artifact>
          <ae:test type="[TEST-TYPE-NAME]">
            <ae:parameters>
              <ae:parameter dt="string" name="operator">[operator.value]</ae:parameter>
-             <ae:parameter dt="string" name="configuration_setting"
-               >[configuration_setting.value]</ae:parameter>
-             <ae:parameter dt="string" name="data_type"
-               >[data_type.value]</ae:parameter>
+             <ae:parameter dt="string" name="configuration_setting">[configuration_setting.value]</ae:parameter>
+             <ae:parameter dt="string" name="data_type">[data_type.value]</ae:parameter>
              <ae:parameter dt="string" name="value">[value.value]</ae:parameter>
            </ae:parameters>
          </ae:test>

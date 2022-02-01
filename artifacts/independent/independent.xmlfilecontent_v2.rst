@@ -74,7 +74,6 @@ NOTE: The ``check_existence`` parameter is governed by a constraint allowing onl
   - all_exist 
   - any_exist 
   - at_least_one_exists 
-  - none_satisfy 
   - none_exist 
   - only_one_exists
 
@@ -264,6 +263,7 @@ Test
 
 Object
 
+::
 
   <xmlfilecontent_object
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent" 
@@ -397,7 +397,7 @@ JSON
             "parameter": {
               "name": "file_system",
               "type": "string",
-              "value": "file_system.value]"
+              "value": "[file_system.value]"
             }
           },
           {
@@ -625,7 +625,7 @@ JSON
             "parameter": {
               "name": "file_system",
               "type": "string",
-              "value": "file_system.value]"
+              "value": "[file_system.value]"
             }
           },
           {
@@ -788,6 +788,8 @@ State
 
 Variable
 
+::
+
   <external_variable
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
@@ -904,7 +906,7 @@ JSON
             "parameter": {
               "name": "file_system",
               "type": "string",
-              "value": "file_system.value]"
+              "value": "[file_system.value]"
             }
           },
           {

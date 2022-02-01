@@ -62,12 +62,11 @@ NOTE: The ``check`` parameter is governed by a constraint allowing only the foll
   - none satisfy
   - only one
 
-NOTE: The ``check_existence`` parameter is governed by a constraint allowing only the following values:
-  - all_exist
-  - any_exist
-  - at_least_one_exists
-  - none_satisfy
-  - none_exist
+NOTE: The ``check_existence`` parameter is governed by a constraint allowing only the following values: 
+  - all_exist 
+  - any_exist 
+  - at_least_one_exists 
+  - none_exist 
   - only_one_exists
 
 Supported Test Types
@@ -143,7 +142,7 @@ XCCDF
 
 For ``unix.individual_file_tomcat_v1`` ``existence_test`` artifacts, an XCCDF Value element is generated.
 
-**CATALINA_HOME**
+- CATALINA_HOME
 
 ::
 
@@ -155,7 +154,7 @@ For ``unix.individual_file_tomcat_v1`` ``existence_test`` artifacts, an XCCDF Va
     <value>[value.value]</value>
   </Value>
 
-**CATALINA_BASE**
+- CATALINA_BASE
 
 ::
 
@@ -169,7 +168,7 @@ For ``unix.individual_file_tomcat_v1`` ``existence_test`` artifacts, an XCCDF Va
 
 For ``unix.individual_file_tomcat_v1`` ``existence_test`` artifacts, the XCCDF check looks like this.
 
-**CATALINA_HOME**
+- CATALINA_HOME
 
 ::
 
@@ -181,7 +180,7 @@ For ``unix.individual_file_tomcat_v1`` ``existence_test`` artifacts, the XCCDF c
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 
-**CATALINA_BASE**
+- CATALINA_BASE
 
 ::
 
@@ -212,7 +211,7 @@ Test
 
 Object
 
-**CATALINA_HOME**
+- CATALINA_HOME
 
 ::
 
@@ -238,7 +237,7 @@ Object
     <filename>[filename.value]</filename>
   </file_object>
 
-**CATALINA_BASE**
+- CATALINA_BASE
 
 ::
 
@@ -272,7 +271,7 @@ State
 
 Variable
 
-**CATALINA_HOME**
+- CATALINA_HOME
 
 ::
 
@@ -304,7 +303,7 @@ Variable
       </concat>
   </local_variable>
 
-**CATALINA_BASE**
+- CATALINA_BASE
 
 ::
 

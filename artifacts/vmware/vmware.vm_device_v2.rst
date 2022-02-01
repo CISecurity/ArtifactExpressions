@@ -145,7 +145,7 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
             <ae:parameter dt="string" name="vm_name">[vm_name.value]</ae:parameter>
             <ae:parameter dt="string" name="vm_name_operation">[vm_name_operation.value]</ae:parameter>
             <ae:parameter dt="string" name="device_type_operation">[device_type_operation.value]</ae:parameter>
-            <ae:parameter dt="string" name="device_type">[device_type.value]</ae:parameter>                                                
+            <ae:parameter dt="string" name="device_type">[device_type.value]</ae:parameter>
           </ae:parameters>
         </ae:artifact>
         <ae:test type="[TEST-TYPE-NAME]">

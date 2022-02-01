@@ -8,7 +8,7 @@ The Independent: SQL57 test is used to check information stored in a database. I
 
 The sql57_objectelement is used by a sql57_testto define the specific database and query to be evaluated. Connection information is supplied allowing the tool to connect to the desired database and a query is supplied to call out the desired setting.
 
-The sql57_stateelement contains two entities that are used to check the name of the specified field and the value associated with it.
+The sql57_state element contains two entities that are used to check the name of the specified field and the value associated with it.
 
 Technical Details
 -----------------
@@ -135,8 +135,7 @@ NOTE: The ``check_existence`` parameter is governed by a constraint allowing onl
   - all_exist 
   - any_exist 
   - at_least_one_exists 
-  - none_satisfy 
-  - none_exist
+  - none_exist 
   - only_one_exists
 
 NOTE: The ``check`` parameter is governed by a constraint allowing only the following values:
@@ -307,10 +306,10 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
             <ae:parameter dt="string" name="engine">[engine.value]</ae:parameter>
             <ae:parameter dt="string" name="sql">[sql.value]</ae:parameter>
             <ae:parameter dt="string" name="version">[version.value]</ae:parameter>
-            <ae:parameter dt="string" name="prepend_str" />
-            <ae:parameter dt="string" name="append_str" />
-            <ae:parameter dt="string" name="prepend_type" />
-            <ae:parameter dt="string" name="append_type" />
+            <ae:parameter dt="string" name="prepend_str">[prepend_str.value]</ae:parameter>
+            <ae:parameter dt="string" name="append_str">[append_str.value]</ae:parameter>
+            <ae:parameter dt="string" name="prepend_type">[prepend_type.value]</ae:parameter>
+            <ae:parameter dt="string" name="append_type">[append_type.value]</ae:parameter>
           </ae:parameters>
         </ae:artifact>
         <ae:test type="[TEST-TYPE-NAME]">

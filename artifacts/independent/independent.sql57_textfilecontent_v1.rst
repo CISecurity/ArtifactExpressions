@@ -216,16 +216,15 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
             <ae:parameter dt="string" name="engine">[engine.value]</ae:parameter>
             <ae:parameter dt="string" name="sql">[sql.value]</ae:parameter>
             <ae:parameter dt="string" name="version">[version.value]</ae:parameter>
-            <ae:parameter dt="string" name="path" />
-            <ae:parameter dt="string" name="filename" />
+            <ae:parameter dt="string" name="path">[path.value]</ae:parameter>
+            <ae:parameter dt="string" name="filename">[filename.value]</ae:parameter>
             <ae:parameter dt="string" name="recurse">[recurse.value]</ae:parameter>
-            <ae:parameter dt="binary" name="max_depth" />
+            <ae:parameter dt="binary" name="max_depth">[max_depth.value]</ae:parameter>
             <ae:parameter dt="string" name="file_system">[file_system.value]</ae:parameter>
-            <ae:parameter dt="string" name="prepend_str" />
-            <ae:parameter dt="string" name="append_str" />
-            <ae:parameter dt="string" name="prepend_type" />
-            <ae:parameter dt="string" name="append_type" />
-            <ae:parameter dt="string" name="pattern">[pattern.value]</ae:parameter>
+            <ae:parameter dt="string" name="prepend_str">[prepend_str.value]</ae:parameter>
+            <ae:parameter dt="string" name="append_str">[append_str.value]</ae:parameter>
+            <ae:parameter dt="string" name="prepend_type">[prepend_type.value]</ae:parameter>
+            <ae:parameter dt="string" name="append_type">[append_type.value]</ae:parameter>.value]</ae:parameter>
           </ae:parameters>
         </ae:artifact>
         <ae:test type="[TEST-TYPE-NAME]">

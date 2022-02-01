@@ -8,7 +8,7 @@ The Independent: SQL Server Query Each Database test is used to check informatio
 
 The sql57_objectelement is used by a sql57_testto define the specific database and query to be evaluated. Connection information is supplied allowing the tool to connect to the desired database and a query is supplied to call out the desired setting.
 
-The sql57_stateelement contains two entities that are used to check the name of the specified field and the value associated with it.
+The sql57_state element contains two entities that are used to check the name of the specified field and the value associated with it.
 
 Technical Details
 -----------------
@@ -41,12 +41,11 @@ Artifact Parameters
 | check_existence                       | string  |                          |
 +---------------------------------------+---------+--------------------------+
 
-NOTE: The ``check_existence`` parameter is governed by a constraint allowing only the following values:
-  - all_exist
-  - any_exist
-  - at_least_one_exists
-  - none_satisfy
-  - none_exist
+NOTE: The ``check_existence`` parameter is governed by a constraint allowing only the following values: 
+  - all_exist 
+  - any_exist 
+  - at_least_one_exists 
+  - none_exist 
   - only_one_exists
 
 Supported Test Types

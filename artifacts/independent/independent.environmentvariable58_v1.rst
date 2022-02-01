@@ -33,7 +33,6 @@ NOTE: The ``check_existence`` parameter is governed by a constraint allowing onl
   - all_exist
   - any_exist
   - at_least_one_exists
-  - none_satisfy
   - none_exist
   - only_one_exists
 

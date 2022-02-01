@@ -84,7 +84,6 @@ NOTE: The ``check_existence`` parameter is governed by a constraint allowing onl
   - all_exist 
   - any_exist 
   - at_least_one_exists 
-  - none_satisfy 
   - none_exist 
   - only_one_exists
 
@@ -252,7 +251,7 @@ For ``independent.xmlfile_content_tomcat_v1`` ``pattern match`` and ``pattern no
 
 For ``independent.xmlfile_content_tomcat_v1`` ``pattern match`` and ``pattern not match`` artifacts, the XCCDF check looks like this. 
 
-**CATALINA_HOME**
+- CATALINA_HOME
 
 ::
 
@@ -268,7 +267,7 @@ For ``independent.xmlfile_content_tomcat_v1`` ``pattern match`` and ``pattern no
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 
-**CATALINA_BASE**
+- CATALINA_BASE
 
 ::
 
@@ -304,6 +303,8 @@ Test
 
 Object
 
+::
+
   <xmlfilecontent_object
     xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent" 
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:obj:[ARTIFACT-OVAL-ID]"    
@@ -319,7 +320,7 @@ Object
     <xpath>[path.value]</path>
   </xmlfilecontent_object>
 
-**CATALINA_HOME**
+- CATALINA_HOME
 
 ::
 
@@ -336,7 +337,7 @@ Object
     <filename xsi:nil="true" />
   </file_object>
 
-**CATALINA_BASE**
+- CATALINA_BASE
 
 ::
 
@@ -377,7 +378,7 @@ Variable
     datatype="[datatype.value]"
     version="1" />
 
-**CATALINA_HOME**
+- CATALINA_HOME
 
 ::
 
@@ -409,7 +410,7 @@ Variable
     </concat>
   </local_variable>
 
-**CATALINA_BASE**
+- CATALINA_BASE
 
 ::
 
@@ -533,7 +534,7 @@ JSON
             "parameter": {
               "name": "concat_path",
               "type": "string",
-              "value": "concat_path.value]"
+              "value": "[concat_path.value]"
             }
           },
           {
@@ -660,7 +661,7 @@ XCCDF
 
 For ``independent.xmlfilecontent_tomcat_v1`` ``existence_test`` artifacts, the XCCDF check looks like this. There is no Value element in the XCCDF for this artifact.
 
-**$CATALINA_HOME**
+- CATALINA_HOME
 
 ::
 
@@ -673,7 +674,7 @@ For ``independent.xmlfilecontent_tomcat_v1`` ``existence_test`` artifacts, the X
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 
-**$CATALINA_BASE**
+- CATALINA_BASE
 
 ::
 
@@ -721,7 +722,7 @@ Object
     <xpath>[xpath.value]</xpath>
   </xmlfilecontent_object>
 
-**$CATALINA_HOME**
+- CATALINA_HOME
 
 ::
 
@@ -739,7 +740,7 @@ Object
     <filename xsi:nil="true" />
   </file_object>
 
-**$CATALINA_BASE**
+- CATALINA_BASE
 
 ::
 
@@ -765,7 +766,7 @@ State
 
 Variable
 
-**$CATALINA_HOME**
+- CATALINA_HOME
 
 ::
 
@@ -799,7 +800,7 @@ Variable
     </concat>
   </local_variable>
 
-**$CATALINA_BASE**
+- CATALINA_BASE
 
 ::
 
@@ -921,7 +922,7 @@ JSON
             "parameter": {
               "name": "concat_path",
               "type": "string",
-              "value": "concat_path.value]"
+              "value": "[concat_path.value]"
             }
           },
           {
@@ -1060,7 +1061,7 @@ For ``independent.xmlfile_content_tomcat_v1`` ``independent.xmlfilecontent_v2`` 
 
 For ``independent.xmlfile_content_tomcat_v1`` ``independent.xmlfilecontent_v2`` artifacts, the XCCDF check looks like this.
 
-**$CATALINA_HOME**
+- CATALINA_HOME
 
 ::
 
@@ -1076,7 +1077,7 @@ For ``independent.xmlfile_content_tomcat_v1`` ``independent.xmlfilecontent_v2`` 
       name="oval:org.cisecurity.benchmarks.[PLATFORM]:def:[ARTIFACT-OVAL-ID]" />
   </check>
 
-**$CATALINA_BASE**
+- CATALINA_BASE
 
 ::
 
@@ -1128,7 +1129,7 @@ Object
     <xpath>[xpath.value]</xpath>
   </xmlfilecontent_object>
 
-**$CATALINA_HOME**
+- CATALINA_HOME
 
 ::
 
@@ -1145,7 +1146,7 @@ Object
     <filename xsi:nil="true" />
   </file_object>
 
-**$CATALINA_BASE**
+- CATALINA_BASE
 
 ::
 
@@ -1183,7 +1184,7 @@ Variable
     datatype="string"
     version="1" />
 
-**$CATALINA_HOME**
+- CATALINA_HOME
 
 ::
 
@@ -1217,7 +1218,7 @@ Variable
     </concat>
   </local_variable>
 
-**$CATALINA_BASE**
+- CATALINA_BASE
 
 ::
 
@@ -1357,7 +1358,7 @@ JSON
             "parameter": {
               "name": "concat_path",
               "type": "string",
-              "value": "concat_path.value]"
+              "value": "[concat_path.value]"
             }
           },
           {

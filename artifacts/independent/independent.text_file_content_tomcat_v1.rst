@@ -1496,113 +1496,113 @@ JSON
               "name": "max_depth",
               "type": "binary",
               "value": "[max_depth.value]"
-              }
-            },
-            {
-              "parameter": {
-                "name": "file_system",
-                "dt": "string",
-                "value": "[file_system.value]"
-              }
-            },
-            {
-              "parameter": {
-                "name": "check",
-                "dt": "string",
-                "value": "[check.value]"
-              }
-            },
-            {
-              "parameter": {
-                "name": "pattern",
-                "dt": "string",
-                "value": "[pattern.value]"
-              }
             }
-          ]
-        },
-        "test": {
-          "type": "[TEST-TYPE-NAME]",
-          "parameters": [
-            {
-              "parameter": {
-                "name": "subexpression",
-                "dt": "string",
-                "value": "[subexpression.value]"
-              }
-            },
-            {
-              "parameter": {
-                "name": "filepath",
-                "dt": "string",
-                "value": "[filepath.value]"
-              }
-            },
-            {
-              "parameter": {
-                "name": "path",
-                "dt": "string",
-                "value": "[path.value]"
-              }
-            },
-            {
-              "parameter": {
-                "name": "filename",
-                "dt": "string",
-                "value": "[filename.value]"
-              }
-            },
-            {
-              "parameter": {
-                "name": "pattern",
-                "dt": "binary",
-                "value": "[pattern.value]"
-              }
-            },
-            {
-              "parameter": {
-                "name": "instance",
-                "dt": "binary",
-                "value": "[instance.value]"
-              }
-            },
-            {
-              "parameter": {
-                "name": "subexp_op",
-                "dt": "string",
-                "value": "[subexp_op.value]"
-              }
-            },
-            {
-              "parameter": {
-                "name": "inst_op",
-                "dt": "string",
-                "value": "[inst_op.value]"
-              }
-            },
-            {
-              "parameter": {
-                "name": "text",
-                "dt": "string",
-                "value": "[text.value]"
-              }
-            },
-            {
-              "parameter": {
-                "name": "text_op",
-                "dt": "string",
-                "value": "[text_op.value]"
-              }
+          },
+          {
+            "parameter": {
+              "name": "file_system",
+              "dt": "string",
+              "value": "[file_system.value]"
             }
-          ]
-        }
+          },
+          {
+            "parameter": {
+              "name": "check",
+              "dt": "string",
+              "value": "[check.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "pattern",
+              "dt": "string",
+              "value": "[pattern.value]"
+            }
+          }
+        ]
+      },
+      "test": {
+        "type": "[TEST-TYPE-NAME]",
+        "parameters": [
+          {
+            "parameter": {
+              "name": "subexpression",
+              "dt": "string",
+              "value": "[subexpression.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "filepath",
+              "dt": "string",
+              "value": "[filepath.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "path",
+              "dt": "string",
+              "value": "[path.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "filename",
+              "dt": "string",
+              "value": "[filename.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "pattern",
+              "dt": "binary",
+              "value": "[pattern.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "instance",
+              "dt": "binary",
+              "value": "[instance.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "subexp_op",
+              "dt": "string",
+              "value": "[subexp_op.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "inst_op",
+              "dt": "string",
+              "value": "[inst_op.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "text",
+              "dt": "string",
+              "value": "[text.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "text_op",
+              "dt": "string",
+              "value": "[text_op.value]"
+            }
+          }
+        ]
       }
     }
+  }
 
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
-*Txt-Unix_File_or_Directory_Permissions_v1*
+**Txt-Unix_File_or_Directory_Permissions_v1**
 
 XCCDF+AE
 ^^^^^^^^
@@ -1656,8 +1656,6 @@ XCCDF
 '''''
 
 For ``independent.text_file_content_tomcat_v1`` ``Txt-Unix_File_or_Directory_Permissions_v1`` artifacts, the XCCDF check looks like this. There is no Value element in the XCCDF for this artifact.
-
-::
 
 - CATALINA_HOME
 
@@ -2180,7 +2178,7 @@ JSON
 Generated Content
 ~~~~~~~~~~~~~~~~~
 
-*Txt-Unix_File_or_Directory_Permissions_v2*
+**Txt-Unix_File_or_Directory_Permissions_v2**
 
 XCCDF+AE
 ^^^^^^^^
@@ -2234,8 +2232,6 @@ XCCDF
 '''''
 
 For ``independent.text_file_content_tomcat_v1`` ``Txt-Unix_File_or_Directory_Permissions_v2`` artifacts, the XCCDF check looks like this. There is no Value element in the XCCDF for this artifact.
-
-::
 
 - CATALINA_HOME
 

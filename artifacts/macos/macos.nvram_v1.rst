@@ -29,12 +29,12 @@ Artifact Parameters
 |                             |         | to check. Cannot be blank.         |
 +-----------------------------+---------+------------------------------------+
 
-NOTE: The ``check_existence`` parameter is governed by a constraint allowing only the following values:
-  -  all_exist
-  -  any_exist
-  -  at_least_one_exists
-  -  none_exist
-  -  only_one_exists
+NOTE: The ``check_existence`` parameter is governed by a constraint allowing only the following values: 
+  - all_exist 
+  - any_exist 
+  - at_least_one_exists 
+  - none_exist 
+  - only_one_exists
 
 NOTE: The ``nvram_var`` is governed by a constraint allowing only values conforming to the following regex pattern: ``^.+$``
 

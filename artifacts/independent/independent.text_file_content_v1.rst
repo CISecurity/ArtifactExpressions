@@ -4,9 +4,9 @@ Independent: Text File Content
 Description
 -----------
 
-The Independent: Text File Content test The textfilecontent54_testelement is used to check the contents of a text file (aka a configuration file) by looking at individual blocks of text.
+The Independent: Text File Content test is used to check the contents of a text file (aka a configuration file) by looking at individual blocks of text.
 
-The textfilecontent54_objectelement is used by a textfilecontent_testto define the specific block(s) of text of a file(s) to be evaluated. The textfilecontent54_objectwill only collect regular files on UNIX systems and FILE_TYPE_DISK files on Windows systems.
+The textfilecontent54_objectelement is used by a textfilecontent_test to define the specific block(s) of text of a file(s) to be evaluated. The textfilecontent54_objectwill only collect regular files on UNIX systems and FILE_TYPE_DISK files on Windows systems.
 
 The set of files to be evaluated may be identified with either a complete filepath or a path and filename. Only one of these options may be selected.
 
@@ -32,7 +32,7 @@ Artifact Parameters
 |                        |         | to the file.                            |
 +------------------------+---------+-----------------------------------------+
 | recurse                | string  | Should subdirectories be recursed       |
-|                        |         | through. (Yes/Np)                       |
+|                        |         | through. (Yes/No)                       |
 +------------------------+---------+-----------------------------------------+
 | max_depth              | int     | Max depth forrecursion. -1 for          |
 |                        |         | unlimited recursion.                    |
@@ -47,7 +47,7 @@ Artifact Parameters
 |                        |         | expression. A subexpression (using      |
 |                        |         | parentheses) can call out a piece of    |
 |                        |         | the text block to test. Must be a valid |
-|                        |         |  expression according to Perl 5's       |
+|                        |         | expression according to Perl 5's        |
 |                        |         | regular expression specification.       |
 +------------------------+---------+-----------------------------------------+
 
@@ -620,12 +620,12 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
           <ae:title>[ARTIFACT-TITLE]</ae:title>
           <ae:artifact type="[ARTIFACT-TYPE-NAME]">
             <ae:parameters>
-            <ae:parameter dt="string" name="path">[path.value]</ae:parameter>
-            <ae:parameter dt="string" name="filename">[filename.value]</ae:parameter>
-            <ae:parameter dt="string" name="recurse">[recurse.value]</ae:parameter>
-            <ae:parameter dt="int" name="max_depth">[max_depth.value]</ae:parameter>
-            <ae:parameter dt="string" name="file_system">[file_system.value]</ae:parameter>
-            <ae:parameter dt="string" name="pattern">[pattern.value]</ae:parameter>
+              <ae:parameter dt="string" name="path">[path.value]</ae:parameter>
+              <ae:parameter dt="string" name="filename">[filename.value]</ae:parameter>
+              <ae:parameter dt="string" name="recurse">[recurse.value]</ae:parameter>
+              <ae:parameter dt="int" name="max_depth">[max_depth.value]</ae:parameter>
+              <ae:parameter dt="string" name="file_system">[file_system.value]</ae:parameter>
+              <ae:parameter dt="string" name="pattern">[pattern.value]</ae:parameter>
             </ae:parameters>
           </ae:artifact>
           <ae:test type="[TEST-TYPE-NAME]">

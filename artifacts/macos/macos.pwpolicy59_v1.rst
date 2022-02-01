@@ -84,12 +84,12 @@ Artifact Parameters
 
 NOTE: The ``target_user``, ``username``, ``userpass``, and ``directory_node`` parameters are governed by a constraint allowing only values conforming to the following regex pattern: ``^.+$``
 
-NOTE: The ``check_existence`` parameter is governed by a constraint allowing only the following values:
-   -  all_exist
-   -  any_exist
-   -  at_least_one_exists
-   -  none_exist
-   -  only_one_exists
+NOTE: The ``check_existence`` parameter is governed by a constraint allowing only the following values: 
+  - all_exist 
+  - any_exist 
+  - at_least_one_exists 
+  - none_exist 
+  - only_one_exists
 
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
@@ -551,7 +551,7 @@ YAML
 
 ::
 
-  artifact-expression:
+  artifact-expression:  
     artifact-unique-id: "[ARTIFACT-OVAL-ID]"
     artifact_title: "[ARTIFACT-TITLE]"
     artifact:
@@ -901,9 +901,9 @@ JSON
           },
           {
             "parameter": {
-                "name": "expirationDateGMT",
-                "dt": "string",
-                "value": "[expirationDateGMT.value]"
+              "name": "expirationDateGMT",
+              "dt": "string",
+              "value": "[expirationDateGMT.value]"
             }
           },
           {

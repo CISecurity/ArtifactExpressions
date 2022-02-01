@@ -56,11 +56,10 @@ Test Type Parameters
 |                             |         | permissive, disabled.              |
 +-----------------------------+---------+------------------------------------+
 
-NOTE: The ``check_existence`` parameter is governed by a constraint allowing only the following values:
-  - all_exist
+NOTE: The ``check_existence`` parameter is governed by a constraint allowing only the following values: 
+  - all_exist 
   - any_exist 
   - at_least_one_exists 
-  - none_satisfy 
   - none_exist 
   - only_one_exists
 
@@ -114,11 +113,10 @@ NOTE: The ``datatype`` parameter is governed by a constraint allowing only the f
 |                             |         | ('targeted', 'minimum', or 'mls'). |
 +-----------------------------+---------+------------------------------------+
 
-NOTE: The ``check_existence`` parameter is governed by a constraint allowing only the following values:
-  - all_exist
+NOTE: The ``check_existence`` parameter is governed by a constraint allowing only the following values: 
+  - all_exist 
   - any_exist 
   - at_least_one_exists 
-  - none_satisfy 
   - none_exist 
   - only_one_exists
 
@@ -172,11 +170,10 @@ NOTE: The ``datatype`` parameter is governed by a constraint allowing only the f
 |                             |         | 'mls').                            |
 +-----------------------------+---------+------------------------------------+
 
-NOTE: The ``check_existence`` parameter is governed by a constraint allowing only the following values:
-  - all_exist
+NOTE: The ``check_existence`` parameter is governed by a constraint allowing only the following values: 
+  - all_exist 
   - any_exist 
   - at_least_one_exists 
-  - none_satisfy 
   - none_exist 
   - only_one_exists
 
@@ -229,11 +226,10 @@ NOTE: The ``datatype`` parameter is governed by a constraint allowing only the f
 |                             |         | is enabled or disabled.            |
 +-----------------------------+---------+------------------------------------+
 
-NOTE: The ``check_existence`` parameter is governed by a constraint allowing only the following values:
-  - all_exist
+NOTE: The ``check_existence`` parameter is governed by a constraint allowing only the following values: 
+  - all_exist 
   - any_exist 
   - at_least_one_exists 
-  - none_satisfy 
   - none_exist 
   - only_one_exists
 
