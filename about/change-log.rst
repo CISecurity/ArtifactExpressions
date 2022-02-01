@@ -1,7 +1,9 @@
 About Artifact Expressions
 ================================
 
-The CIS Artifact Expressions documentation is a guide for creating Artifacts during benchmark customization. The documentation is organized by family and broken down by Artifact Types. Review the Change Log below for new content.
+The CIS Artifact Expressions documentation is a guide for creating Artifacts during benchmark customization. The documentation is organized by family and broken down by Artifact Types.
+
+Review the Change Log below for new content.
 
 Change Log
 ~~~~~~~~~~~~~~~~~~~~
