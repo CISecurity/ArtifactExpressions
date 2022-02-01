@@ -1178,6 +1178,8 @@ State
 
 Variable
 
+::
+
   <external_variable
     id="oval:org.cisecurity.benchmarks.[PLATFORM]:var:[ARTIFACT-OVAL-ID]"
     comment="[ARTIFACT-TITLE]"
