@@ -13,6 +13,7 @@ MacOS
    macos.gatekeeper_v1 <macos.gatekeeper_v1>
    macos.inetlisteningserver510_v1 <macos.inetlisteningserver510_v1>
    macos.keychain_v1 <macos.keychain_v1>
+   macos.launchd_v1 <macos.launchd_v1>
    macos.nvram_v1 <macos.nvram_v1>
    macos.plist511_v1 <macos.plist511_v1>
    macos.pwpolicy59_v1 <macos.pwpolicy59_v1>
