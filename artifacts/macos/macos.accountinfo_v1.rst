@@ -43,31 +43,55 @@ Test Type Parameters
 | check                       | string  | Defines how many collected items   |
 |                             |         | must match the expected state.     |
 +-----------------------------+---------+------------------------------------+
-| operation                   | string  | Comparison Operation.              |
-+-----------------------------+---------+------------------------------------+
-| datatype                    | string  | Data type.                         |
-+-----------------------------+---------+------------------------------------+
 | username                    | integer | Specifies the user of the account  |
 |                             |         | to gather information from.        |
 +-----------------------------+---------+------------------------------------+
+| username_operation          | string  | Comparison Operation.              |
++-----------------------------+---------+------------------------------------+
+| username_datatype           | string  | Data type.                         |
++-----------------------------+---------+------------------------------------+
 | password                    | string  | Obfuscated (*****) or encrypted    |
 |                             |         | password for this user.            |
++-----------------------------+---------+------------------------------------+
+| password_operation          | string  | Comparison Operation.              |
++-----------------------------+---------+------------------------------------+
+| password_datatype           | string  | Data type.                         |
 +-----------------------------+---------+------------------------------------+
 | uid                         | integer | The numeric user id, or uid, is    |
 |                             |         | the third column of each user's    |
 |                             |         | entry in /etc/passwd. This element |
 |                             |         | represents the owner of the file.  |
 +-----------------------------+---------+------------------------------------+
+| uid_operation               | string  | Comparison Operation.              |
++-----------------------------+---------+------------------------------------+
+| uid_datatype                | string  | Data type.                         |
++-----------------------------+---------+------------------------------------+
 | gid                         | integer | Group ID of this account.          |
++-----------------------------+---------+------------------------------------+
+| gid_operation               | string  | Comparison Operation.              |
++-----------------------------+---------+------------------------------------+
+| gid_datatype                | string  | Data type.                         |
 +-----------------------------+---------+------------------------------------+
 | realname                    | string  | User's real name, aka gecos field  |
 |                             |         | of /etc/passwd.                    |
 +-----------------------------+---------+------------------------------------+
+| realname_operation          | string  | Comparison Operation.              |
++-----------------------------+---------+------------------------------------+
+| realname_datatype           | string  | Data type.                         |
++-----------------------------+---------+------------------------------------+
 | home_dir                    | string  | The home directory for this user   |
 |                             |         | account.                           |
 +-----------------------------+---------+------------------------------------+
+| home_dir_operation          | string  | Comparison Operation.              |
++-----------------------------+---------+------------------------------------+
+| home_dir_datatype           | string  | Data type.                         |
++-----------------------------+---------+------------------------------------+
 | login_shell                 | string  | The login shell for this user      |
 |                             |         | account.                           |
++-----------------------------+---------+------------------------------------+
+| login_shell_operation       | string  | Comparison Operation.              |
++-----------------------------+---------+------------------------------------+
+| login_shell_datatype        | string  | Data type.                         |
 +-----------------------------+---------+------------------------------------+
 
 NOTE: The ``check_existence`` parameter is governed by a constraint allowing only the following values:
@@ -84,7 +108,7 @@ NOTE: The ``check`` parameter is governed by a constraint allowing only the foll
   - none satisfy
   - only one
 
-NOTE: The ``operation`` parameter is governed by a constraint allowing only the following values:
+NOTE: All ``operation`` parameters are governed by a constraint allowing only the following values:
   - equals
   - not equal
   - case insensitive equals
@@ -99,7 +123,7 @@ NOTE: The ``operation`` parameter is governed by a constraint allowing only the 
   - subset of
   - superset of
 
-NOTE: The ``datatype`` parameter is governed by a constraint allowing only the following values:
+NOTE: All ``datatype`` parameters are governed by a constraint allowing only the following values:
   - boolean
   - float
   - int
@@ -133,14 +157,24 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
           <ae:parameters>
             <ae:parameter dt="string" name="existence_check">[existence_check.value]</ae:parameter>
             <ae:parameter dt="string" name="check">[check.value]</ae:parameter>
-            <ae:parameter dt="string" name="operation">[operation.value]</ae:parameter>
-            <ae:parameter dt="string" name="datatype">[datatype.value]</ae:parameter>
             <ae:parameter dt="string" name="username">[username.value]</ae:parameter>
+            <ae:parameter dt="string" name="username_operation">[username_operation.value]</ae:parameter>
+            <ae:parameter dt="string" name="username_datatype">[username_datatype.value]</ae:parameter>
             <ae:parameter dt="string" name="password">[password.value]</ae:parameter>
+            <ae:parameter dt="string" name="password_operation">[password_operation.value]</ae:parameter>
+            <ae:parameter dt="string" name="password_datatype">[password_datatype.value]</ae:parameter>
             <ae:parameter dt="integer" name="uid">[uid.value]</ae:parameter>
+            <ae:parameter dt="string" name="uid_operation">[uid_operation.value]</ae:parameter>
+            <ae:parameter dt="string" name="uid_datatype">[uid_datatype.value]</ae:parameter>
             <ae:parameter dt="integer" name="gid">[gid.value]</ae:parameter>
+            <ae:parameter dt="string" name="gid_operation">[gid_operation.value]</ae:parameter>
+            <ae:parameter dt="string" name="gid_datatype">[gid_datatype.value]</ae:parameter>
             <ae:parameter dt="string" name="home_dir">[home_dir.value]</ae:parameter>
+            <ae:parameter dt="string" name="home_dir_operation">[home_dir_operation.value]</ae:parameter>
+            <ae:parameter dt="string" name="home_dir_datatype">[home_dir_datatype.value]</ae:parameter>
             <ae:parameter dt="string" name="login_shell">[login_shell.value]</ae:parameter>
+            <ae:parameter dt="string" name="login_shell_operation">[login_shell_operation.value]</ae:parameter>
+            <ae:parameter dt="string" name="login_shell_datatype">[login_shell_datatype.value]</ae:parameter>
           </ae:parameters>
         </ae:test>
         <ae:profiles>
@@ -207,38 +241,38 @@ State
     comment="[ARTIFACT-TTILE]"
     version="1">
     <username 
-      datatype="[datatype.value]"
-      operation="[operation.value]">
+      datatype="[username_datatype.value]"
+      operation="[username_operation.value]">
         [username.value]
     </username>
     <password 
-      datatype="[datatype.value]"
-      operation="[operation.value]">
+      datatype="[password_datatype.value]"
+      operation="[password_operation.value]">
         [password.value]
     </password>
     <uid 
-      datatype="int"
-      operation="equals">
+      datatype="[uid_datatype.value]"
+      operation="[uid_operation.value]">
         [uid.value]
     </uid>
     <gid
-      datatype="int"
-      operation="equals">
+      datatype="[gid_datatype.value]"
+      operation="[gid_operation.value]">
         [gid.value]
     </gid>
     <realname 
-      datatype="[datatype.value]"
-      operation="[operation.value]">
+      datatype="[realname_datatype.value]"
+      operation="[realname_operation.value]">
         [realname.value]
     </realname>
     <home_dir
-      datatype="[datatype.value]"
-      operation="[operation.value]">
+      datatype="[home_dir_datatype.value]"
+      operation="[home_dir_operation.value]">
         [home_dir.value]
     </home_dir>
     <login_shell 
-      datatype="[datatype.value]"
-      operation="[operation.value]">
+      datatype="[login_shell_datatype.value]"
+      operation="[login_shell_operation.value]">
         [login_shell.value]
     </login_shell>
   </accountinfo_state>
@@ -268,43 +302,91 @@ YAML
         - parameter: 
             name: "check"
             dt: "string"
-            value: "[check.value]"
-        - parameter:
-            name: "operation"
-            dt: "string"
-            value: "[operation.value]"
-        - parameter: 
-            name: "datatype"
-            dt: "string"
-            value: "[datatype.value]"  
+            value: "[check.value]" 
         - parameter: 
             name: "username"
             dt: "string"
             value: "[username.value]"
+        - parameter:
+            name: "username_operation"
+            dt: "string"
+            value: "[username_operation.value]"
+        - parameter: 
+            name: "username_datatype"
+            dt: "string"
+            value: "[username_datatype.value]" 
         - parameter: 
             name: "password"
             dt: "string"
             value: "[password.value]"
+        - parameter:
+            name: "password_operation"
+            dt: "string"
+            value: "[password_operation.value]"
+        - parameter: 
+            name: "password_datatype"
+            dt: "string"
+            value: "[password_datatype.value]" 
         - parameter: 
             name: "uid"
             dt: "integer"
             value: "[uid.value]"
+        - parameter:
+            name: "uid_operation"
+            dt: "string"
+            value: "[uid_operation.value]"
+        - parameter: 
+            name: "uid_datatype"
+            dt: "string"
+            value: "[uid_datatype.value]" 
         - parameter: 
             name: "gid"
             dt: "integer"
             value: "[gid.value]"
+        - parameter:
+            name: "gid_operation"
+            dt: "string"
+            value: "[gid_operation.value]"
+        - parameter: 
+            name: "gid_datatype"
+            dt: "string"
+            value: "[gid_datatype.value]" 
         - parameter: 
             name: "realname"
             dt: "string"
             value: "[realname.value]"
+        - parameter:
+            name: "realname_operation"
+            dt: "string"
+            value: "[realname_operation.value]"
+        - parameter: 
+            name: "realname_datatype"
+            dt: "string"
+            value: "[realname_datatype.value]" 
         - parameter: 
             name: "home_dir"
             dt: "string"
             value: "[home_dir.value]"
+        - parameter:
+            name: "home_dir_operation"
+            dt: "string"
+            value: "[home_dir_operation.value]"
+        - parameter: 
+            name: "home_dir_datatype"
+            dt: "string"
+            value: "[home_dir_datatype.value]" 
         - parameter: 
             name: "login_shell"
             dt: "string"
             value: "[login_shell.value]"
+        - parameter:
+            name: "login_shell_operation"
+            dt: "string"
+            value: "[login_shell_operation.value]"
+        - parameter: 
+            name: "login_shell_datatype"
+            dt: "string"
+            value: "[login_shell_datatype.value]" 
 
 JSON
 ^^^^
@@ -346,23 +428,23 @@ JSON
           },
           {
             "parameter": {
-              "name": "operation",
-              "dt": "string",
-              "value": "[operation.value]"
-            }
-          },
-          {
-            "parameter": {
-              "name": "datatype",
-              "dt": "string",
-              "value": "[datatype.value]"
-            }
-          },
-          {
-            "parameter": {
               "name": "username",
               "dt": "string",
               "value": "[username.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "username_operation",
+              "dt": "string",
+              "value": "[username_operation.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "username_datatype",
+              "dt": "string",
+              "value": "[username_datatype.value]"
             }
           },
           {
@@ -374,9 +456,37 @@ JSON
           },
           {
             "parameter": {
+              "name": "password_operation",
+              "dt": "string",
+              "value": "[password_operation.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "password_datatype",
+              "dt": "string",
+              "value": "[password_datatype.value]"
+            }
+          },
+          {
+            "parameter": {
               "name": "uid",
               "dt": "integer",
               "value": "[uid.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "uid_operation",
+              "dt": "string",
+              "value": "[uid_operation.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "uid_datatype",
+              "dt": "string",
+              "value": "[uid_datatype.value]"
             }
           },
           {
@@ -388,9 +498,36 @@ JSON
           },
           {
             "parameter": {
+              "name": "gid_operation",
+              "dt": "string",
+              "value": "[gid_operation.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "gid_datatype",
+              "dt": "string",
+              "value": "[gid_datatype.value]"
+            }
+          },
+          {
+            "parameter": {
               "name": "realname",
               "dt": "string",
               "value": "[realname.value]"
+          },
+          {
+            "parameter": {
+              "name": "realname_operation",
+              "dt": "string",
+              "value": "[realname_operation.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "realname_datatype",
+              "dt": "string",
+              "value": "[realname_datatype.value]"
             }
           },
           {
@@ -402,9 +539,37 @@ JSON
           },
           {
             "parameter": {
+              "name": "home_dir_operation",
+              "dt": "string",
+              "value": "[home_dir_operation.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "home_dir_datatype",
+              "dt": "string",
+              "value": "[home_dir_datatype.value]"
+            }
+          },
+          {
+            "parameter": {
               "name": "login_shell",
               "dt": "string",
               "value": "[login_shell.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "login_shell_operation",
+              "dt": "string",
+              "value": "[login_shell_operation.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "login_shell_datatype",
+              "dt": "string",
+              "value": "[login_shell_datatype.value]"
             }
           }
         ]
