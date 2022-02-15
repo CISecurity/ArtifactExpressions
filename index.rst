@@ -21,7 +21,7 @@ The “Terms of Use” section provides the terms of use policy.
 
    About Artifact Expressions <about/about>
    Change Log <about/change-log>
-   How to Use This Guide  <about/how-to>
+   How to Use This Guide <about/how-to>
    Terms of Use <about/terms-of-use>
 
 .. toctree::
