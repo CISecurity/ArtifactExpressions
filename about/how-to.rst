@@ -1,5 +1,5 @@
-About Artifact Expressions
-================================
+How To
+======
 
 How to Use This Guide
 ~~~~~~~~~~~~~~~~~~~~
