@@ -68,7 +68,7 @@ Creating a Recommendation
 
 **Choosing an Artifact and Test Type**
 
-For this example, we will be using the artifact type macos:pwpolicy59. Click here to view the documentation for this artifact: `https://artifact-expressions.readthedocs.io/en/latest/artifacts/macos/macos.pwpolicy59_v1/`
+For this example, we will be using the artifact type macos:pwpolicy59. Click here to view the documentation for this artifact: https://artifact-expressions.readthedocs.io/en/latest/artifacts/macos/macos.pwpolicy59_v1/
 
 9. Click ‘+Artifact’.
 
@@ -139,7 +139,7 @@ If you wanted to add another artifact (and have it evaluated with the first arti
   :width: 700
   :alt: Alternative text
 
-Review what the generated content for the macos:pwpolicy59 artifact type should look like here: `https://artifact-expressions.readthedocs.io/en/latest/artifacts/macos/macos.pwpolicy59_v1/`
+Review what the generated content for the macos:pwpolicy59 artifact type should look like here: https://artifact-expressions.readthedocs.io/en/latest/artifacts/macos/macos.pwpolicy59_v1/
 
 
 
