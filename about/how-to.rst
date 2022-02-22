@@ -1,14 +1,13 @@
 How To
 ======
 
-How to Use This Guide
-~~~~~~~~~~~~~~~~~~~~~
-
 The CIS Artifact Expressions documentation is a guide for creating Artifacts during benchmark customization. The documentation is organized by family and broken down by Artifact Types.
 This guide will walk you through forking a benchmark and adding a custom recommendation in Workbench using this documentation.
 
 Creating a Recommendation
 =========================
+
+**Forking a Benchmark**
 
 1. Navigate to the benchmark you would like to use.
 
@@ -33,6 +32,8 @@ Creating a Recommendation
 .. image:: ../images/submitFork.png
   :width: 700
   :alt: Alternative text
+
+**Add a Recommendation**
 
 5. The left pane lists all of the ‘Sections’ of the benchmark. Each recommendation is nested in a particular Section. Use these sections to determine where to place your recommendation. In this example, we are going to create a recommendation that prohibits a user from using the same password more than once. Therefore, we are going to place it in the System Access, Authentication and Authorization > Password Management section.
 
@@ -62,6 +63,12 @@ Creating a Recommendation
   :width: 700
   :alt: Alternative text
 
+**Choosing an Artifact and Test Type**
+
+- For this example, we will be using the artifact type macos:pwpolicy59. Click below to view the documentation for this artifact:
+
+https://artifact-expressions.readthedocs.io/en/latest/artifacts/macos/macos.pwpolicy59_v1/
+
 9. Click ‘+Artifact’.
 
 .. image:: ../images/addArtifact.png
@@ -86,6 +93,9 @@ Creating a Recommendation
   :width: 700
   :alt: Alternative text
 
+Artifact Equation
+-----------------
+
 13. Next, you must add an Artifact Equation. The purpose of the Artifact Equation is twofold: 1) To determine the All Pass All Fail result of the Recommendation in the CIS-CAT Assessor 2) To tell Workbench how multiple artifacts should be evaluated (together?). The artifact equation is a logical statement consisting of AND, OR, and a number. The number references the artifact. This number can be found in the top left corner of the artifact. See the image below.
 
 .. image:: ../images/artifactNumber.png
@@ -103,6 +113,8 @@ If you wanted to add another artifact (and have it evaluated with the first arti
 .. image:: ../images/secondArtifactEquation.png
   :width: 700
   :alt: Alternative text
+
+**Finish and Review Recommendation**
 
 14. When you’re finished, click ‘Submit’.
 
@@ -125,6 +137,10 @@ If you wanted to add another artifact (and have it evaluated with the first arti
 .. image:: ../images/artifactDetailsGlance.png
   :width: 700
   :alt: Alternative text
+
+Review what the generated content for the macos:pwpolicy59 artifact type should look like here:
+
+https://artifact-expressions.readthedocs.io/en/latest/artifacts/macos/macos.pwpolicy59_v1/
 
 
 
