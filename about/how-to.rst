@@ -1,9 +1,6 @@
 How To
 ======
 
-How to Use This Guide
-~~~~~~~~~~~~~~~~~~~~~
-
 The CIS Artifact Expressions documentation is a guide for creating Artifacts during benchmark customization. The documentation is organized by family and broken down by Artifact Types.
 This guide will walk you through forking a benchmark and adding a custom recommendation in Workbench using this documentation.
 
@@ -97,7 +94,7 @@ https://artifact-expressions.readthedocs.io/en/latest/artifacts/macos/macos.pwpo
   :alt: Alternative text
 
 Artifact Equation
-^^^^^^^^^^^^^^^^^
+-----------------
 
 13. Next, you must add an Artifact Equation. The purpose of the Artifact Equation is twofold: 1) To determine the All Pass All Fail result of the Recommendation in the CIS-CAT Assessor 2) To tell Workbench how multiple artifacts should be evaluated (together?). The artifact equation is a logical statement consisting of AND, OR, and a number. The number references the artifact. This number can be found in the top left corner of the artifact. See the image below.
 
