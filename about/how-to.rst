@@ -90,7 +90,7 @@ https://artifact-expressions.readthedocs.io/en/latest/artifacts/macos/macos.pwpo
   :width: 700
   :alt: Alternative text
 
-12. Fill out the parameter fields. View the parameter requirements for macos:pwpolicy59 in the OVAL Language documentation here: https://github.com/OVALProject/Language/blob/master/docs/macos-definitions-schema.md#pwpolicy59_test Make sure you set ‘Assessment Status’ to ‘Automated’. NOTE: If you would like this Recommendation to be excluded from the CIS-CAT Assessor Tool, set ‘Assessment Status’ to ‘Manual’.
+12. Fill out the parameter fields. View the parameter requirements for macos:pwpolicy59 in the OVAL Language documentation here: https://artifact-expressions.readthedocs.io/en/latest/artifacts/macos/macos.pwpolicy59_v1/#artifact-parameters Make sure you set ‘Assessment Status’ to ‘Automated’. NOTE: If you would like this Recommendation to be excluded from the CIS-CAT Assessor Tool, set ‘Assessment Status’ to ‘Manual’.
 
 .. image:: ../images/assessmentStatus.png
   :width: 700
