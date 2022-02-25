@@ -5,9 +5,10 @@ The CIS Artifact Expressions documentation is a guide for creating Artifacts dur
 This guide will walk you through forking a benchmark and adding a custom recommendation in Workbench using this documentation.
 
 Creating a Recommendation
-=========================
+-------------------------
 
-**Forking a Benchmark**
+Forking a Benchmark
+^^^^^^^^^^^^^^^^^^^^^^^
 
 1. Navigate to the benchmark you would like to use.
 
@@ -33,7 +34,8 @@ Creating a Recommendation
   :width: 700
   :alt: Alternative text
 
-**Add a Recommendation**
+Add a Recommendation
+--------------------
 
 5. The left pane lists all of the ‘Sections’ of the benchmark. Each recommendation is nested in a particular Section. Use these sections to determine where to place your recommendation. In this example, we are going to create a recommendation that prohibits a user from using the same password more than once. Therefore, we are going to place it in the System Access, Authentication and Authorization > Password Management section.
 
@@ -63,7 +65,8 @@ Creating a Recommendation
   :width: 700
   :alt: Alternative text
 
-**Choosing an Artifact and Test Type**
+Choosing an Artifact and Test Type
+----------------------------------
 
 - For this example, we will be using the artifact type macos:pwpolicy59. Click below to view the documentation for this artifact:
 
@@ -87,7 +90,7 @@ https://artifact-expressions.readthedocs.io/en/latest/artifacts/macos/macos.pwpo
   :width: 700
   :alt: Alternative text
 
-12. Fill in the required fields. Make sure you set ‘Assessment Status’ to ‘Automated’. NOTE: If you would like this Recommendation to be excluded from the CIS-CAT Assessor Tool, set ‘Assessment Status’ to ‘Manual’.
+12. Fill out the parameter fields. View the parameter requirements for macos:pwpolicy59 in the OVAL Language documentation here: https://github.com/OVALProject/Language/blob/master/docs/macos-definitions-schema.md#pwpolicy59_test Make sure you set ‘Assessment Status’ to ‘Automated’. NOTE: If you would like this Recommendation to be excluded from the CIS-CAT Assessor Tool, set ‘Assessment Status’ to ‘Manual’.
 
 .. image:: ../images/assessmentStatus.png
   :width: 700
@@ -96,7 +99,7 @@ https://artifact-expressions.readthedocs.io/en/latest/artifacts/macos/macos.pwpo
 Artifact Equation
 -----------------
 
-13. Next, you must add an Artifact Equation. The purpose of the Artifact Equation is twofold: 1) To determine the All Pass All Fail result of the Recommendation in the CIS-CAT Assessor 2) To tell Workbench how multiple artifacts should be evaluated (together?). The artifact equation is a logical statement consisting of AND, OR, and a number. The number references the artifact. This number can be found in the top left corner of the artifact. See the image below.
+13. Next, you must add an Artifact Equation. The purpose of the Artifact Equation is twofold: 1) To determine the All Pass All Fail result of the Recommendation in the CIS-CAT Assessor 2) To tell Workbench how multiple artifacts should be evaluated together. The artifact equation is a logical statement consisting of AND, OR, and a number. The number references the artifact. This number can be found in the top left corner of the artifact. See the image below.
 
 .. image:: ../images/artifactNumber.png
   :width: 700
@@ -114,7 +117,8 @@ If you wanted to add another artifact (and have it evaluated with the first arti
   :width: 700
   :alt: Alternative text
 
-**Finish and Review Recommendation**
+Finish and Review Recommendation
+--------------------------------
 
 14. When you’re finished, click ‘Submit’.
 

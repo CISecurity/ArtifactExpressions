@@ -9,7 +9,7 @@ The “About Artifact Expressions” section outlines what to expect from this d
 
 The “Change Log” lists releases beginning January 2022, with the newest at the top.
 
-The "How to Use This Guide" describes how to best use this documentation. This serves as a guide to help you find the information you need.
+The "How To" describes how to best use this documentation. This serves as a guide to help you find the information you need.
 
 The “Terms of Use” section provides the terms of use policy.
 
@@ -21,7 +21,7 @@ The “Terms of Use” section provides the terms of use policy.
 
    About Artifact Expressions <about/about>
    Change Log <about/change-log>
-   How to Use This Guide <about/how-to>
+   How To <about/how-to>
    Terms of Use <about/terms-of-use>
 
 .. toctree::
