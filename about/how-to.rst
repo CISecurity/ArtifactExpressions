@@ -4,11 +4,9 @@ How To
 The CIS Artifact Expressions documentation is a guide for creating Artifacts during benchmark customization. The documentation is organized by family and broken down by Artifact Types.
 This guide will walk you through forking a benchmark and adding a custom recommendation in Workbench using this documentation.
 
-Creating a Recommendation
+Fork a Benchmark
 -------------------------
 
-Forking a Benchmark
-^^^^^^^^^^^^^^^^^^^^^^^
 
 1. Navigate to the benchmark you would like to use.
 
@@ -65,7 +63,7 @@ Add a Recommendation
   :width: 700
   :alt: Alternative text
 
-Choosing an Artifact and Test Type
+Choose an Artifact and Test Type
 ----------------------------------
 
 - For this example, we will be using the artifact type macos:pwpolicy59. Click below to view the documentation for this artifact:
@@ -90,7 +88,11 @@ https://artifact-expressions.readthedocs.io/en/latest/artifacts/macos/macos.pwpo
   :width: 700
   :alt: Alternative text
 
-12. Fill out the parameter fields. View the parameter requirements for macos:pwpolicy59 in the OVAL Language documentation here: https://artifact-expressions.readthedocs.io/en/latest/artifacts/macos/macos.pwpolicy59_v1/#artifact-parameters Make sure you set ‘Assessment Status’ to ‘Automated’. NOTE: If you would like this Recommendation to be excluded from the CIS-CAT Assessor Tool, set ‘Assessment Status’ to ‘Manual’.
+12. Fill out the remaining fields, starting with any parameters (ex. 'Target User'). View the parameter requirements for macos:pwpolicy59 in the OVAL Language documentation here: https://artifact-expressions.readthedocs.io/en/latest/artifacts/macos/macos.pwpolicy59_v1/#artifact-parameters
+
+Make sure you set ‘Assessment Status’ to ‘Automated’ and select your profile(s).
+
+NOTE: If you would like this Recommendation to be excluded from the CIS-CAT Assessor Tool, set ‘Assessment Status’ to ‘Manual’.
 
 .. image:: ../images/assessmentStatus.png
   :width: 700
