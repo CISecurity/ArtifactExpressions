@@ -82,9 +82,9 @@ Artifact Parameters
 |                               |         | be collected.                    |
 +-------------------------------+---------+----------------------------------+
 
-NOTE: The ``target_user``, ``username``, ``userpass``, and ``directory_node`` parameters are governed by a constraint allowing only values conforming to the following regex pattern: ``^.+$``
+:emphasis:`NOTE: The ``target_user``, ``username``, ``userpass``, and ``directory_node`` parameters are governed by a constraint allowing only values conforming to the following regex pattern: ``^.+$```
 
-NOTE: The ``check_existence`` parameter is governed by a constraint allowing only the following values: 
+`NOTE: The ``check_existence`` parameter is governed by a constraint allowing only the following values:`
   - all_exist 
   - any_exist 
   - at_least_one_exists 
@@ -325,7 +325,7 @@ Test Type Parameters
 | notGuessablePattern_datatype            | string  | The data type of the value.      |
 +-----------------------------------------+---------+----------------------------------+
 
-NOTE: The ``check`` parameter is governed by a constraint allowing only the following values:
+`NOTE: The ``check`` parameter is governed by a constraint allowing only the following values:`
    -  all
    -  at least one
    -  none satisfy
@@ -488,50 +488,50 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
               <ae:parameter dt="string" name="directory_node_operation">[directory_node_operation.value]</ae:parameter>
               <ae:parameter dt="string" name="directory_node_datatype">[directory_node_datatype.value]</ae:parameter>
               <ae:parameter dt="integer" name="maxChars">[maxChars.value]</ae:parameter>
-              <ae:parameter dt="integer" name="maxChars_operation">[maxChars_operation.value]</ae:parameter>
-              <ae:parameter dt="integer" name="maxChars_datatype">[maxChars_datatype.value]</ae:parameter>
+              <ae:parameter dt="string" name="maxChars_operation">[maxChars_operation.value]</ae:parameter>
+              <ae:parameter dt="string" name="maxChars_datatype">[maxChars_datatype.value]</ae:parameter>
               <ae:parameter dt="integer" name="maxFailedLoginAttempts">[maxFailedLoginAttempts.value]</ae:parameter>
-              <ae:parameter dt="integer" name="maxFailedLoginAttempts_operation">[maxFailedLoginAttempts_operation.value]</ae:parameter>
-              <ae:parameter dt="integer" name="maxFailedLoginAttempts_datatype">[maxFailedLoginAttempts_datatype.value]</ae:parameter>
+              <ae:parameter dt="string" name="maxFailedLoginAttempts_operation">[maxFailedLoginAttempts_operation.value]</ae:parameter>
+              <ae:parameter dt="string" name="maxFailedLoginAttempts_datatype">[maxFailedLoginAttempts_datatype.value]</ae:parameter>
               <ae:parameter dt="integer" name="minChars">[minChars.value]</ae:parameter>
-              <ae:parameter dt="integer" name="minChars_operation">[minChars_operation.value]</ae:parameter>
-              <ae:parameter dt="integer" name="minChars_datatype">[minChars_datatype.value]</ae:parameter>
+              <ae:parameter dt="string" name="minChars_operation">[minChars_operation.value]</ae:parameter>
+              <ae:parameter dt="string" name="minChars_datatype">[minChars_datatype.value]</ae:parameter>
               <ae:parameter dt="boolean" name="passwordCannotBeName">[passwordCannotBeName.value]</ae:parameter>
-              <ae:parameter dt="boolean" name="passwordCannotBeName_operation">[passwordCannotBeName_operation.value]</ae:parameter>
-              <ae:parameter dt="boolean" name="passwordCannotBeName_datatype">[passwordCannotBeName_datatype.value]</ae:parameter>
+              <ae:parameter dt="string" name="passwordCannotBeName_operation">[passwordCannotBeName_operation.value]</ae:parameter>
+              <ae:parameter dt="string" name="passwordCannotBeName_datatype">[passwordCannotBeName_datatype.value]</ae:parameter>
               <ae:parameter dt="boolean" name="requiresAlpha">[requiresAlpha.value]</ae:parameter>
-              <ae:parameter dt="boolean" name="requiresAlpha_operation">[requiresAlpha_operation.value]</ae:parameter>
-              <ae:parameter dt="boolean" name="requiresAlpha_datatype">[requiresAlpha_datatype.value]</ae:parameter>
+              <ae:parameter dt="string" name="requiresAlpha_operation">[requiresAlpha_operation.value]</ae:parameter>
+              <ae:parameter dt="string" name="requiresAlpha_datatype">[requiresAlpha_datatype.value]</ae:parameter>
               <ae:parameter dt="boolean" name="requiresNumeric">[requiresNumeric.value]</ae:parameter>
-              <ae:parameter dt="boolean" name="requiresNumeric_operation">[requiresNumeric_operation.value]</ae:parameter>
-              <ae:parameter dt="boolean" name="requiresNumeric_datatype">[requiresNumeric_datatype.value]</ae:parameter>
+              <ae:parameter dt="string" name="requiresNumeric_operation">[requiresNumeric_operation.value]</ae:parameter>
+              <ae:parameter dt="string" name="requiresNumeric_datatype">[requiresNumeric_datatype.value]</ae:parameter>
               <ae:parameter dt="integer" name="maxMinutesUntilChangePassword">[maxMinutesUntilChangePassword.value]</ae:parameter>
-              <ae:parameter dt="integer" name="maxMinutesUntilChangePassword_operation">[maxMinutesUntilChangePassword_operation.value]</ae:parameter>
-              <ae:parameter dt="integer" name="maxMinutesUntilChangePassword_datatype">[maxMinutesUntilChangePassword_datatype.value]</ae:parameter>
+              <ae:parameter dt="string" name="maxMinutesUntilChangePassword_operation">[maxMinutesUntilChangePassword_operation.value]</ae:parameter>
+              <ae:parameter dt="string" name="maxMinutesUntilChangePassword_datatype">[maxMinutesUntilChangePassword_datatype.value]</ae:parameter>
               <ae:parameter dt="integer" name="minMinutesUntilChangePassword">[minMinutesUntilChangePassword.value]</ae:parameter>
-              <ae:parameter dt="integer" name="minMinutesUntilChangePassword_operation">[minMinutesUntilChangePassword_operation.value]</ae:parameter>
-              <ae:parameter dt="integer" name="minMinutesUntilChangePassword_datatype">[minMinutesUntilChangePassword_datatype.value]</ae:parameter>
+              <ae:parameter dt="string" name="minMinutesUntilChangePassword_operation">[minMinutesUntilChangePassword_operation.value]</ae:parameter>
+              <ae:parameter dt="string" name="minMinutesUntilChangePassword_datatype">[minMinutesUntilChangePassword_datatype.value]</ae:parameter>
               <ae:parameter dt="boolean" name="requiresMixedCase">[requiresMixedCase.value]</ae:parameter>
-              <ae:parameter dt="boolean" name="requiresMixedCase_operation">[requiresMixedCase_operation.value]</ae:parameter>
-              <ae:parameter dt="boolean" name="requiresMixedCase_datatype">[requiresMixedCase_datatype.value]</ae:parameter>
+              <ae:parameter dt="string" name="requiresMixedCase_operation">[requiresMixedCase_operation.value]</ae:parameter>
+              <ae:parameter dt="string" name="requiresMixedCase_datatype">[requiresMixedCase_datatype.value]</ae:parameter>
               <ae:parameter dt="boolean" name="requiresSymbol">[requiresSymbol.value]</ae:parameter>
-              <ae:parameter dt="boolean" name="requiresSymbol_operation">[requiresSymbol_operation.value]</ae:parameter>
-              <ae:parameter dt="boolean" name="requiresSymbol_datatype">[requiresSymbol_datatype.value]</ae:parameter>
+              <ae:parameter dt="string" name="requiresSymbol_operation">[requiresSymbol_operation.value]</ae:parameter>
+              <ae:parameter dt="string" name="requiresSymbol_datatype">[requiresSymbol_datatype.value]</ae:parameter>
               <ae:parameter dt="integer" name="minutesUntilFailedLoginReset">[minutesUntilFailedLoginReset.value]</ae:parameter>
-              <ae:parameter dt="integer" name="minutesUntilFailedLoginReset_operation">[minutesUntilFailedLoginReset_operation.value]</ae:parameter>
-              <ae:parameter dt="integer" name="minutesUntilFailedLoginReset_datatype">[minutesUntilFailedLoginReset_datatype.value]</ae:parameter>
+              <ae:parameter dt="string" name="minutesUntilFailedLoginReset_operation">[minutesUntilFailedLoginReset_operation.value]</ae:parameter>
+              <ae:parameter dt="string" name="minutesUntilFailedLoginReset_datatype">[minutesUntilFailedLoginReset_datatype.value]</ae:parameter>
               <ae:parameter dt="integer" name="usingHistory">[usingHistory.value]</ae:parameter>
-              <ae:parameter dt="integer" name="usingHistory_operation">[usingHistory_operation.value]</ae:parameter>
-              <ae:parameter dt="integer" name="usingHistory_datatype">[usingHistory_datatype.value]</ae:parameter>
+              <ae:parameter dt="string" name="usingHistory_operation">[usingHistory_operation.value]</ae:parameter>
+              <ae:parameter dt="string" name="usingHistory_datatype">[usingHistory_datatype.value]</ae:parameter>
               <ae:parameter dt="boolean" name="canModifyPasswordforSelf">[canModifyPasswordforSelf.value]</ae:parameter>
-              <ae:parameter dt="boolean" name="canModifyPasswordforSelf_operation">[canModifyPasswordforSelf_operation.value]</ae:parameter>
-              <ae:parameter dt="boolean" name="canModifyPasswordforSelf_datatype">[canModifyPasswordforSelf_datatype.value]</ae:parameter>
+              <ae:parameter dt="string" name="canModifyPasswordforSelf_operation">[canModifyPasswordforSelf_operation.value]</ae:parameter>
+              <ae:parameter dt="string" name="canModifyPasswordforSelf_datatype">[canModifyPasswordforSelf_datatype.value]</ae:parameter>
               <ae:parameter dt="boolean" name="usingExpirationDate">[usingExpirationDate.value]</ae:parameter>
-              <ae:parameter dt="boolean" name="usingExpirationDate_operation">[usingExpirationDate_operation.value]</ae:parameter>
-              <ae:parameter dt="boolean" name="usingExpirationDate_datatype">[usingExpirationDate_datatype.value]</ae:parameter>
+              <ae:parameter dt="string" name="usingExpirationDate_operation">[usingExpirationDate_operation.value]</ae:parameter>
+              <ae:parameter dt="string" name="usingExpirationDate_datatype">[usingExpirationDate_datatype.value]</ae:parameter>
               <ae:parameter dt="boolean" name="usingHardExpirationDate">[usingHardExpirationDate.value]</ae:parameter>
-              <ae:parameter dt="boolean" name="usingHardExpirationDate_operation">[usingHardExpirationDate_operation.value]</ae:parameter>
-              <ae:parameter dt="boolean" name="usingHardExpirationDate_datatype">[usingHardExpirationDate_datatype.value]</ae:parameter>
+              <ae:parameter dt="string" name="usingHardExpirationDate_operation">[usingHardExpirationDate_operation.value]</ae:parameter>
+              <ae:parameter dt="string" name="usingHardExpirationDate_datatype">[usingHardExpirationDate_datatype.value]</ae:parameter>
               <ae:parameter dt="string" name="expirationDateGMT">[expirationDateGMT.value]</ae:parameter>
               <ae:parameter dt="string" name="expirationDateGMT_operation">[expirationDateGMT_operation.value]</ae:parameter>
               <ae:parameter dt="string" name="expirationDateGMT_datatype">[expirationDateGMT_datatype.value]</ae:parameter>
@@ -539,17 +539,17 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
               <ae:parameter dt="string" name="hardExpireDateGMT_operation">[hardExpireDateGMT_operation.value]</ae:parameter>
               <ae:parameter dt="string" name="hardExpireDateGMT_datatype">[hardExpireDateGMT_datatype.value]</ae:parameter>
               <ae:parameter dt="integer" name="maxMinutesUntilDisabled">[maxMinutesUntilDisabled.value]</ae:parameter>
-              <ae:parameter dt="integer" name="maxMinutesUntilDisabled_operation">[maxMinutesUntilDisabled_operation.value]</ae:parameter>
-              <ae:parameter dt="integer" name="maxMinutesUntilDisabled_datatype">[maxMinutesUntilDisabled_datatype.value]</ae:parameter>
+              <ae:parameter dt="string" name="maxMinutesUntilDisabled_operation">[maxMinutesUntilDisabled_operation.value]</ae:parameter>
+              <ae:parameter dt="string" name="maxMinutesUntilDisabled_datatype">[maxMinutesUntilDisabled_datatype.value]</ae:parameter>
               <ae:parameter dt="integer" name="maxMinutesOfNonUse">[maxMinutesOfNonUse.value]</ae:parameter>
-              <ae:parameter dt="integer" name="maxMinutesOfNonUse_operation">[maxMinutesOfNonUse_operation.value]</ae:parameter>
-              <ae:parameter dt="integer" name="maxMinutesOfNonUse_datatype">[maxMinutesOfNonUse_datatype.value]</ae:parameter>
+              <ae:parameter dt="string" name="maxMinutesOfNonUse_operation">[maxMinutesOfNonUse_operation.value]</ae:parameter>
+              <ae:parameter dt="string" name="maxMinutesOfNonUse_datatype">[maxMinutesOfNonUse_datatype.value]</ae:parameter>
               <ae:parameter dt="boolean" name="newPasswordRequired">[newPasswordRequired.value]</ae:parameter>
-              <ae:parameter dt="boolean" name="newPasswordRequired_operation">[newPasswordRequired_operation.value]</ae:parameter>
-              <ae:parameter dt="boolean" name="newPasswordRequired_datatype">[newPasswordRequired_datatype.value]</ae:parameter>
+              <ae:parameter dt="string" name="newPasswordRequired_operation">[newPasswordRequired_operation.value]</ae:parameter>
+              <ae:parameter dt="string" name="newPasswordRequired_datatype">[newPasswordRequired_datatype.value]</ae:parameter>
               <ae:parameter dt="boolean" name="notGuessablePattern">[notGuessablePattern.value]</ae:parameter>
-              <ae:parameter dt="boolean" name="notGuessablePattern_operation">[notGuessablePattern_operation.value]</ae:parameter>
-              <ae:parameter dt="boolean" name="notGuessablePattern_datatype">[notGuessablePattern_datatype.value]</ae:parameter>
+              <ae:parameter dt="string" name="notGuessablePattern_operation">[notGuessablePattern_operation.value]</ae:parameter>
+              <ae:parameter dt="string" name="notGuessablePattern_datatype">[notGuessablePattern_datatype.value]</ae:parameter>
             </ae:parameters>
           </ae:test>
           <ae:profiles>
@@ -791,11 +791,11 @@ YAML
         - parameter:
             name: "target_user_operation"
             dt: "string"
-            value: "equals"
+            value: "[target_user_operation.value]"
         - parameter:
             name: "target_user_datatype"
             dt: "string"
-            value: "string"
+            value: "[target_user_datatype.value]"
         - parameter:
             name: "username"
             dt: "string"
@@ -803,11 +803,11 @@ YAML
         - parameter:
             name: "username_datatype"
             dt: "string"
-            value: "string"
+            value: "[username_datatype.value]"
         - parameter:
             name: "username_operation"
             dt: "string"
-            value: "equals"
+            value: "[username_operation.value]"
         - parameter:
             name: "userpass"
             dt: "string"
@@ -815,11 +815,11 @@ YAML
         - parameter:
             name: "userpass_datatype"
             dt: "string"
-            value: "string"
+            value: "[userpass_datatype.value]"
         - parameter:
             name: "userpass_operation"
             dt: "string"
-            value: "equals"
+            value: "[userpass_operation.value]"
         - parameter:
             name: "directory_node"
             dt: "string"
@@ -827,11 +827,11 @@ YAML
         - parameter:
             name: "directory_node_datatype"
             dt: "string"
-            value: "string"
+            value: "[directory_node_datatype.value]"
         - parameter:
             name: "directory_node_operation"
             dt: "string"
-            value: "equals"
+            value: "[directory_node_operation.value]"
         - parameter:
             name: "maxChars"
             dt: "integer"
@@ -839,11 +839,11 @@ YAML
         - parameter:
             name: "maxChars_datatype"
             dt: "string"
-            value: "int"
+            value: "[maxChars_datatype.value]"
         - parameter:
             name: "maxChars_operation"
             dt: "string"
-            value: "equals"
+            value: "[maxChars_operation.value]"
         - parameter:
             name: "maxFailedLoginAttempts"
             dt: "integer"
@@ -851,11 +851,11 @@ YAML
         - parameter:
             name: "maxFailedLoginAttempts_datatype"
             dt: "string"
-            value: "int"
+            value: "[maxFailedLoginAttempts_datatype.value]"
         - parameter:
             name: "maxFailedLoginAttempts_operation"
             dt: "string"
-            value: "equals"
+            value: "[maxFailedLoginAttempts_operation.value]"
         - parameter:
             name: "minChars"
             dt: "integer"
@@ -863,11 +863,11 @@ YAML
         - parameter:
             name: "minChars_datatype"
             dt: "string"
-            value: "int"
+            value: "[minChars_datatype.value]"
         - parameter:
             name: "minChars_operation"
             dt: "string"
-            value: "equals"
+            value: "[minChars_operation.value]"
         - parameter:
             name: "passwordCannotBeName"
             dt: "boolean"
@@ -875,11 +875,11 @@ YAML
         - parameter:
             name: "passwordCannotBeName_datatype"
             dt: "string"
-            value: "boolean"
+            value: "[passwordCannotBeName_datatype.value]"
         - parameter:
             name: "passwordCannotBeName_operation"
             dt: "string"
-            value: "equals"
+            value: "[passwordCannotBeName_operation.value]"
         - parameter:
             name: "requiresAlpha"
             dt: "boolean"
@@ -887,11 +887,11 @@ YAML
         - parameter:
             name: "requiresAlpha_datatype"
             dt: "string"
-            value: "boolean"
+            value: "[requiresAlpha_datatype.value]"
         - parameter:
             name: "requiresAlpha_operation"
             dt: "string"
-            value: "equals"
+            value: "[requiresAlpha_operation.value]"
         - parameter:
             name: "requiresNumeric"
             dt: "boolean"
@@ -899,11 +899,11 @@ YAML
         - parameter:
             name: "requiresNumeric_datatype"
             dt: "string"
-            value: "boolean"
+            value: "[requiresNumeric_datatype.value]"
         - parameter:
             name: "requiresNumeric_operation"
             dt: "string"
-            value: "equals"
+            value: "[requiresNumeric_operation.value]"
         - parameter:
             name: "maxMinutesUntilChangePassword"
             dt: "integer"
@@ -911,11 +911,11 @@ YAML
         - parameter:
             name: "maxMinutesUntilChangePassword_datatype"
             dt: "string"
-            value: "int"
+            value: "[maxMinutesUntilChangePassword_datatype.value]"
         - parameter:
             name: "maxMinutesUntilChangePassword_operation"
             dt: "string"
-            value: "equals"
+            value: "[maxMinutesUntilChangePassword_operation.value]"
         - parameter:
             name: "minMinutesUntilChangePassword"
             dt: "integer"
@@ -923,11 +923,11 @@ YAML
         - parameter:
             name: "minMinutesUntilChangePassword_datatype"
             dt: "string"
-            value: "int"
+            value: "[minMinutesUntilChangePassword_datatype.value]"
         - parameter:
             name: "minMinutesUntilChangePassword_operation"
             dt: "string"
-            value: "equals"
+            value: "[minMinutesUntilChangePassword_operation.value]"
         - parameter:
             name: "requiresMixedCase"
             dt: "boolean"
@@ -935,11 +935,11 @@ YAML
         - parameter:
             name: "requiresMixedCase_datatype"
             dt: "string"
-            value: "boolean"
+            value: "[requiresMixedCase_datatype.value]"
         - parameter:
             name: "requiresMixedCase_operation"
             dt: "string"
-            value: "equals"
+            value: "[requiresMixedCase_operation.value]"
         - parameter:
             name: "requiresSymbol"
             dt: "boolean"
@@ -947,11 +947,11 @@ YAML
         - parameter:
             name: "requiresSymbol_datatype"
             dt: "string"
-            value: "boolean"
+            value: "[requiresSymbol_datatype.value]"
         - parameter:
             name: "requiresSymbol_operation"
             dt: "string"
-            value: "equals"
+            value: "[requiresSymbol_operation.value]"
         - parameter:
             name: "minutesUntilFailedLoginReset"
             dt: "integer"
@@ -959,11 +959,11 @@ YAML
         - parameter:
             name: "minutesUntilFailedLoginReset_datatype"
             dt: "string"
-            value: "int"
+            value: "[minutesUntilFailedLoginReset_datatype.value]"
         - parameter:
             name: "minutesUntilFailedLoginReset_operation"
             dt: "string"
-            value: "equals"
+            value: "[minutesUntilFailedLoginReset_operation.value]"
         - parameter:
             name: "usingHistory"
             dt: "integer"
@@ -971,11 +971,11 @@ YAML
         - parameter:
             name: "usingHistory_datatype"
             dt: "string"
-            value: "int"
+            value: "[usingHistory_datatype.value]"
         - parameter:
             name: "usingHistory_operation"
             dt: "string"
-            value: "equals"
+            value: "[usingHistory_operation.value]"
         - parameter:
             name: "canModifyPasswordforSelf"
             dt: "boolean"
@@ -983,11 +983,11 @@ YAML
         - parameter:
             name: "canModifyPasswordforSelf_datatype"
             dt: "string"
-            value: "boolean"
+            value: "[canModifyPasswordforSelf_datatype.value]"
         - parameter:
             name: "canModifyPasswordforSelf_operation"
             dt: "string"
-            value: "equals"
+            value: "[canModifyPasswordforSelf_operation.value]"
         - parameter:
             name: "usingExpirationDate"
             dt: "boolean"
@@ -995,11 +995,11 @@ YAML
         - parameter:
             name: "usingExpirationDate_datatype"
             dt: "string"
-            value: "boolean"
+            value: "[usingExpirationDate_datatype.value]"
         - parameter:
             name: "usingExpirationDate_operation"
             dt: "string"
-            value: "equals"
+            value: "[usingExpirationDate_operation.value]"
         - parameter:
             name: "usingHardExpirationDate"
             dt: "boolean"
@@ -1007,11 +1007,11 @@ YAML
         - parameter:
             name: "usingHardExpirationDate_datatype"
             dt: "string"
-            value: "boolean"
+            value: "[usingHardExpirationDate_datatype.value]"
         - parameter:
             name: "usingHardExpirationDate_operation"
             dt: "string"
-            value: "equals"
+            value: "[usingHardExpirationDate_operation.value]"
         - parameter:
             name: "expirationDateGMT"
             dt: "string"
@@ -1019,11 +1019,11 @@ YAML
         - parameter:
             name: "expirationDateGMT_datatype"
             dt: "string"
-            value: "string"
+            value: "[expirationDateGMT_datatype.value]"
         - parameter:
             name: "expirationDateGMT_operation"
             dt: "string"
-            value: "equals"
+            value: "[expirationDateGMT_operation.value]"
         - parameter:
             name: "hardExpireDateGMT"
             dt: "string"
@@ -1031,11 +1031,11 @@ YAML
         - parameter:
             name: "hardExpireDateGMT_datatype"
             dt: "string"
-            value: "string"
+            value: "[hardExpireDateGMT_datatype.value]"
         - parameter:
             name: "hardExpireDateGMT_operation"
             dt: "string"
-            value: "equals"
+            value: "[hardExpireDateGMT_operation.value]"
         - parameter:
             name: "maxMinutesUntilDisabled"
             dt: "integer"
@@ -1043,11 +1043,11 @@ YAML
         - parameter:
             name: "maxMinutesUntilDisabled_datatype"
             dt: "string"
-            value: "int"
+            value: "[maxMinutesUntilDisabled_datatype.value]"
         - parameter:
             name: "maxMinutesUntilDisabled_operation"
             dt: "string"
-            value: "equals"
+            value: "[maxMinutesUntilDisabled_operation.value]"
         - parameter:
             name: "maxMinutesOfNonUse"
             dt: "integer"
@@ -1055,11 +1055,11 @@ YAML
         - parameter:
             name: "maxMinutesOfNonUse_datatype"
             dt: "string"
-            value: "int"
+            value: "[maxMinutesOfNonUse_datatype.value]"
         - parameter:
             name: "maxMinutesOfNonUse_operation"
             dt: "string"
-            value: "equals"
+            value: "[maxMinutesOfNonUse_operation.value]"
         - parameter:
             name: "newPasswordRequired"
             dt: "boolean"
@@ -1067,11 +1067,11 @@ YAML
         - parameter:
             name: "newPasswordRequired_datatype"
             dt: "string"
-            value: "boolean"
+            value: "[newPasswordRequired_datatype.value]"
         - parameter:
             name: "newPasswordRequired_operation"
             dt: "string"
-            value: "equals"
+            value: "[newPasswordRequired_operation.value]"
         - parameter:
             name: "notGuessablePattern"
             dt: "boolean"
@@ -1079,11 +1079,11 @@ YAML
         - parameter:
             name: "notGuessablePattern_datatype"
             dt: "string"
-            value: "boolean"
+            value: "[notGuessablePattern_datatype.value]"
         - parameter:
             name: "notGuessablePattern_operation"
             dt: "string"
-            value: "equals"
+            value: "[notGuessablePattern_operation.value]"
 
 JSON
 ^^^^
@@ -1155,14 +1155,14 @@ JSON
             "parameter": {
               "name": "target_user_operation",
               "dt": "string",
-              "value": "equals"
+              "value": "[target_user_operation.value]"
             }
           },
           {
             "parameter": {
               "name": "target_user_datatype",
               "dt": "string",
-              "value": "string"
+              "value": "[target_user_datatype.value]"
             }
           },
           {
@@ -1176,14 +1176,14 @@ JSON
             "parameter": {
               "name": "username_datatype",
               "dt": "string",
-              "value": "string"
+              "value": "[username_datatype.value]"
             }
           },
           {
             "parameter": {
               "name": "username_operation",
               "dt": "string",
-              "value": "equals"
+              "value": "[username_operation.value]"
             }
           },
           {
@@ -1197,14 +1197,14 @@ JSON
             "parameter": {
               "name": "userpass_datatype",
               "dt": "string",
-              "value": "string"
+              "value": "[userpass_datatype.value]"
             }
           },
           {
             "parameter": {
               "name": "userpass_operation",
               "dt": "string",
-              "value": "equals"
+              "value": "[userpass_operation.value]"
             }
           },
           {
@@ -1218,14 +1218,14 @@ JSON
             "parameter": {
               "name": "directory_node_datatype",
               "dt": "string",
-              "value": "string"
+              "value": "[directory_node_datatype.value]"
             }
           },
           {
             "parameter": {
               "name": "directory_node_operation",
               "dt": "string",
-              "value": "equals"
+              "value": "[directory_node_operation.value]"
             }
           },
           {
@@ -1239,14 +1239,14 @@ JSON
             "parameter": {
               "name": "maxChars_datatype",
               "dt": "string",
-              "value": "int"
+              "value": "[maxChars_datatype.value]"
             }
           },
           {
             "parameter": {
               "name": "maxChars_operation",
               "dt": "string",
-              "value": "equals"
+              "value": "[maxChars_operation.value]"
             }
           },
           {
@@ -1260,14 +1260,14 @@ JSON
             "parameter": {
               "name": "maxFailedLoginAttempts_datatype",
               "dt": "string",
-              "value": "int"
+              "value": "[maxFailedLoginAttempts_datatype.value]"
             }
           },
           {
             "parameter": {
               "name": "maxFailedLoginAttempts_operation",
               "dt": "string",
-              "value": "equals"
+              "value": "[maxFailedLoginAttempts_operation.value]"
             }
           },
           {
@@ -1281,14 +1281,14 @@ JSON
             "parameter": {
               "name": "minChars_datatype",
               "dt": "string",
-              "value": "int"
+              "value": "[minChars_datatype.value]"
             }
           },
           {
             "parameter": {
               "name": "minChars_operation",
               "dt": "string",
-              "value": "equals"
+              "value": "[minChars_operation.value]"
             }
           },
           {
@@ -1302,14 +1302,14 @@ JSON
             "parameter": {
               "name": "passwordCannotBeName_datatype",
               "dt": "string",
-              "value": "boolean"
+              "value": "[passwordCannotBeName_datatype.value]"
             }
           },
           {
             "parameter": {
               "name": "passwordCannotBeName_operation",
               "dt": "string",
-              "value": "equals"
+              "value": "[passwordCannotBeName_operation.value]"
             }
           },
           {
@@ -1323,14 +1323,14 @@ JSON
             "parameter": {
               "name": "requiresAlpha_datatype",
               "dt": "string",
-              "value": "boolean"
+              "value": "[requiresAlpha_datatype.value]"
             }
           },
           {
             "parameter": {
               "name": "requiresAlpha_operation",
               "dt": "string",
-              "value": "equals"
+              "value": "[requiresAlpha_operation.value]"
             }
           },
           {
@@ -1344,14 +1344,14 @@ JSON
             "parameter": {
               "name": "requiresNumeric_datatype",
               "dt": "string",
-              "value": "boolean"
+              "value": "[requiresNumeric_datatype.value]"
             }
           },
           {
             "parameter": {
               "name": "requiresNumeric_operation",
               "dt": "string",
-              "value": "equals"
+              "value": "[requiresNumeric_operation.value]"
             }
           },
           {
@@ -1365,14 +1365,14 @@ JSON
             "parameter": {
               "name": "maxMinutesUntilChangePassword_datatype",
               "dt": "string",
-              "value": "int"
+              "value": "[maxMinutesUntilChangePassword_datatype.value]"
             }
           },
           {
             "parameter": {
               "name": "maxMinutesUntilChangePassword_operation",
               "dt": "string",
-              "value": "equals"
+              "value": "[maxMinutesUntilChangePassword_operation.value]"
             }
           },
           {
@@ -1386,14 +1386,14 @@ JSON
             "parameter": {
               "name": "minMinutesUntilChangePassword_datatype",
               "dt": "string",
-              "value": "int"
+              "value": "[minMinutesUntilChangePassword_datatype.value]"
             }
           },
           {
             "parameter": {
               "name": "minMinutesUntilChangePassword_operation",
               "dt": "string",
-              "value": "equals"
+              "value": "[minMinutesUntilChangePassword_operation.value]"
             }
           },
           {
@@ -1407,14 +1407,14 @@ JSON
             "parameter": {
               "name": "requiresMixedCase_datatype",
               "dt": "string",
-              "value": "boolean"
+              "value": "[requiresMixedCase_datatype.value]"
             }
           },
           {
             "parameter": {
               "name": "requiresMixedCase_operation",
               "dt": "string",
-              "value": "equals"
+              "value": "[requiresMixedCase_operation.value]"
             }
           },
           {
@@ -1428,14 +1428,14 @@ JSON
             "parameter": {
               "name": "requiresSymbol_datatype",
               "dt": "string",
-              "value": "boolean"
+              "value": "[requiresSymbol_datatype.value]"
             }
           },
           {
             "parameter": {
               "name": "requiresSymbol_operation",
               "dt": "string",
-              "value": "equals"
+              "value": "[requiresSymbol_operation.value]"
             }
           },
           {
@@ -1449,14 +1449,14 @@ JSON
             "parameter": {
               "name": "minutesUntilFailedLoginReset_datatype",
               "dt": "string",
-              "value": "int"
+              "value": "[minutesUntilFailedLoginReset_datatype.value]"
             }
           },
           {
             "parameter": {
               "name": "minutesUntilFailedLoginReset_operation",
               "dt": "string",
-              "value": "equals"
+              "value": "[minutesUntilFailedLoginReset_operation.value]"
             }
           },
           {
@@ -1470,14 +1470,14 @@ JSON
             "parameter": {
               "name": "usingHistory_datatype",
               "dt": "string",
-              "value": "int"
+              "value": "[usingHistory_datatype.value]"
             }
           },
           {
             "parameter": {
               "name": "usingHistory_operation",
               "dt": "string",
-              "value": "equals"
+              "value": "[usingHistory_operation.value]"
             }
           },
           {
@@ -1491,14 +1491,14 @@ JSON
             "parameter": {
               "name": "canModifyPasswordforSelf_datatype",
               "dt": "string",
-              "value": "boolean"
+              "value": "[canModifyPasswordforSelf_datatype.value]"
             }
           },
           {
             "parameter": {
               "name": "canModifyPasswordforSelf_operation",
               "dt": "string",
-              "value": "equals"
+              "value": "[canModifyPasswordforSelf_operation.value]"
             }
           },
           {
@@ -1512,14 +1512,14 @@ JSON
             "parameter": {
               "name": "usingExpirationDate_datatype",
               "dt": "string",
-              "value": "boolean"
+              "value": "[usingExpirationDate_datatype.value]"
             }
           },
           {
             "parameter": {
               "name": "usingExpirationDate_operation",
               "dt": "string",
-              "value": "equals"
+              "value": "[usingExpirationDate_operation.value]"
             }
           },
           {
@@ -1533,14 +1533,14 @@ JSON
             "parameter": {
               "name": "usingHardExpirationDate_datatype",
               "dt": "string",
-              "value": "boolean"
+              "value": "[usingHardExpirationDate_datatype.value]"
             }
           },
           {
             "parameter": {
               "name": "usingHardExpirationDate_operation",
               "dt": "string",
-              "value": "equals"
+              "value": "[usingHardExpirationDate_operation.value]"
             }
           },
           {
@@ -1554,14 +1554,14 @@ JSON
             "parameter": {
               "name": "expirationDateGMT_datatype",
               "dt": "string",
-              "value": "string"
+              "value": "[expirationDateGMT_datatype.value]"
             }
           },
           {
             "parameter": {
               "name": "expirationDateGMT_operation",
               "dt": "string",
-              "value": "equals"
+              "value": "[expirationDateGMT_operation.value]"
             }
           },
           {
@@ -1575,14 +1575,14 @@ JSON
             "parameter": {
               "name": "hardExpireDateGMT_datatype",
               "dt": "string",
-              "value": "string"
+              "value": "[hardExpireDateGMT_datatype.value]"
             }
           },
           {
             "parameter": {
               "name": "hardExpireDateGMT_operation",
               "dt": "string",
-              "value": "equals"
+              "value": "[hardExpireDateGMT_operation.value]"
             }
           },
           {
@@ -1596,14 +1596,14 @@ JSON
             "parameter": {
               "name": "maxMinutesUntilDisabled_datatype",
               "dt": "string",
-              "value": "int"
+              "value": "[maxMinutesUntilDisabled_datatype.value]"
             }
           },
           {
             "parameter": {
               "name": "maxMinutesUntilDisabled_operation",
               "dt": "string",
-              "value": "equals"
+              "value": "[maxMinutesUntilDisabled_operation.value]"
             }
           },
           {
@@ -1617,14 +1617,14 @@ JSON
             "parameter": {
               "name": "maxMinutesOfNonUse_datatype",
               "dt": "string",
-              "value": "int"
+              "value": "[maxMinutesOfNonUse_datatype.value]"
             }
           },
           {
             "parameter": {
               "name": "maxMinutesOfNonUse_operation",
               "dt": "string",
-              "value": "equals"
+              "value": "[maxMinutesOfNonUse_operation.value]"
             }
           },
           {
@@ -1638,14 +1638,14 @@ JSON
             "parameter": {
               "name": "newPasswordRequired_datatype",
               "dt": "string",
-              "value": "boolean"
+              "value": "[newPasswordRequired_datatype.value]"
             }
           },
           {
             "parameter": {
               "name": "newPasswordRequired_operation",
               "dt": "string",
-              "value": "equals"
+              "value": "[newPasswordRequired_operation.value]"
             }
           },
           {
@@ -1659,14 +1659,14 @@ JSON
             "parameter": {
               "name": "notGuessablePattern_datatype",
               "dt": "string",
-              "value": "boolean"
+              "value": "[notGuessablePattern_datatype.value]"
             }
           },
           {
             "parameter": {
               "name": "notGuessablePattern_operation",
               "dt": "string",
-              "value": "equals"
+              "value": "[notGuessablePattern_operation.value]"
             }
           }
         ]
