@@ -234,7 +234,7 @@ Test Type Parameters
 :strong:`NOTE: The` ``exec_time`` `and` ``start_time`` `parameters are governed by a constraint allowing only values conforming to the following regex pattern:`
   ``^(([0-9]{0,2}-)?(([0-1][0-9])|([2][0-3])):([0-5][0-9]):([0-5][0-9])){0,1}$``
 
-:strong:`NOTE: The following ``ID`` `parameters:`
+:strong:`NOTE: The following` ``ID`` `parameters:`
   +-------------+--------------+----------------+
   | ``pid``     | ``ppid``     | ``ruid``       |
   +-------------+--------------+----------------+
