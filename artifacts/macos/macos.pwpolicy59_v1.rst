@@ -81,7 +81,7 @@ Artifact Parameters
 | check_existence               | string  | Defines how many items should    |
 |                               |         | be collected.                    |
 +-------------------------------+---------+----------------------------------+
-:emphasis:NOTE: The ``target_user``, ``username``, ``userpass``, and ``directory_node`` parameters are governed by a constraint allowing only values conforming to the following regex pattern: ``^.+$``
+:strong:`NOTE: The ``target_user``, ``username``, ``userpass``, and ``directory_node`` parameters are governed by a constraint allowing only values conforming to the following regex pattern: ``^.+$``
 
 NOTE: The ``check_existence`` parameter is governed by a constraint allowing only the following values:
   - all_exist 
@@ -330,7 +330,7 @@ NOTE: The ``check`` parameter is governed by a constraint allowing only the foll
    -  none satisfy
    -  only one
 
-:emphasis:NOTE: The following parameters:
+:strong:`NOTE: The following parameters:`
   +--------------------------------------------+--------------------------------------------+
   | ``target_user_operation``                  | ``username_operation``                     |
   +--------------------------------------------+--------------------------------------------+
@@ -358,7 +358,7 @@ NOTE: The ``check`` parameter is governed by a constraint allowing only the foll
   +--------------------------------------------+--------------------------------------------+
   | ``notGuessablePattern_operation``          |                                            |
   +--------------------------------------------+--------------------------------------------+
-  :emphasis:are governed by a constraint allowing only the following values:
+  are governed by a constraint allowing only the following values:
     -  equals
     -  not equal
     -  case insensitive equals
@@ -373,7 +373,7 @@ NOTE: The ``check`` parameter is governed by a constraint allowing only the foll
     -  subset of
     -  superset of
 
-:emphasis:NOTE: The following parameters:
+:strong:`NOTE: The following parameters:`
   +-------------------------------------------+-------------------------------------------+
   | ``target_user_datatype``                  | ``username_datatype``                     |
   +-------------------------------------------+-------------------------------------------+
@@ -401,7 +401,7 @@ NOTE: The ``check`` parameter is governed by a constraint allowing only the foll
   +-------------------------------------------+-------------------------------------------+
   | ``notGuessablePattern_datatype``          |                                           |
   +-------------------------------------------+-------------------------------------------+
-  :emphasis:are governed by a constraint allowing only the following values:
+  are governed by a constraint allowing only the following values:
     - boolean
     - float
     - int
@@ -409,7 +409,7 @@ NOTE: The ``check`` parameter is governed by a constraint allowing only the foll
     - version
     - set
 
-:emphasis:NOTE: The following parameters:
+:strong:`NOTE: The following parameters:`
   +----------------------------------+-----------------------------------+
   | ``target_user``                  | ``username``                      |
   +----------------------------------+-----------------------------------+
@@ -437,7 +437,7 @@ NOTE: The ``check`` parameter is governed by a constraint allowing only the foll
   +----------------------------------+-----------------------------------+
   | ``notGuessablePattern``          |                                   |
   +----------------------------------+-----------------------------------+
-  :emphasis:are governed by a constraint allowing only values conforming to the following regex pattern: ``^.+$``
+  :strong:`are governed by a constraint allowing only values conforming to the following regex pattern:` ``^.+$``
 
 Generated Content
 ~~~~~~~~~~~~~~~~~
