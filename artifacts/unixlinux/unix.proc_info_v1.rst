@@ -200,7 +200,7 @@ Test Type Parameters
 |                                 |         | information.                   |
 +---------------------------------+---------+--------------------------------+
 
-:emphasis:NOTE: The following ``_operation`` parameters:
+:emphasis:NOTE: The following ``operation`` parameters:
   +-------------------------------------+------------------------------------+
   | ``cmd_operation``                   | ``exec_time_operation``            |
   +-------------------------------------+------------------------------------+
