@@ -200,7 +200,7 @@ Test Type Parameters
 |                                 |         | information.                   |
 +---------------------------------+---------+--------------------------------+
 
-:strong:`NOTE: The following ``operation`` `parameters:`
+:strong:`NOTE: The following` ``operation`` `parameters:`
   +-------------------------------------+------------------------------------+
   | ``cmd_operation``                   | ``exec_time_operation``            |
   +-------------------------------------+------------------------------------+
