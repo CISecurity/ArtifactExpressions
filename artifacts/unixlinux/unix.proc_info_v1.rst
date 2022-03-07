@@ -200,7 +200,7 @@ Test Type Parameters
 |                                 |         | information.                   |
 +---------------------------------+---------+--------------------------------+
 
-:emphasis:`NOTE: The following _operation parameters:`
+:emphasis:NOTE: The following ``_operation`` parameters:
   +-------------------------------------+------------------------------------+
   | ``cmd_operation``                   | ``exec_time_operation``            |
   +-------------------------------------+------------------------------------+
@@ -216,7 +216,6 @@ Test Type Parameters
   +-------------------------------------+------------------------------------+
   | ``selinux_domain_label_operation``  | ``session_id_operation``           |
   +-------------------------------------+------------------------------------+
-  
   are governed by a constraint allowing only the following values: 
     - equals
     - not equal
@@ -232,17 +231,16 @@ Test Type Parameters
     - subset of
     - superset of 
 
-:emphasis:`NOTE: The` ``exec_time`` `and` ``start_time`` `parameters are governed by a constraint allowing only values conforming to the following regex pattern:` 
+:emphasis:NOTE: The ``exec_time`` and ``start_time`` parameters are governed by a constraint allowing only values conforming to the following regex pattern: 
   ``^(([0-9]{0,2}-)?(([0-1][0-9])|([2][0-3])):([0-5][0-9]):([0-5][0-9])){0,1}$``
 
-:emphasis:`NOTE: The following ID parameters:`
+:emphasis:NOTE: The following ``ID`` parameters:
   +-------------+--------------+----------------+
   | ``pid``     | ``ppid``     | ``ruid``       |
   +-------------+--------------+----------------+
   | ``user_id`` | ``loginuid`` | ``session_id`` |
   +-------------+--------------+----------------+
-
-  :emphasis:`are governed by a constraint allowing only empty, positive integer, or OVAL Variable ID values conforming to the following regex pattern:` 
+  :emphasis:are governed by a constraint allowing only empty, positive integer, or OVAL Variable ID values conforming to the following regex pattern:
     ``^()|([0-9]+|oval:org.cisecurity[A-Za-z0-9_\-\.]+:var:[1-9][0-9]*)$``
 
 NOTE: The ``posix_capability`` parameter is governed by a constraint allowing only the following values:

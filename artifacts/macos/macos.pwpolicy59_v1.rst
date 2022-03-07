@@ -81,10 +81,9 @@ Artifact Parameters
 | check_existence               | string  | Defines how many items should    |
 |                               |         | be collected.                    |
 +-------------------------------+---------+----------------------------------+
+:emphasis:NOTE: The ``target_user``, ``username``, ``userpass``, and ``directory_node`` parameters are governed by a constraint allowing only values conforming to the following regex pattern: ``^.+$``
 
-:emphasis:`NOTE: The ``target_user``, ``username``, ``userpass``, and ``directory_node`` parameters are governed by a constraint allowing only values conforming to the following regex pattern: ``^.+$``
-
-`NOTE: The ``check_existence`` parameter is governed by a constraint allowing only the following values:
+NOTE: The ``check_existence`` parameter is governed by a constraint allowing only the following values:
   - all_exist 
   - any_exist 
   - at_least_one_exists 
@@ -325,13 +324,13 @@ Test Type Parameters
 | notGuessablePattern_datatype            | string  | The data type of the value.      |
 +-----------------------------------------+---------+----------------------------------+
 
-`NOTE: The ``check`` parameter is governed by a constraint allowing only the following values:
+NOTE: The ``check`` parameter is governed by a constraint allowing only the following values:
    -  all
    -  at least one
    -  none satisfy
    -  only one
 
-:emphasis:`NOTE: The following parameters:`
+:emphasis:NOTE: The following parameters:
   +--------------------------------------------+--------------------------------------------+
   | ``target_user_operation``                  | ``username_operation``                     |
   +--------------------------------------------+--------------------------------------------+
@@ -359,30 +358,28 @@ Test Type Parameters
   +--------------------------------------------+--------------------------------------------+
   | ``notGuessablePattern_operation``          |                                            |
   +--------------------------------------------+--------------------------------------------+
+  :emphasis:are governed by a constraint allowing only the following values:
+    -  equals
+    -  not equal
+    -  case insensitive equals
+    -  case insensitive not equal
+    -  greater than
+    -  less than
+    -  greater than or equal
+    -  less than or equal
+    -  bitwise and
+    -  bitwise or
+    -  pattern match
+    -  subset of
+    -  superset of
 
-:emphasis:`are governed by a constraint allowing only the following values:`
-
-   -  equals
-   -  not equal
-   -  case insensitive equals
-   -  case insensitive not equal
-   -  greater than
-   -  less than
-   -  greater than or equal
-   -  less than or equal
-   -  bitwise and
-   -  bitwise or
-   -  pattern match
-   -  subset of
-   -  superset of
-
-:emphasis:`NOTE: The following parameters:`
+:emphasis:NOTE: The following parameters:
   +-------------------------------------------+-------------------------------------------+
   | ``target_user_datatype``                  | ``username_datatype``                     |
   +-------------------------------------------+-------------------------------------------+
   | ``userpass_datatype``                     | ``directory_node_datatype``               |
   +-------------------------------------------+-------------------------------------------+
-  | ``maxChars_datatype``                     | ``maxFailedLoginAttempts_datatype``        |
+  | ``maxChars_datatype``                     | ``maxFailedLoginAttempts_datatype``       |
   +-------------------------------------------+-------------------------------------------+
   | ``minChars_datatype``                     | ``passwordCannotBeName_datatype``         |
   +-------------------------------------------+-------------------------------------------+
@@ -404,17 +401,15 @@ Test Type Parameters
   +-------------------------------------------+-------------------------------------------+
   | ``notGuessablePattern_datatype``          |                                           |
   +-------------------------------------------+-------------------------------------------+
+  :emphasis:are governed by a constraint allowing only the following values:
+    - boolean
+    - float
+    - int
+    - string
+    - version
+    - set
 
-:emphasis:`are governed by a constraint allowing only the following values:`
-
-  - boolean
-  - float
-  - int
-  - string
-  - version
-  - set
-
-:emphasis:`NOTE: The following parameters:`
+:emphasis:NOTE: The following parameters:
   +----------------------------------+-----------------------------------+
   | ``target_user``                  | ``username``                      |
   +----------------------------------+-----------------------------------+
@@ -442,8 +437,7 @@ Test Type Parameters
   +----------------------------------+-----------------------------------+
   | ``notGuessablePattern``          |                                   |
   +----------------------------------+-----------------------------------+
-  
-:emphasis:`are governed by a constraint allowing only values conforming to the following regex pattern:` ``^.+$``
+  :emphasis:are governed by a constraint allowing only values conforming to the following regex pattern: ``^.+$``
 
 Generated Content
 ~~~~~~~~~~~~~~~~~

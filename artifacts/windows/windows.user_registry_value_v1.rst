@@ -86,7 +86,7 @@ NOTE: The ``check`` parameter is governed by a constraint allowing only the foll
   - none satisfy
   - only one
 
-NOTE: The ``existence_check `` parameter is governed by a constraint allowing only the following values:
+NOTE: The ``existence_check`` parameter is governed by a constraint allowing only the following values:
   - all_exist
   - any_exist
   - at_least_one_exists
