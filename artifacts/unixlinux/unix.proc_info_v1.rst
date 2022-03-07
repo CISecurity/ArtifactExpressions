@@ -200,7 +200,7 @@ Test Type Parameters
 |                                 |         | information.                   |
 +---------------------------------+---------+--------------------------------+
 
-:emphasis:NOTE: The following ``operation`` parameters:
+:emphasis: NOTE: The following ``operation`` parameters:
   +-------------------------------------+------------------------------------+
   | ``cmd_operation``                   | ``exec_time_operation``            |
   +-------------------------------------+------------------------------------+
@@ -216,6 +216,7 @@ Test Type Parameters
   +-------------------------------------+------------------------------------+
   | ``selinux_domain_label_operation``  | ``session_id_operation``           |
   +-------------------------------------+------------------------------------+
+  
   are governed by a constraint allowing only the following values: 
     - equals
     - not equal
