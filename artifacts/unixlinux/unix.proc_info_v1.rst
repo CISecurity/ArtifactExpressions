@@ -200,7 +200,7 @@ Test Type Parameters
 |                                 |         | information.                   |
 +---------------------------------+---------+--------------------------------+
 
-**NOTE: The following ``operation`` parameters:**
+:strong:`NOTE: The following ``operation`` parameters:`
   +-------------------------------------+------------------------------------+
   | ``cmd_operation``                   | ``exec_time_operation``            |
   +-------------------------------------+------------------------------------+
@@ -232,16 +232,16 @@ Test Type Parameters
     - subset of
     - superset of 
 
-:emphasis:NOTE: The ``exec_time`` and ``start_time`` parameters are governed by a constraint allowing only values conforming to the following regex pattern: 
+:strong:`NOTE: The` ``exec_time`` `and` ``start_time`` `parameters are governed by a constraint allowing only values conforming to the following regex pattern:`
   ``^(([0-9]{0,2}-)?(([0-1][0-9])|([2][0-3])):([0-5][0-9]):([0-5][0-9])){0,1}$``
 
-:emphasis:NOTE: The following ``ID`` parameters:
+:strong:`NOTE: The following ``ID`` parameters:`
   +-------------+--------------+----------------+
   | ``pid``     | ``ppid``     | ``ruid``       |
   +-------------+--------------+----------------+
   | ``user_id`` | ``loginuid`` | ``session_id`` |
   +-------------+--------------+----------------+
-  :emphasis:are governed by a constraint allowing only empty, positive integer, or OVAL Variable ID values conforming to the following regex pattern:
+  :strong:`are governed by a constraint allowing only empty, positive integer, or OVAL Variable ID values conforming to the following regex pattern:`
     ``^()|([0-9]+|oval:org.cisecurity[A-Za-z0-9_\-\.]+:var:[1-9][0-9]*)$``
 
 NOTE: The ``posix_capability`` parameter is governed by a constraint allowing only the following values:
