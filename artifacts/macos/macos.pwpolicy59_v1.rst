@@ -81,7 +81,7 @@ Artifact Parameters
 | check_existence               | string  | Defines how many items should    |
 |                               |         | be collected.                    |
 +-------------------------------+---------+----------------------------------+
-:strong:`NOTE: The` ``target_user``, ``username``, ``userpass``, :strong:`and` ``directory_node`` :strong:`parameters are governed by a constraint allowing only values conforming to the following regex pattern:` ``^.+$``
+:strong:`NOTE: The ``target_user``, ``username``, ``userpass``, and ``directory_node`` parameters are governed by a constraint allowing only values conforming to the following regex pattern:` ``^.+$``
 
 NOTE: The ``check_existence`` parameter is governed by a constraint allowing only the following values:
   - all_exist 
