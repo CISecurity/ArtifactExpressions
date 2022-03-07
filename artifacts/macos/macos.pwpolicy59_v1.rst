@@ -437,7 +437,7 @@ NOTE: The ``check`` parameter is governed by a constraint allowing only the foll
   +----------------------------------+-----------------------------------+
   | ``notGuessablePattern``          |                                   |
   +----------------------------------+-----------------------------------+
-:strong:`  are governed by a constraint allowing only values conforming to the following regex pattern:` ``^.+$``
+  :strong:`are governed by a constraint allowing only values conforming to the following regex pattern:` ``^.+$``
 
 Generated Content
 ~~~~~~~~~~~~~~~~~
