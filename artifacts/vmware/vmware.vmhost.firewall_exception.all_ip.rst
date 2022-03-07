@@ -41,12 +41,12 @@ Test Type Parameters
 
 **vmware.vmhost.firewall_exception.all_ip**
 
-==================== ======= =====================
+==================== ======= ======================
 Name                 Type    Description
-==================== ======= =====================
-operator             string Comparison operation.
+==================== ======= ======================
+operator             string  Comparison operation.
 allowed_hosts_all_ip boolean Allows Hosts All IP?
-==================== ======= =====================
+==================== ======= ======================
 
 NOTE: The ``operator`` parameter is governed by a constraint allowing only the following values:
   - bitwise and
