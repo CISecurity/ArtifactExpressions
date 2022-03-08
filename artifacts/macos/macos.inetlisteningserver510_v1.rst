@@ -43,6 +43,7 @@ Artifact Parameters
 |                             |         | by its own object. Cannot be       |
 |                             |         | blank.                             |
 +-----------------------------+---------+------------------------------------+
+:strong:`NOTE: The` ``protocol``, ``local_address``, :strong:`and` ``local_port`` :strong:`parameters are governed by a constraint allowing only values conforming to the following regex pattern:` ``^.+$``
 
 NOTE: The ``check_existence`` parameter is governed by a constraint allowing only the following values: 
   - all_exist 
@@ -243,13 +244,13 @@ Test Type Parameters
 |                             |         | program.                           |
 +-----------------------------+---------+------------------------------------+
 
-NOTE: The ``check`` parameter is governed by a constraint allowing only the following values:
+`NOTE: The ``check`` parameter is governed by a constraint allowing only the following values:
   - all
   - at least one
   - none satisfy
   - only one
 
-:emphasis:``NOTE: The following parameters:``
+:strong:`NOTE: The following parameters:`
   +--------------------------------------------+--------------------------------------------+
   | ``local_address_operation``                | ``protocol_operation``                     |
   +--------------------------------------------+--------------------------------------------+
@@ -261,9 +262,7 @@ NOTE: The ``check`` parameter is governed by a constraint allowing only the foll
   +--------------------------------------------+--------------------------------------------+
   | ``pid_operation``                          | ``user_id_operation``                      |
   +--------------------------------------------+--------------------------------------------+
-
-  ``are governed by a constraint allowing only the following values:``
-
+  are governed by a constraint allowing only the following values:
    -  equals
    -  not equal
    -  case insensitive equals
@@ -278,7 +277,7 @@ NOTE: The ``check`` parameter is governed by a constraint allowing only the foll
    -  subset of
    -  superset of
 
-:emphasis:``NOTE: The following parameters:``
+:strong:`NOTE: The following parameters:`
   +-------------------------------------------+-------------------------------------------+
   | ``protocol_datatype``                     | ``local_address_datatype``                |
   +-------------------------------------------+-------------------------------------------+
@@ -290,9 +289,7 @@ NOTE: The ``check`` parameter is governed by a constraint allowing only the foll
   +-------------------------------------------+-------------------------------------------+
   | ``pid_datatype``                          | ``user_id_datatype``                      |
   +-------------------------------------------+-------------------------------------------+
-
-  ``are governed by a constraint allowing only the following values:``
-
+  are governed by a constraint allowing only the following values:
   - boolean
   - float
   - int
