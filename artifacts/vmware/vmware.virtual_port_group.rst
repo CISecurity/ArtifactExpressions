@@ -38,12 +38,12 @@ Test Type Parameters
 
 **vmware.virtual_port_group.vlan**
 
-======== ======= =====================
-Name     Type    Description
-======== ======= =====================
-operator string Comparison operation.
-vlan_id  integer VLAN ID
-======== ======= =====================
+========= ======== ======================
+Name      Type     Description
+========= ======== ======================
+operator  string   Comparison operation.
+vlan_id   integer  VLAN ID
+========= ======== ======================
 
 NOTE: The ``operator`` parameter is governed by a constraint allowing only the following values:
   - bitwise and

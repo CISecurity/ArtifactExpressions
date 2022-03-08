@@ -54,7 +54,7 @@ NOTE: The ``check_existence`` parameter is governed by a constraint allowing onl
 Supported Test Types
 ~~~~~~~~~~~~~~~~~~~~
 
-  - macos:accountinfo
+  - macos:inetlisteningserver510
 
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
@@ -171,6 +171,77 @@ Test Type Parameters
 +--------------------------------+---------+-------------------------------------+
 | user_id_datatype               | string  | Datatype.                           |
 +--------------------------------+---------+-------------------------------------+
+=======
++-----------------------------+---------+------------------------------------+
+| Name                        | Type    | Description                        |
++=============================+=========+====================================+
+| check                       | string  | Defines how many collected items   |
+|                             |         | must match the expected state.     |
++-----------------------------+---------+------------------------------------+
+| operation                   | string  | Comparison operation.              |
++-----------------------------+---------+------------------------------------+
+| datatype                    | string  | The data type of the value.        |
++-----------------------------+---------+------------------------------------+
+| protocol                    | string  | This is the transport-layer        |
+|                             |         | protocol, in lowercase: tcp or udp.|
++-----------------------------+---------+------------------------------------+
+| local_address               | binary  | This is the IP address of the      |
+|                             |         | network interface on which the     |
+|                             |         | program listens. Note that the IP  |
+|                             |         | address can be IPv4 or IPv6.       |
++-----------------------------+---------+------------------------------------+
+| local_port                  | integer | This is the TCP or UDP port on     |
+|                             |         | which the program listens. Note    |
+|                             |         | that this is not a list -- if a    |
+|                             |         | program listens on multiple ports, |
+|                             |         | or on a combination of TCP and     |
+|                             |         | UDP, each will have its own entry  |
+|                             |         | in the table data stored by this   |
+|                             |         | test.                              |
++-----------------------------+---------+------------------------------------+
+| local_full_address          | string  | This is the IP address and network |
+|                             |         | port on which the program listens, |
+|                             |         | equivalent to                      |
+|                             |         | local_address:local_port. Note     |
+|                             |         | that the IP address can be IPv4 or |
+|                             |         | IPv6.                              |
++-----------------------------+---------+------------------------------------+
+| program_name                | string  | This is the name of the            |
+|                             |         | communicating program.             |
++-----------------------------+---------+------------------------------------+
+| foreign_address             | string  | This is the IP address with which  |
+|                             |         | the program is communicating, or   |
+|                             |         | with which it will communicate, in |
+|                             |         | the case of a listening server.    |
+|                             |         | Note that the IP address can be    |
+|                             |         | IPv4 or IPv6.                      |
++-----------------------------+---------+------------------------------------+
+| foreign_port                | integer | This is the TCP or UDP port to     |
+|                             |         | which the program communicates. In |
+|                             |         | the case of a listening program    |
+|                             |         | accepting new connections, this is |
+|                             |         | usually '0'.                       |
++-----------------------------+---------+------------------------------------+
+| foreign_full_address        | binary  | This is the IP address and network |
+|                             |         | port to which the program is       |
+|                             |         | communicating or will accept       |
+|                             |         | communications from, equivalent to |
+|                             |         | foreign_address:foreign_port. Note |
+|                             |         | that the IP address can be IPv4 or |
+|                             |         | IPv6.                              |
++-----------------------------+---------+------------------------------------+
+| pid                         | integer | This is the process ID of the      |
+|                             |         | process. The process in question   |
+|                             |         | is that of the program             |
+|                             |         | communicating on the network.      |
++-----------------------------+---------+------------------------------------+
+| user_id                     | integer | The numeric user id, or uid, is    |
+|                             |         | the third column of each user's    |
+|                             |         | entry in /etc/passwd. It           |
+|                             |         | represents the owner, and thus     |
+|                             |         | privilege level, of the specified  |
+|                             |         | program.                           |
++-----------------------------+---------+------------------------------------+
 
 NOTE: The ``check`` parameter is governed by a constraint allowing only the following values:
   - all

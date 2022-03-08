@@ -26,7 +26,7 @@ Technical Details
 Artifact Parameters
 ~~~~~~~~~~~~~~~~~~~
 
-unix.sshd_parameter_v1
+**unix.sshd_parameter_v1**
 
 ========= ====== ===================================================
 Name      Type   Description
@@ -75,7 +75,7 @@ NOTE: The ``data_type`` parameter is governed by a constraint allowing only the 
   - version
   - set
 
-existence_test
+**existence_test**
 
 ===== ====== =======================
 Name  Type   Description

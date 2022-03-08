@@ -37,12 +37,12 @@ Test Type Parameters
 
 **vmware.vmhost.bus_adapter.iscsi.chap.mutual**
 
-=================== ======= =====================
+=================== ======= ======================
 Name                Type    Description
-=================== ======= =====================
-operator            string Comparison operation.
+=================== ======= ======================
+operator            string  Comparison operation.
 mutual_chap_enabled boolean Mutual Chap Enabled?
-=================== ======= =====================
+=================== ======= ======================
 
 NOTE: The ``operator`` parameter is governed by a constraint allowing only the following values:
   - bitwise and

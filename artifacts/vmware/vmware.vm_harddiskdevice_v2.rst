@@ -92,7 +92,7 @@ Supported Test Types
 Test Type Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
-vmware.vm_harddiskdevice_v2
+**vmware.vm_harddiskdevice_v2**
 
 +-------------------------------------+---------+----------------------------+
 | Name                                | Type    | Description                |
