@@ -34,7 +34,7 @@ Artifact Parameters
 |                             |         | IP address can be IPv4 or IPv6.    |
 |                             |         | Cannot be blank.                   |
 +-----------------------------+---------+------------------------------------+
-| local_port                  | string  | This is the TCP or UDP port on     |
+| local_port                  | integer | This is the TCP or UDP port on     |
 |                             |         | which an application would listen. |
 |                             |         | Note that this is not a list -- if |
 |                             |         | a program listens on multiple      |
@@ -43,6 +43,7 @@ Artifact Parameters
 |                             |         | by its own object. Cannot be       |
 |                             |         | blank.                             |
 +-----------------------------+---------+------------------------------------+
+:strong:`NOTE: The` ``protocol``, ``local_address``, :strong:`and` ``local_port`` :strong:`parameters are governed by a constraint allowing only values conforming to the following regex pattern:` ``^.+$``
 
 NOTE: The ``check_existence`` parameter is governed by a constraint allowing only the following values: 
   - all_exist 
@@ -61,99 +62,159 @@ Test Type Parameters
 
 **macos.inetlisteningserver510**
 
-+-----------------------------+---------+------------------------------------+
-| Name                        | Type    | Description                        |
-+=============================+=========+====================================+
-| check                       | string  | Defines how many collected items   |
-|                             |         | must match the expected state.     |
-+-----------------------------+---------+------------------------------------+
-| operation                   | string  | Comparison operation.              |
-+-----------------------------+---------+------------------------------------+
-| datatype                    | string  | The data type of the value.        |
-+-----------------------------+---------+------------------------------------+
-| protocol                    | string  | This is the transport-layer        |
-|                             |         | protocol, in lowercase: tcp or udp.|
-+-----------------------------+---------+------------------------------------+
-| local_address               | binary  | This is the IP address of the      |
-|                             |         | network interface on which the     |
-|                             |         | program listens. Note that the IP  |
-|                             |         | address can be IPv4 or IPv6.       |
-+-----------------------------+---------+------------------------------------+
-| local_port                  | integer | This is the TCP or UDP port on     |
-|                             |         | which the program listens. Note    |
-|                             |         | that this is not a list -- if a    |
-|                             |         | program listens on multiple ports, |
-|                             |         | or on a combination of TCP and     |
-|                             |         | UDP, each will have its own entry  |
-|                             |         | in the table data stored by this   |
-|                             |         | test.                              |
-+-----------------------------+---------+------------------------------------+
-| local_full_address          | string  | This is the IP address and network |
-|                             |         | port on which the program listens, |
-|                             |         | equivalent to                      |
-|                             |         | local_address:local_port. Note     |
-|                             |         | that the IP address can be IPv4 or |
-|                             |         | IPv6.                              |
-+-----------------------------+---------+------------------------------------+
-| program_name                | string  | This is the name of the            |
-|                             |         | communicating program.             |
-+-----------------------------+---------+------------------------------------+
-| foreign_address             | string  | This is the IP address with which  |
-|                             |         | the program is communicating, or   |
-|                             |         | with which it will communicate, in |
-|                             |         | the case of a listening server.    |
-|                             |         | Note that the IP address can be    |
-|                             |         | IPv4 or IPv6.                      |
-+-----------------------------+---------+------------------------------------+
-| foreign_port                | integer | This is the TCP or UDP port to     |
-|                             |         | which the program communicates. In |
-|                             |         | the case of a listening program    |
-|                             |         | accepting new connections, this is |
-|                             |         | usually '0'.                       |
-+-----------------------------+---------+------------------------------------+
-| foreign_full_address        | binary  | This is the IP address and network |
-|                             |         | port to which the program is       |
-|                             |         | communicating or will accept       |
-|                             |         | communications from, equivalent to |
-|                             |         | foreign_address:foreign_port. Note |
-|                             |         | that the IP address can be IPv4 or |
-|                             |         | IPv6.                              |
-+-----------------------------+---------+------------------------------------+
-| pid                         | integer | This is the process ID of the      |
-|                             |         | process. The process in question   |
-|                             |         | is that of the program             |
-|                             |         | communicating on the network.      |
-+-----------------------------+---------+------------------------------------+
-| user_id                     | integer | The numeric user id, or uid, is    |
-|                             |         | the third column of each user's    |
-|                             |         | entry in /etc/passwd. It           |
-|                             |         | represents the owner, and thus     |
-|                             |         | privilege level, of the specified  |
-|                             |         | program.                           |
-+-----------------------------+---------+------------------------------------+
++--------------------------------+---------+-------------------------------------+
+| Name                           | Type    | Description                         |
++================================+=========+=====================================+
+| check                          | string  | Defines how many collected items    |
+|                                |         | must match the expected state.      |
++--------------------------------+---------+-------------------------------------+
+| protocol                       | string  | This is the transport-layer         |
+|                                |         | protocol, in lowercase: tcp or udp. |
++--------------------------------+---------+-------------------------------------+
+| protocol_operation             | string  | Comparison operation.               |
++--------------------------------+---------+-------------------------------------+
+| protocol_datatype              | string  | Datatype.                           |
++--------------------------------+---------+-------------------------------------+
+| local_address                  | binary  | This is the IP address of the       |
+|                                |         | network interface on which the      |
+|                                |         | program listens. Note that the IP   |
+|                                |         | address can be IPv4 or IPv6.	     |
++--------------------------------+---------+-------------------------------------+
+| local_address_operation        | string  | Comparison operation.               |
++--------------------------------+---------+-------------------------------------+
+| local_address_datatype         | string  | Datatype.                           |
++--------------------------------+---------+-------------------------------------+
+| local_port                     | integer | This is the TCP or UDP port on      |
+|                                |         | which the program listens. Note     |
+|                                |         | that this is not a list -- if a     |
+|                                |         | program listens on multiple ports,  |
+|                                |         | or on a combination of TCP and      |
+|                                |         | UDP, each will have its own entry   |
+|                                |         | in the table data stored by this    |
+|                                |         | test.	                             |
++--------------------------------+---------+-------------------------------------+
+| local_port_operation           | string  | Comparison operation.               |
++--------------------------------+---------+-------------------------------------+
+| local_port_datatype            | string  | Datatype                            |
++--------------------------------+---------+-------------------------------------+
+| local_full_address             | string  | This is the IP address and network  |
+|                                |         | port on which the program listens,  |
+|                                |         | equivalent to                       |
+|                                |         | local_address:local_port. Note      |
+|                                |         | that the IP address can be IPv4 or  |
+|                                |         | IPv6.	                             |
++--------------------------------+---------+-------------------------------------+
+| local_full_address_operation   | string  | Comparison operation.               |
++--------------------------------+---------+-------------------------------------+
+| local_full_address_datatype    | string  | Datatype.                           |
++--------------------------------+---------+-------------------------------------+
+| program_name                   | string  | This is the name of the             |
+|                                |         | communicating program.	             |
++--------------------------------+---------+-------------------------------------+
+| program_name_operation         | string  | Comparison operation.               |
++--------------------------------+---------+-------------------------------------+
+| program_name_datatype          | string  | Datatype.                           |
++--------------------------------+---------+-------------------------------------+
+| foreign_address                | string  | This is the IP address with which   |
+|                                |         | the program is communicating, or    |
+|                                |         | with which it will communicate, in  |
+|                                |         | the case of a listening server.     |
+|                                |         | Note that the IP address can be     |
+|                                |         | IPv4 or IPv6.	                     |
++--------------------------------+---------+-------------------------------------+
+| foreign_address_operation      | string  | Comparison operation.               |
++--------------------------------+---------+-------------------------------------+
+| foreign_address_datatype       | string  | Datatype.                           |
++--------------------------------+---------+-------------------------------------+
+| foreign_port                   | integer | This is the TCP or UDP port to      |
+|                                |         | which the program communicates. In  |
+|                                |         | the case of a listening program     |
+|                                |         | accepting new connections, this is  |
+|                                |         | usually '0'.	                     |
++--------------------------------+---------+-------------------------------------+
+| foreign_port_operation         | string  | Comparison operation.               |
++--------------------------------+---------+-------------------------------------+
+| foreign_port_datatype          | string  | Datatype.                           |
++--------------------------------+---------+-------------------------------------+
+| foreign_full_address           | binary  | This is the IP address and network  |
+|                                |         | port to which the program is        |
+|                                |         | communicating or will accept        |
+|                                |         | communications from, equivalent to  |
+|                                |         | foreign_address:foreign_port. Note  |
+|                                |         | that the IP address can be IPv4 or  |
+|                                |         | IPv6.	                             |
++--------------------------------+---------+-------------------------------------+
+| foreign_full_address_operation | string  | Comparison operation.               |
++--------------------------------+---------+-------------------------------------+
+| foreign_full_address_datatype  | string  | Datatype.                           |
++--------------------------------+---------+-------------------------------------+
+| pid                            | integer | This is the process ID of the       |
+|                                |         | process. The process in question    |
+|                                |         | is that of the program              |
+|                                |         | communicating on the network.	     |
++--------------------------------+---------+-------------------------------------+
+| pid_operation                  | string  | Comparison operation.               |
++--------------------------------+---------+-------------------------------------+
+| pid_datatype                   | string  | Datatype.                           |
++--------------------------------+---------+-------------------------------------+
+| user_id                        | integer | The numeric user id, or uid, is     |
+|                                |         | the third column of each user's     |
+|                                |         | entry in /etc/passwd. It            |
+|                                |         | represents the owner, and thus      |
+|                                |         | privilege level, of the specified   |
+|                                |         | program.	                         |
++--------------------------------+---------+-------------------------------------+
+| user_id_operation              | string  | Comparison operation.               |
++--------------------------------+---------+-------------------------------------+
+| user_id_datatype               | string  | Datatype.                           |
++--------------------------------+---------+-------------------------------------+
 
-NOTE: The ``check`` parameter is governed by a constraint allowing only the following values:
+`NOTE: The ``check`` parameter is governed by a constraint allowing only the following values:
   - all
   - at least one
   - none satisfy
   - only one
 
-NOTE: The ``operation`` parameter is governed by a constraint allowing only the following values:
-  - equals
-  - not equal
-  - case insensitive equals
-  - case insensitive not equal
-  - greater than
-  - less than
-  - greater than or equal
-  - less than or equal
-  - bitwise and
-  - bitwise or
-  - pattern match
-  - subset of
-  - superset of
+:strong:`NOTE: The following parameters:`
+  +--------------------------------------------+--------------------------------------------+
+  | ``local_address_operation``                | ``protocol_operation``                     |
+  +--------------------------------------------+--------------------------------------------+
+  | ``local_port_operation``                   | ``local_full_address_operation``           |
+  +--------------------------------------------+--------------------------------------------+
+  | ``program_name_operation``                 | ``foreign_address_operation``              |
+  +--------------------------------------------+--------------------------------------------+
+  | ``foreign_port_operation``                 | ``foreign_full_address_operation``         |
+  +--------------------------------------------+--------------------------------------------+
+  | ``pid_operation``                          | ``user_id_operation``                      |
+  +--------------------------------------------+--------------------------------------------+
+  are governed by a constraint allowing only the following values:
+   -  equals
+   -  not equal
+   -  case insensitive equals
+   -  case insensitive not equal
+   -  greater than
+   -  less than
+   -  greater than or equal
+   -  less than or equal
+   -  bitwise and
+   -  bitwise or
+   -  pattern match
+   -  subset of
+   -  superset of
 
-NOTE: The ``datatype`` parameter is governed by a constraint allowing only the following values:
+:strong:`NOTE: The following parameters:`
+  +-------------------------------------------+-------------------------------------------+
+  | ``protocol_datatype``                     | ``local_address_datatype``                |
+  +-------------------------------------------+-------------------------------------------+
+  | ``local_port_datatype``                   | ``local_full_address_datatype``           |
+  +-------------------------------------------+-------------------------------------------+
+  | ``program_name_datatype``                 | ``foreign_address_datatype``              |
+  +-------------------------------------------+-------------------------------------------+
+  | ``foreign_port_datatype``                 | ``foreign_full_address_datatype``         |
+  +-------------------------------------------+-------------------------------------------+
+  | ``pid_datatype``                          | ``user_id_datatype``                      |
+  +-------------------------------------------+-------------------------------------------+
+  are governed by a constraint allowing only the following values:
   - boolean
   - float
   - int
@@ -189,18 +250,36 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
         <ae:test type="[TEST-TYPE-NAME]">
           <ae:parameters>
             <ae:parameter dt="string" name="check">[check.value]</ae:parameter>
-            <ae:parameter dt="string" name="operation">[operation.value]</ae:parameter>
-            <ae:parameter dt="string" name="datatype">[datatype.value]</ae:parameter>
             <ae:parameter dt="string" name="protocol">[protocol.value]</ae:parameter>
+            <ae:parameter dt="string" name="protocol_operation">equals</ae:parameter>
+            <ae:parameter dt="string" name="protocol_datatype">string</ae:parameter>
             <ae:parameter dt="binary" name="local_address">[local_address.value]</ae:parameter>
+            <ae:parameter dt="string" name="local_address_operation">[local_address_operation.value]</ae:parameter>
+            <ae:parameter dt="string" name="local_address_datatype">[local_address_datatype.value]</ae:parameter>
             <ae:parameter dt="integer" name="local_port">[local_port.value]</ae:parameter>
+            <ae:parameter dt="string" name="local_port_operation">[local_port_operation.value]</ae:parameter>
+            <ae:parameter dt="string" name="local_port_datatype">[local_port_datatype.value]</ae:parameter>
             <ae:parameter dt="string" name="local_full_address">[local_full_address.value]</ae:parameter>
+            <ae:parameter dt="string" name="local_full_address_operation">[local_full_address_operation.value]</ae:parameter>
+            <ae:parameter dt="string" name="local_full_address_datatype">[local_full_address_datatype.value]</ae:parameter>
             <ae:parameter dt="string" name="program_name">[program_name.value]</ae:parameter>
+            <ae:parameter dt="string" name="program_name_operation">[program_name_operation.value]</ae:parameter>
+            <ae:parameter dt="string" name="program_name_datatype">[program_name_datatype.value]</ae:parameter>
             <ae:parameter dt="string" name="foreign_address">[foreign_address.value]</ae:parameter>
+            <ae:parameter dt="string" name="foreign_address_operation">[foreign_address_operation.value]</ae:parameter>
+            <ae:parameter dt="string" name="foreign_address_datatype">[foreign_address_datatype.value]</ae:parameter>
             <ae:parameter dt="integer" name="foreign_port">[foreign_port.value]</ae:parameter>
+            <ae:parameter dt="string" name="foreign_port_operation">[foreign_port_operation.value]</ae:parameter>
+            <ae:parameter dt="string" name="foreign_port_datatype">[foreign_port_datatype.value]</ae:parameter>
             <ae:parameter dt="binary" name="foreign_full_address">[foreign_full_address.value]</ae:parameter>
+            <ae:parameter dt="string" name="foreign_full_address_operation">[foreign_full_address_operation.value]</ae:parameter>
+            <ae:parameter dt="string" name="foreign_full_address_datatype">[foreign_full_address_datatype.value]</ae:parameter>
             <ae:parameter dt="integer" name="pid">[pid.value]</ae:parameter>
+            <ae:parameter dt="string" name="pid_operation">[pid_operation.value]</ae:parameter>
+            <ae:parameter dt="string" name="pid_datatype">[pid_datatype.value]</ae:parameter>
             <ae:parameter dt="integer" name="user_id">[user_id.value]</ae:parameter>
+            <ae:parameter dt="string" name="user_id_operation">[user_id_operation.value]</ae:parameter>
+            <ae:parameter dt="string" name="user_id_datatype">[user_id_datatype.value]</ae:parameter>
           </ae:parameters>
         </ae:test>
         <ae:profiles>
@@ -268,53 +347,53 @@ State
     comment="[ARTIFACT-TTILE]"
     version="1">
     <protocol 
-      datatype="[datatype.value]"
-      operation="[operation.value]">
+      datatype="[protocol_datatype.value]"
+      operation="[protocol_operation.value]">
         [protocol.value]
     </protocol>
     <local_address 
-      datatype="[datatype.value]"
-      operation="[operation.value]">
+      datatype="[local_address_datatype.value]"
+      operation="[local_address_operation.value]">
         [local_address.value]
     </local_address>
     <local_port 
-      datatype="int"
-      operation="[operation.value]">
+      datatype="[local_port_datatype.value]"
+      operation="[local_port_operation.value]">
         [local_port.value]
     </local_port>
     <local_full_address 
-      datatype="[datatype.value]"
-      operation="[operation.value]">
+      datatype="[local_full_address_datatype.value]"
+      operation="[local_full_address_operation.value]">
         [local_full_address.value]
     </local_full_address>
     <program_name 
-      datatype="[datatype.value]"
-      operation="[operation.value]">
+      datatype="[program_name_datatype.value]"
+      operation="[program_name_operation.value]">
         [program_name.value]
     </program_name>
     <foreign_address 
-      datatype="[datatype.value]"
-      operation="[operation.value]">
+      datatype="[foreign_address_datatype.value]"
+      operation="[foreign_address_operation.value]">
         [foreign_address.value]
     </foreign_address>
     <foreign_port 
-      datatype="int"
-      operation="[operation.value]">
+      datatype="[foreign_port_datatype.value]"
+      operation="[foreign_port_datatype_operation.value]">
         [foreign_port.value]
     </foreign_port>
     <foreign_full_address 
-      datatype="[datatype.value]"
-      operation="[operation.value]">
+      datatype="[foreign_full_address_datatype.value]"
+      operation="[foreign_full_address_operation.value]">
         [foreign_full_address.value]
     </foreign_full_address>
     <pid 
-      datatype="int"
-      operation="[operation.value]">
+      datatype="[pid_datatype.value]"
+      operation="[pid_operation.value]">
         [pid.value]
     </pid>
     <user_id 
-      datatype="int"
-      operation="[operation.value]">
+      datatype="[user_id_datatype.value]"
+      operation="[user_id_operation.value]">
         [user_id.value]
     </user_id>
   </inetlisteningserver510_state>
@@ -354,10 +433,6 @@ YAML
             dt: "string"
             value: "[check.value]"
         - parameter:
-            name: "operation"
-            dt: "string"
-            value: "[operation.value]"
-        - parameter:
             name: "datatype"
             dt: "string"
             value: "[datatype.value]"
@@ -366,41 +441,121 @@ YAML
             dt: "string"
             value: "[protocol.value]"
         - parameter:
+            name: "protocol_operation"
+            dt: "string"
+            value: "[protocol_operation]"
+        - parameter:
+            name: "protocol_datatype"
+            dt: "string"
+            value: "[protocol_datatype]"
+        - parameter:
             name: "local_address"
             dt: "binary"
             value: "[local_address.value]"
+        - parameter:
+            name: "local_address_operation"
+            dt: "string"
+            value: "[local_address_operation]"
+        - parameter:
+            name: "local_address_datatype"
+            dt: "string"
+            value: "[local_address_datatype]"
         - parameter:
             name: "local_port"
             dt: "integer"
             value: "[local_port.value]"
         - parameter:
+            name: "local_port_operation"
+            dt: "string"
+            value: "[local_port_operation]"
+        - parameter:
+            name: "local_port_datatype"
+            dt: "string"
+            value: "[local_port_datatype]"
+        - parameter:
             name: "local_full_address"
             dt: "string"
             value: "[local_full_address.value]"
+        - parameter:
+            name: "local_full_address_operation"
+            dt: "string"
+            value: "[local_full_address_operation]"
+        - parameter:
+            name: "local_full_address_datatype"
+            dt: "string"
+            value: "[local_full_address_datatype]"
         - parameter:
             name: "program_name"
             dt: "string"
             value: "[program_name.value]"
         - parameter:
+            name: "program_name_operation"
+            dt: "string"
+            value: "[program_name_operation]"
+        - parameter:
+            name: "program_name_datatype"
+            dt: "string"
+            value: "[program_name_datatype]"
+        - parameter:
             name: "foreign_address"
             dt: "string"
             value: "[foreign_address.value]"
+        - parameter:
+            name: "foreign_address_operation"
+            dt: "string"
+            value: "[foreign_address_operation]"
+        - parameter:
+            name: "foreign_address_datatype"
+            dt: "string"
+            value: "[foreign_address_datatype]"
         - parameter:
             name: "foreign_port"
             dt: "integer"
             value: "[foreign_port.value]"
         - parameter:
+            name: "foreign_port_operation"
+            dt: "string"
+            value: "[foreign_port_operation]"
+        - parameter:
+            name: "foreign_port_datatype"
+            dt: "string"
+            value: "[foreign_port_datatype]"
+        - parameter:
             name: "foreign_full_address"
             dt: "binary"
             value: "[foreign_full_address.value]"
+        - parameter:
+            name: "foreign_full_address_operation"
+            dt: "string"
+            value: "[foreign_full_address_operation]"
+        - parameter:
+            name: "foreign_full_address_datatype"
+            dt: "string"
+            value: "[foreign_full_address_datatype]"
         - parameter:
             name: "pid"
             dt: "integer"
             value: "[pid.value]"
         - parameter:
+            name: "pid_operation"
+            dt: "string"
+            value: "[pid_operation]"
+        - parameter:
+            name: "pid_datatype"
+            dt: "string"
+            value: "[pid_datatype]"
+        - parameter:
             name: "user_id"
             dt: "integer"
             value: "[user_id.value]"
+        - parameter:
+            name: "user_id_operation"
+            dt: "string"
+            value: "[user_id_operation]"
+        - parameter:
+            name: "user_id_datatype"
+            dt: "string"
+            value: "[user_id_datatype]"
 
 JSON
 ^^^^
@@ -456,13 +611,6 @@ JSON
           },
           {
             "parameter": {
-              "name": "operation",
-              "dt": "string",
-              "value": "[operation.value]"
-            }
-          },
-          {
-            "parameter": {
               "name": "datatype",
               "dt": "string",
               "value": "[datatype.value]"
@@ -477,9 +625,37 @@ JSON
           },
           {
             "parameter": {
+              "name": "protocol_operation",
+              "dt": "string",
+              "value": "[protocol_operation]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "protocol_datatype",
+              "dt": "string",
+              "value": "[protocol_datatype]"
+            }
+          },
+          {
+            "parameter": {
               "name": "local_address",
               "dt": "binary",
               "value": "[local_address.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "local_address_operation",
+              "dt": "string",
+              "value": "[local_address_operation]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "local_address_datatype",
+              "dt": "string",
+              "value": "[local_address_datatype]"
             }
           },
           {
@@ -491,9 +667,37 @@ JSON
           },
           {
             "parameter": {
+              "name": "local_port_operation",
+              "dt": "string",
+              "value": "[local_port_operation]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "local_port_datatype",
+              "dt": "string",
+              "value": "[local_port_datatype]"
+            }
+          },
+          {
+            "parameter": {
               "name": "local_full_address",
               "dt": "string",
               "value": "[local_full_address.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "local_full_address_operation",
+              "dt": "string",
+              "value": "[local_full_address_operation]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "local_full_address_datatype",
+              "dt": "string",
+              "value": "[local_full_address_datatype]"
             }
           },
           {
@@ -505,9 +709,37 @@ JSON
           },
           {
             "parameter": {
+              "name": "program_name_operation",
+              "dt": "string",
+              "value": "[program_name_operation]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "program_name_datatype",
+              "dt": "string",
+              "value": "[program_name_datatype]"
+            }
+          },
+          {
+            "parameter": {
               "name": "foreign_address",
               "dt": "string",
               "value": "[foreign_address.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "foreign_address_operation",
+              "dt": "string",
+              "value": "[foreign_address_operation]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "foreign_address_datatype",
+              "dt": "string",
+              "value": "[foreign_address_datatype]"
             }
           },
           {
@@ -519,9 +751,37 @@ JSON
           },
           {
             "parameter": {
+              "name": "foreign_port_operation",
+              "dt": "string",
+              "value": "[foreign_port_operation]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "foreign_port_datatype",
+              "dt": "string",
+              "value": "[foreign_port_datatype]"
+            }
+          },
+          {
+            "parameter": {
               "name": "foreign_full_address",
               "dt": "binary",
               "value": "[foreign_full_address.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "foreign_full_address_operation",
+              "dt": "string",
+              "value": "[foreign_full_address_operation]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "foreign_full_address_datatype",
+              "dt": "string",
+              "value": "[foreign_full_address_datatype]"
             }
           },
           {
@@ -533,9 +793,37 @@ JSON
           },
           {
             "parameter": {
+              "name": "pid_operation",
+              "dt": "string",
+              "value": "[pid_operation]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "pid_datatype",
+              "dt": "string",
+              "value": "[pid_datatype]"
+            }
+          },
+          {
+            "parameter": {
               "name": "user_id",
               "dt": "integer",
               "value": "[user_id.value]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "user_id_operation",
+              "dt": "string",
+              "value": "[user_id_operation]"
+            }
+          },
+          {
+            "parameter": {
+              "name": "user_id_datatype",
+              "dt": "string",
+              "value": "[user_id_datatype]"
             }
           }
         ]

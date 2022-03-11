@@ -84,6 +84,7 @@ Artifact Parameters
 :strong:`NOTE: The` ``target_user``, ``username``, ``userpass``, :strong:`and` ``directory_node`` :strong:`parameters are governed by a constraint allowing only values conforming to the following regex pattern:` ``^.+$``
 
 NOTE: The ``check_existence`` parameter is governed by a constraint allowing only the following values:
+
   - all_exist 
   - any_exist 
   - at_least_one_exists 
@@ -324,7 +325,7 @@ Test Type Parameters
 | notGuessablePattern_datatype            | string  | The data type of the value.      |
 +-----------------------------------------+---------+----------------------------------+
 
-NOTE: The ``check`` parameter is governed by a constraint allowing only the following values:
+`NOTE: The ``check`` parameter is governed by a constraint allowing only the following values:
    -  all
    -  at least one
    -  none satisfy
