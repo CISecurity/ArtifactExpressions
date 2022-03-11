@@ -34,7 +34,7 @@ Artifact Parameters
 |                             |         | IP address can be IPv4 or IPv6.    |
 |                             |         | Cannot be blank.                   |
 +-----------------------------+---------+------------------------------------+
-| local_port                  | string  | This is the TCP or UDP port on     |
+| local_port                  | integer | This is the TCP or UDP port on     |
 |                             |         | which an application would listen. |
 |                             |         | Note that this is not a list -- if |
 |                             |         | a program listens on multiple      |
@@ -422,53 +422,53 @@ State
     comment="[ARTIFACT-TTILE]"
     version="1">
     <protocol 
-      datatype="[datatype.value]"
-      operation="[operation.value]">
+      datatype="[protocol_datatype.value]"
+      operation="[protocol_operation.value]">
         [protocol.value]
     </protocol>
     <local_address 
-      datatype="[datatype.value]"
-      operation="[operation.value]">
+      datatype="[local_address_datatype.value]"
+      operation="[local_address_operation.value]">
         [local_address.value]
     </local_address>
     <local_port 
-      datatype="int"
-      operation="[operation.value]">
+      datatype="[local_port_datatype.value]"
+      operation="[local_port_operation.value]">
         [local_port.value]
     </local_port>
     <local_full_address 
-      datatype="[datatype.value]"
-      operation="[operation.value]">
+      datatype="[local_full_address_datatype.value]"
+      operation="[local_full_address_operation.value]">
         [local_full_address.value]
     </local_full_address>
     <program_name 
-      datatype="[datatype.value]"
-      operation="[operation.value]">
+      datatype="[program_name_datatype.value]"
+      operation="[program_name_operation.value]">
         [program_name.value]
     </program_name>
     <foreign_address 
-      datatype="[datatype.value]"
-      operation="[operation.value]">
+      datatype="[foreign_address_datatype.value]"
+      operation="[foreign_address_operation.value]">
         [foreign_address.value]
     </foreign_address>
     <foreign_port 
-      datatype="int"
-      operation="[operation.value]">
+      datatype="[foreign_port_datatype.value]"
+      operation="[foreign_port_datatype_operation.value]">
         [foreign_port.value]
     </foreign_port>
     <foreign_full_address 
-      datatype="[datatype.value]"
-      operation="[operation.value]">
+      datatype="[foreign_full_address_datatype.value]"
+      operation="[foreign_full_address_operation.value]">
         [foreign_full_address.value]
     </foreign_full_address>
     <pid 
-      datatype="int"
-      operation="[operation.value]">
+      datatype="[pid_datatype.value]"
+      operation="[pid_operation.value]">
         [pid.value]
     </pid>
     <user_id 
-      datatype="int"
-      operation="[operation.value]">
+      datatype="[user_id_datatype.value]"
+      operation="[user_id_operation.value]">
         [user_id.value]
     </user_id>
   </inetlisteningserver510_state>
