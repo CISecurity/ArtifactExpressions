@@ -78,7 +78,7 @@ Test Type Parameters
 | local_address                  | binary  | This is the IP address of the       |
 |                                |         | network interface on which the      |
 |                                |         | program listens. Note that the IP   |
-|                                |         | address can be IPv4 or IPv6.	     |
+|                                |         | address can be IPv4 or IPv6.        |
 +--------------------------------+---------+-------------------------------------+
 | local_address_operation        | string  | Comparison operation.               |
 +--------------------------------+---------+-------------------------------------+
@@ -91,7 +91,7 @@ Test Type Parameters
 |                                |         | or on a combination of TCP and      |
 |                                |         | UDP, each will have its own entry   |
 |                                |         | in the table data stored by this    |
-|                                |         | test.	                             |
+|                                |         | test.                               |
 +--------------------------------+---------+-------------------------------------+
 | local_port_operation           | string  | Comparison operation.               |
 +--------------------------------+---------+-------------------------------------+
@@ -102,14 +102,14 @@ Test Type Parameters
 |                                |         | equivalent to                       |
 |                                |         | local_address:local_port. Note      |
 |                                |         | that the IP address can be IPv4 or  |
-|                                |         | IPv6.	                             |
+|                                |         | IPv6.                               |
 +--------------------------------+---------+-------------------------------------+
 | local_full_address_operation   | string  | Comparison operation.               |
 +--------------------------------+---------+-------------------------------------+
 | local_full_address_datatype    | string  | Datatype.                           |
 +--------------------------------+---------+-------------------------------------+
 | program_name                   | string  | This is the name of the             |
-|                                |         | communicating program.	             |
+|                                |         | communicating program.              |
 +--------------------------------+---------+-------------------------------------+
 | program_name_operation         | string  | Comparison operation.               |
 +--------------------------------+---------+-------------------------------------+
@@ -120,7 +120,7 @@ Test Type Parameters
 |                                |         | with which it will communicate, in  |
 |                                |         | the case of a listening server.     |
 |                                |         | Note that the IP address can be     |
-|                                |         | IPv4 or IPv6.	                     |
+|                                |         | IPv4 or IPv6.                       |
 +--------------------------------+---------+-------------------------------------+
 | foreign_address_operation      | string  | Comparison operation.               |
 +--------------------------------+---------+-------------------------------------+
@@ -130,7 +130,7 @@ Test Type Parameters
 |                                |         | which the program communicates. In  |
 |                                |         | the case of a listening program     |
 |                                |         | accepting new connections, this is  |
-|                                |         | usually '0'.	                     |
+|                                |         | usually '0'.                        |
 +--------------------------------+---------+-------------------------------------+
 | foreign_port_operation         | string  | Comparison operation.               |
 +--------------------------------+---------+-------------------------------------+
@@ -142,7 +142,7 @@ Test Type Parameters
 |                                |         | communications from, equivalent to  |
 |                                |         | foreign_address:foreign_port. Note  |
 |                                |         | that the IP address can be IPv4 or  |
-|                                |         | IPv6.	                             |
+|                                |         | IPv6.                               |
 +--------------------------------+---------+-------------------------------------+
 | foreign_full_address_operation | string  | Comparison operation.               |
 +--------------------------------+---------+-------------------------------------+
@@ -151,7 +151,7 @@ Test Type Parameters
 | pid                            | integer | This is the process ID of the       |
 |                                |         | process. The process in question    |
 |                                |         | is that of the program              |
-|                                |         | communicating on the network.	     |
+|                                |         | communicating on the network.       |
 +--------------------------------+---------+-------------------------------------+
 | pid_operation                  | string  | Comparison operation.               |
 +--------------------------------+---------+-------------------------------------+
@@ -162,14 +162,14 @@ Test Type Parameters
 |                                |         | entry in /etc/passwd. It            |
 |                                |         | represents the owner, and thus      |
 |                                |         | privilege level, of the specified   |
-|                                |         | program.	                         |
+|                                |         | program.                            |
 +--------------------------------+---------+-------------------------------------+
 | user_id_operation              | string  | Comparison operation.               |
 +--------------------------------+---------+-------------------------------------+
 | user_id_datatype               | string  | Datatype.                           |
 +--------------------------------+---------+-------------------------------------+
 
-`NOTE: The ``check`` parameter is governed by a constraint allowing only the following values:
+NOTE: The ``check`` parameter is governed by a constraint allowing only the following values:
   - all
   - at least one
   - none satisfy
