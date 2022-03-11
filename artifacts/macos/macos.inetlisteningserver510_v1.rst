@@ -169,7 +169,7 @@ Test Type Parameters
 | user_id_datatype               | string  | Datatype.                           |
 +--------------------------------+---------+-------------------------------------+
 
-`NOTE: The ``check`` parameter is governed by a constraint allowing only the following values:
+NOTE: The ``check`` parameter is governed by a constraint allowing only the following values:
   - all
   - at least one
   - none satisfy
