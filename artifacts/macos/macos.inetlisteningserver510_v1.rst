@@ -73,7 +73,7 @@ Test Type Parameters
 +--------------------------------+---------+-------------------------------------+
 | protocol_operation             | string  | Comparison operation.               |
 +--------------------------------+---------+-------------------------------------+
-| protocol_datatype              | string  | Datatype.                           |
+| protocol_datatype              | string  | Data type.                          |
 +--------------------------------+---------+-------------------------------------+
 | local_address                  | binary  | This is the IP address of the       |
 |                                |         | network interface on which the      |
@@ -82,7 +82,7 @@ Test Type Parameters
 +--------------------------------+---------+-------------------------------------+
 | local_address_operation        | string  | Comparison operation.               |
 +--------------------------------+---------+-------------------------------------+
-| local_address_datatype         | string  | Datatype.                           |
+| local_address_datatype         | string  | Data type.                          |
 +--------------------------------+---------+-------------------------------------+
 | local_port                     | integer | This is the TCP or UDP port on      |
 |                                |         | which the program listens. Note     |
@@ -95,7 +95,7 @@ Test Type Parameters
 +--------------------------------+---------+-------------------------------------+
 | local_port_operation           | string  | Comparison operation.               |
 +--------------------------------+---------+-------------------------------------+
-| local_port_datatype            | string  | Datatype                            |
+| local_port_datatype            | string  | Data type.                          |
 +--------------------------------+---------+-------------------------------------+
 | local_full_address             | string  | This is the IP address and network  |
 |                                |         | port on which the program listens,  |
@@ -106,14 +106,14 @@ Test Type Parameters
 +--------------------------------+---------+-------------------------------------+
 | local_full_address_operation   | string  | Comparison operation.               |
 +--------------------------------+---------+-------------------------------------+
-| local_full_address_datatype    | string  | Datatype.                           |
+| local_full_address_datatype    | string  | Data type.                          |
 +--------------------------------+---------+-------------------------------------+
 | program_name                   | string  | This is the name of the             |
 |                                |         | communicating program.              |
 +--------------------------------+---------+-------------------------------------+
 | program_name_operation         | string  | Comparison operation.               |
 +--------------------------------+---------+-------------------------------------+
-| program_name_datatype          | string  | Datatype.                           |
+| program_name_datatype          | string  | Data type.                          |
 +--------------------------------+---------+-------------------------------------+
 | foreign_address                | string  | This is the IP address with which   |
 |                                |         | the program is communicating, or    |
@@ -124,7 +124,7 @@ Test Type Parameters
 +--------------------------------+---------+-------------------------------------+
 | foreign_address_operation      | string  | Comparison operation.               |
 +--------------------------------+---------+-------------------------------------+
-| foreign_address_datatype       | string  | Datatype.                           |
+| foreign_address_datatype       | string  | Data type.                          |
 +--------------------------------+---------+-------------------------------------+
 | foreign_port                   | integer | This is the TCP or UDP port to      |
 |                                |         | which the program communicates. In  |
@@ -134,7 +134,7 @@ Test Type Parameters
 +--------------------------------+---------+-------------------------------------+
 | foreign_port_operation         | string  | Comparison operation.               |
 +--------------------------------+---------+-------------------------------------+
-| foreign_port_datatype          | string  | Datatype.                           |
+| foreign_port_datatype          | string  | Data type.                          |
 +--------------------------------+---------+-------------------------------------+
 | foreign_full_address           | binary  | This is the IP address and network  |
 |                                |         | port to which the program is        |
@@ -146,7 +146,7 @@ Test Type Parameters
 +--------------------------------+---------+-------------------------------------+
 | foreign_full_address_operation | string  | Comparison operation.               |
 +--------------------------------+---------+-------------------------------------+
-| foreign_full_address_datatype  | string  | Datatype.                           |
+| foreign_full_address_datatype  | string  | Data type.                          |
 +--------------------------------+---------+-------------------------------------+
 | pid                            | integer | This is the process ID of the       |
 |                                |         | process. The process in question    |
@@ -155,7 +155,7 @@ Test Type Parameters
 +--------------------------------+---------+-------------------------------------+
 | pid_operation                  | string  | Comparison operation.               |
 +--------------------------------+---------+-------------------------------------+
-| pid_datatype                   | string  | Datatype.                           |
+| pid_datatype                   | string  | Data type.                          |
 +--------------------------------+---------+-------------------------------------+
 | user_id                        | integer | The numeric user id, or uid, is     |
 |                                |         | the third column of each user's     |
@@ -166,7 +166,7 @@ Test Type Parameters
 +--------------------------------+---------+-------------------------------------+
 | user_id_operation              | string  | Comparison operation.               |
 +--------------------------------+---------+-------------------------------------+
-| user_id_datatype               | string  | Datatype.                           |
+| user_id_datatype               | string  | Data type.                          |
 +--------------------------------+---------+-------------------------------------+
 
 NOTE: The ``check`` parameter is governed by a constraint allowing only the following values:
@@ -433,10 +433,6 @@ YAML
             dt: "string"
             value: "[check.value]"
         - parameter:
-            name: "datatype"
-            dt: "string"
-            value: "[datatype.value]"
-        - parameter:
             name: "protocol"
             dt: "string"
             value: "[protocol.value]"
@@ -607,13 +603,6 @@ JSON
               "name": "check",
               "dt": "string",
               "value": "[check.value]"
-            }
-          },
-          {
-            "parameter": {
-              "name": "datatype",
-              "dt": "string",
-              "value": "[datatype.value]"
             }
           },
           {
