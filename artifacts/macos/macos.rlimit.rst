@@ -52,13 +52,13 @@ Test Type Parameters
 |                             |         | seconds) to be used by each        |
 |                             |         | process. Cannot be blank.          |
 +-----------------------------+---------+------------------------------------+
-| cpu_current_datatype        | string  | Datatype.                          |
+| cpu_current_datatype        | string  | Data type.                         |
 +-----------------------------+---------+------------------------------------+
 | cpu_current_operation       | string  | Comparison operation.              |
 +-----------------------------+---------+------------------------------------+
 | cpu_max                     | integer | CPU hard limit. Cannot be blank.   |
 +-----------------------------+---------+------------------------------------+
-| cpu_max_datatype            | string  | Datatype.                          |
+| cpu_max_datatype            | string  | Data type.                         |
 +-----------------------------+---------+------------------------------------+
 | cpu_max_operation           | string  | Comparison operation.              |
 +-----------------------------+---------+------------------------------------+
@@ -66,14 +66,14 @@ Test Type Parameters
 |                             |         | that may be created. Cannot be     |
 |                             |         | blank.                             |
 +-----------------------------+---------+------------------------------------+
-| filesize_current_datatype   | string  | Datatype.                          |
+| filesize_current_datatype   | string  | Data type.                         |
 +-----------------------------+---------+------------------------------------+
 | filesize_current_operation  | string  | Comparison operation.              |
 +-----------------------------+---------+------------------------------------+
 | filesize_max                | integer | Filesize hard limit. Cannot be     |
 |                             |         | blank.                             |
 +-----------------------------+---------+------------------------------------+
-| filesize_max_datatype       | string  | Datatype.                          |
+| filesize_max_datatype       | string  | Data type.                         |
 +-----------------------------+---------+------------------------------------+
 | filesize_max_operation      | string  | Comparison operation.              |
 +-----------------------------+---------+------------------------------------+
@@ -83,13 +83,13 @@ Test Type Parameters
 |                             |         | extend its break with the sbrk(2)  |
 |                             |         | system call. Cannot be blank.      |
 +-----------------------------+---------+------------------------------------+
-| data_current_datatype       | string  | Datatype.                          |
+| data_current_datatype       | string  | Data type.                         |
 +-----------------------------+---------+------------------------------------+
 | data_current_operation      | string  | Comparison operation.              |
 +-----------------------------+---------+------------------------------------+
 | data_max                    | integer | Data hard limit. Cannot be blank.  |
 +-----------------------------+---------+------------------------------------+
-| data_max_datatype           | string  | Datatype.                          |
+| data_max_datatype           | string  | Data type.                         |
 +-----------------------------+---------+------------------------------------+
 | data_max_operation          | string  | Comparison operation.              |
 +-----------------------------+---------+------------------------------------+
@@ -101,13 +101,13 @@ Test Type Parameters
 |                             |         | automatically by the system.       |
 |                             |         | Cannot be blank.                   |
 +-----------------------------+---------+------------------------------------+
-| stack_current_datatype      | string  | Datatype.                          |
+| stack_current_datatype      | string  | Data type.                         |
 +-----------------------------+---------+------------------------------------+
 | stack_current_operation     | string  | Comparison operation.              |
 +-----------------------------+---------+------------------------------------+
 | stack_max                   | integer | Stack hard limit. Cannot be blank. |
 +-----------------------------+---------+------------------------------------+
-| stack_max_datatype          | string  | Datatype.                          |
+| stack_max_datatype          | string  | Data type.                         |
 +-----------------------------+---------+------------------------------------+
 | stack_max_operation         | string  | Comparison operation.              |
 +-----------------------------+---------+------------------------------------+
@@ -115,13 +115,13 @@ Test Type Parameters
 |                             |         | file that may be created. Cannot   |
 |                             |         | be blank.                          |
 +-----------------------------+---------+------------------------------------+
-| core_current_datatype       | string  | Datatype.                          |
+| core_current_datatype       | string  | Data type.                         |
 +-----------------------------+---------+------------------------------------+
 | core_current_operation      | string  | Comparison operation.              |
 +-----------------------------+---------+------------------------------------+
 | core_max                    | integer | Core hard limit. Cannot be blank.  |
 +-----------------------------+---------+------------------------------------+
-| core_max_datatype           | string  | Datatype.                          |
+| core_max_datatype           | string  | Data type.                         |
 +-----------------------------+---------+------------------------------------+
 | core_max_operation          | string  | Comparison operation.              |
 +-----------------------------+---------+------------------------------------+
@@ -136,13 +136,13 @@ Test Type Parameters
 |                             |         | declared resident set size.        |
 |                             |         | Cannot be blank.                   |
 +-----------------------------+---------+------------------------------------+
-| rss_current_datatype        | string  | Datatype.                          |
+| rss_current_datatype        | string  | Data type.                         |
 +-----------------------------+---------+------------------------------------+
 | rss_current_operation       | string  | Comparison operation.              |
 +-----------------------------+---------+------------------------------------+
 | rss_max                     | integer | RSS hard limit. Cannot be blank.   |
 +-----------------------------+---------+------------------------------------+
-| rss_max_datatype            | string  | Datatype.                          |
+| rss_max_datatype            | string  | Data type.                         |
 +-----------------------------+---------+------------------------------------+
 | rss_max_operation           | string  | Comparison operation.              |
 +-----------------------------+---------+------------------------------------+
@@ -151,14 +151,14 @@ Test Type Parameters
 |                             |         | using the mlock(2) function.       |
 |                             |         | Cannot be blank.                   |
 +-----------------------------+---------+------------------------------------+
-| memlock_current_datatype    | string  | Datatype.                          |
+| memlock_current_datatype    | string  | Data type.                         |
 +-----------------------------+---------+------------------------------------+
 | memlock_current_operation   | string  | Comparison operation.              |
 +-----------------------------+---------+------------------------------------+
 | memlock_max                 | integer | Memlock hard limit. Cannot be      |
 |                             |         | blank.                             |
 +-----------------------------+---------+------------------------------------+
-| memlock_max_datatype        | string  | Datatype.                          |
+| memlock_max_datatype        | string  | Data type.                         |
 +-----------------------------+---------+------------------------------------+
 | memlock_max_operation       | string  | Comparison operation.              |
 +-----------------------------+---------+------------------------------------+
@@ -166,28 +166,28 @@ Test Type Parameters
 |                             |         | processes for this user id.        |
 |                             |         | Cannot be blank.                   |
 +-----------------------------+---------+------------------------------------+
-| maxproc_current_datatype    | string  | Datatype.                          |
+| maxproc_current_datatype    | string  | Data type.                         |
 +-----------------------------+---------+------------------------------------+
 | maxproc_current_operation   | string  | Comparison operation.              |
 +-----------------------------+---------+------------------------------------+
 | maxproc_max                 | integer | Maxproc hard limit. Cannot be      |
 |                             |         | blank.                             |
 +-----------------------------+---------+------------------------------------+
-| maxproc_max_datatype        | string  | Datatype.                          |
+| maxproc_max_datatype        | string  | Data type.                         |
 +-----------------------------+---------+------------------------------------+
 | maxproc_max_operation       | string  | Comparison operation.              |
 +-----------------------------+---------+------------------------------------+
 | maxfiles_current            | integer | The maximum number of open files   |
 |                             |         | for this process. Cannot be blank. | 
 +-----------------------------+---------+------------------------------------+
-| maxfiles_current_datatype   | string  | Datatype.                          |
+| maxfiles_current_datatype   | string  | Data type.                         |
 +-----------------------------+---------+------------------------------------+
 | maxfiles_current_operation  | string  | Comparison operation.              |
 +-----------------------------+---------+------------------------------------+
 | maxfiles_max                | integer | Maxfiles hard limit. Cannot be     |
 |                             |         | blank.                             |
 +-----------------------------+---------+------------------------------------+
-| maxfiles_max_datatype       | string  | Datatype.                          |
+| maxfiles_max_datatype       | string  | Data type.                         |
 +-----------------------------+---------+------------------------------------+
 | maxfiles_max_operation      | string  | Comparison operation.              |
 +-----------------------------+---------+------------------------------------+
@@ -254,12 +254,12 @@ NOTE: The ``check`` parameter is governed by a constraint allowing only the foll
   | ``maxfiles_current_datatype``             | ``maxfiles_max_datatype``                 |
   +-------------------------------------------+-------------------------------------------+
   are governed by a constraint allowing only the following values:
-  - boolean
-  - float
-  - int
-  - string
-  - version
-  - set
+    - boolean
+    - float
+    - int
+    - string
+    - version
+    - set
 
 Generated Content
 ~~~~~~~~~~~~~~~~~
