@@ -188,19 +188,19 @@ NOTE: The ``check`` parameter is governed by a constraint allowing only the foll
   | ``pid_operation``                          | ``user_id_operation``                      |
   +--------------------------------------------+--------------------------------------------+
   are governed by a constraint allowing only the following values:
-    -  equals
-    -  not equal
-    -  case insensitive equals
-    -  case insensitive not equal
-    -  greater than
-    -  less than
-    -  greater than or equal
-    -  less than or equal
-    -  bitwise and
-    -  bitwise or
-    -  pattern match
-    -  subset of
-    -  superset of
+    - equals
+    - not equal
+    - case insensitive equals
+    - case insensitive not equal
+    - greater than
+    - less than
+    - greater than or equal
+    - less than or equal
+    - bitwise and
+    - bitwise or
+    - pattern match
+    - subset of
+    - superset of
 
 :strong:`NOTE: The following parameters:`
   +-------------------------------------------+-------------------------------------------+
