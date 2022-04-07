@@ -20,7 +20,7 @@ Artifact Parameters
 | Name                                  | Type    | Description              |
 +=======================================+=========+==========================+
 | check_existence                       | string  | Defines how many items   |
-|                                       |         | should be collected      |
+|                                       |         | should be collected.     |
 +---------------------------------------+---------+--------------------------+
 | xpath                                 | string  | Specifies an Xpath       |
 |                                       |         | expression describing the|
@@ -40,13 +40,12 @@ Artifact Parameters
 |                                       |         | is equals since there is |
 |                                       |         | an infinite number of    |
 |                                       |         | possible XPaths and      |
-|                                       |         | determining all those  |
+|                                       |         | determining all those    |
 |                                       |         | that do not equal a given|
 |                                       |         | XPath would be           |
-|                                       |         | impossible.The operation |
+|                                       |         | impossible. The operation|
 |                                       |         | of the pod security      |
 |                                       |         | policy.                  |
-|                                       |         |                          |
 +---------------------------------------+---------+--------------------------+
 
 Supported Test Types
