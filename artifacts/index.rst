@@ -15,6 +15,7 @@ This documentation is organized into sections by “family” and Artifact Type.
    Independent <independent/index>
    Kubernetes <kubernetes/index>
    MacOS <macos/index>
+   PaloAlto <paloalto/index>
    UnixLinux <unixlinux/index>
    VMware <vmware/index>
    Windows <windows/index>
