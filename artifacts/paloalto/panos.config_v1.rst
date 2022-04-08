@@ -138,9 +138,9 @@ This is what the AE check looks like, inside a Rule, in the XCCDF.
         <ae:test type="[TEST-TYPE-NAME]">
           <ae:parameters>
             <ae:parameter dt="string" name="check">[check.value]</ae:parameter>
-			<ae:parameter dt="string" name="operation">[operation.value]</ae:parameter>
-			<ae:parameter dt="string" name="datatype">[datatype.value]</ae:parameter>
-			<ae:parameter dt="string" name="value_of">[value_of.value]</ae:parameter>
+            <ae:parameter dt="string" name="operation">[operation.value]</ae:parameter>
+            <ae:parameter dt="string" name="datatype">[datatype.value]</ae:parameter>
+            <ae:parameter dt="string" name="value_of">[value_of.value]</ae:parameter>
           </ae:parameters>
         </ae:test>
         <ae:profiles>
