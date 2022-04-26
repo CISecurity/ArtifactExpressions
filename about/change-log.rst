@@ -7,6 +7,8 @@ Review the Change Log below for new content.
 
 Change Log
 ~~~~~~~~~~~~~~~~~~~~
+Newly Added for April 2022
+  - `panos.config_v1 <https://artifact-expressions.readthedocs.io/en/stable/artifacts/paloalto/panos.config_v1/>`_.
 
 Newly Added for January 2022
   - macos.accountinfo_v1
