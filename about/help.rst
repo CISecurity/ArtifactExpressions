@@ -1,5 +1,8 @@
+Help
+====
+
 Contact Us
-==========
+----------
 
 Join the `CIS Members : Benchmark Customization Discussions Community on WorkBench
 <https://workbench.cisecurity.org/communities/148>`_.
