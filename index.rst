@@ -13,6 +13,7 @@ The "How To" describes how to best use this documentation. This serves as a guid
 
 The “Terms of Use” section provides the terms of use policy.
 
+The “Help" section provides the user assistance with tailoring or exporting.
 
 .. toctree::
    :maxdepth: 1
@@ -23,6 +24,7 @@ The “Terms of Use” section provides the terms of use policy.
    Change Log <about/change-log>
    How To <about/how-to>
    Terms of Use <about/terms-of-use>
+   Help <about/help>
 
 .. toctree::
    :maxdepth: 1
