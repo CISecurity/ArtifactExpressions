@@ -5,6 +5,10 @@ The CIS Artifact Expressions documentation is a guide for creating Artifacts dur
 
 Review the Change Log below for new content.
 
+May 2022
+--------
+  -  `Help section added <https://artifact-expressions.readthedocs.io/en/stable/about/help/>`_
+
 April 2022
 ~~~~~~~~~~~~~~~~~~~~
 Newly Added for April 2022
