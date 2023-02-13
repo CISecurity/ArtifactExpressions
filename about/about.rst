@@ -21,6 +21,4 @@ Key terms:
 - the various formats that can be generated from the defined benchmark content including recommendation prose and Artifacts
 
 **Benchmark Customization Community**
-- Join the Benchmark Customization Community below if you want to provide feedback or ask questions about tailoring or Artifact Expressions
-
-https://workbench.cisecurity.org/communities/148
+- SecureSuite members can join the `CIS Members : Benchmark Customization Discussions <https://workbench.cisecurity.org/communities/148>`_ Community on WorkBench. This community is a place to seek guidance, or share experience and information with other benchmark customization users.
