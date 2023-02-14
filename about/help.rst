@@ -4,8 +4,6 @@ Help
 Contact Us
 ----------
 
-Join the `CIS Members : Benchmark Customization Discussions Community on WorkBench
-<https://workbench.cisecurity.org/communities/148>`_.
+`CIS SecureSuite <https://www.cisecurity.org/cis-securesuite>`_ members can join the `CIS Members : Benchmark Customization Discussions <https://workbench.cisecurity.org/communities/148>`_ Community on WorkBench. This community is a place to seek guidance, or share experience and information with other benchmark customization users.
 
-This community is a place to seek guidance, share experience or information between users. If you
-need further assistance, follow the link to the `Support Portal <https://www.cisecurity.org/support>`_.
+For further assistance, please view our `Tailoring Benchmarks Quick Start Guide <https://cisecurity.atlassian.net/wiki/spaces/SCFKB/pages/2671870093/Quick+Start+Guide+Tailoring+Benchmarks>`_ or contact our `Support Team <https://cisecurity.atlassian.net/servicedesk/customer/portal/15/group/35/create/144>`_.
